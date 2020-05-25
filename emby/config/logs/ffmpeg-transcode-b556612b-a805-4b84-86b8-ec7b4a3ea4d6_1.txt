@@ -1,0 +1,123 @@
+2020-05-22 15:06:36.605
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/8619/hls1/main/71.ts?DeviceId=0939de9f-ad24-4206-b247-0dafb526de65&MediaSourceId=ab96a488c688a736ad5266cd0d143f28&PlaySessionId=8aef4b5e586d4946bad7d3d1bfc0d570&api_key=b24b9e0ee12b43b4b0d434c8e5187ccc&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=1761624&AudioBitrate=93375&AudioStreamIndex=1&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=ContainerBitrateExceedsLimit
+
+{"Protocol":"File","Id":"ab96a488c688a736ad5266cd0d143f28","Path":"/00/22/SEX分类/无码/@YOU/【@YOU】051119-917/051119-917 結婚直前で心が揺らいだ新婦の情事.mp4","Type":"Default","Container":"mp4","Size":1946993747,"Name":"051119-917 結婚直前で心が揺らいだ新婦の情事","IsRemote":false,"RunTimeTicks":37927890000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"h264","CodecTag":"avc1","Language":"eng","TimeBase":"1/60000","CodecTimeBase":"1001/120000","VideoRange":"SDR","DisplayTitle":"1080p H264","DisplayLanguage":"English","NalLengthSize":"4","IsInterlaced":false,"IsAVC":true,"BitRate":4000808,"BitDepth":8,"RefFrames":1,"IsDefault":true,"IsForced":false,"Height":1080,"Width":1920,"AverageFrameRate":59.94006,"RealFrameRate":59.94006,"Profile":"High","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuvj420p","Level":41,"IsAnamorphic":false},{"Codec":"aac","CodecTag":"mp4a","Language":"eng","TimeBase":"1/48000","CodecTimeBase":"1/48000","DisplayTitle":"English AAC stereo (Default)","DisplayLanguage":"English","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":93375,"Channels":2,"SampleRate":48000,"IsDefault":true,"IsForced":false,"Profile":"LC","Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":4106727,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for guest
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: h264, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    Scaling                                  >> False                False                                                         
+Info    ColorConversion                          >> False                False                                                         
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    h264                 >> -            yuvj420p     yuvj420p     >> scale
+Info    scale                >> -            yuvj420p     yuvj420p     >> format
+Info    format               >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -ss 00:03:33.000  -f mp4 -i file:"/00/22/SEX分类/无码/@YOU/【@YOU】051119-917/051119-917 結婚直前で心が揺らいだ新婦の情事.mp4" -threads 0 -map 0:0 -map 0:1 -sn -c:v:0 libx264 -filter_complex "[0:0]scale=trunc(min(max(iw\,ih*dar)\,720)/2)*2:trunc(ow/dar/2)*2" -pix_fmt yuv420p  -maxrate 1761624 -bufsize 3523248 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 180 -keyint_min:v:0 180 -sc_threshold:v:0 0  -copyts -vsync -1 -codec:a:0 copy -metadata:s:a:0 language=eng -disposition:a:0 default -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 71 -segment_list "/config/transcoding-temp/2E7973.m3u8" -y "/config/transcoding-temp/2E7973_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-b556612b-a805-4b84-86b8-ec7b4a3ea4d6_1graph.txt -copyts -start_at_zero -f mp4 -ss 00:03:33.000 -c:v:0 h264 -i "/00/22/SEX分类/无码/@YOU/【@YOU】051119-917/051119-917 結婚直前で心が揺らいだ新婦の情事.mp4" -filter_complex "[0:0]scale@f1=w=720:h=404,format@f2=pix_fmts=yuv420p[f2_out0]" -map [f2_out0] -map 0:1 -sn -c:v:0 libx264 -g:v:0 180 -maxrate:v:0 1761624 -bufsize:v:0 3523248 -sc_threshold:v:0 0 -keyint_min:v:0 180 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 3.1 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 copy -metadata:s:a:0 language=eng -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/2E7973.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 71 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/2E7973_%d.ts"
+
+15:06:36.642 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+15:06:36.642   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+15:06:36.642 Execution Date: 2020-05-22 15:06:36
+15:06:37.797 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/00/22/SEX分类/无码/@YOU/【@YOU】051119-917/051119-917 結婚直前で心が揺らいだ新婦の情事.mp4':
+15:06:37.798   Metadata:
+15:06:37.798     major_brand     : isom
+15:06:37.799     minor_version   : 512
+15:06:37.799     compatible_brands: isomiso2avc1mp41
+15:06:37.799     encoder         : Lavf58.3.100
+15:06:37.799   Duration: 01:03:12.79, start: 0.000000, bitrate: 4106 kb/s
+15:06:37.799     Stream #0:0(eng): Video: h264 (High) (avc1 / 0x31637661), yuvj420p(pc), 1920x1080 [SAR 1:1 DAR 16:9], 4000 kb/s, Level 41, 59.94 fps, 59.94 tbr, 60k tbn, 119.88 tbc (default)
+15:06:37.799     Metadata:
+15:06:37.799       handler_name    : VideoHandler
+15:06:37.799     Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 93 kb/s (default)
+15:06:37.799     Metadata:
+15:06:37.799       handler_name    : SoundHandler
+15:06:37.800 Stream mapping:
+15:06:37.801   Stream #0:0 (h264) -> scale
+15:06:37.801   format -> Stream #0:0 (libx264)
+15:06:37.801   Stream #0:1 -> #0:1 (copy)
+15:06:37.801 Press [q] to stop, [?] for help
+15:06:38.705 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+15:06:38.757 [swscaler @ 0x171afc0] deprecated pixel format used, make sure you did set range correctly
+15:06:38.758 [libx264 @ 0x1ce3640] using SAR=404/405
+15:06:38.758 [libx264 @ 0x1ce3640] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+15:06:38.760 [libx264 @ 0x1ce3640] profile Main, level 3.1, 4:2:0, 8-bit
+15:06:38.760 [libx264 @ 0x1ce3640] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=180 keyint_min=91 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=1761 vbv_bufsize=3523 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+15:06:38.761 Output #0, segment, to '/config/transcoding-temp/2E7973_%d.ts':
+15:06:38.761   Metadata:
+15:06:38.761     encoder         : Lavf58.35.100
+15:06:38.762     Stream #0:0: Video: h264 (libx264), yuv420p, 720x404 [SAR 404:405 DAR 16:9], q=-1--1, 59.94 fps, 90k tbn, 59.94 tbc (default)
+15:06:38.762     Metadata:
+15:06:38.762       encoder         : Lavc58.62.100 libx264
+15:06:38.762     Side data:
+15:06:38.762       cpb: bitrate max/min/avg: 1761000/0/0 buffer size: 3523000 vbv_delay: N/A
+15:06:38.763     Stream #0:1(eng): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 93 kb/s (default)
+15:06:39.143 frame=   40 fps= 30 q=31.0 size=      37kB time=00:03:33.73 bitrate=   0.0kbits/s throttle=off speed=6.87e+12x    
+15:06:39.649 frame=  114 fps= 62 q=31.0 size=     112kB time=00:03:34.97 bitrate=   0.0kbits/s throttle=off speed=4.99e+12x    
+15:06:40.151 frame=  196 fps= 83 q=29.0 size=     201kB time=00:03:36.34 bitrate=   0.0kbits/s throttle=off speed=3.92e+12x    
+15:06:40.172 [segment @ 0x13d9900] Opening '/config/transcoding-temp/2E7973.m3u8.tmp' for writing
+15:06:40.173 SegmentComplete=video:0 Index=71 Start=0.000000 End=216.015811 Duration=216.015811 offset_pts=0 start_pts=0 Frames=180 filename=2E7973_71.ts
+15:06:40.173 [segment @ 0x13d9900] Opening '/config/transcoding-temp/2E7973_72.ts.tmp' for writing
+15:06:40.665 frame=  274 fps= 96 q=31.0 size=     309kB time=00:03:37.64 bitrate=   0.0kbits/s throttle=off speed=3.22e+12x    
+15:06:40.741 
+
+[q] command received. Exiting.
+
+15:06:40.770 15:06:40.770 [segment @ 0x13d9900] Opening '/config/transcoding-temp/2E7973.m3u8.tmp' for writing
+15:06:40.771 SegmentComplete=video:0 Index=72 Start=216.015800 End=217.750878 Duration=1.735078 offset_pts=0 start_pts=216015800 Frames=104 filename=2E7973_72.ts
+15:06:40.771 frame=  284 fps= 96 q=-1.0 Lsize=     338kB time=00:03:37.79 bitrate=   0.0kbits/s throttle=off speed=3.1e+12x    
+15:06:40.771 video:281kB audio:57kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+15:06:40.780 EXIT
+15:06:40.783 [libx264 @ 0x1ce3640] frame I:2     Avg QP:21.46  size: 12605
+15:06:40.784 [libx264 @ 0x1ce3640] frame P:71    Avg QP:25.85  size:  2950
+15:06:40.784 [libx264 @ 0x1ce3640] frame B:211   Avg QP:28.45  size:   248
+15:06:40.784 [libx264 @ 0x1ce3640] consecutive B-frames:  0.7%  0.0%  2.1% 97.2%
+15:06:40.784 [libx264 @ 0x1ce3640] mb I  I16..4: 41.4%  0.0% 58.6%
+15:06:40.784 [libx264 @ 0x1ce3640] mb P  I16..4:  4.1%  0.0%  0.0%  P16..4: 42.7%  0.0%  0.0%  0.0%  0.0%    skip:53.2%
+15:06:40.784 [libx264 @ 0x1ce3640] mb B  I16..4:  0.1%  0.0%  0.0%  B16..8:  5.7%  0.0%  0.0%  direct: 1.0%  skip:93.3%  L0:26.2% L1:52.9% BI:20.9%
+15:06:40.784 [libx264 @ 0x1ce3640] coded y,uvDC,uvAC intra: 42.7% 42.4% 12.9% inter: 3.8% 2.1% 0.0%
+15:06:40.784 [libx264 @ 0x1ce3640] i16 v,h,dc,p: 48% 20% 17% 16%
+15:06:40.784 [libx264 @ 0x1ce3640] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 33% 19% 14%  9%  5%  6%  4%  5%  5%
+15:06:40.784 [libx264 @ 0x1ce3640] i8c dc,h,v,p: 41% 20% 32%  7%
+15:06:40.784 [libx264 @ 0x1ce3640] Weighted P-Frames: Y:0.0% UV:0.0%
+15:06:40.784 [libx264 @ 0x1ce3640] kb/s:484.60
+15:06:40.786 
+
+======= ExtraData
+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

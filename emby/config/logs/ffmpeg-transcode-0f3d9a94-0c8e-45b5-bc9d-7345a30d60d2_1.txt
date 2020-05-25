@@ -1,0 +1,769 @@
+2020-05-22 08:30:52.712
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome Android
+
+http://emby.super0.me:8096/videos/7596/hls1/main/169.ts?DeviceId=5f44ca82-da4c-431e-b855-db1136acebe0&MediaSourceId=58d300e8423394c8688691b216aa3fff&PlaySessionId=bee6c5fdd62546d09adf62d0ae61cef4&api_key=69a8c8e4d325445b972db49b3c282f55&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=1032447&AudioBitrate=192553&AudioStreamIndex=1&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=False&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=ContainerBitrateExceedsLimit
+
+{"Protocol":"File","Id":"58d300e8423394c8688691b216aa3fff","Path":"/00/00/SSNI/701-778/SSNI-772-C/ssni-772-C.mp4","Type":"Default","Container":"mp4","Size":5302165678,"Name":"SSNI-772-C","IsRemote":false,"RunTimeTicks":73084380000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"h264","CodecTag":"avc1","Language":"und","TimeBase":"1/30000","CodecTimeBase":"1001/60000","VideoRange":"SDR","DisplayTitle":"1080p H264","NalLengthSize":"4","IsInterlaced":false,"IsAVC":true,"BitRate":5600719,"BitDepth":8,"RefFrames":1,"IsDefault":true,"IsForced":false,"Height":1080,"Width":1920,"AverageFrameRate":29.97003,"RealFrameRate":29.97003,"Profile":"Main","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p","Level":31,"IsAnamorphic":false},{"Codec":"aac","CodecTag":"mp4a","Language":"und","TimeBase":"1/48000","CodecTimeBase":"1/48000","DisplayTitle":"Und AAC stereo (Default)","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":192553,"Channels":2,"SampleRate":48000,"IsDefault":true,"IsForced":false,"Profile":"LC","Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":5803883,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for 1124721976
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: h264, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    Scaling                                  >> False                False                                                         
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    h264                 >> -            yuv420p      yuv420p      >> scale
+Info    scale                >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -ss 00:08:27.000  -f mp4 -i file:"/00/00/SSNI/701-778/SSNI-772-C/ssni-772-C.mp4" -threads 0 -map 0:0 -map 0:1 -sn -c:v:0 libx264 -filter_complex "[0:0]scale=trunc(min(max(iw\,ih*dar)\,720)/2)*2:trunc(ow/dar/2)*2" -pix_fmt yuv420p  -maxrate 1032447 -bufsize 2064894 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 90 -keyint_min:v:0 90 -sc_threshold:v:0 0  -copyts -vsync -1 -codec:a:0 copy -disposition:a:0 default -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 169 -segment_list "/config/transcoding-temp/CB5ACE.m3u8" -y "/config/transcoding-temp/CB5ACE_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-0f3d9a94-0c8e-45b5-bc9d-7345a30d60d2_1graph.txt -copyts -start_at_zero -f mp4 -ss 00:08:27.000 -c:v:0 h264 -i "/00/00/SSNI/701-778/SSNI-772-C/ssni-772-C.mp4" -filter_complex "[0:0]scale@f1=w=720:h=404[f1_out0]" -map [f1_out0] -map 0:1 -sn -c:v:0 libx264 -g:v:0 90 -maxrate:v:0 1032447 -bufsize:v:0 2064894 -sc_threshold:v:0 0 -keyint_min:v:0 90 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 3.0 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 copy -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/CB5ACE.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 169 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/CB5ACE_%d.ts"
+
+08:30:52.754 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+08:30:52.754   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+08:30:52.754 Execution Date: 2020-05-22 08:30:52
+08:30:58.460 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/00/00/SSNI/701-778/SSNI-772-C/ssni-772-C.mp4':
+08:30:58.460   Metadata:
+08:30:58.460     major_brand     : isom
+08:30:58.460     minor_version   : 512
+08:30:58.460     compatible_brands: isomiso2avc1mp41
+08:30:58.460     encoder         : Lavf58.30.100
+08:30:58.460   Duration: 02:01:48.44, start: 0.000000, bitrate: 5803 kb/s
+08:30:58.460     Stream #0:0(und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p, 1920x1080 [SAR 1:1 DAR 16:9], 5600 kb/s, Level 31, 29.97 fps, 29.97 tbr, 30k tbn, 59.94 tbc (default)
+08:30:58.460     Metadata:
+08:30:58.460       handler_name    : VideoHandler
+08:30:58.460     Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 192 kb/s (default)
+08:30:58.460     Metadata:
+08:30:58.460       handler_name    : SoundHandler
+08:30:58.461 Stream mapping:
+08:30:58.461   Stream #0:0 (h264) -> scale
+08:30:58.461   scale -> Stream #0:0 (libx264)
+08:30:58.461   Stream #0:1 -> #0:1 (copy)
+08:30:58.461 Press [q] to stop, [?] for help
+08:31:00.327 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+08:31:00.327 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+08:31:00.376 [libx264 @ 0x2a5fc80] using SAR=404/405
+08:31:00.377 [libx264 @ 0x2a5fc80] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+08:31:00.379 [libx264 @ 0x2a5fc80] profile Main, level 3.0, 4:2:0, 8-bit
+08:31:00.379 [libx264 @ 0x2a5fc80] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=90 keyint_min=46 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=1032 vbv_bufsize=2064 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+08:31:00.379 Output #0, segment, to '/config/transcoding-temp/CB5ACE_%d.ts':
+08:31:00.379   Metadata:
+08:31:00.379     encoder         : Lavf58.35.100
+08:31:00.379     Stream #0:0: Video: h264 (libx264), yuv420p, 720x404 [SAR 404:405 DAR 16:9], q=-1--1, 29.97 fps, 90k tbn, 29.97 tbc (default)
+08:31:00.379     Metadata:
+08:31:00.379       encoder         : Lavc58.62.100 libx264
+08:31:00.379     Side data:
+08:31:00.379       cpb: bitrate max/min/avg: 1032000/0/0 buffer size: 2064000 vbv_delay: N/A
+08:31:00.379     Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 192 kb/s (default)
+08:31:00.831 frame=   10 fps=4.2 q=0.0 size=      68kB time=00:08:27.45 bitrate=   0.0kbits/s throttle=off speed=3.89e+12x    
+08:31:01.201 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:01.202 SegmentComplete=video:0 Index=169 Start=0.000000 End=510.009500 Duration=510.009500 offset_pts=0 start_pts=0 Frames=90 filename=CB5ACE_169.ts
+08:31:01.202 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_170.ts.tmp' for writing
+08:31:01.334 frame=  148 fps= 52 q=29.0 size=     337kB time=00:08:32.06 bitrate=   0.0kbits/s throttle=off speed=3.21e+12x    
+08:31:01.499 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:01.502 SegmentComplete=video:0 Index=170 Start=510.009500 End=513.012500 Duration=3.003000 offset_pts=0 start_pts=510009500 Frames=90 filename=CB5ACE_170.ts
+08:31:01.502 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_171.ts.tmp' for writing
+08:31:01.783 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:01.784 SegmentComplete=video:0 Index=171 Start=513.012500 End=516.015500 Duration=3.003000 offset_pts=0 start_pts=513012500 Frames=90 filename=CB5ACE_171.ts
+08:31:01.784 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_172.ts.tmp' for writing
+08:31:01.835 frame=  304 fps= 90 q=29.0 size=     620kB time=00:08:37.26 bitrate=   0.0kbits/s throttle=off speed=2.73e+12x    
+08:31:02.128 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:02.129 SegmentComplete=video:0 Index=172 Start=516.015500 End=519.018500 Duration=3.003000 offset_pts=0 start_pts=516015500 Frames=90 filename=CB5ACE_172.ts
+08:31:02.129 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_173.ts.tmp' for writing
+08:31:02.337 frame=  439 fps=113 q=29.0 size=     920kB time=00:08:41.77 bitrate=   0.0kbits/s throttle=off speed=2.38e+12x    
+08:31:02.452 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:02.453 SegmentComplete=video:0 Index=173 Start=519.018500 End=522.021500 Duration=3.003000 offset_pts=0 start_pts=519018500 Frames=90 filename=CB5ACE_173.ts
+08:31:02.453 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_174.ts.tmp' for writing
+08:31:02.773 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:02.773 SegmentComplete=video:0 Index=174 Start=522.021500 End=525.024500 Duration=3.003000 offset_pts=0 start_pts=522021500 Frames=90 filename=CB5ACE_174.ts
+08:31:02.773 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_175.ts.tmp' for writing
+08:31:02.842 frame=  581 fps=133 q=29.0 size=    1419kB time=00:08:46.50 bitrate=   0.0kbits/s throttle=off speed=2.11e+12x    
+08:31:03.109 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:03.110 SegmentComplete=video:0 Index=175 Start=525.024500 End=528.027500 Duration=3.003000 offset_pts=0 start_pts=525024500 Frames=90 filename=CB5ACE_175.ts
+08:31:03.110 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_176.ts.tmp' for writing
+08:31:03.347 frame=  716 fps=147 q=29.0 size=    1845kB time=00:08:51.00 bitrate=   0.0kbits/s throttle=off speed=1.89e+12x    
+08:31:03.440 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:03.441 SegmentComplete=video:0 Index=176 Start=528.027500 End=531.030500 Duration=3.003000 offset_pts=0 start_pts=528027500 Frames=90 filename=CB5ACE_176.ts
+08:31:03.441 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_177.ts.tmp' for writing
+08:31:03.756 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:03.757 SegmentComplete=video:0 Index=177 Start=531.030500 End=534.033500 Duration=3.003000 offset_pts=0 start_pts=531030500 Frames=90 filename=CB5ACE_177.ts
+08:31:03.757 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_178.ts.tmp' for writing
+08:31:03.852 frame=  857 fps=159 q=29.0 size=    2154kB time=00:08:55.70 bitrate=   0.0kbits/s throttle=off speed=1.71e+12x    
+08:31:04.088 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:04.088 SegmentComplete=video:0 Index=178 Start=534.033500 End=537.036500 Duration=3.003000 offset_pts=0 start_pts=534033500 Frames=90 filename=CB5ACE_178.ts
+08:31:04.089 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_179.ts.tmp' for writing
+08:31:04.358 frame=  997 fps=169 q=29.0 size=    2561kB time=00:09:00.37 bitrate=   0.0kbits/s throttle=off speed=1.56e+12x    
+08:31:04.411 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:04.412 SegmentComplete=video:0 Index=179 Start=537.036500 End=540.039500 Duration=3.003000 offset_pts=0 start_pts=537036500 Frames=90 filename=CB5ACE_179.ts
+08:31:04.412 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_180.ts.tmp' for writing
+08:31:04.752 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:04.753 SegmentComplete=video:0 Index=180 Start=540.039500 End=543.042500 Duration=3.003000 offset_pts=0 start_pts=540039500 Frames=90 filename=CB5ACE_180.ts
+08:31:04.753 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_181.ts.tmp' for writing
+08:31:04.860 frame= 1126 fps=176 q=29.0 size=    3025kB time=00:09:04.68 bitrate=   0.0kbits/s throttle=off speed=1.44e+12x    
+08:31:05.086 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:05.087 SegmentComplete=video:0 Index=181 Start=543.042500 End=546.045500 Duration=3.003000 offset_pts=0 start_pts=543042500 Frames=90 filename=CB5ACE_181.ts
+08:31:05.087 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_182.ts.tmp' for writing
+08:31:05.361 frame= 1270 fps=184 q=29.0 size=    3430kB time=00:09:09.48 bitrate=   0.0kbits/s throttle=off speed=1.34e+12x    
+08:31:05.401 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:05.401 SegmentComplete=video:0 Index=182 Start=546.045500 End=549.048500 Duration=3.003000 offset_pts=0 start_pts=546045500 Frames=90 filename=CB5ACE_182.ts
+08:31:05.402 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_183.ts.tmp' for writing
+08:31:05.717 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:05.719 SegmentComplete=video:0 Index=183 Start=549.048500 End=552.051500 Duration=3.003000 offset_pts=0 start_pts=549048500 Frames=90 filename=CB5ACE_183.ts
+08:31:05.719 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_184.ts.tmp' for writing
+08:31:05.861 frame= 1410 fps=191 q=29.0 size=    3766kB time=00:09:14.15 bitrate=   0.0kbits/s throttle=off speed=1.25e+12x    
+08:31:06.058 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:06.059 SegmentComplete=video:0 Index=184 Start=552.051500 End=555.054500 Duration=3.003000 offset_pts=0 start_pts=552051500 Frames=90 filename=CB5ACE_184.ts
+08:31:06.059 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_185.ts.tmp' for writing
+08:31:06.362 frame= 1538 fps=195 q=29.0 size=    4049kB time=00:09:18.44 bitrate=   0.0kbits/s throttle=off speed=1.17e+12x    
+08:31:06.424 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:06.425 SegmentComplete=video:0 Index=185 Start=555.054500 End=558.057500 Duration=3.003000 offset_pts=0 start_pts=555054500 Frames=90 filename=CB5ACE_185.ts
+08:31:06.425 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_186.ts.tmp' for writing
+08:31:06.810 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:06.810 SegmentComplete=video:0 Index=186 Start=558.057500 End=561.060500 Duration=3.003000 offset_pts=0 start_pts=558057500 Frames=90 filename=CB5ACE_186.ts
+08:31:06.810 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_187.ts.tmp' for writing
+08:31:06.863 frame= 1655 fps=197 q=29.0 size=    4394kB time=00:09:22.34 bitrate=   0.0kbits/s throttle=off speed=1.1e+12x    
+08:31:07.140 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:07.141 SegmentComplete=video:0 Index=187 Start=561.060500 End=564.063500 Duration=3.003000 offset_pts=0 start_pts=561060500 Frames=90 filename=CB5ACE_187.ts
+08:31:07.141 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_188.ts.tmp' for writing
+08:31:07.364 frame= 1790 fps=201 q=29.0 size=    4768kB time=00:09:26.84 bitrate=   0.0kbits/s throttle=off speed=1.04e+12x    
+08:31:07.488 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:07.488 SegmentComplete=video:0 Index=188 Start=564.063500 End=567.066500 Duration=3.003000 offset_pts=0 start_pts=564063500 Frames=90 filename=CB5ACE_188.ts
+08:31:07.488 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_189.ts.tmp' for writing
+08:31:07.862 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:07.862 SegmentComplete=video:0 Index=189 Start=567.066500 End=570.069500 Duration=3.003000 offset_pts=0 start_pts=567066500 Frames=90 filename=CB5ACE_189.ts
+08:31:07.863 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_190.ts.tmp' for writing
+08:31:07.867 frame= 1912 fps=203 q=29.0 size=    5134kB time=00:09:30.92 bitrate=   0.0kbits/s throttle=off speed=9.81e+11x    
+08:31:08.245 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:08.246 SegmentComplete=video:0 Index=190 Start=570.069500 End=573.072500 Duration=3.003000 offset_pts=0 start_pts=570069500 Frames=90 filename=CB5ACE_190.ts
+08:31:08.246 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_191.ts.tmp' for writing
+08:31:08.367 frame= 2028 fps=205 q=29.0 size=    5532kB time=00:09:34.78 bitrate=   0.0kbits/s throttle=off speed=9.31e+11x    
+08:31:08.640 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:08.640 SegmentComplete=video:0 Index=191 Start=573.072500 End=576.075500 Duration=3.003000 offset_pts=0 start_pts=573072500 Frames=90 filename=CB5ACE_191.ts
+08:31:08.640 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_192.ts.tmp' for writing
+08:31:08.870 frame= 2153 fps=207 q=29.0 size=    5817kB time=00:09:38.96 bitrate=   0.0kbits/s throttle=off speed=8.86e+11x    
+08:31:08.981 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:08.982 SegmentComplete=video:0 Index=192 Start=576.075500 End=579.078500 Duration=3.003000 offset_pts=0 start_pts=576075500 Frames=90 filename=CB5ACE_192.ts
+08:31:08.982 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_193.ts.tmp' for writing
+08:31:09.306 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:09.307 SegmentComplete=video:0 Index=193 Start=579.078500 End=582.081500 Duration=3.003000 offset_pts=0 start_pts=579078500 Frames=90 filename=CB5ACE_193.ts
+08:31:09.307 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_194.ts.tmp' for writing
+08:31:09.371 frame= 2289 fps=210 q=29.0 size=    6122kB time=00:09:43.48 bitrate=   0.0kbits/s throttle=off speed=8.45e+11x    
+08:31:09.642 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:09.643 SegmentComplete=video:0 Index=194 Start=582.081500 End=585.084500 Duration=3.003000 offset_pts=0 start_pts=582081500 Frames=90 filename=CB5ACE_194.ts
+08:31:09.643 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_195.ts.tmp' for writing
+08:31:09.874 frame= 2425 fps=212 q=29.0 size=    6457kB time=00:09:48.03 bitrate=   0.0kbits/s throttle=off speed=8.08e+11x    
+08:31:09.970 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:09.971 SegmentComplete=video:0 Index=195 Start=585.084500 End=588.087500 Duration=3.003000 offset_pts=0 start_pts=585084500 Frames=90 filename=CB5ACE_195.ts
+08:31:09.972 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_196.ts.tmp' for writing
+08:31:10.334 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:10.335 SegmentComplete=video:0 Index=196 Start=588.087500 End=591.090500 Duration=3.003000 offset_pts=0 start_pts=588087500 Frames=90 filename=CB5ACE_196.ts
+08:31:10.335 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_197.ts.tmp' for writing
+08:31:10.374 frame= 2553 fps=214 q=29.0 size=    6749kB time=00:09:52.29 bitrate=   0.0kbits/s throttle=off speed=7.74e+11x    
+08:31:10.653 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:10.658 SegmentComplete=video:0 Index=197 Start=591.090500 End=594.093500 Duration=3.003000 offset_pts=0 start_pts=591090500 Frames=90 filename=CB5ACE_197.ts
+08:31:10.658 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_198.ts.tmp' for writing
+08:31:10.874 frame= 2697 fps=217 q=29.0 size=    7052kB time=00:09:57.09 bitrate=   0.0kbits/s throttle=off speed=7.43e+11x    
+08:31:10.963 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:10.964 SegmentComplete=video:0 Index=198 Start=594.093500 End=597.096500 Duration=3.003000 offset_pts=0 start_pts=594093500 Frames=90 filename=CB5ACE_198.ts
+08:31:10.964 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_199.ts.tmp' for writing
+08:31:11.283 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:11.283 SegmentComplete=video:0 Index=199 Start=597.096500 End=600.099500 Duration=3.003000 offset_pts=0 start_pts=597096500 Frames=90 filename=CB5ACE_199.ts
+08:31:11.283 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_200.ts.tmp' for writing
+08:31:11.375 frame= 2838 fps=220 q=29.0 size=    7346kB time=00:10:01.81 bitrate=   0.0kbits/s throttle=off speed=7.14e+11x    
+08:31:11.608 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:11.609 SegmentComplete=video:0 Index=200 Start=600.099500 End=603.102500 Duration=3.003000 offset_pts=0 start_pts=600099500 Frames=90 filename=CB5ACE_200.ts
+08:31:11.609 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_201.ts.tmp' for writing
+08:31:11.881 frame= 2977 fps=222 q=29.0 size=    7636kB time=00:10:06.44 bitrate=   0.0kbits/s throttle=off speed=6.87e+11x    
+08:31:11.934 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:11.934 SegmentComplete=video:0 Index=201 Start=603.102500 End=606.105500 Duration=3.003000 offset_pts=0 start_pts=603102500 Frames=90 filename=CB5ACE_201.ts
+08:31:11.934 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_202.ts.tmp' for writing
+08:31:12.260 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:12.261 SegmentComplete=video:0 Index=202 Start=606.105500 End=609.108500 Duration=3.003000 offset_pts=0 start_pts=606105500 Frames=90 filename=CB5ACE_202.ts
+08:31:12.261 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_203.ts.tmp' for writing
+08:31:12.387 frame= 3113 fps=224 q=29.0 size=    7970kB time=00:10:10.98 bitrate=   0.0kbits/s throttle=off speed=6.62e+11x    
+08:31:12.601 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:12.602 SegmentComplete=video:0 Index=203 Start=609.108500 End=612.111500 Duration=3.003000 offset_pts=0 start_pts=609108500 Frames=90 filename=CB5ACE_203.ts
+08:31:12.602 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_204.ts.tmp' for writing
+08:31:12.889 frame= 3255 fps=226 q=29.0 size=    8248kB time=00:10:15.72 bitrate=   0.0kbits/s throttle=off speed=6.39e+11x    
+08:31:12.910 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:12.911 SegmentComplete=video:0 Index=204 Start=612.111500 End=615.114500 Duration=3.003000 offset_pts=0 start_pts=612111500 Frames=90 filename=CB5ACE_204.ts
+08:31:12.911 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_205.ts.tmp' for writing
+08:31:13.240 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:13.241 SegmentComplete=video:0 Index=205 Start=615.114500 End=618.117500 Duration=3.003000 offset_pts=0 start_pts=615114500 Frames=90 filename=CB5ACE_205.ts
+08:31:13.241 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_206.ts.tmp' for writing
+08:31:13.392 frame= 3391 fps=227 q=29.0 size=    8497kB time=00:10:20.26 bitrate=   0.0kbits/s throttle=off speed=6.18e+11x    
+08:31:13.586 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:13.586 SegmentComplete=video:0 Index=206 Start=618.117500 End=621.120500 Duration=3.003000 offset_pts=0 start_pts=618117500 Frames=90 filename=CB5ACE_206.ts
+08:31:13.586 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_207.ts.tmp' for writing
+08:31:13.895 frame= 3529 fps=229 q=29.0 size=    8761kB time=00:10:24.87 bitrate=   0.0kbits/s throttle=off speed=5.98e+11x    
+08:31:13.902 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:13.902 SegmentComplete=video:0 Index=207 Start=621.120500 End=624.123500 Duration=3.003000 offset_pts=0 start_pts=621120500 Frames=90 filename=CB5ACE_207.ts
+08:31:13.902 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_208.ts.tmp' for writing
+08:31:14.202 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:14.204 SegmentComplete=video:0 Index=208 Start=624.123500 End=627.126500 Duration=3.003000 offset_pts=0 start_pts=624123500 Frames=90 filename=CB5ACE_208.ts
+08:31:14.204 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_209.ts.tmp' for writing
+08:31:14.396 frame= 3674 fps=231 q=29.0 size=    9017kB time=00:10:29.69 bitrate=   0.0kbits/s throttle=off speed=5.79e+11x    
+08:31:14.540 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:14.541 SegmentComplete=video:0 Index=209 Start=627.126500 End=630.129500 Duration=3.003000 offset_pts=0 start_pts=627126500 Frames=90 filename=CB5ACE_209.ts
+08:31:14.541 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_210.ts.tmp' for writing
+08:31:14.908 frame= 3798 fps=231 q=29.0 size=    9312kB time=00:10:33.83 bitrate=   0.0kbits/s throttle=off speed=5.61e+11x    
+08:31:14.922 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:14.922 SegmentComplete=video:0 Index=210 Start=630.129500 End=633.132500 Duration=3.003000 offset_pts=0 start_pts=630129500 Frames=90 filename=CB5ACE_210.ts
+08:31:14.922 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_211.ts.tmp' for writing
+08:31:15.277 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:15.277 SegmentComplete=video:0 Index=211 Start=633.132500 End=636.135500 Duration=3.003000 offset_pts=0 start_pts=633132500 Frames=90 filename=CB5ACE_211.ts
+08:31:15.277 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_212.ts.tmp' for writing
+08:31:15.415 frame= 3928 fps=232 q=29.0 size=    9691kB time=00:10:38.18 bitrate=   0.0kbits/s throttle=off speed=5.44e+11x    
+08:31:15.620 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:15.620 SegmentComplete=video:0 Index=212 Start=636.135500 End=639.138500 Duration=3.003000 offset_pts=0 start_pts=636135500 Frames=90 filename=CB5ACE_212.ts
+08:31:15.620 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_213.ts.tmp' for writing
+08:31:15.917 frame= 4056 fps=232 q=29.0 size=   10084kB time=00:10:42.45 bitrate=   0.0kbits/s throttle=off speed=5.28e+11x    
+08:31:15.977 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:15.977 SegmentComplete=video:0 Index=213 Start=639.138500 End=642.141500 Duration=3.003000 offset_pts=0 start_pts=639138500 Frames=90 filename=CB5ACE_213.ts
+08:31:15.977 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_214.ts.tmp' for writing
+08:31:16.306 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:16.307 SegmentComplete=video:0 Index=214 Start=642.141500 End=645.144500 Duration=3.003000 offset_pts=0 start_pts=642141500 Frames=90 filename=CB5ACE_214.ts
+08:31:16.307 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_215.ts.tmp' for writing
+08:31:16.424 frame= 4191 fps=233 q=29.0 size=   10414kB time=00:10:46.95 bitrate=   0.0kbits/s throttle=off speed=5.13e+11x    
+08:31:16.651 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:16.652 SegmentComplete=video:0 Index=215 Start=645.144500 End=648.147500 Duration=3.003000 offset_pts=0 start_pts=645144500 Frames=90 filename=CB5ACE_215.ts
+08:31:16.652 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_216.ts.tmp' for writing
+08:31:16.925 frame= 4317 fps=234 q=29.0 size=   10745kB time=00:10:51.15 bitrate=   0.0kbits/s throttle=off speed=5e+11x    
+08:31:17.018 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:17.018 SegmentComplete=video:0 Index=216 Start=648.147500 End=651.150500 Duration=3.003000 offset_pts=0 start_pts=648147500 Frames=90 filename=CB5ACE_216.ts
+08:31:17.019 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_217.ts.tmp' for writing
+08:31:17.386 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:17.387 SegmentComplete=video:0 Index=217 Start=651.150500 End=654.153500 Duration=3.003000 offset_pts=0 start_pts=651150500 Frames=90 filename=CB5ACE_217.ts
+08:31:17.387 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_218.ts.tmp' for writing
+08:31:17.426 frame= 4442 fps=234 q=29.0 size=   11159kB time=00:10:55.33 bitrate=   0.0kbits/s throttle=off speed=4.86e+11x    
+08:31:17.721 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:17.722 SegmentComplete=video:0 Index=218 Start=654.153500 End=657.156500 Duration=3.003000 offset_pts=0 start_pts=654153500 Frames=90 filename=CB5ACE_218.ts
+08:31:17.722 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_219.ts.tmp' for writing
+08:31:17.927 frame= 4578 fps=235 q=29.0 size=   11534kB time=00:10:59.86 bitrate=   0.0kbits/s throttle=off speed=4.74e+11x    
+08:31:18.044 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:18.045 SegmentComplete=video:0 Index=219 Start=657.156500 End=660.159500 Duration=3.003000 offset_pts=0 start_pts=657156500 Frames=90 filename=CB5ACE_219.ts
+08:31:18.045 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_220.ts.tmp' for writing
+08:31:18.351 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:18.352 SegmentComplete=video:0 Index=220 Start=660.159500 End=663.162500 Duration=3.003000 offset_pts=0 start_pts=660159500 Frames=90 filename=CB5ACE_220.ts
+08:31:18.352 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_221.ts.tmp' for writing
+08:31:18.427 frame= 4720 fps=236 q=29.0 size=   11828kB time=00:11:04.59 bitrate=   0.0kbits/s throttle=off speed=4.62e+11x    
+08:31:18.672 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:18.672 SegmentComplete=video:0 Index=221 Start=663.162500 End=666.165500 Duration=3.003000 offset_pts=0 start_pts=663162500 Frames=90 filename=CB5ACE_221.ts
+08:31:18.672 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_222.ts.tmp' for writing
+08:31:18.928 frame= 4861 fps=237 q=29.0 size=   12107kB time=00:11:09.31 bitrate=   0.0kbits/s throttle=off speed=4.51e+11x    
+08:31:19.014 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:19.015 SegmentComplete=video:0 Index=222 Start=666.165500 End=669.168500 Duration=3.003000 offset_pts=0 start_pts=666165500 Frames=90 filename=CB5ACE_222.ts
+08:31:19.015 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_223.ts.tmp' for writing
+08:31:19.379 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:19.381 SegmentComplete=video:0 Index=223 Start=669.168500 End=672.171500 Duration=3.003000 offset_pts=0 start_pts=669168500 Frames=90 filename=CB5ACE_223.ts
+08:31:19.381 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_224.ts.tmp' for writing
+08:31:19.432 frame= 4982 fps=238 q=29.0 size=   12352kB time=00:11:13.34 bitrate=   0.0kbits/s throttle=off speed=4.4e+11x    
+08:31:19.777 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:19.777 SegmentComplete=video:0 Index=224 Start=672.171500 End=675.174500 Duration=3.003000 offset_pts=0 start_pts=672171500 Frames=90 filename=CB5ACE_224.ts
+08:31:19.777 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_225.ts.tmp' for writing
+08:31:19.933 frame= 5104 fps=238 q=29.0 size=   12585kB time=00:11:17.41 bitrate=   0.0kbits/s throttle=off speed=4.3e+11x    
+08:31:20.093 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:20.094 SegmentComplete=video:0 Index=225 Start=675.174500 End=678.177500 Duration=3.003000 offset_pts=0 start_pts=675174500 Frames=90 filename=CB5ACE_225.ts
+08:31:20.094 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_226.ts.tmp' for writing
+08:31:20.402 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:20.403 SegmentComplete=video:0 Index=226 Start=678.177500 End=681.180500 Duration=3.003000 offset_pts=0 start_pts=678177500 Frames=90 filename=CB5ACE_226.ts
+08:31:20.403 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_227.ts.tmp' for writing
+08:31:20.435 frame= 5253 fps=239 q=29.0 size=   12872kB time=00:11:22.38 bitrate=   0.0kbits/s throttle=off speed=4.2e+11x    
+08:31:20.680 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:20.682 SegmentComplete=video:0 Index=227 Start=681.180500 End=684.183500 Duration=3.003000 offset_pts=0 start_pts=681180500 Frames=90 filename=CB5ACE_227.ts
+08:31:20.682 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_228.ts.tmp' for writing
+08:31:20.937 frame= 5409 fps=241 q=29.0 size=   13093kB time=00:11:27.59 bitrate=   0.0kbits/s throttle=off speed=4.1e+11x    
+08:31:20.972 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:20.972 SegmentComplete=video:0 Index=228 Start=684.183500 End=687.186500 Duration=3.003000 offset_pts=0 start_pts=684183500 Frames=90 filename=CB5ACE_228.ts
+08:31:20.972 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_229.ts.tmp' for writing
+08:31:21.250 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:21.250 SegmentComplete=video:0 Index=229 Start=687.186500 End=690.189500 Duration=3.003000 offset_pts=0 start_pts=687186500 Frames=90 filename=CB5ACE_229.ts
+08:31:21.250 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_230.ts.tmp' for writing
+08:31:21.438 frame= 5573 fps=243 q=29.0 size=   13368kB time=00:11:33.07 bitrate=   0.0kbits/s throttle=off speed=4.01e+11x    
+08:31:21.524 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:21.525 SegmentComplete=video:0 Index=230 Start=690.189500 End=693.192500 Duration=3.003000 offset_pts=0 start_pts=690189500 Frames=90 filename=CB5ACE_230.ts
+08:31:21.525 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_231.ts.tmp' for writing
+08:31:21.822 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:21.823 SegmentComplete=video:0 Index=231 Start=693.192500 End=696.195500 Duration=3.003000 offset_pts=0 start_pts=693192500 Frames=90 filename=CB5ACE_231.ts
+08:31:21.823 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_232.ts.tmp' for writing
+08:31:21.940 frame= 5731 fps=244 q=29.0 size=   13661kB time=00:11:38.34 bitrate=   0.0kbits/s throttle=off speed=3.93e+11x    
+08:31:22.089 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:22.090 SegmentComplete=video:0 Index=232 Start=696.195500 End=699.198500 Duration=3.003000 offset_pts=0 start_pts=696195500 Frames=90 filename=CB5ACE_232.ts
+08:31:22.090 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_233.ts.tmp' for writing
+08:31:22.418 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:22.419 SegmentComplete=video:0 Index=233 Start=699.198500 End=702.201500 Duration=3.003000 offset_pts=0 start_pts=699198500 Frames=90 filename=CB5ACE_233.ts
+08:31:22.419 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_234.ts.tmp' for writing
+08:31:22.440 frame= 5878 fps=245 q=29.0 size=   14010kB time=00:11:43.25 bitrate=   0.0kbits/s throttle=off speed=3.85e+11x    
+08:31:22.769 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:22.769 SegmentComplete=video:0 Index=234 Start=702.201500 End=705.204500 Duration=3.003000 offset_pts=0 start_pts=702201500 Frames=90 filename=CB5ACE_234.ts
+08:31:22.769 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_235.ts.tmp' for writing
+08:31:22.944 frame= 6005 fps=245 q=29.0 size=   14332kB time=00:11:47.47 bitrate=   0.0kbits/s throttle=off speed=3.77e+11x    
+08:31:23.116 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:23.116 SegmentComplete=video:0 Index=235 Start=705.204500 End=708.207500 Duration=3.003000 offset_pts=0 start_pts=705204500 Frames=90 filename=CB5ACE_235.ts
+08:31:23.116 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_236.ts.tmp' for writing
+08:31:23.448 frame= 6135 fps=246 q=29.0 size=   14690kB time=00:11:51.82 bitrate=   0.0kbits/s throttle=off speed=3.69e+11x    
+08:31:23.462 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:23.462 SegmentComplete=video:0 Index=236 Start=708.207500 End=711.210500 Duration=3.003000 offset_pts=0 start_pts=708207500 Frames=90 filename=CB5ACE_236.ts
+08:31:23.462 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_237.ts.tmp' for writing
+08:31:23.802 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:23.802 SegmentComplete=video:0 Index=237 Start=711.210500 End=714.213500 Duration=3.003000 offset_pts=0 start_pts=711210500 Frames=90 filename=CB5ACE_237.ts
+08:31:23.802 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_238.ts.tmp' for writing
+08:31:23.952 frame= 6270 fps=246 q=29.0 size=   15034kB time=00:11:56.33 bitrate=   0.0kbits/s throttle=off speed=3.62e+11x    
+08:31:24.139 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:24.140 SegmentComplete=video:0 Index=238 Start=714.213500 End=717.216500 Duration=3.003000 offset_pts=0 start_pts=714213500 Frames=90 filename=CB5ACE_238.ts
+08:31:24.140 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_239.ts.tmp' for writing
+08:31:24.455 frame= 6398 fps=246 q=29.0 size=   15362kB time=00:12:00.59 bitrate=   0.0kbits/s throttle=off speed=3.55e+11x    
+08:31:24.503 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:24.504 SegmentComplete=video:0 Index=239 Start=717.216500 End=720.219500 Duration=3.003000 offset_pts=0 start_pts=717216500 Frames=90 filename=CB5ACE_239.ts
+08:31:24.504 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_240.ts.tmp' for writing
+08:31:24.859 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:24.860 SegmentComplete=video:0 Index=240 Start=720.219500 End=723.222500 Duration=3.003000 offset_pts=0 start_pts=720219500 Frames=90 filename=CB5ACE_240.ts
+08:31:24.860 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_241.ts.tmp' for writing
+08:31:24.961 frame= 6526 fps=246 q=29.0 size=   15776kB time=00:12:04.86 bitrate=   0.0kbits/s throttle=off speed=3.48e+11x    
+08:31:25.208 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:25.209 SegmentComplete=video:0 Index=241 Start=723.222500 End=726.225500 Duration=3.003000 offset_pts=0 start_pts=723222500 Frames=90 filename=CB5ACE_241.ts
+08:31:25.209 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_242.ts.tmp' for writing
+08:31:25.471 frame= 6656 fps=246 q=29.0 size=   16289kB time=00:12:09.19 bitrate=   0.0kbits/s throttle=off speed=3.41e+11x    
+08:31:25.561 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:25.561 SegmentComplete=video:0 Index=242 Start=726.225500 End=729.228500 Duration=3.003000 offset_pts=0 start_pts=726225500 Frames=90 filename=CB5ACE_242.ts
+08:31:25.561 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_243.ts.tmp' for writing
+08:31:25.870 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:25.870 SegmentComplete=video:0 Index=243 Start=729.228500 End=732.231500 Duration=3.003000 offset_pts=0 start_pts=729228500 Frames=90 filename=CB5ACE_243.ts
+08:31:25.870 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_244.ts.tmp' for writing
+08:31:25.972 frame= 6801 fps=247 q=29.0 size=   16712kB time=00:12:14.03 bitrate=   0.0kbits/s throttle=off speed=3.35e+11x    
+08:31:26.210 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:26.211 SegmentComplete=video:0 Index=244 Start=732.231500 End=735.234500 Duration=3.003000 offset_pts=0 start_pts=732231500 Frames=90 filename=CB5ACE_244.ts
+08:31:26.211 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_245.ts.tmp' for writing
+08:31:26.473 frame= 6939 fps=248 q=29.0 size=   16969kB time=00:12:18.64 bitrate=   0.0kbits/s throttle=off speed=3.29e+11x    
+08:31:26.513 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:26.514 SegmentComplete=video:0 Index=245 Start=735.234500 End=738.237500 Duration=3.003000 offset_pts=0 start_pts=735234500 Frames=90 filename=CB5ACE_245.ts
+08:31:26.514 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_246.ts.tmp' for writing
+08:31:26.840 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:26.841 SegmentComplete=video:0 Index=246 Start=738.237500 End=741.240500 Duration=3.003000 offset_pts=0 start_pts=738237500 Frames=90 filename=CB5ACE_246.ts
+08:31:26.841 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_247.ts.tmp' for writing
+08:31:26.977 frame= 7077 fps=248 q=29.0 size=   17368kB time=00:12:23.25 bitrate=   0.0kbits/s throttle=off speed=3.23e+11x    
+08:31:27.194 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:27.195 SegmentComplete=video:0 Index=247 Start=741.240500 End=744.243500 Duration=3.003000 offset_pts=0 start_pts=741240500 Frames=90 filename=CB5ACE_247.ts
+08:31:27.195 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_248.ts.tmp' for writing
+08:31:27.479 frame= 7205 fps=248 q=29.0 size=   17807kB time=00:12:27.52 bitrate=   0.0kbits/s throttle=off speed=3.18e+11x    
+08:31:27.540 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:27.543 SegmentComplete=video:0 Index=248 Start=744.243500 End=747.246500 Duration=3.003000 offset_pts=0 start_pts=744243500 Frames=90 filename=CB5ACE_248.ts
+08:31:27.543 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_249.ts.tmp' for writing
+08:31:27.870 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:27.870 SegmentComplete=video:0 Index=249 Start=747.246500 End=750.249500 Duration=3.003000 offset_pts=0 start_pts=747246500 Frames=90 filename=CB5ACE_249.ts
+08:31:27.870 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_250.ts.tmp' for writing
+08:31:27.984 frame= 7340 fps=249 q=29.0 size=   18158kB time=00:12:32.02 bitrate=   0.0kbits/s throttle=off speed=3.12e+11x    
+08:31:28.199 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:28.199 SegmentComplete=video:0 Index=250 Start=750.249500 End=753.252500 Duration=3.003000 offset_pts=0 start_pts=750249500 Frames=90 filename=CB5ACE_250.ts
+08:31:28.199 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_251.ts.tmp' for writing
+08:31:28.487 frame= 7474 fps=249 q=29.0 size=   18474kB time=00:12:36.50 bitrate=   0.0kbits/s throttle=off speed=3.07e+11x    
+08:31:28.548 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:28.550 SegmentComplete=video:0 Index=251 Start=753.252500 End=756.255500 Duration=3.003000 offset_pts=0 start_pts=753252500 Frames=90 filename=CB5ACE_251.ts
+08:31:28.550 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_252.ts.tmp' for writing
+08:31:28.906 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:28.907 SegmentComplete=video:0 Index=252 Start=756.255500 End=759.258500 Duration=3.003000 offset_pts=0 start_pts=756255500 Frames=90 filename=CB5ACE_252.ts
+08:31:28.907 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_253.ts.tmp' for writing
+08:31:28.988 frame= 7601 fps=249 q=29.0 size=   18792kB time=00:12:40.74 bitrate=   0.0kbits/s throttle=off speed=3.02e+11x    
+08:31:29.264 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:29.264 SegmentComplete=video:0 Index=253 Start=759.258500 End=762.261500 Duration=3.003000 offset_pts=0 start_pts=759258500 Frames=90 filename=CB5ACE_253.ts
+08:31:29.264 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_254.ts.tmp' for writing
+08:31:29.491 frame= 7732 fps=249 q=29.0 size=   19168kB time=00:12:45.09 bitrate=   0.0kbits/s throttle=off speed=2.97e+11x    
+08:31:29.604 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:29.604 SegmentComplete=video:0 Index=254 Start=762.261500 End=765.264500 Duration=3.003000 offset_pts=0 start_pts=762261500 Frames=90 filename=CB5ACE_254.ts
+08:31:29.604 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_255.ts.tmp' for writing
+08:31:29.952 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:29.952 SegmentComplete=video:0 Index=255 Start=765.264500 End=768.267500 Duration=3.003000 offset_pts=0 start_pts=765264500 Frames=90 filename=CB5ACE_255.ts
+08:31:29.952 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_256.ts.tmp' for writing
+08:31:29.993 frame= 7861 fps=249 q=29.0 size=   19516kB time=00:12:49.40 bitrate=   0.0kbits/s throttle=off speed=2.93e+11x    
+08:31:30.314 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:30.314 SegmentComplete=video:0 Index=256 Start=768.267500 End=771.270500 Duration=3.003000 offset_pts=0 start_pts=768267500 Frames=90 filename=CB5ACE_256.ts
+08:31:30.314 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_257.ts.tmp' for writing
+08:31:30.495 frame= 7984 fps=249 q=29.0 size=   19853kB time=00:12:53.52 bitrate=   0.0kbits/s throttle=off speed=2.88e+11x    
+08:31:30.709 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:30.709 SegmentComplete=video:0 Index=257 Start=771.270500 End=774.273500 Duration=3.003000 offset_pts=0 start_pts=771270500 Frames=90 filename=CB5ACE_257.ts
+08:31:30.709 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_258.ts.tmp' for writing
+08:31:31.003 frame= 8099 fps=249 q=29.0 size=   20218kB time=00:12:57.34 bitrate=   0.0kbits/s throttle=off speed=2.83e+11x    
+08:31:31.121 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:31.123 SegmentComplete=video:0 Index=258 Start=774.273500 End=777.276500 Duration=3.003000 offset_pts=0 start_pts=774273500 Frames=90 filename=CB5ACE_258.ts
+08:31:31.123 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_259.ts.tmp' for writing
+08:31:31.482 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:31.482 SegmentComplete=video:0 Index=259 Start=777.276500 End=780.279500 Duration=3.003000 offset_pts=0 start_pts=777276500 Frames=90 filename=CB5ACE_259.ts
+08:31:31.482 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_260.ts.tmp' for writing
+08:31:31.508 frame= 8217 fps=249 q=29.0 size=   20541kB time=00:13:01.29 bitrate=   0.0kbits/s throttle=off speed=2.79e+11x    
+08:31:31.838 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:31.839 SegmentComplete=video:0 Index=260 Start=780.279500 End=783.282500 Duration=3.003000 offset_pts=0 start_pts=780279500 Frames=90 filename=CB5ACE_260.ts
+08:31:31.839 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_261.ts.tmp' for writing
+08:31:32.010 frame= 8346 fps=249 q=29.0 size=   20800kB time=00:13:05.60 bitrate=   0.0kbits/s throttle=off speed=2.75e+11x    
+08:31:32.175 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:32.175 SegmentComplete=video:0 Index=261 Start=783.282500 End=786.285500 Duration=3.003000 offset_pts=0 start_pts=783282500 Frames=90 filename=CB5ACE_261.ts
+08:31:32.175 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_262.ts.tmp' for writing
+08:31:32.510 frame= 8477 fps=249 q=29.0 size=   21095kB time=00:13:09.97 bitrate=   0.0kbits/s throttle=off speed=2.71e+11x    
+08:31:32.522 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:32.523 SegmentComplete=video:0 Index=262 Start=786.285500 End=789.288500 Duration=3.003000 offset_pts=0 start_pts=786285500 Frames=90 filename=CB5ACE_262.ts
+08:31:32.523 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_263.ts.tmp' for writing
+08:31:32.848 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:32.848 SegmentComplete=video:0 Index=263 Start=789.288500 End=792.291500 Duration=3.003000 offset_pts=0 start_pts=789288500 Frames=90 filename=CB5ACE_263.ts
+08:31:32.848 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_264.ts.tmp' for writing
+08:31:33.014 frame= 8615 fps=249 q=29.0 size=   21445kB time=00:13:14.56 bitrate=   0.0kbits/s throttle=off speed=2.67e+11x    
+08:31:33.169 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:33.169 SegmentComplete=video:0 Index=264 Start=792.291500 End=795.294500 Duration=3.003000 offset_pts=0 start_pts=792291500 Frames=90 filename=CB5ACE_264.ts
+08:31:33.170 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_265.ts.tmp' for writing
+08:31:33.477 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:33.478 SegmentComplete=video:0 Index=265 Start=795.294500 End=798.297500 Duration=3.003000 offset_pts=0 start_pts=795294500 Frames=90 filename=CB5ACE_265.ts
+08:31:33.478 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_266.ts.tmp' for writing
+08:31:33.518 frame= 8760 fps=250 q=29.0 size=   21752kB time=00:13:19.40 bitrate=   0.0kbits/s throttle=off speed=2.63e+11x    
+08:31:33.798 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:33.799 SegmentComplete=video:0 Index=266 Start=798.297500 End=801.300500 Duration=3.003000 offset_pts=0 start_pts=798297500 Frames=90 filename=CB5ACE_266.ts
+08:31:33.799 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_267.ts.tmp' for writing
+08:31:34.019 frame= 8905 fps=250 q=29.0 size=   22039kB time=00:13:24.24 bitrate=   0.0kbits/s throttle=off speed=2.59e+11x    
+08:31:34.113 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:34.115 SegmentComplete=video:0 Index=267 Start=801.300500 End=804.303500 Duration=3.003000 offset_pts=0 start_pts=801300500 Frames=90 filename=CB5ACE_267.ts
+08:31:34.115 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_268.ts.tmp' for writing
+08:31:34.445 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:34.445 SegmentComplete=video:0 Index=268 Start=804.303500 End=807.306500 Duration=3.003000 offset_pts=0 start_pts=804303500 Frames=90 filename=CB5ACE_268.ts
+08:31:34.445 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_269.ts.tmp' for writing
+08:31:34.522 frame= 9042 fps=251 q=29.0 size=   22439kB time=00:13:28.81 bitrate=   0.0kbits/s throttle=off speed=2.56e+11x    
+08:31:34.772 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:34.772 SegmentComplete=video:0 Index=269 Start=807.306500 End=810.309500 Duration=3.003000 offset_pts=0 start_pts=807306500 Frames=90 filename=CB5ACE_269.ts
+08:31:34.772 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_270.ts.tmp' for writing
+08:31:35.022 frame= 9177 fps=251 q=29.0 size=   22793kB time=00:13:33.33 bitrate=   0.0kbits/s throttle=off speed=2.52e+11x    
+08:31:35.114 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:35.115 SegmentComplete=video:0 Index=270 Start=810.309500 End=813.312500 Duration=3.003000 offset_pts=0 start_pts=810309500 Frames=90 filename=CB5ACE_270.ts
+08:31:35.115 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_271.ts.tmp' for writing
+08:31:35.438 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:35.439 SegmentComplete=video:0 Index=271 Start=813.312500 End=816.315500 Duration=3.003000 offset_pts=0 start_pts=813312500 Frames=90 filename=CB5ACE_271.ts
+08:31:35.439 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_272.ts.tmp' for writing
+08:31:35.524 frame= 9317 fps=251 q=29.0 size=   23128kB time=00:13:37.98 bitrate=   0.0kbits/s throttle=off speed=2.49e+11x    
+08:31:35.765 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:35.765 SegmentComplete=video:0 Index=272 Start=816.315500 End=819.318500 Duration=3.003000 offset_pts=0 start_pts=816315500 Frames=90 filename=CB5ACE_272.ts
+08:31:35.765 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_273.ts.tmp' for writing
+08:31:36.025 frame= 9460 fps=252 q=29.0 size=   23482kB time=00:13:42.76 bitrate=   0.0kbits/s throttle=off speed=2.46e+11x    
+08:31:36.062 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:36.063 SegmentComplete=video:0 Index=273 Start=819.318500 End=822.321500 Duration=3.003000 offset_pts=0 start_pts=819318500 Frames=90 filename=CB5ACE_273.ts
+08:31:36.063 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_274.ts.tmp' for writing
+08:31:36.422 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:36.423 SegmentComplete=video:0 Index=274 Start=822.321500 End=825.324500 Duration=3.003000 offset_pts=0 start_pts=822321500 Frames=90 filename=CB5ACE_274.ts
+08:31:36.423 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_275.ts.tmp' for writing
+08:31:36.527 frame= 9588 fps=252 q=29.0 size=   23974kB time=00:13:47.02 bitrate=   0.0kbits/s throttle=off speed=2.42e+11x    
+08:31:36.759 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:36.760 SegmentComplete=video:0 Index=275 Start=825.324500 End=828.327500 Duration=3.003000 offset_pts=0 start_pts=825324500 Frames=90 filename=CB5ACE_275.ts
+08:31:36.760 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_276.ts.tmp' for writing
+08:31:37.028 frame= 9731 fps=252 q=29.0 size=   24341kB time=00:13:51.80 bitrate=   0.0kbits/s throttle=off speed=2.39e+11x    
+08:31:37.060 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:37.060 SegmentComplete=video:0 Index=276 Start=828.327500 End=831.330500 Duration=3.003000 offset_pts=0 start_pts=828327500 Frames=90 filename=CB5ACE_276.ts
+08:31:37.060 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_277.ts.tmp' for writing
+08:31:37.392 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:37.393 SegmentComplete=video:0 Index=277 Start=831.330500 End=834.333500 Duration=3.003000 offset_pts=0 start_pts=831330500 Frames=90 filename=CB5ACE_277.ts
+08:31:37.393 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_278.ts.tmp' for writing
+08:31:37.537 frame= 9864 fps=252 q=29.0 size=   24668kB time=00:13:56.24 bitrate=   0.0kbits/s throttle=off speed=2.36e+11x    
+08:31:37.760 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:37.761 SegmentComplete=video:0 Index=278 Start=834.333500 End=837.336500 Duration=3.003000 offset_pts=0 start_pts=834333500 Frames=90 filename=CB5ACE_278.ts
+08:31:37.761 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_279.ts.tmp' for writing
+08:31:38.039 frame= 9986 fps=252 q=29.0 size=   25070kB time=00:14:00.32 bitrate=   0.0kbits/s throttle=off speed=2.33e+11x    
+08:31:38.138 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:38.139 SegmentComplete=video:0 Index=279 Start=837.336500 End=840.339500 Duration=3.003000 offset_pts=0 start_pts=837336500 Frames=90 filename=CB5ACE_279.ts
+08:31:38.139 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_280.ts.tmp' for writing
+08:31:38.494 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:38.494 SegmentComplete=video:0 Index=280 Start=840.339500 End=843.342500 Duration=3.003000 offset_pts=0 start_pts=840339500 Frames=90 filename=CB5ACE_280.ts
+08:31:38.495 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_281.ts.tmp' for writing
+08:31:38.541 frame=10113 fps=252 q=29.0 size=   25448kB time=00:14:04.54 bitrate=   0.0kbits/s throttle=off speed=2.3e+11x    
+08:31:38.865 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:38.866 SegmentComplete=video:0 Index=281 Start=843.342500 End=846.345500 Duration=3.003000 offset_pts=0 start_pts=843342500 Frames=90 filename=CB5ACE_281.ts
+08:31:38.866 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_282.ts.tmp' for writing
+08:31:39.045 frame=10238 fps=252 q=29.0 size=   25873kB time=00:14:08.72 bitrate=   0.0kbits/s throttle=off speed=2.27e+11x    
+08:31:39.204 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:39.204 SegmentComplete=video:0 Index=282 Start=846.345500 End=849.348500 Duration=3.003000 offset_pts=0 start_pts=846345500 Frames=90 filename=CB5ACE_282.ts
+08:31:39.204 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_283.ts.tmp' for writing
+08:31:39.529 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:39.530 SegmentComplete=video:0 Index=283 Start=849.348500 End=852.351500 Duration=3.003000 offset_pts=0 start_pts=849348500 Frames=90 filename=CB5ACE_283.ts
+08:31:39.530 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_284.ts.tmp' for writing
+08:31:39.546 frame=10377 fps=253 q=29.0 size=   26212kB time=00:14:13.35 bitrate=   0.0kbits/s throttle=off speed=2.24e+11x    
+08:31:39.849 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:39.850 SegmentComplete=video:0 Index=284 Start=852.351500 End=855.354500 Duration=3.003000 offset_pts=0 start_pts=852351500 Frames=90 filename=CB5ACE_284.ts
+08:31:39.850 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_285.ts.tmp' for writing
+08:31:40.047 frame=10514 fps=253 q=29.0 size=   26500kB time=00:14:17.94 bitrate=   0.0kbits/s throttle=off speed=2.22e+11x    
+08:31:40.177 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:40.178 SegmentComplete=video:0 Index=285 Start=855.354500 End=858.357500 Duration=3.003000 offset_pts=0 start_pts=855354500 Frames=90 filename=CB5ACE_285.ts
+08:31:40.178 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_286.ts.tmp' for writing
+08:31:40.506 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:40.506 SegmentComplete=video:0 Index=286 Start=858.357500 End=861.360500 Duration=3.003000 offset_pts=0 start_pts=858357500 Frames=90 filename=CB5ACE_286.ts
+08:31:40.506 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_287.ts.tmp' for writing
+08:31:40.554 frame=10654 fps=253 q=29.0 size=   26845kB time=00:14:22.61 bitrate=   0.0kbits/s throttle=off speed=2.19e+11x    
+08:31:40.860 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:40.861 SegmentComplete=video:0 Index=287 Start=861.360500 End=864.363500 Duration=3.003000 offset_pts=0 start_pts=861360500 Frames=90 filename=CB5ACE_287.ts
+08:31:40.861 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_288.ts.tmp' for writing
+08:31:41.057 frame=10782 fps=253 q=29.0 size=   27199kB time=00:14:26.88 bitrate=   0.0kbits/s throttle=off speed=2.17e+11x    
+08:31:41.203 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:41.204 SegmentComplete=video:0 Index=288 Start=864.363500 End=867.366500 Duration=3.003000 offset_pts=0 start_pts=864363500 Frames=90 filename=CB5ACE_288.ts
+08:31:41.204 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_289.ts.tmp' for writing
+08:31:41.559 frame=10910 fps=253 q=29.0 size=   27557kB time=00:14:31.14 bitrate=   0.0kbits/s throttle=off speed=2.14e+11x    
+08:31:41.567 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:41.567 SegmentComplete=video:0 Index=289 Start=867.366500 End=870.369500 Duration=3.003000 offset_pts=0 start_pts=867366500 Frames=90 filename=CB5ACE_289.ts
+08:31:41.567 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_290.ts.tmp' for writing
+08:31:41.919 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:41.920 SegmentComplete=video:0 Index=290 Start=870.369500 End=873.372500 Duration=3.003000 offset_pts=0 start_pts=870369500 Frames=90 filename=CB5ACE_290.ts
+08:31:41.921 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_291.ts.tmp' for writing
+08:31:42.059 frame=11034 fps=253 q=29.0 size=   27874kB time=00:14:35.28 bitrate=   0.0kbits/s throttle=off speed=2.12e+11x    
+08:31:42.299 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:42.300 SegmentComplete=video:0 Index=291 Start=873.372500 End=876.375500 Duration=3.003000 offset_pts=0 start_pts=873372500 Frames=90 filename=CB5ACE_291.ts
+08:31:42.300 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_292.ts.tmp' for writing
+08:31:42.560 frame=11158 fps=253 q=29.0 size=   28282kB time=00:14:39.42 bitrate=   0.0kbits/s throttle=off speed=2.09e+11x    
+08:31:42.655 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:42.655 SegmentComplete=video:0 Index=292 Start=876.375500 End=879.378500 Duration=3.003000 offset_pts=0 start_pts=876375500 Frames=90 filename=CB5ACE_292.ts
+08:31:42.655 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_293.ts.tmp' for writing
+08:31:43.027 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:43.028 SegmentComplete=video:0 Index=293 Start=879.378500 End=882.381500 Duration=3.003000 offset_pts=0 start_pts=879378500 Frames=90 filename=CB5ACE_293.ts
+08:31:43.030 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_294.ts.tmp' for writing
+08:31:43.066 frame=11278 fps=253 q=29.0 size=   28637kB time=00:14:43.43 bitrate=   0.0kbits/s throttle=off speed=2.07e+11x    
+08:31:43.393 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:43.393 SegmentComplete=video:0 Index=294 Start=882.381500 End=885.384500 Duration=3.003000 offset_pts=0 start_pts=882381500 Frames=90 filename=CB5ACE_294.ts
+08:31:43.393 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_295.ts.tmp' for writing
+08:31:43.571 frame=11404 fps=253 q=29.0 size=   28977kB time=00:14:47.63 bitrate=   0.0kbits/s throttle=off speed=2.04e+11x    
+08:31:43.766 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:43.766 SegmentComplete=video:0 Index=295 Start=885.384500 End=888.387500 Duration=3.003000 offset_pts=0 start_pts=885384500 Frames=90 filename=CB5ACE_295.ts
+08:31:43.766 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_296.ts.tmp' for writing
+08:31:44.079 frame=11528 fps=253 q=29.0 size=   29361kB time=00:14:51.77 bitrate=   0.0kbits/s throttle=off speed=2.02e+11x    
+08:31:44.131 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:44.131 SegmentComplete=video:0 Index=296 Start=888.387500 End=891.390500 Duration=3.003000 offset_pts=0 start_pts=888387500 Frames=90 filename=CB5ACE_296.ts
+08:31:44.132 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_297.ts.tmp' for writing
+08:31:44.483 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:44.483 SegmentComplete=video:0 Index=297 Start=891.390500 End=894.393500 Duration=3.003000 offset_pts=0 start_pts=891390500 Frames=90 filename=CB5ACE_297.ts
+08:31:44.483 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_298.ts.tmp' for writing
+08:31:44.580 frame=11657 fps=253 q=29.0 size=   29732kB time=00:14:56.06 bitrate=   0.0kbits/s throttle=off speed=2e+11x    
+08:31:44.838 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:44.838 SegmentComplete=video:0 Index=298 Start=894.393500 End=897.396500 Duration=3.003000 offset_pts=0 start_pts=894393500 Frames=90 filename=CB5ACE_298.ts
+08:31:44.838 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_299.ts.tmp' for writing
+08:31:45.088 frame=11785 fps=253 q=29.0 size=   30135kB time=00:15:00.35 bitrate=   0.0kbits/s throttle=off speed=1.98e+11x    
+08:31:45.217 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:45.218 SegmentComplete=video:0 Index=299 Start=897.396500 End=900.399500 Duration=3.003000 offset_pts=0 start_pts=897396500 Frames=90 filename=CB5ACE_299.ts
+08:31:45.219 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_300.ts.tmp' for writing
+08:31:45.568 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:45.569 SegmentComplete=video:0 Index=300 Start=900.399500 End=903.402500 Duration=3.003000 offset_pts=0 start_pts=900399500 Frames=90 filename=CB5ACE_300.ts
+08:31:45.569 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_301.ts.tmp' for writing
+08:31:45.589 frame=11907 fps=253 q=29.0 size=   30474kB time=00:15:04.40 bitrate=   0.0kbits/s throttle=off speed=1.96e+11x    
+08:31:45.908 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:45.909 SegmentComplete=video:0 Index=301 Start=903.402500 End=906.405500 Duration=3.003000 offset_pts=0 start_pts=903402500 Frames=90 filename=CB5ACE_301.ts
+08:31:45.909 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_302.ts.tmp' for writing
+08:31:46.090 frame=12039 fps=253 q=29.0 size=   30800kB time=00:15:08.82 bitrate=   0.0kbits/s throttle=off speed=1.94e+11x    
+08:31:46.261 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:46.261 SegmentComplete=video:0 Index=302 Start=906.405500 End=909.408500 Duration=3.003000 offset_pts=0 start_pts=906405500 Frames=90 filename=CB5ACE_302.ts
+08:31:46.261 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_303.ts.tmp' for writing
+08:31:46.591 frame=12163 fps=253 q=29.0 size=   31223kB time=00:15:12.96 bitrate=   0.0kbits/s throttle=off speed=1.92e+11x    
+08:31:46.625 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:46.626 SegmentComplete=video:0 Index=303 Start=909.408500 End=912.411500 Duration=3.003000 offset_pts=0 start_pts=909408500 Frames=90 filename=CB5ACE_303.ts
+08:31:46.626 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_304.ts.tmp' for writing
+08:31:46.987 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:46.988 SegmentComplete=video:0 Index=304 Start=912.411500 End=915.414500 Duration=3.003000 offset_pts=0 start_pts=912411500 Frames=90 filename=CB5ACE_304.ts
+08:31:46.988 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_305.ts.tmp' for writing
+08:31:47.100 frame=12291 fps=253 q=29.0 size=   31745kB time=00:15:17.22 bitrate=   0.0kbits/s throttle=off speed=1.9e+11x    
+08:31:47.337 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:47.337 SegmentComplete=video:0 Index=305 Start=915.414500 End=918.417500 Duration=3.003000 offset_pts=0 start_pts=915414500 Frames=90 filename=CB5ACE_305.ts
+08:31:47.337 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_306.ts.tmp' for writing
+08:31:47.606 frame=12419 fps=253 q=29.0 size=   32185kB time=00:15:21.49 bitrate=   0.0kbits/s throttle=off speed=1.88e+11x    
+08:31:47.691 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:47.692 SegmentComplete=video:0 Index=306 Start=918.417500 End=921.420500 Duration=3.003000 offset_pts=0 start_pts=918417500 Frames=90 filename=CB5ACE_306.ts
+08:31:47.692 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_307.ts.tmp' for writing
+08:31:48.082 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:48.082 SegmentComplete=video:0 Index=307 Start=921.420500 End=924.423500 Duration=3.003000 offset_pts=0 start_pts=921420500 Frames=90 filename=CB5ACE_307.ts
+08:31:48.082 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_308.ts.tmp' for writing
+08:31:48.111 frame=12538 fps=253 q=29.0 size=   32595kB time=00:15:25.46 bitrate=   0.0kbits/s throttle=off speed=1.86e+11x    
+08:31:48.449 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:48.449 SegmentComplete=video:0 Index=308 Start=924.423500 End=927.426500 Duration=3.003000 offset_pts=0 start_pts=924423500 Frames=90 filename=CB5ACE_308.ts
+08:31:48.449 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_309.ts.tmp' for writing
+08:31:48.614 frame=12667 fps=253 q=29.0 size=   33019kB time=00:15:29.77 bitrate=   0.0kbits/s throttle=off speed=1.84e+11x    
+08:31:48.779 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:48.779 SegmentComplete=video:0 Index=309 Start=927.426500 End=930.429500 Duration=3.003000 offset_pts=0 start_pts=927426500 Frames=90 filename=CB5ACE_309.ts
+08:31:48.779 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_310.ts.tmp' for writing
+08:31:49.118 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:49.118 SegmentComplete=video:0 Index=310 Start=930.429500 End=933.432500 Duration=3.003000 offset_pts=0 start_pts=930429500 Frames=90 filename=CB5ACE_310.ts
+08:31:49.118 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_311.ts.tmp' for writing
+08:31:49.118 frame=12801 fps=253 q=29.0 size=   33312kB time=00:15:34.25 bitrate=   0.0kbits/s throttle=off speed=1.82e+11x    
+08:31:49.482 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:49.482 SegmentComplete=video:0 Index=311 Start=933.432500 End=936.435500 Duration=3.003000 offset_pts=0 start_pts=933432500 Frames=90 filename=CB5ACE_311.ts
+08:31:49.482 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_312.ts.tmp' for writing
+08:31:49.621 frame=12924 fps=253 q=29.0 size=   33636kB time=00:15:38.34 bitrate=   0.0kbits/s throttle=off speed=1.8e+11x    
+08:31:49.854 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:49.854 SegmentComplete=video:0 Index=312 Start=936.435500 End=939.438500 Duration=3.003000 offset_pts=0 start_pts=936435500 Frames=90 filename=CB5ACE_312.ts
+08:31:49.854 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_313.ts.tmp' for writing
+08:31:50.124 frame=13047 fps=253 q=29.0 size=   33955kB time=00:15:42.44 bitrate=   0.0kbits/s throttle=off speed=1.79e+11x    
+08:31:50.228 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:50.229 SegmentComplete=video:0 Index=313 Start=939.438500 End=942.441500 Duration=3.003000 offset_pts=0 start_pts=939438500 Frames=90 filename=CB5ACE_313.ts
+08:31:50.229 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_314.ts.tmp' for writing
+08:31:50.610 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:50.611 SegmentComplete=video:0 Index=314 Start=942.441500 End=945.444500 Duration=3.003000 offset_pts=0 start_pts=942441500 Frames=90 filename=CB5ACE_314.ts
+08:31:50.611 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_315.ts.tmp' for writing
+08:31:50.625 frame=13166 fps=252 q=29.0 size=   34213kB time=00:15:46.43 bitrate=   0.0kbits/s throttle=off speed=1.77e+11x    
+08:31:50.936 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:50.939 SegmentComplete=video:0 Index=315 Start=945.444500 End=948.447500 Duration=3.003000 offset_pts=0 start_pts=945444500 Frames=90 filename=CB5ACE_315.ts
+08:31:50.939 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_316.ts.tmp' for writing
+08:31:51.128 frame=13304 fps=253 q=29.0 size=   34486kB time=00:15:51.01 bitrate=   0.0kbits/s throttle=off speed=1.75e+11x    
+08:31:51.245 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:51.246 SegmentComplete=video:0 Index=316 Start=948.447500 End=951.450500 Duration=3.003000 offset_pts=0 start_pts=948447500 Frames=90 filename=CB5ACE_316.ts
+08:31:51.246 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_317.ts.tmp' for writing
+08:31:51.596 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:51.597 SegmentComplete=video:0 Index=317 Start=951.450500 End=954.453500 Duration=3.003000 offset_pts=0 start_pts=951450500 Frames=90 filename=CB5ACE_317.ts
+08:31:51.598 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_318.ts.tmp' for writing
+08:31:51.632 frame=13439 fps=253 q=29.0 size=   34757kB time=00:15:55.54 bitrate=   0.0kbits/s throttle=off speed=1.73e+11x    
+08:31:51.960 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:51.961 SegmentComplete=video:0 Index=318 Start=954.453500 End=957.456500 Duration=3.003000 offset_pts=0 start_pts=954453500 Frames=90 filename=CB5ACE_318.ts
+08:31:51.961 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_319.ts.tmp' for writing
+08:31:52.139 frame=13567 fps=253 q=29.0 size=   35104kB time=00:15:59.80 bitrate=   0.0kbits/s throttle=off speed=1.72e+11x    
+08:31:52.290 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:52.291 SegmentComplete=video:0 Index=319 Start=957.456500 End=960.459500 Duration=3.003000 offset_pts=0 start_pts=957456500 Frames=90 filename=CB5ACE_319.ts
+08:31:52.291 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_320.ts.tmp' for writing
+08:31:52.644 frame=13700 fps=253 q=29.0 size=   35469kB time=00:16:04.24 bitrate=   0.0kbits/s throttle=off speed=1.7e+11x    
+08:31:52.651 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:52.652 SegmentComplete=video:0 Index=320 Start=960.459500 End=963.462500 Duration=3.003000 offset_pts=0 start_pts=960459500 Frames=90 filename=CB5ACE_320.ts
+08:31:52.652 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_321.ts.tmp' for writing
+08:31:53.003 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:53.003 SegmentComplete=video:0 Index=321 Start=963.462500 End=966.465500 Duration=3.003000 offset_pts=0 start_pts=963462500 Frames=90 filename=CB5ACE_321.ts
+08:31:53.004 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_322.ts.tmp' for writing
+08:31:53.144 frame=13829 fps=253 q=29.0 size=   35767kB time=00:16:08.55 bitrate=   0.0kbits/s throttle=off speed=1.69e+11x    
+08:31:53.343 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:53.344 SegmentComplete=video:0 Index=322 Start=966.465500 End=969.468500 Duration=3.003000 offset_pts=0 start_pts=966465500 Frames=90 filename=CB5ACE_322.ts
+08:31:53.344 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_323.ts.tmp' for writing
+08:31:53.655 frame=13961 fps=253 q=29.0 size=   36038kB time=00:16:12.94 bitrate=   0.0kbits/s throttle=off speed=1.67e+11x    
+08:31:53.690 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:53.691 SegmentComplete=video:0 Index=323 Start=969.468500 End=972.471500 Duration=3.003000 offset_pts=0 start_pts=969468500 Frames=90 filename=CB5ACE_323.ts
+08:31:53.691 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_324.ts.tmp' for writing
+08:31:54.041 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:54.042 SegmentComplete=video:0 Index=324 Start=972.471500 End=975.474500 Duration=3.003000 offset_pts=0 start_pts=972471500 Frames=90 filename=CB5ACE_324.ts
+08:31:54.042 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_325.ts.tmp' for writing
+08:31:54.162 frame=14091 fps=253 q=29.0 size=   36346kB time=00:16:17.28 bitrate=   0.0kbits/s throttle=off speed=1.66e+11x    
+08:31:54.391 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:54.391 SegmentComplete=video:0 Index=325 Start=975.474500 End=978.477500 Duration=3.003000 offset_pts=0 start_pts=975474500 Frames=90 filename=CB5ACE_325.ts
+08:31:54.391 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_326.ts.tmp' for writing
+08:31:54.668 frame=14221 fps=253 q=29.0 size=   36711kB time=00:16:21.63 bitrate=   0.0kbits/s throttle=off speed=1.64e+11x    
+08:31:54.749 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:54.749 SegmentComplete=video:0 Index=326 Start=978.477500 End=981.480500 Duration=3.003000 offset_pts=0 start_pts=978477500 Frames=90 filename=CB5ACE_326.ts
+08:31:54.749 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_327.ts.tmp' for writing
+08:31:55.102 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:55.103 SegmentComplete=video:0 Index=327 Start=981.480500 End=984.483500 Duration=3.003000 offset_pts=0 start_pts=981480500 Frames=90 filename=CB5ACE_327.ts
+08:31:55.103 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_328.ts.tmp' for writing
+08:31:55.168 frame=14350 fps=253 q=29.0 size=   37093kB time=00:16:25.92 bitrate=   0.0kbits/s throttle=off speed=1.63e+11x    
+08:31:55.438 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:55.438 SegmentComplete=video:0 Index=328 Start=984.483500 End=987.486500 Duration=3.003000 offset_pts=0 start_pts=984483500 Frames=90 filename=CB5ACE_328.ts
+08:31:55.438 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_329.ts.tmp' for writing
+08:31:55.672 frame=14483 fps=253 q=29.0 size=   37414kB time=00:16:30.35 bitrate=   0.0kbits/s throttle=off speed=1.61e+11x    
+08:31:55.785 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:55.786 SegmentComplete=video:0 Index=329 Start=987.486500 End=990.489500 Duration=3.003000 offset_pts=0 start_pts=987486500 Frames=90 filename=CB5ACE_329.ts
+08:31:55.786 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_330.ts.tmp' for writing
+08:31:56.111 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:56.112 SegmentComplete=video:0 Index=330 Start=990.489500 End=993.492500 Duration=3.003000 offset_pts=0 start_pts=990489500 Frames=90 filename=CB5ACE_330.ts
+08:31:56.113 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_331.ts.tmp' for writing
+08:31:56.173 frame=14617 fps=253 q=29.0 size=   37727kB time=00:16:34.83 bitrate=   0.0kbits/s throttle=off speed=1.6e+11x    
+08:31:56.440 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:56.440 SegmentComplete=video:0 Index=331 Start=993.492500 End=996.495500 Duration=3.003000 offset_pts=0 start_pts=993492500 Frames=90 filename=CB5ACE_331.ts
+08:31:56.441 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_332.ts.tmp' for writing
+08:31:56.673 frame=14754 fps=253 q=29.0 size=   38051kB time=00:16:39.40 bitrate=   0.0kbits/s throttle=off speed=1.58e+11x    
+08:31:56.764 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:56.765 SegmentComplete=video:0 Index=332 Start=996.495500 End=999.498500 Duration=3.003000 offset_pts=0 start_pts=996495500 Frames=90 filename=CB5ACE_332.ts
+08:31:56.765 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_333.ts.tmp' for writing
+08:31:57.068 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:57.069 SegmentComplete=video:0 Index=333 Start=999.498500 End=1002.501500 Duration=3.003000 offset_pts=0 start_pts=999498500 Frames=90 filename=CB5ACE_333.ts
+08:31:57.069 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_334.ts.tmp' for writing
+08:31:57.181 frame=14893 fps=254 q=29.0 size=   38354kB time=00:16:44.05 bitrate=   0.0kbits/s throttle=off speed=1.57e+11x    
+08:31:57.433 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:57.435 SegmentComplete=video:0 Index=334 Start=1002.501500 End=1005.504500 Duration=3.003000 offset_pts=0 start_pts=1002501500 Frames=90 filename=CB5ACE_334.ts
+08:31:57.435 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_335.ts.tmp' for writing
+08:31:57.681 frame=15027 fps=254 q=29.0 size=   38629kB time=00:16:48.51 bitrate=   0.0kbits/s throttle=off speed=1.56e+11x    
+08:31:57.775 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:57.776 SegmentComplete=video:0 Index=335 Start=1005.504500 End=1008.507500 Duration=3.003000 offset_pts=0 start_pts=1005504500 Frames=90 filename=CB5ACE_335.ts
+08:31:57.776 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_336.ts.tmp' for writing
+08:31:58.100 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:58.101 SegmentComplete=video:0 Index=336 Start=1008.507500 End=1011.510500 Duration=3.003000 offset_pts=0 start_pts=1008507500 Frames=90 filename=CB5ACE_336.ts
+08:31:58.101 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_337.ts.tmp' for writing
+08:31:58.182 frame=15162 fps=254 q=29.0 size=   38932kB time=00:16:53.01 bitrate=   0.0kbits/s throttle=off speed=1.54e+11x    
+08:31:58.445 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:58.446 SegmentComplete=video:0 Index=337 Start=1011.510500 End=1014.513500 Duration=3.003000 offset_pts=0 start_pts=1011510500 Frames=90 filename=CB5ACE_337.ts
+08:31:58.446 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_338.ts.tmp' for writing
+08:31:58.686 frame=15295 fps=254 q=29.0 size=   39216kB time=00:16:57.45 bitrate=   0.0kbits/s throttle=off speed=1.53e+11x    
+08:31:58.780 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:58.780 SegmentComplete=video:0 Index=338 Start=1014.513500 End=1017.516500 Duration=3.003000 offset_pts=0 start_pts=1014513500 Frames=90 filename=CB5ACE_338.ts
+08:31:58.780 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_339.ts.tmp' for writing
+08:31:59.086 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:59.087 SegmentComplete=video:0 Index=339 Start=1017.516500 End=1020.519500 Duration=3.003000 offset_pts=0 start_pts=1017516500 Frames=90 filename=CB5ACE_339.ts
+08:31:59.087 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_340.ts.tmp' for writing
+08:31:59.190 frame=15438 fps=254 q=29.0 size=   39555kB time=00:17:02.22 bitrate=   0.0kbits/s throttle=off speed=1.52e+11x    
+08:31:59.422 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:59.423 SegmentComplete=video:0 Index=340 Start=1020.519500 End=1023.522500 Duration=3.003000 offset_pts=0 start_pts=1020519500 Frames=90 filename=CB5ACE_340.ts
+08:31:59.423 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_341.ts.tmp' for writing
+08:31:59.696 frame=15578 fps=254 q=29.0 size=   39862kB time=00:17:06.90 bitrate=   0.0kbits/s throttle=off speed=1.51e+11x    
+08:31:59.743 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:31:59.744 SegmentComplete=video:0 Index=341 Start=1023.522500 End=1026.525500 Duration=3.003000 offset_pts=0 start_pts=1023522500 Frames=90 filename=CB5ACE_341.ts
+08:31:59.744 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_342.ts.tmp' for writing
+08:32:00.054 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:32:00.055 SegmentComplete=video:0 Index=342 Start=1026.525500 End=1029.528500 Duration=3.003000 offset_pts=0 start_pts=1026525500 Frames=90 filename=CB5ACE_342.ts
+08:32:00.055 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_343.ts.tmp' for writing
+08:32:00.197 frame=15721 fps=255 q=29.0 size=   40159kB time=00:17:11.68 bitrate=   0.0kbits/s throttle=off speed=1.49e+11x    
+08:32:00.365 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:32:00.365 SegmentComplete=video:0 Index=343 Start=1029.528500 End=1032.531500 Duration=3.003000 offset_pts=0 start_pts=1029528500 Frames=90 filename=CB5ACE_343.ts
+08:32:00.365 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_344.ts.tmp' for writing
+08:32:00.664 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:32:00.664 SegmentComplete=video:0 Index=344 Start=1032.531500 End=1035.534500 Duration=3.003000 offset_pts=0 start_pts=1032531500 Frames=90 filename=CB5ACE_344.ts
+08:32:00.665 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_345.ts.tmp' for writing
+08:32:00.699 frame=15872 fps=255 q=29.0 size=   40436kB time=00:17:16.71 bitrate=   0.0kbits/s throttle=off speed=1.48e+11x    
+08:32:00.964 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:32:00.965 SegmentComplete=video:0 Index=345 Start=1035.534500 End=1038.537500 Duration=3.003000 offset_pts=0 start_pts=1035534500 Frames=90 filename=CB5ACE_345.ts
+08:32:00.965 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_346.ts.tmp' for writing
+08:32:01.200 frame=16020 fps=255 q=29.0 size=   40715kB time=00:17:21.64 bitrate=   0.0kbits/s throttle=off speed=1.47e+11x    
+08:32:01.265 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:32:01.269 SegmentComplete=video:0 Index=346 Start=1038.537500 End=1041.540500 Duration=3.003000 offset_pts=0 start_pts=1038537500 Frames=90 filename=CB5ACE_346.ts
+08:32:01.269 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE_347.ts.tmp' for writing
+08:32:01.404 
+
+[q] command received. Exiting.
+
+08:32:01.416 08:32:01.416 [segment @ 0x2a5e080] Opening '/config/transcoding-temp/CB5ACE.m3u8.tmp' for writing
+08:32:01.417 SegmentComplete=video:0 Index=347 Start=1041.540500 End=1043.542500 Duration=2.002000 offset_pts=0 start_pts=1041540500 Frames=60 filename=CB5ACE_347.ts
+08:32:01.417 frame=16080 fps=255 q=-1.0 Lsize=   40829kB time=00:17:23.62 bitrate=   0.0kbits/s throttle=off speed=1.47e+11x    
+08:32:01.417 video:28133kB audio:12696kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+08:32:01.419 EXIT
+08:32:01.420 [libx264 @ 0x2a5fc80] frame I:179   Avg QP:19.12  size: 19021
+08:32:01.420 [libx264 @ 0x2a5fc80] frame P:4477  Avg QP:22.72  size:  4074
+08:32:01.420 [libx264 @ 0x2a5fc80] frame B:11424 Avg QP:26.24  size:   627
+08:32:01.420 [libx264 @ 0x2a5fc80] consecutive B-frames:  2.6%  7.2%  2.6% 87.6%
+08:32:01.420 [libx264 @ 0x2a5fc80] mb I  I16..4: 28.1%  0.0% 71.9%
+08:32:01.420 [libx264 @ 0x2a5fc80] mb P  I16..4: 12.9%  0.0%  0.0%  P16..4: 51.3%  0.0%  0.0%  0.0%  0.0%    skip:35.9%
+08:32:01.420 [libx264 @ 0x2a5fc80] mb B  I16..4:  1.1%  0.0%  0.0%  B16..8: 13.6%  0.0%  0.0%  direct: 3.8%  skip:81.5%  L0:33.7% L1:50.6% BI:15.7%
+08:32:01.420 [libx264 @ 0x2a5fc80] coded y,uvDC,uvAC intra: 29.0% 42.3% 9.4% inter: 6.2% 6.8% 0.0%
+08:32:01.420 [libx264 @ 0x2a5fc80] i16 v,h,dc,p: 33% 24% 18% 25%
+08:32:01.420 [libx264 @ 0x2a5fc80] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 23% 21% 11%  9%  9%  6%  8%  5%  7%
+08:32:01.420 [libx264 @ 0x2a5fc80] i8c dc,h,v,p: 43% 22% 24% 11%
+08:32:01.420 [libx264 @ 0x2a5fc80] Weighted P-Frames: Y:5.0% UV:1.9%
+08:32:01.420 [libx264 @ 0x2a5fc80] kb/s:429.54
+08:32:01.423 
+
+======= ExtraData
+H4sIAAAAAAAAA9VY227bOBD9FUHAvtkxZTvxBTBQx+kl2KQN4rb7UAQCLVE2N5IoiJTrtMi/7wwlOZTlW9p0ixYpII2Hw+GZMxfquz0RUURj3x5+t9/wULFUVh6/lM9ayqjKUvaeRswe2tKjIbMbpfTjQ4LSz9xnoljSsD8kiotYm8wfP9MwY7ndwsxXUNPSqUp5PAdJr03sx8ZaYVFT6JKu/Xj3+NgofLsE9+3AAb3LOMnUDY/zHSYijpmnmD8VWeoxrUaGROv5bGUPCVi5AzNvQzGj4RHOPtR8UWnGTG8TkCt3ntJkId2Aa4SqK1qeiAM+b4ViLltBECVs3lQpjaUnfNYkQccf0EG3Sbw+a3ZPZ6fNmTfwm71O95R2iH9G/LbraPsnaqXMrT2RPCh50EOpaKpcqtxvLBU7tBEUjWV++gsWZattHIjEshEl3UbUpY3OPIH/7Ub0b7vGitLAPkbogOpNy+iU8UyFEp4I69svlEpqe1XXHNzxiKgHNZTgzBVI66gTIFp/2O7lWIKY0agEEwO9BcxF+6y7PZ/KJYfhk+NMrdWHAQ0la9jXzOf0b45Znts7YKiRa+VOo8YEzHmFl+9yL7WGlj95rmW3NJ6j3vTiFkQ3fMXCNyKNqMoNhSItX+2HbNltE4zg6xg8jEH0KZYJ83jAmW/r81zGkOAh9eC9PM45V7dU4R6nJx3resZVC/EHsbxhqd7RHjptLblgiVrYw37DvmXBmxSOAEd0ygPyb2jFGbTJyiF9LAzjJUvpnGnNYpP2YNAjpNNyCP6z0RIN9yqM8QzoIxdo/mw4QCRSocvB0L6mPAbBFVuio3ZHFy45jmkk0mTBvfVBn/IgD4VJCVij0f/II3ZOpT4HIU7rrPDBlLc6hfBSXrCAZiGAj3mOAgiGie0VRC+jOoAZ8AXOEoYf6VzzAtVfryAcMQ2LBY+YBDsJTalX4/M48/kP8zl32qSzNneQzlprO53H44ldKJRszt2eLCh0jxBMtNcvV/RBZMjc/GEKWOhIPDHS6fdPiHVfcnJKoyQseTJNu/0iDnlgnY3AloepBbZVLtwq/AVRBemnFMnZIgT/ptP3l60ecZq9Xl+/wEO7OWlJGfP88USXRFj3IVPrvnG9vWtINo9YrGrcuD7YI54qbm7CDfJaUq/PbA4+mCW6WBByWVcvW3LZhkHaVCxKWpPz0/Hk9UnUyfq7jLkKna85sGOFggDWlDvbNPM2HWfRTGNSXeGcDcw1kAt8yf2Mhu6CUUgVF04Cxaa+UMfXXPo15Yo9e1XpZL4aodo5SBzXYiO6cn0W0vqAdUrysmrsTpeC+27M5lBhl7B9vfv6XNJZqHvIni5e8tBQimjiRkxRnypa0286m6regiZ6UN6mipUnz4bdE0wxIVbzYGPRwSppThfbZt4vgeNCuSJ3utPuKNYhn612DiDlqqNimaRMsnqSQWd9CKhU1WlZbJ2RF3y+MPVC3StreXNSoQW6L5ItbJDZLGIjMoyYm+J0MuoOU88NhbinSPyRgz+NoKkMYwEhTUVEgQTD/qrvewrWJZCJXB97FIu4kgheWqdVu1Pw/nlz19rmvGZxQKrEW6XYUWpFgXTa3W7PVJ1lgcQhp+YiOev2B9UZ1nPVAiK3EKFfn2ZNzXv2gHecSE8x+xxN+MoNojoTyrlPo7TrmoZT0fM6/XpfyP5ESB2xemUoWiXu/dTl9td/9y//BLvJ3frG+Vbf79CH8kkP9tJLufYJkw4uAHf6jvwqcEZfR3CrHS5GcHU1s3H7PbtqaIo2LLVgFsebjbVEJlkYVgsu7i2RWuA9JJfKdSLo81beFk/syi3uisf35h3Jrs01xBx74AUcUTfUL2EtoAO36xP8OwYpCyKco4vA4V4YTFKdg/B1fIt81THOg15sAVGKXB67xCXrn7Y58A/3cazHyR2jaH6ReKU/BKCkbXykMKcSA4dcfBwQZcUuJ44fAAeifyQ2oAnap5v4GCcsIOghAjqNdvHnPAsClha0CfQVqIHMsSJ6r3kVWdTzmJR8hjwTmkaBNgbtjccVFj2BrT9BWKQgZQBF05K6D1n5J5YyAjO9/YuGoMqS/52kh05eIefe0Nxw796CjoIZrHiciUxaEkoh/JrbXWd9w/JTkeh3qNF/YGYfAu25uV7lQEk2lL4o1YyE+83F8HhWHZPwSxj0qZHvDH4WgZH6Vv6J8Tfw7KeL5LpCH+RUr0IpOMAGnfLaJeHUFVLth39idmOjYwPSmOoFyuvPXFaCH6yKji3/SMCNJHkm5OtQlYivBS+Xwk9h/a1krPZrgEBPjhufun8i6i/c8Y+vani1Ky43m0AhBo4xhZVRPmZ26Jizw56SudEefp43v66SHs2zH4C0Wrw6m8VrA8AKGYGO/wGTZNC/CBwAAA==

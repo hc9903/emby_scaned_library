@@ -1,0 +1,129 @@
+2020-05-24 14:18:12.895
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/6979/hls1/main/51.ts?DeviceId=0939de9f-ad24-4206-b247-0dafb526de65&MediaSourceId=098df234c0f90e7a099636bf96b377fc&PlaySessionId=d550a5eef8604300814e2da4fc7378f8&api_key=b24b9e0ee12b43b4b0d434c8e5187ccc&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=858004&AudioBitrate=191996&AudioStreamIndex=1&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=ContainerBitrateExceedsLimit
+
+{"Protocol":"File","Id":"098df234c0f90e7a099636bf96b377fc","Path":"/00/00/SSNI/101-200/SSNI-142-2018-03-10/SSNI-142.mp4","Type":"Default","Container":"mp4","Size":4611238782,"Name":"SSNI-142","IsRemote":false,"RunTimeTicks":70926790000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"h264","CodecTag":"avc1","Language":"und","TimeBase":"1/30000","CodecTimeBase":"30692182/1839642759","VideoRange":"SDR","DisplayTitle":"1080p H264","NalLengthSize":"4","IsInterlaced":false,"IsAVC":true,"BitRate":5000486,"BitDepth":8,"RefFrames":1,"IsDefault":true,"IsForced":false,"Height":1080,"Width":1920,"AverageFrameRate":29.96924,"RealFrameRate":29.97003,"Profile":"Main","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p","Level":40,"IsAnamorphic":false},{"Codec":"aac","CodecTag":"mp4a","Language":"und","TimeBase":"1/44100","CodecTimeBase":"1/44100","DisplayTitle":"Und AAC stereo (Default)","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":191996,"Channels":2,"SampleRate":44100,"IsDefault":true,"IsForced":false,"Profile":"LC","Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":5201125,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for guest
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: h264, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    Scaling                                  >> False                False                                                         
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    h264                 >> -            yuv420p      yuv420p      >> scale
+Info    scale                >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -ss 00:02:33.000  -f mp4 -i file:"/00/00/SSNI/101-200/SSNI-142-2018-03-10/SSNI-142.mp4" -threads 0 -map 0:0 -map 0:1 -sn -c:v:0 libx264 -filter_complex "[0:0]scale=trunc(min(max(iw\,ih*dar)\,640)/2)*2:trunc(ow/dar/2)*2" -pix_fmt yuv420p  -maxrate 858004 -bufsize 1716008 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 90 -keyint_min:v:0 90 -sc_threshold:v:0 0  -copyts -vsync -1 -codec:a:0 copy -disposition:a:0 default -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 51 -segment_list "/config/transcoding-temp/4D90FE.m3u8" -y "/config/transcoding-temp/4D90FE_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-8ba9cae0-ec18-447c-86cf-62bcf15864eb_1graph.txt -copyts -start_at_zero -f mp4 -ss 00:02:33.000 -c:v:0 h264 -i "/00/00/SSNI/101-200/SSNI-142-2018-03-10/SSNI-142.mp4" -filter_complex "[0:0]scale@f1=w=640:h=360[f1_out0]" -map [f1_out0] -map 0:1 -sn -c:v:0 libx264 -g:v:0 90 -maxrate:v:0 858004 -bufsize:v:0 1716008 -sc_threshold:v:0 0 -keyint_min:v:0 90 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 3.0 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 copy -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/4D90FE.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 51 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/4D90FE_%d.ts"
+
+14:18:12.981 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+14:18:12.981   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+14:18:12.982 Execution Date: 2020-05-24 14:18:12
+14:18:16.323 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/00/00/SSNI/101-200/SSNI-142-2018-03-10/SSNI-142.mp4':
+14:18:16.323   Metadata:
+14:18:16.323     major_brand     : isom
+14:18:16.323     minor_version   : 512
+14:18:16.323     compatible_brands: isomiso2avc1mp41
+14:18:16.323     encoder         : Bandicut 2.8 (Lavf57.41.100)
+14:18:16.323   Duration: 01:58:12.68, start: 0.000000, bitrate: 5201 kb/s
+14:18:16.323     Stream #0:0(und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p, 1920x1080 [SAR 1:1 DAR 16:9], 5000 kb/s, Level 40, 29.97 fps, 29.97 tbr, 30k tbn, 59.94 tbc (default)
+14:18:16.323     Metadata:
+14:18:16.323       handler_name    : VideoHandler
+14:18:16.323     Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 191 kb/s (default)
+14:18:16.324     Metadata:
+14:18:16.324       handler_name    : SoundHandler
+14:18:16.325 Stream mapping:
+14:18:16.325   Stream #0:0 (h264) -> scale
+14:18:16.325   scale -> Stream #0:0 (libx264)
+14:18:16.325   Stream #0:1 -> #0:1 (copy)
+14:18:16.325 Press [q] to stop, [?] for help
+14:18:17.847 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+14:18:17.919 [libx264 @ 0x135ddc0] using SAR=1/1
+14:18:17.919 [libx264 @ 0x135ddc0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+14:18:17.921 [libx264 @ 0x135ddc0] profile Main, level 3.0, 4:2:0, 8-bit
+14:18:17.921 [libx264 @ 0x135ddc0] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=90 keyint_min=46 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=858 vbv_bufsize=1716 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+14:18:17.921 Output #0, segment, to '/config/transcoding-temp/4D90FE_%d.ts':
+14:18:17.921   Metadata:
+14:18:17.921     encoder         : Lavf58.35.100
+14:18:17.921     Stream #0:0: Video: h264 (libx264), yuv420p, 640x360 [SAR 1:1 DAR 16:9], q=-1--1, 29.97 fps, 90k tbn, 29.97 tbc (default)
+14:18:17.921     Metadata:
+14:18:17.921       encoder         : Lavc58.62.100 libx264
+14:18:17.921     Side data:
+14:18:17.921       cpb: bitrate max/min/avg: 858000/0/0 buffer size: 1716000 vbv_delay: N/A
+14:18:17.921     Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 191 kb/s (default)
+14:18:18.317 frame=    0 fps=0.0 q=0.0 size=      57kB time=00:02:30.24 bitrate=   0.0kbits/s throttle=off speed=4.63e+12x    
+14:18:18.820 frame=    0 fps=0.0 q=0.0 size=     122kB time=00:02:33.05 bitrate=   0.0kbits/s throttle=off speed=3.7e+12x    
+14:18:19.320 frame=   62 fps= 21 q=29.0 size=     241kB time=00:02:35.19 bitrate=   0.0kbits/s throttle=off speed=3.08e+12x    
+14:18:19.751 [segment @ 0x135c1c0] Opening '/config/transcoding-temp/4D90FE.m3u8.tmp' for writing
+14:18:19.752 SegmentComplete=video:0 Index=51 Start=0.000000 End=156.022533 Duration=156.022533 offset_pts=0 start_pts=0 Frames=90 filename=4D90FE_51.ts
+14:18:19.752 [segment @ 0x135c1c0] Opening '/config/transcoding-temp/4D90FE_52.ts.tmp' for writing
+14:18:19.840 frame=  120 fps= 34 q=29.0 size=     367kB time=00:02:37.12 bitrate=   0.0kbits/s throttle=off speed=2.62e+12x    
+14:18:20.348 frame=  178 fps= 44 q=29.0 size=     506kB time=00:02:39.04 bitrate=   0.0kbits/s throttle=off speed=2.29e+12x    
+14:18:20.530 [segment @ 0x135c1c0] Opening '/config/transcoding-temp/4D90FE.m3u8.tmp' for writing
+14:18:20.531 SegmentComplete=video:0 Index=52 Start=156.022533 End=159.025533 Duration=3.003000 offset_pts=0 start_pts=156022533 Frames=90 filename=4D90FE_52.ts
+14:18:20.532 [segment @ 0x135c1c0] Opening '/config/transcoding-temp/4D90FE_53.ts.tmp' for writing
+14:18:20.851 frame=  234 fps= 52 q=29.0 size=     665kB time=00:02:40.92 bitrate=   0.0kbits/s throttle=off speed=2.04e+12x    
+14:18:21.356 frame=  287 fps= 57 q=29.0 size=     809kB time=00:02:42.69 bitrate=   0.0kbits/s throttle=off speed=1.83e+12x    
+14:18:21.392 [segment @ 0x135c1c0] Opening '/config/transcoding-temp/4D90FE.m3u8.tmp' for writing
+14:18:21.392 SegmentComplete=video:0 Index=53 Start=159.025533 End=162.028533 Duration=3.003000 offset_pts=0 start_pts=159025533 Frames=90 filename=4D90FE_53.ts
+14:18:21.392 [segment @ 0x135c1c0] Opening '/config/transcoding-temp/4D90FE_54.ts.tmp' for writing
+14:18:21.733 
+
+[q] command received. Exiting.
+
+14:18:21.763 14:18:21.763 [segment @ 0x135c1c0] Opening '/config/transcoding-temp/4D90FE.m3u8.tmp' for writing
+14:18:21.763 SegmentComplete=video:0 Index=54 Start=162.028533 End=164.397567 Duration=2.369033 offset_pts=0 start_pts=162028533 Frames=71 filename=4D90FE_54.ts
+14:18:21.763 frame=  341 fps= 63 q=-1.0 Lsize=    1001kB time=00:02:44.48 bitrate=   0.0kbits/s throttle=off speed=1.7e+12x    
+14:18:21.763 video:610kB audio:390kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+14:18:21.768 EXIT
+14:18:21.775 [libx264 @ 0x135ddc0] frame I:4     Avg QP:20.72  size: 17765
+14:18:21.775 [libx264 @ 0x135ddc0] frame P:99    Avg QP:23.48  size:  4629
+14:18:21.775 [libx264 @ 0x135ddc0] frame B:238   Avg QP:27.78  size:   398
+14:18:21.775 [libx264 @ 0x135ddc0] consecutive B-frames:  2.9% 10.6%  4.4% 82.1%
+14:18:21.775 [libx264 @ 0x135ddc0] mb I  I16..4: 12.9%  0.0% 87.1%
+14:18:21.775 [libx264 @ 0x135ddc0] mb P  I16..4:  5.4%  0.0%  0.0%  P16..4: 66.5%  0.0%  0.0%  0.0%  0.0%    skip:28.1%
+14:18:21.775 [libx264 @ 0x135ddc0] mb B  I16..4:  0.1%  0.0%  0.0%  B16..8: 12.1%  0.0%  0.0%  direct: 2.2%  skip:85.6%  L0:29.5% L1:51.2% BI:19.3%
+14:18:21.775 [libx264 @ 0x135ddc0] coded y,uvDC,uvAC intra: 61.7% 61.3% 18.8% inter: 9.1% 5.7% 0.1%
+14:18:21.775 [libx264 @ 0x135ddc0] i16 v,h,dc,p: 28% 27% 23% 22%
+14:18:21.775 [libx264 @ 0x135ddc0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 22% 16% 10% 12%  9%  7%  6%  9%  8%
+14:18:21.775 [libx264 @ 0x135ddc0] i8c dc,h,v,p: 39% 23% 24% 13%
+14:18:21.775 [libx264 @ 0x135ddc0] Weighted P-Frames: Y:2.0% UV:1.0%
+14:18:21.775 [libx264 @ 0x135ddc0] kb/s:438.81
+14:18:21.778 
+
+======= ExtraData
+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

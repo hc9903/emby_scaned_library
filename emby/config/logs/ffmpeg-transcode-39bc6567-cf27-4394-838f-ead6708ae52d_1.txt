@@ -1,0 +1,361 @@
+2020-05-22 15:18:02.985
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/811/hls1/main/92.ts?DeviceId=0939de9f-ad24-4206-b247-0dafb526de65&MediaSourceId=6c422cbf7b4c57dd848af79b871b55bf&PlaySessionId=4cf2af7cb0914c0dbe87780041c0a510&api_key=b24b9e0ee12b43b4b0d434c8e5187ccc&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=6639000&AudioBitrate=256000&AudioStreamIndex=1&SubtitleMethod=Encode&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=ContainerBitrateExceedsLimit
+
+{"Protocol":"File","Id":"6c422cbf7b4c57dd848af79b871b55bf","Path":"/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170129215650.m2ts","Type":"Default","Container":"mpegts","Size":2563964928,"Name":"bhd1080.com@20170129215650","IsRemote":false,"RunTimeTicks":9124160000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"h264","CodecTag":"HDMV","TimeBase":"1/90000","CodecTimeBase":"1001/60000","VideoRange":"SDR","DisplayTitle":"1080i H264","NalLengthSize":"0","IsInterlaced":true,"IsAVC":false,"BitRate":22480666,"BitDepth":8,"RefFrames":1,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"AverageFrameRate":29.97003,"RealFrameRate":59.94006,"Profile":"High","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p","Level":40,"IsAnamorphic":false},{"Codec":"ac3","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"Dolby Digital stereo","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":256000,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"Type":"Subtitle","Index":2,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":22480666,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for guest
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: h264, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+Warning: No filter behavior available for filter yadif
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    Deinterlace                              >> False                False                                                         
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    h264                 >> -            yuv420p      yuv420p      >> yadif
+Info    yadif                >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -ss 00:04:36.000  -f mpegts -i file:"/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170129215650.m2ts" -threads 0 -map 0:0 -map 0:1 -sn -c:v:0 libx264 -filter_complex "[0:0]yadif=0:-1:0" -pix_fmt yuv420p  -maxrate 6639000 -bufsize 13278000 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 90 -keyint_min:v:0 90 -sc_threshold:v:0 0  -copyts -vsync -1 -codec:a:0 libmp3lame -disposition:a:0 default -ac:a:0 2 -ab:a:0 192000  -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 92 -segment_list "/config/transcoding-temp/6C478D.m3u8" -y "/config/transcoding-temp/6C478D_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-39bc6567-cf27-4394-838f-ead6708ae52d_1graph.txt -copyts -start_at_zero -f mpegts -ss 00:04:36.000 -c:v:0 h264 -i "/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170129215650.m2ts" -filter_complex "[0:0]yadif@f1=mode=send_frame:parity=auto:deint=all[f1_out0]" -map [f1_out0] -map 0:1 -sn -c:v:0 libx264 -g:v:0 90 -maxrate:v:0 6639000 -bufsize:v:0 13278000 -sc_threshold:v:0 0 -keyint_min:v:0 90 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 4.2 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 2 -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/6C478D.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 92 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/6C478D_%d.ts"
+
+15:18:03.018 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+15:18:03.018   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+15:18:03.018 Execution Date: 2020-05-22 15:18:03
+15:18:08.346 Input #0, mpegts, from '/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170129215650.m2ts':
+15:18:08.346   Duration: 00:15:12.42, start: 1.033367, bitrate: 22480 kb/s
+15:18:08.346   Program 1 
+15:18:08.346     Stream #0:0[0x1011]: Video: h264 (High) (HDMV / 0x564D4448), yuv420p(top first), 1920x1080 [SAR 1:1 DAR 16:9], Level 40, 29.97 fps, 59.94 tbr, 90k tbn, 59.94 tbc, Start-Time 1.100s
+15:18:08.346     Stream #0:1[0x1100]: Audio: ac3 (AC-3 / 0x332D4341), 48000 Hz, stereo, fltp, 256 kb/s, Start-Time 1.033s
+15:18:08.346     Stream #0:2[0x1200]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), 1920x1080, Start-Time 1.033s
+15:18:08.348 Stream mapping:
+15:18:08.348   Stream #0:0 (h264) -> yadif (graph 0)
+15:18:08.348   yadif (graph 0) -> Stream #0:0 (libx264)
+15:18:08.348   Stream #0:1 -> #0:1 (ac3 (native) -> mp3 (libmp3lame))
+15:18:08.348 Press [q] to stop, [?] for help
+15:18:08.367 [h264 @ 0x1224f00] reference picture missing during reorder
+15:18:08.367 [h264 @ 0x1224f00] Missing reference picture, default is 2147483647
+15:18:08.517 [libx264 @ 0x1187bc0] using SAR=1/1
+15:18:08.517 [libx264 @ 0x1187bc0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+15:18:08.531 [libx264 @ 0x1187bc0] profile Main, level 4.2, 4:2:0, 8-bit
+15:18:08.532 [libx264 @ 0x1187bc0] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=90 keyint_min=46 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=6639 vbv_bufsize=13278 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+15:18:08.533 Output #0, segment, to '/config/transcoding-temp/6C478D_%d.ts':
+15:18:08.533   Metadata:
+15:18:08.533     encoder         : Lavf58.35.100
+15:18:08.533     Stream #0:0: Video: h264 (libx264), yuv420p, 1920x1080 [SAR 1:1 DAR 16:9], q=-1--1, 29.97 fps, 90k tbn, 29.97 tbc
+15:18:08.533     Metadata:
+15:18:08.533       encoder         : Lavc58.62.100 libx264
+15:18:08.533     Side data:
+15:18:08.533       cpb: bitrate max/min/avg: 6639000/0/0 buffer size: 13278000 vbv_delay: N/A
+15:18:08.533     Stream #0:1: Audio: mp3 (libmp3lame), 48000 Hz, stereo, fltp, 192 kb/s (default)
+15:18:08.533     Metadata:
+15:18:08.533       encoder         : Lavc58.62.100 libmp3lame
+15:18:08.865 frame=   21 fps=0.0 q=29.0 size=      78kB time=00:04:36.52 bitrate=N/A throttle=off speed=   0x    
+15:18:09.350 frame=   55 fps= 55 q=29.0 size=     527kB time=00:04:37.70 bitrate=3671.5kbits/s throttle=off speed=1.17x    
+15:18:09.861 frame=   90 fps= 60 q=29.0 size=     954kB time=00:04:38.83 bitrate=3391.4kbits/s throttle=off speed=1.53x    
+15:18:10.218 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:10.218 SegmentComplete=video:0 Index=92 Start=0.000000 End=279.345733 Duration=279.345733 offset_pts=0 start_pts=0 Frames=90 filename=6C478D_92.ts
+15:18:10.218 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_93.ts.tmp' for writing
+15:18:10.356 frame=  121 fps= 60 q=29.0 size=    1408kB time=00:04:39.86 bitrate=3458.1kbits/s throttle=off speed=1.66x    
+15:18:10.868 frame=  157 fps= 62 q=29.0 size=    1879kB time=00:04:41.06 bitrate=3394.2kbits/s throttle=off speed= 1.8x    
+15:18:11.386 frame=  189 fps= 62 q=29.0 size=    2309kB time=00:04:42.16 bitrate=3353.6kbits/s throttle=off speed=1.86x    
+15:18:11.605 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:11.606 SegmentComplete=video:0 Index=93 Start=279.345733 End=282.348733 Duration=3.003000 offset_pts=0 start_pts=279345733 Frames=90 filename=6C478D_93.ts
+15:18:11.606 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_94.ts.tmp' for writing
+15:18:11.917 frame=  221 fps= 63 q=29.0 size=    2825kB time=00:04:43.22 bitrate=3456.7kbits/s throttle=off speed= 1.9x    
+15:18:12.406 frame=  246 fps= 61 q=29.0 size=    3214kB time=00:04:44.01 bitrate=3516.3kbits/s throttle=off speed=1.85x    
+15:18:12.913 frame=  280 fps= 61 q=29.0 size=    3740kB time=00:04:45.24 bitrate=3516.8kbits/s throttle=off speed=1.91x    
+15:18:13.106 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:13.107 SegmentComplete=video:0 Index=94 Start=282.348733 End=285.351733 Duration=3.003000 offset_pts=0 start_pts=282348733 Frames=90 filename=6C478D_94.ts
+15:18:13.107 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_95.ts.tmp' for writing
+15:18:13.414 frame=  311 fps= 61 q=29.0 size=    4295kB time=00:04:46.20 bitrate=3637.6kbits/s throttle=off speed=1.91x    
+15:18:13.924 frame=  345 fps= 62 q=29.0 size=    4891kB time=00:04:47.35 bitrate=3701.6kbits/s throttle=off speed=1.94x    
+15:18:14.446 frame=  375 fps= 61 q=29.0 size=    5365kB time=00:04:48.33 bitrate=3722.0kbits/s throttle=off speed=1.94x    
+15:18:14.538 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:14.539 SegmentComplete=video:0 Index=95 Start=285.351733 End=288.354733 Duration=3.003000 offset_pts=0 start_pts=285351733 Frames=90 filename=6C478D_95.ts
+15:18:14.539 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_96.ts.tmp' for writing
+15:18:14.962 frame=  409 fps= 62 q=29.0 size=    5966kB time=00:04:49.48 bitrate=3771.0kbits/s throttle=off speed=1.96x    
+15:18:15.478 frame=  441 fps= 62 q=29.0 size=    6497kB time=00:04:50.54 bitrate=3797.2kbits/s throttle=off speed=1.97x    
+15:18:15.974 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:15.975 SegmentComplete=video:0 Index=96 Start=288.354733 End=291.357733 Duration=3.003000 offset_pts=0 start_pts=288354733 Frames=90 filename=6C478D_96.ts
+15:18:15.975 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_97.ts.tmp' for writing
+15:18:15.981 frame=  471 fps= 62 q=29.0 size=    7091kB time=00:04:51.52 bitrate=3872.5kbits/s throttle=off speed=1.97x    
+15:18:16.485 frame=  505 fps= 62 q=29.0 size=    7615kB time=00:04:52.68 bitrate=3861.9kbits/s throttle=off speed=1.99x    
+15:18:16.994 frame=  541 fps= 63 q=29.0 size=    8078kB time=00:04:53.90 bitrate=3808.4kbits/s throttle=off speed=2.01x    
+15:18:17.383 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:17.384 SegmentComplete=video:0 Index=97 Start=291.357733 End=294.360733 Duration=3.003000 offset_pts=0 start_pts=291357733 Frames=90 filename=6C478D_97.ts
+15:18:17.384 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_98.ts.tmp' for writing
+15:18:17.507 frame=  566 fps= 62 q=29.0 size=    8492kB time=00:04:54.74 bitrate=3819.0kbits/s throttle=off speed=1.99x    
+15:18:18.017 frame=  599 fps= 62 q=29.0 size=    8938kB time=00:04:55.82 bitrate=3794.8kbits/s throttle=off speed=   2x    
+15:18:18.529 frame=  635 fps= 62 q=29.0 size=    9468kB time=00:04:57.00 bitrate=3788.7kbits/s throttle=off speed=2.01x    
+15:18:18.790 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:18.791 SegmentComplete=video:0 Index=98 Start=294.360733 End=297.363733 Duration=3.003000 offset_pts=0 start_pts=294360733 Frames=90 filename=6C478D_98.ts
+15:18:18.791 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_99.ts.tmp' for writing
+15:18:19.034 frame=  667 fps= 62 q=29.0 size=    9985kB time=00:04:58.10 bitrate=3791.2kbits/s throttle=off speed=2.02x    
+15:18:19.550 frame=  701 fps= 63 q=29.0 size=   10512kB time=00:04:59.25 bitrate=3788.8kbits/s throttle=off speed=2.03x    
+15:18:20.072 frame=  735 fps= 63 q=29.0 size=   11065kB time=00:05:00.36 bitrate=3803.3kbits/s throttle=off speed=2.03x    
+15:18:20.215 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:20.216 SegmentComplete=video:0 Index=99 Start=297.363733 End=300.366733 Duration=3.003000 offset_pts=0 start_pts=297363733 Frames=90 filename=6C478D_99.ts
+15:18:20.216 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_100.ts.tmp' for writing
+15:18:20.579 frame=  766 fps= 63 q=29.0 size=   11687kB time=00:05:01.39 bitrate=3850.7kbits/s throttle=off speed=2.03x    
+15:18:21.086 frame=  798 fps= 63 q=29.0 size=   12214kB time=00:05:02.47 bitrate=3856.5kbits/s throttle=off speed=2.04x    
+15:18:21.592 frame=  829 fps= 63 q=29.0 size=   12696kB time=00:05:03.48 bitrate=3858.9kbits/s throttle=off speed=2.03x    
+15:18:21.641 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:21.642 SegmentComplete=video:0 Index=100 Start=300.366733 End=303.369733 Duration=3.003000 offset_pts=0 start_pts=300366733 Frames=90 filename=6C478D_100.ts
+15:18:21.642 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_101.ts.tmp' for writing
+15:18:22.099 frame=  862 fps= 63 q=29.0 size=   13305kB time=00:05:04.58 bitrate=3884.8kbits/s throttle=off speed=2.04x    
+15:18:22.603 frame=  894 fps= 63 q=29.0 size=   13863kB time=00:05:05.68 bitrate=3894.6kbits/s throttle=off speed=2.05x    
+15:18:23.054 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:23.055 SegmentComplete=video:0 Index=101 Start=303.369733 End=306.372733 Duration=3.003000 offset_pts=0 start_pts=303369733 Frames=90 filename=6C478D_101.ts
+15:18:23.055 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_102.ts.tmp' for writing
+15:18:23.110 frame=  924 fps= 63 q=29.0 size=   14468kB time=00:05:06.67 bitrate=3931.9kbits/s throttle=off speed=2.04x    
+15:18:23.614 frame=  958 fps= 63 q=29.0 size=   15008kB time=00:05:07.80 bitrate=3931.5kbits/s throttle=off speed=2.05x    
+15:18:24.129 frame=  992 fps= 63 q=29.0 size=   15534kB time=00:05:08.90 bitrate=3930.5kbits/s throttle=off speed=2.05x    
+15:18:24.455 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:24.457 SegmentComplete=video:0 Index=102 Start=306.372733 End=309.375733 Duration=3.003000 offset_pts=0 start_pts=306372733 Frames=90 filename=6C478D_102.ts
+15:18:24.457 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_103.ts.tmp' for writing
+15:18:24.619 frame= 1021 fps= 63 q=29.0 size=   16048kB time=00:05:09.91 bitrate=3937.9kbits/s throttle=off speed=2.05x    
+15:18:25.124 frame= 1055 fps= 63 q=29.0 size=   16594kB time=00:05:11.01 bitrate=3941.6kbits/s throttle=off speed=2.06x    
+15:18:25.629 frame= 1090 fps= 63 q=29.0 size=   17156kB time=00:05:12.24 bitrate=3935.3kbits/s throttle=off speed=2.07x    
+15:18:25.833 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:25.833 SegmentComplete=video:0 Index=103 Start=309.375733 End=312.378733 Duration=3.003000 offset_pts=0 start_pts=309375733 Frames=90 filename=6C478D_103.ts
+15:18:25.834 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_104.ts.tmp' for writing
+15:18:26.135 frame= 1121 fps= 63 q=29.0 size=   17755kB time=00:05:13.22 bitrate=3963.6kbits/s throttle=off speed=2.06x    
+15:18:26.636 frame= 1154 fps= 63 q=29.0 size=   18411kB time=00:05:14.35 bitrate=3987.5kbits/s throttle=off speed=2.07x    
+15:18:27.173 frame= 1186 fps= 63 q=26.0 size=   18948kB time=00:05:15.40 bitrate=3992.4kbits/s throttle=off speed=2.07x    
+15:18:27.253 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:27.254 SegmentComplete=video:0 Index=104 Start=312.378733 End=315.381733 Duration=3.003000 offset_pts=0 start_pts=312378733 Frames=90 filename=6C478D_104.ts
+15:18:27.254 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_105.ts.tmp' for writing
+15:18:27.674 frame= 1219 fps= 63 q=29.0 size=   19581kB time=00:05:16.56 bitrate=4007.0kbits/s throttle=off speed=2.07x    
+15:18:28.174 frame= 1253 fps= 63 q=29.0 size=   20171kB time=00:05:17.61 bitrate=4021.6kbits/s throttle=off speed=2.07x    
+15:18:28.644 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:28.645 SegmentComplete=video:0 Index=105 Start=315.381733 End=318.384733 Duration=3.003000 offset_pts=0 start_pts=315381733 Frames=90 filename=6C478D_105.ts
+15:18:28.645 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_106.ts.tmp' for writing
+15:18:28.693 frame= 1283 fps= 63 q=29.0 size=   20777kB time=00:05:18.64 bitrate=4041.0kbits/s throttle=off speed=2.07x    
+15:18:29.199 frame= 1316 fps= 63 q=29.0 size=   21321kB time=00:05:19.75 bitrate=4040.8kbits/s throttle=off speed=2.07x    
+15:18:29.714 frame= 1349 fps= 63 q=29.0 size=   21819kB time=00:05:20.85 bitrate=4032.3kbits/s throttle=off speed=2.07x    
+15:18:30.095 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:30.096 SegmentComplete=video:0 Index=106 Start=318.384733 End=321.387733 Duration=3.003000 offset_pts=0 start_pts=318384733 Frames=90 filename=6C478D_106.ts
+15:18:30.096 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_107.ts.tmp' for writing
+15:18:30.227 frame= 1379 fps= 63 q=29.0 size=   22391kB time=00:05:21.84 bitrate=4048.0kbits/s throttle=off speed=2.07x    
+15:18:30.730 frame= 1412 fps= 63 q=29.0 size=   22991kB time=00:05:22.92 bitrate=4059.7kbits/s throttle=off speed=2.07x    
+15:18:31.243 frame= 1443 fps= 63 q=29.0 size=   23515kB time=00:05:23.97 bitrate=4059.9kbits/s throttle=off speed=2.07x    
+15:18:31.558 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:31.560 SegmentComplete=video:0 Index=107 Start=321.387733 End=324.390733 Duration=3.003000 offset_pts=0 start_pts=321387733 Frames=90 filename=6C478D_107.ts
+15:18:31.560 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_108.ts.tmp' for writing
+15:18:31.759 frame= 1473 fps= 63 q=29.0 size=   24085kB time=00:05:24.98 bitrate=4071.8kbits/s throttle=off speed=2.07x    
+15:18:32.279 frame= 1505 fps= 63 q=29.0 size=   24667kB time=00:05:26.06 bitrate=4079.3kbits/s throttle=off speed=2.07x    
+15:18:32.782 frame= 1537 fps= 63 q=29.0 size=   25205kB time=00:05:27.12 bitrate=4081.2kbits/s throttle=off speed=2.07x    
+15:18:33.043 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:33.044 SegmentComplete=video:0 Index=108 Start=324.390733 End=327.393733 Duration=3.003000 offset_pts=0 start_pts=324390733 Frames=90 filename=6C478D_108.ts
+15:18:33.044 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_109.ts.tmp' for writing
+15:18:33.297 frame= 1566 fps= 63 q=29.0 size=   25708kB time=00:05:28.08 bitrate=4085.2kbits/s throttle=off speed=2.07x    
+15:18:33.797 frame= 1597 fps= 63 q=29.0 size=   26229kB time=00:05:29.11 bitrate=4086.2kbits/s throttle=off speed=2.07x    
+15:18:34.293 frame= 1631 fps= 63 q=29.0 size=   26702kB time=00:05:30.26 bitrate=4070.7kbits/s throttle=off speed=2.07x    
+15:18:34.504 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:34.505 SegmentComplete=video:0 Index=109 Start=327.393733 End=330.396733 Duration=3.003000 offset_pts=0 start_pts=327393733 Frames=90 filename=6C478D_109.ts
+15:18:34.505 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_110.ts.tmp' for writing
+15:18:34.798 frame= 1659 fps= 63 q=29.0 size=   27252kB time=00:05:31.24 bitrate=4079.8kbits/s throttle=off speed=2.07x    
+15:18:35.299 frame= 1693 fps= 63 q=29.0 size=   27768kB time=00:05:32.32 bitrate=4076.6kbits/s throttle=off speed=2.07x    
+15:18:35.827 frame= 1726 fps= 63 q=26.0 size=   28254kB time=00:05:33.43 bitrate=4067.5kbits/s throttle=off speed=2.07x    
+15:18:35.894 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:35.895 SegmentComplete=video:0 Index=110 Start=330.396733 End=333.399733 Duration=3.003000 offset_pts=0 start_pts=330396733 Frames=90 filename=6C478D_110.ts
+15:18:35.895 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_111.ts.tmp' for writing
+15:18:36.339 frame= 1761 fps= 63 q=29.0 size=   28798kB time=00:05:34.58 bitrate=4063.5kbits/s throttle=off speed=2.07x    
+15:18:36.842 frame= 1796 fps= 63 q=29.0 size=   29217kB time=00:05:35.83 bitrate=4035.9kbits/s throttle=off speed=2.08x    
+15:18:37.266 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:37.266 SegmentComplete=video:0 Index=111 Start=333.399733 End=336.402733 Duration=3.003000 offset_pts=0 start_pts=333399733 Frames=90 filename=6C478D_111.ts
+15:18:37.266 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_112.ts.tmp' for writing
+15:18:37.348 frame= 1826 fps= 63 q=29.0 size=   29742kB time=00:05:36.81 bitrate=4041.4kbits/s throttle=off speed=2.08x    
+15:18:37.855 frame= 1860 fps= 63 q=29.0 size=   30236kB time=00:05:37.94 bitrate=4033.0kbits/s throttle=off speed=2.08x    
+15:18:38.371 frame= 1893 fps= 63 q=29.0 size=   30716kB time=00:05:39.00 bitrate=4027.8kbits/s throttle=off speed=2.08x    
+15:18:38.672 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:38.673 SegmentComplete=video:0 Index=112 Start=336.402733 End=339.405733 Duration=3.003000 offset_pts=0 start_pts=336402733 Frames=90 filename=6C478D_112.ts
+15:18:38.673 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_113.ts.tmp' for writing
+15:18:38.881 frame= 1925 fps= 63 q=29.0 size=   31288kB time=00:05:40.08 bitrate=4033.1kbits/s throttle=off speed=2.08x    
+15:18:39.391 frame= 1959 fps= 63 q=29.0 size=   31710kB time=00:05:41.20 bitrate=4016.2kbits/s throttle=off speed=2.08x    
+15:18:39.908 frame= 1995 fps= 63 q=29.0 size=   32190kB time=00:05:42.36 bitrate=4005.6kbits/s throttle=off speed=2.09x    
+15:18:40.042 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:40.042 SegmentComplete=video:0 Index=113 Start=339.405733 End=342.408733 Duration=3.003000 offset_pts=0 start_pts=339405733 Frames=90 filename=6C478D_113.ts
+15:18:40.042 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_114.ts.tmp' for writing
+15:18:40.414 frame= 2026 fps= 63 q=29.0 size=   32716kB time=00:05:43.41 bitrate=4006.8kbits/s throttle=off speed=2.09x    
+15:18:40.925 frame= 2061 fps= 63 q=29.0 size=   33200kB time=00:05:44.59 bitrate=3995.9kbits/s throttle=off speed=2.09x    
+15:18:41.440 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:41.441 SegmentComplete=video:0 Index=114 Start=342.408733 End=345.411733 Duration=3.003000 offset_pts=0 start_pts=342408733 Frames=90 filename=6C478D_114.ts
+15:18:41.441 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_115.ts.tmp' for writing
+15:18:41.441 frame= 2091 fps= 63 q=29.0 size=   33770kB time=00:05:45.62 bitrate=4003.8kbits/s throttle=off speed=2.09x    
+15:18:41.943 frame= 2126 fps= 63 q=29.0 size=   34319kB time=00:05:46.77 bitrate=4002.1kbits/s throttle=off speed=2.09x    
+15:18:42.451 frame= 2159 fps= 63 q=29.0 size=   34844kB time=00:05:47.88 bitrate=4000.5kbits/s throttle=off speed=2.09x    
+15:18:42.831 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:42.832 SegmentComplete=video:0 Index=115 Start=345.411733 End=348.414733 Duration=3.003000 offset_pts=0 start_pts=345411733 Frames=90 filename=6C478D_115.ts
+15:18:42.832 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_116.ts.tmp' for writing
+15:18:42.962 frame= 2189 fps= 63 q=29.0 size=   35386kB time=00:05:48.88 bitrate=4006.1kbits/s throttle=off speed=2.09x    
+15:18:43.472 frame= 2223 fps= 63 q=29.0 size=   35914kB time=00:05:50.04 bitrate=4002.2kbits/s throttle=off speed=2.09x    
+15:18:43.973 frame= 2256 fps= 63 q=29.0 size=   36403kB time=00:05:51.12 bitrate=3997.9kbits/s throttle=off speed=2.09x    
+15:18:44.220 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:44.221 SegmentComplete=video:0 Index=116 Start=348.414733 End=351.417733 Duration=3.003000 offset_pts=0 start_pts=348414733 Frames=90 filename=6C478D_116.ts
+15:18:44.221 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_117.ts.tmp' for writing
+15:18:44.475 frame= 2287 fps= 63 q=29.0 size=   36936kB time=00:05:52.17 bitrate=3999.8kbits/s throttle=off speed=2.09x    
+15:18:44.982 frame= 2322 fps= 63 q=29.0 size=   37458kB time=00:05:53.32 bitrate=3995.5kbits/s throttle=off speed= 2.1x    
+15:18:45.531 frame= 2356 fps= 63 q=26.0 size=   37969kB time=00:05:54.45 bitrate=3991.4kbits/s throttle=off speed= 2.1x    
+15:18:45.600 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:45.601 SegmentComplete=video:0 Index=117 Start=351.417733 End=354.420733 Duration=3.003000 offset_pts=0 start_pts=351417733 Frames=90 filename=6C478D_117.ts
+15:18:45.601 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_118.ts.tmp' for writing
+15:18:46.038 frame= 2392 fps= 63 q=29.0 size=   38490kB time=00:05:55.65 bitrate=3984.8kbits/s throttle=off speed= 2.1x    
+15:18:46.541 frame= 2427 fps= 64 q=29.0 size=   38888kB time=00:05:56.80 bitrate=3968.2kbits/s throttle=off speed= 2.1x    
+15:18:46.918 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:46.919 SegmentComplete=video:0 Index=118 Start=354.420733 End=357.423733 Duration=3.003000 offset_pts=0 start_pts=354420733 Frames=90 filename=6C478D_118.ts
+15:18:46.919 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_119.ts.tmp' for writing
+15:18:47.057 frame= 2460 fps= 64 q=29.0 size=   39343kB time=00:05:57.93 bitrate=3959.0kbits/s throttle=off speed= 2.1x    
+15:18:47.566 frame= 2496 fps= 64 q=29.0 size=   39769kB time=00:05:59.11 bitrate=3944.9kbits/s throttle=off speed=2.11x    
+15:18:48.080 frame= 2531 fps= 64 q=29.0 size=   40110kB time=00:06:00.24 bitrate=3925.1kbits/s throttle=off speed=2.11x    
+15:18:48.261 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:48.262 SegmentComplete=video:0 Index=119 Start=357.423733 End=360.426733 Duration=3.003000 offset_pts=0 start_pts=357423733 Frames=90 filename=6C478D_119.ts
+15:18:48.262 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_120.ts.tmp' for writing
+15:18:48.582 frame= 2563 fps= 64 q=29.0 size=   40599kB time=00:06:01.32 bitrate=3922.4kbits/s throttle=off speed=2.11x    
+15:18:49.092 frame= 2598 fps= 64 q=29.0 size=   41043kB time=00:06:02.52 bitrate=3910.0kbits/s throttle=off speed=2.11x    
+15:18:49.600 frame= 2627 fps= 64 q=29.0 size=   41540kB time=00:06:03.48 bitrate=3913.6kbits/s throttle=off speed=2.11x    
+15:18:49.654 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:49.655 SegmentComplete=video:0 Index=120 Start=360.426733 End=363.429733 Duration=3.003000 offset_pts=0 start_pts=360426733 Frames=90 filename=6C478D_120.ts
+15:18:49.656 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_121.ts.tmp' for writing
+15:18:50.117 frame= 2661 fps= 64 q=29.0 size=   42201kB time=00:06:04.63 bitrate=3923.9kbits/s throttle=off speed=2.11x    
+15:18:50.613 frame= 2694 fps= 64 q=29.0 size=   42699kB time=00:06:05.73 bitrate=3921.1kbits/s throttle=off speed=2.11x    
+15:18:51.084 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:51.085 SegmentComplete=video:0 Index=121 Start=363.429733 End=366.432733 Duration=3.003000 offset_pts=0 start_pts=363429733 Frames=90 filename=6C478D_121.ts
+15:18:51.085 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_122.ts.tmp' for writing
+15:18:51.122 frame= 2724 fps= 64 q=29.0 size=   43204kB time=00:06:06.69 bitrate=3925.2kbits/s throttle=off speed=2.11x    
+15:18:51.629 frame= 2758 fps= 64 q=29.0 size=   43649kB time=00:06:07.84 bitrate=3915.6kbits/s throttle=off speed=2.11x    
+15:18:52.156 frame= 2793 fps= 64 q=29.0 size=   44117kB time=00:06:09.04 bitrate=3906.2kbits/s throttle=off speed=2.11x    
+15:18:52.444 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:52.445 SegmentComplete=video:0 Index=122 Start=366.432733 End=369.435733 Duration=3.003000 offset_pts=0 start_pts=366432733 Frames=90 filename=6C478D_122.ts
+15:18:52.445 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_123.ts.tmp' for writing
+15:18:52.637 frame= 2824 fps= 64 q=29.0 size=   44596kB time=00:06:10.03 bitrate=3907.1kbits/s throttle=off speed=2.11x    
+15:18:53.139 frame= 2858 fps= 64 q=29.0 size=   45018kB time=00:06:11.18 bitrate=3896.1kbits/s throttle=off speed=2.11x    
+15:18:53.646 frame= 2892 fps= 64 q=29.0 size=   45485kB time=00:06:12.36 bitrate=3888.2kbits/s throttle=off speed=2.12x    
+15:18:53.837 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:53.838 SegmentComplete=video:0 Index=123 Start=369.435733 End=372.438733 Duration=3.003000 offset_pts=0 start_pts=369435733 Frames=90 filename=6C478D_123.ts
+15:18:53.838 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_124.ts.tmp' for writing
+15:18:54.153 frame= 2923 fps= 64 q=29.0 size=   45910kB time=00:06:13.36 bitrate=3883.7kbits/s throttle=off speed=2.11x    
+15:18:54.665 frame= 2958 fps= 64 q=29.0 size=   46339kB time=00:06:14.54 bitrate=3872.9kbits/s throttle=off speed=2.12x    
+15:18:55.162 frame= 2990 fps= 64 q=29.0 size=   46694kB time=00:06:15.60 bitrate=3861.0kbits/s throttle=off speed=2.12x    
+15:18:55.171 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:55.172 SegmentComplete=video:0 Index=124 Start=372.438733 End=375.441733 Duration=3.003000 offset_pts=0 start_pts=372438733 Frames=90 filename=6C478D_124.ts
+15:18:55.172 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_125.ts.tmp' for writing
+15:18:55.656 frame= 3025 fps= 64 q=29.0 size=   47158kB time=00:06:16.77 bitrate=3853.6kbits/s throttle=off speed=2.12x    
+15:18:56.166 frame= 3059 fps= 64 q=29.0 size=   47540kB time=00:06:17.92 bitrate=3840.7kbits/s throttle=off speed=2.12x    
+15:18:56.515 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:56.516 SegmentComplete=video:0 Index=125 Start=375.441733 End=378.444733 Duration=3.003000 offset_pts=0 start_pts=375441733 Frames=90 filename=6C478D_125.ts
+15:18:56.516 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_126.ts.tmp' for writing
+15:18:56.666 frame= 3092 fps= 64 q=29.0 size=   48032kB time=00:06:19.05 bitrate=3837.8kbits/s throttle=off speed=2.12x    
+15:18:57.167 frame= 3127 fps= 64 q=29.0 size=   48447kB time=00:06:20.18 bitrate=3828.8kbits/s throttle=off speed=2.12x    
+15:18:57.680 frame= 3163 fps= 64 q=29.0 size=   48867kB time=00:06:21.36 bitrate=3818.6kbits/s throttle=off speed=2.13x    
+15:18:57.834 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:57.835 SegmentComplete=video:0 Index=126 Start=378.444733 End=381.447733 Duration=3.003000 offset_pts=0 start_pts=378444733 Frames=90 filename=6C478D_126.ts
+15:18:57.835 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_127.ts.tmp' for writing
+15:18:58.182 frame= 3196 fps= 64 q=29.0 size=   49326kB time=00:06:22.48 bitrate=3813.5kbits/s throttle=off speed=2.13x    
+15:18:58.688 frame= 3232 fps= 64 q=29.0 size=   49741kB time=00:06:23.66 bitrate=3803.4kbits/s throttle=off speed=2.13x    
+15:18:59.122 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:18:59.123 SegmentComplete=video:0 Index=127 Start=381.447733 End=384.450733 Duration=3.003000 offset_pts=0 start_pts=381447733 Frames=90 filename=6C478D_127.ts
+15:18:59.123 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_128.ts.tmp' for writing
+15:18:59.199 frame= 3266 fps= 64 q=29.0 size=   50186kB time=00:06:24.84 bitrate=3795.7kbits/s throttle=off speed=2.13x    
+15:18:59.692 frame= 3303 fps= 64 q=29.0 size=   50596kB time=00:06:26.04 bitrate=3784.8kbits/s throttle=off speed=2.13x    
+15:19:00.199 frame= 3337 fps= 64 q=29.0 size=   50961kB time=00:06:27.21 bitrate=3771.6kbits/s throttle=off speed=2.13x    
+15:19:00.457 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:19:00.458 SegmentComplete=video:0 Index=128 Start=384.450733 End=387.453733 Duration=3.003000 offset_pts=0 start_pts=384450733 Frames=90 filename=6C478D_128.ts
+15:19:00.458 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_129.ts.tmp' for writing
+15:19:00.714 frame= 3368 fps= 64 q=29.0 size=   51437kB time=00:06:28.20 bitrate=3773.3kbits/s throttle=off speed=2.13x    
+15:19:01.226 frame= 3404 fps= 64 q=29.0 size=   51931kB time=00:06:29.42 bitrate=3768.2kbits/s throttle=off speed=2.14x    
+15:19:01.771 frame= 3436 fps= 64 q=26.0 size=   52319kB time=00:06:30.48 bitrate=3761.2kbits/s throttle=off speed=2.13x    
+15:19:01.846 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:19:01.847 SegmentComplete=video:0 Index=129 Start=387.453733 End=390.456733 Duration=3.003000 offset_pts=0 start_pts=387453733 Frames=90 filename=6C478D_129.ts
+15:19:01.847 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_130.ts.tmp' for writing
+15:19:02.276 frame= 3470 fps= 64 q=29.0 size=   52804kB time=00:06:31.63 bitrate=3758.1kbits/s throttle=off speed=2.13x    
+15:19:02.785 frame= 3488 fps= 64 q=29.0 size=   53031kB time=00:06:32.20 bitrate=3755.5kbits/s throttle=off speed=2.13x    
+15:19:03.302 frame= 3515 fps= 64 q=29.0 size=   53381kB time=00:06:33.14 bitrate=3749.9kbits/s throttle=off speed=2.12x    
+15:19:03.578 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:19:03.579 SegmentComplete=video:0 Index=130 Start=390.456733 End=393.459733 Duration=3.003000 offset_pts=0 start_pts=390456733 Frames=90 filename=6C478D_130.ts
+15:19:03.579 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_131.ts.tmp' for writing
+15:19:03.807 frame= 3546 fps= 64 q=29.0 size=   53831kB time=00:06:34.12 bitrate=3749.9kbits/s throttle=off speed=2.12x    
+15:19:04.292 frame= 3579 fps= 64 q=29.0 size=   54270kB time=00:06:35.25 bitrate=3744.5kbits/s throttle=off speed=2.12x    
+15:19:04.798 frame= 3613 fps= 64 q=29.0 size=   54752kB time=00:06:36.36 bitrate=3743.0kbits/s throttle=off speed=2.12x    
+15:19:04.966 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:19:04.967 SegmentComplete=video:0 Index=131 Start=393.459733 End=396.462733 Duration=3.003000 offset_pts=0 start_pts=393459733 Frames=90 filename=6C478D_131.ts
+15:19:04.967 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_132.ts.tmp' for writing
+15:19:05.313 frame= 3643 fps= 64 q=29.0 size=   55229kB time=00:06:37.36 bitrate=3744.1kbits/s throttle=off speed=2.12x    
+15:19:05.808 frame= 3675 fps= 64 q=29.0 size=   55722kB time=00:06:38.44 bitrate=3744.0kbits/s throttle=off speed=2.12x    
+15:19:06.329 frame= 3706 fps= 64 q=26.0 size=   56196kB time=00:06:39.50 bitrate=3743.5kbits/s throttle=off speed=2.12x    
+15:19:06.410 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:19:06.410 SegmentComplete=video:0 Index=132 Start=396.462733 End=399.465733 Duration=3.003000 offset_pts=0 start_pts=396462733 Frames=90 filename=6C478D_132.ts
+15:19:06.410 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_133.ts.tmp' for writing
+15:19:06.832 frame= 3738 fps= 64 q=29.0 size=   56710kB time=00:06:40.56 bitrate=3745.5kbits/s throttle=off speed=2.12x    
+15:19:07.352 frame= 3771 fps= 64 q=29.0 size=   57183kB time=00:06:41.64 bitrate=3744.2kbits/s throttle=off speed=2.12x    
+15:19:07.852 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:19:07.853 SegmentComplete=video:0 Index=133 Start=399.465733 End=402.468733 Duration=3.003000 offset_pts=0 start_pts=399465733 Frames=90 filename=6C478D_133.ts
+15:19:07.853 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_134.ts.tmp' for writing
+15:19:07.853 frame= 3801 fps= 64 q=29.0 size=   57706kB time=00:06:42.64 bitrate=3748.2kbits/s throttle=off speed=2.12x    
+15:19:08.358 frame= 3835 fps= 64 q=29.0 size=   58224kB time=00:06:43.80 bitrate=3747.6kbits/s throttle=off speed=2.12x    
+15:19:08.861 frame= 3867 fps= 64 q=29.0 size=   58757kB time=00:06:44.88 bitrate=3750.1kbits/s throttle=off speed=2.12x    
+15:19:09.291 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:19:09.292 SegmentComplete=video:0 Index=134 Start=402.468733 End=405.471733 Duration=3.003000 offset_pts=0 start_pts=402468733 Frames=90 filename=6C478D_134.ts
+15:19:09.292 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D_135.ts.tmp' for writing
+15:19:09.378 frame= 3896 fps= 64 q=29.0 size=   59330kB time=00:06:45.81 bitrate=3759.3kbits/s throttle=off speed=2.12x    
+15:19:09.890 frame= 3929 fps= 64 q=29.0 size=   59952kB time=00:06:46.92 bitrate=3766.5kbits/s throttle=off speed=2.12x    
+15:19:10.329 
+
+[q] command received. Exiting.
+
+15:19:10.438 15:19:10.438 [segment @ 0x119c400] Opening '/config/transcoding-temp/6C478D.m3u8.tmp' for writing
+15:19:10.439 SegmentComplete=video:0 Index=135 Start=405.471733 End=408.408000 Duration=2.936267 offset_pts=0 start_pts=405471733 Frames=88 filename=6C478D_135.ts
+15:19:10.439 frame= 3958 fps= 64 q=-1.0 Lsize=   60833kB time=00:06:48.30 bitrate=3781.6kbits/s throttle=off speed=2.12x    
+15:19:10.439 video:57739kB audio:3093kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+15:19:10.440 EXIT
+15:19:10.442 [libx264 @ 0x1187bc0] frame I:44    Avg QP:20.06  size: 86159
+15:19:10.442 [libx264 @ 0x1187bc0] frame P:1013  Avg QP:23.16  size: 29752
+15:19:10.443 [libx264 @ 0x1187bc0] frame B:2901  Avg QP:24.93  size:  8685
+15:19:10.443 [libx264 @ 0x1187bc0] consecutive B-frames:  2.1%  0.2%  0.7% 97.0%
+15:19:10.443 [libx264 @ 0x1187bc0] mb I  I16..4: 47.8%  0.0% 52.2%
+15:19:10.443 [libx264 @ 0x1187bc0] mb P  I16..4: 31.2%  0.0%  0.0%  P16..4: 49.4%  0.0%  0.0%  0.0%  0.0%    skip:19.5%
+15:19:10.443 [libx264 @ 0x1187bc0] mb B  I16..4:  4.9%  0.0%  0.0%  B16..8: 28.3%  0.0%  0.0%  direct: 8.9%  skip:57.9%  L0:42.6% L1:50.5% BI: 6.9%
+15:19:10.443 [libx264 @ 0x1187bc0] coded y,uvDC,uvAC intra: 14.0% 35.0% 3.4% inter: 7.5% 13.0% 0.1%
+15:19:10.443 [libx264 @ 0x1187bc0] i16 v,h,dc,p: 32% 24% 19% 25%
+15:19:10.443 [libx264 @ 0x1187bc0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 21% 19% 15% 10%  9%  7%  7%  5%  7%
+15:19:10.443 [libx264 @ 0x1187bc0] i8c dc,h,v,p: 44% 23% 24%  9%
+15:19:10.443 [libx264 @ 0x1187bc0] Weighted P-Frames: Y:5.0% UV:0.6%
+15:19:10.443 [libx264 @ 0x1187bc0] kb/s:3581.52
+15:19:10.445 
+
+======= ExtraData
+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

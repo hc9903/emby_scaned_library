@@ -1,0 +1,254 @@
+2020-05-22 09:47:06.012
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome Android
+
+http://emby.super0.me:8096/videos/10322/hls1/main/3.ts?DeviceId=5f44ca82-da4c-431e-b855-db1136acebe0&MediaSourceId=46d4b971f02951b943a8bd7ad90c7a2e&PlaySessionId=9f75c1fb201e443a9146a508867771d6&api_key=69a8c8e4d325445b972db49b3c282f55&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=59680000&AudioBitrate=320000&AudioStreamIndex=1&SubtitleStreamIndex=2&SubtitleMethod=Encode&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=False&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=SubtitleCodecNotSupported
+
+{"Protocol":"File","Id":"46d4b971f02951b943a8bd7ad90c7a2e","Path":"/00/00/IMDB Top250/250.兰闺惊变.What.Ever.Happened.to.Baby.Jane.1962.BluRay.1080p.x265.10bit.MNHD-FRDS/What.Ever.Happened.to.Baby.Jane.1962.BluRay.1080p.x265.10bit.MNHD-FRDS.mkv","Type":"Default","Container":"mkv","Size":9308686794,"Name":"What.Ever.Happened.to.Baby.Jane.1962.BluRay.1080p.x265.10bit.MNHD-FRDS","IsRemote":false,"RunTimeTicks":80201790000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"hevc","ColorPrimaries":"bt709","TimeBase":"1/1000","CodecTimeBase":"1001/24000","VideoRange":"SDR","DisplayTitle":"1080p HEVC","IsInterlaced":false,"BitRate":9285265,"BitDepth":10,"RefFrames":1,"IsDefault":true,"IsForced":false,"Height":1080,"Width":1920,"AverageFrameRate":23.976025,"RealFrameRate":23.976025,"Profile":"Main 10","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p10le","Level":120,"IsAnamorphic":false},{"Codec":"ac3","Language":"eng","TimeBase":"1/1000","CodecTimeBase":"1/48000","DisplayTitle":"English Dolby Digital mono (Default)","DisplayLanguage":"English","IsInterlaced":false,"ChannelLayout":"mono","BitRate":320000,"Channels":1,"SampleRate":48000,"IsDefault":true,"IsForced":false,"Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"eng","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"English (Default PGSSUB)","DisplayLanguage":"English","IsInterlaced":false,"IsDefault":true,"IsForced":false,"Type":"Subtitle","Index":2,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":3,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":4,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":9285265,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for 1124721976
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: hevc, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    ColorConversion                          >> False                False                                                         
+Info    SubtitleOverlay                          >> False                False                                                         
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    hevc                 >> -            yuv420p10    yuv420p10    >> format
+Info    format               >> -            yuv420p      yuv420p      >> overlay
+Info    overlay              >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -ss 00:00:09.000  -f matroska -i file:"/00/00/IMDB Top250/250.兰闺惊变.What.Ever.Happened.to.Baby.Jane.1962.BluRay.1080p.x265.10bit.MNHD-FRDS/What.Ever.Happened.to.Baby.Jane.1962.BluRay.1080p.x265.10bit.MNHD-FRDS.mkv" -threads 0 -map 0:0 -map 0:1 -c:v:0 libx264 -copyts -filter_complex "[0:2]scale=1920:1080:force_original_aspect_ratio=decrease[sub];[0:0][sub]overlay=(W-w)/2:(H-h):repeatlast=0" -pix_fmt yuv420p  -maxrate 18570530 -bufsize 37141060 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 72 -keyint_min:v:0 72 -sc_threshold:v:0 0  -vsync -1 -codec:a:0 libmp3lame -metadata:s:a:0 language=eng -disposition:a:0 default -ac:a:0 1 -ab:a:0 192000  -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 3 -segment_list "/config/transcoding-temp/E44F68.m3u8" -y "/config/transcoding-temp/E44F68_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-35a5ee6f-0cf4-4dce-8fcf-92fe581550d9_1graph.txt -copyts -start_at_zero -f matroska,webm -ss 00:00:09.000 -c:v:0 hevc -i "/00/00/IMDB Top250/250.兰闺惊变.What.Ever.Happened.to.Baby.Jane.1962.BluRay.1080p.x265.10bit.MNHD-FRDS/What.Ever.Happened.to.Baby.Jane.1962.BluRay.1080p.x265.10bit.MNHD-FRDS.mkv" -filter_complex "[0:0]format@f1=pix_fmts=yuv420p[f1_out0];[0:2]scale@f2=width=1920:height=-2:force_original_aspect_ratio=decrease[f2_out0];[f1_out0][f2_out0]overlay@f3=x=(W-w)/2:y=(H-h):repeatlast=0[f3_out0]" -map [f3_out0] -map 0:1 -sn -c:v:0 libx264 -g:v:0 72 -maxrate:v:0 18570530 -bufsize:v:0 37141060 -sc_threshold:v:0 0 -keyint_min:v:0 72 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 4.1 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 1 -metadata:s:a:0 language=eng -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/E44F68.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 3 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/E44F68_%d.ts"
+
+09:47:06.039 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+09:47:06.039   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+09:47:06.039 Execution Date: 2020-05-22 09:47:06
+09:47:08.249 [matroska,webm @ 0x1b239c0] Could not find codec parameters for stream 2 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+09:47:08.249 [matroska,webm @ 0x1b239c0] Could not find codec parameters for stream 3 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+09:47:08.249 [matroska,webm @ 0x1b239c0] Could not find codec parameters for stream 4 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+09:47:09.090 Input #0, matroska,webm, from '/00/00/IMDB Top250/250.兰闺惊变.What.Ever.Happened.to.Baby.Jane.1962.BluRay.1080p.x265.10bit.MNHD-FRDS/What.Ever.Happened.to.Baby.Jane.1962.BluRay.1080p.x265.10bit.MNHD-FRDS.mkv':
+09:47:09.090   Metadata:
+09:47:09.090     encoder         : libebml v1.3.4 + libmatroska v1.4.5
+09:47:09.090     creation_time   : 2017-09-15T11:02:32.000000Z
+09:47:09.090   Duration: 02:13:40.18, start: 0.000000, bitrate: 9285 kb/s
+09:47:09.090     Stream #0:0: Video: hevc (Main 10), yuv420p10le(tv, unknown/bt709/unknown), 1920x1080, SAR 1:1 DAR 16:9, Level 120, 23.98 fps, 23.98 tbr, 1k tbn, 23.98 tbc (default)
+09:47:09.090     Metadata:
+09:47:09.090       BPS             : 8922941
+09:47:09.090       BPS-eng         : 8922941
+09:47:09.090       DURATION        : 02:13:40.179000000
+09:47:09.090       DURATION-eng    : 02:13:40.179000000
+09:47:09.090       NUMBER_OF_FRAMES: 192292
+09:47:09.090       NUMBER_OF_FRAMES-eng: 192292
+09:47:09.090       NUMBER_OF_BYTES : 8945448057
+09:47:09.090       NUMBER_OF_BYTES-eng: 8945448057
+09:47:09.090     Stream #0:1(eng): Audio: ac3, 48000 Hz, mono, fltp, 320 kb/s (default)
+09:47:09.090     Metadata:
+09:47:09.090       BPS             : 320000
+09:47:09.090       BPS-eng         : 320000
+09:47:09.090       DURATION        : 02:13:40.160000000
+09:47:09.090       DURATION-eng    : 02:13:40.160000000
+09:47:09.090       NUMBER_OF_FRAMES: 250630
+09:47:09.090       NUMBER_OF_FRAMES-eng: 250630
+09:47:09.090       NUMBER_OF_BYTES : 320806400
+09:47:09.090       NUMBER_OF_BYTES-eng: 320806400
+09:47:09.090     Stream #0:2(eng): Subtitle: hdmv_pgs_subtitle (default)
+09:47:09.090     Metadata:
+09:47:09.090       BPS             : 12117
+09:47:09.090       BPS-eng         : 12117
+09:47:09.090       DURATION        : 02:13:25.748000000
+09:47:09.090       DURATION-eng    : 02:13:25.748000000
+09:47:09.090       NUMBER_OF_FRAMES: 2692
+09:47:09.090       NUMBER_OF_FRAMES-eng: 2692
+09:47:09.090       NUMBER_OF_BYTES : 12125890
+09:47:09.090       NUMBER_OF_BYTES-eng: 12125890
+09:47:09.090     Stream #0:3(chi): Subtitle: hdmv_pgs_subtitle
+09:47:09.090     Metadata:
+09:47:09.090       BPS             : 13899
+09:47:09.090       BPS-eng         : 13899
+09:47:09.090       DURATION        : 02:12:51.013000000
+09:47:09.090       DURATION-eng    : 02:12:51.013000000
+09:47:09.090       NUMBER_OF_FRAMES: 2604
+09:47:09.090       NUMBER_OF_FRAMES-eng: 2604
+09:47:09.090       NUMBER_OF_BYTES : 13849553
+09:47:09.090       NUMBER_OF_BYTES-eng: 13849553
+09:47:09.090     Stream #0:4(chi): Subtitle: hdmv_pgs_subtitle
+09:47:09.090     Metadata:
+09:47:09.090       BPS             : 14386
+09:47:09.090       BPS-eng         : 14386
+09:47:09.090       DURATION        : 02:12:51.013000000
+09:47:09.090       DURATION-eng    : 02:12:51.013000000
+09:47:09.090       NUMBER_OF_FRAMES: 2604
+09:47:09.090       NUMBER_OF_FRAMES-eng: 2604
+09:47:09.090       NUMBER_OF_BYTES : 14334184
+09:47:09.090       NUMBER_OF_BYTES-eng: 14334184
+09:47:09.092 Stream mapping:
+09:47:09.092   Stream #0:0 (hevc) -> format (graph 0)
+09:47:09.092   Stream #0:2 (pgssub) -> scale (graph 0)
+09:47:09.092   overlay (graph 0) -> Stream #0:0 (libx264)
+09:47:09.092   Stream #0:1 -> #0:1 (ac3 (native) -> mp3 (libmp3lame))
+09:47:09.092 Press [q] to stop, [?] for help
+09:47:09.130 [matroska,webm @ 0x1b239c0] sub2video: using 1920x1080 canvas
+09:47:09.136 [libx264 @ 0x1c18c00] using SAR=1/1
+09:47:09.136 [libx264 @ 0x1c18c00] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+09:47:09.151 [libx264 @ 0x1c18c00] profile Main, level 4.1, 4:2:0, 8-bit
+09:47:09.153 [libx264 @ 0x1c18c00] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=72 keyint_min=37 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=18570 vbv_bufsize=37141 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+09:47:09.153 Output #0, segment, to '/config/transcoding-temp/E44F68_%d.ts':
+09:47:09.153   Metadata:
+09:47:09.153     encoder         : Lavf58.35.100
+09:47:09.153     Stream #0:0: Video: h264 (libx264), yuv420p, 1920x1080 [SAR 1:1 DAR 16:9], q=-1--1, 23.98 fps, 90k tbn, 23.98 tbc (default)
+09:47:09.153     Metadata:
+09:47:09.153       encoder         : Lavc58.62.100 libx264
+09:47:09.153     Side data:
+09:47:09.153       cpb: bitrate max/min/avg: 18570000/0/0 buffer size: 37141000 vbv_delay: N/A
+09:47:09.153     Stream #0:1(eng): Audio: mp3 (libmp3lame), 48000 Hz, mono, fltp, 192 kb/s (default)
+09:47:09.153     Metadata:
+09:47:09.153       encoder         : Lavc58.62.100 libmp3lame
+09:47:09.596 frame=    0 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A throttle=off speed=   0x    
+09:47:10.350 frame=    0 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A throttle=off speed=   0x    
+09:47:10.883 frame=   19 fps= 11 q=0.0 size=      29kB time=00:00:10.20 bitrate=  23.0kbits/s throttle=off speed=5.77x    
+09:47:11.378 frame=   68 fps= 30 q=28.0 size=     112kB time=00:00:11.97 bitrate=  76.3kbits/s throttle=off speed=5.27x    
+09:47:11.709 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68.m3u8.tmp' for writing
+09:47:11.709 SegmentComplete=video:0 Index=3 Start=0.000000 End=12.012000 Duration=12.012000 offset_pts=0 start_pts=0 Frames=72 filename=E44F68_3.ts
+09:47:11.709 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68_4.ts.tmp' for writing
+09:47:11.905 frame=  104 fps= 37 q=28.0 size=     440kB time=00:00:13.46 bitrate= 267.8kbits/s throttle=off speed=4.85x    
+09:47:12.378 frame=  133 fps= 41 q=28.0 size=    1400kB time=00:00:15.02 bitrate= 763.1kbits/s throttle=off speed=4.58x    
+09:47:12.893 frame=  164 fps= 43 q=28.0 size=    2112kB time=00:00:15.98 bitrate=1082.6kbits/s throttle=off speed=4.22x    
+09:47:12.923 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68.m3u8.tmp' for writing
+09:47:12.924 SegmentComplete=video:0 Index=4 Start=12.012000 End=15.015000 Duration=3.003000 offset_pts=0 start_pts=12012000 Frames=72 filename=E44F68_4.ts
+09:47:12.924 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68_5.ts.tmp' for writing
+09:47:13.393 frame=  194 fps= 45 q=28.0 size=    3006kB time=00:00:17.40 bitrate=1415.0kbits/s throttle=off speed=4.05x    
+09:47:13.922 frame=  217 fps= 45 q=28.0 size=    3443kB time=00:00:18.36 bitrate=1536.1kbits/s throttle=off speed=3.81x    
+09:47:14.288 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68.m3u8.tmp' for writing
+09:47:14.288 SegmentComplete=video:0 Index=5 Start=15.015000 End=18.018000 Duration=3.003000 offset_pts=0 start_pts=15015000 Frames=72 filename=E44F68_5.ts
+09:47:14.288 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68_6.ts.tmp' for writing
+09:47:14.426 frame=  247 fps= 46 q=28.0 size=    4182kB time=00:00:19.63 bitrate=1745.1kbits/s throttle=off speed=3.68x    
+09:47:14.928 frame=  280 fps= 48 q=28.0 size=    4604kB time=00:00:20.85 bitrate=1808.2kbits/s throttle=off speed=3.58x    
+09:47:15.380 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68.m3u8.tmp' for writing
+09:47:15.381 SegmentComplete=video:0 Index=6 Start=18.018000 End=21.021000 Duration=3.003000 offset_pts=0 start_pts=18018000 Frames=72 filename=E44F68_6.ts
+09:47:15.381 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68_7.ts.tmp' for writing
+09:47:15.469 frame=  314 fps= 49 q=28.0 size=    5216kB time=00:00:22.39 bitrate=1908.1kbits/s throttle=off speed=3.52x    
+09:47:15.987 frame=  344 fps= 50 q=28.0 size=    6246kB time=00:00:23.49 bitrate=2177.7kbits/s throttle=off speed=3.41x    
+09:47:16.507 frame=  375 fps= 51 q=28.0 size=    7118kB time=00:00:24.81 bitrate=2349.6kbits/s throttle=off speed=3.35x    
+09:47:16.597 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68.m3u8.tmp' for writing
+09:47:16.598 SegmentComplete=video:0 Index=7 Start=21.021000 End=24.024000 Duration=3.003000 offset_pts=0 start_pts=21021000 Frames=72 filename=E44F68_7.ts
+09:47:16.598 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68_8.ts.tmp' for writing
+09:47:17.065 frame=  407 fps= 51 q=28.0 size=    8110kB time=00:00:26.18 bitrate=2537.2kbits/s throttle=off speed=3.31x    
+09:47:17.537 frame=  434 fps= 51 q=28.0 size=    9083kB time=00:00:27.38 bitrate=2717.1kbits/s throttle=off speed=3.24x    
+09:47:17.918 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68.m3u8.tmp' for writing
+09:47:17.918 SegmentComplete=video:0 Index=8 Start=24.024000 End=27.027000 Duration=3.003000 offset_pts=0 start_pts=24024000 Frames=72 filename=E44F68_8.ts
+09:47:17.918 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68_9.ts.tmp' for writing
+09:47:18.049 frame=  460 fps= 51 q=28.0 size=   10223kB time=00:00:28.34 bitrate=2954.6kbits/s throttle=off speed=3.17x    
+09:47:18.554 frame=  488 fps= 52 q=28.0 size=   11161kB time=00:00:29.73 bitrate=3074.6kbits/s throttle=off speed=3.14x    
+09:47:19.106 frame=  521 fps= 52 q=28.0 size=   11916kB time=00:00:31.12 bitrate=3135.9kbits/s throttle=off speed=3.12x    
+09:47:19.160 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68.m3u8.tmp' for writing
+09:47:19.160 SegmentComplete=video:0 Index=9 Start=27.027000 End=30.030000 Duration=3.003000 offset_pts=0 start_pts=27027000 Frames=72 filename=E44F68_9.ts
+09:47:19.161 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68_10.ts.tmp' for writing
+09:47:19.621 frame=  546 fps= 52 q=28.0 size=   12623kB time=00:00:32.01 bitrate=3229.9kbits/s throttle=off speed=3.05x    
+09:47:20.133 frame=  573 fps= 52 q=28.0 size=   13117kB time=00:00:33.04 bitrate=3251.4kbits/s throttle=off speed=   3x    
+09:47:20.507 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68.m3u8.tmp' for writing
+09:47:20.508 SegmentComplete=video:0 Index=10 Start=30.030000 End=33.033000 Duration=3.003000 offset_pts=0 start_pts=30030000 Frames=72 filename=E44F68_10.ts
+09:47:20.508 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68_11.ts.tmp' for writing
+09:47:20.634 frame=  604 fps= 52 q=28.0 size=   13927kB time=00:00:34.44 bitrate=3312.5kbits/s throttle=off speed=2.99x    
+09:47:21.150 frame=  632 fps= 52 q=28.0 size=   14760kB time=00:00:35.56 bitrate=3399.3kbits/s throttle=off speed=2.95x    
+09:47:21.640 frame=  658 fps= 52 q=28.0 size=   15659kB time=00:00:36.91 bitrate=3475.3kbits/s throttle=off speed=2.94x    
+09:47:21.806 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68.m3u8.tmp' for writing
+09:47:21.807 SegmentComplete=video:0 Index=11 Start=33.033000 End=36.036000 Duration=3.003000 offset_pts=0 start_pts=33033000 Frames=72 filename=E44F68_11.ts
+09:47:21.807 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68_12.ts.tmp' for writing
+09:47:22.168 frame=  690 fps= 53 q=28.0 size=   16529kB time=00:00:37.96 bitrate=3566.1kbits/s throttle=off speed=2.91x    
+09:47:22.676 frame=  719 fps= 53 q=28.0 size=   17365kB time=00:00:39.24 bitrate=3625.2kbits/s throttle=off speed=2.89x    
+09:47:23.101 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68.m3u8.tmp' for writing
+09:47:23.101 SegmentComplete=video:0 Index=12 Start=36.036000 End=39.039000 Duration=3.003000 offset_pts=0 start_pts=36036000 Frames=72 filename=E44F68_12.ts
+09:47:23.102 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68_13.ts.tmp' for writing
+09:47:23.179 frame=  746 fps= 53 q=28.0 size=   18386kB time=00:00:40.27 bitrate=3739.9kbits/s throttle=off speed=2.86x    
+09:47:23.685 frame=  772 fps= 53 q=28.0 size=   19320kB time=00:00:41.35 bitrate=3827.2kbits/s throttle=off speed=2.83x    
+09:47:24.198 frame=  799 fps= 53 q=28.0 size=   20357kB time=00:00:42.60 bitrate=3914.6kbits/s throttle=off speed=2.82x    
+09:47:24.466 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68.m3u8.tmp' for writing
+09:47:24.467 SegmentComplete=video:0 Index=13 Start=39.039000 End=42.042000 Duration=3.003000 offset_pts=0 start_pts=39039000 Frames=72 filename=E44F68_13.ts
+09:47:24.467 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68_14.ts.tmp' for writing
+09:47:24.749 frame=  828 fps= 53 q=28.0 size=   21490kB time=00:00:43.89 bitrate=4010.5kbits/s throttle=off speed=2.81x    
+09:47:25.241 frame=  856 fps= 53 q=28.0 size=   22619kB time=00:00:45.00 bitrate=4117.5kbits/s throttle=off speed=2.79x    
+09:47:25.681 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68.m3u8.tmp' for writing
+09:47:25.682 SegmentComplete=video:0 Index=14 Start=42.042000 End=45.045000 Duration=3.003000 offset_pts=0 start_pts=42042000 Frames=72 filename=E44F68_14.ts
+09:47:25.682 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68_15.ts.tmp' for writing
+09:47:25.750 frame=  890 fps= 53 q=28.0 size=   23442kB time=00:00:46.53 bitrate=4126.5kbits/s throttle=off speed=2.79x    
+09:47:26.296 frame=  927 fps= 54 q=28.0 size=   23794kB time=00:00:47.88 bitrate=4070.9kbits/s throttle=off speed=2.78x    
+09:47:26.712 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68.m3u8.tmp' for writing
+09:47:26.713 SegmentComplete=video:0 Index=15 Start=45.045000 End=48.048000 Duration=3.003000 offset_pts=0 start_pts=45045000 Frames=72 filename=E44F68_15.ts
+09:47:26.713 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68_16.ts.tmp' for writing
+09:47:26.805 frame=  963 fps= 54 q=28.0 size=   24324kB time=00:00:49.56 bitrate=4020.5kbits/s throttle=off speed= 2.8x    
+09:47:27.325 frame= 1002 fps= 55 q=28.0 size=   24727kB time=00:00:51.33 bitrate=3945.8kbits/s throttle=off speed=2.82x    
+09:47:27.650 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68.m3u8.tmp' for writing
+09:47:27.650 SegmentComplete=video:0 Index=16 Start=48.048000 End=51.051000 Duration=3.003000 offset_pts=0 start_pts=48048000 Frames=72 filename=E44F68_16.ts
+09:47:27.650 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68_17.ts.tmp' for writing
+09:47:27.831 frame= 1043 fps= 56 q=28.0 size=   25182kB time=00:00:52.94 bitrate=3896.3kbits/s throttle=off speed=2.83x    
+09:47:28.320 frame= 1080 fps= 56 q=28.0 size=   25568kB time=00:00:54.48 bitrate=3844.5kbits/s throttle=off speed=2.83x    
+09:47:28.572 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68.m3u8.tmp' for writing
+09:47:28.572 SegmentComplete=video:0 Index=17 Start=51.051000 End=54.054000 Duration=3.003000 offset_pts=0 start_pts=51051000 Frames=72 filename=E44F68_17.ts
+09:47:28.572 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68_18.ts.tmp' for writing
+09:47:28.849 frame= 1121 fps= 57 q=28.0 size=   26045kB time=00:00:56.13 bitrate=3800.7kbits/s throttle=off speed=2.84x    
+09:47:29.335 frame= 1157 fps= 57 q=28.0 size=   26427kB time=00:00:57.62 bitrate=3756.8kbits/s throttle=off speed=2.85x    
+09:47:29.583 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68.m3u8.tmp' for writing
+09:47:29.583 SegmentComplete=video:0 Index=18 Start=54.054000 End=57.057000 Duration=3.003000 offset_pts=0 start_pts=54054000 Frames=72 filename=E44F68_18.ts
+09:47:29.583 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68_19.ts.tmp' for writing
+09:47:29.849 frame= 1194 fps= 58 q=28.0 size=   27048kB time=00:00:58.96 bitrate=3757.5kbits/s throttle=off speed=2.84x    
+09:47:29.875 
+
+[q] command received. Exiting.
+
+09:47:29.935 09:47:29.935 [segment @ 0x1c17740] Opening '/config/transcoding-temp/E44F68.m3u8.tmp' for writing
+09:47:29.935 SegmentComplete=video:0 Index=19 Start=57.057000 End=58.808756 Duration=1.751756 offset_pts=0 start_pts=57057000 Frames=42 filename=E44F68_19.ts
+09:47:29.935 frame= 1194 fps= 57 q=-1.0 Lsize=   27253kB time=00:00:59.04 bitrate=3781.4kbits/s throttle=off speed=2.83x    
+09:47:29.935 video:26080kB audio:1173kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+09:47:29.945 EXIT
+09:47:29.946 [libx264 @ 0x1c18c00] frame I:17    Avg QP:18.45  size:109216
+09:47:29.946 [libx264 @ 0x1c18c00] frame P:320   Avg QP:23.27  size: 40855
+09:47:29.946 [libx264 @ 0x1c18c00] frame B:857   Avg QP:26.26  size: 13739
+09:47:29.946 [libx264 @ 0x1c18c00] consecutive B-frames:  2.6%  2.7%  7.3% 87.4%
+09:47:29.946 [libx264 @ 0x1c18c00] mb I  I16..4: 46.1%  0.0% 53.9%
+09:47:29.946 [libx264 @ 0x1c18c00] mb P  I16..4: 24.2%  0.0%  0.0%  P16..4: 40.6%  0.0%  0.0%  0.0%  0.0%    skip:35.2%
+09:47:29.946 [libx264 @ 0x1c18c00] mb B  I16..4:  5.1%  0.0%  0.0%  B16..8: 20.6%  0.0%  0.0%  direct:10.2%  skip:64.1%  L0:39.3% L1:44.1% BI:16.5%
+09:47:29.946 [libx264 @ 0x1c18c00] coded y,uvDC,uvAC intra: 65.9% 0.0% 0.0% inter: 13.7% 0.0% 0.0%
+09:47:29.946 [libx264 @ 0x1c18c00] i16 v,h,dc,p: 33% 19% 33% 16%
+09:47:29.946 [libx264 @ 0x1c18c00] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 20% 13%  8%  6%  7%  6%  6%  7%
+09:47:29.946 [libx264 @ 0x1c18c00] i8c dc,h,v,p: 100%  0%  0%  0%
+09:47:29.946 [libx264 @ 0x1c18c00] Weighted P-Frames: Y:1.2% UV:0.0%
+09:47:29.946 [libx264 @ 0x1c18c00] kb/s:4289.95
+09:47:29.951 
+
+======= ExtraData
+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

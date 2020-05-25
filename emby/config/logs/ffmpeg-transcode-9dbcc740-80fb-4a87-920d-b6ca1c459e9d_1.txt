@@ -1,0 +1,260 @@
+2020-05-22 13:55:47.900
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/10169/hls1/main/5.ts?DeviceId=742a1421-7e11-40d7-9611-791852fd013c&MediaSourceId=44287c743255457dfd4b5faac58c8dc8&PlaySessionId=597df5b5421a4b379f3f85eb85f341cf&api_key=809e417cac5442cab3a5577cb047ed1f&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=59616000&AudioBitrate=384000&AudioStreamIndex=1&SubtitleStreamIndex=3&SubtitleMethod=Encode&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=SubtitleCodecNotSupported
+
+{"Protocol":"File","Id":"44287c743255457dfd4b5faac58c8dc8","Path":"/00/00/IMDB Top250/096.三傻大闹宝莱坞.3.Idiots.2009.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS/3.Idiots.2009.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS.mkv","Type":"Default","Container":"mkv","Size":9917540082,"Name":"3.Idiots.2009.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS","IsRemote":false,"RunTimeTicks":102672920000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"hevc","ColorPrimaries":"bt709","TimeBase":"1/1000","CodecTimeBase":"1/24","VideoRange":"SDR","DisplayTitle":"1080p HEVC","IsInterlaced":false,"BitRate":7727482,"BitDepth":10,"RefFrames":1,"IsDefault":true,"IsForced":false,"Height":816,"Width":1920,"AverageFrameRate":24,"RealFrameRate":24,"Profile":"Main 10","Type":"Video","AspectRatio":"40:17","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p10le","Level":120,"IsAnamorphic":false},{"Codec":"ac3","Language":"hin","TimeBase":"1/1000","CodecTimeBase":"1/48000","DisplayTitle":"Hindi Dolby Digital 5.1 (Default)","DisplayLanguage":"Hindi","IsInterlaced":false,"ChannelLayout":"5.1","BitRate":640000,"Channels":6,"SampleRate":48000,"IsDefault":true,"IsForced":false,"Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"1/48000","DisplayTitle":"Chinese Dolby Digital 5.1","DisplayLanguage":"Chinese","IsInterlaced":false,"ChannelLayout":"5.1","BitRate":640000,"Channels":6,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":2,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"eng","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"English (Default PGSSUB)","DisplayLanguage":"English","IsInterlaced":false,"IsDefault":true,"IsForced":false,"Type":"Subtitle","Index":3,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":4,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":5,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":7727482,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for 1124721976
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: hevc, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    ColorConversion                          >> False                False                                                         
+Info    SubtitleOverlay                          >> False                False                                                         
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    hevc                 >> -            yuv420p10    yuv420p10    >> format
+Info    format               >> -            yuv420p      yuv420p      >> overlay
+Info    overlay              >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -ss 00:00:15.000  -f matroska -i file:"/00/00/IMDB Top250/096.三傻大闹宝莱坞.3.Idiots.2009.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS/3.Idiots.2009.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS.mkv" -threads 0 -map 0:0 -map 0:1 -c:v:0 libx264 -copyts -filter_complex "[0:3]scale=1920:816:force_original_aspect_ratio=decrease[sub];[0:0][sub]overlay=(W-w)/2:(H-h):repeatlast=0" -pix_fmt yuv420p  -maxrate 15454964 -bufsize 30909928 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 72 -keyint_min:v:0 72 -sc_threshold:v:0 0  -vsync -1 -codec:a:0 libmp3lame -metadata:s:a:0 language=hin -disposition:a:0 default -ac:a:0 2 -ab:a:0 192000 -filter:a:0 "volume=2" -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 5 -segment_list "/config/transcoding-temp/2A5AD9.m3u8" -y "/config/transcoding-temp/2A5AD9_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-9dbcc740-80fb-4a87-920d-b6ca1c459e9d_1graph.txt -copyts -start_at_zero -f matroska,webm -ss 00:00:15.000 -c:v:0 hevc -i "/00/00/IMDB Top250/096.三傻大闹宝莱坞.3.Idiots.2009.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS/3.Idiots.2009.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS.mkv" -filter_complex "[0:0]format@f1=pix_fmts=yuv420p[f1_out0];[0:3]scale@f2=width=1920:height=-2:force_original_aspect_ratio=decrease[f2_out0];[f1_out0][f2_out0]overlay@f3=x=(W-w)/2:y=(H-h):repeatlast=0[f3_out0]" -map [f3_out0] -map 0:1 -sn -c:v:0 libx264 -g:v:0 72 -maxrate:v:0 15454964 -bufsize:v:0 30909928 -sc_threshold:v:0 0 -keyint_min:v:0 72 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 4.0 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 2 -metadata:s:a:0 language=hin -filter:a:0 "volume=2" -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/2A5AD9.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 5 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/2A5AD9_%d.ts"
+
+13:55:47.932 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+13:55:47.933   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+13:55:47.933 Execution Date: 2020-05-22 13:55:47
+13:55:50.478 [matroska,webm @ 0x7f3a00] Could not find codec parameters for stream 3 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+13:55:50.478 [matroska,webm @ 0x7f3a00] Could not find codec parameters for stream 4 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+13:55:50.478 [matroska,webm @ 0x7f3a00] Could not find codec parameters for stream 5 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+13:55:51.347 Input #0, matroska,webm, from '/00/00/IMDB Top250/096.三傻大闹宝莱坞.3.Idiots.2009.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS/3.Idiots.2009.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS.mkv':
+13:55:51.347   Metadata:
+13:55:51.347     encoder         : libebml v1.3.3 + libmatroska v1.4.4
+13:55:51.347     creation_time   : 2016-12-30T05:44:41.000000Z
+13:55:51.347   Duration: 02:51:07.29, start: 0.000000, bitrate: 7727 kb/s
+13:55:51.347     Stream #0:0: Video: hevc (Main 10), yuv420p10le(tv, unknown/bt709/unknown), 1920x816, SAR 1:1 DAR 40:17, Level 120, 24 fps, 24 tbr, 1k tbn, 24 tbc (default)
+13:55:51.347     Metadata:
+13:55:51.347       BPS             : 6387289
+13:55:51.347       BPS-eng         : 6387289
+13:55:51.347       DURATION        : 02:51:07.292000000
+13:55:51.347       DURATION-eng    : 02:51:07.292000000
+13:55:51.347       NUMBER_OF_FRAMES: 246415
+13:55:51.347       NUMBER_OF_FRAMES-eng: 246415
+13:55:51.347       NUMBER_OF_BYTES : 8197521337
+13:55:51.347       NUMBER_OF_BYTES-eng: 8197521337
+13:55:51.347     Stream #0:1(hin): Audio: ac3, 48000 Hz, 5.1(side), fltp, 640 kb/s (default)
+13:55:51.347     Metadata:
+13:55:51.347       BPS             : 640000
+13:55:51.347       BPS-eng         : 640000
+13:55:51.347       DURATION        : 02:51:06.016000000
+13:55:51.347       DURATION-eng    : 02:51:06.016000000
+13:55:51.347       NUMBER_OF_FRAMES: 320813
+13:55:51.347       NUMBER_OF_FRAMES-eng: 320813
+13:55:51.347       NUMBER_OF_BYTES : 821281280
+13:55:51.347       NUMBER_OF_BYTES-eng: 821281280
+13:55:51.347     Stream #0:2(chi): Audio: ac3, 48000 Hz, 5.1(side), fltp, 640 kb/s
+13:55:51.347     Metadata:
+13:55:51.347       BPS             : 640000
+13:55:51.347       BPS-eng         : 640000
+13:55:51.347       DURATION        : 02:51:06.016000000
+13:55:51.347       DURATION-eng    : 02:51:06.016000000
+13:55:51.347       NUMBER_OF_FRAMES: 320813
+13:55:51.347       NUMBER_OF_FRAMES-eng: 320813
+13:55:51.347       NUMBER_OF_BYTES : 821281280
+13:55:51.347       NUMBER_OF_BYTES-eng: 821281280
+13:55:51.347     Stream #0:3(eng): Subtitle: hdmv_pgs_subtitle (default)
+13:55:51.347     Metadata:
+13:55:51.347       BPS             : 14082
+13:55:51.347       BPS-eng         : 14082
+13:55:51.347       DURATION        : 02:46:55.917000000
+13:55:51.347       DURATION-eng    : 02:46:55.917000000
+13:55:51.347       NUMBER_OF_FRAMES: 4266
+13:55:51.347       NUMBER_OF_FRAMES-eng: 4266
+13:55:51.347       NUMBER_OF_BYTES : 17630786
+13:55:51.347       NUMBER_OF_BYTES-eng: 17630786
+13:55:51.347     Stream #0:4(chi): Subtitle: hdmv_pgs_subtitle
+13:55:51.347     Metadata:
+13:55:51.347       BPS             : 21647
+13:55:51.348       BPS-eng         : 21647
+13:55:51.348       DURATION        : 02:50:54.619000000
+13:55:51.348       DURATION-eng    : 02:50:54.619000000
+13:55:51.348       NUMBER_OF_FRAMES: 4497
+13:55:51.348       NUMBER_OF_FRAMES-eng: 4497
+13:55:51.348       NUMBER_OF_BYTES : 27748022
+13:55:51.348       NUMBER_OF_BYTES-eng: 27748022
+13:55:51.348     Stream #0:5(chi): Subtitle: hdmv_pgs_subtitle
+13:55:51.348     Metadata:
+13:55:51.348       BPS             : 22557
+13:55:51.348       BPS-eng         : 22557
+13:55:51.348       DURATION        : 02:50:54.619000000
+13:55:51.348       DURATION-eng    : 02:50:54.619000000
+13:55:51.348       NUMBER_OF_FRAMES: 4497
+13:55:51.348       NUMBER_OF_FRAMES-eng: 4497
+13:55:51.348       NUMBER_OF_BYTES : 28915400
+13:55:51.348       NUMBER_OF_BYTES-eng: 28915400
+13:55:51.349 Stream mapping:
+13:55:51.349   Stream #0:0 (hevc) -> format (graph 0)
+13:55:51.349   Stream #0:3 (pgssub) -> scale (graph 0)
+13:55:51.349   overlay (graph 0) -> Stream #0:0 (libx264)
+13:55:51.349   Stream #0:1 -> #0:1 (ac3 (native) -> mp3 (libmp3lame))
+13:55:51.349 Press [q] to stop, [?] for help
+13:55:51.996 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+13:55:52.079 [matroska,webm @ 0x7f3a00] sub2video: using 1920x816 canvas
+13:55:52.086 [libx264 @ 0x8e5600] using SAR=1/1
+13:55:52.086 [libx264 @ 0x8e5600] VBV buffer (30909) > level limit (25000)
+13:55:52.086 [libx264 @ 0x8e5600] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+13:55:52.093 [libx264 @ 0x8e5600] profile Main, level 4.0, 4:2:0, 8-bit
+13:55:52.094 [libx264 @ 0x8e5600] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=72 keyint_min=37 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=15454 vbv_bufsize=30909 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+13:55:52.094 Output #0, segment, to '/config/transcoding-temp/2A5AD9_%d.ts':
+13:55:52.095   Metadata:
+13:55:52.095     encoder         : Lavf58.35.100
+13:55:52.095     Stream #0:0: Video: h264 (libx264), yuv420p, 1920x816 [SAR 1:1 DAR 40:17], q=-1--1, 24 fps, 90k tbn, 24 tbc (default)
+13:55:52.095     Metadata:
+13:55:52.095       encoder         : Lavc58.62.100 libx264
+13:55:52.095     Side data:
+13:55:52.095       cpb: bitrate max/min/avg: 15454000/0/0 buffer size: 30909000 vbv_delay: N/A
+13:55:52.095     Stream #0:1(hin): Audio: mp3 (libmp3lame), 48000 Hz, stereo, fltp, 192 kb/s (default)
+13:55:52.095     Metadata:
+13:55:52.095       encoder         : Lavc58.62.100 libmp3lame
+13:55:52.495 frame=    0 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=   0.0kbits/s throttle=off speed=8.06e+12x    
+13:55:53.003 frame=   18 fps= 11 q=0.0 size=      21kB time=00:00:15.88 bitrate=   0.0kbits/s throttle=off speed=5.6e+12x    
+13:55:53.501 frame=   73 fps= 34 q=28.0 size=     277kB time=00:00:18.45 bitrate=   0.0kbits/s throttle=off speed=4.29e+12x    
+13:55:53.659 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:55:53.661 SegmentComplete=video:0 Index=5 Start=0.000000 End=18.000000 Duration=18.000000 offset_pts=0 start_pts=0 Frames=72 filename=2A5AD9_5.ts
+13:55:53.662 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_6.ts.tmp' for writing
+13:55:54.010 frame=  134 fps= 50 q=28.0 size=     463kB time=00:00:20.80 bitrate=   0.0kbits/s throttle=off speed=3.47e+12x    
+13:55:54.271 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:55:54.271 SegmentComplete=video:0 Index=6 Start=18.000000 End=21.000000 Duration=3.000000 offset_pts=0 start_pts=18000000 Frames=72 filename=2A5AD9_6.ts
+13:55:54.271 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_7.ts.tmp' for writing
+13:55:54.514 frame=  197 fps= 62 q=28.0 size=     649kB time=00:00:23.64 bitrate=   0.0kbits/s throttle=off speed=2.92e+12x    
+13:55:54.811 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:55:54.812 SegmentComplete=video:0 Index=7 Start=21.000000 End=24.000000 Duration=3.000000 offset_pts=0 start_pts=21000000 Frames=72 filename=2A5AD9_7.ts
+13:55:54.812 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_8.ts.tmp' for writing
+13:55:55.023 frame=  265 fps= 72 q=28.0 size=     778kB time=00:00:26.44 bitrate=   0.0kbits/s throttle=off speed=2.51e+12x    
+13:55:55.359 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:55:55.360 SegmentComplete=video:0 Index=8 Start=24.000000 End=27.000000 Duration=3.000000 offset_pts=0 start_pts=24000000 Frames=72 filename=2A5AD9_8.ts
+13:55:55.360 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_9.ts.tmp' for writing
+13:55:55.536 frame=  332 fps= 79 q=28.0 size=     976kB time=00:00:29.16 bitrate=   0.0kbits/s throttle=off speed=2.2e+12x    
+13:55:55.924 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:55:55.925 SegmentComplete=video:0 Index=9 Start=27.000000 End=30.000000 Duration=3.000000 offset_pts=0 start_pts=27000000 Frames=72 filename=2A5AD9_9.ts
+13:55:55.925 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_10.ts.tmp' for writing
+13:55:56.040 frame=  397 fps= 85 q=28.0 size=    1148kB time=00:00:31.84 bitrate=   0.0kbits/s throttle=off speed=1.97e+12x    
+13:55:56.475 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:55:56.476 SegmentComplete=video:0 Index=10 Start=30.000000 End=33.000000 Duration=3.000000 offset_pts=0 start_pts=30000000 Frames=72 filename=2A5AD9_10.ts
+13:55:56.476 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_11.ts.tmp' for writing
+13:55:56.544 frame=  460 fps= 89 q=28.0 size=    1249kB time=00:00:34.41 bitrate=   0.0kbits/s throttle=off speed=1.78e+12x    
+13:55:57.050 frame=  523 fps= 92 q=28.0 size=    1397kB time=00:00:37.08 bitrate=   0.0kbits/s throttle=off speed=1.62e+12x    
+13:55:57.072 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:55:57.072 SegmentComplete=video:0 Index=11 Start=33.000000 End=36.000000 Duration=3.000000 offset_pts=0 start_pts=33000000 Frames=72 filename=2A5AD9_11.ts
+13:55:57.072 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_12.ts.tmp' for writing
+13:55:57.547 frame=  585 fps= 94 q=28.0 size=    1560kB time=00:00:39.62 bitrate=   0.0kbits/s throttle=off speed=1.49e+12x    
+13:55:57.643 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:55:57.643 SegmentComplete=video:0 Index=12 Start=36.000000 End=39.000000 Duration=3.000000 offset_pts=0 start_pts=36000000 Frames=72 filename=2A5AD9_12.ts
+13:55:57.643 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_13.ts.tmp' for writing
+13:55:58.046 frame=  648 fps= 97 q=28.0 size=    1673kB time=00:00:42.50 bitrate=   0.0kbits/s throttle=off speed=1.38e+12x    
+13:55:58.191 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:55:58.191 SegmentComplete=video:0 Index=13 Start=39.000000 End=42.000000 Duration=3.000000 offset_pts=0 start_pts=39000000 Frames=72 filename=2A5AD9_13.ts
+13:55:58.191 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_14.ts.tmp' for writing
+13:55:58.549 frame=  713 fps= 99 q=28.0 size=    1760kB time=00:00:44.95 bitrate=   0.0kbits/s throttle=off speed=1.28e+12x    
+13:55:58.800 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:55:58.801 SegmentComplete=video:0 Index=14 Start=42.000000 End=45.000000 Duration=3.000000 offset_pts=0 start_pts=42000000 Frames=72 filename=2A5AD9_14.ts
+13:55:58.801 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_15.ts.tmp' for writing
+13:55:59.060 frame=  774 fps=100 q=28.0 size=    1916kB time=00:00:47.37 bitrate=   0.0kbits/s throttle=off speed=1.2e+12x    
+13:55:59.412 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:55:59.413 SegmentComplete=video:0 Index=15 Start=45.000000 End=48.000000 Duration=3.000000 offset_pts=0 start_pts=45000000 Frames=72 filename=2A5AD9_15.ts
+13:55:59.413 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_16.ts.tmp' for writing
+13:55:59.561 frame=  830 fps=101 q=28.0 size=    2191kB time=00:00:49.94 bitrate=   0.0kbits/s throttle=off speed=1.12e+12x    
+13:56:00.025 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:56:00.025 SegmentComplete=video:0 Index=16 Start=48.000000 End=51.000000 Duration=3.000000 offset_pts=0 start_pts=48000000 Frames=72 filename=2A5AD9_16.ts
+13:56:00.026 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_17.ts.tmp' for writing
+13:56:00.056 frame=  889 fps=102 q=28.0 size=    2389kB time=00:00:52.46 bitrate=   0.0kbits/s throttle=off speed=1.06e+12x    
+13:56:00.564 frame=  947 fps=103 q=28.0 size=    2540kB time=00:00:54.88 bitrate=   0.0kbits/s throttle=off speed=1e+12x    
+13:56:00.649 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:56:00.650 SegmentComplete=video:0 Index=17 Start=51.000000 End=54.000000 Duration=3.000000 offset_pts=0 start_pts=51000000 Frames=72 filename=2A5AD9_17.ts
+13:56:00.650 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_18.ts.tmp' for writing
+13:56:01.073 frame= 1008 fps=104 q=28.0 size=    2704kB time=00:00:57.33 bitrate=   0.0kbits/s throttle=off speed=9.49e+11x    
+13:56:01.267 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:56:01.268 SegmentComplete=video:0 Index=18 Start=54.000000 End=57.000000 Duration=3.000000 offset_pts=0 start_pts=54000000 Frames=72 filename=2A5AD9_18.ts
+13:56:01.268 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_19.ts.tmp' for writing
+13:56:01.580 frame= 1055 fps=103 q=28.0 size=    3003kB time=00:00:59.37 bitrate=   0.0kbits/s throttle=off speed=9.02e+11x    
+13:56:01.973 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:56:01.974 SegmentComplete=video:0 Index=19 Start=57.000000 End=60.000000 Duration=3.000000 offset_pts=0 start_pts=57000000 Frames=72 filename=2A5AD9_19.ts
+13:56:01.974 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_20.ts.tmp' for writing
+13:56:02.077 frame= 1113 fps=104 q=28.0 size=    3344kB time=00:01:01.80 bitrate=   0.0kbits/s throttle=off speed=8.6e+11x    
+13:56:02.547 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:56:02.547 SegmentComplete=video:0 Index=20 Start=60.000000 End=63.000000 Duration=3.000000 offset_pts=0 start_pts=60000000 Frames=72 filename=2A5AD9_20.ts
+13:56:02.547 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_21.ts.tmp' for writing
+13:56:02.579 frame= 1177 fps=105 q=28.0 size=    3434kB time=00:01:04.36 bitrate=   0.0kbits/s throttle=off speed=8.22e+11x    
+13:56:03.091 frame= 1233 fps=105 q=28.0 size=    3508kB time=00:01:06.57 bitrate=   0.0kbits/s throttle=off speed=7.86e+11x    
+13:56:03.244 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:56:03.244 SegmentComplete=video:0 Index=21 Start=63.000000 End=66.000000 Duration=3.000000 offset_pts=0 start_pts=63000000 Frames=72 filename=2A5AD9_21.ts
+13:56:03.244 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_22.ts.tmp' for writing
+13:56:03.613 frame= 1273 fps=104 q=28.0 size=    4108kB time=00:01:08.20 bitrate=   0.0kbits/s throttle=off speed=7.52e+11x    
+13:56:04.116 frame= 1315 fps=103 q=28.0 size=    4429kB time=00:01:10.03 bitrate=   0.0kbits/s throttle=off speed=7.23e+11x    
+13:56:04.163 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:56:04.164 SegmentComplete=video:0 Index=22 Start=66.000000 End=69.000000 Duration=3.000000 offset_pts=0 start_pts=66000000 Frames=72 filename=2A5AD9_22.ts
+13:56:04.164 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_23.ts.tmp' for writing
+13:56:04.617 frame= 1354 fps=102 q=28.0 size=    4930kB time=00:01:11.66 bitrate=   0.0kbits/s throttle=off speed=6.95e+11x    
+13:56:05.034 
+
+[q] command received. Exiting.
+
+13:56:05.094 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:56:05.094 SegmentComplete=video:0 Index=23 Start=69.000000 End=72.000000 Duration=3.000000 offset_pts=0 start_pts=69000000 Frames=72 filename=2A5AD9_23.ts
+13:56:05.094 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9_24.ts.tmp' for writing
+13:56:05.125 13:56:05.125 [segment @ 0x8e4a40] Opening '/config/transcoding-temp/2A5AD9.m3u8.tmp' for writing
+13:56:05.126 SegmentComplete=video:0 Index=24 Start=72.000000 End=72.583333 Duration=0.583333 offset_pts=0 start_pts=72000000 Frames=14 filename=2A5AD9_24.ts
+13:56:05.126 frame= 1382 fps=100 q=-1.0 Lsize=    5691kB time=00:01:12.86 bitrate=   0.0kbits/s throttle=off speed=6.69e+11x    
+13:56:05.126 video:4334kB audio:1357kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+13:56:05.133 EXIT
+13:56:05.135 [libx264 @ 0x8e5600] frame I:20    Avg QP: 9.54  size: 33516
+13:56:05.135 [libx264 @ 0x8e5600] frame P:441   Avg QP:17.39  size:  6473
+13:56:05.135 [libx264 @ 0x8e5600] frame B:921   Avg QP:18.61  size:   990
+13:56:05.135 [libx264 @ 0x8e5600] consecutive B-frames:  8.3%  6.9%  4.6% 80.2%
+13:56:05.135 [libx264 @ 0x8e5600] mb I  I16..4: 87.9%  0.0% 12.1%
+13:56:05.135 [libx264 @ 0x8e5600] mb P  I16..4: 19.5%  0.0%  0.0%  P16..4:  9.3%  0.0%  0.0%  0.0%  0.0%    skip:71.2%
+13:56:05.135 [libx264 @ 0x8e5600] mb B  I16..4:  0.8%  0.0%  0.0%  B16..8:  2.4%  0.0%  0.0%  direct: 2.6%  skip:94.1%  L0:44.3% L1:49.2% BI: 6.5%
+13:56:05.135 [libx264 @ 0x8e5600] coded y,uvDC,uvAC intra: 9.9% 25.9% 10.3% inter: 1.7% 4.4% 0.3%
+13:56:05.135 [libx264 @ 0x8e5600] i16 v,h,dc,p: 72% 14%  7%  7%
+13:56:05.135 [libx264 @ 0x8e5600] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24% 27% 13%  6%  6%  5%  7%  4%  8%
+13:56:05.135 [libx264 @ 0x8e5600] i8c dc,h,v,p: 69% 15% 10%  6%
+13:56:05.135 [libx264 @ 0x8e5600] Weighted P-Frames: Y:33.1% UV:21.5%
+13:56:05.135 [libx264 @ 0x8e5600] kb/s:616.44
+13:56:05.140 
+
+======= ExtraData
+H4sIAAAAAAAAA+1bS2/jxh3/KgSBAllAD5KSbEuBAL92s0bsrGE7m0OyIEbkUBqYL5BDrZTAl9566bWn9FSgtwK9tejX6QLtt+h/ZkiKL0mULMnJNos9iMN5/v6//3Pon+QLz3GQa8qDn+Q3xKY4CHM/v09+81aMaBTgb5CD5YFseYGDqNxImh/mPmt+T0zsxWMa8jufEs/lc4qf75EdYTFxPI9PZrrl0BB685f3NCDuGF7Mo2lXU3z56cPTUyPexpXJVlah75XrR/SWuGKuC891sUGxee9FgYF5N2Wg8H4mnskDBWZpLD9MaCAbP/8sH4lJJ6WDqH1Nkdnqca8JJuMJLXVratlOAK+BdS8gY+IiW0ehD+fTAwQLl0aa2AgwCnEFVFpNqDq1ofKmOLDR/PlgzUrn+OK75sdX7RwM83Knt83Jq2yXAPuwERuFZUgtZFei0qmFyveWqnsRVT5ksWks66sV+6qwLiApf2V7I2TXAKR8VhpEOHtUH9qpPg6QPwl1i3DK5ke0Dc+1yLhte+OwbVmOj8dNGiA3NDwTN/vmyDCOu0rzRLFGzS46OW4CN83m6MhAqtHt9XHf1FU+f4vOaHZpw/PnFUpa3GFIUUB1RPUfcVAmqujNQOHoi9NfYieaVTENzEvghY+o8RGPnBLfkmGruMYFz5dK5JfIPfCoZ3h2edEJpX5prfyYtSvWkLVVwiZ/2iykZdTVnkARGjByEhiZiCtgnOCpUa2tyZD1EIZnEU27D7haNeQbbBL0NWHeQ8y3ZqKG6CU2zXpcwHRGvMu3r99fyHEP3r7Y+YVne8FtQBwUEDaVPKLHSj/pfIfcMZvg/vIOmm7JDNtvhGviK8DQ5DHxKCrzC69d2LwLjdeEUhvHj/ysVy5lJs7AZnrUc0LvEGXLHLe60s2I0DaTCjSHtzjgi4LC93jLJfbBCQxU4Nodtt4EcD7YtJqcnvyIY58wO1GPYJIzMKhojHnHeBGt22Y+7g4ju6L5jPuCO+4KBnJXGajH7OSBxy3CQL5BxJX4Ia/xlG1MVjXuCsMzFzle4E+IkZ5soRhCLll+cOxBFA/EwefMv8BMba0LzbkWVVHE9JfYQpENSDM9Zw1vmBNboHhm2w9ozMnA3r6eAc7g3OL3T4zzS1mMjE6JxGeRSbYmsdhjlsN8urUc5r2qOXx2wfbIOyQUFtu+mCBwGTZMcZQ+XKM5OAxGQP6jd+uBbVfPkfEoZ/l2pPVaivSYMO4eOb6d8OE+6J7E2McupyDF5ERlKSYDtxPkNehchLjaTYgr/ybZvUtW27VkE/VfIVpjQuqJdi3+99GIEsrDldUiSDou8RGXN+/126/u9ftvzx+uHq5fy4sRqc8wnanuj0M9XKx5FX7FQhpisG3HlBawdgqwZjZaRFbhtvfZ+oLBgX/moHZ3DOpvVGWo9n6pqELrtwGLMtqKwv5f3VyeSw+er/XgsX/U+vc//vDp9//69Je//vdP//z0t5//88e/f/r5z61O6wosGA1bmqL0W+d2dIfmLVU5UfzWTDvqwU8wjC2N27nWzTdvL5tv7i7v29sNazmPU5lt9F1E07zjpjrrCPHYwW65sHGzNttYROxiCj0tkRQifUjKYA/ZED8eYJOKJDZJ6ZI0DlqbFDt+WzvrnV32W04nOlk2mU7Z5ksbWDKCAmNKnTtVPUWa50bOiGOSH9HLjgCtIlNiRsjWJxiB0ulwDohTy8PiZH0x9GNAKN54VLJFMZoBtTQNrZeqOWimm1iUPAoHVfi/7Opo6hFTd/EYovMpLF/O3UwSopENCpct9pR6JSzMdHKQrzuYIhNRVC4eqcWuxgT5vIhX1ZUZMKELyzPhuL6Q14LCoLWhWTZDra6bdNK6yWt3SYRokxEod7c6iU1G1Ss2BjjEZRWDDGxusQJSrtbiVVZYJmQ8yfazeY5V7NVt5WjBtu/5FWwA0+/goTJwsB6wRHbYHQSGbnveI2LEH6rs1RDc08D1QKSB5yAgweBkdmIaFMb5oIeEH3voem5OEYygTCutE/N+s9w9nXNcmvFYyxNvFrAItlyw6Pa6fRBhpu8oskKWDJcMjtJX+n0tb6EMnU5AdhPPNksDckg/4jmrkTk8LVm11bjuvLrsvKxcqq6hq+N3bOSU1Yf7pTqMLQlpfQqzsEGjyhJ0wVAZZXLkJLnM0thxfDBkmV/WhiWl33z30x/kqWdHQGLtBznbH+yg74WcuxUFbRGkMBkswovVflD/ndliXvVDWuvlkRRHKvnFy2ShERCOHDM/ykD5INz0qaUOk7uIYUyCtAL8JXTsfOC3BKeWNuR1/iEDdSCK+cOmNlhRsR8mFfq0TPxlOnXaFBfWT63OcDaMS+GD+ZDXuweLIvdQydrM6pua/CGBwjA1legES4RVMqUp03iJehKYDMmz+Bu2XWIRbEo+K2dJApWwlZTKxRrXxH3MFkXlUtarZJNieIC90FtkJlKPJQs7L1TloOmtuBgZnKhHMfnZUkzllHx+zB7P7hivuSYK1YxXAA45OnF1RVfSV1Xrf8fvagZMiIxjuVutU37FxJo0OXPTlY0eM0CI5npI5C9RTvlNRB4hB3HTtS94sgfMQfCUv/TJU+ieMb9EIGa+JeSabS+QjCzJHLAPMYH2z5/ROEBboaOsIk9nC/Ik9iHDneRi8SDUyVzNZdiDtqZPBUCZI9ZnzzuxLwklvOEzgvEBE+Qn9ocTa8dsOaAu1eNK4/lnOqyQN1WBHDsTJVhseXdqkBrlQ/uX3Anr68B5ZFk4iBXA4pdCDWY7JQc9csvqSMgwcBiSEbO0HtcJEVNBJkfcnGYs8OZ3tZISm2UL8gMp5CmXJD5/SEQw4svvVAIoop7OqRJwV1tXEKrCLeJOhLHu+PXlc0uMRx4OgSOjxI28KJRCCODgrZg3tVENyQzAbLFnyEgO4OB2TOCi3DZV8XyAlRCMte5BwYVxfdkY8het5J39Knk+IDpoLLbu1J+Fbh8SsO0VvbNPRc9EGy8Y6+9WyaeI2Cij4xhex3GuUHdJfGT1a/MdadS1cVwY0YLDEMYqhCPn2LQa+/+vUkYu1NyukrHnMkYq1Rcj4udRw3iB0HhTPhXDxv1VOPLR10uHxwWCASC8mlz4oPQZzNhx/LgRp6DbNL79KeLF4FCr7EidlLOTjUZXIL+L2si+8FsZa9QALlGMOrh1auNWkdfuQvf2F9/U1tMakC4KSWlpKRdXLOCL44oChHldbiz7Q5dCzDFhF7OJ0+B3WRs7BLXXU6s/Flx8TNBSvwjh/K9W2LwEOGW1eeOfAFZEu8ydxedImVerdpn1A7coCLGpCyBynkA0be4KtgAna6shUeNnX12FegZ05RMvYKmTKSB2dbvrcoCuCheZvahC2xYAtpfAKlrtQRSlo9eUxOEqAC+v6SWMNlLvVQJNebZdDWB7lpU18MAWcocKv6/SQCcLrVaGNoSpuXPdA3QiRtSFM96YcothBUP27OKAEMSy4sC2ZYGXRLrC422EdUlSKeTblgc2QqMk8UOQsaby3sWoxqxhHz/9Cq1/2VRuxI8KfqUMSZoPw5GSGA+jTVmyFHJ9dR+5/rOCwzS3ApcxXwIFP6b4djAHj1rITIsBZScXUK4oqmdZtI9EdFfedEdg5U1nBqWVKafC/xj86X+aLru5cUEAAA==

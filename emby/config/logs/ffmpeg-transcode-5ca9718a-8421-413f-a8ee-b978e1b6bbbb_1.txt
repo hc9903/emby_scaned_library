@@ -1,0 +1,974 @@
+2020-05-23 04:41:42.525
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome Android
+
+http://emby.super0.me:8096/videos/8675/hls1/main/1225.ts?DeviceId=5f44ca82-da4c-431e-b855-db1136acebe0&MediaSourceId=08ecf0c9ef09e82bac9bf2a013ea4652&PlaySessionId=8d6f0f99d9a64b3ebae3299cc8fffbd9&api_key=69a8c8e4d325445b972db49b3c282f55&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=59808000&AudioBitrate=192000&AudioStreamIndex=0&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=False&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=ContainerNotSupported
+
+{"Protocol":"File","Id":"08ecf0c9ef09e82bac9bf2a013ea4652","Path":"/00/22/SEX分类/无码/あずみ恋/【あずみ恋】043013-325/043013-325 AV女優と飲み…そして泊まりSEX by HAMAR　前編.wmv","Type":"Default","Container":"asf","Size":2121336128,"Name":"043013-325 AV女優と飲み…そして泊まりSEX by HAMAR　前編","IsRemote":false,"RunTimeTicks":40451440000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"wmav2","TimeBase":"1/1000","CodecTimeBase":"1/48000","DisplayTitle":"WMAV2 2 ch","IsInterlaced":false,"BitRate":192000,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"wmv3","CodecTag":"WMV3","TimeBase":"1/1000","CodecTimeBase":"1001/30000","VideoRange":"SDR","DisplayTitle":"720p WMV3","IsInterlaced":false,"BitRate":4000000,"BitDepth":8,"RefFrames":1,"IsDefault":false,"IsForced":false,"Height":720,"Width":1280,"AverageFrameRate":29.97003,"RealFrameRate":29.97003,"Profile":"Main","Type":"Video","AspectRatio":"16:9","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p","Level":-99,"IsAnamorphic":false}],"Formats":[],"Bitrate":4195323,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for 1124721976
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: wmv3, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    wmv3                 >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -ss 01:01:15.000 -async 1  -f asf -i file:"/00/22/SEX分类/无码/あずみ恋/【あずみ恋】043013-325/043013-325 AV女優と飲み…そして泊まりSEX by HAMAR　前編.wmv" -threads 0 -map 0:1 -map 0:0 -sn -c:v:0 libx264 -pix_fmt yuv420p  -maxrate 4000000 -bufsize 8000000 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 90 -keyint_min:v:0 90 -sc_threshold:v:0 0  -copyts -vsync -1 -codec:a:0 libmp3lame -disposition:a:0 default -ac:a:0 2 -ab:a:0 192000  -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 1225 -segment_list "/config/transcoding-temp/464C3C.m3u8" -y "/config/transcoding-temp/464C3C_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-5ca9718a-8421-413f-a8ee-b978e1b6bbbb_1graph.txt -async 1 -copyts -start_at_zero -f asf -ss 01:01:15.000 -c:v:0 wmv3 -i "/00/22/SEX分类/无码/あずみ恋/【あずみ恋】043013-325/043013-325 AV女優と飲み…そして泊まりSEX by HAMAR　前編.wmv" -map 0:1 -map 0:0 -sn -c:v:0 libx264 -g:v:0 90 -maxrate:v:0 4000000 -bufsize:v:0 8000000 -sc_threshold:v:0 0 -keyint_min:v:0 90 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 3.1 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 2 -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/464C3C.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 1225 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/464C3C_%d.ts"
+
+04:41:42.558 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+04:41:42.558   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+04:41:42.558 Execution Date: 2020-05-23 04:41:42
+04:41:43.334 [wmv3 @ 0x98b600] Extra data: 8 bits left, value: 0
+04:41:45.705 Guessed Channel Layout for Input Stream #0.0 : stereo
+04:41:45.705 Input #0, asf, from '/00/22/SEX分类/无码/あずみ恋/【あずみ恋】043013-325/043013-325 AV女優と飲み…そして泊まりSEX by HAMAR　前編.wmv':
+04:41:45.705   Metadata:
+04:41:45.705     VBR Peak        : 7000000
+04:41:45.705     DeviceConformanceTemplate: MP@HL
+04:41:45.705     NumberOfFrames  : 121219
+04:41:45.705     WMFSDKVersion   : 12.0.7601.17514
+04:41:45.705     WMFSDKNeeded    : 0.0.0.0000
+04:41:45.705     IsVBR           : 1
+04:41:45.705     Buffer Average  : 210513
+04:41:45.705   Duration: 01:07:25.14, start: 0.000000, bitrate: 4195 kb/s
+04:41:45.705     Stream #0:0: Audio: wmav2 (a[1][0][0] / 0x0161), 48000 Hz, stereo, fltp, 192 kb/s
+04:41:45.705     Stream #0:1: Video: wmv3 (Main) (WMV3 / 0x33564D57), yuv420p, 1280x720, 4000 kb/s, SAR 1:1 DAR 16:9, 29.97 fps, 29.97 tbr, 1k tbn, 1k tbc
+04:41:45.707 [wmv3 @ 0x9bf3c0] Extra data: 8 bits left, value: 0
+04:41:45.708 Stream mapping:
+04:41:45.708   Stream #0:1 -> #0:0 (wmv3 (native) -> h264 (libx264))
+04:41:45.708   Stream #0:0 -> #0:1 (wmav2 (native) -> mp3 (libmp3lame))
+04:41:45.708 Press [q] to stop, [?] for help
+04:41:46.537 -async is forwarded to lavfi similarly to -af aresample=async=1:min_hard_comp=0.100000:first_pts=0.
+04:41:52.616 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 3673.471000
+04:41:52.631 [libx264 @ 0x9b7e80] using SAR=1/1
+04:41:52.631 [libx264 @ 0x9b7e80] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+04:41:52.642 [libx264 @ 0x9b7e80] profile Main, level 3.1, 4:2:0, 8-bit
+04:41:52.643 [libx264 @ 0x9b7e80] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=90 keyint_min=46 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=4000 vbv_bufsize=8000 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+04:41:52.644 Output #0, segment, to '/config/transcoding-temp/464C3C_%d.ts':
+04:41:52.644   Metadata:
+04:41:52.644     encoder         : Lavf58.35.100
+04:41:52.644     Stream #0:0: Video: h264 (libx264), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], q=-1--1, 29.97 fps, 90k tbn, 29.97 tbc
+04:41:52.644     Metadata:
+04:41:52.644       encoder         : Lavc58.62.100 libx264
+04:41:52.644     Side data:
+04:41:52.644       cpb: bitrate max/min/avg: 4000000/0/0 buffer size: 8000000 vbv_delay: N/A
+04:41:52.644     Stream #0:1: Audio: mp3 (libmp3lame), 48000 Hz, stereo, fltp, 192 kb/s (default)
+04:41:52.644     Metadata:
+04:41:52.644       encoder         : Lavc58.62.100 libmp3lame
+04:41:52.644 frame=    0 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A throttle=off speed=   0x    
+04:41:52.685 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 878.335667
+04:41:52.729 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 879.361167
+04:41:52.768 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 880.386167
+04:41:52.806 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 881.411500
+04:41:52.840 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 882.437167
+04:41:52.893 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 883.590500
+04:41:52.960 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 884.615833
+04:41:53.029 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 885.641167
+04:41:53.078 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 886.666500
+04:41:53.126 frame=   46 fps=6.2 q=29.0 size=     149kB time=01:01:15.77 bitrate=   0.3kbits/s throttle=off speed= 496x    
+04:41:53.131 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 887.819833
+04:41:53.181 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 888.845167
+04:41:53.238 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 889.870500
+04:41:53.290 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 890.895833
+04:41:53.347 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 892.049167
+04:41:53.401 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 893.074500
+04:41:53.474 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 894.099833
+04:41:53.521 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 895.125167
+04:41:53.573 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 896.278500
+04:41:53.627 frame=  142 fps= 18 q=29.0 size=     756kB time=01:01:18.97 bitrate=   1.7kbits/s throttle=off speed= 465x    
+04:41:53.628 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 897.303833
+04:41:53.673 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 898.329167
+04:41:53.717 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 899.354500
+04:41:53.769 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 900.507833
+04:41:53.815 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 901.532833
+04:41:53.858 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 902.558167
+04:41:53.932 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 903.603333
+04:41:53.977 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 904.609333
+04:41:54.024 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 905.634667
+04:41:54.072 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 906.788000
+04:41:54.121 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 907.813167
+04:41:54.131 frame=  249 fps= 30 q=29.0 size=    1262kB time=01:01:22.54 bitrate=   2.8kbits/s throttle=off speed= 437x    
+04:41:54.173 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 908.838500
+04:41:54.224 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 909.864167
+04:41:54.287 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 911.017500
+04:41:54.370 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 912.042833
+04:41:54.430 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 913.068167
+04:41:54.498 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 914.093500
+04:41:54.563 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 915.118500
+04:41:54.634 frame=  331 fps= 37 q=29.0 size=    1945kB time=01:01:25.28 bitrate=   4.3kbits/s throttle=off speed= 413x    
+04:41:54.635 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 916.271833
+04:41:54.691 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 917.296833
+04:41:54.742 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 918.322167
+04:41:54.800 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 919.358333
+04:41:54.865 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 920.500667
+04:41:54.969 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 921.536667
+04:41:55.041 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 922.551667
+04:41:55.089 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 923.587667
+04:41:55.120 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:41:55.120 SegmentComplete=video:0 Index=1225 Start=0.000000 End=3678.007667 Duration=3678.007667 offset_pts=0 start_pts=0 Frames=90 filename=464C3C_1225.ts
+04:41:55.120 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1226.ts.tmp' for writing
+04:41:55.135 frame=  414 fps= 44 q=29.0 size=    2748kB time=01:01:28.05 bitrate=   6.1kbits/s throttle=off speed= 391x    
+04:41:55.140 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 924.620667
+04:41:55.188 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 925.643667
+04:41:55.231 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 926.653667
+04:41:55.278 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 927.807000
+04:41:55.322 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 928.831500
+04:41:55.387 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 929.857500
+04:41:55.437 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 931.010833
+04:41:55.485 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 932.035833
+04:41:55.538 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 933.061167
+04:41:55.555 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:41:55.556 SegmentComplete=video:0 Index=1226 Start=3678.007667 End=3681.010667 Duration=3.003000 offset_pts=0 start_pts=3678007667 Frames=90 filename=464C3C_1226.ts
+04:41:55.556 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1227.ts.tmp' for writing
+04:41:55.601 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 934.086500
+04:41:55.639 frame=  516 fps= 52 q=29.0 size=    3397kB time=01:01:31.45 bitrate=   7.5kbits/s throttle=off speed= 372x    
+04:41:55.655 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 935.111833
+04:41:55.705 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 936.137167
+04:41:55.764 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 937.290167
+04:41:55.814 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 938.315500
+04:41:55.878 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 939.341167
+04:41:55.930 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 940.494500
+04:41:55.975 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 941.519833
+04:41:56.011 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:41:56.011 SegmentComplete=video:0 Index=1227 Start=3681.010667 End=3684.013667 Duration=3.003000 offset_pts=0 start_pts=3681010667 Frames=90 filename=464C3C_1227.ts
+04:41:56.011 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1228.ts.tmp' for writing
+04:41:56.025 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 942.565000
+04:41:56.069 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 943.581000
+04:41:56.118 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 944.596000
+04:41:56.139 frame=  619 fps= 59 q=29.0 size=    4136kB time=01:01:34.89 bitrate=   9.2kbits/s throttle=off speed= 354x    
+04:41:56.164 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 945.749333
+04:41:56.206 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 946.774833
+04:41:56.276 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 947.799833
+04:41:56.317 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 948.824833
+04:41:56.366 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 949.850167
+04:41:56.411 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 951.003500
+04:41:56.427 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:41:56.427 SegmentComplete=video:0 Index=1228 Start=3684.013667 End=3687.016667 Duration=3.003000 offset_pts=0 start_pts=3684013667 Frames=90 filename=464C3C_1228.ts
+04:41:56.427 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1229.ts.tmp' for writing
+04:41:56.456 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 952.028833
+04:41:56.498 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 953.064667
+04:41:56.545 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 954.097667
+04:41:56.583 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 955.105667
+04:41:56.634 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 956.258500
+04:41:56.639 frame=  731 fps= 67 q=29.0 size=    4651kB time=01:01:38.62 bitrate=  10.3kbits/s throttle=off speed= 338x    
+04:41:56.697 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 957.283833
+04:41:56.739 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 958.309167
+04:41:56.784 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 959.334500
+04:41:56.829 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:41:56.829 SegmentComplete=video:0 Index=1229 Start=3687.016667 End=3690.019667 Duration=3.003000 offset_pts=0 start_pts=3687016667 Frames=90 filename=464C3C_1229.ts
+04:41:56.829 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1230.ts.tmp' for writing
+04:41:56.830 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 960.359833
+04:41:56.886 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 961.513167
+04:41:56.935 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 962.538500
+04:41:56.979 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 963.563833
+04:41:57.024 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 964.588833
+04:41:57.080 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 965.742167
+04:41:57.144 frame=  834 fps= 73 q=29.0 size=    5164kB time=01:01:42.06 bitrate=  11.4kbits/s throttle=off speed= 324x    
+04:41:57.149 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 966.768167
+04:41:57.196 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 967.803667
+04:41:57.245 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 968.818667
+04:41:57.271 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:41:57.272 SegmentComplete=video:0 Index=1230 Start=3690.019667 End=3693.022667 Duration=3.003000 offset_pts=0 start_pts=3690019667 Frames=90 filename=464C3C_1230.ts
+04:41:57.272 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1231.ts.tmp' for writing
+04:41:57.294 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 969.854667
+04:41:57.344 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 970.997000
+04:41:57.392 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 972.042000
+04:41:57.431 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 973.048000
+04:41:57.482 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 974.073333
+04:41:57.551 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 975.237333
+04:41:57.601 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 976.262667
+04:41:57.643 frame=  940 fps= 79 q=29.0 size=    5820kB time=01:01:45.60 bitrate=  12.9kbits/s throttle=off speed= 311x    
+04:41:57.644 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 977.277333
+04:41:57.685 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 978.302667
+04:41:57.689 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:41:57.689 SegmentComplete=video:0 Index=1231 Start=3693.022667 End=3696.025667 Duration=3.003000 offset_pts=0 start_pts=3693022667 Frames=90 filename=464C3C_1231.ts
+04:41:57.689 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1232.ts.tmp' for writing
+04:41:57.726 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 979.327833
+04:41:57.774 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 980.481167
+04:41:57.816 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 981.506500
+04:41:57.857 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 982.531833
+04:41:57.898 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 983.557167
+04:41:57.966 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 984.710500
+04:41:58.016 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 985.735500
+04:41:58.065 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 986.760833
+04:41:58.097 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:41:58.097 SegmentComplete=video:0 Index=1232 Start=3696.025667 End=3699.028667 Duration=3.003000 offset_pts=0 start_pts=3696025667 Frames=90 filename=464C3C_1232.ts
+04:41:58.097 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1233.ts.tmp' for writing
+04:41:58.110 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 987.786167
+04:41:58.144 frame= 1052 fps= 85 q=29.0 size=    6401kB time=01:01:49.33 bitrate=  14.1kbits/s throttle=off speed= 298x    
+04:41:58.161 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 988.939500
+04:41:58.205 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 989.964833
+04:41:58.250 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 990.990167
+04:41:58.298 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 992.015500
+04:41:58.362 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 993.052333
+04:41:58.404 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 994.067333
+04:41:58.453 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 995.220167
+04:41:58.494 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 996.245500
+04:41:58.502 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:41:58.503 SegmentComplete=video:0 Index=1233 Start=3699.028667 End=3702.031667 Duration=3.003000 offset_pts=0 start_pts=3699028667 Frames=90 filename=464C3C_1233.ts
+04:41:58.503 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1234.ts.tmp' for writing
+04:41:58.536 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 997.270833
+04:41:58.582 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 998.296167
+04:41:58.632 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 999.449500
+04:41:58.644 frame= 1164 fps= 90 q=29.0 size=    7072kB time=01:01:53.07 bitrate=  15.6kbits/s throttle=off speed= 287x    
+04:41:58.674 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1000.474833
+04:41:58.715 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1001.499500
+04:41:58.781 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1002.652833
+04:41:58.837 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1003.678833
+04:41:58.881 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1004.703833
+04:41:58.916 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:41:58.917 SegmentComplete=video:0 Index=1234 Start=3702.031667 End=3705.034667 Duration=3.003000 offset_pts=0 start_pts=3702031667 Frames=90 filename=464C3C_1234.ts
+04:41:58.917 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1235.ts.tmp' for writing
+04:41:58.931 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1005.729167
+04:41:58.977 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1006.754500
+04:41:59.026 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1007.907833
+04:41:59.071 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1008.933167
+04:41:59.126 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1009.958500
+04:41:59.146 frame= 1270 fps= 95 q=29.0 size=    7722kB time=01:01:56.61 bitrate=  17.0kbits/s throttle=off speed= 277x    
+04:41:59.194 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1010.983833
+04:41:59.245 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1012.009167
+04:41:59.305 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1013.173000
+04:41:59.355 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1014.188000
+04:41:59.370 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:41:59.371 SegmentComplete=video:0 Index=1235 Start=3705.034667 End=3708.037667 Duration=3.003000 offset_pts=0 start_pts=3705034667 Frames=90 filename=464C3C_1235.ts
+04:41:59.371 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1236.ts.tmp' for writing
+04:41:59.407 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1015.213333
+04:41:59.456 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1016.238500
+04:41:59.508 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1017.280000
+04:41:59.556 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1018.289000
+04:41:59.610 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1019.442333
+04:41:59.665 frame= 1367 fps= 98 q=29.0 size=    8449kB time=01:01:59.84 bitrate=  18.6kbits/s throttle=off speed= 267x    
+04:41:59.685 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1020.467667
+04:41:59.739 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1021.508333
+04:41:59.792 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1022.645667
+04:41:59.834 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:41:59.834 SegmentComplete=video:0 Index=1236 Start=3708.037667 End=3711.040667 Duration=3.003000 offset_pts=0 start_pts=3708037667 Frames=90 filename=464C3C_1236.ts
+04:41:59.834 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1237.ts.tmp' for writing
+04:41:59.845 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1023.682667
+04:41:59.899 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1024.696667
+04:41:59.947 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1025.722167
+04:41:59.999 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1026.758667
+04:42:00.062 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1027.911500
+04:42:00.115 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1028.926000
+04:42:00.165 frame= 1463 fps=101 q=29.0 size=    9349kB time=01:02:03.05 bitrate=  20.6kbits/s throttle=off speed= 258x    
+04:42:00.183 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1029.963000
+04:42:00.234 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1030.978000
+04:42:00.298 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1032.130833
+04:42:00.317 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:00.317 SegmentComplete=video:0 Index=1237 Start=3711.040667 End=3714.043667 Duration=3.003000 offset_pts=0 start_pts=3711040667 Frames=90 filename=464C3C_1237.ts
+04:42:00.317 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1238.ts.tmp' for writing
+04:42:00.346 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1033.156167
+04:42:00.400 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1034.181500
+04:42:00.464 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1035.334833
+04:42:00.525 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1036.375667
+04:42:00.580 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1037.385667
+04:42:00.650 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1038.421667
+04:42:00.669 frame= 1553 fps=104 q=29.0 size=   10122kB time=01:02:06.05 bitrate=  22.3kbits/s throttle=off speed= 249x    
+04:42:00.709 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1039.446167
+04:42:00.756 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1040.460667
+04:42:00.802 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1041.486167
+04:42:00.807 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:00.807 SegmentComplete=video:0 Index=1238 Start=3714.043667 End=3717.046667 Duration=3.003000 offset_pts=0 start_pts=3714043667 Frames=90 filename=464C3C_1238.ts
+04:42:00.807 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1239.ts.tmp' for writing
+04:42:00.860 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1042.639500
+04:42:00.916 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1043.664833
+04:42:00.975 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1044.690167
+04:42:01.102 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1045.843500
+04:42:01.156 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1046.879333
+04:42:01.197 frame= 1637 fps=106 q=29.0 size=   10821kB time=01:02:08.85 bitrate=  23.8kbits/s throttle=off speed= 241x    
+04:42:01.233 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1047.894333
+04:42:01.292 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1048.930333
+04:42:01.348 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1050.072667
+04:42:01.373 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:01.373 SegmentComplete=video:0 Index=1239 Start=3717.046667 End=3720.049667 Duration=3.003000 offset_pts=0 start_pts=3717046667 Frames=90 filename=464C3C_1239.ts
+04:42:01.373 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1240.ts.tmp' for writing
+04:42:01.397 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1051.108667
+04:42:01.446 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1052.123667
+04:42:01.502 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1053.149000
+04:42:01.553 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1054.174333
+04:42:01.607 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1055.327667
+04:42:01.682 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1056.353000
+04:42:01.697 frame= 1732 fps=108 q=29.0 size=   11475kB time=01:02:12.02 bitrate=  25.2kbits/s throttle=off speed= 233x    
+04:42:01.735 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1057.378500
+04:42:01.800 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1058.531833
+04:42:01.880 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:01.880 SegmentComplete=video:0 Index=1240 Start=3720.049667 End=3723.052667 Duration=3.003000 offset_pts=0 start_pts=3720049667 Frames=90 filename=464C3C_1240.ts
+04:42:01.880 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1241.ts.tmp' for writing
+04:42:01.881 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1059.556833
+04:42:01.934 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1060.593333
+04:42:01.986 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1061.627333
+04:42:02.029 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1062.633333
+04:42:02.085 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1063.786667
+04:42:02.130 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1064.812000
+04:42:02.201 frame= 1823 fps=111 q=29.0 size=   12093kB time=01:02:15.06 bitrate=  26.5kbits/s throttle=off speed= 227x    
+04:42:02.201 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1065.837167
+04:42:02.248 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1066.862500
+04:42:02.300 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1068.015500
+04:42:02.329 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:02.329 SegmentComplete=video:0 Index=1241 Start=3723.052667 End=3726.055667 Duration=3.003000 offset_pts=0 start_pts=3723052667 Frames=90 filename=464C3C_1241.ts
+04:42:02.329 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1242.ts.tmp' for writing
+04:42:02.350 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1069.040833
+04:42:02.412 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1070.066500
+04:42:02.463 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1071.091833
+04:42:02.512 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1072.245167
+04:42:02.558 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1073.270500
+04:42:02.637 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1074.295833
+04:42:02.685 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1075.320833
+04:42:02.705 frame= 1922 fps=113 q=29.0 size=   12637kB time=01:02:18.36 bitrate=  27.7kbits/s throttle=off speed= 220x    
+04:42:02.738 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1076.474167
+04:42:02.792 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1077.515667
+04:42:02.796 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:02.797 SegmentComplete=video:0 Index=1242 Start=3726.055667 End=3729.058667 Duration=3.003000 offset_pts=0 start_pts=3726055667 Frames=90 filename=464C3C_1242.ts
+04:42:02.797 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1243.ts.tmp' for writing
+04:42:02.845 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1078.524667
+04:42:02.896 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1079.560667
+04:42:02.961 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1080.704000
+04:42:03.016 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1081.745000
+04:42:03.066 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1082.754000
+04:42:03.137 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1083.790000
+04:42:03.178 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1084.805000
+04:42:03.205 frame= 2018 fps=115 q=29.0 size=   13229kB time=01:02:21.57 bitrate=  29.0kbits/s throttle=off speed= 214x    
+04:42:03.232 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1085.968333
+04:42:03.262 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:03.263 SegmentComplete=video:0 Index=1243 Start=3729.058667 End=3732.061667 Duration=3.003000 offset_pts=0 start_pts=3729058667 Frames=90 filename=464C3C_1243.ts
+04:42:03.263 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1244.ts.tmp' for writing
+04:42:03.275 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1086.983333
+04:42:03.323 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1088.019333
+04:42:03.367 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1089.034333
+04:42:03.411 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1090.059833
+04:42:03.460 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1091.213167
+04:42:03.529 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1092.238500
+04:42:03.580 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1093.263833
+04:42:03.633 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1094.289167
+04:42:03.689 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1095.442500
+04:42:03.698 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:03.699 SegmentComplete=video:0 Index=1244 Start=3732.061667 End=3735.064667 Duration=3.003000 offset_pts=0 start_pts=3732061667 Frames=90 filename=464C3C_1244.ts
+04:42:03.699 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1245.ts.tmp' for writing
+04:42:03.708 frame= 2123 fps=118 q=29.0 size=   13779kB time=01:02:25.07 bitrate=  30.1kbits/s throttle=off speed= 208x    
+04:42:03.734 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1096.467500
+04:42:03.780 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1097.493500
+04:42:03.826 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1098.518500
+04:42:03.879 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1099.671833
+04:42:03.931 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1100.697167
+04:42:04.008 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1101.722500
+04:42:04.057 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1102.747833
+04:42:04.111 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1103.773167
+04:42:04.178 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:04.179 SegmentComplete=video:0 Index=1245 Start=3735.064667 End=3738.067667 Duration=3.003000 offset_pts=0 start_pts=3735064667 Frames=90 filename=464C3C_1245.ts
+04:42:04.179 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1246.ts.tmp' for writing
+04:42:04.190 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1104.926167
+04:42:04.210 frame= 2217 fps=120 q=29.0 size=   14324kB time=01:02:28.21 bitrate=  31.3kbits/s throttle=off speed= 203x    
+04:42:04.243 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1105.951500
+04:42:04.299 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1106.977167
+04:42:04.346 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1108.002500
+04:42:04.392 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1109.027833
+04:42:04.468 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1110.181167
+04:42:04.515 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1111.217000
+04:42:04.560 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1112.232000
+04:42:04.618 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1113.385333
+04:42:04.634 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:04.635 SegmentComplete=video:0 Index=1246 Start=3738.067667 End=3741.070667 Duration=3.003000 offset_pts=0 start_pts=3738067667 Frames=90 filename=464C3C_1246.ts
+04:42:04.635 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1247.ts.tmp' for writing
+04:42:04.670 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1114.410833
+04:42:04.714 frame= 2317 fps=122 q=29.0 size=   14909kB time=01:02:31.54 bitrate=  32.6kbits/s throttle=off speed= 197x    
+04:42:04.720 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1115.436167
+04:42:04.769 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1116.460833
+04:42:04.822 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1117.503333
+04:42:04.884 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1118.658667
+04:42:04.948 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1119.664667
+04:42:04.998 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1120.690167
+04:42:05.040 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1121.725667
+04:42:05.082 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:05.083 SegmentComplete=video:0 Index=1247 Start=3741.070667 End=3744.073667 Duration=3.003000 offset_pts=0 start_pts=3741070667 Frames=90 filename=464C3C_1247.ts
+04:42:05.083 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1248.ts.tmp' for writing
+04:42:05.083 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1122.741667
+04:42:05.128 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1123.785667
+04:42:05.174 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1124.920000
+04:42:05.215 frame= 2422 fps=124 q=29.0 size=   15517kB time=01:02:35.05 bitrate=  33.9kbits/s throttle=off speed= 193x    
+04:42:05.221 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1125.945333
+04:42:05.269 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1126.970667
+04:42:05.310 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1127.996000
+04:42:05.359 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1129.149333
+04:42:05.405 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1130.174667
+04:42:05.451 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1131.200000
+04:42:05.478 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:05.479 SegmentComplete=video:0 Index=1248 Start=3744.073667 End=3747.076667 Duration=3.003000 offset_pts=0 start_pts=3744073667 Frames=90 filename=464C3C_1248.ts
+04:42:05.479 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1249.ts.tmp' for writing
+04:42:05.502 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1132.224833
+04:42:05.555 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1133.378167
+04:42:05.611 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1134.420667
+04:42:05.659 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1135.439667
+04:42:05.712 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1136.454667
+04:42:05.712 frame= 2528 fps=126 q=29.0 size=   16150kB time=01:02:38.58 bitrate=  35.2kbits/s throttle=off speed= 188x    
+04:42:05.767 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1137.608000
+04:42:05.820 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1138.633333
+04:42:05.865 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1139.658500
+04:42:05.911 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1140.683833
+04:42:05.915 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:05.916 SegmentComplete=video:0 Index=1249 Start=3747.076667 End=3750.079667 Duration=3.003000 offset_pts=0 start_pts=3747076667 Frames=90 filename=464C3C_1249.ts
+04:42:05.916 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1250.ts.tmp' for writing
+04:42:05.960 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1141.709167
+04:42:06.013 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1142.862500
+04:42:06.058 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1143.887833
+04:42:06.104 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1144.913167
+04:42:06.150 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1145.938500
+04:42:06.218 frame= 2633 fps=128 q=29.0 size=   16814kB time=01:02:42.09 bitrate=  36.6kbits/s throttle=off speed= 183x    
+04:42:06.222 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1147.102667
+04:42:06.264 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1148.116667
+04:42:06.311 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1149.153667
+04:42:06.333 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:06.333 SegmentComplete=video:0 Index=1250 Start=3750.079667 End=3753.082667 Duration=3.003000 offset_pts=0 start_pts=3750079667 Frames=90 filename=464C3C_1250.ts
+04:42:06.333 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1251.ts.tmp' for writing
+04:42:06.350 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1150.167667
+04:42:06.394 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1151.321000
+04:42:06.436 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1152.346500
+04:42:06.489 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1153.382000
+04:42:06.542 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1154.397000
+04:42:06.606 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1155.550333
+04:42:06.654 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1156.586333
+04:42:06.696 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1157.601333
+04:42:06.720 frame= 2745 fps=131 q=29.0 size=   17479kB time=01:02:45.82 bitrate=  38.0kbits/s throttle=off speed= 179x    
+04:42:06.738 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1158.642333
+04:42:06.746 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:06.747 SegmentComplete=video:0 Index=1251 Start=3753.082667 End=3756.085667 Duration=3.003000 offset_pts=0 start_pts=3753082667 Frames=90 filename=464C3C_1251.ts
+04:42:06.747 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1252.ts.tmp' for writing
+04:42:06.788 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1159.779667
+04:42:06.831 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1160.825667
+04:42:06.874 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1161.830667
+04:42:06.920 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1162.866667
+04:42:06.963 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1163.901667
+04:42:07.023 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1165.034000
+04:42:07.073 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1166.059500
+04:42:07.134 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1167.096000
+04:42:07.175 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:07.175 SegmentComplete=video:0 Index=1252 Start=3756.085667 End=3759.088667 Duration=3.003000 offset_pts=0 start_pts=3756085667 Frames=90 filename=464C3C_1252.ts
+04:42:07.175 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1253.ts.tmp' for writing
+04:42:07.193 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1168.111000
+04:42:07.226 frame= 2850 fps=132 q=29.0 size=   18018kB time=01:02:49.33 bitrate=  39.2kbits/s throttle=off speed= 175x    
+04:42:07.248 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1169.135500
+04:42:07.306 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1170.160833
+04:42:07.377 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1171.314833
+04:42:07.467 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1172.339833
+04:42:07.547 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1173.365167
+04:42:07.598 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1174.390500
+04:42:07.663 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1175.543833
+04:42:07.716 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1176.579667
+04:42:07.726 frame= 2930 fps=133 q=29.0 size=   18628kB time=01:02:52.00 bitrate=  40.5kbits/s throttle=off speed= 171x    
+04:42:07.731 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:07.732 SegmentComplete=video:0 Index=1253 Start=3759.088667 End=3762.091667 Duration=3.003000 offset_pts=0 start_pts=3759088667 Frames=90 filename=464C3C_1253.ts
+04:42:07.732 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1254.ts.tmp' for writing
+04:42:07.775 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1177.605000
+04:42:07.821 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1178.619667
+04:42:07.885 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1179.773000
+04:42:07.942 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1180.798333
+04:42:08.001 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1181.823667
+04:42:08.087 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1182.849000
+04:42:08.138 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1183.874333
+04:42:08.195 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1185.027667
+04:42:08.227 frame= 3019 fps=134 q=29.0 size=   19300kB time=01:02:54.97 bitrate=  41.9kbits/s throttle=off speed= 168x    
+04:42:08.236 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:08.236 SegmentComplete=video:0 Index=1254 Start=3762.091667 End=3765.094667 Duration=3.003000 offset_pts=0 start_pts=3762091667 Frames=90 filename=464C3C_1254.ts
+04:42:08.236 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1255.ts.tmp' for writing
+04:42:08.248 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1186.053000
+04:42:08.294 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1187.078333
+04:42:08.338 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1188.103667
+04:42:08.380 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1189.128833
+04:42:08.430 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1190.298667
+04:42:08.467 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1191.307667
+04:42:08.529 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1192.343667
+04:42:08.567 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1193.369000
+04:42:08.606 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1194.383667
+04:42:08.637 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:08.637 SegmentComplete=video:0 Index=1255 Start=3765.094667 End=3768.097667 Duration=3.003000 offset_pts=0 start_pts=3765094667 Frames=90 filename=464C3C_1255.ts
+04:42:08.637 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1256.ts.tmp' for writing
+04:42:08.660 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1195.537000
+04:42:08.697 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1196.562333
+04:42:08.729 frame= 3135 fps=136 q=29.0 size=   20003kB time=01:02:58.84 bitrate=  43.4kbits/s throttle=off speed= 164x    
+04:42:08.742 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1197.587667
+04:42:08.778 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1198.613500
+04:42:08.824 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1199.785333
+04:42:08.886 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1200.792333
+04:42:08.936 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1201.817667
+04:42:08.984 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1202.842833
+04:42:09.037 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:09.038 SegmentComplete=video:0 Index=1256 Start=3768.097667 End=3771.100667 Duration=3.003000 offset_pts=0 start_pts=3768097667 Frames=90 filename=464C3C_1256.ts
+04:42:09.038 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1257.ts.tmp' for writing
+04:42:09.044 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1204.014667
+04:42:09.095 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1205.021667
+04:42:09.142 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1206.046167
+04:42:09.195 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1207.087667
+04:42:09.234 frame= 3241 fps=138 q=29.0 size=   20718kB time=01:03:02.37 bitrate=  44.9kbits/s throttle=off speed= 161x    
+04:42:09.245 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1208.115667
+04:42:09.298 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1209.250000
+04:42:09.369 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1210.275333
+04:42:09.427 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1211.300667
+04:42:09.481 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1212.326000
+04:42:09.513 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:09.514 SegmentComplete=video:0 Index=1257 Start=3771.100667 End=3774.103667 Duration=3.003000 offset_pts=0 start_pts=3771100667 Frames=90 filename=464C3C_1257.ts
+04:42:09.514 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1258.ts.tmp' for writing
+04:42:09.541 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1213.479333
+04:42:09.602 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1214.504833
+04:42:09.654 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1215.530167
+04:42:09.706 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1216.555833
+04:42:09.737 frame= 3333 fps=139 q=29.0 size=   21363kB time=01:03:05.44 bitrate=  46.2kbits/s throttle=off speed= 158x    
+04:42:09.770 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1217.709167
+04:42:09.847 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1218.734500
+04:42:09.893 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1219.759833
+04:42:09.937 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1220.785167
+04:42:09.991 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:09.991 SegmentComplete=video:0 Index=1258 Start=3774.103667 End=3777.106667 Duration=3.003000 offset_pts=0 start_pts=3774103667 Frames=90 filename=464C3C_1258.ts
+04:42:09.991 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1259.ts.tmp' for writing
+04:42:09.992 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1221.938500
+04:42:10.038 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1222.963833
+04:42:10.086 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1224.009000
+04:42:10.125 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1225.015000
+04:42:10.175 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1226.050000
+04:42:10.219 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1227.203833
+04:42:10.250 frame= 3437 fps=140 q=29.0 size=   21990kB time=01:03:08.91 bitrate=  47.5kbits/s throttle=off speed= 154x    
+04:42:10.278 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1228.219333
+04:42:10.326 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1229.254333
+04:42:10.370 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1230.279667
+04:42:10.401 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:10.401 SegmentComplete=video:0 Index=1259 Start=3777.106667 End=3780.109667 Duration=3.003000 offset_pts=0 start_pts=3777106667 Frames=90 filename=464C3C_1259.ts
+04:42:10.401 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1260.ts.tmp' for writing
+04:42:10.415 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1231.294333
+04:42:10.459 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1232.319667
+04:42:10.512 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1233.491667
+04:42:10.557 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1234.498667
+04:42:10.604 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1235.524167
+04:42:10.668 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1236.549500
+04:42:10.730 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1237.702833
+04:42:10.756 frame= 3542 fps=141 q=29.0 size=   22608kB time=01:03:12.42 bitrate=  48.8kbits/s throttle=off speed= 151x    
+04:42:10.787 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1238.728167
+04:42:10.832 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1239.753500
+04:42:10.846 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:10.846 SegmentComplete=video:0 Index=1260 Start=3780.109667 End=3783.112667 Duration=3.003000 offset_pts=0 start_pts=3780109667 Frames=90 filename=464C3C_1260.ts
+04:42:10.846 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1261.ts.tmp' for writing
+04:42:10.885 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1240.906833
+04:42:10.929 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1241.932167
+04:42:10.978 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1242.968333
+04:42:11.026 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1243.982333
+04:42:11.074 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1245.018333
+04:42:11.144 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1246.161667
+04:42:11.193 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1247.186167
+04:42:11.237 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1248.211500
+04:42:11.258 frame= 3648 fps=143 q=29.0 size=   23160kB time=01:03:15.95 bitrate=  50.0kbits/s throttle=off speed= 149x    
+04:42:11.272 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:11.272 SegmentComplete=video:0 Index=1261 Start=3783.112667 End=3786.115667 Duration=3.003000 offset_pts=0 start_pts=3783112667 Frames=90 filename=464C3C_1261.ts
+04:42:11.272 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1262.ts.tmp' for writing
+04:42:11.285 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1249.364833
+04:42:11.335 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1250.409000
+04:42:11.374 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1251.426000
+04:42:11.414 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1252.441000
+04:42:11.463 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1253.594333
+04:42:11.525 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1254.619667
+04:42:11.567 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1255.645000
+04:42:11.609 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1256.670333
+04:42:11.667 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1257.823667
+04:42:11.676 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:11.676 SegmentComplete=video:0 Index=1262 Start=3786.115667 End=3789.118667 Duration=3.003000 offset_pts=0 start_pts=3786115667 Frames=90 filename=464C3C_1262.ts
+04:42:11.676 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1263.ts.tmp' for writing
+04:42:11.713 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1258.849000
+04:42:11.756 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1259.874333
+04:42:11.756 frame= 3759 fps=144 q=29.0 size=   23647kB time=01:03:19.66 bitrate=  51.0kbits/s throttle=off speed= 146x    
+04:42:11.802 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1260.899667
+04:42:11.861 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1262.053000
+04:42:11.907 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1263.078500
+04:42:11.973 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1264.103833
+04:42:12.019 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1265.129500
+04:42:12.059 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1266.154500
+04:42:12.101 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:12.102 SegmentComplete=video:0 Index=1263 Start=3789.118667 End=3792.121667 Duration=3.003000 offset_pts=0 start_pts=3789118667 Frames=90 filename=464C3C_1263.ts
+04:42:12.102 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1264.ts.tmp' for writing
+04:42:12.111 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1267.307833
+04:42:12.160 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1268.333167
+04:42:12.205 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1269.358500
+04:42:12.248 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1270.383833
+04:42:12.261 frame= 3867 fps=146 q=29.0 size=   24204kB time=01:03:23.26 bitrate=  52.1kbits/s throttle=off speed= 143x    
+04:42:12.299 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1271.548667
+04:42:12.342 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1272.561667
+04:42:12.384 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1273.587167
+04:42:12.434 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1274.752000
+04:42:12.474 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1275.766000
+04:42:12.486 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:12.486 SegmentComplete=video:0 Index=1264 Start=3792.121667 End=3795.124667 Duration=3.003000 offset_pts=0 start_pts=3792121667 Frames=90 filename=464C3C_1264.ts
+04:42:12.486 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1265.ts.tmp' for writing
+04:42:12.514 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1276.791500
+04:42:12.554 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1277.816833
+04:42:12.596 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1278.842167
+04:42:12.641 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1279.995500
+04:42:12.683 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1281.020833
+04:42:12.737 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1282.046167
+04:42:12.763 frame= 3986 fps=147 q=29.0 size=   24740kB time=01:03:27.23 bitrate=  53.2kbits/s throttle=off speed= 141x    
+04:42:12.788 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1283.199500
+04:42:12.832 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1284.240667
+04:42:12.865 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:12.865 SegmentComplete=video:0 Index=1265 Start=3795.124667 End=3798.127667 Duration=3.003000 offset_pts=0 start_pts=3795124667 Frames=90 filename=464C3C_1265.ts
+04:42:12.865 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1266.ts.tmp' for writing
+04:42:12.874 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1285.260667
+04:42:12.914 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1286.275667
+04:42:12.964 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1287.445000
+04:42:12.999 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1288.455000
+04:42:13.044 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1289.491000
+04:42:13.100 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1290.505000
+04:42:13.145 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1291.658833
+04:42:13.188 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1292.700333
+04:42:13.227 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1293.708333
+04:42:13.243 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:13.243 SegmentComplete=video:0 Index=1266 Start=3798.127667 End=3801.130667 Duration=3.003000 offset_pts=0 start_pts=3798127667 Frames=90 filename=464C3C_1266.ts
+04:42:13.243 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1267.ts.tmp' for writing
+04:42:13.263 frame= 4106 fps=149 q=29.0 size=   25212kB time=01:03:31.24 bitrate=  54.2kbits/s throttle=off speed= 138x    
+04:42:13.267 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1294.733833
+04:42:13.307 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1295.759167
+04:42:13.354 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1296.923667
+04:42:13.392 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1297.958667
+04:42:13.426 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1298.963667
+04:42:13.481 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1299.989000
+04:42:13.520 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1301.014333
+04:42:13.558 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1302.167667
+04:42:13.600 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:13.600 SegmentComplete=video:0 Index=1267 Start=3801.130667 End=3804.133667 Duration=3.003000 offset_pts=0 start_pts=3801130667 Frames=90 filename=464C3C_1267.ts
+04:42:13.601 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1268.ts.tmp' for writing
+04:42:13.601 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1303.193000
+04:42:13.644 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1304.218500
+04:42:13.680 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1305.243833
+04:42:13.716 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1306.269167
+04:42:13.759 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1307.422500
+04:42:13.766 frame= 4236 fps=151 q=29.0 size=   25699kB time=01:03:35.57 bitrate=  55.2kbits/s throttle=off speed= 136x    
+04:42:13.797 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1308.447833
+04:42:13.848 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1309.472833
+04:42:13.888 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1310.498167
+04:42:13.935 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1311.523500
+04:42:13.960 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:13.960 SegmentComplete=video:0 Index=1268 Start=3804.133667 End=3807.136667 Duration=3.003000 offset_pts=0 start_pts=3804133667 Frames=90 filename=464C3C_1268.ts
+04:42:13.960 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1269.ts.tmp' for writing
+04:42:13.984 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1312.676833
+04:42:14.031 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1313.702167
+04:42:14.077 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1314.727500
+04:42:14.123 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1315.752833
+04:42:14.174 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1316.906167
+04:42:14.236 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1317.931500
+04:42:14.270 frame= 4346 fps=152 q=29.0 size=   26211kB time=01:03:39.24 bitrate=  56.2kbits/s throttle=off speed= 134x    
+04:42:14.283 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1318.956833
+04:42:14.328 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1319.982500
+04:42:14.371 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1321.007500
+04:42:14.379 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:14.380 SegmentComplete=video:0 Index=1269 Start=3807.136667 End=3810.139667 Duration=3.003000 offset_pts=0 start_pts=3807136667 Frames=90 filename=464C3C_1269.ts
+04:42:14.380 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1270.ts.tmp' for writing
+04:42:14.421 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1322.160833
+04:42:14.461 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1323.186167
+04:42:14.504 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1324.211500
+04:42:14.547 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1325.236833
+04:42:14.603 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1326.390167
+04:42:14.662 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1327.415500
+04:42:14.702 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1328.440833
+04:42:14.749 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1329.466167
+04:42:14.773 frame= 4460 fps=153 q=29.0 size=   26737kB time=01:03:43.05 bitrate=  57.3kbits/s throttle=off speed= 132x    
+04:42:14.777 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:14.777 SegmentComplete=video:0 Index=1270 Start=3810.139667 End=3813.142667 Duration=3.003000 offset_pts=0 start_pts=3810139667 Frames=90 filename=464C3C_1270.ts
+04:42:14.777 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1271.ts.tmp' for writing
+04:42:14.794 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1330.619500
+04:42:14.839 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1331.644833
+04:42:14.886 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1332.670167
+04:42:14.936 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1333.706000
+04:42:14.981 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1334.721000
+04:42:15.027 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1335.746500
+04:42:15.082 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1336.771500
+04:42:15.139 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1337.924833
+04:42:15.187 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1338.950833
+04:42:15.200 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:15.201 SegmentComplete=video:0 Index=1271 Start=3813.142667 End=3816.145667 Duration=3.003000 offset_pts=0 start_pts=3813142667 Frames=90 filename=464C3C_1271.ts
+04:42:15.201 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1272.ts.tmp' for writing
+04:42:15.231 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1339.975833
+04:42:15.277 frame= 4568 fps=155 q=29.0 size=   27370kB time=01:03:46.65 bitrate=  58.6kbits/s throttle=off speed= 129x    
+04:42:15.282 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1341.000833
+04:42:15.334 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1342.170667
+04:42:15.371 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1343.179667
+04:42:15.417 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1344.205000
+04:42:15.461 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1345.230333
+04:42:15.504 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1346.255667
+04:42:15.554 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1347.409000
+04:42:15.588 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:15.589 SegmentComplete=video:0 Index=1272 Start=3816.145667 End=3819.148667 Duration=3.003000 offset_pts=0 start_pts=3816145667 Frames=90 filename=464C3C_1272.ts
+04:42:15.589 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1273.ts.tmp' for writing
+04:42:15.599 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1348.434333
+04:42:15.645 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1349.459667
+04:42:15.703 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1350.485000
+04:42:15.751 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1351.510333
+04:42:15.778 frame= 4679 fps=156 q=29.0 size=   27951kB time=01:03:50.35 bitrate=  59.8kbits/s throttle=off speed= 127x    
+04:42:15.806 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1352.663667
+04:42:15.852 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1353.689000
+04:42:15.917 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1354.714333
+04:42:15.964 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1355.739833
+04:42:16.012 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1356.893167
+04:42:16.030 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:16.031 SegmentComplete=video:0 Index=1273 Start=3819.148667 End=3822.151667 Duration=3.003000 offset_pts=0 start_pts=3819148667 Frames=90 filename=464C3C_1273.ts
+04:42:16.031 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1274.ts.tmp' for writing
+04:42:16.057 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1357.918167
+04:42:16.108 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1358.944167
+04:42:16.154 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1359.969167
+04:42:16.207 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1361.143000
+04:42:16.253 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1362.164000
+04:42:16.298 frame= 4785 fps=157 q=29.0 size=   28502kB time=01:03:53.89 bitrate=  60.9kbits/s throttle=off speed= 125x    
+04:42:16.323 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1363.173000
+04:42:16.368 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1364.198333
+04:42:16.415 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1365.223667
+04:42:16.465 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:16.465 SegmentComplete=video:0 Index=1274 Start=3822.151667 End=3825.154667 Duration=3.003000 offset_pts=0 start_pts=3822151667 Frames=90 filename=464C3C_1274.ts
+04:42:16.465 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1275.ts.tmp' for writing
+04:42:16.466 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1366.249500
+04:42:16.516 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1367.402833
+04:42:16.561 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1368.428167
+04:42:16.609 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1369.453500
+04:42:16.654 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1370.478833
+04:42:16.755 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1371.632167
+04:42:16.781 frame= 4880 fps=157 q=29.0 size=   29027kB time=01:03:57.06 bitrate=  62.0kbits/s throttle=off speed= 124x    
+04:42:16.799 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1372.657500
+04:42:16.848 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1373.682833
+04:42:16.897 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1374.708167
+04:42:16.924 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:16.924 SegmentComplete=video:0 Index=1275 Start=3825.154667 End=3828.157667 Duration=3.003000 offset_pts=0 start_pts=3825154667 Frames=90 filename=464C3C_1275.ts
+04:42:16.924 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1276.ts.tmp' for writing
+04:42:16.947 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1375.749667
+04:42:16.996 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1376.887000
+04:42:17.041 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1377.911500
+04:42:17.091 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1378.936833
+04:42:17.141 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1379.962167
+04:42:17.215 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1380.987500
+04:42:17.271 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1382.160333
+04:42:17.284 frame= 4983 fps=158 q=29.0 size=   29611kB time=01:04:00.50 bitrate=  63.2kbits/s throttle=off speed= 122x    
+04:42:17.313 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1383.166333
+04:42:17.362 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1384.191833
+04:42:17.366 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:17.367 SegmentComplete=video:0 Index=1276 Start=3828.157667 End=3831.160667 Duration=3.003000 offset_pts=0 start_pts=3828157667 Frames=90 filename=464C3C_1276.ts
+04:42:17.367 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1277.ts.tmp' for writing
+04:42:17.409 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1385.217167
+04:42:17.455 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1386.242833
+04:42:17.518 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1387.396167
+04:42:17.569 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1388.421500
+04:42:17.620 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1389.446833
+04:42:17.695 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1390.487667
+04:42:17.739 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1391.496667
+04:42:17.788 frame= 5083 fps=158 q=29.0 size=   30165kB time=01:04:03.84 bitrate=  64.3kbits/s throttle=off speed= 120x    
+04:42:17.793 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1392.650500
+04:42:17.823 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:17.823 SegmentComplete=video:0 Index=1277 Start=3831.160667 End=3834.163667 Duration=3.003000 offset_pts=0 start_pts=3831160667 Frames=90 filename=464C3C_1277.ts
+04:42:17.823 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1278.ts.tmp' for writing
+04:42:17.837 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1393.675500
+04:42:17.882 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1394.700833
+04:42:17.929 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1395.745000
+04:42:17.974 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1396.752000
+04:42:18.023 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1397.905333
+04:42:18.092 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1398.930667
+04:42:18.138 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1399.955833
+04:42:18.188 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1401.109167
+04:42:18.238 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1402.134500
+04:42:18.247 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:18.247 SegmentComplete=video:0 Index=1278 Start=3834.163667 End=3837.166667 Duration=3.003000 offset_pts=0 start_pts=3834163667 Frames=90 filename=464C3C_1278.ts
+04:42:18.247 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1279.ts.tmp' for writing
+04:42:18.283 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1403.159833
+04:42:18.292 frame= 5191 fps=159 q=29.0 size=   30695kB time=01:04:07.44 bitrate=  65.4kbits/s throttle=off speed= 118x    
+04:42:18.328 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1404.185167
+04:42:18.373 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1405.210167
+04:42:18.426 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1406.363500
+04:42:18.473 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1407.388833
+04:42:18.538 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1408.414167
+04:42:18.587 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1409.439500
+04:42:18.667 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1410.464833
+04:42:18.708 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:18.708 SegmentComplete=video:0 Index=1279 Start=3837.166667 End=3840.169667 Duration=3.003000 offset_pts=0 start_pts=3837166667 Frames=90 filename=464C3C_1279.ts
+04:42:18.709 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1280.ts.tmp' for writing
+04:42:18.718 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1411.618167
+04:42:18.761 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1412.643500
+04:42:18.795 frame= 5291 fps=160 q=29.0 size=   31203kB time=01:04:10.78 bitrate=  66.4kbits/s throttle=off speed= 116x    
+04:42:18.809 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1413.668833
+04:42:18.856 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1414.822167
+04:42:18.899 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1415.847500
+04:42:18.964 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1416.872833
+04:42:19.007 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1417.898167
+04:42:19.056 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1419.051500
+04:42:19.103 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1420.076833
+04:42:19.116 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:19.117 SegmentComplete=video:0 Index=1280 Start=3840.169667 End=3843.172667 Duration=3.003000 offset_pts=0 start_pts=3840169667 Frames=90 filename=464C3C_1280.ts
+04:42:19.117 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1281.ts.tmp' for writing
+04:42:19.147 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1421.102167
+04:42:19.196 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1422.144000
+04:42:19.251 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1423.281333
+04:42:19.295 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1424.317333
+04:42:19.295 frame= 5400 fps=161 q=29.0 size=   31754kB time=01:04:14.41 bitrate=  67.5kbits/s throttle=off speed= 115x    
+04:42:19.342 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1425.332333
+04:42:19.404 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1426.357667
+04:42:19.452 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1427.398333
+04:42:19.496 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1428.407333
+04:42:19.540 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:19.541 SegmentComplete=video:0 Index=1281 Start=3843.172667 End=3846.175667 Duration=3.003000 offset_pts=0 start_pts=3843172667 Frames=90 filename=464C3C_1281.ts
+04:42:19.541 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1282.ts.tmp' for writing
+04:42:19.546 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1429.561167
+04:42:19.590 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1430.586167
+04:42:19.638 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1431.621667
+04:42:19.683 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1432.647167
+04:42:19.728 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1433.662667
+04:42:19.805 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1434.826000
+04:42:19.805 frame= 5505 fps=161 q=29.0 size=   32319kB time=01:04:17.92 bitrate=  68.6kbits/s throttle=off speed= 113x    
+04:42:19.849 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1435.841000
+04:42:19.897 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1436.866333
+04:42:19.942 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1437.891667
+04:42:19.970 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:19.971 SegmentComplete=video:0 Index=1282 Start=3846.175667 End=3849.178667 Duration=3.003000 offset_pts=0 start_pts=3846175667 Frames=90 filename=464C3C_1282.ts
+04:42:19.971 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1283.ts.tmp' for writing
+04:42:19.998 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1439.045000
+04:42:20.048 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1440.089333
+04:42:20.089 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1441.096333
+04:42:20.139 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1442.120833
+04:42:20.191 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1443.274167
+04:42:20.253 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1444.299500
+04:42:20.300 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1445.324833
+04:42:20.310 frame= 5611 fps=162 q=29.0 size=   32957kB time=01:04:21.45 bitrate=  69.9kbits/s throttle=off speed= 112x    
+04:42:20.353 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1446.361667
+04:42:20.412 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:20.413 SegmentComplete=video:0 Index=1283 Start=3849.178667 End=3852.181667 Duration=3.003000 offset_pts=0 start_pts=3849178667 Frames=90 filename=464C3C_1283.ts
+04:42:20.413 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1284.ts.tmp' for writing
+04:42:20.414 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1447.504000
+04:42:20.469 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1448.529333
+04:42:20.527 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1449.554500
+04:42:20.584 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1450.579500
+04:42:20.636 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1451.604833
+04:42:20.696 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1452.758167
+04:42:20.757 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1453.783500
+04:42:20.807 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1454.808833
+04:42:20.807 frame= 5704 fps=163 q=29.0 size=   33534kB time=01:04:24.56 bitrate=  71.1kbits/s throttle=off speed= 110x    
+04:42:20.857 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1455.834167
+04:42:20.891 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:20.892 SegmentComplete=video:0 Index=1284 Start=3852.181667 End=3855.184667 Duration=3.003000 offset_pts=0 start_pts=3852181667 Frames=90 filename=464C3C_1284.ts
+04:42:20.892 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1285.ts.tmp' for writing
+04:42:20.916 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1456.987500
+04:42:20.966 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1458.012833
+04:42:21.019 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1459.038167
+04:42:21.077 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1460.064167
+04:42:21.141 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1461.233000
+04:42:21.194 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1462.243000
+04:42:21.243 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1463.278000
+04:42:21.287 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1464.313000
+04:42:21.314 frame= 5805 fps=163 q=29.0 size=   34184kB time=01:04:27.93 bitrate=  72.4kbits/s throttle=off speed= 109x    
+04:42:21.336 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1465.318000
+04:42:21.344 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:21.345 SegmentComplete=video:0 Index=1285 Start=3855.184667 End=3858.187667 Duration=3.003000 offset_pts=0 start_pts=3855184667 Frames=90 filename=464C3C_1285.ts
+04:42:21.345 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1286.ts.tmp' for writing
+04:42:21.380 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1466.343500
+04:42:21.431 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1467.496833
+04:42:21.471 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1468.532333
+04:42:21.512 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1469.547333
+04:42:21.553 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1470.572833
+04:42:21.613 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1471.598167
+04:42:21.656 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1472.751500
+04:42:21.698 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1473.787667
+04:42:21.724 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:21.725 SegmentComplete=video:0 Index=1286 Start=3858.187667 End=3861.190667 Duration=3.003000 offset_pts=0 start_pts=3858187667 Frames=90 filename=464C3C_1286.ts
+04:42:21.725 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1287.ts.tmp' for writing
+04:42:21.737 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1474.802667
+04:42:21.778 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1475.828000
+04:42:21.817 frame= 5924 fps=164 q=29.0 size=   34753kB time=01:04:31.90 bitrate=  73.5kbits/s throttle=off speed= 107x    
+04:42:21.829 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1476.999000
+04:42:21.868 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1478.007000
+04:42:21.910 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1479.031500
+04:42:21.964 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1480.057500
+04:42:22.010 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1481.101000
+04:42:22.055 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1482.235333
+04:42:22.096 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1483.260833
+04:42:22.115 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:22.116 SegmentComplete=video:0 Index=1287 Start=3861.190667 End=3864.193667 Duration=3.003000 offset_pts=0 start_pts=3861190667 Frames=90 filename=464C3C_1287.ts
+04:42:22.116 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1288.ts.tmp' for writing
+04:42:22.149 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1484.286167
+04:42:22.188 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1485.311500
+04:42:22.232 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1486.336833
+04:42:22.279 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1487.490167
+04:42:22.317 frame= 6039 fps=165 q=29.0 size=   35200kB time=01:04:35.73 bitrate=  74.4kbits/s throttle=off speed= 106x    
+04:42:22.322 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1488.515500
+04:42:22.387 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1489.541167
+04:42:22.431 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1490.694500
+04:42:22.472 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1491.719833
+04:42:22.508 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:22.509 SegmentComplete=video:0 Index=1288 Start=3864.193667 End=3867.196667 Duration=3.003000 offset_pts=0 start_pts=3864193667 Frames=90 filename=464C3C_1288.ts
+04:42:22.509 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1289.ts.tmp' for writing
+04:42:22.517 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1492.745167
+04:42:22.558 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1493.770500
+04:42:22.602 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1494.795833
+04:42:22.652 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1495.959333
+04:42:22.695 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1496.975333
+04:42:22.739 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1498.000667
+04:42:22.805 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1499.024333
+04:42:22.818 frame= 6148 fps=166 q=29.0 size=   35704kB time=01:04:39.37 bitrate=  75.4kbits/s throttle=off speed= 105x    
+04:42:22.858 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1500.178167
+04:42:22.901 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1501.203500
+04:42:22.915 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:22.915 SegmentComplete=video:0 Index=1289 Start=3867.196667 End=3870.199667 Duration=3.003000 offset_pts=0 start_pts=3867196667 Frames=90 filename=464C3C_1289.ts
+04:42:22.915 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1290.ts.tmp' for writing
+04:42:22.940 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1502.228833
+04:42:22.977 [graph_1_aresample_in_0_0 @ 0xa02b00] [SWR @ 0xa034c0] Failed to compensate for timestamp delta of 1503.254167
+04:42:22.988 
+
+[q] command received. Exiting.
+
+04:42:23.321 04:42:23.322 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:23.322 SegmentComplete=video:0 Index=1290 Start=3870.199667 End=3873.202667 Duration=3.003000 offset_pts=0 start_pts=3870199667 Frames=90 filename=464C3C_1290.ts
+04:42:23.322 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1291.ts.tmp' for writing
+04:42:23.323 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:23.323 SegmentComplete=video:0 Index=1291 Start=3873.202667 End=3876.205667 Duration=3.003000 offset_pts=0 start_pts=3873202667 Frames=90 filename=464C3C_1291.ts
+04:42:23.323 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1292.ts.tmp' for writing
+04:42:23.324 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:23.325 SegmentComplete=video:0 Index=1292 Start=3876.205667 End=3879.208667 Duration=3.003000 offset_pts=0 start_pts=3876205667 Frames=90 filename=464C3C_1292.ts
+04:42:23.325 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C_1293.ts.tmp' for writing
+04:42:23.325 [segment @ 0x9bfd40] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:42:23.326 SegmentComplete=video:0 Index=1293 Start=3879.208667 End=3881.544333 Duration=2.335667 offset_pts=0 start_pts=3879208667 Frames=70 filename=464C3C_1293.ts
+04:42:23.326 frame= 6190 fps=165 q=-1.0 Lsize=   35939kB time=01:04:41.44 bitrate=  75.9kbits/s throttle=off speed= 103x    
+04:42:23.326 video:35939kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+04:42:23.326 EXIT
+04:42:23.472 [libx264 @ 0x9b7e80] frame I:69    Avg QP:19.74  size: 40514
+04:42:23.472 [libx264 @ 0x9b7e80] frame P:1588  Avg QP:22.63  size: 12752
+04:42:23.472 [libx264 @ 0x9b7e80] frame B:4533  Avg QP:24.47  size:  3034
+04:42:23.472 [libx264 @ 0x9b7e80] consecutive B-frames:  2.1%  0.3%  0.9% 96.6%
+04:42:23.472 [libx264 @ 0x9b7e80] mb I  I16..4: 37.9%  0.0% 62.1%
+04:42:23.472 [libx264 @ 0x9b7e80] mb P  I16..4: 22.5%  0.0%  0.0%  P16..4: 56.2%  0.0%  0.0%  0.0%  0.0%    skip:21.2%
+04:42:23.472 [libx264 @ 0x9b7e80] mb B  I16..4:  2.2%  0.0%  0.0%  B16..8: 22.8%  0.0%  0.0%  direct: 7.5%  skip:67.5%  L0:39.5% L1:50.6% BI: 9.9%
+04:42:23.472 [libx264 @ 0x9b7e80] coded y,uvDC,uvAC intra: 21.6% 48.0% 5.1% inter: 6.4% 12.9% 0.0%
+04:42:23.472 [libx264 @ 0x9b7e80] i16 v,h,dc,p: 31% 26% 18% 25%
+04:42:23.472 [libx264 @ 0x9b7e80] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24% 22% 14% 10%  7%  5%  6%  5%  6%
+04:42:23.472 [libx264 @ 0x9b7e80] i8c dc,h,v,p: 38% 27% 25% 11%
+04:42:23.472 [libx264 @ 0x9b7e80] Weighted P-Frames: Y:8.1% UV:1.8%
+04:42:23.472 [libx264 @ 0x9b7e80] kb/s:1425.41
+04:42:23.483 
+
+======= ExtraData
+H4sIAAAAAAAAA9VZW4vjRhb+K0Kwb3ZbF/e0begHT/dMMux00nRPOoEQRFkq2UXrhqrk2BkG2iEsu1kWNk+BhYXAsiHs2yYPeQhk/8uamWH/xZ4qSbak8r3d3ZlhHqyjU1WnvvOdm/qlehL6PgoctfNSfUo8hmNa+vnpZ69q6nte2EPehxEjYSBepz+vkJdgrvNS/QD5WO2oY7WmCukli0nQBwmLE6y+qs00IpAzqx+jaEAtl3hYWtGww8Al/YYX9mnDdf0I9+ssRgG1QwfXD23UPtJbqN5qGnq9qZtuHbUwrvfaRy2s9x714J+li/0P2IgVj0Z0HNjScXpRxQ6jMaNrL0EZipmFmPUFjsMl2hy3Z0GUsBSgU+wnIxwLbDFiSYxnVrmwQyZ7MY64LFeuqcsx/+xVfsCzwMEjtaNlj+dxyEI79OSjBoxF0lnlNWtP3IAEroQIv2MRPhlhTe/Af/0wxQ3EGPk5cNzvC4D73EdDQ7pON3FImK9Zjx/tJmym3uGeq6ln2CHo94THRLrdmn1qqVZqNNc4gd3szMqPz7pX3EqhIl4UTD8ZoCDAHmxj1NTHhF0gxtforaODQ+W6R1iDI3WJ/MjD2bvLuNnSNE3lzs7dnp5cBIDvzc96QXz8GFGxaSNfWBLq2Wb0FLso8ZjacZFHMZc8DWMbOzNB1/NeoL64Mn/7ZAQJIkBe9v4V9+8KXw1NyVVXxME7uyozqugrsd9aXwmtZb664lYKjbmrhjPZBQr6wgenFyA6JyPsAUY+YulGXhjnj+o4GTYNjUfbkwAsDED0UUAjbBOXAKbiPs8CQNBDRYznHDAPWspZzgAQ03McixPVjp6S5RRHbKB2WjX1ArtPY7gCXFHPL0i+EP41WtroyOAe7g5xjPpYKGZnGO32kaaZggOCBRcYeSsVuvwK3ESgGOz+qNPmQMShSOQd9QyRAATP8ZDbqdbbbUGtboD8MI4GxJ6zKyWvXiFv7kKJvJqmN0ztTvkL0o9ibnZD0xqG0bh88snrP/7h7b9/abz59ru3300a08mX08nfppP/vJn8uTG9+WvxeXrzjdY0Nd2sm8ZhY/5T6V69/udPr7/613Tyw//+8SMo//fm++nk79PJt9PJ929++no6+XX65ddwltIbK+93z7oX05ub13/6y9uffzgA7qncrA8TNqsjZ4urCMV9HwdMirGztXVknpXTLSw35XA1Q/M6DDYU03i2wCNUVs+reF65QVpn2I8azUfNE/PkwDeT1rLNLMaNlwxYsoIBHSRlc5FmWraDxO8JTCp9gGEcFhdBTiFD4iTIswYYQc6x4CpAc3ml4E9x6ecxYXjrVbmV6WqO1dLOYrM67KOR5WAPyU3ZoZYGdLE5GobEsQLch9gewvFyiXYIRT1PJK8VpT4nYkHJR5HlY4YcxJCkX9erqvYARaL3XKTKM3gaDsvbnKyrLAdCZdHaclNsQU5CqNI2w85lmEBKecaLjdbRRXJfUvA80hsZj5qLa16+aiMvRjGmWI4vyOZjF1FW7q3DhR31gPQHRT1P5GcpZA5KruDmh9ECHtCk5+NjreNjK+YF8bjZiW3LC8NrxCl/rPNXx1D0OkEIzoxDH4H7O61Ry7EZrIsgCIm49nEQBqUQsGOZUIaZMX67Uj/bsy/t2NbKlBvFvNpVtZpyjPQSl/K6WlVtyarUttgAPDcIPUdudoua13jMJyJfVM5VhkZkZLm+zIS81RAoLSOrtoasfmR6yJfDRnSTm/BVctH6znmee3pyNm4b1QQlj25G8T2kpyikglhy6sp6Aw7RvMyvrlDW75wDXu94xkmn4ffE0Movkv/6tDgo57+5wimmdkzEdeGkc0SpwgZYocIlShJAjoPIcRQWCnkoktOBWpoYn5PgujijzeeF52gMK0TrP58g4AFOZefIyQHJLg3my13p+xhyAoigN8zcxo/iZNHKAwd/7F5wj4iEl5IqOwHg9S0SWJo1f7Xo/I+JwztV3oxy+LP35yimGEpO4nkWpycXGyDnArXc9BSgSMWbYZHXg7yhuW98qjcs4SCCdRljHieui2NlyNOc4orevqagwFF8dI05ZXwF2TamlEBFzlnkis2AWiQoUWkOufgsomgK4a9g39BXqKhzSlrOchf0xPF7dUKZK/ftiXUX39wz58S+VqBsKZA9GAmSMKEKhXwLb9N9uSfEMTXFicNIPEMhePeiex1m28Z7mQE51bh0r0SrBt3DJsX9hvwQRglUiHgMr0O3EPxK+uHzXaPaLENvyymwHoDWpNRF4colVq3GHnom6KfZPHYzNwDMPNQziGefb5SIf4hRUqvpO4d2NUK2BX3mrRzzmWB/UTx37INxsRK6cH/R9lW+tt/C6Xuu9xsDwqfHbH6qgpR7dJNGwSw2CivQrZDo9hy5u6S5TwjLqcmspqYKYGWy1R52rjArf5nIHuZfAMAacfdlsZmDtiYMxR8kFpRPnlkz6s1Yt1GiWjBeIGm+QLsNGFuBUsolVkqFVX3vLQCT7jnHYpN+A/Exfd8jhqWnHVAJ9l2Hil2Az61A0HkL/Ob23IELpDtv6IKLzLjMCfz76DsVq9K9twrQFT6acSZ/dT+sWZV77hC+BQBsSKD7G0Z/CzRbgNNWhFvl3hnjdptHd2GblLjvuZrusU7c1Vz6kKyTavdWXJsvq9S/W0+mqSOWTaa7zqQPibQUCFshLflpBviuY+kuwXynLZ50xWLoVuZS/S7m0ls1ibOhCnLAeAkQ3F3Z34tK4OiVkbTaWJqlxnLhEFr6wHtnE+i+0uOewCpHgymln8XTJ+cTMOr/F2Ax7BQqAAA=

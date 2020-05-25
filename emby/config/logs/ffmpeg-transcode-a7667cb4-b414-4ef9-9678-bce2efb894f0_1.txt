@@ -1,0 +1,612 @@
+2020-05-22 09:38:25.817
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/10103/hls1/main/3.ts?DeviceId=f6e80783-687e-493f-86cc-bb660d1276e8&MediaSourceId=6ab6d593f0c808bfecac36fccccf9fd5&PlaySessionId=12e30d8d236c4518843f08b59c33f9e3&api_key=e1b2df3ea44d45129b6352df6a663541&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=59616000&AudioBitrate=384000&AudioStreamIndex=1&SubtitleStreamIndex=6&SubtitleMethod=Encode&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=SubtitleCodecNotSupported
+
+{"Protocol":"File","Id":"6ab6d593f0c808bfecac36fccccf9fd5","Path":"/00/00/IMDB Top250/029.千与千寻的神隐.Spirited.Away.2001.BluRay.1080p.x265.10bit.4Audio.MnHD-FRDS/Spirited.Away.2001.BluRay.1080p.x265.10bit.4Audio.MnHD-FRDS.mkv","Type":"Default","Container":"mkv","Size":6089368915,"Name":"Spirited.Away.2001.BluRay.1080p.x265.10bit.4Audio.MnHD-FRDS","IsRemote":false,"RunTimeTicks":74722980000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"hevc","ColorPrimaries":"bt709","TimeBase":"1/1000","CodecTimeBase":"1001/24000","VideoRange":"SDR","DisplayTitle":"1080p HEVC","IsInterlaced":false,"BitRate":6519406,"BitDepth":10,"RefFrames":1,"IsDefault":true,"IsForced":false,"Height":1038,"Width":1920,"AverageFrameRate":23.976025,"RealFrameRate":23.976025,"Profile":"Main 10","Type":"Video","AspectRatio":"320:173","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p10le","Level":120,"IsAnamorphic":false},{"Codec":"ac3","Language":"jpn","TimeBase":"1/1000","CodecTimeBase":"1/48000","Title":"日语","DisplayTitle":"Japanese Dolby Digital 5.1 (Default)","DisplayLanguage":"Japanese","IsInterlaced":false,"ChannelLayout":"5.1","BitRate":640000,"Channels":6,"SampleRate":48000,"IsDefault":true,"IsForced":false,"Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"1/48000","Title":"台配国语","DisplayTitle":"Chinese Dolby Digital 5.1","DisplayLanguage":"Chinese","IsInterlaced":false,"ChannelLayout":"5.1","BitRate":448000,"Channels":6,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":2,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"1/48000","Title":"粤语","DisplayTitle":"Chinese Dolby Digital 5.1","DisplayLanguage":"Chinese","IsInterlaced":false,"ChannelLayout":"5.1","BitRate":448000,"Channels":6,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":3,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","Language":"eng","TimeBase":"1/1000","CodecTimeBase":"1/48000","Title":"英语","DisplayTitle":"English Dolby Digital 5.1","DisplayLanguage":"English","IsInterlaced":false,"ChannelLayout":"5.1","BitRate":448000,"Channels":6,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":4,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"jpn","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"日文","DisplayTitle":"Japanese (Default PGSSUB)","DisplayLanguage":"Japanese","IsInterlaced":false,"IsDefault":true,"IsForced":false,"Type":"Subtitle","Index":5,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"囯配简中特效","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"Type":"Subtitle","Index":6,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"囯配简中特效","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"Type":"Subtitle","Index":7,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"繁体中文","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":8,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"繁体中文","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":9,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"eng","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"英文","DisplayTitle":"English (PGSSUB)","DisplayLanguage":"English","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":10,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":6519406,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for 1124721976
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: hevc, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    ColorConversion                          >> False                False                                                         
+Info    SubtitleOverlay                          >> False                False                                                         
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    hevc                 >> -            yuv420p10    yuv420p10    >> format
+Info    format               >> -            yuv420p      yuv420p      >> overlay
+Info    overlay              >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -ss 00:00:09.000  -f matroska -i file:"/00/00/IMDB Top250/029.千与千寻的神隐.Spirited.Away.2001.BluRay.1080p.x265.10bit.4Audio.MnHD-FRDS/Spirited.Away.2001.BluRay.1080p.x265.10bit.4Audio.MnHD-FRDS.mkv" -threads 0 -map 0:0 -map 0:1 -c:v:0 libx264 -copyts -filter_complex "[0:6]scale=1920:1038:force_original_aspect_ratio=decrease[sub];[0:0][sub]overlay=(W-w)/2:(H-h):repeatlast=0" -pix_fmt yuv420p  -maxrate 13038812 -bufsize 26077624 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 72 -keyint_min:v:0 72 -sc_threshold:v:0 0  -vsync -1 -codec:a:0 libmp3lame -metadata:s:a:0 language=jpn -disposition:a:0 default -ac:a:0 2 -ab:a:0 192000 -filter:a:0 "volume=2" -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 3 -segment_list "/config/transcoding-temp/FFFC51.m3u8" -y "/config/transcoding-temp/FFFC51_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-a7667cb4-b414-4ef9-9678-bce2efb894f0_1graph.txt -copyts -start_at_zero -f matroska,webm -ss 00:00:09.000 -c:v:0 hevc -canvas_size:s:1 "1920:1080" -i "/00/00/IMDB Top250/029.千与千寻的神隐.Spirited.Away.2001.BluRay.1080p.x265.10bit.4Audio.MnHD-FRDS/Spirited.Away.2001.BluRay.1080p.x265.10bit.4Audio.MnHD-FRDS.mkv" -filter_complex "[0:0]format@f1=pix_fmts=yuv420p[f1_out0];[0:6]scale@f2=width=1920:height=-2:force_original_aspect_ratio=decrease[f2_out0];[f1_out0][f2_out0]overlay@f3=x=(W-w)/2:y=(H-h):repeatlast=0[f3_out0]" -map [f3_out0] -map 0:1 -sn -c:v:0 libx264 -g:v:0 72 -maxrate:v:0 13038812 -bufsize:v:0 26077624 -sc_threshold:v:0 0 -keyint_min:v:0 72 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 4.0 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 2 -metadata:s:a:0 language=jpn -filter:a:0 "volume=2" -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/FFFC51.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 3 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/FFFC51_%d.ts"
+
+09:38:25.846 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+09:38:25.846   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+09:38:25.847 Execution Date: 2020-05-22 09:38:25
+09:38:29.646 [matroska,webm @ 0x1eabb40] Could not find codec parameters for stream 5 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+09:38:29.646 [matroska,webm @ 0x1eabb40] Could not find codec parameters for stream 8 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+09:38:29.646 [matroska,webm @ 0x1eabb40] Could not find codec parameters for stream 9 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+09:38:29.646 [matroska,webm @ 0x1eabb40] Could not find codec parameters for stream 10 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+09:38:30.477 Input #0, matroska,webm, from '/00/00/IMDB Top250/029.千与千寻的神隐.Spirited.Away.2001.BluRay.1080p.x265.10bit.4Audio.MnHD-FRDS/Spirited.Away.2001.BluRay.1080p.x265.10bit.4Audio.MnHD-FRDS.mkv':
+09:38:30.477   Metadata:
+09:38:30.477     encoder         : libebml v1.3.5 + libmatroska v1.4.8
+09:38:30.477     creation_time   : 2017-11-15T10:11:42.000000Z
+09:38:30.477   Duration: 02:04:32.30, start: 0.000000, bitrate: 6519 kb/s
+09:38:30.477     Stream #0:0: Video: hevc (Main 10), yuv420p10le(tv, unknown/bt709/unknown), 1920x1038, SAR 1:1 DAR 320:173, Level 120, 23.98 fps, 23.98 tbr, 1k tbn, 23.98 tbc (default)
+09:38:30.477     Metadata:
+09:38:30.477       BPS             : 4460478
+09:38:30.477       BPS-eng         : 4460478
+09:38:30.477       DURATION        : 02:04:32.298000000
+09:38:30.477       DURATION-eng    : 02:04:32.298000000
+09:38:30.477       NUMBER_OF_FRAMES: 179156
+09:38:30.477       NUMBER_OF_FRAMES-eng: 179156
+09:38:30.477       NUMBER_OF_BYTES : 4166252944
+09:38:30.477       NUMBER_OF_BYTES-eng: 4166252944
+09:38:30.477     Stream #0:1(jpn): Audio: ac3, 48000 Hz, 5.1(side), fltp, 640 kb/s (default)
+09:38:30.477     Metadata:
+09:38:30.477       title           : 日语
+09:38:30.477       BPS             : 640000
+09:38:30.477       BPS-eng         : 640000
+09:38:30.477       DURATION        : 02:04:32.288000000
+09:38:30.477       DURATION-eng    : 02:04:32.288000000
+09:38:30.477       NUMBER_OF_FRAMES: 233509
+09:38:30.477       NUMBER_OF_FRAMES-eng: 233509
+09:38:30.477       NUMBER_OF_BYTES : 597783040
+09:38:30.477       NUMBER_OF_BYTES-eng: 597783040
+09:38:30.477     Stream #0:2(chi): Audio: ac3, 48000 Hz, 5.1(side), fltp, 448 kb/s
+09:38:30.477     Metadata:
+09:38:30.477       title           : 台配国语
+09:38:30.477       BPS             : 448000
+09:38:30.477       BPS-eng         : 448000
+09:38:30.477       DURATION        : 02:04:32.288000000
+09:38:30.477       DURATION-eng    : 02:04:32.288000000
+09:38:30.477       NUMBER_OF_FRAMES: 233509
+09:38:30.477       NUMBER_OF_FRAMES-eng: 233509
+09:38:30.477       NUMBER_OF_BYTES : 418448128
+09:38:30.477       NUMBER_OF_BYTES-eng: 418448128
+09:38:30.477     Stream #0:3(chi): Audio: ac3, 48000 Hz, 5.1(side), fltp, 448 kb/s
+09:38:30.477     Metadata:
+09:38:30.477       title           : 粤语
+09:38:30.477       BPS             : 448000
+09:38:30.477       BPS-eng         : 448000
+09:38:30.477       DURATION        : 02:04:32.288000000
+09:38:30.477       DURATION-eng    : 02:04:32.288000000
+09:38:30.477       NUMBER_OF_FRAMES: 233509
+09:38:30.477       NUMBER_OF_FRAMES-eng: 233509
+09:38:30.477       NUMBER_OF_BYTES : 418448128
+09:38:30.477       NUMBER_OF_BYTES-eng: 418448128
+09:38:30.477     Stream #0:4(eng): Audio: ac3, 48000 Hz, 5.1(side), fltp, 448 kb/s
+09:38:30.477     Metadata:
+09:38:30.477       title           : 英语
+09:38:30.477       BPS             : 448000
+09:38:30.477       BPS-eng         : 448000
+09:38:30.477       DURATION        : 02:04:32.288000000
+09:38:30.477       DURATION-eng    : 02:04:32.288000000
+09:38:30.477       NUMBER_OF_FRAMES: 233509
+09:38:30.477       NUMBER_OF_FRAMES-eng: 233509
+09:38:30.477       NUMBER_OF_BYTES : 418448128
+09:38:30.477       NUMBER_OF_BYTES-eng: 418448128
+09:38:30.477     Stream #0:5(jpn): Subtitle: hdmv_pgs_subtitle (default)
+09:38:30.477     Metadata:
+09:38:30.477       title           : 日文
+09:38:30.477       BPS             : 23286
+09:38:30.477       BPS-eng         : 23286
+09:38:30.477       DURATION        : 02:03:38.661000000
+09:38:30.477       DURATION-eng    : 02:03:38.661000000
+09:38:30.477       NUMBER_OF_FRAMES: 3058
+09:38:30.477       NUMBER_OF_FRAMES-eng: 3058
+09:38:30.477       NUMBER_OF_BYTES : 21594018
+09:38:30.477       NUMBER_OF_BYTES-eng: 21594018
+09:38:30.477     Stream #0:6(chi): Subtitle: hdmv_pgs_subtitle, 1920x1080, Start-Time 1.168s
+09:38:30.477     Metadata:
+09:38:30.477       title           : 囯配简中特效
+09:38:30.477       BPS             : 33990
+09:38:30.477       BPS-eng         : 33990
+09:38:30.477       DURATION        : 02:00:30.265000000
+09:38:30.477       DURATION-eng    : 02:00:30.265000000
+09:38:30.477       NUMBER_OF_FRAMES: 2487
+09:38:30.477       NUMBER_OF_FRAMES-eng: 2487
+09:38:30.477       NUMBER_OF_BYTES : 30719667
+09:38:30.477       NUMBER_OF_BYTES-eng: 30719667
+09:38:30.477     Stream #0:7(chi): Subtitle: hdmv_pgs_subtitle, 1920x1080, Start-Time 1.335s
+09:38:30.477     Metadata:
+09:38:30.477       title           : 囯配简中特效
+09:38:30.477       BPS             : 28861
+09:38:30.477       BPS-eng         : 28861
+09:38:30.477       DURATION        : 02:00:30.098000000
+09:38:30.477       DURATION-eng    : 02:00:30.098000000
+09:38:30.477       NUMBER_OF_FRAMES: 2462
+09:38:30.477       NUMBER_OF_FRAMES-eng: 2462
+09:38:30.477       NUMBER_OF_BYTES : 26084223
+09:38:30.477       NUMBER_OF_BYTES-eng: 26084223
+09:38:30.477     Stream #0:8(chi): Subtitle: hdmv_pgs_subtitle
+09:38:30.477     Metadata:
+09:38:30.477       title           : 繁体中文
+09:38:30.477       BPS             : 20257
+09:38:30.477       BPS-eng         : 20257
+09:38:30.477       DURATION        : 02:04:16.490000000
+09:38:30.477       DURATION-eng    : 02:04:16.490000000
+09:38:30.477       NUMBER_OF_FRAMES: 2242
+09:38:30.477       NUMBER_OF_FRAMES-eng: 2242
+09:38:30.477       NUMBER_OF_BYTES : 18881244
+09:38:30.477       NUMBER_OF_BYTES-eng: 18881244
+09:38:30.477     Stream #0:9(chi): Subtitle: hdmv_pgs_subtitle
+09:38:30.477     Metadata:
+09:38:30.477       title           : 繁体中文
+09:38:30.477       BPS             : 20407
+09:38:30.477       BPS-eng         : 20407
+09:38:30.477       DURATION        : 02:04:16.490000000
+09:38:30.477       DURATION-eng    : 02:04:16.490000000
+09:38:30.477       NUMBER_OF_FRAMES: 2302
+09:38:30.477       NUMBER_OF_FRAMES-eng: 2302
+09:38:30.477       NUMBER_OF_BYTES : 19021063
+09:38:30.477       NUMBER_OF_BYTES-eng: 19021063
+09:38:30.478     Stream #0:10(eng): Subtitle: hdmv_pgs_subtitle
+09:38:30.478     Metadata:
+09:38:30.478       title           : 英文
+09:38:30.478       BPS             : 24759
+09:38:30.478       BPS-eng         : 24759
+09:38:30.478       DURATION        : 02:04:22.747000000
+09:38:30.478       DURATION-eng    : 02:04:22.747000000
+09:38:30.478       NUMBER_OF_FRAMES: 2182
+09:38:30.478       NUMBER_OF_FRAMES-eng: 2182
+09:38:30.478       NUMBER_OF_BYTES : 23096670
+09:38:30.478       NUMBER_OF_BYTES-eng: 23096670
+09:38:30.479 Stream mapping:
+09:38:30.479   Stream #0:0 (hevc) -> format (graph 0)
+09:38:30.479   Stream #0:6 (pgssub) -> scale (graph 0)
+09:38:30.479   overlay (graph 0) -> Stream #0:0 (libx264)
+09:38:30.479   Stream #0:1 -> #0:1 (ac3 (native) -> mp3 (libmp3lame))
+09:38:30.479 Press [q] to stop, [?] for help
+09:38:30.519 [matroska,webm @ 0x1eabb40] sub2video: using 1920x1038 canvas
+09:38:30.544 [libx264 @ 0x2108800] using SAR=1/1
+09:38:30.544 [libx264 @ 0x2108800] VBV buffer (26077) > level limit (25000)
+09:38:30.544 [libx264 @ 0x2108800] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+09:38:30.557 [libx264 @ 0x2108800] profile Main, level 4.0, 4:2:0, 8-bit
+09:38:30.558 [libx264 @ 0x2108800] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=72 keyint_min=37 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=13038 vbv_bufsize=26077 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+09:38:30.559 Output #0, segment, to '/config/transcoding-temp/FFFC51_%d.ts':
+09:38:30.559   Metadata:
+09:38:30.559     encoder         : Lavf58.35.100
+09:38:30.559     Stream #0:0: Video: h264 (libx264), yuv420p, 1920x1038 [SAR 1:1 DAR 320:173], q=-1--1, 23.98 fps, 90k tbn, 23.98 tbc (default)
+09:38:30.559     Metadata:
+09:38:30.559       encoder         : Lavc58.62.100 libx264
+09:38:30.559     Side data:
+09:38:30.559       cpb: bitrate max/min/avg: 13038000/0/0 buffer size: 26077000 vbv_delay: N/A
+09:38:30.559     Stream #0:1(jpn): Audio: mp3 (libmp3lame), 48000 Hz, stereo, fltp, 192 kb/s (default)
+09:38:30.559     Metadata:
+09:38:30.559       encoder         : Lavc58.62.100 libmp3lame
+09:38:30.992 frame=    0 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A throttle=off speed=   0x    
+09:38:31.542 frame=    0 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A throttle=off speed=   0x    
+09:38:32.092 frame=   15 fps=9.4 q=0.0 size=      25kB time=00:00:10.03 bitrate=  20.2kbits/s throttle=off speed=6.29x    
+09:38:32.592 frame=   57 fps= 27 q=28.0 size=     148kB time=00:00:11.56 bitrate= 104.6kbits/s throttle=off speed=5.52x    
+09:38:32.909 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:32.909 SegmentComplete=video:0 Index=3 Start=0.000000 End=12.012000 Duration=12.012000 offset_pts=0 start_pts=0 Frames=72 filename=FFFC51_3.ts
+09:38:32.910 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_4.ts.tmp' for writing
+09:38:33.089 frame=  111 fps= 43 q=28.0 size=     254kB time=00:00:13.89 bitrate= 149.9kbits/s throttle=off speed=5.33x    
+09:38:33.612 frame=  150 fps= 48 q=28.0 size=     846kB time=00:00:15.57 bitrate= 444.8kbits/s throttle=off speed=   5x    
+09:38:33.821 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:33.821 SegmentComplete=video:0 Index=4 Start=12.012000 End=15.015000 Duration=3.003000 offset_pts=0 start_pts=12012000 Frames=72 filename=FFFC51_4.ts
+09:38:33.821 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_5.ts.tmp' for writing
+09:38:34.098 frame=  177 fps= 49 q=28.0 size=    1590kB time=00:00:16.94 bitrate= 768.7kbits/s throttle=off speed=4.68x    
+09:38:34.616 frame=  221 fps= 54 q=28.0 size=    2175kB time=00:00:18.48 bitrate= 964.0kbits/s throttle=off speed=4.48x    
+09:38:34.865 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:34.866 SegmentComplete=video:0 Index=5 Start=15.015000 End=18.018000 Duration=3.003000 offset_pts=0 start_pts=15015000 Frames=72 filename=FFFC51_5.ts
+09:38:34.866 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_6.ts.tmp' for writing
+09:38:35.124 frame=  254 fps= 55 q=28.0 size=    2955kB time=00:00:19.89 bitrate=1216.6kbits/s throttle=off speed=4.29x    
+09:38:35.632 frame=  284 fps= 55 q=28.0 size=    4457kB time=00:00:21.19 bitrate=1722.7kbits/s throttle=off speed=4.12x    
+09:38:35.983 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:35.983 SegmentComplete=video:0 Index=6 Start=18.018000 End=21.021000 Duration=3.003000 offset_pts=0 start_pts=18018000 Frames=72 filename=FFFC51_6.ts
+09:38:35.984 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_7.ts.tmp' for writing
+09:38:36.134 frame=  320 fps= 57 q=28.0 size=    6124kB time=00:00:22.53 bitrate=2226.1kbits/s throttle=off speed=3.99x    
+09:38:36.627 frame=  359 fps= 58 q=28.0 size=    6968kB time=00:00:24.31 bitrate=2347.8kbits/s throttle=off speed=3.96x    
+09:38:36.872 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:36.873 SegmentComplete=video:0 Index=7 Start=21.021000 End=24.024000 Duration=3.003000 offset_pts=0 start_pts=21021000 Frames=72 filename=FFFC51_7.ts
+09:38:36.873 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_8.ts.tmp' for writing
+09:38:37.126 frame=  400 fps= 60 q=28.0 size=    7372kB time=00:00:25.96 bitrate=2325.6kbits/s throttle=off speed=3.91x    
+09:38:37.644 frame=  434 fps= 61 q=28.0 size=    7955kB time=00:00:27.40 bitrate=2377.7kbits/s throttle=off speed=3.83x    
+09:38:37.934 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:37.934 SegmentComplete=video:0 Index=8 Start=24.024000 End=27.027000 Duration=3.003000 offset_pts=0 start_pts=24024000 Frames=72 filename=FFFC51_8.ts
+09:38:37.934 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_9.ts.tmp' for writing
+09:38:38.154 frame=  466 fps= 61 q=28.0 size=    8654kB time=00:00:28.84 bitrate=2457.3kbits/s throttle=off speed=3.76x    
+09:38:38.668 frame=  509 fps= 62 q=28.0 size=    9506kB time=00:00:30.38 bitrate=2562.9kbits/s throttle=off speed=3.72x    
+09:38:38.883 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:38.883 SegmentComplete=video:0 Index=9 Start=27.027000 End=30.030000 Duration=3.003000 offset_pts=0 start_pts=27027000 Frames=72 filename=FFFC51_9.ts
+09:38:38.883 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_10.ts.tmp' for writing
+09:38:39.169 frame=  550 fps= 63 q=28.0 size=   10109kB time=00:00:32.20 bitrate=2571.1kbits/s throttle=off speed=3.71x    
+09:38:39.685 frame=  593 fps= 65 q=28.0 size=   10608kB time=00:00:34.00 bitrate=2555.3kbits/s throttle=off speed= 3.7x    
+09:38:39.740 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:39.740 SegmentComplete=video:0 Index=10 Start=30.030000 End=33.033000 Duration=3.003000 offset_pts=0 start_pts=30030000 Frames=72 filename=FFFC51_10.ts
+09:38:39.740 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_11.ts.tmp' for writing
+09:38:40.173 frame=  636 fps= 66 q=28.0 size=   11353kB time=00:00:35.78 bitrate=2598.9kbits/s throttle=off speed=3.69x    
+09:38:40.562 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:40.563 SegmentComplete=video:0 Index=11 Start=33.033000 End=36.036000 Duration=3.003000 offset_pts=0 start_pts=33033000 Frames=72 filename=FFFC51_11.ts
+09:38:40.563 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_12.ts.tmp' for writing
+09:38:40.674 frame=  679 fps= 67 q=28.0 size=   12060kB time=00:00:37.68 bitrate=2621.9kbits/s throttle=off speed= 3.7x    
+09:38:41.184 frame=  720 fps= 67 q=28.0 size=   12634kB time=00:00:39.33 bitrate=2631.0kbits/s throttle=off speed=3.68x    
+09:38:41.459 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:41.460 SegmentComplete=video:0 Index=12 Start=36.036000 End=39.039000 Duration=3.003000 offset_pts=0 start_pts=36036000 Frames=72 filename=FFFC51_12.ts
+09:38:41.460 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_13.ts.tmp' for writing
+09:38:41.693 frame=  757 fps= 68 q=28.0 size=   13405kB time=00:00:41.04 bitrate=2675.7kbits/s throttle=off speed=3.66x    
+09:38:42.197 frame=  790 fps= 67 q=28.0 size=   13940kB time=00:00:42.09 bitrate=2712.6kbits/s throttle=off speed=3.59x    
+09:38:42.538 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:42.538 SegmentComplete=video:0 Index=13 Start=39.039000 End=42.042000 Duration=3.003000 offset_pts=0 start_pts=39039000 Frames=72 filename=FFFC51_13.ts
+09:38:42.538 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_14.ts.tmp' for writing
+09:38:42.716 frame=  824 fps= 67 q=28.0 size=   14932kB time=00:00:43.60 bitrate=2804.9kbits/s throttle=off speed=3.56x    
+09:38:43.225 frame=  857 fps= 67 q=28.0 size=   15878kB time=00:00:44.90 bitrate=2896.7kbits/s throttle=off speed=3.52x    
+09:38:43.666 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:43.667 SegmentComplete=video:0 Index=14 Start=42.042000 End=45.045000 Duration=3.003000 offset_pts=0 start_pts=42042000 Frames=72 filename=FFFC51_14.ts
+09:38:43.667 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_15.ts.tmp' for writing
+09:38:43.737 frame=  889 fps= 67 q=28.0 size=   16851kB time=00:00:46.24 bitrate=2984.8kbits/s throttle=off speed=3.49x    
+09:38:44.251 frame=  924 fps= 67 q=28.0 size=   17892kB time=00:00:47.68 bitrate=3073.5kbits/s throttle=off speed=3.47x    
+09:38:44.646 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:44.646 SegmentComplete=video:0 Index=15 Start=45.045000 End=48.048000 Duration=3.003000 offset_pts=0 start_pts=45045000 Frames=72 filename=FFFC51_15.ts
+09:38:44.646 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_16.ts.tmp' for writing
+09:38:44.735 frame=  965 fps= 68 q=28.0 size=   18853kB time=00:00:49.68 bitrate=3108.6kbits/s throttle=off speed=3.49x    
+09:38:45.240 frame= 1009 fps= 68 q=28.0 size=   19358kB time=00:00:51.31 bitrate=3090.5kbits/s throttle=off speed=3.48x    
+09:38:45.490 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:45.491 SegmentComplete=video:0 Index=16 Start=48.048000 End=51.051000 Duration=3.003000 offset_pts=0 start_pts=48048000 Frames=72 filename=FFFC51_16.ts
+09:38:45.491 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_17.ts.tmp' for writing
+09:38:45.740 frame= 1050 fps= 69 q=28.0 size=   20004kB time=00:00:53.16 bitrate=3082.6kbits/s throttle=off speed=3.48x    
+09:38:46.278 frame= 1091 fps= 69 q=28.0 size=   20730kB time=00:00:54.67 bitrate=3106.1kbits/s throttle=off speed=3.46x    
+09:38:46.421 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:46.422 SegmentComplete=video:0 Index=17 Start=51.051000 End=54.054000 Duration=3.003000 offset_pts=0 start_pts=51051000 Frames=72 filename=FFFC51_17.ts
+09:38:46.422 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_18.ts.tmp' for writing
+09:38:46.783 frame= 1126 fps= 69 q=28.0 size=   21797kB time=00:00:56.18 bitrate=3178.1kbits/s throttle=off speed=3.45x    
+09:38:47.277 frame= 1160 fps= 69 q=28.0 size=   22728kB time=00:00:57.74 bitrate=3224.3kbits/s throttle=off speed=3.44x    
+09:38:47.480 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:47.481 SegmentComplete=video:0 Index=18 Start=54.054000 End=57.057000 Duration=3.003000 offset_pts=0 start_pts=54054000 Frames=72 filename=FFFC51_18.ts
+09:38:47.481 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_19.ts.tmp' for writing
+09:38:47.794 frame= 1200 fps= 69 q=28.0 size=   23743kB time=00:00:59.37 bitrate=3275.8kbits/s throttle=off speed=3.43x    
+09:38:48.305 frame= 1239 fps= 70 q=28.0 size=   24417kB time=00:01:00.98 bitrate=3280.0kbits/s throttle=off speed=3.42x    
+09:38:48.385 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:48.386 SegmentComplete=video:0 Index=19 Start=57.057000 End=60.060000 Duration=3.003000 offset_pts=0 start_pts=57057000 Frames=72 filename=FFFC51_19.ts
+09:38:48.386 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_20.ts.tmp' for writing
+09:38:48.794 frame= 1278 fps= 70 q=28.0 size=   25320kB time=00:01:02.44 bitrate=3321.4kbits/s throttle=off speed=3.41x    
+09:38:49.268 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:49.268 SegmentComplete=video:0 Index=20 Start=60.060000 End=63.063000 Duration=3.003000 offset_pts=0 start_pts=60060000 Frames=72 filename=FFFC51_20.ts
+09:38:49.268 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_21.ts.tmp' for writing
+09:38:49.294 frame= 1320 fps= 70 q=28.0 size=   26285kB time=00:01:04.24 bitrate=3351.5kbits/s throttle=off speed=3.42x    
+09:38:49.792 frame= 1360 fps= 70 q=28.0 size=   26987kB time=00:01:06.07 bitrate=3345.9kbits/s throttle=off speed=3.42x    
+09:38:50.120 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:50.120 SegmentComplete=video:0 Index=21 Start=63.063000 End=66.066000 Duration=3.003000 offset_pts=0 start_pts=63063000 Frames=72 filename=FFFC51_21.ts
+09:38:50.120 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_22.ts.tmp' for writing
+09:38:50.296 frame= 1402 fps= 71 q=28.0 size=   27805kB time=00:01:07.75 bitrate=3361.9kbits/s throttle=off speed=3.42x    
+09:38:50.817 frame= 1445 fps= 71 q=28.0 size=   28664kB time=00:01:09.57 bitrate=3374.8kbits/s throttle=off speed=3.42x    
+09:38:51.030 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:51.031 SegmentComplete=video:0 Index=22 Start=66.066000 End=69.069000 Duration=3.003000 offset_pts=0 start_pts=66066000 Frames=72 filename=FFFC51_22.ts
+09:38:51.031 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_23.ts.tmp' for writing
+09:38:51.344 frame= 1487 fps= 71 q=28.0 size=   29640kB time=00:01:11.35 bitrate=3402.9kbits/s throttle=off speed=3.42x    
+09:38:51.847 frame= 1529 fps= 72 q=28.0 size=   30570kB time=00:01:12.93 bitrate=3433.5kbits/s throttle=off speed=3.41x    
+09:38:51.916 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:51.916 SegmentComplete=video:0 Index=23 Start=69.069000 End=72.072000 Duration=3.003000 offset_pts=0 start_pts=69069000 Frames=72 filename=FFFC51_23.ts
+09:38:51.916 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_24.ts.tmp' for writing
+09:38:52.359 frame= 1571 fps= 72 q=28.0 size=   31417kB time=00:01:14.83 bitrate=3439.2kbits/s throttle=off speed=3.42x    
+09:38:52.804 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:52.805 SegmentComplete=video:0 Index=24 Start=72.072000 End=75.075000 Duration=3.003000 offset_pts=0 start_pts=72072000 Frames=72 filename=FFFC51_24.ts
+09:38:52.805 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_25.ts.tmp' for writing
+09:38:52.844 frame= 1609 fps= 72 q=28.0 size=   32240kB time=00:01:16.29 bitrate=3461.6kbits/s throttle=off speed=3.41x    
+09:38:53.344 frame= 1648 fps= 72 q=28.0 size=   33130kB time=00:01:17.90 bitrate=3483.7kbits/s throttle=off speed=3.41x    
+09:38:53.732 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:53.732 SegmentComplete=video:0 Index=25 Start=75.075000 End=78.078000 Duration=3.003000 offset_pts=0 start_pts=75075000 Frames=72 filename=FFFC51_25.ts
+09:38:53.732 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_26.ts.tmp' for writing
+09:38:53.864 frame= 1685 fps= 72 q=28.0 size=   34211kB time=00:01:19.60 bitrate=3520.4kbits/s throttle=off speed=3.41x    
+09:38:54.389 frame= 1717 fps= 72 q=28.0 size=   35031kB time=00:01:20.71 bitrate=3555.5kbits/s throttle=off speed=3.38x    
+09:38:54.865 frame= 1744 fps= 72 q=25.0 size=   35762kB time=00:01:22.00 bitrate=3572.3kbits/s throttle=off speed=3.36x    
+09:38:54.939 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:54.940 SegmentComplete=video:0 Index=26 Start=78.078000 End=81.081000 Duration=3.003000 offset_pts=0 start_pts=78078000 Frames=72 filename=FFFC51_26.ts
+09:38:54.940 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_27.ts.tmp' for writing
+09:38:55.376 frame= 1779 fps= 71 q=28.0 size=   37016kB time=00:01:23.49 bitrate=3631.7kbits/s throttle=off speed=3.36x    
+09:38:55.868 frame= 1812 fps= 71 q=28.0 size=   38149kB time=00:01:24.81 bitrate=3684.6kbits/s throttle=off speed=3.34x    
+09:38:56.071 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:56.072 SegmentComplete=video:0 Index=27 Start=81.081000 End=84.084000 Duration=3.003000 offset_pts=0 start_pts=81081000 Frames=72 filename=FFFC51_27.ts
+09:38:56.072 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_28.ts.tmp' for writing
+09:38:56.367 frame= 1845 fps= 71 q=28.0 size=   39537kB time=00:01:26.37 bitrate=3749.7kbits/s throttle=off speed=3.34x    
+09:38:56.866 frame= 1886 fps= 71 q=28.0 size=   40382kB time=00:01:27.98 bitrate=3759.9kbits/s throttle=off speed=3.33x    
+09:38:56.952 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:56.953 SegmentComplete=video:0 Index=28 Start=84.084000 End=87.087000 Duration=3.003000 offset_pts=0 start_pts=84084000 Frames=72 filename=FFFC51_28.ts
+09:38:56.953 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_29.ts.tmp' for writing
+09:38:57.371 frame= 1933 fps= 72 q=28.0 size=   41424kB time=00:01:30.07 bitrate=3767.4kbits/s throttle=off speed=3.35x    
+09:38:57.670 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:57.671 SegmentComplete=video:0 Index=29 Start=87.087000 End=90.090000 Duration=3.003000 offset_pts=0 start_pts=87087000 Frames=72 filename=FFFC51_29.ts
+09:38:57.671 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_30.ts.tmp' for writing
+09:38:57.878 frame= 1986 fps= 73 q=28.0 size=   42154kB time=00:01:32.18 bitrate=3746.0kbits/s throttle=off speed=3.37x    
+09:38:58.373 frame= 2032 fps= 73 q=25.0 size=   42924kB time=00:01:34.20 bitrate=3732.8kbits/s throttle=off speed=3.38x    
+09:38:58.437 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:58.437 SegmentComplete=video:0 Index=30 Start=90.090000 End=93.093000 Duration=3.003000 offset_pts=0 start_pts=90090000 Frames=72 filename=FFFC51_30.ts
+09:38:58.437 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_31.ts.tmp' for writing
+09:38:58.892 frame= 2078 fps= 73 q=28.0 size=   43865kB time=00:01:36.02 bitrate=3742.2kbits/s throttle=off speed=3.38x    
+09:38:59.269 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:38:59.270 SegmentComplete=video:0 Index=31 Start=93.093000 End=96.096000 Duration=3.003000 offset_pts=0 start_pts=93093000 Frames=72 filename=FFFC51_31.ts
+09:38:59.270 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_32.ts.tmp' for writing
+09:38:59.384 frame= 2120 fps= 73 q=28.0 size=   45180kB time=00:01:37.60 bitrate=3791.8kbits/s throttle=off speed=3.38x    
+09:38:59.905 frame= 2166 fps= 74 q=28.0 size=   45810kB time=00:01:39.60 bitrate=3767.8kbits/s throttle=off speed=3.39x    
+09:39:00.179 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:00.180 SegmentComplete=video:0 Index=32 Start=96.096000 End=99.099000 Duration=3.003000 offset_pts=0 start_pts=96096000 Frames=72 filename=FFFC51_32.ts
+09:39:00.180 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_33.ts.tmp' for writing
+09:39:00.399 frame= 2206 fps= 74 q=28.0 size=   46807kB time=00:01:41.20 bitrate=3788.6kbits/s throttle=off speed=3.38x    
+09:39:00.809 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:00.809 SegmentComplete=video:0 Index=33 Start=99.099000 End=102.102000 Duration=3.003000 offset_pts=0 start_pts=99099000 Frames=72 filename=FFFC51_33.ts
+09:39:00.809 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_34.ts.tmp' for writing
+09:39:00.894 frame= 2264 fps= 74 q=28.0 size=   47285kB time=00:01:43.80 bitrate=3731.8kbits/s throttle=off speed=3.41x    
+09:39:01.396 frame= 2312 fps= 75 q=28.0 size=   47361kB time=00:01:45.76 bitrate=3668.2kbits/s throttle=off speed=3.42x    
+09:39:01.580 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:01.580 SegmentComplete=video:0 Index=34 Start=102.102000 End=105.105000 Duration=3.003000 offset_pts=0 start_pts=102102000 Frames=72 filename=FFFC51_34.ts
+09:39:01.580 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_35.ts.tmp' for writing
+09:39:01.948 frame= 2357 fps= 75 q=28.0 size=   48291kB time=00:01:47.59 bitrate=3676.8kbits/s throttle=off speed=3.42x    
+09:39:02.445 frame= 2390 fps= 75 q=28.0 size=   48593kB time=00:01:48.93 bitrate=3654.1kbits/s throttle=off speed=3.41x    
+09:39:02.541 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:02.542 SegmentComplete=video:0 Index=35 Start=105.105000 End=108.108000 Duration=3.003000 offset_pts=0 start_pts=105105000 Frames=72 filename=FFFC51_35.ts
+09:39:02.542 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_36.ts.tmp' for writing
+09:39:02.942 frame= 2420 fps= 75 q=28.0 size=   49268kB time=00:01:50.44 bitrate=3654.2kbits/s throttle=off speed= 3.4x    
+09:39:03.510 frame= 2450 fps= 74 q=28.0 size=   49778kB time=00:01:51.33 bitrate=3662.6kbits/s throttle=off speed=3.37x    
+09:39:03.835 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:03.836 SegmentComplete=video:0 Index=36 Start=108.108000 End=111.111000 Duration=3.003000 offset_pts=0 start_pts=108108000 Frames=72 filename=FFFC51_36.ts
+09:39:03.836 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_37.ts.tmp' for writing
+09:39:04.031 frame= 2481 fps= 74 q=28.0 size=   50336kB time=00:01:52.63 bitrate=3661.1kbits/s throttle=off speed=3.36x    
+09:39:04.531 frame= 2518 fps= 74 q=28.0 size=   51037kB time=00:01:54.40 bitrate=3654.4kbits/s throttle=off speed=3.36x    
+09:39:04.777 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:04.778 SegmentComplete=video:0 Index=37 Start=111.111000 End=114.114000 Duration=3.003000 offset_pts=0 start_pts=111111000 Frames=72 filename=FFFC51_37.ts
+09:39:04.778 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_38.ts.tmp' for writing
+09:39:05.047 frame= 2567 fps= 74 q=28.0 size=   51765kB time=00:01:56.23 bitrate=3648.3kbits/s throttle=off speed=3.36x    
+09:39:05.562 frame= 2612 fps= 74 q=28.0 size=   52236kB time=00:01:58.22 bitrate=3619.5kbits/s throttle=off speed=3.37x    
+09:39:05.573 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:05.573 SegmentComplete=video:0 Index=38 Start=114.114000 End=117.117000 Duration=3.003000 offset_pts=0 start_pts=114114000 Frames=72 filename=FFFC51_38.ts
+09:39:05.573 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_39.ts.tmp' for writing
+09:39:06.117 frame= 2659 fps= 75 q=28.0 size=   53136kB time=00:02:00.07 bitrate=3625.2kbits/s throttle=off speed=3.37x    
+09:39:06.422 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:06.422 SegmentComplete=video:0 Index=39 Start=117.117000 End=120.120000 Duration=3.003000 offset_pts=0 start_pts=117117000 Frames=72 filename=FFFC51_39.ts
+09:39:06.422 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_40.ts.tmp' for writing
+09:39:06.621 frame= 2702 fps= 75 q=28.0 size=   54101kB time=00:02:01.84 bitrate=3637.2kbits/s throttle=off speed=3.37x    
+09:39:07.137 frame= 2746 fps= 75 q=28.0 size=   54779kB time=00:02:03.96 bitrate=3620.1kbits/s throttle=off speed=3.38x    
+09:39:07.310 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:07.310 SegmentComplete=video:0 Index=40 Start=120.120000 End=123.123000 Duration=3.003000 offset_pts=0 start_pts=120120000 Frames=72 filename=FFFC51_40.ts
+09:39:07.311 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_41.ts.tmp' for writing
+09:39:07.629 frame= 2780 fps= 75 q=28.0 size=   55423kB time=00:02:05.23 bitrate=3625.5kbits/s throttle=off speed=3.37x    
+09:39:08.145 frame= 2815 fps= 75 q=28.0 size=   55878kB time=00:02:06.55 bitrate=3617.1kbits/s throttle=off speed=3.36x    
+09:39:08.337 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:08.337 SegmentComplete=video:0 Index=41 Start=123.123000 End=126.126000 Duration=3.003000 offset_pts=0 start_pts=123123000 Frames=72 filename=FFFC51_41.ts
+09:39:08.337 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_42.ts.tmp' for writing
+09:39:08.629 frame= 2857 fps= 75 q=28.0 size=   56938kB time=00:02:08.71 bitrate=3623.9kbits/s throttle=off speed=3.37x    
+09:39:09.148 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:09.148 SegmentComplete=video:0 Index=42 Start=126.126000 End=129.129000 Duration=3.003000 offset_pts=0 start_pts=126126000 Frames=72 filename=FFFC51_42.ts
+09:39:09.148 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_43.ts.tmp' for writing
+09:39:09.156 frame= 2902 fps= 75 q=28.0 size=   57882kB time=00:02:10.39 bitrate=3636.5kbits/s throttle=off speed=3.37x    
+09:39:09.653 frame= 2946 fps= 75 q=28.0 size=   58374kB time=00:02:12.26 bitrate=3615.5kbits/s throttle=off speed=3.38x    
+09:39:09.973 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:09.974 SegmentComplete=video:0 Index=43 Start=129.129000 End=132.132000 Duration=3.003000 offset_pts=0 start_pts=129129000 Frames=72 filename=FFFC51_43.ts
+09:39:09.974 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_44.ts.tmp' for writing
+09:39:10.165 frame= 2994 fps= 75 q=28.0 size=   59154kB time=00:02:14.18 bitrate=3611.4kbits/s throttle=off speed=3.38x    
+09:39:10.668 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:10.668 SegmentComplete=video:0 Index=44 Start=132.132000 End=135.135000 Duration=3.003000 offset_pts=0 start_pts=132132000 Frames=72 filename=FFFC51_44.ts
+09:39:10.668 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_45.ts.tmp' for writing
+09:39:10.669 frame= 3045 fps= 76 q=28.0 size=   59662kB time=00:02:16.29 bitrate=3585.9kbits/s throttle=off speed=3.39x    
+09:39:11.181 frame= 3088 fps= 76 q=28.0 size=   60066kB time=00:02:17.92 bitrate=3567.5kbits/s throttle=off speed=3.39x    
+09:39:11.611 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:11.612 SegmentComplete=video:0 Index=45 Start=135.135000 End=138.138000 Duration=3.003000 offset_pts=0 start_pts=135135000 Frames=72 filename=FFFC51_45.ts
+09:39:11.612 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_46.ts.tmp' for writing
+09:39:11.712 frame= 3123 fps= 76 q=28.0 size=   61028kB time=00:02:19.41 bitrate=3585.9kbits/s throttle=off speed=3.38x    
+09:39:12.194 frame= 3156 fps= 76 q=28.0 size=   62051kB time=00:02:20.97 bitrate=3605.7kbits/s throttle=off speed=3.38x    
+09:39:12.581 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:12.582 SegmentComplete=video:0 Index=46 Start=138.138000 End=141.141000 Duration=3.003000 offset_pts=0 start_pts=138138000 Frames=72 filename=FFFC51_46.ts
+09:39:12.582 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_47.ts.tmp' for writing
+09:39:12.705 frame= 3200 fps= 76 q=28.0 size=   62883kB time=00:02:22.80 bitrate=3607.4kbits/s throttle=off speed=3.38x    
+09:39:13.203 frame= 3241 fps= 76 q=28.0 size=   63348kB time=00:02:24.45 bitrate=3592.4kbits/s throttle=off speed=3.38x    
+09:39:13.451 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:13.452 SegmentComplete=video:0 Index=47 Start=141.141000 End=144.144000 Duration=3.003000 offset_pts=0 start_pts=141141000 Frames=72 filename=FFFC51_47.ts
+09:39:13.452 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_48.ts.tmp' for writing
+09:39:13.709 frame= 3285 fps= 76 q=28.0 size=   64645kB time=00:02:26.44 bitrate=3616.1kbits/s throttle=off speed=3.39x    
+09:39:14.205 frame= 3330 fps= 76 q=28.0 size=   65162kB time=00:02:28.27 bitrate=3600.2kbits/s throttle=off speed=3.39x    
+09:39:14.250 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:14.251 SegmentComplete=video:0 Index=48 Start=144.144000 End=147.147000 Duration=3.003000 offset_pts=0 start_pts=144144000 Frames=72 filename=FFFC51_48.ts
+09:39:14.251 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_49.ts.tmp' for writing
+09:39:14.709 frame= 3372 fps= 76 q=28.0 size=   66167kB time=00:02:29.88 bitrate=3616.5kbits/s throttle=off speed=3.39x    
+09:39:15.109 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:15.109 SegmentComplete=video:0 Index=49 Start=147.147000 End=150.150000 Duration=3.003000 offset_pts=0 start_pts=147147000 Frames=72 filename=FFFC51_49.ts
+09:39:15.109 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_50.ts.tmp' for writing
+09:39:15.229 frame= 3415 fps= 76 q=28.0 size=   67146kB time=00:02:31.72 bitrate=3625.3kbits/s throttle=off speed=3.39x    
+09:39:15.732 frame= 3457 fps= 76 q=28.0 size=   67968kB time=00:02:33.33 bitrate=3631.2kbits/s throttle=off speed=3.39x    
+09:39:15.984 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:15.985 SegmentComplete=video:0 Index=50 Start=150.150000 End=153.153000 Duration=3.003000 offset_pts=0 start_pts=150150000 Frames=72 filename=FFFC51_50.ts
+09:39:15.985 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_51.ts.tmp' for writing
+09:39:16.247 frame= 3499 fps= 76 q=28.0 size=   68814kB time=00:02:35.18 bitrate=3632.6kbits/s throttle=off speed=3.39x    
+09:39:16.767 frame= 3534 fps= 76 q=28.0 size=   69710kB time=00:02:36.69 bitrate=3644.4kbits/s throttle=off speed=3.39x    
+09:39:16.974 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:16.974 SegmentComplete=video:0 Index=51 Start=153.153000 End=156.156000 Duration=3.003000 offset_pts=0 start_pts=153153000 Frames=72 filename=FFFC51_51.ts
+09:39:16.974 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_52.ts.tmp' for writing
+09:39:17.265 frame= 3570 fps= 76 q=28.0 size=   70740kB time=00:02:38.18 bitrate=3663.4kbits/s throttle=off speed=3.38x    
+09:39:17.787 frame= 3601 fps= 76 q=28.0 size=   72288kB time=00:02:39.43 bitrate=3714.3kbits/s throttle=off speed=3.37x    
+09:39:18.118 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:18.118 SegmentComplete=video:0 Index=52 Start=156.156000 End=159.159000 Duration=3.003000 offset_pts=0 start_pts=156156000 Frames=72 filename=FFFC51_52.ts
+09:39:18.118 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_53.ts.tmp' for writing
+09:39:18.297 frame= 3633 fps= 76 q=28.0 size=   74051kB time=00:02:40.77 bitrate=3773.1kbits/s throttle=off speed=3.36x    
+09:39:18.766 frame= 3671 fps= 76 q=28.0 size=   75341kB time=00:02:42.31 bitrate=3802.5kbits/s throttle=off speed=3.36x    
+09:39:19.034 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:19.034 SegmentComplete=video:0 Index=53 Start=159.159000 End=162.162000 Duration=3.003000 offset_pts=0 start_pts=159159000 Frames=72 filename=FFFC51_53.ts
+09:39:19.034 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_54.ts.tmp' for writing
+09:39:19.300 frame= 3713 fps= 76 q=28.0 size=   76488kB time=00:02:44.01 bitrate=3820.3kbits/s throttle=off speed=3.36x    
+09:39:19.798 frame= 3748 fps= 76 q=28.0 size=   77671kB time=00:02:45.57 bitrate=3842.8kbits/s throttle=off speed=3.36x    
+09:39:20.045 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:20.045 SegmentComplete=video:0 Index=54 Start=162.162000 End=165.165000 Duration=3.003000 offset_pts=0 start_pts=162162000 Frames=72 filename=FFFC51_54.ts
+09:39:20.045 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_55.ts.tmp' for writing
+09:39:20.309 frame= 3782 fps= 76 q=28.0 size=   78957kB time=00:02:46.99 bitrate=3873.3kbits/s throttle=off speed=3.35x    
+09:39:20.848 frame= 3817 fps= 76 q=28.0 size=   80579kB time=00:02:48.45 bitrate=3918.5kbits/s throttle=off speed=3.35x    
+09:39:21.179 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:21.180 SegmentComplete=video:0 Index=55 Start=165.165000 End=168.168000 Duration=3.003000 offset_pts=0 start_pts=165165000 Frames=72 filename=FFFC51_55.ts
+09:39:21.180 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_56.ts.tmp' for writing
+09:39:21.351 frame= 3848 fps= 76 q=28.0 size=   82016kB time=00:02:49.80 bitrate=3956.8kbits/s throttle=off speed=3.34x    
+09:39:21.861 frame= 3879 fps= 75 q=28.0 size=   83172kB time=00:02:50.95 bitrate=3985.6kbits/s throttle=off speed=3.33x    
+09:39:22.349 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:22.350 SegmentComplete=video:0 Index=56 Start=168.168000 End=171.171000 Duration=3.003000 offset_pts=0 start_pts=168168000 Frames=72 filename=FFFC51_56.ts
+09:39:22.350 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_57.ts.tmp' for writing
+09:39:22.371 frame= 3911 fps= 75 q=28.0 size=   84230kB time=00:02:52.36 bitrate=4003.1kbits/s throttle=off speed=3.32x    
+09:39:22.939 frame= 3945 fps= 75 q=28.0 size=   85990kB time=00:02:53.71 bitrate=4055.1kbits/s throttle=off speed=3.31x    
+09:39:23.458 frame= 3980 fps= 75 q=28.0 size=   87285kB time=00:02:55.27 bitrate=4079.6kbits/s throttle=off speed=3.31x    
+09:39:23.479 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:23.480 SegmentComplete=video:0 Index=57 Start=171.171000 End=174.174000 Duration=3.003000 offset_pts=0 start_pts=171171000 Frames=72 filename=FFFC51_57.ts
+09:39:23.480 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_58.ts.tmp' for writing
+09:39:23.969 frame= 4013 fps= 75 q=28.0 size=   88785kB time=00:02:56.68 bitrate=4116.4kbits/s throttle=off speed= 3.3x    
+09:39:24.462 frame= 4045 fps= 75 q=28.0 size=   90224kB time=00:02:58.10 bitrate=4149.9kbits/s throttle=off speed= 3.3x    
+09:39:24.604 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:24.604 SegmentComplete=video:0 Index=58 Start=174.174000 End=177.177000 Duration=3.003000 offset_pts=0 start_pts=174174000 Frames=72 filename=FFFC51_58.ts
+09:39:24.604 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_59.ts.tmp' for writing
+09:39:24.965 frame= 4076 fps= 75 q=28.0 size=   91800kB time=00:02:59.28 bitrate=4194.7kbits/s throttle=off speed=3.29x    
+09:39:25.456 frame= 4106 fps= 75 q=28.0 size=   93033kB time=00:03:00.60 bitrate=4220.0kbits/s throttle=off speed=3.29x    
+09:39:25.803 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:25.804 SegmentComplete=video:0 Index=59 Start=177.177000 End=180.180000 Duration=3.003000 offset_pts=0 start_pts=177177000 Frames=72 filename=FFFC51_59.ts
+09:39:25.804 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_60.ts.tmp' for writing
+09:39:25.972 frame= 4136 fps= 75 q=28.0 size=   94600kB time=00:03:01.70 bitrate=4265.0kbits/s throttle=off speed=3.28x    
+09:39:26.475 frame= 4173 fps= 75 q=28.0 size=   95828kB time=00:03:03.50 bitrate=4277.9kbits/s throttle=off speed=3.28x    
+09:39:26.883 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:26.883 SegmentComplete=video:0 Index=60 Start=180.180000 End=183.183000 Duration=3.003000 offset_pts=0 start_pts=180180000 Frames=72 filename=FFFC51_60.ts
+09:39:26.883 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_61.ts.tmp' for writing
+09:39:26.984 frame= 4204 fps= 74 q=28.0 size=   96203kB time=00:03:04.68 bitrate=4267.3kbits/s throttle=off speed=3.27x    
+09:39:27.482 frame= 4251 fps= 75 q=28.0 size=   96914kB time=00:03:06.64 bitrate=4253.5kbits/s throttle=off speed=3.27x    
+09:39:27.664 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:27.664 SegmentComplete=video:0 Index=61 Start=183.183000 End=186.186000 Duration=3.003000 offset_pts=0 start_pts=183183000 Frames=72 filename=FFFC51_61.ts
+09:39:27.664 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_62.ts.tmp' for writing
+09:39:27.984 frame= 4301 fps= 75 q=28.0 size=   97390kB time=00:03:08.80 bitrate=4225.5kbits/s throttle=off speed=3.28x    
+09:39:28.471 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:28.472 SegmentComplete=video:0 Index=62 Start=186.186000 End=189.189000 Duration=3.003000 offset_pts=0 start_pts=186186000 Frames=72 filename=FFFC51_62.ts
+09:39:28.472 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_63.ts.tmp' for writing
+09:39:28.497 frame= 4344 fps= 75 q=28.0 size=   97790kB time=00:03:10.39 bitrate=4207.6kbits/s throttle=off speed=3.28x    
+09:39:29.020 frame= 4385 fps= 75 q=28.0 size=   98589kB time=00:03:12.16 bitrate=4202.8kbits/s throttle=off speed=3.28x    
+09:39:29.377 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:29.377 SegmentComplete=video:0 Index=63 Start=189.189000 End=192.192000 Duration=3.003000 offset_pts=0 start_pts=189189000 Frames=72 filename=FFFC51_63.ts
+09:39:29.378 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_64.ts.tmp' for writing
+09:39:29.519 frame= 4427 fps= 75 q=28.0 size=   99633kB time=00:03:13.96 bitrate=4207.9kbits/s throttle=off speed=3.29x    
+09:39:30.032 frame= 4472 fps= 75 q=28.0 size=  100153kB time=00:03:15.72 bitrate=4192.0kbits/s throttle=off speed=3.29x    
+09:39:30.198 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:30.198 SegmentComplete=video:0 Index=64 Start=192.192000 End=195.195000 Duration=3.003000 offset_pts=0 start_pts=192192000 Frames=72 filename=FFFC51_64.ts
+09:39:30.198 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_65.ts.tmp' for writing
+09:39:30.552 frame= 4516 fps= 75 q=28.0 size=  101257kB time=00:03:17.64 bitrate=4197.0kbits/s throttle=off speed=3.29x    
+09:39:31.018 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:31.019 SegmentComplete=video:0 Index=65 Start=195.195000 End=198.198000 Duration=3.003000 offset_pts=0 start_pts=195195000 Frames=72 filename=FFFC51_65.ts
+09:39:31.019 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_66.ts.tmp' for writing
+09:39:31.070 frame= 4563 fps= 75 q=28.0 size=  102188kB time=00:03:19.51 bitrate=4195.8kbits/s throttle=off speed=3.29x    
+09:39:31.566 frame= 4608 fps= 75 q=28.0 size=  102720kB time=00:03:21.72 bitrate=4171.5kbits/s throttle=off speed= 3.3x    
+09:39:31.773 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:31.774 SegmentComplete=video:0 Index=66 Start=198.198000 End=201.201000 Duration=3.003000 offset_pts=0 start_pts=198198000 Frames=72 filename=FFFC51_66.ts
+09:39:31.774 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_67.ts.tmp' for writing
+09:39:32.092 frame= 4658 fps= 76 q=28.0 size=  103563kB time=00:03:23.49 bitrate=4169.1kbits/s throttle=off speed= 3.3x    
+09:39:32.590 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:32.590 SegmentComplete=video:0 Index=67 Start=201.201000 End=204.204000 Duration=3.003000 offset_pts=0 start_pts=201201000 Frames=72 filename=FFFC51_67.ts
+09:39:32.591 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_68.ts.tmp' for writing
+09:39:32.598 frame= 4702 fps= 76 q=28.0 size=  104353kB time=00:03:25.29 bitrate=4164.0kbits/s throttle=off speed=3.31x    
+09:39:33.107 frame= 4750 fps= 76 q=28.0 size=  104983kB time=00:03:27.60 bitrate=4142.7kbits/s throttle=off speed=3.32x    
+09:39:33.400 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:33.400 SegmentComplete=video:0 Index=68 Start=204.204000 End=207.207000 Duration=3.003000 offset_pts=0 start_pts=204204000 Frames=72 filename=FFFC51_68.ts
+09:39:33.400 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_69.ts.tmp' for writing
+09:39:33.608 frame= 4782 fps= 76 q=28.0 size=  105485kB time=00:03:28.87 bitrate=4137.1kbits/s throttle=off speed=3.31x    
+09:39:34.141 frame= 4826 fps= 76 q=28.0 size=  106304kB time=00:03:30.45 bitrate=4137.8kbits/s throttle=off speed=3.31x    
+09:39:34.347 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:34.347 SegmentComplete=video:0 Index=69 Start=207.207000 End=210.210000 Duration=3.003000 offset_pts=0 start_pts=207207000 Frames=72 filename=FFFC51_69.ts
+09:39:34.347 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_70.ts.tmp' for writing
+09:39:34.625 frame= 4869 fps= 76 q=28.0 size=  107042kB time=00:03:32.28 bitrate=4130.8kbits/s throttle=off speed=3.31x    
+09:39:35.141 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:35.142 SegmentComplete=video:0 Index=70 Start=210.210000 End=213.213000 Duration=3.003000 offset_pts=0 start_pts=210210000 Frames=72 filename=FFFC51_70.ts
+09:39:35.142 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_71.ts.tmp' for writing
+09:39:35.148 frame= 4918 fps= 76 q=28.0 size=  107792kB time=00:03:34.58 bitrate=4115.1kbits/s throttle=off speed=3.32x    
+09:39:35.657 frame= 4968 fps= 76 q=28.0 size=  108291kB time=00:03:36.64 bitrate=4094.7kbits/s throttle=off speed=3.32x    
+09:39:35.860 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:35.861 SegmentComplete=video:0 Index=71 Start=213.213000 End=216.216000 Duration=3.003000 offset_pts=0 start_pts=213213000 Frames=72 filename=FFFC51_71.ts
+09:39:35.861 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_72.ts.tmp' for writing
+09:39:36.153 frame= 5016 fps= 76 q=28.0 size=  108393kB time=00:03:38.64 bitrate=4061.3kbits/s throttle=off speed=3.33x    
+09:39:36.636 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:36.637 SegmentComplete=video:0 Index=72 Start=216.216000 End=219.219000 Duration=3.003000 offset_pts=0 start_pts=216216000 Frames=72 filename=FFFC51_72.ts
+09:39:36.637 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_73.ts.tmp' for writing
+09:39:36.664 frame= 5062 fps= 76 q=28.0 size=  109092kB time=00:03:40.36 bitrate=4055.4kbits/s throttle=off speed=3.33x    
+09:39:37.186 frame= 5108 fps= 77 q=28.0 size=  109703kB time=00:03:42.36 bitrate=4041.6kbits/s throttle=off speed=3.33x    
+09:39:37.455 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:37.456 SegmentComplete=video:0 Index=73 Start=219.219000 End=222.222000 Duration=3.003000 offset_pts=0 start_pts=219219000 Frames=72 filename=FFFC51_73.ts
+09:39:37.456 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_74.ts.tmp' for writing
+09:39:37.692 frame= 5153 fps= 77 q=28.0 size=  110471kB time=00:03:44.04 bitrate=4039.3kbits/s throttle=off speed=3.33x    
+09:39:38.201 frame= 5196 fps= 77 q=28.0 size=  111000kB time=00:03:46.05 bitrate=4022.5kbits/s throttle=off speed=3.34x    
+09:39:38.320 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:38.321 SegmentComplete=video:0 Index=74 Start=222.222000 End=225.225000 Duration=3.003000 offset_pts=0 start_pts=222222000 Frames=72 filename=FFFC51_74.ts
+09:39:38.321 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_75.ts.tmp' for writing
+09:39:38.699 frame= 5240 fps= 77 q=28.0 size=  111819kB time=00:03:47.92 bitrate=4018.9kbits/s throttle=off speed=3.34x    
+09:39:39.206 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:39.206 SegmentComplete=video:0 Index=75 Start=225.225000 End=228.228000 Duration=3.003000 offset_pts=0 start_pts=225225000 Frames=72 filename=FFFC51_75.ts
+09:39:39.206 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_76.ts.tmp' for writing
+09:39:39.215 frame= 5278 fps= 77 q=28.0 size=  112333kB time=00:03:49.56 bitrate=4008.6kbits/s throttle=off speed=3.34x    
+09:39:39.725 frame= 5317 fps= 77 q=28.0 size=  112716kB time=00:03:50.95 bitrate=3998.1kbits/s throttle=off speed=3.34x    
+09:39:40.087 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:40.088 SegmentComplete=video:0 Index=76 Start=228.228000 End=231.231000 Duration=3.003000 offset_pts=0 start_pts=228228000 Frames=72 filename=FFFC51_76.ts
+09:39:40.088 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_77.ts.tmp' for writing
+09:39:40.212 frame= 5359 fps= 77 q=28.0 size=  113561kB time=00:03:52.84 bitrate=3995.3kbits/s throttle=off speed=3.34x    
+09:39:40.725 frame= 5407 fps= 77 q=28.0 size=  114072kB time=00:03:54.96 bitrate=3977.2kbits/s throttle=off speed=3.35x    
+09:39:40.864 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:40.865 SegmentComplete=video:0 Index=77 Start=231.231000 End=234.234000 Duration=3.003000 offset_pts=0 start_pts=231231000 Frames=72 filename=FFFC51_77.ts
+09:39:40.865 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_78.ts.tmp' for writing
+09:39:41.227 frame= 5454 fps= 77 q=28.0 size=  114501kB time=00:03:56.78 bitrate=3961.4kbits/s throttle=off speed=3.35x    
+09:39:41.595 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:41.598 SegmentComplete=video:0 Index=78 Start=234.234000 End=237.237000 Duration=3.003000 offset_pts=0 start_pts=234234000 Frames=72 filename=FFFC51_78.ts
+09:39:41.598 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_79.ts.tmp' for writing
+09:39:41.735 frame= 5509 fps= 77 q=28.0 size=  114948kB time=00:03:59.06 bitrate=3938.9kbits/s throttle=off speed=3.36x    
+09:39:42.240 frame= 5555 fps= 77 q=28.0 size=  115375kB time=00:04:01.10 bitrate=3920.1kbits/s throttle=off speed=3.36x    
+09:39:42.349 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:42.349 SegmentComplete=video:0 Index=79 Start=237.237000 End=240.240000 Duration=3.003000 offset_pts=0 start_pts=237237000 Frames=72 filename=FFFC51_79.ts
+09:39:42.349 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51_80.ts.tmp' for writing
+09:39:42.748 frame= 5600 fps= 77 q=28.0 size=  115876kB time=00:04:02.83 bitrate=3909.1kbits/s throttle=off speed=3.36x    
+09:39:42.856 
+
+[q] command received. Exiting.
+
+09:39:42.909 09:39:42.909 [segment @ 0x21077c0] Opening '/config/transcoding-temp/FFFC51.m3u8.tmp' for writing
+09:39:42.910 SegmentComplete=video:0 Index=80 Start=240.240000 End=242.992756 Duration=2.752756 offset_pts=0 start_pts=240240000 Frames=66 filename=FFFC51_80.ts
+09:39:42.910 frame= 5610 fps= 77 q=-1.0 Lsize=  116050kB time=00:04:03.40 bitrate=3905.7kbits/s throttle=off speed=3.36x    
+09:39:42.910 video:110556kB audio:5494kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+09:39:42.918 EXIT
+09:39:42.919 [libx264 @ 0x2108800] frame I:78    Avg QP:18.56  size:204950
+09:39:42.919 [libx264 @ 0x2108800] frame P:2320  Avg QP:22.96  size: 33761
+09:39:42.919 [libx264 @ 0x2108800] frame B:3212  Avg QP:27.17  size:  5883
+09:39:42.919 [libx264 @ 0x2108800] consecutive B-frames: 17.4% 14.5% 12.5% 55.5%
+09:39:42.919 [libx264 @ 0x2108800] mb I  I16..4: 38.7%  0.0% 61.3%
+09:39:42.919 [libx264 @ 0x2108800] mb P  I16..4: 13.8%  0.0%  0.0%  P16..4: 32.0%  0.0%  0.0%  0.0%  0.0%    skip:54.3%
+09:39:42.919 [libx264 @ 0x2108800] mb B  I16..4:  1.3%  0.0%  0.0%  B16..8: 11.3%  0.0%  0.0%  direct: 3.0%  skip:84.4%  L0:45.9% L1:42.7% BI:11.4%
+09:39:42.920 [libx264 @ 0x2108800] coded y,uvDC,uvAC intra: 56.7% 48.5% 24.2% inter: 7.6% 4.9% 0.6%
+09:39:42.920 [libx264 @ 0x2108800] i16 v,h,dc,p: 35% 33% 20% 12%
+09:39:42.920 [libx264 @ 0x2108800] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 21% 19% 15% 10%  7%  7%  7%  7%  8%
+09:39:42.920 [libx264 @ 0x2108800] i8c dc,h,v,p: 47% 27% 20%  7%
+09:39:42.920 [libx264 @ 0x2108800] Weighted P-Frames: Y:1.7% UV:1.6%
+09:39:42.920 [libx264 @ 0x2108800] kb/s:3870.64
+09:39:42.929 
+
+======= ExtraData
+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

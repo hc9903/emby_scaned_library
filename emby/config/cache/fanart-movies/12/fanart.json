@@ -1,0 +1,803 @@
+{
+    "name": "Finding Nemo",
+    "tmdb_id": "12",
+    "imdb_id": "tt0266543",
+    "moviedisc": [
+        {
+            "id": "51334",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviedisc/finding-nemo-52363db492f84.png",
+            "lang": "en",
+            "likes": "30",
+            "disc": "1",
+            "disc_type": "bluray"
+        },
+        {
+            "id": "22752",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviedisc/finding-nemo-510550293269a.png",
+            "lang": "en",
+            "likes": "25",
+            "disc": "1",
+            "disc_type": "dvd"
+        },
+        {
+            "id": "22016",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviedisc/finding-nemo-50fb9ffc24c02.png",
+            "lang": "en",
+            "likes": "22",
+            "disc": "1",
+            "disc_type": "bluray"
+        },
+        {
+            "id": "577",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviedisc/finding-nemo-4f551f4294486.png",
+            "lang": "en",
+            "likes": "20",
+            "disc": "1",
+            "disc_type": "dvd"
+        },
+        {
+            "id": "575",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviedisc/finding-nemo-4f551e712fa93.png",
+            "lang": "nl",
+            "likes": "17",
+            "disc": "1",
+            "disc_type": "dvd"
+        },
+        {
+            "id": "576",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviedisc/finding-nemo-4f551e9adf009.png",
+            "lang": "nl",
+            "likes": "17",
+            "disc": "2",
+            "disc_type": "dvd"
+        },
+        {
+            "id": "154739",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviedisc/finding-nemo-574f56da2e6ad.png",
+            "lang": "pl",
+            "likes": "16",
+            "disc": "1",
+            "disc_type": "dvd"
+        },
+        {
+            "id": "154774",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviedisc/finding-nemo-574fe8e4a81db.png",
+            "lang": "pl",
+            "likes": "16",
+            "disc": "1",
+            "disc_type": "dvd"
+        },
+        {
+            "id": "154804",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviedisc/finding-nemo-575039ca79a7f.png",
+            "lang": "pl",
+            "likes": "16",
+            "disc": "1",
+            "disc_type": "dvd"
+        },
+        {
+            "id": "154805",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviedisc/finding-nemo-57503ed7f2a87.png",
+            "lang": "pl",
+            "likes": "16",
+            "disc": "1",
+            "disc_type": "dvd"
+        },
+        {
+            "id": "205844",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviedisc/finding-nemo-59c829ead6568.png",
+            "lang": "pt",
+            "likes": "15",
+            "disc": "1",
+            "disc_type": "bluray"
+        },
+        {
+            "id": "185968",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviedisc/finding-nemo-58bde4c48bae4.png",
+            "lang": "fr",
+            "likes": "15",
+            "disc": "1",
+            "disc_type": "bluray"
+        },
+        {
+            "id": "148660",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviedisc/finding-nemo-571151554bf93.png",
+            "lang": "ru",
+            "likes": "15",
+            "disc": "1",
+            "disc_type": "bluray"
+        },
+        {
+            "id": "120006",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviedisc/finding-nemo-55e6326cbfafc.png",
+            "lang": "es",
+            "likes": "15",
+            "disc": "1",
+            "disc_type": "bluray"
+        },
+        {
+            "id": "270804",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviedisc/finding-nemo-5d867c8beb29f.png",
+            "lang": "es",
+            "likes": "14",
+            "disc": "1",
+            "disc_type": "uhd-bluray"
+        }
+    ],
+    "hdmovielogo": [
+        {
+            "id": "43816",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovielogo/finding-nemo-51fd1478abd26.png",
+            "lang": "en",
+            "likes": "29"
+        },
+        {
+            "id": "43820",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovielogo/finding-nemo-51fd156a3148b.png",
+            "lang": "en",
+            "likes": "21"
+        },
+        {
+            "id": "43521",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovielogo/finding-nemo-51f98ef01119a.png",
+            "lang": "de",
+            "likes": "15"
+        },
+        {
+            "id": "205843",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovielogo/finding-nemo-59c8230075347.png",
+            "lang": "pt",
+            "likes": "15"
+        },
+        {
+            "id": "28451",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovielogo/finding-nemo-514dd50c8846d.png",
+            "lang": "fr",
+            "likes": "15"
+        },
+        {
+            "id": "43818",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovielogo/finding-nemo-51fd14c9d5cab.png",
+            "lang": "sv",
+            "likes": "15"
+        },
+        {
+            "id": "43819",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovielogo/finding-nemo-51fd14dd6f835.png",
+            "lang": "sv",
+            "likes": "15"
+        },
+        {
+            "id": "104749",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovielogo/finding-nemo-552e1f2f98eb0.png",
+            "lang": "it",
+            "likes": "15"
+        },
+        {
+            "id": "94012",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovielogo/finding-nemo-54b546ee80782.png",
+            "lang": "hu",
+            "likes": "15"
+        },
+        {
+            "id": "154725",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovielogo/finding-nemo-574f3f633fc2c.png",
+            "lang": "pl",
+            "likes": "15"
+        },
+        {
+            "id": "154726",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovielogo/finding-nemo-574f3f634097a.png",
+            "lang": "pl",
+            "likes": "15"
+        },
+        {
+            "id": "154727",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovielogo/finding-nemo-574f3f63410ed.png",
+            "lang": "pl",
+            "likes": "15"
+        },
+        {
+            "id": "154728",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovielogo/finding-nemo-574f3f6341796.png",
+            "lang": "pl",
+            "likes": "15"
+        },
+        {
+            "id": "148868",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovielogo/finding-nemo-5712ca7e5ce27.png",
+            "lang": "es",
+            "likes": "15"
+        },
+        {
+            "id": "148869",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovielogo/finding-nemo-5712ca8db49fd.png",
+            "lang": "es",
+            "likes": "15"
+        },
+        {
+            "id": "148657",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovielogo/finding-nemo-571150f91ecf8.png",
+            "lang": "ru",
+            "likes": "15"
+        },
+        {
+            "id": "14789",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovielogo/finding-nemo-505dd02747909.png",
+            "lang": "de",
+            "likes": "15"
+        }
+    ],
+    "movieposter": [
+        {
+            "id": "53736",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-5257392833da0.jpg",
+            "lang": "en",
+            "likes": "27"
+        },
+        {
+            "id": "73910",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-539f4b4b473e8.jpg",
+            "lang": "",
+            "likes": "23"
+        },
+        {
+            "id": "257308",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-5cd610fd4a959.jpg",
+            "lang": "en",
+            "likes": "17"
+        },
+        {
+            "id": "99183",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-54f60506eb798.jpg",
+            "lang": "en",
+            "likes": "17"
+        },
+        {
+            "id": "85521",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-543878c0234b2.jpg",
+            "lang": "00",
+            "likes": "16"
+        },
+        {
+            "id": "191271",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-58f25c36ba086.jpg",
+            "lang": "00",
+            "likes": "16"
+        },
+        {
+            "id": "270125",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-5d7edfe0a218a.jpg",
+            "lang": "en",
+            "likes": "16"
+        },
+        {
+            "id": "85597",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-5439aefb4b45a.jpg",
+            "lang": "00",
+            "likes": "16"
+        },
+        {
+            "id": "220002",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-5a98d2d06286d.jpg",
+            "lang": "en",
+            "likes": "16"
+        },
+        {
+            "id": "48582",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-52222d2c05ab6.jpg",
+            "lang": "00",
+            "likes": "16"
+        },
+        {
+            "id": "48583",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-52222d2c092b6.jpg",
+            "lang": "00",
+            "likes": "16"
+        },
+        {
+            "id": "48584",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-52222d2c09641.jpg",
+            "lang": "00",
+            "likes": "16"
+        },
+        {
+            "id": "63472",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-52efd9fe6a794.jpg",
+            "lang": "en",
+            "likes": "16"
+        },
+        {
+            "id": "191270",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-58f25bcbb14cc.jpg",
+            "lang": "00",
+            "likes": "15"
+        },
+        {
+            "id": "158265",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-5782102dee09c.jpg",
+            "lang": "en",
+            "likes": "15"
+        },
+        {
+            "id": "154718",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-574f3d9e750fb.jpg",
+            "lang": "pl",
+            "likes": "15"
+        },
+        {
+            "id": "154719",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-574f3d9e75f4b.jpg",
+            "lang": "pl",
+            "likes": "15"
+        },
+        {
+            "id": "154720",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-574f3d9e763ef.jpg",
+            "lang": "pl",
+            "likes": "15"
+        },
+        {
+            "id": "154721",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-574f3d9e768c1.jpg",
+            "lang": "pl",
+            "likes": "15"
+        },
+        {
+            "id": "207535",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-59e3d488010c9.jpg",
+            "lang": "es",
+            "likes": "15"
+        },
+        {
+            "id": "113156",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-558f5b02cbbd2.jpg",
+            "lang": "fr",
+            "likes": "14"
+        },
+        {
+            "id": "113157",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-558f5ba3200df.jpg",
+            "lang": "fr",
+            "likes": "14"
+        },
+        {
+            "id": "205845",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-59c82a03c8827.jpg",
+            "lang": "pt",
+            "likes": "14"
+        },
+        {
+            "id": "72249",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-537877c7892bc.jpg",
+            "lang": "sv",
+            "likes": "14"
+        },
+        {
+            "id": "148658",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-57115121968ad.jpg",
+            "lang": "ru",
+            "likes": "14"
+        },
+        {
+            "id": "126425",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-563715edeeda7.jpg",
+            "lang": "it",
+            "likes": "14"
+        },
+        {
+            "id": "144892",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-56f577fa3195c.jpg",
+            "lang": "de",
+            "likes": "14"
+        },
+        {
+            "id": "292350",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieposter/finding-nemo-5e7a9d3c2666e.jpg",
+            "lang": "00",
+            "likes": "12"
+        }
+    ],
+    "hdmovieclearart": [
+        {
+            "id": "11616",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovieclearart/finding-nemo-504369a9286f5.png",
+            "lang": "en",
+            "likes": "26"
+        },
+        {
+            "id": "217940",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovieclearart/finding-nemo-5a7c92d63f250.png",
+            "lang": "de",
+            "likes": "16"
+        },
+        {
+            "id": "66152",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovieclearart/finding-nemo-531a2aca60b4e.png",
+            "lang": "de",
+            "likes": "16"
+        },
+        {
+            "id": "149916",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovieclearart/finding-nemo-571e81e6a645f.png",
+            "lang": "es",
+            "likes": "16"
+        },
+        {
+            "id": "66210",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovieclearart/finding-nemo-531aab085f1c3.png",
+            "lang": "fr",
+            "likes": "16"
+        },
+        {
+            "id": "66211",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovieclearart/finding-nemo-531aab90883c6.png",
+            "lang": "sv",
+            "likes": "16"
+        },
+        {
+            "id": "148659",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovieclearart/finding-nemo-5711513a888c9.png",
+            "lang": "ru",
+            "likes": "16"
+        },
+        {
+            "id": "154839",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovieclearart/finding-nemo-575161fd1086b.png",
+            "lang": "pl",
+            "likes": "16"
+        },
+        {
+            "id": "154840",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovieclearart/finding-nemo-575161fd11199.png",
+            "lang": "pl",
+            "likes": "16"
+        },
+        {
+            "id": "154841",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovieclearart/finding-nemo-5751623af1d25.png",
+            "lang": "pl",
+            "likes": "16"
+        },
+        {
+            "id": "226040",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovieclearart/finding-nemo-5af04b93d443f.png",
+            "lang": "fr",
+            "likes": "16"
+        },
+        {
+            "id": "226202",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovieclearart/finding-nemo-5af2b491c389e.png",
+            "lang": "pt",
+            "likes": "15"
+        },
+        {
+            "id": "226203",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovieclearart/finding-nemo-5af2b4c5274d1.png",
+            "lang": "it",
+            "likes": "15"
+        },
+        {
+            "id": "226041",
+            "url": "https://assets.fanart.tv/fanart/movies/12/hdmovieclearart/finding-nemo-5af04b93dec11.png",
+            "lang": "fr",
+            "likes": "15"
+        }
+    ],
+    "moviebackground": [
+        {
+            "id": "22697",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebackground/finding-nemo-51046b7c8918e.jpg",
+            "lang": "",
+            "likes": "24"
+        },
+        {
+            "id": "257037",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebackground/finding-nemo-5cd28bacc06eb.jpg",
+            "lang": "",
+            "likes": "17"
+        },
+        {
+            "id": "147312",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebackground/finding-nemo-5706d12d900a9.jpg",
+            "lang": "",
+            "likes": "16"
+        },
+        {
+            "id": "16241",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebackground/finding-nemo-507657d8293dc.jpg",
+            "lang": "",
+            "likes": "16"
+        },
+        {
+            "id": "16239",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebackground/finding-nemo-507657d8271ae.jpg",
+            "lang": "",
+            "likes": "15"
+        },
+        {
+            "id": "16240",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebackground/finding-nemo-507657d828db6.jpg",
+            "lang": "",
+            "likes": "15"
+        },
+        {
+            "id": "16242",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebackground/finding-nemo-507657d829ab8.jpg",
+            "lang": "",
+            "likes": "12"
+        },
+        {
+            "id": "32962",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebackground/finding-nemo-5182123705f66.jpg",
+            "lang": "",
+            "likes": "12"
+        },
+        {
+            "id": "290092",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebackground/finding-nemo-5e6289dd4b390.jpg",
+            "lang": "",
+            "likes": "11"
+        },
+        {
+            "id": "61209",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebackground/finding-nemo-52d2d612cfc0f.jpg",
+            "lang": "",
+            "likes": "10"
+        },
+        {
+            "id": "147311",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebackground/finding-nemo-5706d12d8f9eb.jpg",
+            "lang": "",
+            "likes": "10"
+        },
+        {
+            "id": "261622",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebackground/finding-nemo-5d01543ddefcb.jpg",
+            "lang": "",
+            "likes": "10"
+        },
+        {
+            "id": "291359",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebackground/finding-nemo-5e705c74e5b39.jpg",
+            "lang": "",
+            "likes": "9"
+        }
+    ],
+    "moviethumb": [
+        {
+            "id": "73908",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-539f4b12e0ad9.jpg",
+            "lang": "en",
+            "likes": "24"
+        },
+        {
+            "id": "163431",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-57cb4d81d5889.jpg",
+            "lang": "en",
+            "likes": "19"
+        },
+        {
+            "id": "19568",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-50cddc0443e9a.jpg",
+            "lang": "en",
+            "likes": "17"
+        },
+        {
+            "id": "19569",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-50cddc04450fb.jpg",
+            "lang": "en",
+            "likes": "17"
+        },
+        {
+            "id": "19570",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-50cddc0445749.jpg",
+            "lang": "en",
+            "likes": "17"
+        },
+        {
+            "id": "52498",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-5243e83c2f913.jpg",
+            "lang": "de",
+            "likes": "15"
+        },
+        {
+            "id": "85528",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-54387ab20fbb0.jpg",
+            "lang": "fr",
+            "likes": "15"
+        },
+        {
+            "id": "85529",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-54387ab210005.jpg",
+            "lang": "fr",
+            "likes": "15"
+        },
+        {
+            "id": "85530",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-54387ab21043e.jpg",
+            "lang": "fr",
+            "likes": "15"
+        },
+        {
+            "id": "85531",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-54387ab210897.jpg",
+            "lang": "fr",
+            "likes": "15"
+        },
+        {
+            "id": "85532",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-54387ab210c90.jpg",
+            "lang": "fr",
+            "likes": "15"
+        },
+        {
+            "id": "85586",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-543980ff49b21.jpg",
+            "lang": "fr",
+            "likes": "15"
+        },
+        {
+            "id": "148871",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-5712cac64290d.jpg",
+            "lang": "es",
+            "likes": "15"
+        },
+        {
+            "id": "148662",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-57115179b8521.jpg",
+            "lang": "ru",
+            "likes": "15"
+        },
+        {
+            "id": "154842",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-57516a80812c5.jpg",
+            "lang": "pl",
+            "likes": "15"
+        },
+        {
+            "id": "154843",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-57516a8081cfd.jpg",
+            "lang": "pl",
+            "likes": "15"
+        },
+        {
+            "id": "154844",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-57516a8082200.jpg",
+            "lang": "pl",
+            "likes": "15"
+        },
+        {
+            "id": "154849",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-57517fc00beba.jpg",
+            "lang": "pl",
+            "likes": "15"
+        },
+        {
+            "id": "270197",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviethumb/finding-nemo-5d80162027b4b.jpg",
+            "lang": "pt",
+            "likes": "13"
+        }
+    ],
+    "movielogo": [
+        {
+            "id": "1557",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movielogo/finding-nemo-4f77409b7bfed.png",
+            "lang": "en",
+            "likes": "21"
+        },
+        {
+            "id": "8207",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movielogo/finding-nemo-501bb3ae2aeaa.png",
+            "lang": "fr",
+            "likes": "18"
+        },
+        {
+            "id": "3785",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movielogo/finding-nemo-4fb0157333dfb.png",
+            "lang": "de",
+            "likes": "18"
+        }
+    ],
+    "movieart": [
+        {
+            "id": "2403",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieart/finding-nemo-4f8b26ea1124f.png",
+            "lang": "en",
+            "likes": "21"
+        },
+        {
+            "id": "8955",
+            "url": "https://assets.fanart.tv/fanart/movies/12/movieart/finding-nemo-5024f60316448.png",
+            "lang": "en",
+            "likes": "21"
+        }
+    ],
+    "moviebanner": [
+        {
+            "id": "52497",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebanner/finding-nemo-5243e82b3d2e3.jpg",
+            "lang": "en",
+            "likes": "20"
+        },
+        {
+            "id": "157728",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebanner/finding-nemo-577a4d70bfa06.jpg",
+            "lang": "en",
+            "likes": "20"
+        },
+        {
+            "id": "73909",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebanner/finding-nemo-539f4b1d343f6.jpg",
+            "lang": "en",
+            "likes": "20"
+        },
+        {
+            "id": "52496",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebanner/finding-nemo-5243e81d7e08f.jpg",
+            "lang": "de",
+            "likes": "15"
+        },
+        {
+            "id": "85526",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebanner/finding-nemo-54387a3a0b5b4.jpg",
+            "lang": "fr",
+            "likes": "15"
+        },
+        {
+            "id": "85587",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebanner/finding-nemo-5439818f0e76b.jpg",
+            "lang": "fr",
+            "likes": "15"
+        },
+        {
+            "id": "85588",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebanner/finding-nemo-5439818f0ed6a.jpg",
+            "lang": "fr",
+            "likes": "15"
+        },
+        {
+            "id": "148870",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebanner/finding-nemo-5712cab552c84.jpg",
+            "lang": "es",
+            "likes": "15"
+        },
+        {
+            "id": "148661",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebanner/finding-nemo-57115169a6b7a.jpg",
+            "lang": "ru",
+            "likes": "15"
+        },
+        {
+            "id": "154850",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebanner/finding-nemo-57517fdda004b.jpg",
+            "lang": "pl",
+            "likes": "15"
+        },
+        {
+            "id": "154851",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebanner/finding-nemo-57517fdda0f1b.jpg",
+            "lang": "pl",
+            "likes": "15"
+        },
+        {
+            "id": "154852",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebanner/finding-nemo-57517fdda17d1.jpg",
+            "lang": "pl",
+            "likes": "15"
+        },
+        {
+            "id": "154853",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebanner/finding-nemo-57517fdda1dad.jpg",
+            "lang": "pl",
+            "likes": "15"
+        },
+        {
+            "id": "270198",
+            "url": "https://assets.fanart.tv/fanart/movies/12/moviebanner/finding-nemo-5d80163d70743.jpg",
+            "lang": "pt",
+            "likes": "13"
+        }
+    ]
+}

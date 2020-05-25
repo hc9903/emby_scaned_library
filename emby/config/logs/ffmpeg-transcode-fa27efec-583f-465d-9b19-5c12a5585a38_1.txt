@@ -1,0 +1,382 @@
+2020-05-22 13:32:20.188
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/813/hls1/main/0.ts?DeviceId=0939de9f-ad24-4206-b247-0dafb526de65&MediaSourceId=cba9bc2a18e59467bf93325f1205d43a&PlaySessionId=f11770783f6b40b2b716ef4dd59da6ec&api_key=b24b9e0ee12b43b4b0d434c8e5187ccc&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=1109000&AudioBitrate=256000&AudioStreamIndex=1&SubtitleMethod=Encode&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=ContainerBitrateExceedsLimit
+
+{"Protocol":"File","Id":"cba9bc2a18e59467bf93325f1205d43a","Path":"/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170130145925.m2ts","Type":"Default","Container":"mpegts","Size":3931275264,"Name":"bhd1080.com@20170130145925","IsRemote":false,"RunTimeTicks":13989120000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"h264","CodecTag":"HDMV","TimeBase":"1/90000","CodecTimeBase":"1001/60000","VideoRange":"SDR","DisplayTitle":"1080i H264","NalLengthSize":"0","IsInterlaced":true,"IsAVC":false,"BitRate":22481901,"BitDepth":8,"RefFrames":1,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"AverageFrameRate":29.97003,"RealFrameRate":59.94006,"Profile":"High","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p","Level":40,"IsAnamorphic":false},{"Codec":"ac3","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"Dolby Digital stereo","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":256000,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"Type":"Subtitle","Index":2,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":22481901,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for guest
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: h264, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+Warning: No filter behavior available for filter yadif
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    Deinterlace                              >> False                False                                                         
+Info    Scaling                                  >> False                False                                                         
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    h264                 >> -            yuv420p      yuv420p      >> yadif
+Info    yadif                >> -            yuv420p      yuv420p      >> scale
+Info    scale                >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -f mpegts -i file:"/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170130145925.m2ts" -threads 0 -map 0:0 -map 0:1 -sn -c:v:0 libx264 -filter_complex "[0:0]yadif=0:-1:0,scale=trunc(min(max(iw\,ih*dar)\,720)/2)*2:trunc(ow/dar/2)*2" -pix_fmt yuv420p  -maxrate 1109000 -bufsize 2218000 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 90 -keyint_min:v:0 90 -sc_threshold:v:0 0  -copyts -vsync -1 -codec:a:0 libmp3lame -disposition:a:0 default -ac:a:0 2 -ab:a:0 192000  -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 0 -segment_list "/config/transcoding-temp/C91193.m3u8" -y "/config/transcoding-temp/C91193_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-fa27efec-583f-465d-9b19-5c12a5585a38_1graph.txt -copyts -start_at_zero -f mpegts -c:v:0 h264 -i "/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170130145925.m2ts" -filter_complex "[0:0]yadif@f1=mode=send_frame:parity=auto:deint=all,scale@f2=w=720:h=404[f2_out0]" -map [f2_out0] -map 0:1 -sn -c:v:0 libx264 -g:v:0 90 -maxrate:v:0 1109000 -bufsize:v:0 2218000 -sc_threshold:v:0 0 -keyint_min:v:0 90 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 3.1 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 2 -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/C91193.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 0 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/C91193_%d.ts"
+
+13:32:20.329 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+13:32:20.330   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+13:32:20.330 Execution Date: 2020-05-22 13:32:20
+13:32:24.427 Input #0, mpegts, from '/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170130145925.m2ts':
+13:32:24.427   Duration: 00:23:18.91, start: 1.033367, bitrate: 22481 kb/s
+13:32:24.427   Program 1 
+13:32:24.427     Stream #0:0[0x1011]: Video: h264 (High) (HDMV / 0x564D4448), yuv420p(top first), 1920x1080 [SAR 1:1 DAR 16:9], Level 40, 29.97 fps, 59.94 tbr, 90k tbn, 59.94 tbc, Start-Time 1.100s
+13:32:24.427     Stream #0:1[0x1100]: Audio: ac3 (AC-3 / 0x332D4341), 48000 Hz, stereo, fltp, 256 kb/s, Start-Time 1.033s
+13:32:24.427     Stream #0:2[0x1200]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), 1920x1080, Start-Time 1.033s
+13:32:24.429 Stream mapping:
+13:32:24.429   Stream #0:0 (h264) -> yadif (graph 0)
+13:32:24.429   scale (graph 0) -> Stream #0:0 (libx264)
+13:32:24.429   Stream #0:1 -> #0:1 (ac3 (native) -> mp3 (libmp3lame))
+13:32:24.429 Press [q] to stop, [?] for help
+13:32:24.588 [libx264 @ 0x22ebd00] using SAR=404/405
+13:32:24.589 [libx264 @ 0x22ebd00] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+13:32:24.592 [libx264 @ 0x22ebd00] profile Main, level 3.1, 4:2:0, 8-bit
+13:32:24.592 [libx264 @ 0x22ebd00] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=90 keyint_min=46 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=1109 vbv_bufsize=2218 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+13:32:24.593 Output #0, segment, to '/config/transcoding-temp/C91193_%d.ts':
+13:32:24.593   Metadata:
+13:32:24.593     encoder         : Lavf58.35.100
+13:32:24.594     Stream #0:0: Video: h264 (libx264), yuv420p, 720x404 [SAR 404:405 DAR 16:9], q=-1--1, 29.97 fps, 90k tbn, 29.97 tbc
+13:32:24.594     Metadata:
+13:32:24.595       encoder         : Lavc58.62.100 libx264
+13:32:24.595     Side data:
+13:32:24.595       cpb: bitrate max/min/avg: 1109000/0/0 buffer size: 2218000 vbv_delay: N/A
+13:32:24.597     Stream #0:1: Audio: mp3 (libmp3lame), 48000 Hz, stereo, fltp, 192 kb/s (default)
+13:32:24.597     Metadata:
+13:32:24.597       encoder         : Lavc58.62.100 libmp3lame
+13:32:24.939 frame=   20 fps=0.0 q=0.0 size=      17kB time=00:00:00.69 bitrate=N/A throttle=off speed=   0x    
+13:32:25.441 frame=   47 fps= 46 q=29.0 size=     160kB time=00:00:01.46 bitrate=1707.8kbits/s throttle=off speed=0.759x    
+13:32:26.289 frame=   56 fps= 30 q=29.0 size=     196kB time=00:00:01.70 bitrate=1593.5kbits/s throttle=off speed=0.542x    
+13:32:26.790 frame=   81 fps= 34 q=29.0 size=     305kB time=00:00:02.44 bitrate=1425.2kbits/s throttle=off speed=0.742x    
+13:32:27.305 frame=  110 fps= 38 q=29.0 size=     411kB time=00:00:03.31 bitrate=1286.6kbits/s throttle=off speed=0.914x    
+13:32:27.335 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:27.337 SegmentComplete=video:0 Index=0 Start=0.000000 End=3.003000 Duration=3.003000 offset_pts=0 start_pts=0 Frames=90 filename=C91193_0.ts
+13:32:27.337 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_1.ts.tmp' for writing
+13:32:27.825 frame=  136 fps= 40 q=29.0 size=     543kB time=00:00:04.10 bitrate=1305.1kbits/s throttle=off speed=   1x    
+13:32:28.339 frame=  162 fps= 41 q=29.0 size=     626kB time=00:00:04.92 bitrate=1214.1kbits/s throttle=off speed=1.08x    
+13:32:28.841 frame=  191 fps= 43 q=29.0 size=     724kB time=00:00:05.88 bitrate=1143.7kbits/s throttle=off speed=1.17x    
+13:32:29.016 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:29.016 SegmentComplete=video:0 Index=1 Start=3.003000 End=6.006000 Duration=3.003000 offset_pts=0 start_pts=3003000 Frames=90 filename=C91193_1.ts
+13:32:29.017 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_2.ts.tmp' for writing
+13:32:29.363 frame=  219 fps= 44 q=29.0 size=     847kB time=00:00:06.79 bitrate=1138.4kbits/s throttle=off speed=1.24x    
+13:32:29.863 frame=  247 fps= 45 q=29.0 size=     932kB time=00:00:07.72 bitrate=1085.5kbits/s throttle=off speed= 1.3x    
+13:32:30.384 frame=  276 fps= 46 q=29.0 size=    1012kB time=00:00:08.68 bitrate=1037.2kbits/s throttle=off speed=1.34x    
+13:32:30.677 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:30.678 SegmentComplete=video:0 Index=2 Start=6.006000 End=9.009000 Duration=3.003000 offset_pts=0 start_pts=6006000 Frames=90 filename=C91193_2.ts
+13:32:30.678 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_3.ts.tmp' for writing
+13:32:30.892 frame=  302 fps= 47 q=29.0 size=    1111kB time=00:00:09.57 bitrate=1024.7kbits/s throttle=off speed=1.37x    
+13:32:31.402 frame=  328 fps= 47 q=29.0 size=    1187kB time=00:00:10.44 bitrate= 998.1kbits/s throttle=off speed= 1.4x    
+13:32:31.905 frame=  352 fps= 47 q=29.0 size=    1270kB time=00:00:11.25 bitrate= 985.1kbits/s throttle=off speed=1.41x    
+13:32:32.405 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:32.406 SegmentComplete=video:0 Index=3 Start=9.009000 End=12.012000 Duration=3.003000 offset_pts=0 start_pts=9009000 Frames=90 filename=C91193_3.ts
+13:32:32.406 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_4.ts.tmp' for writing
+13:32:32.406 frame=  381 fps= 48 q=29.0 size=    1392kB time=00:00:12.16 bitrate= 993.8kbits/s throttle=off speed=1.44x    
+13:32:32.908 frame=  410 fps= 48 q=29.0 size=    1488kB time=00:00:13.17 bitrate= 976.8kbits/s throttle=off speed=1.47x    
+13:32:33.414 frame=  439 fps= 49 q=29.0 size=    1566kB time=00:00:14.13 bitrate= 954.6kbits/s throttle=off speed= 1.5x    
+13:32:33.927 frame=  466 fps= 49 q=26.0 size=    1641kB time=00:00:15.02 bitrate= 938.4kbits/s throttle=off speed=1.51x    
+13:32:34.009 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:34.009 SegmentComplete=video:0 Index=4 Start=12.012000 End=15.015000 Duration=3.003000 offset_pts=0 start_pts=12012000 Frames=90 filename=C91193_4.ts
+13:32:34.009 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_5.ts.tmp' for writing
+13:32:34.443 frame=  491 fps= 49 q=29.0 size=    1742kB time=00:00:15.91 bitrate= 937.9kbits/s throttle=off speed=1.52x    
+13:32:34.953 frame=  519 fps= 49 q=29.0 size=    1847kB time=00:00:16.82 bitrate= 938.2kbits/s throttle=off speed=1.53x    
+13:32:35.461 frame=  548 fps= 50 q=29.0 size=    1977kB time=00:00:17.73 bitrate= 950.5kbits/s throttle=off speed=1.54x    
+13:32:35.678 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:35.678 SegmentComplete=video:0 Index=5 Start=15.015000 End=18.018000 Duration=3.003000 offset_pts=0 start_pts=15015000 Frames=90 filename=C91193_5.ts
+13:32:35.678 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_6.ts.tmp' for writing
+13:32:35.975 frame=  578 fps= 50 q=29.0 size=    2088kB time=00:00:18.76 bitrate= 946.5kbits/s throttle=off speed=1.57x    
+13:32:36.489 frame=  610 fps= 51 q=29.0 size=    2177kB time=00:00:19.82 bitrate= 932.5kbits/s throttle=off speed=1.59x    
+13:32:36.998 frame=  639 fps= 51 q=29.0 size=    2262kB time=00:00:20.80 bitrate= 921.5kbits/s throttle=off speed= 1.6x    
+13:32:37.252 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:37.253 SegmentComplete=video:0 Index=6 Start=18.018000 End=21.021000 Duration=3.003000 offset_pts=0 start_pts=18018000 Frames=90 filename=C91193_6.ts
+13:32:37.253 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_7.ts.tmp' for writing
+13:32:37.505 frame=  663 fps= 51 q=29.0 size=    2352kB time=00:00:21.62 bitrate= 920.6kbits/s throttle=off speed= 1.6x    
+13:32:38.008 frame=  691 fps= 51 q=29.0 size=    2430kB time=00:00:22.58 bitrate= 909.4kbits/s throttle=off speed=1.61x    
+13:32:38.527 frame=  718 fps= 51 q=29.0 size=    2503kB time=00:00:23.49 bitrate= 899.4kbits/s throttle=off speed=1.62x    
+13:32:38.922 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:38.922 SegmentComplete=video:0 Index=7 Start=21.021000 End=24.024000 Duration=3.003000 offset_pts=0 start_pts=21021000 Frames=90 filename=C91193_7.ts
+13:32:38.922 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_8.ts.tmp' for writing
+13:32:39.031 frame=  746 fps= 51 q=29.0 size=    2598kB time=00:00:24.40 bitrate= 897.5kbits/s throttle=off speed=1.62x    
+13:32:39.547 frame=  773 fps= 51 q=29.0 size=    2656kB time=00:00:25.27 bitrate= 885.2kbits/s throttle=off speed=1.63x    
+13:32:40.048 frame=  795 fps= 51 q=29.0 size=    2724kB time=00:00:26.08 bitrate= 878.8kbits/s throttle=off speed=1.63x    
+13:32:40.554 frame=  822 fps= 51 q=29.0 size=    2797kB time=00:00:26.92 bitrate= 873.3kbits/s throttle=off speed=1.63x    
+13:32:40.690 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:40.711 SegmentComplete=video:0 Index=8 Start=24.024000 End=27.027000 Duration=3.003000 offset_pts=0 start_pts=24024000 Frames=90 filename=C91193_8.ts
+13:32:40.711 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_9.ts.tmp' for writing
+13:32:41.074 frame=  842 fps= 51 q=29.0 size=    2870kB time=00:00:27.57 bitrate= 874.6kbits/s throttle=off speed=1.61x    
+13:32:41.589 frame=  860 fps= 50 q=29.0 size=    2910kB time=00:00:28.15 bitrate= 868.2kbits/s throttle=off speed= 1.6x    
+13:32:42.093 frame=  889 fps= 50 q=29.0 size=    2971kB time=00:00:29.13 bitrate= 855.8kbits/s throttle=off speed=1.61x    
+13:32:42.599 frame=  917 fps= 50 q=29.0 size=    3060kB time=00:00:30.12 bitrate= 851.8kbits/s throttle=off speed=1.62x    
+13:32:42.652 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:42.652 SegmentComplete=video:0 Index=9 Start=27.027000 End=30.030000 Duration=3.003000 offset_pts=0 start_pts=27027000 Frames=90 filename=C91193_9.ts
+13:32:42.652 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_10.ts.tmp' for writing
+13:32:43.101 frame=  946 fps= 51 q=29.0 size=    3172kB time=00:00:31.05 bitrate= 855.8kbits/s throttle=off speed=1.63x    
+13:32:43.612 frame=  973 fps= 51 q=29.0 size=    3249kB time=00:00:31.94 bitrate= 851.8kbits/s throttle=off speed=1.63x    
+13:32:44.120 frame= 1003 fps= 51 q=29.0 size=    3328kB time=00:00:33.00 bitrate= 843.9kbits/s throttle=off speed=1.64x    
+13:32:44.258 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:44.259 SegmentComplete=video:0 Index=10 Start=30.030000 End=33.033000 Duration=3.003000 offset_pts=0 start_pts=30030000 Frames=90 filename=C91193_10.ts
+13:32:44.259 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_11.ts.tmp' for writing
+13:32:44.659 frame= 1033 fps= 51 q=29.0 size=    3425kB time=00:00:34.00 bitrate= 842.3kbits/s throttle=off speed=1.65x    
+13:32:45.139 frame= 1064 fps= 51 q=29.0 size=    3508kB time=00:00:35.01 bitrate= 837.4kbits/s throttle=off speed=1.66x    
+13:32:45.650 frame= 1092 fps= 51 q=29.0 size=    3581kB time=00:00:35.97 bitrate= 831.5kbits/s throttle=off speed=1.66x    
+13:32:45.819 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:45.830 SegmentComplete=video:0 Index=11 Start=33.033000 End=36.036000 Duration=3.003000 offset_pts=0 start_pts=33033000 Frames=90 filename=C91193_11.ts
+13:32:45.830 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_12.ts.tmp' for writing
+13:32:46.154 frame= 1118 fps= 51 q=29.0 size=    3666kB time=00:00:36.79 bitrate= 831.9kbits/s throttle=off speed=1.66x    
+13:32:46.654 frame= 1146 fps= 52 q=29.0 size=    3730kB time=00:00:37.70 bitrate= 825.7kbits/s throttle=off speed=1.67x    
+13:32:47.173 frame= 1173 fps= 52 q=29.0 size=    3790kB time=00:00:38.64 bitrate= 818.2kbits/s throttle=off speed=1.67x    
+13:32:47.501 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:47.501 SegmentComplete=video:0 Index=12 Start=36.036000 End=39.039000 Duration=3.003000 offset_pts=0 start_pts=36036000 Frames=90 filename=C91193_12.ts
+13:32:47.501 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_13.ts.tmp' for writing
+13:32:47.665 frame= 1199 fps= 52 q=29.0 size=    3874kB time=00:00:39.57 bitrate= 816.2kbits/s throttle=off speed=1.67x    
+13:32:48.186 frame= 1228 fps= 52 q=29.0 size=    3933kB time=00:00:40.46 bitrate= 810.1kbits/s throttle=off speed=1.67x    
+13:32:48.680 frame= 1255 fps= 52 q=29.0 size=    3990kB time=00:00:41.35 bitrate= 804.1kbits/s throttle=off speed=1.68x    
+13:32:49.145 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:49.146 SegmentComplete=video:0 Index=13 Start=39.039000 End=42.042000 Duration=3.003000 offset_pts=0 start_pts=39039000 Frames=90 filename=C91193_13.ts
+13:32:49.148 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_14.ts.tmp' for writing
+13:32:49.187 frame= 1283 fps= 52 q=29.0 size=    4085kB time=00:00:42.28 bitrate= 804.6kbits/s throttle=off speed=1.68x    
+13:32:49.693 frame= 1306 fps= 52 q=29.0 size=    4139kB time=00:00:43.08 bitrate= 799.9kbits/s throttle=off speed=1.68x    
+13:32:50.199 frame= 1334 fps= 52 q=29.0 size=    4211kB time=00:00:44.04 bitrate= 795.8kbits/s throttle=off speed=1.68x    
+13:32:50.713 frame= 1362 fps= 52 q=29.0 size=    4293kB time=00:00:44.95 bitrate= 794.6kbits/s throttle=off speed=1.68x    
+13:32:50.854 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:50.855 SegmentComplete=video:0 Index=14 Start=42.042000 End=45.045000 Duration=3.003000 offset_pts=0 start_pts=42042000 Frames=90 filename=C91193_14.ts
+13:32:50.855 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_15.ts.tmp' for writing
+13:32:51.215 frame= 1390 fps= 52 q=29.0 size=    4400kB time=00:00:45.84 bitrate= 798.5kbits/s throttle=off speed=1.69x    
+13:32:51.719 frame= 1419 fps= 52 q=29.0 size=    4495kB time=00:00:46.82 bitrate= 798.3kbits/s throttle=off speed=1.69x    
+13:32:52.226 frame= 1445 fps= 52 q=29.0 size=    4587kB time=00:00:47.68 bitrate= 799.6kbits/s throttle=off speed=1.69x    
+13:32:52.516 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:52.517 SegmentComplete=video:0 Index=15 Start=45.045000 End=48.048000 Duration=3.003000 offset_pts=0 start_pts=45045000 Frames=90 filename=C91193_15.ts
+13:32:52.517 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_16.ts.tmp' for writing
+13:32:52.726 frame= 1471 fps= 52 q=29.0 size=    4695kB time=00:00:48.60 bitrate= 802.9kbits/s throttle=off speed=1.69x    
+13:32:53.238 frame= 1497 fps= 52 q=29.0 size=    4792kB time=00:00:49.46 bitrate= 805.0kbits/s throttle=off speed=1.69x    
+13:32:53.736 frame= 1526 fps= 52 q=29.0 size=    4898kB time=00:00:50.42 bitrate= 806.9kbits/s throttle=off speed= 1.7x    
+13:32:54.192 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:54.192 SegmentComplete=video:0 Index=16 Start=48.048000 End=51.051000 Duration=3.003000 offset_pts=0 start_pts=48048000 Frames=90 filename=C91193_16.ts
+13:32:54.192 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_17.ts.tmp' for writing
+13:32:54.247 frame= 1554 fps= 52 q=29.0 size=    5029kB time=00:00:51.33 bitrate= 813.5kbits/s throttle=off speed= 1.7x    
+13:32:54.756 frame= 1581 fps= 52 q=29.0 size=    5149kB time=00:00:52.24 bitrate= 818.2kbits/s throttle=off speed= 1.7x    
+13:32:55.284 frame= 1612 fps= 52 q=29.0 size=    5282kB time=00:00:53.25 bitrate= 823.2kbits/s throttle=off speed= 1.7x    
+13:32:55.773 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:55.774 SegmentComplete=video:0 Index=17 Start=51.051000 End=54.054000 Duration=3.003000 offset_pts=0 start_pts=51051000 Frames=90 filename=C91193_17.ts
+13:32:55.774 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_18.ts.tmp' for writing
+13:32:55.774 frame= 1641 fps= 52 q=29.0 size=    5410kB time=00:00:54.21 bitrate= 828.0kbits/s throttle=off speed=1.71x    
+13:32:56.277 frame= 1667 fps= 52 q=29.0 size=    5529kB time=00:00:55.08 bitrate= 832.8kbits/s throttle=off speed=1.71x    
+13:32:56.787 frame= 1697 fps= 52 q=29.0 size=    5637kB time=00:00:56.11 bitrate= 833.3kbits/s throttle=off speed=1.71x    
+13:32:57.284 frame= 1724 fps= 52 q=29.0 size=    5735kB time=00:00:57.00 bitrate= 834.5kbits/s throttle=off speed=1.71x    
+13:32:57.386 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:57.389 SegmentComplete=video:0 Index=18 Start=54.054000 End=57.057000 Duration=3.003000 offset_pts=0 start_pts=54054000 Frames=90 filename=C91193_18.ts
+13:32:57.389 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_19.ts.tmp' for writing
+13:32:57.801 frame= 1755 fps= 53 q=29.0 size=    5891kB time=00:00:58.05 bitrate= 841.4kbits/s throttle=off speed=1.72x    
+13:32:58.307 frame= 1781 fps= 53 q=29.0 size=    6011kB time=00:00:58.96 bitrate= 845.0kbits/s throttle=off speed=1.72x    
+13:32:58.814 frame= 1807 fps= 53 q=29.0 size=    6134kB time=00:00:59.78 bitrate= 850.5kbits/s throttle=off speed=1.72x    
+13:32:59.021 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:32:59.021 SegmentComplete=video:0 Index=19 Start=57.057000 End=60.060000 Duration=3.003000 offset_pts=0 start_pts=57057000 Frames=90 filename=C91193_19.ts
+13:32:59.022 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_20.ts.tmp' for writing
+13:32:59.325 frame= 1837 fps= 53 q=29.0 size=    6305kB time=00:01:00.81 bitrate= 859.1kbits/s throttle=off speed=1.72x    
+13:32:59.835 frame= 1864 fps= 53 q=29.0 size=    6427kB time=00:01:01.68 bitrate= 863.4kbits/s throttle=off speed=1.72x    
+13:33:00.338 frame= 1890 fps= 53 q=29.0 size=    6521kB time=00:01:02.54 bitrate= 863.7kbits/s throttle=off speed=1.72x    
+13:33:00.774 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:00.775 SegmentComplete=video:0 Index=20 Start=60.060000 End=63.063000 Duration=3.003000 offset_pts=0 start_pts=60060000 Frames=90 filename=C91193_20.ts
+13:33:00.775 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_21.ts.tmp' for writing
+13:33:00.850 frame= 1916 fps= 53 q=29.0 size=    6628kB time=00:01:03.48 bitrate= 864.9kbits/s throttle=off speed=1.72x    
+13:33:01.364 frame= 1947 fps= 53 q=29.0 size=    6770kB time=00:01:04.46 bitrate= 869.7kbits/s throttle=off speed=1.73x    
+13:33:01.863 frame= 1976 fps= 53 q=29.0 size=    6896kB time=00:01:05.42 bitrate= 872.7kbits/s throttle=off speed=1.73x    
+13:33:02.237 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:02.238 SegmentComplete=video:0 Index=21 Start=63.063000 End=66.066000 Duration=3.003000 offset_pts=0 start_pts=63063000 Frames=90 filename=C91193_21.ts
+13:33:02.238 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_22.ts.tmp' for writing
+13:33:02.396 frame= 2008 fps= 53 q=29.0 size=    7032kB time=00:01:06.48 bitrate= 875.7kbits/s throttle=off speed=1.73x    
+13:33:02.885 frame= 2026 fps= 53 q=29.0 size=    7092kB time=00:01:07.12 bitrate= 874.5kbits/s throttle=off speed=1.73x    
+13:33:03.394 frame= 2053 fps= 53 q=29.0 size=    7165kB time=00:01:08.04 bitrate= 871.6kbits/s throttle=off speed=1.73x    
+13:33:03.879 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:03.879 SegmentComplete=video:0 Index=22 Start=66.066000 End=69.069000 Duration=3.003000 offset_pts=0 start_pts=66066000 Frames=90 filename=C91193_22.ts
+13:33:03.879 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_23.ts.tmp' for writing
+13:33:03.898 frame= 2093 fps= 53 q=29.0 size=    7312kB time=00:01:09.33 bitrate= 872.6kbits/s throttle=off speed=1.74x    
+13:33:04.402 frame= 2147 fps= 54 q=29.0 size=    7485kB time=00:01:11.11 bitrate= 870.8kbits/s throttle=off speed=1.76x    
+13:33:04.734 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:04.735 SegmentComplete=video:0 Index=23 Start=69.069000 End=72.072000 Duration=3.003000 offset_pts=0 start_pts=69069000 Frames=90 filename=C91193_23.ts
+13:33:04.735 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_24.ts.tmp' for writing
+13:33:04.909 frame= 2198 fps= 54 q=29.0 size=    7700kB time=00:01:12.81 bitrate= 874.6kbits/s throttle=off speed=1.78x    
+13:33:05.419 frame= 2247 fps= 55 q=29.0 size=    7860kB time=00:01:14.47 bitrate= 872.8kbits/s throttle=off speed= 1.8x    
+13:33:05.648 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:05.648 SegmentComplete=video:0 Index=24 Start=72.072000 End=75.075000 Duration=3.003000 offset_pts=0 start_pts=72072000 Frames=90 filename=C91193_24.ts
+13:33:05.648 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_25.ts.tmp' for writing
+13:33:05.923 frame= 2300 fps= 55 q=29.0 size=    8040kB time=00:01:16.27 bitrate= 871.5kbits/s throttle=off speed=1.82x    
+13:33:06.436 frame= 2353 fps= 56 q=29.0 size=    8198kB time=00:01:18.00 bitrate= 868.7kbits/s throttle=off speed=1.84x    
+13:33:06.510 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:06.511 SegmentComplete=video:0 Index=25 Start=75.075000 End=78.078000 Duration=3.003000 offset_pts=0 start_pts=75075000 Frames=90 filename=C91193_25.ts
+13:33:06.511 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_26.ts.tmp' for writing
+13:33:06.932 frame= 2405 fps= 57 q=29.0 size=    8373kB time=00:01:19.72 bitrate= 867.9kbits/s throttle=off speed=1.86x    
+13:33:07.395 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:07.396 SegmentComplete=video:0 Index=26 Start=78.078000 End=81.081000 Duration=3.003000 offset_pts=0 start_pts=78078000 Frames=90 filename=C91193_26.ts
+13:33:07.396 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_27.ts.tmp' for writing
+13:33:07.447 frame= 2455 fps= 57 q=29.0 size=    8548kB time=00:01:21.38 bitrate= 867.9kbits/s throttle=off speed=1.88x    
+13:33:07.946 frame= 2507 fps= 58 q=29.0 size=    8711kB time=00:01:23.16 bitrate= 865.4kbits/s throttle=off speed= 1.9x    
+13:33:08.319 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:08.320 SegmentComplete=video:0 Index=27 Start=81.081000 End=84.084000 Duration=3.003000 offset_pts=0 start_pts=81081000 Frames=90 filename=C91193_27.ts
+13:33:08.320 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_28.ts.tmp' for writing
+13:33:08.445 frame= 2552 fps= 58 q=29.0 size=    8884kB time=00:01:24.64 bitrate= 866.9kbits/s throttle=off speed=1.91x    
+13:33:08.952 frame= 2606 fps= 59 q=29.0 size=    9051kB time=00:01:26.47 bitrate= 864.4kbits/s throttle=off speed=1.93x    
+13:33:09.188 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:09.188 SegmentComplete=video:0 Index=28 Start=84.084000 End=87.087000 Duration=3.003000 offset_pts=0 start_pts=84084000 Frames=90 filename=C91193_28.ts
+13:33:09.188 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_29.ts.tmp' for writing
+13:33:09.458 frame= 2657 fps= 59 q=29.0 size=    9246kB time=00:01:28.15 bitrate= 866.1kbits/s throttle=off speed=1.94x    
+13:33:09.968 frame= 2708 fps= 59 q=29.0 size=    9480kB time=00:01:29.83 bitrate= 871.3kbits/s throttle=off speed=1.96x    
+13:33:10.101 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:10.102 SegmentComplete=video:0 Index=29 Start=87.087000 End=90.090000 Duration=3.003000 offset_pts=0 start_pts=87087000 Frames=90 filename=C91193_29.ts
+13:33:10.102 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_30.ts.tmp' for writing
+13:33:10.478 frame= 2749 fps= 60 q=29.0 size=    9663kB time=00:01:31.22 bitrate= 874.4kbits/s throttle=off speed=1.97x    
+13:33:10.980 frame= 2795 fps= 60 q=29.0 size=    9867kB time=00:01:32.76 bitrate= 878.0kbits/s throttle=off speed=1.98x    
+13:33:11.131 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:11.131 SegmentComplete=video:0 Index=30 Start=90.090000 End=93.093000 Duration=3.003000 offset_pts=0 start_pts=90090000 Frames=90 filename=C91193_30.ts
+13:33:11.131 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_31.ts.tmp' for writing
+13:33:11.485 frame= 2839 fps= 60 q=29.0 size=   10048kB time=00:01:34.22 bitrate= 880.1kbits/s throttle=off speed=1.99x    
+13:33:11.996 frame= 2872 fps= 60 q=29.0 size=   10187kB time=00:01:35.30 bitrate= 882.1kbits/s throttle=off speed=1.99x    
+13:33:12.281 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:12.282 SegmentComplete=video:0 Index=31 Start=93.093000 End=96.096000 Duration=3.003000 offset_pts=0 start_pts=93093000 Frames=90 filename=C91193_31.ts
+13:33:12.282 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_32.ts.tmp' for writing
+13:33:12.503 frame= 2924 fps= 61 q=29.0 size=   10374kB time=00:01:37.08 bitrate= 881.7kbits/s throttle=off speed=   2x    
+13:33:13.014 frame= 2977 fps= 61 q=29.0 size=   10577kB time=00:01:38.83 bitrate= 882.9kbits/s throttle=off speed=2.02x    
+13:33:13.150 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:13.151 SegmentComplete=video:0 Index=32 Start=96.096000 End=99.099000 Duration=3.003000 offset_pts=0 start_pts=96096000 Frames=90 filename=C91193_32.ts
+13:33:13.151 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_33.ts.tmp' for writing
+13:33:13.509 frame= 3027 fps= 62 q=29.0 size=   10754kB time=00:01:40.48 bitrate= 882.8kbits/s throttle=off speed=2.03x    
+13:33:14.019 frame= 3078 fps= 62 q=29.0 size=   10903kB time=00:01:42.19 bitrate= 880.0kbits/s throttle=off speed=2.05x    
+13:33:14.046 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:14.047 SegmentComplete=video:0 Index=33 Start=99.099000 End=102.102000 Duration=3.003000 offset_pts=0 start_pts=99099000 Frames=90 filename=C91193_33.ts
+13:33:14.047 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_34.ts.tmp' for writing
+13:33:14.530 frame= 3131 fps= 62 q=29.0 size=   11086kB time=00:01:43.94 bitrate= 879.6kbits/s throttle=off speed=2.06x    
+13:33:14.913 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:14.913 SegmentComplete=video:0 Index=34 Start=102.102000 End=105.105000 Duration=3.003000 offset_pts=0 start_pts=102102000 Frames=90 filename=C91193_34.ts
+13:33:14.913 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_35.ts.tmp' for writing
+13:33:15.030 frame= 3183 fps= 63 q=29.0 size=   11253kB time=00:01:45.67 bitrate= 878.2kbits/s throttle=off speed=2.07x    
+13:33:15.539 frame= 3238 fps= 63 q=29.0 size=   11392kB time=00:01:47.54 bitrate= 873.4kbits/s throttle=off speed=2.09x    
+13:33:15.754 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:15.755 SegmentComplete=video:0 Index=35 Start=105.105000 End=108.108000 Duration=3.003000 offset_pts=0 start_pts=105105000 Frames=90 filename=C91193_35.ts
+13:33:15.755 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_36.ts.tmp' for writing
+13:33:16.033 frame= 3290 fps= 64 q=29.0 size=   11545kB time=00:01:49.27 bitrate= 871.0kbits/s throttle=off speed= 2.1x    
+13:33:16.538 frame= 3341 fps= 64 q=29.0 size=   11671kB time=00:01:50.95 bitrate= 867.1kbits/s throttle=off speed=2.12x    
+13:33:16.641 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:16.641 SegmentComplete=video:0 Index=36 Start=108.108000 End=111.111000 Duration=3.003000 offset_pts=0 start_pts=108108000 Frames=90 filename=C91193_36.ts
+13:33:16.641 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_37.ts.tmp' for writing
+13:33:17.045 frame= 3391 fps= 64 q=29.0 size=   11828kB time=00:01:52.65 bitrate= 865.5kbits/s throttle=off speed=2.13x    
+13:33:17.543 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:17.544 SegmentComplete=video:0 Index=37 Start=111.111000 End=114.114000 Duration=3.003000 offset_pts=0 start_pts=111111000 Frames=90 filename=C91193_37.ts
+13:33:17.544 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_38.ts.tmp' for writing
+13:33:17.544 frame= 3441 fps= 65 q=29.0 size=   11985kB time=00:01:54.28 bitrate= 864.3kbits/s throttle=off speed=2.14x    
+13:33:18.052 frame= 3493 fps= 65 q=29.0 size=   12210kB time=00:01:56.11 bitrate= 866.7kbits/s throttle=off speed=2.15x    
+13:33:18.432 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:18.433 SegmentComplete=video:0 Index=38 Start=114.114000 End=117.117000 Duration=3.003000 offset_pts=0 start_pts=114114000 Frames=90 filename=C91193_38.ts
+13:33:18.433 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_39.ts.tmp' for writing
+13:33:18.553 frame= 3543 fps= 65 q=29.0 size=   12421kB time=00:01:57.72 bitrate= 869.5kbits/s throttle=off speed=2.16x    
+13:33:19.061 frame= 3585 fps= 66 q=29.0 size=   12601kB time=00:01:59.11 bitrate= 871.7kbits/s throttle=off speed=2.17x    
+13:33:19.429 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:19.430 SegmentComplete=video:0 Index=39 Start=117.117000 End=120.120000 Duration=3.003000 offset_pts=0 start_pts=117117000 Frames=90 filename=C91193_39.ts
+13:33:19.430 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_40.ts.tmp' for writing
+13:33:19.568 frame= 3636 fps= 66 q=29.0 size=   12816kB time=00:02:00.81 bitrate= 874.1kbits/s throttle=off speed=2.18x    
+13:33:20.076 frame= 3687 fps= 66 q=29.0 size=   13008kB time=00:02:02.52 bitrate= 874.7kbits/s throttle=off speed=2.19x    
+13:33:20.319 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:20.320 SegmentComplete=video:0 Index=40 Start=120.120000 End=123.123000 Duration=3.003000 offset_pts=0 start_pts=120120000 Frames=90 filename=C91193_40.ts
+13:33:20.320 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_41.ts.tmp' for writing
+13:33:20.584 frame= 3738 fps= 67 q=29.0 size=   13218kB time=00:02:04.20 bitrate= 876.8kbits/s throttle=off speed= 2.2x    
+13:33:21.086 frame= 3787 fps= 67 q=29.0 size=   13400kB time=00:02:05.83 bitrate= 877.2kbits/s throttle=off speed=2.21x    
+13:33:21.285 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:21.285 SegmentComplete=video:0 Index=41 Start=123.123000 End=126.126000 Duration=3.003000 offset_pts=0 start_pts=123123000 Frames=90 filename=C91193_41.ts
+13:33:21.285 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_42.ts.tmp' for writing
+13:33:21.590 frame= 3831 fps= 67 q=29.0 size=   13582kB time=00:02:07.32 bitrate= 878.7kbits/s throttle=off speed=2.22x    
+13:33:22.104 frame= 3883 fps= 67 q=29.0 size=   13777kB time=00:02:09.04 bitrate= 879.3kbits/s throttle=off speed=2.23x    
+13:33:22.170 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:22.171 SegmentComplete=video:0 Index=42 Start=126.126000 End=129.129000 Duration=3.003000 offset_pts=0 start_pts=126126000 Frames=90 filename=C91193_42.ts
+13:33:22.171 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_43.ts.tmp' for writing
+13:33:22.592 frame= 3933 fps= 68 q=29.0 size=   13980kB time=00:02:10.70 bitrate= 880.9kbits/s throttle=off speed=2.24x    
+13:33:23.078 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:23.079 SegmentComplete=video:0 Index=43 Start=129.129000 End=132.132000 Duration=3.003000 offset_pts=0 start_pts=129129000 Frames=90 filename=C91193_43.ts
+13:33:23.079 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_44.ts.tmp' for writing
+13:33:23.102 frame= 3983 fps= 68 q=29.0 size=   14200kB time=00:02:12.36 bitrate= 883.5kbits/s throttle=off speed=2.24x    
+13:33:23.610 frame= 4034 fps= 68 q=29.0 size=   14411kB time=00:02:14.08 bitrate= 885.0kbits/s throttle=off speed=2.25x    
+13:33:23.960 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:23.960 SegmentComplete=video:0 Index=44 Start=132.132000 End=135.135000 Duration=3.003000 offset_pts=0 start_pts=132132000 Frames=90 filename=C91193_44.ts
+13:33:23.960 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_45.ts.tmp' for writing
+13:33:24.111 frame= 4085 fps= 68 q=29.0 size=   14621kB time=00:02:15.79 bitrate= 886.6kbits/s throttle=off speed=2.26x    
+13:33:24.616 frame= 4134 fps= 69 q=29.0 size=   14763kB time=00:02:17.42 bitrate= 884.5kbits/s throttle=off speed=2.27x    
+13:33:24.878 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:24.879 SegmentComplete=video:0 Index=45 Start=135.135000 End=138.138000 Duration=3.003000 offset_pts=0 start_pts=135135000 Frames=90 filename=C91193_45.ts
+13:33:24.879 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_46.ts.tmp' for writing
+13:33:25.124 frame= 4186 fps= 69 q=29.0 size=   14946kB time=00:02:19.15 bitrate= 884.3kbits/s throttle=off speed=2.28x    
+13:33:25.629 frame= 4239 fps= 69 q=29.0 size=   15132kB time=00:02:20.90 bitrate= 884.1kbits/s throttle=off speed=2.29x    
+13:33:25.747 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:25.747 SegmentComplete=video:0 Index=46 Start=138.138000 End=141.141000 Duration=3.003000 offset_pts=0 start_pts=138138000 Frames=90 filename=C91193_46.ts
+13:33:25.747 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_47.ts.tmp' for writing
+13:33:26.135 frame= 4287 fps= 69 q=29.0 size=   15299kB time=00:02:22.53 bitrate= 883.6kbits/s throttle=off speed= 2.3x    
+13:33:26.642 frame= 4325 fps= 70 q=29.0 size=   15429kB time=00:02:23.78 bitrate= 883.4kbits/s throttle=off speed= 2.3x    
+13:33:26.805 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:26.806 SegmentComplete=video:0 Index=47 Start=141.141000 End=144.144000 Duration=3.003000 offset_pts=0 start_pts=141141000 Frames=90 filename=C91193_47.ts
+13:33:26.806 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_48.ts.tmp' for writing
+13:33:27.139 frame= 4374 fps= 70 q=29.0 size=   15606kB time=00:02:25.46 bitrate= 883.1kbits/s throttle=off speed=2.31x    
+13:33:27.644 frame= 4425 fps= 70 q=29.0 size=   15769kB time=00:02:27.14 bitrate= 882.1kbits/s throttle=off speed=2.32x    
+13:33:27.698 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:27.698 SegmentComplete=video:0 Index=48 Start=144.144000 End=147.147000 Duration=3.003000 offset_pts=0 start_pts=144144000 Frames=90 filename=C91193_48.ts
+13:33:27.698 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193_49.ts.tmp' for writing
+13:33:27.765 
+
+[q] command received. Exiting.
+
+13:33:27.783 13:33:27.783 [segment @ 0x22eacc0] Opening '/config/transcoding-temp/C91193.m3u8.tmp' for writing
+13:33:27.783 SegmentComplete=video:0 Index=49 Start=147.147000 End=148.081267 Duration=0.934267 offset_pts=0 start_pts=147147000 Frames=28 filename=C91193_49.ts
+13:33:27.784 frame= 4438 fps= 70 q=-1.0 Lsize=   15873kB time=00:02:27.98 bitrate= 882.9kbits/s throttle=off speed=2.32x    
+13:33:27.784 video:12412kB audio:3461kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+13:33:27.785 EXIT
+13:33:27.788 [libx264 @ 0x22ebd00] frame I:50    Avg QP:20.62  size: 25336
+13:33:27.788 [libx264 @ 0x22ebd00] frame P:1144  Avg QP:24.32  size:  7205
+13:33:27.788 [libx264 @ 0x22ebd00] frame B:3244  Avg QP:28.46  size:   987
+13:33:27.788 [libx264 @ 0x22ebd00] consecutive B-frames:  2.1%  0.8%  1.6% 95.5%
+13:33:27.788 [libx264 @ 0x22ebd00] mb I  I16..4: 15.8%  0.0% 84.2%
+13:33:27.788 [libx264 @ 0x22ebd00] mb P  I16..4:  8.9%  0.0%  0.0%  P16..4: 70.8%  0.0%  0.0%  0.0%  0.0%    skip:20.3%
+13:33:27.788 [libx264 @ 0x22ebd00] mb B  I16..4:  0.4%  0.0%  0.0%  B16..8: 20.5%  0.0%  0.0%  direct: 5.3%  skip:73.8%  L0:29.0% L1:47.8% BI:23.2%
+13:33:27.788 [libx264 @ 0x22ebd00] coded y,uvDC,uvAC intra: 57.8% 56.5% 22.7% inter: 10.3% 9.2% 0.3%
+13:33:27.788 [libx264 @ 0x22ebd00] i16 v,h,dc,p: 28% 24% 23% 24%
+13:33:27.788 [libx264 @ 0x22ebd00] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 23% 18% 11%  7% 11%  9%  9%  6%  6%
+13:33:27.788 [libx264 @ 0x22ebd00] i8c dc,h,v,p: 40% 23% 28% 10%
+13:33:27.788 [libx264 @ 0x22ebd00] Weighted P-Frames: Y:1.4% UV:0.2%
+13:33:27.788 [libx264 @ 0x22ebd00] kb/s:686.61
+13:33:27.792 
+
+======= ExtraData
+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

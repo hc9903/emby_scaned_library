@@ -1,0 +1,601 @@
+2020-05-23 06:48:19.796
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/20994/hls1/main/0.ts?DeviceId=f6e80783-687e-493f-86cc-bb660d1276e8&MediaSourceId=eeb5991b30fd2468ccc6af64218e965a&PlaySessionId=8f00d7ed56da497184b51ecaf389c262&api_key=e1b2df3ea44d45129b6352df6a663541&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=59616000&AudioBitrate=384000&AudioStreamIndex=1&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=ContainerNotSupported
+
+{"Protocol":"File","Id":"eeb5991b30fd2468ccc6af64218e965a","Path":"/00/11/TV/英美剧/单身毒妈.Weeds/Weeds S01 1080p EUR Blu-ray AVC TrueHD 5.1-WiHD/WEEDS_S1_D1","Type":"Default","Container":"bluray","Size":8619411456,"Name":"WEEDS_S1_D1/Bluray","IsRemote":false,"RunTimeTicks":19009600000,"SupportsTranscoding":true,"SupportsDirectStream":false,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"h264","CodecTag":"HDMV","ColorTransfer":"bt709","ColorPrimaries":"bt709","ColorSpace":"bt709","TimeBase":"1/90000","CodecTimeBase":"1001/48000","VideoRange":"SDR","DisplayTitle":"1080p H264","NalLengthSize":"0","IsInterlaced":false,"IsAVC":false,"BitRate":36273930,"BitDepth":8,"RefFrames":1,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"AverageFrameRate":23.976025,"RealFrameRate":23.976025,"Profile":"High","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p","Level":41,"IsAnamorphic":false},{"Codec":"truehd","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"TRUEHD 5.1","IsInterlaced":false,"ChannelLayout":"5.1","BitDepth":24,"Channels":6,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"Dolby Digital 5.1","IsInterlaced":false,"ChannelLayout":"5.1","BitRate":640000,"Channels":6,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":2,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"truehd","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"TRUEHD 5.1","IsInterlaced":false,"ChannelLayout":"5.1","BitDepth":24,"Channels":6,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":3,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"Dolby Digital 5.1","IsInterlaced":false,"ChannelLayout":"5.1","BitRate":640000,"Channels":6,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":4,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"Dolby Digital stereo","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":192000,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":5,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"Dolby Digital stereo","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":192000,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":6,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"Dolby Digital stereo","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":192000,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":7,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":8,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":9,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":10,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":11,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":12,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":13,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":14,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":15,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":16,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":17,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":18,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":19,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":20,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":21,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":22,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":23,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":24,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":36273930,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for 1124721976
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Copy video stream                        >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    Copy video stream                        >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    h264                 >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -noaccurate_seek -i file:"/00/11/TV/英美剧/单身毒妈.Weeds/Weeds S01 1080p EUR Blu-ray AVC TrueHD 5.1-WiHD/WEEDS_S1_D1/BDMV/STREAM/00262.m2ts" -threads 0 -map 0:0 -map 0:1 -sn -c:v:0 copy -copyts -vsync -1 -codec:a:0 libmp3lame -disposition:a:0 default -ac:a:0 2 -ab:a:0 192000 -filter:a:0 "volume=2" -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 6  -individual_header_trailer 0 -break_non_keyframes 1 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 0 -segment_list "/config/transcoding-temp/55740E.m3u8" -y "/config/transcoding-temp/55740E_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-remux-e0b6606b-91af-4860-b3fb-bce63c5656e7_1graph.txt -copyts -start_at_zero -noaccurate_seek -c:v:0 h264 -i "/00/11/TV/英美剧/单身毒妈.Weeds/Weeds S01 1080p EUR Blu-ray AVC TrueHD 5.1-WiHD/WEEDS_S1_D1/BDMV/STREAM/00262.m2ts" -map 0:0 -map 0:1 -sn -c:v:0 copy -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 2 -filter:a:0 "volume=2" -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/55740E.m3u8 -segment_list_type m3u8 -segment_time 6 -segment_start_number 0 -break_non_keyframes 1 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/55740E_%d.ts"
+
+06:48:19.995 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+06:48:19.995   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+06:48:19.995 Execution Date: 2020-05-23 06:48:19
+06:48:21.035 [mpegts @ 0x6a4540] start time for stream 8 is not set in estimate_timings_from_pts
+06:48:21.035 [mpegts @ 0x6a4540] start time for stream 9 is not set in estimate_timings_from_pts
+06:48:21.035 [mpegts @ 0x6a4540] start time for stream 10 is not set in estimate_timings_from_pts
+06:48:21.035 [mpegts @ 0x6a4540] start time for stream 11 is not set in estimate_timings_from_pts
+06:48:21.035 [mpegts @ 0x6a4540] start time for stream 12 is not set in estimate_timings_from_pts
+06:48:21.035 [mpegts @ 0x6a4540] start time for stream 13 is not set in estimate_timings_from_pts
+06:48:21.035 [mpegts @ 0x6a4540] start time for stream 14 is not set in estimate_timings_from_pts
+06:48:21.035 [mpegts @ 0x6a4540] start time for stream 15 is not set in estimate_timings_from_pts
+06:48:21.035 [mpegts @ 0x6a4540] start time for stream 16 is not set in estimate_timings_from_pts
+06:48:21.035 [mpegts @ 0x6a4540] start time for stream 17 is not set in estimate_timings_from_pts
+06:48:21.035 [mpegts @ 0x6a4540] start time for stream 18 is not set in estimate_timings_from_pts
+06:48:21.035 [mpegts @ 0x6a4540] start time for stream 19 is not set in estimate_timings_from_pts
+06:48:21.035 [mpegts @ 0x6a4540] start time for stream 20 is not set in estimate_timings_from_pts
+06:48:21.035 [mpegts @ 0x6a4540] start time for stream 21 is not set in estimate_timings_from_pts
+06:48:21.035 [mpegts @ 0x6a4540] start time for stream 22 is not set in estimate_timings_from_pts
+06:48:21.035 [mpegts @ 0x6a4540] start time for stream 23 is not set in estimate_timings_from_pts
+06:48:21.035 [mpegts @ 0x6a4540] start time for stream 24 is not set in estimate_timings_from_pts
+06:48:27.544 [mpegts @ 0x6a4540] stream 0 : no PTS found at end of file, duration not set
+06:48:27.544 [mpegts @ 0x6a4540] Could not find codec parameters for stream 8 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:48:27.544 [mpegts @ 0x6a4540] Could not find codec parameters for stream 9 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:48:27.544 [mpegts @ 0x6a4540] Could not find codec parameters for stream 10 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:48:27.544 [mpegts @ 0x6a4540] Could not find codec parameters for stream 11 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:48:27.544 [mpegts @ 0x6a4540] Could not find codec parameters for stream 12 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:48:27.544 [mpegts @ 0x6a4540] Could not find codec parameters for stream 13 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:48:27.544 [mpegts @ 0x6a4540] Could not find codec parameters for stream 14 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:48:27.544 [mpegts @ 0x6a4540] Could not find codec parameters for stream 15 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:48:27.544 [mpegts @ 0x6a4540] Could not find codec parameters for stream 16 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:48:27.544 [mpegts @ 0x6a4540] Could not find codec parameters for stream 17 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:48:27.544 [mpegts @ 0x6a4540] Could not find codec parameters for stream 18 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:48:27.544 [mpegts @ 0x6a4540] Could not find codec parameters for stream 19 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:48:27.544 [mpegts @ 0x6a4540] Could not find codec parameters for stream 20 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:48:27.544 [mpegts @ 0x6a4540] Could not find codec parameters for stream 21 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:48:27.544 [mpegts @ 0x6a4540] Could not find codec parameters for stream 22 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:48:27.544 [mpegts @ 0x6a4540] Could not find codec parameters for stream 23 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:48:27.544 [mpegts @ 0x6a4540] Could not find codec parameters for stream 24 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:48:27.546 Input #0, mpegts, from '/00/11/TV/英美剧/单身毒妈.Weeds/Weeds S01 1080p EUR Blu-ray AVC TrueHD 5.1-WiHD/WEEDS_S1_D1/BDMV/STREAM/00262.m2ts':
+06:48:27.546   Duration: 00:31:40.96, start: 11.650667, bitrate: 36273 kb/s
+06:48:27.546   Program 1 
+06:48:27.546     Stream #0:0[0x1011]: Video: h264 (High) (HDMV / 0x564D4448), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], Level 41, 23.98 fps, 23.98 tbr, 90k tbn, 47.95 tbc, Start-Time 11.651s
+06:48:27.546     Stream #0:1[0x1100]: Audio: truehd (AC-3 / 0x332D4341), 48000 Hz, 5.1(side), s32 (24 bit), Start-Time 11.651s
+06:48:27.546     Stream #0:2[0x1100]: Audio: ac3 (AC-3 / 0x332D4341), 48000 Hz, 5.1(side), fltp, 640 kb/s, Start-Time 11.651s
+06:48:27.546     Stream #0:3[0x1101]: Audio: truehd (AC-3 / 0x332D4341), 48000 Hz, 5.1(side), s32 (24 bit), Start-Time 11.651s
+06:48:27.546     Stream #0:4[0x1101]: Audio: ac3 (AC-3 / 0x332D4341), 48000 Hz, 5.1(side), fltp, 640 kb/s, Start-Time 11.651s
+06:48:27.546     Stream #0:5[0x1102]: Audio: ac3 (AC-3 / 0x332D4341), 48000 Hz, stereo, fltp, 192 kb/s, Start-Time 11.651s
+06:48:27.546     Stream #0:6[0x1103]: Audio: ac3 (AC-3 / 0x332D4341), 48000 Hz, stereo, fltp, 192 kb/s, Start-Time 11.651s
+06:48:27.546     Stream #0:7[0x1104]: Audio: ac3 (AC-3 / 0x332D4341), 48000 Hz, stereo, fltp, 192 kb/s, Start-Time 11.651s
+06:48:27.546     Stream #0:8[0x1200]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:48:27.546     Stream #0:9[0x1201]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:48:27.546     Stream #0:10[0x1202]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:48:27.546     Stream #0:11[0x1203]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:48:27.546     Stream #0:12[0x1204]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:48:27.547     Stream #0:13[0x1205]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:48:27.547     Stream #0:14[0x1206]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:48:27.547     Stream #0:15[0x1207]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:48:27.547     Stream #0:16[0x1208]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:48:27.547     Stream #0:17[0x1209]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:48:27.547     Stream #0:18[0x120a]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:48:27.547     Stream #0:19[0x120b]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:48:27.547     Stream #0:20[0x120c]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:48:27.547     Stream #0:21[0x120d]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:48:27.547     Stream #0:22[0x120e]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:48:27.547     Stream #0:23[0x120f]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:48:27.547     Stream #0:24[0x1210]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:48:27.547 Stream mapping:
+06:48:27.547   Stream #0:0 -> #0:0 (copy)
+06:48:27.547   Stream #0:1 -> #0:1 (truehd (native) -> mp3 (libmp3lame))
+06:48:27.547 Press [q] to stop, [?] for help
+06:48:27.553 Output #0, segment, to '/config/transcoding-temp/55740E_%d.ts':
+06:48:27.553   Metadata:
+06:48:27.553     encoder         : Lavf58.35.100
+06:48:27.553     Stream #0:0: Video: h264 (High) (HDMV / 0x564D4448), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, Level 41, 23.98 fps, 23.98 tbr, 90k tbn, 23.98 tbc
+06:48:27.553     Stream #0:1: Audio: mp3 (libmp3lame), 48000 Hz, stereo, fltp (24 bit), 192 kb/s (default)
+06:48:27.553     Metadata:
+06:48:27.553       encoder         : Lavc58.62.100 libmp3lame
+06:48:28.298 frame=   83 fps=0.0 q=-1.0 size=    3486kB time=00:00:03.37 bitrate=N/A throttle=off speed=   0x    
+06:48:28.585 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:48:28.585 SegmentComplete=video:0 Index=0 Start=0.000000 End=6.005989 Duration=6.005989 offset_pts=0 start_pts=0 Frames=144 filename=55740E_0.ts
+06:48:28.586 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_1.ts.tmp' for writing
+06:48:29.060 frame=  176 fps=116 q=-1.0 size=   15046kB time=00:00:07.25 bitrate=31776.0kbits/s throttle=off speed=2.56x    
+06:48:29.574 frame=  188 fps= 93 q=-1.0 size=   16434kB time=00:00:07.75 bitrate=30741.4kbits/s throttle=off speed=2.16x    
+06:48:30.087 frame=  231 fps= 91 q=-1.0 size=   21411kB time=00:00:09.55 bitrate=28414.5kbits/s throttle=off speed=2.43x    
+06:48:31.002 frame=  280 fps= 81 q=-1.0 size=   27139kB time=00:00:11.59 bitrate=27058.0kbits/s throttle=off speed=2.38x    
+06:48:31.058 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:48:31.059 SegmentComplete=video:0 Index=1 Start=6.089411 End=12.011989 Duration=5.922578 offset_pts=0 start_pts=6089411 Frames=144 filename=55740E_1.ts
+06:48:31.059 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_2.ts.tmp' for writing
+06:48:31.641 frame=  415 fps=101 q=-1.0 size=   28780kB time=00:00:17.22 bitrate=17026.3kbits/s throttle=off speed=3.38x    
+06:48:31.708 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:48:31.709 SegmentComplete=video:0 Index=2 Start=12.012000 End=18.017989 Duration=6.005989 offset_pts=0 start_pts=12012000 Frames=144 filename=55740E_2.ts
+06:48:31.709 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_3.ts.tmp' for writing
+06:48:32.182 frame=  470 fps=101 q=-1.0 size=   33527kB time=00:00:19.51 bitrate=17015.6kbits/s throttle=off speed=3.48x    
+06:48:32.682 frame=  522 fps=102 q=-1.0 size=   40044kB time=00:00:21.68 bitrate=17916.0kbits/s throttle=off speed=3.57x    
+06:48:33.187 frame=  562 fps=100 q=-1.0 size=   45507kB time=00:00:23.35 bitrate=18659.7kbits/s throttle=off speed=3.54x    
+06:48:33.264 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:48:33.264 SegmentComplete=video:0 Index=3 Start=18.101411 End=24.023989 Duration=5.922578 offset_pts=0 start_pts=18101411 Frames=144 filename=55740E_3.ts
+06:48:33.264 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_4.ts.tmp' for writing
+06:48:33.853 frame=  607 fps= 96 q=-1.0 size=   51664kB time=00:00:25.23 bitrate=19365.4kbits/s throttle=off speed=3.47x    
+06:48:34.421 frame=  653 fps= 95 q=-1.0 size=   57475kB time=00:00:27.15 bitrate=19804.9kbits/s throttle=off speed=3.46x    
+06:48:35.236 frame=  704 fps= 92 q=-1.0 size=   63273kB time=00:00:29.27 bitrate=20012.2kbits/s throttle=off speed=3.37x    
+06:48:35.319 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:48:35.320 SegmentComplete=video:0 Index=4 Start=24.107411 End=29.988278 Duration=5.880867 offset_pts=0 start_pts=24107411 Frames=143 filename=55740E_4.ts
+06:48:35.320 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_5.ts.tmp' for writing
+06:48:35.847 frame=  749 fps= 90 q=-1.0 size=   69348kB time=00:00:31.15 bitrate=20451.5kbits/s throttle=off speed=3.35x    
+06:48:36.430 frame=  795 fps= 89 q=-1.0 size=   75546kB time=00:00:33.07 bitrate=20840.0kbits/s throttle=off speed=3.34x    
+06:48:36.996 frame=  839 fps= 89 q=-1.0 size=   81460kB time=00:00:34.90 bitrate=21163.7kbits/s throttle=off speed=3.34x    
+06:48:37.114 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:48:37.114 SegmentComplete=video:0 Index=5 Start=30.071700 End=36.035989 Duration=5.964289 offset_pts=0 start_pts=30071700 Frames=145 filename=55740E_5.ts
+06:48:37.114 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_6.ts.tmp' for writing
+06:48:37.496 frame=  886 fps= 89 q=-1.0 size=   87770kB time=00:00:36.87 bitrate=21468.4kbits/s throttle=off speed=3.37x    
+06:48:38.750 frame=  923 fps= 82 q=-1.0 size=   92797kB time=00:00:38.41 bitrate=21698.0kbits/s throttle=off speed=3.13x    
+06:48:39.351 frame=  956 fps= 81 q=-1.0 size=   97236kB time=00:00:39.78 bitrate=21876.5kbits/s throttle=off speed=3.08x    
+06:48:40.008 frame=  983 fps= 79 q=-1.0 size=  100866kB time=00:00:40.91 bitrate=22012.5kbits/s throttle=off speed=3.01x    
+06:48:40.115 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:48:40.115 SegmentComplete=video:0 Index=6 Start=36.119411 End=41.916867 Duration=5.797456 offset_pts=0 start_pts=36119411 Frames=141 filename=55740E_6.ts
+06:48:40.115 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_7.ts.tmp' for writing
+06:48:40.908 frame= 1034 fps= 77 q=-1.0 size=  107815kB time=00:00:43.04 bitrate=22267.3kbits/s throttle=off speed=2.97x    
+06:48:41.692 frame= 1074 fps= 76 q=-1.0 size=  113294kB time=00:00:44.71 bitrate=22454.3kbits/s throttle=off speed=2.92x    
+06:48:42.193 frame= 1112 fps= 76 q=-1.0 size=  118391kB time=00:00:46.29 bitrate=22598.0kbits/s throttle=off speed=2.93x    
+06:48:42.899 frame= 1153 fps= 75 q=-1.0 size=  123895kB time=00:00:48.00 bitrate=22742.4kbits/s throttle=off speed=2.91x    
+06:48:42.937 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:48:42.938 SegmentComplete=video:0 Index=7 Start=42.000289 End=48.006278 Duration=6.005989 offset_pts=0 start_pts=42000289 Frames=146 filename=55740E_7.ts
+06:48:42.938 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_8.ts.tmp' for writing
+06:48:43.425 frame= 1196 fps= 75 q=-1.0 size=  129741kB time=00:00:49.79 bitrate=22895.5kbits/s throttle=off speed=2.92x    
+06:48:43.927 frame= 1240 fps= 76 q=-1.0 size=  135774kB time=00:00:51.63 bitrate=23048.9kbits/s throttle=off speed=2.95x    
+06:48:44.618 frame= 1285 fps= 75 q=-1.0 size=  141850kB time=00:00:53.51 bitrate=23178.8kbits/s throttle=off speed=2.94x    
+06:48:44.674 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:48:44.675 SegmentComplete=video:0 Index=8 Start=48.089700 End=53.928867 Duration=5.839167 offset_pts=0 start_pts=48089700 Frames=142 filename=55740E_8.ts
+06:48:44.675 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_9.ts.tmp' for writing
+06:48:45.273 frame= 1330 fps= 75 q=-1.0 size=  147900kB time=00:00:55.38 bitrate=23295.4kbits/s throttle=off speed=2.93x    
+06:48:45.916 frame= 1375 fps= 75 q=-1.0 size=  153953kB time=00:00:57.26 bitrate=23404.2kbits/s throttle=off speed=2.93x    
+06:48:46.560 frame= 1420 fps= 75 q=-1.0 size=  160091kB time=00:00:59.14 bitrate=23518.1kbits/s throttle=off speed=2.93x    
+06:48:46.653 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:48:46.653 SegmentComplete=video:0 Index=9 Start=54.012289 End=59.934867 Duration=5.922578 offset_pts=0 start_pts=54012289 Frames=144 filename=55740E_9.ts
+06:48:46.653 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_10.ts.tmp' for writing
+06:48:47.060 frame= 1473 fps= 75 q=-1.0 size=  167143kB time=00:01:01.35 bitrate=23617.8kbits/s throttle=off speed=2.97x    
+06:48:47.640 frame= 1508 fps= 75 q=-1.0 size=  171952kB time=00:01:02.81 bitrate=23700.6kbits/s throttle=off speed=2.96x    
+06:48:48.237 frame= 1553 fps= 75 q=-1.0 size=  178083kB time=00:01:04.68 bitrate=23794.3kbits/s throttle=off speed=2.96x    
+06:48:48.358 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:48:48.359 SegmentComplete=video:0 Index=10 Start=60.018289 End=65.940867 Duration=5.922578 offset_pts=0 start_pts=60018289 Frames=144 filename=55740E_10.ts
+06:48:48.359 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_11.ts.tmp' for writing
+06:48:48.737 frame= 1615 fps= 76 q=-1.0 size=  186550kB time=00:01:07.27 bitrate=23916.8kbits/s throttle=off speed=3.02x    
+06:48:49.561 frame= 1687 fps= 77 q=-1.0 size=  196257kB time=00:01:10.27 bitrate=24031.8kbits/s throttle=off speed=3.04x    
+06:48:50.224 frame= 1728 fps= 76 q=-1.0 size=  201607kB time=00:01:11.98 bitrate=24071.7kbits/s throttle=off speed=3.03x    
+06:48:50.258 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:48:50.259 SegmentComplete=video:0 Index=11 Start=66.024289 End=71.946867 Duration=5.922578 offset_pts=0 start_pts=66024289 Frames=144 filename=55740E_11.ts
+06:48:50.259 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_12.ts.tmp' for writing
+06:48:50.825 frame= 1768 fps= 76 q=-1.0 size=  207083kB time=00:01:13.65 bitrate=24138.6kbits/s throttle=off speed=3.02x    
+06:48:51.382 frame= 1808 fps= 76 q=-1.0 size=  212550kB time=00:01:15.32 bitrate=24201.3kbits/s throttle=off speed=3.02x    
+06:48:51.988 frame= 1852 fps= 76 q=-1.0 size=  218472kB time=00:01:17.16 bitrate=24256.9kbits/s throttle=off speed=3.02x    
+06:48:52.079 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:48:52.080 SegmentComplete=video:0 Index=12 Start=72.030289 End=78.036278 Duration=6.005989 offset_pts=0 start_pts=72030289 Frames=146 filename=55740E_12.ts
+06:48:52.080 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_13.ts.tmp' for writing
+06:48:52.628 frame= 1895 fps= 76 q=-1.0 size=  224204kB time=00:01:18.95 bitrate=24302.6kbits/s throttle=off speed=3.01x    
+06:48:53.285 frame= 1938 fps= 75 q=-1.0 size=  230180kB time=00:01:20.74 bitrate=24371.9kbits/s throttle=off speed=3.01x    
+06:48:53.965 frame= 1982 fps= 75 q=-1.0 size=  236021kB time=00:01:22.58 bitrate=24411.4kbits/s throttle=off speed=   3x    
+06:48:54.559 frame= 2025 fps= 75 q=-1.0 size=  241842kB time=00:01:24.37 bitrate=24459.6kbits/s throttle=off speed=   3x    
+06:48:54.575 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:48:54.575 SegmentComplete=video:0 Index=13 Start=78.036289 End=84.000567 Duration=5.964278 offset_pts=0 start_pts=78036289 Frames=143 filename=55740E_13.ts
+06:48:54.575 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_14.ts.tmp' for writing
+06:48:55.147 frame= 2070 fps= 75 q=-1.0 size=  247918kB time=00:01:26.25 bitrate=24506.3kbits/s throttle=off speed=   3x    
+06:48:55.647 frame= 2147 fps= 76 q=-1.0 size=  258285kB time=00:01:29.46 bitrate=24578.6kbits/s throttle=off speed=3.06x    
+06:48:56.046 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:48:56.046 SegmentComplete=video:0 Index=14 Start=84.084000 End=89.923156 Duration=5.839156 offset_pts=0 start_pts=84084000 Frames=142 filename=55740E_14.ts
+06:48:56.046 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_15.ts.tmp' for writing
+06:48:56.433 frame= 2200 fps= 76 q=-1.0 size=  265429kB time=00:01:31.67 bitrate=24626.0kbits/s throttle=off speed=3.06x    
+06:48:56.934 frame= 2262 fps= 77 q=-1.0 size=  273746kB time=00:01:34.26 bitrate=24675.0kbits/s throttle=off speed=3.09x    
+06:48:57.111 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:48:57.112 SegmentComplete=video:0 Index=15 Start=90.006578 End=96.012567 Duration=6.005989 offset_pts=0 start_pts=90006578 Frames=146 filename=55740E_15.ts
+06:48:57.112 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_16.ts.tmp' for writing
+06:48:58.334 frame= 2326 fps= 76 q=-1.0 size=  282405kB time=00:01:36.93 bitrate=24729.2kbits/s throttle=off speed=3.04x    
+06:48:59.265 frame= 2358 fps= 74 q=-1.0 size=  286740kB time=00:01:38.26 bitrate=24755.6kbits/s throttle=off speed=2.99x    
+06:48:59.823 frame= 2379 fps= 74 q=-1.0 size=  289614kB time=00:01:39.14 bitrate=24775.1kbits/s throttle=off speed=2.97x    
+06:49:00.407 frame= 2390 fps= 73 q=-1.0 size=  291016kB time=00:01:39.59 bitrate=24776.3kbits/s throttle=off speed=2.93x    
+06:49:01.007 frame= 2421 fps= 72 q=-1.0 size=  295254kB time=00:01:40.89 bitrate=24803.8kbits/s throttle=off speed=2.91x    
+06:49:01.541 frame= 2433 fps= 72 q=-1.0 size=  296795kB time=00:01:41.39 bitrate=24806.0kbits/s throttle=off speed=2.88x    
+06:49:01.637 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:01.637 SegmentComplete=video:0 Index=16 Start=96.012578 End=101.935156 Duration=5.922578 offset_pts=0 start_pts=96012578 Frames=142 filename=55740E_16.ts
+06:49:01.637 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_17.ts.tmp' for writing
+06:49:02.471 frame= 2473 fps= 71 q=-1.0 size=  302217kB time=00:01:43.06 bitrate=24836.3kbits/s throttle=off speed=2.85x    
+06:49:03.103 frame= 2512 fps= 71 q=-1.0 size=  307513kB time=00:01:44.68 bitrate=24865.8kbits/s throttle=off speed=2.85x    
+06:49:03.790 frame= 2550 fps= 70 q=-1.0 size=  312636kB time=00:01:46.27 bitrate=24890.7kbits/s throttle=off speed=2.84x    
+06:49:04.533 frame= 2592 fps= 70 q=-1.0 size=  318347kB time=00:01:48.02 bitrate=24921.1kbits/s throttle=off speed=2.83x    
+06:49:04.581 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:04.582 SegmentComplete=video:0 Index=17 Start=102.018578 End=107.941156 Duration=5.922578 offset_pts=0 start_pts=102018578 Frames=144 filename=55740E_17.ts
+06:49:04.582 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_18.ts.tmp' for writing
+06:49:05.201 frame= 2631 fps= 70 q=-1.0 size=  323502kB time=00:01:49.65 bitrate=24937.1kbits/s throttle=off speed=2.82x    
+06:49:05.950 frame= 2674 fps= 70 q=-1.0 size=  329402kB time=00:01:51.44 bitrate=24970.4kbits/s throttle=off speed=2.81x    
+06:49:06.917 frame= 2717 fps= 69 q=-1.0 size=  335146kB time=00:01:53.23 bitrate=24991.1kbits/s throttle=off speed=2.79x    
+06:49:07.000 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:07.000 SegmentComplete=video:0 Index=18 Start=108.024578 End=114.030567 Duration=6.005989 offset_pts=0 start_pts=108024578 Frames=146 filename=55740E_18.ts
+06:49:07.000 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_19.ts.tmp' for writing
+06:49:07.531 frame= 2759 fps= 69 q=-1.0 size=  340825kB time=00:01:54.98 bitrate=25015.7kbits/s throttle=off speed=2.79x    
+06:49:08.087 frame= 2803 fps= 69 q=-1.0 size=  346767kB time=00:01:56.82 bitrate=25040.1kbits/s throttle=off speed= 2.8x    
+06:49:08.595 frame= 2846 fps= 69 q=-1.0 size=  352506kB time=00:01:58.61 bitrate=25058.4kbits/s throttle=off speed=2.81x    
+06:49:09.108 frame= 2888 fps= 69 q=-1.0 size=  358272kB time=00:02:00.37 bitrate=25086.9kbits/s throttle=off speed=2.81x    
+06:49:09.120 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:09.121 SegmentComplete=video:0 Index=19 Start=114.114000 End=119.953156 Duration=5.839156 offset_pts=0 start_pts=114114000 Frames=142 filename=55740E_19.ts
+06:49:09.121 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_20.ts.tmp' for writing
+06:49:09.619 frame= 2933 fps= 70 q=-1.0 size=  364298kB time=00:02:02.24 bitrate=25106.1kbits/s throttle=off speed=2.83x    
+06:49:10.488 frame= 2975 fps= 69 q=-1.0 size=  370022kB time=00:02:03.99 bitrate=25130.2kbits/s throttle=off speed=2.81x    
+06:49:11.018 frame= 3019 fps= 69 q=-1.0 size=  376020kB time=00:02:05.83 bitrate=25154.9kbits/s throttle=off speed=2.82x    
+06:49:11.075 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:11.075 SegmentComplete=video:0 Index=20 Start=120.036578 End=125.959156 Duration=5.922578 offset_pts=0 start_pts=120036578 Frames=144 filename=55740E_20.ts
+06:49:11.075 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_21.ts.tmp' for writing
+06:49:11.518 frame= 3066 fps= 70 q=-1.0 size=  382278kB time=00:02:07.79 bitrate=25170.6kbits/s throttle=off speed=2.83x    
+06:49:12.018 frame= 3116 fps= 70 q=-1.0 size=  388987kB time=00:02:09.87 bitrate=25190.1kbits/s throttle=off speed=2.84x    
+06:49:12.518 frame= 3160 fps= 70 q=-1.0 size=  394837kB time=00:02:11.71 bitrate=25203.3kbits/s throttle=off speed=2.85x    
+06:49:12.587 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:12.587 SegmentComplete=video:0 Index=21 Start=126.000867 End=131.965156 Duration=5.964289 offset_pts=0 start_pts=126000867 Frames=144 filename=55740E_21.ts
+06:49:12.587 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_22.ts.tmp' for writing
+06:49:13.075 frame= 3195 fps= 70 q=-1.0 size=  399590kB time=00:02:13.17 bitrate=25219.8kbits/s throttle=off speed=2.85x    
+06:49:13.579 frame= 3240 fps= 70 q=-1.0 size=  405469kB time=00:02:15.05 bitrate=25226.1kbits/s throttle=off speed=2.86x    
+06:49:14.079 frame= 3310 fps= 71 q=-1.0 size=  414978kB time=00:02:17.97 bitrate=25257.7kbits/s throttle=off speed=2.89x    
+06:49:14.124 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:14.124 SegmentComplete=video:0 Index=22 Start=132.048578 End=138.012867 Duration=5.964289 offset_pts=0 start_pts=132048578 Frames=145 filename=55740E_22.ts
+06:49:14.124 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_23.ts.tmp' for writing
+06:49:14.640 frame= 3328 fps= 71 q=-1.0 size=  417363kB time=00:02:18.72 bitrate=25261.9kbits/s throttle=off speed=2.87x    
+06:49:15.353 frame= 3371 fps= 71 q=-1.0 size=  423191kB time=00:02:20.51 bitrate=25279.7kbits/s throttle=off speed=2.87x    
+06:49:15.863 frame= 3417 fps= 71 q=-1.0 size=  429369kB time=00:02:22.43 bitrate=25294.8kbits/s throttle=off speed=2.88x    
+06:49:16.480 frame= 3460 fps= 71 q=-1.0 size=  435189kB time=00:02:24.22 bitrate=25311.3kbits/s throttle=off speed=2.88x    
+06:49:16.503 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:16.503 SegmentComplete=video:0 Index=23 Start=138.096289 End=143.977156 Duration=5.880867 offset_pts=0 start_pts=138096289 Frames=143 filename=55740E_23.ts
+06:49:16.504 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_24.ts.tmp' for writing
+06:49:17.077 frame= 3505 fps= 71 q=-1.0 size=  441195kB time=00:02:26.10 bitrate=25323.1kbits/s throttle=off speed=2.88x    
+06:49:17.678 frame= 3547 fps= 71 q=-1.0 size=  446930kB time=00:02:27.85 bitrate=25341.3kbits/s throttle=off speed=2.88x    
+06:49:18.373 frame= 3593 fps= 71 q=-1.0 size=  453106kB time=00:02:29.77 bitrate=25354.8kbits/s throttle=off speed=2.88x    
+06:49:18.444 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:18.445 SegmentComplete=video:0 Index=24 Start=144.060578 End=150.024867 Duration=5.964289 offset_pts=0 start_pts=144060578 Frames=145 filename=55740E_24.ts
+06:49:18.445 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_25.ts.tmp' for writing
+06:49:19.034 frame= 3636 fps= 71 q=-1.0 size=  458825kB time=00:02:31.56 bitrate=25364.1kbits/s throttle=off speed=2.88x    
+06:49:19.722 frame= 3682 fps= 71 q=-1.0 size=  465087kB time=00:02:33.48 bitrate=25381.6kbits/s throttle=off speed=2.88x    
+06:49:19.899 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:19.899 SegmentComplete=video:0 Index=25 Start=150.108289 End=156.030867 Duration=5.922578 offset_pts=0 start_pts=150108289 Frames=144 filename=55740E_25.ts
+06:49:19.899 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_26.ts.tmp' for writing
+06:49:20.261 frame= 3773 fps= 72 q=-1.0 size=  477368kB time=00:02:37.28 bitrate=25409.4kbits/s throttle=off speed=2.92x    
+06:49:20.694 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:20.694 SegmentComplete=video:0 Index=26 Start=156.114289 End=161.995156 Duration=5.880867 offset_pts=0 start_pts=156114289 Frames=143 filename=55740E_26.ts
+06:49:20.694 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_27.ts.tmp' for writing
+06:49:20.761 frame= 3926 fps= 74 q=-1.0 size=  498021kB time=00:02:43.66 bitrate=25453.3kbits/s throttle=off speed=3.01x    
+06:49:21.708 frame= 4034 fps= 74 q=-1.0 size=  512611kB time=00:02:48.16 bitrate=25482.9kbits/s throttle=off speed=3.04x    
+06:49:21.735 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:21.736 SegmentComplete=video:0 Index=27 Start=162.036867 End=167.959444 Duration=5.922578 offset_pts=0 start_pts=162036867 Frames=143 filename=55740E_27.ts
+06:49:21.736 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_28.ts.tmp' for writing
+06:49:22.232 frame= 4118 fps= 75 q=-1.0 size=  523972kB time=00:02:51.67 bitrate=25505.4kbits/s throttle=off speed=3.08x    
+06:49:22.609 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:22.609 SegmentComplete=video:0 Index=28 Start=168.042867 End=173.965444 Duration=5.922578 offset_pts=0 start_pts=168042867 Frames=144 filename=55740E_28.ts
+06:49:22.609 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_29.ts.tmp' for writing
+06:49:22.873 frame= 4200 fps= 76 q=-1.0 size=  535021kB time=00:02:55.09 bitrate=25524.5kbits/s throttle=off speed= 3.1x    
+06:49:24.083 frame= 4232 fps= 75 q=-1.0 size=  539340kB time=00:02:56.42 bitrate=25532.1kbits/s throttle=off speed=3.06x    
+06:49:24.900 frame= 4233 fps= 74 q=-1.0 size=  539466kB time=00:02:56.46 bitrate=25531.9kbits/s throttle=off speed=3.02x    
+06:49:25.238 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:25.239 SegmentComplete=video:0 Index=29 Start=174.048867 End=179.929733 Duration=5.880867 offset_pts=0 start_pts=174048867 Frames=143 filename=55740E_29.ts
+06:49:25.239 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_30.ts.tmp' for writing
+06:49:25.679 frame= 4373 fps= 75 q=-1.0 size=  558388kB time=00:03:02.30 bitrate=25565.0kbits/s throttle=off speed=3.08x    
+06:49:26.373 frame= 4384 fps= 75 q=-1.0 size=  559919kB time=00:03:02.76 bitrate=25569.5kbits/s throttle=off speed=3.05x    
+06:49:26.904 frame= 4420 fps= 74 q=-1.0 size=  564687kB time=00:03:04.26 bitrate=25573.2kbits/s throttle=off speed=3.05x    
+06:49:27.599 frame= 4460 fps= 74 q=-1.0 size=  570206kB time=00:03:05.93 bitrate=25587.2kbits/s throttle=off speed=3.04x    
+06:49:27.633 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:27.634 SegmentComplete=video:0 Index=30 Start=180.013167 End=185.935733 Duration=5.922567 offset_pts=0 start_pts=180013167 Frames=144 filename=55740E_30.ts
+06:49:27.634 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_31.ts.tmp' for writing
+06:49:28.138 frame= 4498 fps= 74 q=-1.0 size=  575265kB time=00:03:07.52 bitrate=25592.0kbits/s throttle=off speed=3.04x    
+06:49:28.733 frame= 4541 fps= 74 q=-1.0 size=  581061kB time=00:03:09.31 bitrate=25600.5kbits/s throttle=off speed=3.04x    
+06:49:29.280 frame= 4585 fps= 74 q=-1.0 size=  587039kB time=00:03:11.14 bitrate=25611.1kbits/s throttle=off speed=3.04x    
+06:49:29.435 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:29.436 SegmentComplete=video:0 Index=31 Start=186.019167 End=192.025156 Duration=6.005989 offset_pts=0 start_pts=186019167 Frames=146 filename=55740E_31.ts
+06:49:29.436 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_32.ts.tmp' for writing
+06:49:29.863 frame= 4628 fps= 74 q=-1.0 size=  592785kB time=00:03:12.94 bitrate=25617.1kbits/s throttle=off speed=3.04x    
+06:49:30.597 frame= 4671 fps= 74 q=-1.0 size=  598603kB time=00:03:14.73 bitrate=25626.1kbits/s throttle=off speed=3.04x    
+06:49:31.156 frame= 4716 fps= 74 q=-1.0 size=  604531kB time=00:03:16.61 bitrate=25628.5kbits/s throttle=off speed=3.04x    
+06:49:31.760 frame= 4758 fps= 74 q=-1.0 size=  610200kB time=00:03:18.36 bitrate=25636.4kbits/s throttle=off speed=3.04x    
+06:49:31.785 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:31.785 SegmentComplete=video:0 Index=32 Start=192.108578 End=197.989444 Duration=5.880867 offset_pts=0 start_pts=192108578 Frames=143 filename=55740E_32.ts
+06:49:31.785 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_33.ts.tmp' for writing
+06:49:32.389 frame= 4800 fps= 74 q=-1.0 size=  615890kB time=00:03:20.11 bitrate=25645.1kbits/s throttle=off speed=3.03x    
+06:49:32.972 frame= 4843 fps= 74 q=-1.0 size=  621671kB time=00:03:21.91 bitrate=25652.0kbits/s throttle=off speed=3.03x    
+06:49:33.547 frame= 4884 fps= 74 q=-1.0 size=  627109kB time=00:03:23.62 bitrate=25655.4kbits/s throttle=off speed=3.03x    
+06:49:33.603 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:33.603 SegmentComplete=video:0 Index=33 Start=198.072867 End=204.037156 Duration=5.964289 offset_pts=0 start_pts=198072867 Frames=145 filename=55740E_33.ts
+06:49:33.603 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_34.ts.tmp' for writing
+06:49:34.667 frame= 4916 fps= 73 q=-1.0 size=  631518kB time=00:03:24.95 bitrate=25664.7kbits/s throttle=off speed=   3x    
+06:49:35.673 frame= 4947 fps= 73 q=-1.0 size=  635680kB time=00:03:26.24 bitrate=25669.2kbits/s throttle=off speed=2.98x    
+06:49:36.629 frame= 4990 fps= 72 q=-1.0 size=  641533kB time=00:03:28.04 bitrate=25678.5kbits/s throttle=off speed=2.96x    
+06:49:37.123 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:37.124 SegmentComplete=video:0 Index=34 Start=204.037167 End=209.918033 Duration=5.880867 offset_pts=0 start_pts=204037167 Frames=141 filename=55740E_34.ts
+06:49:37.124 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_35.ts.tmp' for writing
+06:49:37.130 frame= 5053 fps= 73 q=-1.0 size=  649872kB time=00:03:30.66 bitrate=25682.6kbits/s throttle=off speed=2.98x    
+06:49:38.382 frame= 5100 fps= 72 q=-1.0 size=  656318kB time=00:03:32.62 bitrate=25694.3kbits/s throttle=off speed=2.95x    
+06:49:38.997 frame= 5137 fps= 72 q=-1.0 size=  661231kB time=00:03:34.17 bitrate=25697.2kbits/s throttle=off speed=2.95x    
+06:49:39.497 frame= 5183 fps= 72 q=-1.0 size=  667487kB time=00:03:36.09 bitrate=25706.3kbits/s throttle=off speed=2.96x    
+06:49:39.531 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:39.532 SegmentComplete=video:0 Index=35 Start=210.001456 End=216.007444 Duration=6.005989 offset_pts=0 start_pts=210001456 Frames=146 filename=55740E_35.ts
+06:49:39.532 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_36.ts.tmp' for writing
+06:49:40.114 frame= 5222 fps= 72 q=-1.0 size=  672706kB time=00:03:37.71 bitrate=25710.7kbits/s throttle=off speed=2.95x    
+06:49:40.657 frame= 5263 fps= 72 q=-1.0 size=  678222kB time=00:03:39.42 bitrate=25716.3kbits/s throttle=off speed=2.96x    
+06:49:41.243 frame= 5306 fps= 72 q=-1.0 size=  684037kB time=00:03:41.22 bitrate=25723.3kbits/s throttle=off speed=2.96x    
+06:49:41.318 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:41.319 SegmentComplete=video:0 Index=36 Start=216.090867 End=221.971733 Duration=5.880867 offset_pts=0 start_pts=216090867 Frames=143 filename=55740E_36.ts
+06:49:41.319 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_37.ts.tmp' for writing
+06:49:41.747 frame= 5349 fps= 72 q=-1.0 size=  689861kB time=00:03:43.01 bitrate=25730.5kbits/s throttle=off speed=2.96x    
+06:49:42.355 frame= 5389 fps= 72 q=-1.0 size=  695235kB time=00:03:44.68 bitrate=25735.4kbits/s throttle=off speed=2.96x    
+06:49:42.887 frame= 5432 fps= 72 q=-1.0 size=  701100kB time=00:03:46.47 bitrate=25743.9kbits/s throttle=off speed=2.96x    
+06:49:43.399 frame= 5473 fps= 72 q=-1.0 size=  706544kB time=00:03:48.18 bitrate=25746.5kbits/s throttle=off speed=2.96x    
+06:49:43.431 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:43.440 SegmentComplete=video:0 Index=37 Start=222.055167 End=228.019444 Duration=5.964278 offset_pts=0 start_pts=222055167 Frames=145 filename=55740E_37.ts
+06:49:43.440 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_38.ts.tmp' for writing
+06:49:44.195 frame= 5515 fps= 72 q=-1.0 size=  712293kB time=00:03:49.93 bitrate=25755.3kbits/s throttle=off speed=2.96x    
+06:49:44.806 frame= 5557 fps= 72 q=-1.0 size=  717908kB time=00:03:51.68 bitrate=25759.1kbits/s throttle=off speed=2.96x    
+06:49:45.464 frame= 5600 fps= 72 q=-1.0 size=  723731kB time=00:03:53.48 bitrate=25765.6kbits/s throttle=off speed=2.95x    
+06:49:45.537 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:45.537 SegmentComplete=video:0 Index=38 Start=228.102867 End=234.025444 Duration=5.922578 offset_pts=0 start_pts=228102867 Frames=144 filename=55740E_38.ts
+06:49:45.537 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_39.ts.tmp' for writing
+06:49:46.005 frame= 5640 fps= 72 q=-1.0 size=  729126kB time=00:03:55.15 bitrate=25770.9kbits/s throttle=off speed=2.95x    
+06:49:46.569 frame= 5684 fps= 72 q=-1.0 size=  735085kB time=00:03:56.98 bitrate=25777.4kbits/s throttle=off speed=2.96x    
+06:49:47.430 frame= 5726 fps= 72 q=-1.0 size=  740706kB time=00:03:58.73 bitrate=25781.2kbits/s throttle=off speed=2.95x    
+06:49:47.832 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:47.833 SegmentComplete=video:0 Index=39 Start=234.108867 End=239.948033 Duration=5.839167 offset_pts=0 start_pts=234108867 Frames=142 filename=55740E_39.ts
+06:49:47.833 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_40.ts.tmp' for writing
+06:49:47.930 frame= 5797 fps= 72 q=-1.0 size=  750405kB time=00:04:01.69 bitrate=25794.2kbits/s throttle=off speed=2.96x    
+06:49:48.431 frame= 5835 fps= 72 q=-1.0 size=  755606kB time=00:04:03.28 bitrate=25801.4kbits/s throttle=off speed=2.97x    
+06:49:49.008 frame= 5849 fps= 72 q=-1.0 size=  757452kB time=00:04:03.86 bitrate=25801.7kbits/s throttle=off speed=2.95x    
+06:49:49.564 frame= 5894 fps= 72 q=-1.0 size=  763393kB time=00:04:05.74 bitrate=25802.7kbits/s throttle=off speed=2.96x    
+06:49:49.665 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:49.666 SegmentComplete=video:0 Index=40 Start=240.031456 End=245.954033 Duration=5.922578 offset_pts=0 start_pts=240031456 Frames=144 filename=55740E_40.ts
+06:49:49.666 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_41.ts.tmp' for writing
+06:49:50.064 frame= 5938 fps= 72 q=-1.0 size=  769392kB time=00:04:07.58 bitrate=25810.0kbits/s throttle=off speed=2.96x    
+06:49:50.571 frame= 5980 fps= 72 q=-1.0 size=  774994kB time=00:04:09.33 bitrate=25812.7kbits/s throttle=off speed=2.96x    
+06:49:51.050 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:51.052 SegmentComplete=video:0 Index=41 Start=246.037456 End=251.960033 Duration=5.922578 offset_pts=0 start_pts=246037456 Frames=144 filename=55740E_41.ts
+06:49:51.052 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_42.ts.tmp' for writing
+06:49:51.543 frame= 6064 fps= 72 q=-1.0 size=  786364kB time=00:04:12.83 bitrate=25823.6kbits/s throttle=off speed=2.97x    
+06:49:52.092 frame= 6106 fps= 72 q=-1.0 size=  791838kB time=00:04:14.58 bitrate=25822.0kbits/s throttle=off speed=2.97x    
+06:49:52.625 frame= 6149 fps= 72 q=-1.0 size=  797695kB time=00:04:16.38 bitrate=25828.6kbits/s throttle=off speed=2.97x    
+06:49:53.186 frame= 6193 fps= 72 q=-1.0 size=  803598kB time=00:04:18.21 bitrate=25832.4kbits/s throttle=off speed=2.98x    
+06:49:53.217 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:53.221 SegmentComplete=video:0 Index=42 Start=252.043456 End=257.966033 Duration=5.922578 offset_pts=0 start_pts=252043456 Frames=144 filename=55740E_42.ts
+06:49:53.221 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_43.ts.tmp' for writing
+06:49:54.213 frame= 6266 fps= 72 q=-1.0 size=  813511kB time=00:04:21.26 bitrate=25842.3kbits/s throttle=off speed=2.98x    
+06:49:54.713 frame= 6300 fps= 72 q=-1.0 size=  818150kB time=00:04:22.67 bitrate=25847.5kbits/s throttle=off speed=2.97x    
+06:49:55.120 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:55.120 SegmentComplete=video:0 Index=43 Start=258.049456 End=263.930322 Duration=5.880867 offset_pts=0 start_pts=258049456 Frames=143 filename=55740E_43.ts
+06:49:55.120 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_44.ts.tmp' for writing
+06:49:55.266 frame= 6363 fps= 73 q=-1.0 size=  826566kB time=00:04:25.30 bitrate=25851.5kbits/s throttle=off speed=2.99x    
+06:49:56.044 frame= 6379 fps= 72 q=-1.0 size=  828811kB time=00:04:25.97 bitrate=25855.8kbits/s throttle=off speed=2.97x    
+06:49:56.862 frame= 6418 fps= 72 q=-1.0 size=  834054kB time=00:04:27.60 bitrate=25859.2kbits/s throttle=off speed=2.96x    
+06:49:57.584 frame= 6451 fps= 72 q=-1.0 size=  838474kB time=00:04:28.97 bitrate=25861.5kbits/s throttle=off speed=2.95x    
+06:49:57.677 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:49:57.678 SegmentComplete=video:0 Index=44 Start=264.013744 End=269.978033 Duration=5.964289 offset_pts=0 start_pts=264013744 Frames=145 filename=55740E_44.ts
+06:49:57.678 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_45.ts.tmp' for writing
+06:49:58.125 frame= 6496 fps= 72 q=-1.0 size=  844618kB time=00:04:30.85 bitrate=25868.2kbits/s throttle=off speed=2.95x    
+06:49:58.802 frame= 6540 fps= 72 q=-1.0 size=  850599kB time=00:04:32.68 bitrate=25873.8kbits/s throttle=off speed=2.95x    
+06:49:59.435 frame= 6581 fps= 72 q=-1.0 size=  856138kB time=00:04:34.39 bitrate=25878.0kbits/s throttle=off speed=2.95x    
+06:50:00.156 frame= 6626 fps= 72 q=-1.0 size=  862259kB time=00:04:36.27 bitrate=25883.8kbits/s throttle=off speed=2.95x    
+06:50:00.172 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:00.172 SegmentComplete=video:0 Index=45 Start=270.061456 End=275.942322 Duration=5.880867 offset_pts=0 start_pts=270061456 Frames=143 filename=55740E_45.ts
+06:50:00.172 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_46.ts.tmp' for writing
+06:50:00.807 frame= 6670 fps= 72 q=-1.0 size=  868243kB time=00:04:38.11 bitrate=25889.3kbits/s throttle=off speed=2.95x    
+06:50:01.360 frame= 6715 fps= 72 q=-1.0 size=  874315kB time=00:04:39.98 bitrate=25893.5kbits/s throttle=off speed=2.95x    
+06:50:02.069 frame= 6759 fps= 72 q=-1.0 size=  880230kB time=00:04:41.82 bitrate=25896.8kbits/s throttle=off speed=2.95x    
+06:50:02.115 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:02.115 SegmentComplete=video:0 Index=46 Start=276.025744 End=282.031733 Duration=6.005989 offset_pts=0 start_pts=276025744 Frames=146 filename=55740E_46.ts
+06:50:02.115 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_47.ts.tmp' for writing
+06:50:02.782 frame= 6801 fps= 71 q=-1.0 size=  885978kB time=00:04:43.57 bitrate=25903.0kbits/s throttle=off speed=2.94x    
+06:50:03.500 frame= 6847 fps= 71 q=-1.0 size=  892133kB time=00:04:45.49 bitrate=25905.6kbits/s throttle=off speed=2.94x    
+06:50:04.113 frame= 6888 fps= 71 q=-1.0 size=  897669kB time=00:04:47.20 bitrate=25909.3kbits/s throttle=off speed=2.94x    
+06:50:04.191 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:04.192 SegmentComplete=video:0 Index=47 Start=282.115167 End=287.954322 Duration=5.839156 offset_pts=0 start_pts=282115167 Frames=142 filename=55740E_47.ts
+06:50:04.192 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_48.ts.tmp' for writing
+06:50:04.777 frame= 6932 fps= 71 q=-1.0 size=  903604kB time=00:04:49.03 bitrate=25913.0kbits/s throttle=off speed=2.94x    
+06:50:05.316 frame= 6976 fps= 71 q=-1.0 size=  909545kB time=00:04:50.87 bitrate=25916.9kbits/s throttle=off speed=2.94x    
+06:50:06.017 frame= 7019 fps= 71 q=-1.0 size=  915329kB time=00:04:52.66 bitrate=25920.0kbits/s throttle=off speed=2.94x    
+06:50:06.620 frame= 7061 fps= 71 q=-1.0 size=  920867kB time=00:04:54.41 bitrate=25919.9kbits/s throttle=off speed=2.94x    
+06:50:06.631 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:06.631 SegmentComplete=video:0 Index=48 Start=288.037744 End=294.002033 Duration=5.964289 offset_pts=0 start_pts=288037744 Frames=145 filename=55740E_48.ts
+06:50:06.632 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_49.ts.tmp' for writing
+06:50:07.274 frame= 7106 fps= 71 q=-1.0 size=  926975kB time=00:04:56.29 bitrate=25924.6kbits/s throttle=off speed=2.94x    
+06:50:07.900 frame= 7149 fps= 71 q=-1.0 size=  932800kB time=00:04:58.08 bitrate=25928.8kbits/s throttle=off speed=2.94x    
+06:50:08.439 frame= 7193 fps= 71 q=-1.0 size=  938708kB time=00:04:59.92 bitrate=25931.5kbits/s throttle=off speed=2.94x    
+06:50:08.482 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:08.482 SegmentComplete=video:0 Index=49 Start=294.085456 End=300.008033 Duration=5.922578 offset_pts=0 start_pts=294085456 Frames=144 filename=55740E_49.ts
+06:50:08.482 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_50.ts.tmp' for writing
+06:50:09.073 frame= 7236 fps= 71 q=-1.0 size=  944502kB time=00:05:01.71 bitrate=25934.7kbits/s throttle=off speed=2.94x    
+06:50:09.894 frame= 7280 fps= 71 q=-1.0 size=  950446kB time=00:05:03.55 bitrate=25938.4kbits/s throttle=off speed=2.93x    
+06:50:10.666 frame= 7325 fps= 71 q=-1.0 size=  956572kB time=00:05:05.43 bitrate=25943.4kbits/s throttle=off speed=2.93x    
+06:50:10.782 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:10.783 SegmentComplete=video:0 Index=50 Start=300.091456 End=305.972322 Duration=5.880867 offset_pts=0 start_pts=300091456 Frames=143 filename=55740E_50.ts
+06:50:10.783 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_51.ts.tmp' for writing
+06:50:11.296 frame= 7368 fps= 71 q=-1.0 size=  962378kB time=00:05:07.22 bitrate=25946.8kbits/s throttle=off speed=2.93x    
+06:50:11.853 frame= 7412 fps= 71 q=-1.0 size=  968287kB time=00:05:09.05 bitrate=25949.4kbits/s throttle=off speed=2.93x    
+06:50:12.394 frame= 7454 fps= 71 q=-1.0 size=  974139kB time=00:05:10.81 bitrate=25957.4kbits/s throttle=off speed=2.93x    
+06:50:12.566 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:12.567 SegmentComplete=video:0 Index=51 Start=306.055744 End=311.936611 Duration=5.880867 offset_pts=0 start_pts=306055744 Frames=143 filename=55740E_51.ts
+06:50:12.567 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_52.ts.tmp' for writing
+06:50:13.085 frame= 7498 fps= 71 q=-1.0 size=  979928kB time=00:05:12.64 bitrate=25956.7kbits/s throttle=off speed=2.93x    
+06:50:13.823 frame= 7542 fps= 71 q=-1.0 size=  985830kB time=00:05:14.48 bitrate=25959.0kbits/s throttle=off speed=2.93x    
+06:50:14.703 frame= 7631 fps= 71 q=-1.0 size=  997925kB time=00:05:18.19 bitrate=25967.7kbits/s throttle=off speed=2.94x    
+06:50:14.750 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:14.750 SegmentComplete=video:0 Index=52 Start=312.020033 End=317.942611 Duration=5.922578 offset_pts=0 start_pts=312020033 Frames=144 filename=55740E_52.ts
+06:50:14.750 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_53.ts.tmp' for writing
+06:50:15.309 frame= 7720 fps= 72 q=-1.0 size= 1009855kB time=00:05:21.90 bitrate=25971.9kbits/s throttle=off speed=2.96x    
+06:50:15.705 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:15.706 SegmentComplete=video:0 Index=53 Start=318.026033 End=323.948611 Duration=5.922578 offset_pts=0 start_pts=318026033 Frames=144 filename=55740E_53.ts
+06:50:15.706 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_54.ts.tmp' for writing
+06:50:15.995 frame= 7809 fps= 72 q=-1.0 size= 1021829kB time=00:05:25.61 bitrate=25977.1kbits/s throttle=off speed=2.97x    
+06:50:16.531 frame= 7852 fps= 72 q=-1.0 size= 1027664kB time=00:05:27.41 bitrate=25980.8kbits/s throttle=off speed=2.97x    
+06:50:17.180 frame= 7895 fps= 72 q=-1.0 size= 1033513kB time=00:05:29.20 bitrate=25984.9kbits/s throttle=off speed=2.97x    
+06:50:17.258 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:17.259 SegmentComplete=video:0 Index=54 Start=324.032033 End=329.996322 Duration=5.964289 offset_pts=0 start_pts=324032033 Frames=145 filename=55740E_54.ts
+06:50:17.259 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_55.ts.tmp' for writing
+06:50:17.718 frame= 7940 fps= 72 q=-1.0 size= 1039553kB time=00:05:31.08 bitrate=25987.0kbits/s throttle=off speed=2.97x    
+06:50:18.258 frame= 7984 fps= 72 q=-1.0 size= 1045536kB time=00:05:32.91 bitrate=25991.1kbits/s throttle=off speed=2.98x    
+06:50:18.963 frame= 8028 fps= 72 q=-1.0 size= 1051474kB time=00:05:34.75 bitrate=25993.9kbits/s throttle=off speed=2.97x    
+06:50:19.443 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:19.444 SegmentComplete=video:0 Index=55 Start=330.079744 End=336.002322 Duration=5.922578 offset_pts=0 start_pts=330079744 Frames=144 filename=55740E_55.ts
+06:50:19.444 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_56.ts.tmp' for writing
+06:50:19.463 frame= 8076 fps= 72 q=-1.0 size= 1057783kB time=00:05:36.75 bitrate=25992.8kbits/s throttle=off speed=2.98x    
+06:50:19.963 frame= 8121 fps= 72 q=-1.0 size= 1063801kB time=00:05:38.62 bitrate=25994.4kbits/s throttle=off speed=2.98x    
+06:50:20.343 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:20.344 SegmentComplete=video:0 Index=56 Start=336.085744 End=342.008322 Duration=5.922578 offset_pts=0 start_pts=336085744 Frames=144 filename=55740E_56.ts
+06:50:20.344 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_57.ts.tmp' for writing
+06:50:20.463 frame= 8267 fps= 73 q=-1.0 size= 1083583kB time=00:05:44.71 bitrate=26005.4kbits/s throttle=off speed=3.02x    
+06:50:20.954 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:20.955 SegmentComplete=video:0 Index=57 Start=342.091744 End=347.972611 Duration=5.880867 offset_pts=0 start_pts=342091744 Frames=143 filename=55740E_57.ts
+06:50:20.955 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_58.ts.tmp' for writing
+06:50:20.963 frame= 8365 fps= 74 q=-1.0 size= 1096095kB time=00:05:48.80 bitrate=25994.4kbits/s throttle=off speed=3.05x    
+06:50:21.713 frame= 8470 fps= 74 q=-1.0 size= 1110258kB time=00:05:53.18 bitrate=26000.7kbits/s throttle=off speed=3.06x    
+06:50:21.791 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:21.792 SegmentComplete=video:0 Index=58 Start=348.056033 End=353.936900 Duration=5.880867 offset_pts=0 start_pts=348056033 Frames=143 filename=55740E_58.ts
+06:50:21.792 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_59.ts.tmp' for writing
+06:50:22.222 frame= 8513 fps= 74 q=-1.0 size= 1116032kB time=00:05:54.97 bitrate=26002.6kbits/s throttle=off speed=3.07x    
+06:50:22.857 frame= 8600 fps= 75 q=-1.0 size= 1127854kB time=00:05:58.60 bitrate=26009.6kbits/s throttle=off speed=3.08x    
+06:50:23.052 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:23.053 SegmentComplete=video:0 Index=59 Start=354.020333 End=359.984611 Duration=5.964278 offset_pts=0 start_pts=354020333 Frames=145 filename=55740E_59.ts
+06:50:23.053 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_60.ts.tmp' for writing
+06:50:24.010 frame= 8686 fps= 75 q=-1.0 size= 1139408kB time=00:06:02.19 bitrate=26013.4kbits/s throttle=off speed=3.08x    
+06:50:24.752 frame= 8770 fps= 75 q=-1.0 size= 1150769kB time=00:06:05.69 bitrate=26018.7kbits/s throttle=off speed=3.09x    
+06:50:24.834 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:24.834 SegmentComplete=video:0 Index=60 Start=360.068033 End=365.948900 Duration=5.880867 offset_pts=0 start_pts=360068033 Frames=143 filename=55740E_60.ts
+06:50:24.834 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_61.ts.tmp' for writing
+06:50:25.338 frame= 8854 fps= 75 q=-1.0 size= 1162002kB time=00:06:09.20 bitrate=26021.1kbits/s throttle=off speed=3.11x    
+06:50:25.597 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:25.597 SegmentComplete=video:0 Index=61 Start=366.032333 End=372.038322 Duration=6.005989 offset_pts=0 start_pts=366032333 Frames=146 filename=55740E_61.ts
+06:50:25.597 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_62.ts.tmp' for writing
+06:50:25.890 frame= 8939 fps= 76 q=-1.0 size= 1173117kB time=00:06:12.74 bitrate=26017.8kbits/s throttle=off speed=3.12x    
+06:50:26.391 frame= 9043 fps= 76 q=-1.0 size= 1186925kB time=00:06:17.08 bitrate=26018.5kbits/s throttle=off speed=3.14x    
+06:50:27.213 frame= 9054 fps= 76 q=-1.0 size= 1188353kB time=00:06:17.54 bitrate=26017.9kbits/s throttle=off speed=3.13x    
+06:50:27.347 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:27.348 SegmentComplete=video:0 Index=62 Start=372.121744 End=377.960900 Duration=5.839156 offset_pts=0 start_pts=372121744 Frames=142 filename=55740E_62.ts
+06:50:27.348 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_63.ts.tmp' for writing
+06:50:27.714 frame= 9110 fps= 76 q=-1.0 size= 1196015kB time=00:06:19.87 bitrate=26023.2kbits/s throttle=off speed=3.13x    
+06:50:28.219 frame= 9157 fps= 76 q=-1.0 size= 1202313kB time=00:06:21.83 bitrate=26024.7kbits/s throttle=off speed=3.14x    
+06:50:28.817 frame= 9192 fps= 76 q=-1.0 size= 1206933kB time=00:06:23.29 bitrate=26024.3kbits/s throttle=off speed=3.13x    
+06:50:28.903 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:28.903 SegmentComplete=video:0 Index=63 Start=378.044333 End=384.008611 Duration=5.964278 offset_pts=0 start_pts=378044333 Frames=145 filename=55740E_63.ts
+06:50:28.903 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_64.ts.tmp' for writing
+06:50:29.318 frame= 9236 fps= 76 q=-1.0 size= 1212954kB time=00:06:25.13 bitrate=26028.4kbits/s throttle=off speed=3.14x    
+06:50:29.866 frame= 9269 fps= 76 q=-1.0 size= 1217225kB time=00:06:26.51 bitrate=26026.2kbits/s throttle=off speed=3.13x    
+06:50:30.366 frame= 9328 fps= 76 q=-1.0 size= 1225188kB time=00:06:28.97 bitrate=26029.3kbits/s throttle=off speed=3.14x    
+06:50:30.889 frame= 9354 fps= 76 q=-1.0 size= 1228675kB time=00:06:30.05 bitrate=26030.2kbits/s throttle=off speed=3.13x    
+06:50:30.921 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:30.921 SegmentComplete=video:0 Index=64 Start=384.092033 End=389.931200 Duration=5.839167 offset_pts=0 start_pts=384092033 Frames=142 filename=55740E_64.ts
+06:50:30.921 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_65.ts.tmp' for writing
+06:50:31.539 frame= 9395 fps= 76 q=-1.0 size= 1234227kB time=00:06:31.76 bitrate=26032.7kbits/s throttle=off speed=3.13x    
+06:50:32.087 frame= 9438 fps= 76 q=-1.0 size= 1240014kB time=00:06:33.55 bitrate=26034.5kbits/s throttle=off speed=3.13x    
+06:50:32.632 frame= 9479 fps= 76 q=-1.0 size= 1245568kB time=00:06:35.26 bitrate=26037.0kbits/s throttle=off speed=3.13x    
+06:50:32.717 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:32.717 SegmentComplete=video:0 Index=65 Start=390.014622 End=395.978900 Duration=5.964278 offset_pts=0 start_pts=390014622 Frames=145 filename=55740E_65.ts
+06:50:32.717 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_66.ts.tmp' for writing
+06:50:33.369 frame= 9520 fps= 76 q=-1.0 size= 1251122kB time=00:06:36.97 bitrate=26039.5kbits/s throttle=off speed=3.13x    
+06:50:33.891 frame= 9563 fps= 76 q=-1.0 size= 1256903kB time=00:06:38.77 bitrate=26041.2kbits/s throttle=off speed=3.13x    
+06:50:34.658 frame= 9608 fps= 76 q=-1.0 size= 1262936kB time=00:06:40.65 bitrate=26042.5kbits/s throttle=off speed=3.13x    
+06:50:34.778 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:34.778 SegmentComplete=video:0 Index=66 Start=396.062333 End=401.984900 Duration=5.922567 offset_pts=0 start_pts=396062333 Frames=144 filename=55740E_66.ts
+06:50:34.778 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_67.ts.tmp' for writing
+06:50:35.184 frame= 9655 fps= 76 q=-1.0 size= 1268727kB time=00:06:42.61 bitrate=26033.5kbits/s throttle=off speed=3.13x    
+06:50:35.822 frame= 9705 fps= 76 q=-1.0 size= 1274643kB time=00:06:44.69 bitrate=26019.0kbits/s throttle=off speed=3.13x    
+06:50:36.443 frame= 9750 fps= 76 q=-1.0 size= 1280400kB time=00:06:46.57 bitrate=26014.8kbits/s throttle=off speed=3.13x    
+06:50:37.017 frame= 9794 fps= 76 q=-1.0 size= 1286270kB time=00:06:48.40 bitrate=26015.7kbits/s throttle=off speed=3.13x    
+06:50:37.030 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:37.030 SegmentComplete=video:0 Index=67 Start=402.068333 End=407.949200 Duration=5.880867 offset_pts=0 start_pts=402068333 Frames=143 filename=55740E_67.ts
+06:50:37.031 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_68.ts.tmp' for writing
+06:50:37.597 frame= 9840 fps= 76 q=-1.0 size= 1292103kB time=00:06:50.32 bitrate=26010.5kbits/s throttle=off speed=3.13x    
+06:50:38.138 frame= 9886 fps= 76 q=-1.0 size= 1298132kB time=00:06:52.24 bitrate=26009.2kbits/s throttle=off speed=3.13x    
+06:50:38.808 frame= 9929 fps= 76 q=-1.0 size= 1303828kB time=00:06:54.03 bitrate=26009.2kbits/s throttle=off speed=3.13x    
+06:50:38.842 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:38.843 SegmentComplete=video:0 Index=68 Start=408.032622 End=413.996900 Duration=5.964278 offset_pts=0 start_pts=408032622 Frames=145 filename=55740E_68.ts
+06:50:38.843 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_69.ts.tmp' for writing
+06:50:39.448 frame= 9975 fps= 76 q=-1.0 size= 1310115kB time=00:06:55.95 bitrate=26013.1kbits/s throttle=off speed=3.13x    
+06:50:39.949 frame=10021 fps= 76 q=-1.0 size= 1316284kB time=00:06:57.87 bitrate=26014.6kbits/s throttle=off speed=3.13x    
+06:50:40.558 frame=10064 fps= 76 q=-1.0 size= 1322037kB time=00:06:59.66 bitrate=26015.8kbits/s throttle=off speed=3.13x    
+06:50:40.635 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:40.636 SegmentComplete=video:0 Index=69 Start=414.080333 End=420.002900 Duration=5.922567 offset_pts=0 start_pts=414080333 Frames=144 filename=55740E_69.ts
+06:50:40.636 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_70.ts.tmp' for writing
+06:50:41.059 frame=10114 fps= 76 q=-1.0 size= 1328823kB time=00:07:01.75 bitrate=26019.0kbits/s throttle=off speed=3.13x    
+06:50:41.744 frame=10152 fps= 76 q=-1.0 size= 1333945kB time=00:07:03.33 bitrate=26020.7kbits/s throttle=off speed=3.13x    
+06:50:42.385 frame=10198 fps= 76 q=-1.0 size= 1340199kB time=00:07:05.25 bitrate=26023.8kbits/s throttle=off speed=3.13x    
+06:50:42.455 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:42.455 SegmentComplete=video:0 Index=70 Start=420.044622 End=425.925489 Duration=5.880867 offset_pts=0 start_pts=420044622 Frames=142 filename=55740E_70.ts
+06:50:42.455 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_71.ts.tmp' for writing
+06:50:43.421 frame=10242 fps= 75 q=-1.0 size= 1346169kB time=00:07:07.09 bitrate=26026.5kbits/s throttle=off speed=3.12x    
+06:50:43.921 frame=10324 fps= 76 q=-1.0 size= 1357228kB time=00:07:10.51 bitrate=26030.2kbits/s throttle=off speed=3.13x    
+06:50:44.673 frame=10374 fps= 76 q=-1.0 size= 1363959kB time=00:07:12.59 bitrate=26032.2kbits/s throttle=off speed=3.13x    
+06:50:44.678 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:44.679 SegmentComplete=video:0 Index=71 Start=426.008911 End=432.014900 Duration=6.005989 offset_pts=0 start_pts=426008911 Frames=146 filename=55740E_71.ts
+06:50:44.679 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_72.ts.tmp' for writing
+06:50:45.210 frame=10417 fps= 76 q=-1.0 size= 1369781kB time=00:07:14.39 bitrate=26034.5kbits/s throttle=off speed=3.13x    
+06:50:45.793 frame=10460 fps= 76 q=-1.0 size= 1375661kB time=00:07:16.18 bitrate=26037.9kbits/s throttle=off speed=3.13x    
+06:50:46.327 frame=10505 fps= 76 q=-1.0 size= 1381693kB time=00:07:18.06 bitrate=26039.2kbits/s throttle=off speed=3.13x    
+06:50:46.357 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:46.358 SegmentComplete=video:0 Index=72 Start=432.056622 End=437.979200 Duration=5.922578 offset_pts=0 start_pts=432056622 Frames=143 filename=55740E_72.ts
+06:50:46.358 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_73.ts.tmp' for writing
+06:50:46.853 frame=10550 fps= 76 q=-1.0 size= 1387677kB time=00:07:19.93 bitrate=26039.5kbits/s throttle=off speed=3.13x    
+06:50:47.576 frame=10593 fps= 76 q=-1.0 size= 1393477kB time=00:07:21.73 bitrate=26041.4kbits/s throttle=off speed=3.13x    
+06:50:48.235 frame=10637 fps= 76 q=-1.0 size= 1399409kB time=00:07:23.56 bitrate=26043.2kbits/s throttle=off speed=3.13x    
+06:50:48.295 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:48.295 SegmentComplete=video:0 Index=73 Start=438.062622 End=443.943489 Duration=5.880867 offset_pts=0 start_pts=438062622 Frames=143 filename=55740E_73.ts
+06:50:48.295 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_74.ts.tmp' for writing
+06:50:48.751 frame=10725 fps= 76 q=-1.0 size= 1411234kB time=00:07:27.23 bitrate=26046.1kbits/s throttle=off speed=3.14x    
+06:50:49.040 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:49.041 SegmentComplete=video:0 Index=74 Start=444.026911 End=450.032900 Duration=6.005989 offset_pts=0 start_pts=444026911 Frames=146 filename=55740E_74.ts
+06:50:49.041 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_75.ts.tmp' for writing
+06:50:49.325 frame=10813 fps= 76 q=-1.0 size= 1423329kB time=00:07:30.90 bitrate=26053.9kbits/s throttle=off speed=3.16x    
+06:50:49.972 frame=10902 fps= 77 q=-1.0 size= 1435276kB time=00:07:34.62 bitrate=26056.5kbits/s throttle=off speed=3.17x    
+06:50:50.473 frame=10946 fps= 77 q=-1.0 size= 1441212kB time=00:07:36.45 bitrate=26058.3kbits/s throttle=off speed=3.17x    
+06:50:50.486 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:50.486 SegmentComplete=video:0 Index=75 Start=450.116333 End=455.997200 Duration=5.880867 offset_pts=0 start_pts=450116333 Frames=143 filename=55740E_75.ts
+06:50:50.486 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_76.ts.tmp' for writing
+06:50:51.058 frame=11034 fps= 77 q=-1.0 size= 1453061kB time=00:07:40.12 bitrate=26061.4kbits/s throttle=off speed=3.18x    
+06:50:51.302 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:51.302 SegmentComplete=video:0 Index=76 Start=456.080622 End=461.919778 Duration=5.839156 offset_pts=0 start_pts=456080622 Frames=142 filename=55740E_76.ts
+06:50:51.302 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E_77.ts.tmp' for writing
+06:50:51.686 frame=11121 fps= 77 q=-1.0 size= 1464664kB time=00:07:43.75 bitrate=26062.4kbits/s throttle=off speed=3.19x    
+06:50:52.018 
+
+[q] command received. Exiting.
+
+06:50:52.020 06:50:52.023 [segment @ 0x84a800] Opening '/config/transcoding-temp/55740E.m3u8.tmp' for writing
+06:50:52.023 SegmentComplete=video:0 Index=77 Start=462.003200 End=465.840367 Duration=3.837167 offset_pts=0 start_pts=462003200 Frames=93 filename=55740E_77.ts
+06:50:52.023 frame=11168 fps= 77 q=-1.0 Lsize= 1471035kB time=00:07:45.71 bitrate=26064.8kbits/s throttle=off speed= 3.2x    
+06:50:52.023 video:1460133kB audio:10902kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+06:50:52.023 EXIT
+06:50:52.024 
+
+======= ExtraData
+H4sIAAAAAAAAA+1bzW7bRhB+FYJAgRaQRFJ/lgUUqGwpsVG7ESTZPiQBsSKX0sL8A7lUrQS+tyjaQ4G+Qnvooei1h75N2jxGZ5ekSJGSZSmyGwf0waBmZ3dmvvlZrnb0Vjx2LAvZuth+Kz4jJsWev/T48vVtSXxuOmNkvnApcWw+HD5eIjPAjOet+A2ysNgW52JJ5NQh9Yg9AQr1AizelhYcLtCpOvGQO/VVg5g4N0PSHNsgE8l0Jr5kGJaLJ2UPW8FNGcvjZlNujsuHCjLK9VZTLo9rxrg81nCzpjWajSY+UBW+doXe0LRYzXHn1N+onU+RR1VE1TfYc9ZwM0BObTegoeVdphr2OGgY0cDD0VoTbGOPaLBKRB/NXUaPJ5TE9YC+vo2FnNo6vhHbcvSx7znU0RwzL25KqZuTtTxno8R7eBhpWuAhilUf4+scQgYy/QgioGFkxRhpjr4Ko2m1Wc8pfUl07MRTNqPkdwK6YG9zDUriOdYJ+pqwuA7X27BQKeQKlWYcx7CcFml5EmrJOTg90fzYMR1v5CHbN5h0cUwP5MOY3veIhTzCRCwPDF2k4RSRrzxA9oQRh90BkPrkBpvPHM9CNFQHpsUfxXkwq1dl5u6eDXbaQLqwfRdrxCBYFzkqpzYksAly9AUoR4QOwHXAXWsI52NCJZYRQPX72OMCxbZS5ZQudulUbLdK4gAbzzzAAYxQYpTIG7aIcliVbxS5JcMinRn20ARzzkiGohy2WrIiNWT4E9lCyLxrvMMMYAoSh4022wwZiF1eJMAJZDIFwhmeMTXFuiJy39vIcjx3CnkWW5lkTOjNdFRxB4ADR8TCR8jnasigQ70V6pCmS4eRYqd+FxsoMGkiwgdXpJHtmOYITXgosdHeDWBvIzMav2UVZm0OsKoy1XNZ0Al0snMWsDWXk4AvtzEJONfqJBgNLnonXTHiidNgofzxFNk2NmGh5uLDGZo7AYvX8KHRd6D2K0dIu07Cbogsl/m3Wgd/8ecoPIZe7JTIoUrGobFFOYf+r95EWu2jd2XnuJb1Y6j2Lk6M3NWsNiqycB0XlbtdWX0SriwS836JWXsS3iwS8x6JWS9c+XiurK5z5RCw4O8qiReV1kGlcV8vNgovfgJebBZe/AS8ePAxeXEj1MNgTAnlX8rcjXbMuObA3D2/VPvPh+rw4mh0OjrricmMxQFat2aqO/FVP5F56j9nX94QjakdahfB2MrAmFI0i6QsKQWKq1E8LFDcA4pK9quFAsadYMwe6AsYd4Ixe5guYNwJxuwptoBxJxizJ8gCxp1gzB7hChh3gjF7hipg3AnG7CGmgHEnGItDzF5gLE4x+4CxWpxi9gJjcYrZC4zFKWYvMBanmL3A+NGcYoB64bF+F0kGQYo0upTe//Dnv3//9O7736R3P/7y/q/f//nj53e/fle5wlj3Jf5fGMqKwBpzXKF3MRCOzKDsobnQuTwWRmDmSVdoVJTyFTnpSle9XheAU9SuIh0BjtJwNOh1zkFatVmtWFXqi0yHFwFdNLydr2538/HEwjbNXQacb2x2S7rvwiVUI+xzyjaXsU5Apk8pN8Ekfp497iOkrDsLYhCoZYotV2o0Dupyr2LVgta6xVTKlM8psGYGBefnmJurOMP+QjuwxhyT5RlyesYYou9atR1bvcZzI2zA2tS9CFlFZkQPkKlOMYKkU8F2Yq4QFfXpJVO/9QjFW8+KzQpnM3DX6Hjf7kIL3ag6NlG+j5R3iclLEKGZQ3TVxhNEyQzE5wHSiY/GJu+IW8wyclxx5KaYLOSqFqZIRxTl+MtKllWbIpe3y65iZQUszJ/1zZtRI+xy5mQmbbxIS3dcHju2jTWK9aETQME5ZeVWbrOitG1nJDN19Wqs7vXsNfeCJhlbbs1EVt4ufgUWT9xo1XY3gUlwjHPOYP2KmQjSckzVpVjhXdA5nq9eiTPHDCz8ZfWVmOaHeHMdnzCN8rEYbQUsF5KqfneNUj/TK7wCAw5hRzbfsbjh8dPLdLN2/MwYutjXPMLhAUnsdnOCBcIagoVQ+4pYSjcynxH7Ot02LOauRGurb0yTRIrvSkE07SM9RiWyvCSeYDKZUt6byd3KxLFgkpdvUflNKJB4sMWuglcJ1cM+Z/NUFsnh+Co5V0Rn3asyAzoa7CPPx7oaWs6ns4EqjIQkcXmTS4ERkj8QjTig+M6mwnxVVpWHQSpvaQIHz+Z1IXIUGAb2BMSSTAi3nJKAbF2w0DUW6BRbAtI07PsEaqpAHUYSwhSBAkjspXhKkOf9+GAusSObY+DRmAvcHnml0VBW90Ql20VF+dyH6vbFMv4rougBPJCzeI8OmMHWjFL4Yxh2jJQrhPD3D08pt3NZsVVmJ9MygeWD0UvBdTf6sMnNsEc5lGGZDB0BQDs2jkFedNkLodb+k0I6Xxu2gjrnqAXii1f2RyiiD1o9cybeM3cHUVGJgoa9OG4dGTvUtYeuXFuFx4rqugiQmPw4IZKP88d5JUkHC+DC39Eyv+C6bzDIabPl0gPs1YufE3mTcbW+BgtuZ/jWvYSPkvh25QZfW9rg01AyGDuDxQkiHUdbRsaHQ7TFbrpACyjz3cFarp0plKLdKoNUKqAgpP4DJAIG6645AAA=

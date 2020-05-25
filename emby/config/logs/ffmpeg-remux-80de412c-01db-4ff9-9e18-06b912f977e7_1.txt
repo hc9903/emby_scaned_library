@@ -1,0 +1,434 @@
+2020-05-23 06:28:02.549
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/23724/hls1/main/0.ts?DeviceId=f6e80783-687e-493f-86cc-bb660d1276e8&MediaSourceId=06a1681ca35327b2aad994ade28bc063&PlaySessionId=fa9c9e623f6549c28733f0b457562c33&api_key=e1b2df3ea44d45129b6352df6a663541&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=59616000&AudioBitrate=384000&AudioStreamIndex=1&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=AudioCodecNotSupported
+
+{"Protocol":"File","Id":"06a1681ca35327b2aad994ade28bc063","Path":"/00/11/TV/英美剧/绝命毒师Breaking Bad/第一季/Breaking.Bad.S01E01.mkv","Type":"Default","Container":"mkv","Size":1729587819,"Name":"Breaking.Bad.S01E01","IsRemote":false,"RunTimeTicks":34865600000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"h264","TimeBase":"1/1000","CodecTimeBase":"1001/48000","Title":"Encode by 小狮子@CMCT","VideoRange":"SDR","DisplayTitle":"720p H264","NalLengthSize":"4","IsInterlaced":false,"IsAVC":true,"BitRate":3968582,"BitDepth":8,"RefFrames":1,"IsDefault":true,"IsForced":false,"Height":720,"Width":1280,"AverageFrameRate":23.976025,"RealFrameRate":23.976025,"Profile":"High","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p","Level":41,"IsAnamorphic":false},{"Codec":"ac3","TimeBase":"1/1000","CodecTimeBase":"1/48000","Title":"英语English","DisplayTitle":"Dolby Digital 5.1 (Default)","IsInterlaced":false,"ChannelLayout":"5.1","BitRate":640000,"Channels":6,"SampleRate":48000,"IsDefault":true,"IsForced":false,"Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ass","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"中上英下","DisplayTitle":"Und (Default ASS)","IsInterlaced":false,"IsDefault":true,"IsForced":false,"Type":"Subtitle","Index":2,"IsExternal":false,"IsTextSubtitleStream":true,"SupportsExternalStream":true,"Protocol":"File"},{"Codec":"ass","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"英上中下","DisplayTitle":"Und (ASS)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":3,"IsExternal":false,"IsTextSubtitleStream":true,"SupportsExternalStream":true,"Protocol":"File"},{"Codec":"ass","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"简体中字","DisplayTitle":"Und (ASS)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":4,"IsExternal":false,"IsTextSubtitleStream":true,"SupportsExternalStream":true,"Protocol":"File"},{"Codec":"ass","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"繁体中字","DisplayTitle":"Und (ASS)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":5,"IsExternal":false,"IsTextSubtitleStream":true,"SupportsExternalStream":true,"Protocol":"File"},{"Codec":"subrip","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"英语字幕","DisplayTitle":"Und (SUBRIP)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":6,"IsExternal":false,"IsTextSubtitleStream":true,"SupportsExternalStream":true,"Protocol":"File"}],"Formats":[],"Bitrate":3968582,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for 1124721976
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Copy video stream                        >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    Copy video stream                        >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    h264                 >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -f matroska -noaccurate_seek -i file:"/00/11/TV/英美剧/绝命毒师Breaking Bad/第一季/Breaking.Bad.S01E01.mkv" -threads 0 -map 0:0 -map 0:1 -sn -c:v:0 copy -bsf:v h264_mp4toannexb -copyts -vsync -1 -codec:a:0 libmp3lame -disposition:a:0 default -ac:a:0 2 -ab:a:0 192000 -filter:a:0 "volume=2" -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 6  -individual_header_trailer 0 -break_non_keyframes 1 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 0 -segment_list "/config/transcoding-temp/736F09.m3u8" -y "/config/transcoding-temp/736F09_%d.ts" -map 0:6 -map 0:0 -c:v:0 copy -codec:0 webvtt -copyts -vsync -1 -f segment -segment_time 6 -segment_format webvtt -max_delay 5000000 -avoid_negative_ts disabled -start_at_zero -write_empty_segments 1 -segment_list_type m3u8 -segment_start_number 0 -segment_write_temp 1 -break_non_keyframes 1 -segment_list "/config/transcoding-temp/736F09_s6.m3u8" -y "/config/transcoding-temp/736F09_s6_%d.vtt"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-remux-80de412c-01db-4ff9-9e18-06b912f977e7_1graph.txt -copyts -start_at_zero -f matroska,webm -noaccurate_seek -c:v:0 h264 -i "/00/11/TV/英美剧/绝命毒师Breaking Bad/第一季/Breaking.Bad.S01E01.mkv" -map 0:0 -map 0:1 -sn -c:v:0 copy -bsf:v:0 h264_mp4toannexb -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 2 -filter:a:0 "volume=2" -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/736F09.m3u8 -segment_list_type m3u8 -segment_time 6 -segment_start_number 0 -break_non_keyframes 1 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/736F09_%d.ts" -map 0:6 -map 0:0 -an -c:v:0 copy -c:s:0 webvtt -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format webvtt -segment_list /config/transcoding-temp/736F09_s6.m3u8 -segment_list_type m3u8 -segment_time 6 -segment_start_number 0 -break_non_keyframes 1 -individual_header_trailer 1 -write_header_trailer 0 -write_empty_segments 1 -segment_write_temp 1 -min_frame_time 00:00:00.000 "/config/transcoding-temp/736F09_s6_%d.vtt"
+
+06:28:02.583 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+06:28:02.583   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+06:28:02.583 Execution Date: 2020-05-23 06:28:02
+06:28:03.850 Input #0, matroska,webm, from '/00/11/TV/英美剧/绝命毒师Breaking Bad/第一季/Breaking.Bad.S01E01.mkv':
+06:28:03.851   Metadata:
+06:28:03.851     encoder         : libebml v1.3.0 + libmatroska v1.4.0
+06:28:03.851     creation_time   : 2013-09-18T16:02:09.000000Z
+06:28:03.851   Duration: 00:58:06.56, start: 0.000000, bitrate: 3968 kb/s
+06:28:03.851     Stream #0:0: Video: h264 (High), yuv420p(progressive), 1280x720 [SAR 1:1 DAR 16:9], Level 41, 23.98 fps, 23.98 tbr, 1k tbn, 47.95 tbc (default)
+06:28:03.851     Metadata:
+06:28:03.851       title           : Encode by 小狮子@CMCT
+06:28:03.851     Stream #0:1: Audio: ac3, 48000 Hz, 5.1(side), fltp, 640 kb/s (default)
+06:28:03.851     Metadata:
+06:28:03.851       title           : 英语English
+06:28:03.851     Stream #0:2: Subtitle: ass (default)
+06:28:03.851     Metadata:
+06:28:03.851       title           : 中上英下
+06:28:03.851     Stream #0:3: Subtitle: ass
+06:28:03.851     Metadata:
+06:28:03.851       title           : 英上中下
+06:28:03.851     Stream #0:4: Subtitle: ass
+06:28:03.851     Metadata:
+06:28:03.851       title           : 简体中字
+06:28:03.851     Stream #0:5: Subtitle: ass
+06:28:03.851     Metadata:
+06:28:03.851       title           : 繁体中字
+06:28:03.851     Stream #0:6: Subtitle: subrip
+06:28:03.851     Metadata:
+06:28:03.851       title           : 英语字幕
+06:28:03.872     Stream #0:7: Attachment: ttf
+06:28:03.872     Metadata:
+06:28:03.872       filename        : 华文楷体.TTF
+06:28:03.872       mimetype        : application/x-truetype-font
+06:28:03.872     Stream #0:8: Attachment: ttf
+06:28:03.872     Metadata:
+06:28:03.872       filename        : Cronos+Pro+Subhead.otf
+06:28:03.872       mimetype        : application/x-truetype-font
+06:28:03.872 Output #1, segment, to '/config/transcoding-temp/736F09_s6_%d.vtt':
+06:28:03.873   Metadata:
+06:28:03.873     encoder         : Lavf58.35.100
+06:28:03.873     Stream #1:0: Subtitle: webvtt
+06:28:03.873     Metadata:
+06:28:03.873       encoder         : Lavc58.62.100 webvtt
+06:28:03.873     Stream #1:1: Video: h264 (High), yuv420p(progressive), 1280x720 [SAR 1:1 DAR 16:9], q=2-31, Level 41, 23.98 fps, 23.98 tbr, 23.98 tbn, 23.98 tbc (default)
+06:28:03.873 Stream mapping:
+06:28:03.873   Stream #0:0 -> #0:0 (copy)
+06:28:03.873   Stream #0:1 -> #0:1 (ac3 (native) -> mp3 (libmp3lame))
+06:28:03.873   Stream #0:6 -> #1:0 (subrip (srt) -> webvtt (native))
+06:28:03.873   Stream #0:0 -> #1:1 (copy)
+06:28:03.873 Press [q] to stop, [?] for help
+06:28:03.877 Output #0, segment, to '/config/transcoding-temp/736F09_%d.ts':
+06:28:03.877   Metadata:
+06:28:03.877     encoder         : Lavf58.35.100
+06:28:03.877     Stream #0:0: Video: h264 (High), yuv420p(progressive), 1280x720 [SAR 1:1 DAR 16:9], q=2-31, Level 41, 23.98 fps, 23.98 tbr, 90k tbn, 23.98 tbc (default)
+06:28:03.877     Stream #0:1: Audio: mp3 (libmp3lame), 48000 Hz, stereo, fltp, 192 kb/s (default)
+06:28:03.877     Metadata:
+06:28:03.877       encoder         : Lavc58.62.100 libmp3lame
+06:28:04.045 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:04.046 SegmentComplete=video:0 Index=0 Start=0.000000 End=5.880000 Duration=5.880000 offset_pts=0 start_pts=0 Frames=141 filename=736F09_0.ts
+06:28:04.046 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_1.ts.tmp' for writing
+06:28:04.224 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:04.225 SegmentComplete=video:0 Index=1 Start=6.089000 End=11.970000 Duration=5.881000 offset_pts=0 start_pts=6089000 Frames=146 filename=736F09_1.ts
+06:28:04.225 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_2.ts.tmp' for writing
+06:28:04.335 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:04.335 SegmentComplete=video:1 Index=0 Start=0.000000 End=5.880875 Duration=5.880875 offset_pts=0 start_pts=0 Frames=141 filename=736F09_s6_0.vtt
+06:28:04.335 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_1.vtt.tmp' for writing
+06:28:04.374 frame=  406 fps=0.0 q=-1.0 size=    5976kB time=00:00:17.25 bitrate=N/A throttle=off speed=   0x    
+06:28:04.398 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:04.399 SegmentComplete=video:0 Index=2 Start=12.221000 End=17.934000 Duration=5.713000 offset_pts=0 start_pts=12221000 Frames=143 filename=736F09_2.ts
+06:28:04.399 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_3.ts.tmp' for writing
+06:28:04.512 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:04.513 SegmentComplete=video:1 Index=1 Start=6.089417 End=11.970292 Duration=5.880875 offset_pts=0 start_pts=6089417 Frames=146 filename=736F09_s6_1.vtt
+06:28:04.513 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_2.vtt.tmp' for writing
+06:28:04.581 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:04.582 SegmentComplete=video:0 Index=3 Start=18.143000 End=23.940000 Duration=5.797000 offset_pts=0 start_pts=18143000 Frames=144 filename=736F09_3.ts
+06:28:04.582 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_4.ts.tmp' for writing
+06:28:04.703 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:04.703 SegmentComplete=video:1 Index=2 Start=12.220542 End=17.934583 Duration=5.714042 offset_pts=0 start_pts=12220542 Frames=143 filename=736F09_s6_2.vtt
+06:28:04.703 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_3.vtt.tmp' for writing
+06:28:04.771 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:04.771 SegmentComplete=video:0 Index=4 Start=24.149000 End=29.946000 Duration=5.797000 offset_pts=0 start_pts=24149000 Frames=144 filename=736F09_4.ts
+06:28:04.771 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_5.ts.tmp' for writing
+06:28:04.875 frame=  801 fps=800 q=-1.0 size=   13451kB time=00:00:33.62 bitrate=6732.2kbits/s throttle=off speed=16.4x    
+06:28:04.892 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:04.893 SegmentComplete=video:1 Index=3 Start=18.143125 End=23.940583 Duration=5.797458 offset_pts=0 start_pts=18143125 Frames=144 filename=736F09_s6_3.vtt
+06:28:04.893 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_4.vtt.tmp' for writing
+06:28:04.955 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:04.956 SegmentComplete=video:0 Index=5 Start=30.155000 End=36.035000 Duration=5.880000 offset_pts=0 start_pts=30155000 Frames=146 filename=736F09_5.ts
+06:28:04.956 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_6.ts.tmp' for writing
+06:28:05.077 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:05.077 SegmentComplete=video:1 Index=4 Start=24.149125 End=29.946583 Duration=5.797458 offset_pts=0 start_pts=24149125 Frames=144 filename=736F09_s6_4.vtt
+06:28:05.077 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_5.vtt.tmp' for writing
+06:28:05.136 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:05.136 SegmentComplete=video:0 Index=6 Start=36.245000 End=42.000000 Duration=5.755000 offset_pts=0 start_pts=36245000 Frames=143 filename=736F09_6.ts
+06:28:05.136 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_7.ts.tmp' for writing
+06:28:05.263 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:05.264 SegmentComplete=video:1 Index=5 Start=30.155125 End=36.036000 Duration=5.880875 offset_pts=0 start_pts=30155125 Frames=146 filename=736F09_s6_5.vtt
+06:28:05.264 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_6.vtt.tmp' for writing
+06:28:05.326 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:05.327 SegmentComplete=video:0 Index=7 Start=42.042000 End=47.964000 Duration=5.922000 offset_pts=0 start_pts=42042000 Frames=143 filename=736F09_7.ts
+06:28:05.327 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_8.ts.tmp' for writing
+06:28:05.374 frame= 1188 fps=791 q=-1.0 size=   21293kB time=00:00:49.68 bitrate=5379.8kbits/s throttle=off speed=21.6x    
+06:28:05.446 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:05.447 SegmentComplete=video:1 Index=6 Start=36.244542 End=42.000292 Duration=5.755750 offset_pts=0 start_pts=36244542 Frames=143 filename=736F09_s6_6.vtt
+06:28:05.447 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_7.vtt.tmp' for writing
+06:28:05.508 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:05.509 SegmentComplete=video:0 Index=8 Start=48.006000 End=53.970000 Duration=5.964000 offset_pts=0 start_pts=48006000 Frames=144 filename=736F09_8.ts
+06:28:05.509 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_9.ts.tmp' for writing
+06:28:05.641 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:05.641 SegmentComplete=video:1 Index=7 Start=42.042000 End=47.964583 Duration=5.922583 offset_pts=0 start_pts=42042000 Frames=143 filename=736F09_s6_7.vtt
+06:28:05.641 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_8.vtt.tmp' for writing
+06:28:05.699 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:05.700 SegmentComplete=video:0 Index=9 Start=54.096000 End=60.018000 Duration=5.922000 offset_pts=0 start_pts=54096000 Frames=145 filename=736F09_9.ts
+06:28:05.700 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_10.ts.tmp' for writing
+06:28:05.812 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:05.812 SegmentComplete=video:1 Index=8 Start=48.006292 End=53.970583 Duration=5.964292 offset_pts=0 start_pts=48006292 Frames=144 filename=736F09_s6_8.vtt
+06:28:05.812 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_9.vtt.tmp' for writing
+06:28:05.870 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:05.871 SegmentComplete=video:0 Index=10 Start=60.227000 End=65.940000 Duration=5.713000 offset_pts=0 start_pts=60227000 Frames=142 filename=736F09_10.ts
+06:28:05.871 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_11.ts.tmp' for writing
+06:28:05.875 frame= 1584 fps=792 q=-1.0 size=   31482kB time=00:01:06.16 bitrate=5272.8kbits/s throttle=off speed=24.4x    
+06:28:05.996 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:05.997 SegmentComplete=video:1 Index=9 Start=54.095708 End=60.018292 Duration=5.922583 offset_pts=0 start_pts=54095708 Frames=145 filename=736F09_s6_9.vtt
+06:28:05.997 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_10.vtt.tmp' for writing
+06:28:06.053 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:06.054 SegmentComplete=video:0 Index=11 Start=66.024000 End=71.863000 Duration=5.839000 offset_pts=0 start_pts=66024000 Frames=142 filename=736F09_11.ts
+06:28:06.054 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_12.ts.tmp' for writing
+06:28:06.161 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:06.161 SegmentComplete=video:1 Index=10 Start=60.226833 End=65.940875 Duration=5.714042 offset_pts=0 start_pts=60226833 Frames=142 filename=736F09_s6_10.vtt
+06:28:06.161 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_11.vtt.tmp' for writing
+06:28:06.221 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:06.222 SegmentComplete=video:0 Index=12 Start=72.072000 End=78.036000 Duration=5.964000 offset_pts=0 start_pts=72072000 Frames=148 filename=736F09_12.ts
+06:28:06.222 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_13.ts.tmp' for writing
+06:28:06.330 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:06.330 SegmentComplete=video:1 Index=11 Start=66.024292 End=71.863458 Duration=5.839167 offset_pts=0 start_pts=66024292 Frames=142 filename=736F09_s6_11.vtt
+06:28:06.330 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_12.vtt.tmp' for writing
+06:28:06.375 frame= 2000 fps=800 q=-1.0 size=   39190kB time=00:01:23.47 bitrate=4848.4kbits/s throttle=off speed=26.5x    
+06:28:06.388 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:06.389 SegmentComplete=video:0 Index=13 Start=78.245000 End=83.875000 Duration=5.630000 offset_pts=0 start_pts=78245000 Frames=140 filename=736F09_13.ts
+06:28:06.389 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_14.ts.tmp' for writing
+06:28:06.506 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:06.507 SegmentComplete=video:1 Index=12 Start=72.072000 End=78.036292 Duration=5.964292 offset_pts=0 start_pts=72072000 Frames=148 filename=736F09_s6_12.vtt
+06:28:06.507 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_13.vtt.tmp' for writing
+06:28:06.569 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:06.569 SegmentComplete=video:0 Index=14 Start=84.084000 End=89.964000 Duration=5.880000 offset_pts=0 start_pts=84084000 Frames=146 filename=736F09_14.ts
+06:28:06.569 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_15.ts.tmp' for writing
+06:28:06.679 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:06.680 SegmentComplete=video:1 Index=13 Start=78.244833 End=83.875458 Duration=5.630625 offset_pts=0 start_pts=78244833 Frames=140 filename=736F09_s6_13.vtt
+06:28:06.680 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_14.vtt.tmp' for writing
+06:28:06.750 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:06.750 SegmentComplete=video:0 Index=15 Start=90.173000 End=95.928000 Duration=5.755000 offset_pts=0 start_pts=90173000 Frames=143 filename=736F09_15.ts
+06:28:06.750 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_16.ts.tmp' for writing
+06:28:06.860 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:06.861 SegmentComplete=video:1 Index=14 Start=84.084000 End=89.964875 Duration=5.880875 offset_pts=0 start_pts=84084000 Frames=146 filename=736F09_s6_14.vtt
+06:28:06.861 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_15.vtt.tmp' for writing
+06:28:06.875 frame= 2406 fps=802 q=-1.0 size=   47992kB time=00:01:40.44 bitrate=4726.3kbits/s throttle=off speed=27.7x    
+06:28:06.922 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:06.922 SegmentComplete=video:0 Index=16 Start=96.054000 End=102.018000 Duration=5.964000 offset_pts=0 start_pts=96054000 Frames=146 filename=736F09_16.ts
+06:28:06.922 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_17.ts.tmp' for writing
+06:28:07.080 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:07.080 SegmentComplete=video:1 Index=15 Start=90.173417 End=95.929167 Duration=5.755750 offset_pts=0 start_pts=90173417 Frames=143 filename=736F09_s6_15.vtt
+06:28:07.080 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_16.vtt.tmp' for writing
+06:28:07.135 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:07.136 SegmentComplete=video:0 Index=17 Start=102.144000 End=108.024000 Duration=5.880000 offset_pts=0 start_pts=102144000 Frames=144 filename=736F09_17.ts
+06:28:07.136 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_18.ts.tmp' for writing
+06:28:07.241 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:07.242 SegmentComplete=video:1 Index=16 Start=96.054292 End=102.018583 Duration=5.964292 offset_pts=0 start_pts=96054292 Frames=146 filename=736F09_s6_16.vtt
+06:28:07.242 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_17.vtt.tmp' for writing
+06:28:07.301 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:07.302 SegmentComplete=video:0 Index=18 Start=108.233000 End=113.946000 Duration=5.713000 offset_pts=0 start_pts=108233000 Frames=142 filename=736F09_18.ts
+06:28:07.302 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_19.ts.tmp' for writing
+06:28:07.376 frame= 2803 fps=800 q=-1.0 size=   56368kB time=00:01:56.85 bitrate=4636.2kbits/s throttle=off speed=28.4x    
+06:28:07.415 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:07.415 SegmentComplete=video:1 Index=17 Start=102.143708 End=108.024583 Duration=5.880875 offset_pts=0 start_pts=102143708 Frames=144 filename=736F09_s6_17.vtt
+06:28:07.415 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_18.vtt.tmp' for writing
+06:28:07.472 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:07.472 SegmentComplete=video:0 Index=19 Start=114.156000 End=119.869000 Duration=5.713000 offset_pts=0 start_pts=114156000 Frames=142 filename=736F09_19.ts
+06:28:07.472 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_20.ts.tmp' for writing
+06:28:07.599 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:07.599 SegmentComplete=video:1 Index=18 Start=108.233125 End=113.947167 Duration=5.714042 offset_pts=0 start_pts=108233125 Frames=142 filename=736F09_s6_18.vtt
+06:28:07.599 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_19.vtt.tmp' for writing
+06:28:07.664 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:07.665 SegmentComplete=video:0 Index=20 Start=120.078000 End=126.000000 Duration=5.922000 offset_pts=0 start_pts=120078000 Frames=147 filename=736F09_20.ts
+06:28:07.665 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_21.ts.tmp' for writing
+06:28:07.792 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:07.792 SegmentComplete=video:1 Index=19 Start=114.155708 End=119.869750 Duration=5.714042 offset_pts=0 start_pts=114155708 Frames=142 filename=736F09_s6_19.vtt
+06:28:07.792 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_20.vtt.tmp' for writing
+06:28:07.856 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:07.856 SegmentComplete=video:0 Index=21 Start=126.126000 End=132.006000 Duration=5.880000 offset_pts=0 start_pts=126126000 Frames=144 filename=736F09_21.ts
+06:28:07.856 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_22.ts.tmp' for writing
+06:28:07.875 frame= 3178 fps=794 q=-1.0 size=   65320kB time=00:02:12.79 bitrate=4631.4kbits/s throttle=off speed=28.9x    
+06:28:07.926 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:07.926 SegmentComplete=video:1 Index=20 Start=120.078292 End=126.000875 Duration=5.922583 offset_pts=0 start_pts=120078292 Frames=147 filename=736F09_s6_20.vtt
+06:28:07.926 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_21.vtt.tmp' for writing
+06:28:07.927 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:07.927 SegmentComplete=video:1 Index=21 Start=126.126000 End=132.006875 Duration=5.880875 offset_pts=0 start_pts=126126000 Frames=144 filename=736F09_s6_21.vtt
+06:28:07.927 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_22.vtt.tmp' for writing
+06:28:08.038 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:08.039 SegmentComplete=video:0 Index=22 Start=132.215000 End=138.012000 Duration=5.797000 offset_pts=0 start_pts=132215000 Frames=144 filename=736F09_22.ts
+06:28:08.039 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_23.ts.tmp' for writing
+06:28:08.073 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:08.074 SegmentComplete=video:1 Index=22 Start=132.215417 End=138.012875 Duration=5.797458 offset_pts=0 start_pts=132215417 Frames=144 filename=736F09_s6_22.vtt
+06:28:08.074 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_23.vtt.tmp' for writing
+06:28:08.238 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:08.238 SegmentComplete=video:0 Index=23 Start=138.221000 End=144.018000 Duration=5.797000 offset_pts=0 start_pts=138221000 Frames=144 filename=736F09_23.ts
+06:28:08.238 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_24.ts.tmp' for writing
+06:28:08.291 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:08.292 SegmentComplete=video:1 Index=23 Start=138.221417 End=144.018875 Duration=5.797458 offset_pts=0 start_pts=138221417 Frames=144 filename=736F09_s6_23.vtt
+06:28:08.292 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_24.vtt.tmp' for writing
+06:28:08.376 frame= 3564 fps=792 q=-1.0 size=   72587kB time=00:02:28.87 bitrate=4517.9kbits/s throttle=off speed=29.2x    
+06:28:08.417 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:08.417 SegmentComplete=video:0 Index=24 Start=144.227000 End=149.941000 Duration=5.714000 offset_pts=0 start_pts=144227000 Frames=142 filename=736F09_24.ts
+06:28:08.417 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_25.ts.tmp' for writing
+06:28:08.590 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:08.590 SegmentComplete=video:1 Index=24 Start=144.227417 End=149.941458 Duration=5.714042 offset_pts=0 start_pts=144227417 Frames=142 filename=736F09_s6_24.vtt
+06:28:08.591 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_25.vtt.tmp' for writing
+06:28:08.599 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:08.600 SegmentComplete=video:0 Index=25 Start=150.025000 End=155.988000 Duration=5.963000 offset_pts=0 start_pts=150025000 Frames=145 filename=736F09_25.ts
+06:28:08.600 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_26.ts.tmp' for writing
+06:28:08.653 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:08.653 SegmentComplete=video:1 Index=25 Start=150.024875 End=155.989167 Duration=5.964292 offset_pts=0 start_pts=150024875 Frames=145 filename=736F09_s6_25.vtt
+06:28:08.654 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_26.vtt.tmp' for writing
+06:28:08.765 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:08.766 SegmentComplete=video:0 Index=26 Start=156.239000 End=161.911000 Duration=5.672000 offset_pts=0 start_pts=156239000 Frames=142 filename=736F09_26.ts
+06:28:08.766 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_27.ts.tmp' for writing
+06:28:08.810 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:08.811 SegmentComplete=video:1 Index=26 Start=156.239417 End=161.911750 Duration=5.672333 offset_pts=0 start_pts=156239417 Frames=142 filename=736F09_s6_26.vtt
+06:28:08.811 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_27.vtt.tmp' for writing
+06:28:08.877 frame= 3978 fps=795 q=-1.0 size=   80182kB time=00:02:45.91 bitrate=4418.6kbits/s throttle=off speed=29.7x    
+06:28:08.937 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:08.937 SegmentComplete=video:0 Index=27 Start=162.037000 End=167.834000 Duration=5.797000 offset_pts=0 start_pts=162037000 Frames=142 filename=736F09_27.ts
+06:28:08.937 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_28.ts.tmp' for writing
+06:28:08.953 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:08.954 SegmentComplete=video:1 Index=27 Start=162.036875 End=167.834333 Duration=5.797458 offset_pts=0 start_pts=162036875 Frames=142 filename=736F09_s6_27.vtt
+06:28:08.954 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_28.vtt.tmp' for writing
+06:28:09.104 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:09.105 SegmentComplete=video:0 Index=28 Start=168.043000 End=173.798000 Duration=5.755000 offset_pts=0 start_pts=168043000 Frames=143 filename=736F09_28.ts
+06:28:09.105 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_29.ts.tmp' for writing
+06:28:09.120 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:09.121 SegmentComplete=video:1 Index=28 Start=168.042875 End=173.798625 Duration=5.755750 offset_pts=0 start_pts=168042875 Frames=143 filename=736F09_s6_28.vtt
+06:28:09.121 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_29.vtt.tmp' for writing
+06:28:09.274 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:09.275 SegmentComplete=video:0 Index=29 Start=174.049000 End=179.804000 Duration=5.755000 offset_pts=0 start_pts=174049000 Frames=144 filename=736F09_29.ts
+06:28:09.275 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_30.ts.tmp' for writing
+06:28:09.282 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:09.283 SegmentComplete=video:1 Index=29 Start=174.048875 End=179.804625 Duration=5.755750 offset_pts=0 start_pts=174048875 Frames=144 filename=736F09_s6_29.vtt
+06:28:09.283 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_30.vtt.tmp' for writing
+06:28:09.376 frame= 4401 fps=800 q=-1.0 size=   87710kB time=00:03:03.62 bitrate=4318.8kbits/s throttle=off speed=30.2x    
+06:28:09.443 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:09.443 SegmentComplete=video:0 Index=30 Start=180.013000 End=185.977000 Duration=5.964000 offset_pts=0 start_pts=180013000 Frames=148 filename=736F09_30.ts
+06:28:09.443 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_31.ts.tmp' for writing
+06:28:09.605 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:09.605 SegmentComplete=video:0 Index=31 Start=186.186000 End=191.983000 Duration=5.797000 offset_pts=0 start_pts=186186000 Frames=144 filename=736F09_31.ts
+06:28:09.605 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_32.ts.tmp' for writing
+06:28:09.619 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:09.619 SegmentComplete=video:1 Index=30 Start=180.013167 End=185.977458 Duration=5.964292 offset_pts=0 start_pts=180013167 Frames=148 filename=736F09_s6_30.vtt
+06:28:09.619 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_31.vtt.tmp' for writing
+06:28:09.620 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:09.620 SegmentComplete=video:1 Index=31 Start=186.186000 End=191.983458 Duration=5.797458 offset_pts=0 start_pts=186186000 Frames=144 filename=736F09_s6_31.vtt
+06:28:09.620 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_32.vtt.tmp' for writing
+06:28:09.776 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:09.777 SegmentComplete=video:0 Index=32 Start=192.067000 End=197.989000 Duration=5.922000 offset_pts=0 start_pts=192067000 Frames=144 filename=736F09_32.ts
+06:28:09.777 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_33.ts.tmp' for writing
+06:28:09.877 frame= 4829 fps=804 q=-1.0 size=   98181kB time=00:03:21.43 bitrate=4367.0kbits/s throttle=off speed=30.7x    
+06:28:09.955 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:09.956 SegmentComplete=video:0 Index=33 Start=198.073000 End=203.911000 Duration=5.838000 offset_pts=0 start_pts=198073000 Frames=142 filename=736F09_33.ts
+06:28:09.956 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_34.ts.tmp' for writing
+06:28:10.087 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:10.087 SegmentComplete=video:1 Index=32 Start=192.066875 End=197.989458 Duration=5.922583 offset_pts=0 start_pts=192066875 Frames=144 filename=736F09_s6_32.vtt
+06:28:10.087 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_33.vtt.tmp' for writing
+06:28:10.154 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:10.155 SegmentComplete=video:0 Index=34 Start=204.121000 End=209.876000 Duration=5.755000 offset_pts=0 start_pts=204121000 Frames=143 filename=736F09_34.ts
+06:28:10.155 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_35.ts.tmp' for writing
+06:28:10.288 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:10.288 SegmentComplete=video:1 Index=33 Start=198.072875 End=203.912042 Duration=5.839167 offset_pts=0 start_pts=198072875 Frames=142 filename=736F09_s6_33.vtt
+06:28:10.288 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_34.vtt.tmp' for writing
+06:28:10.360 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:10.361 SegmentComplete=video:0 Index=35 Start=210.085000 End=215.965000 Duration=5.880000 offset_pts=0 start_pts=210085000 Frames=146 filename=736F09_35.ts
+06:28:10.361 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_36.ts.tmp' for writing
+06:28:10.377 frame= 5196 fps=799 q=-1.0 size=  107031kB time=00:03:36.81 bitrate=4393.6kbits/s throttle=off speed=30.7x    
+06:28:10.476 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:10.477 SegmentComplete=video:1 Index=34 Start=204.120583 End=209.876333 Duration=5.755750 offset_pts=0 start_pts=204120583 Frames=143 filename=736F09_s6_34.vtt
+06:28:10.477 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_35.vtt.tmp' for writing
+06:28:10.539 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:10.540 SegmentComplete=video:0 Index=36 Start=216.174000 End=221.888000 Duration=5.714000 offset_pts=0 start_pts=216174000 Frames=142 filename=736F09_36.ts
+06:28:10.540 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_37.ts.tmp' for writing
+06:28:10.660 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:10.661 SegmentComplete=video:1 Index=35 Start=210.084875 End=215.965750 Duration=5.880875 offset_pts=0 start_pts=210084875 Frames=146 filename=736F09_s6_35.vtt
+06:28:10.661 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_36.vtt.tmp' for writing
+06:28:10.726 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:10.727 SegmentComplete=video:0 Index=37 Start=222.097000 End=228.019000 Duration=5.922000 offset_pts=0 start_pts=222097000 Frames=147 filename=736F09_37.ts
+06:28:10.727 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_38.ts.tmp' for writing
+06:28:10.823 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:10.824 SegmentComplete=video:1 Index=36 Start=216.174292 End=221.888333 Duration=5.714042 offset_pts=0 start_pts=216174292 Frames=142 filename=736F09_s6_36.vtt
+06:28:10.824 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_37.vtt.tmp' for writing
+06:28:10.878 frame= 5605 fps=800 q=-1.0 size=  112750kB time=00:03:53.88 bitrate=4263.8kbits/s throttle=off speed=30.9x    
+06:28:10.886 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:10.886 SegmentComplete=video:0 Index=38 Start=228.270000 End=234.025000 Duration=5.755000 offset_pts=0 start_pts=228270000 Frames=144 filename=736F09_38.ts
+06:28:10.886 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_39.ts.tmp' for writing
+06:28:11.001 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:11.001 SegmentComplete=video:1 Index=37 Start=222.096875 End=228.019458 Duration=5.922583 offset_pts=0 start_pts=222096875 Frames=147 filename=736F09_s6_37.vtt
+06:28:11.001 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_38.vtt.tmp' for writing
+06:28:11.059 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:11.060 SegmentComplete=video:0 Index=39 Start=234.025000 End=239.947000 Duration=5.922000 offset_pts=0 start_pts=234025000 Frames=142 filename=736F09_39.ts
+06:28:11.060 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_40.ts.tmp' for writing
+06:28:11.170 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:11.171 SegmentComplete=video:1 Index=38 Start=228.269708 End=234.025458 Duration=5.755750 offset_pts=0 start_pts=228269708 Frames=144 filename=736F09_s6_38.vtt
+06:28:11.171 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_39.vtt.tmp' for writing
+06:28:11.225 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:11.226 SegmentComplete=video:0 Index=40 Start=240.073000 End=245.995000 Duration=5.922000 offset_pts=0 start_pts=240073000 Frames=145 filename=736F09_40.ts
+06:28:11.226 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_41.ts.tmp' for writing
+06:28:11.346 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:11.346 SegmentComplete=video:1 Index=39 Start=234.025458 End=239.948042 Duration=5.922583 offset_pts=0 start_pts=234025458 Frames=142 filename=736F09_s6_39.vtt
+06:28:11.346 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_40.vtt.tmp' for writing
+06:28:11.378 frame= 6022 fps=802 q=-1.0 size=  116322kB time=00:04:11.20 bitrate=4073.1kbits/s throttle=off speed=31.2x    
+06:28:11.406 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:11.407 SegmentComplete=video:0 Index=41 Start=246.079000 End=251.793000 Duration=5.714000 offset_pts=0 start_pts=246079000 Frames=139 filename=736F09_41.ts
+06:28:11.407 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_42.ts.tmp' for writing
+06:28:11.531 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:11.532 SegmentComplete=video:1 Index=40 Start=240.073167 End=245.995750 Duration=5.922583 offset_pts=0 start_pts=240073167 Frames=145 filename=736F09_s6_40.vtt
+06:28:11.532 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_41.vtt.tmp' for writing
+06:28:11.597 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:11.597 SegmentComplete=video:0 Index=42 Start=252.043000 End=257.799000 Duration=5.756000 offset_pts=0 start_pts=252043000 Frames=144 filename=736F09_42.ts
+06:28:11.597 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_43.ts.tmp' for writing
+06:28:11.713 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:11.713 SegmentComplete=video:1 Index=41 Start=246.079167 End=251.793208 Duration=5.714042 offset_pts=0 start_pts=246079167 Frames=139 filename=736F09_s6_41.vtt
+06:28:11.713 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_42.vtt.tmp' for writing
+06:28:11.781 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:11.781 SegmentComplete=video:0 Index=43 Start=258.008000 End=263.930000 Duration=5.922000 offset_pts=0 start_pts=258008000 Frames=147 filename=736F09_43.ts
+06:28:11.782 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_44.ts.tmp' for writing
+06:28:11.879 frame= 6403 fps=800 q=-1.0 size=  118206kB time=00:04:27.28 bitrate=3872.9kbits/s throttle=off speed=31.2x    
+06:28:11.905 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:11.905 SegmentComplete=video:1 Index=42 Start=252.043458 End=257.799208 Duration=5.755750 offset_pts=0 start_pts=252043458 Frames=144 filename=736F09_s6_42.vtt
+06:28:11.905 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_43.vtt.tmp' for writing
+06:28:11.962 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:11.962 SegmentComplete=video:0 Index=44 Start=264.097000 End=269.852000 Duration=5.755000 offset_pts=0 start_pts=264097000 Frames=142 filename=736F09_44.ts
+06:28:11.962 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_45.ts.tmp' for writing
+06:28:12.080 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:12.080 SegmentComplete=video:1 Index=43 Start=258.007750 End=263.930333 Duration=5.922583 offset_pts=0 start_pts=258007750 Frames=147 filename=736F09_s6_43.vtt
+06:28:12.080 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_44.vtt.tmp' for writing
+06:28:12.144 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:12.144 SegmentComplete=video:0 Index=45 Start=270.020000 End=275.942000 Duration=5.922000 offset_pts=0 start_pts=270020000 Frames=146 filename=736F09_45.ts
+06:28:12.144 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_46.ts.tmp' for writing
+06:28:12.251 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:12.252 SegmentComplete=video:1 Index=44 Start=264.097167 End=269.852917 Duration=5.755750 offset_pts=0 start_pts=264097167 Frames=142 filename=736F09_s6_44.vtt
+06:28:12.252 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_45.vtt.tmp' for writing
+06:28:12.317 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:12.317 SegmentComplete=video:0 Index=46 Start=276.109000 End=281.948000 Duration=5.839000 offset_pts=0 start_pts=276109000 Frames=144 filename=736F09_46.ts
+06:28:12.317 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_47.ts.tmp' for writing
+06:28:12.378 frame= 6812 fps=801 q=-1.0 size=  120942kB time=00:04:44.32 bitrate=3709.7kbits/s throttle=off speed=31.4x    
+06:28:12.423 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:12.424 SegmentComplete=video:1 Index=45 Start=270.019750 End=275.942333 Duration=5.922583 offset_pts=0 start_pts=270019750 Frames=146 filename=736F09_s6_45.vtt
+06:28:12.424 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_46.vtt.tmp' for writing
+06:28:12.481 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:12.482 SegmentComplete=video:0 Index=47 Start=282.199000 End=287.829000 Duration=5.630000 offset_pts=0 start_pts=282199000 Frames=141 filename=736F09_47.ts
+06:28:12.482 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_48.ts.tmp' for writing
+06:28:12.591 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:12.592 SegmentComplete=video:1 Index=46 Start=276.109167 End=281.948333 Duration=5.839167 offset_pts=0 start_pts=276109167 Frames=144 filename=736F09_s6_46.vtt
+06:28:12.592 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_47.vtt.tmp' for writing
+06:28:12.647 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:12.647 SegmentComplete=video:0 Index=48 Start=288.038000 End=293.960000 Duration=5.922000 offset_pts=0 start_pts=288038000 Frames=147 filename=736F09_48.ts
+06:28:12.647 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_49.ts.tmp' for writing
+06:28:12.754 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:12.754 SegmentComplete=video:1 Index=47 Start=282.198583 End=287.829208 Duration=5.630625 offset_pts=0 start_pts=282198583 Frames=141 filename=736F09_s6_47.vtt
+06:28:12.754 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_48.vtt.tmp' for writing
+06:28:12.809 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:12.810 SegmentComplete=video:0 Index=49 Start=294.085000 End=299.841000 Duration=5.756000 offset_pts=0 start_pts=294085000 Frames=141 filename=736F09_49.ts
+06:28:12.810 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_50.ts.tmp' for writing
+06:28:12.878 frame= 7250 fps=805 q=-1.0 size=  127929kB time=00:05:02.44 bitrate=3674.7kbits/s throttle=off speed=31.7x    
+06:28:12.921 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:12.922 SegmentComplete=video:1 Index=48 Start=288.037750 End=293.960333 Duration=5.922583 offset_pts=0 start_pts=288037750 Frames=147 filename=736F09_s6_48.vtt
+06:28:12.922 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_49.vtt.tmp' for writing
+06:28:12.986 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:12.986 SegmentComplete=video:0 Index=50 Start=300.050000 End=305.930000 Duration=5.880000 offset_pts=0 start_pts=300050000 Frames=146 filename=736F09_50.ts
+06:28:12.986 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09_51.ts.tmp' for writing
+06:28:13.090 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:13.091 SegmentComplete=video:1 Index=49 Start=294.085458 End=299.841208 Duration=5.755750 offset_pts=0 start_pts=294085458 Frames=141 filename=736F09_s6_49.vtt
+06:28:13.091 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_50.vtt.tmp' for writing
+06:28:13.111 
+
+[q] command received. Exiting.
+
+06:28:13.112 06:28:13.112 [segment @ 0x1b15280] Opening '/config/transcoding-temp/736F09.m3u8.tmp' for writing
+06:28:13.113 SegmentComplete=video:0 Index=51 Start=306.139000 End=310.476000 Duration=4.337000 offset_pts=0 start_pts=306139000 Frames=109 filename=736F09_51.ts
+06:28:13.113 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:13.113 SegmentComplete=video:1 Index=50 Start=300.049750 End=305.930625 Duration=5.880875 offset_pts=0 start_pts=300049750 Frames=146 filename=736F09_s6_50.vtt
+06:28:13.113 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6_51.vtt.tmp' for writing
+06:28:13.114 [segment @ 0x1b23d40] Opening '/config/transcoding-temp/736F09_s6.m3u8.tmp' for writing
+06:28:13.114 SegmentComplete=video:1 Index=51 Start=306.139167 End=310.476833 Duration=4.337667 offset_pts=0 start_pts=306139167 Frames=109 filename=736F09_s6_51.vtt
+06:28:13.114 frame= 7444 fps=806 q=-1.0 Lsize=  131136kB time=00:05:10.75 bitrate=3660.3kbits/s throttle=off speed=31.8x    
+06:28:13.114 video:247703kB audio:7284kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+    Last message repeated 1 times
+06:28:13.114 EXIT
+06:28:13.120 
+
+======= ExtraData
+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

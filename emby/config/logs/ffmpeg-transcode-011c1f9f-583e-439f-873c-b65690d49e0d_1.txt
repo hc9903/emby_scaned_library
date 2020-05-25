@@ -1,0 +1,124 @@
+2020-05-22 13:31:45.557
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/813/hls1/main/18.ts?DeviceId=0939de9f-ad24-4206-b247-0dafb526de65&MediaSourceId=cba9bc2a18e59467bf93325f1205d43a&PlaySessionId=de2c958ee6e7488396ee6c2e23f163ec&api_key=b24b9e0ee12b43b4b0d434c8e5187ccc&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=6744000&AudioBitrate=256000&AudioStreamIndex=1&SubtitleMethod=Encode&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=ContainerBitrateExceedsLimit
+
+{"Protocol":"File","Id":"cba9bc2a18e59467bf93325f1205d43a","Path":"/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170130145925.m2ts","Type":"Default","Container":"mpegts","Size":3931275264,"Name":"bhd1080.com@20170130145925","IsRemote":false,"RunTimeTicks":13989120000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"h264","CodecTag":"HDMV","TimeBase":"1/90000","CodecTimeBase":"1001/60000","VideoRange":"SDR","DisplayTitle":"1080i H264","NalLengthSize":"0","IsInterlaced":true,"IsAVC":false,"BitRate":22481901,"BitDepth":8,"RefFrames":1,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"AverageFrameRate":29.97003,"RealFrameRate":59.94006,"Profile":"High","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p","Level":40,"IsAnamorphic":false},{"Codec":"ac3","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"Dolby Digital stereo","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":256000,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"Type":"Subtitle","Index":2,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":22481901,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for guest
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: h264, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+Warning: No filter behavior available for filter yadif
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    Deinterlace                              >> False                False                                                         
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    h264                 >> -            yuv420p      yuv420p      >> yadif
+Info    yadif                >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -ss 00:00:54.000  -f mpegts -i file:"/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170130145925.m2ts" -threads 0 -map 0:0 -map 0:1 -sn -c:v:0 libx264 -filter_complex "[0:0]yadif=0:-1:0" -pix_fmt yuv420p  -maxrate 6744000 -bufsize 13488000 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 90 -keyint_min:v:0 90 -sc_threshold:v:0 0  -copyts -vsync -1 -codec:a:0 libmp3lame -disposition:a:0 default -ac:a:0 2 -ab:a:0 192000  -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 18 -segment_list "/config/transcoding-temp/EA4090.m3u8" -y "/config/transcoding-temp/EA4090_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-011c1f9f-583e-439f-873c-b65690d49e0d_1graph.txt -copyts -start_at_zero -f mpegts -ss 00:00:54.000 -c:v:0 h264 -i "/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170130145925.m2ts" -filter_complex "[0:0]yadif@f1=mode=send_frame:parity=auto:deint=all[f1_out0]" -map [f1_out0] -map 0:1 -sn -c:v:0 libx264 -g:v:0 90 -maxrate:v:0 6744000 -bufsize:v:0 13488000 -sc_threshold:v:0 0 -keyint_min:v:0 90 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 4.2 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 2 -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/EA4090.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 18 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/EA4090_%d.ts"
+
+13:31:45.589 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+13:31:45.589   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+13:31:45.589 Execution Date: 2020-05-22 13:31:45
+13:31:52.377 Input #0, mpegts, from '/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170130145925.m2ts':
+13:31:52.377   Duration: 00:23:18.91, start: 1.033367, bitrate: 22481 kb/s
+13:31:52.377   Program 1 
+13:31:52.378     Stream #0:0[0x1011]: Video: h264 (High) (HDMV / 0x564D4448), yuv420p(top first), 1920x1080 [SAR 1:1 DAR 16:9], Level 40, 29.97 fps, 59.94 tbr, 90k tbn, 59.94 tbc, Start-Time 1.100s
+13:31:52.378     Stream #0:1[0x1100]: Audio: ac3 (AC-3 / 0x332D4341), 48000 Hz, stereo, fltp, 256 kb/s, Start-Time 1.033s
+13:31:52.378     Stream #0:2[0x1200]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), 1920x1080, Start-Time 1.033s
+13:31:52.379 Stream mapping:
+13:31:52.379   Stream #0:0 (h264) -> yadif (graph 0)
+13:31:52.379   yadif (graph 0) -> Stream #0:0 (libx264)
+13:31:52.379   Stream #0:1 -> #0:1 (ac3 (native) -> mp3 (libmp3lame))
+13:31:52.379 Press [q] to stop, [?] for help
+13:31:52.393 [h264 @ 0x5c1f00] reference picture missing during reorder
+13:31:52.393 [h264 @ 0x5c1f00] Missing reference picture, default is 2147483647
+13:31:52.394 [h264 @ 0x61ae40] reference picture missing during reorder
+13:31:52.394 [h264 @ 0x61ae40] Missing reference picture, default is 2147483647
+13:31:52.408 [h264 @ 0x69dac0] reference picture missing during reorder
+13:31:52.408 [h264 @ 0x69dac0] Missing reference picture, default is 2147483647
+13:31:53.953 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+13:31:54.778 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+13:31:54.828 [libx264 @ 0x5bcc80] using SAR=1/1
+13:31:54.828 [libx264 @ 0x5bcc80] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+13:31:54.841 [libx264 @ 0x5bcc80] profile Main, level 4.2, 4:2:0, 8-bit
+13:31:54.842 [libx264 @ 0x5bcc80] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=90 keyint_min=46 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=6744 vbv_bufsize=13488 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+13:31:54.842 Output #0, segment, to '/config/transcoding-temp/EA4090_%d.ts':
+13:31:54.842   Metadata:
+13:31:54.842     encoder         : Lavf58.35.100
+13:31:54.843     Stream #0:0: Video: h264 (libx264), yuv420p, 1920x1080 [SAR 1:1 DAR 16:9], q=-1--1, 29.97 fps, 90k tbn, 29.97 tbc
+13:31:54.843     Metadata:
+13:31:54.843       encoder         : Lavc58.62.100 libx264
+13:31:54.843     Side data:
+13:31:54.843       cpb: bitrate max/min/avg: 6744000/0/0 buffer size: 13488000 vbv_delay: N/A
+13:31:54.843     Stream #0:1: Audio: mp3 (libmp3lame), 48000 Hz, stereo, fltp, 192 kb/s (default)
+13:31:54.843     Metadata:
+13:31:54.843       encoder         : Lavc58.62.100 libmp3lame
+13:31:55.285 frame=   22 fps=7.6 q=29.0 size=     108kB time=00:00:54.36 bitrate=   0.0kbits/s throttle=off speed=3.17e+12x    
+13:31:55.786 frame=   55 fps= 16 q=29.0 size=     708kB time=00:00:55.46 bitrate=   0.0kbits/s throttle=off speed=2.71e+12x    
+13:31:56.293 frame=   90 fps= 23 q=29.0 size=    1287kB time=00:00:56.61 bitrate=   0.0kbits/s throttle=off speed=2.36e+12x    
+13:31:56.617 [segment @ 0x5cf900] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:31:56.617 SegmentComplete=video:0 Index=18 Start=0.000000 End=57.123733 Duration=57.123733 offset_pts=0 start_pts=0 Frames=90 filename=EA4090_18.ts
+13:31:56.617 [segment @ 0x5cf900] Opening '/config/transcoding-temp/EA4090_19.ts.tmp' for writing
+13:31:56.814 frame=  123 fps= 28 q=29.0 size=    1971kB time=00:00:57.72 bitrate=   0.0kbits/s throttle=off speed=2.08e+12x    
+13:31:57.034 
+
+[q] command received. Exiting.
+
+13:31:57.136 13:31:57.137 [segment @ 0x5cf900] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:31:57.137 SegmentComplete=video:0 Index=19 Start=57.123733 End=58.725333 Duration=1.601600 offset_pts=0 start_pts=57123733 Frames=48 filename=EA4090_19.ts
+13:31:57.137 frame=  138 fps= 29 q=-1.0 Lsize=    2615kB time=00:00:58.62 bitrate=   0.0kbits/s throttle=off speed=1.94e+12x    
+13:31:57.137 video:2514kB audio:101kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+13:31:57.138 EXIT
+13:31:57.141 [libx264 @ 0x5bcc80] frame I:2     Avg QP:22.07  size: 89444
+13:31:57.141 [libx264 @ 0x5bcc80] frame P:35    Avg QP:23.57  size: 40910
+13:31:57.141 [libx264 @ 0x5bcc80] frame B:101   Avg QP:25.68  size:  9534
+13:31:57.141 [libx264 @ 0x5bcc80] consecutive B-frames:  1.4%  1.4%  4.3% 92.8%
+13:31:57.141 [libx264 @ 0x5bcc80] mb I  I16..4: 40.4%  0.0% 59.6%
+13:31:57.141 [libx264 @ 0x5bcc80] mb P  I16..4: 27.7%  0.0%  0.0%  P16..4: 57.0%  0.0%  0.0%  0.0%  0.0%    skip:15.3%
+13:31:57.141 [libx264 @ 0x5bcc80] mb B  I16..4:  2.5%  0.0%  0.0%  B16..8: 30.7%  0.0%  0.0%  direct: 9.4%  skip:57.3%  L0:37.4% L1:52.5% BI:10.1%
+13:31:57.141 [libx264 @ 0x5bcc80] coded y,uvDC,uvAC intra: 29.9% 39.8% 6.4% inter: 9.3% 13.4% 0.1%
+13:31:57.141 [libx264 @ 0x5bcc80] i16 v,h,dc,p: 27% 23% 24% 26%
+13:31:57.141 [libx264 @ 0x5bcc80] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 17% 15%  9%  8%  7%  7%  6%  5%
+13:31:57.141 [libx264 @ 0x5bcc80] i8c dc,h,v,p: 41% 21% 29%  9%
+13:31:57.141 [libx264 @ 0x5bcc80] Weighted P-Frames: Y:2.9% UV:2.9%
+13:31:57.141 [libx264 @ 0x5bcc80] kb/s:4471.44
+13:31:57.144 
+
+======= ExtraData
+H4sIAAAAAAAAA9VaW2/byBX+KwSBvskWKcmOJMBAfEmyRuOuYTvpQ2AQI3IoDUxyCM5QlXfhhyx2sbsFtq99XLTAAvvWLXpBURT9M4ET9F/0zAxJkRzKknyJkSAP5PDMzJnvfOc28pfmPg1DFHnm8EvzOQk4Tljl8U3+LEcx4mmCf4NCbA7NS+QR32zlo2eXsRh9TTxMsykt8/OYExrJJdXjaxSkWK2bLRNSD4Ok/HDKExKNYZDhyHP8REhctQrRGCWEX2rCKOW0LOZhEnFdKgjMq/Orq1Z2oEM4s+nbIHcYxSk/JpFSa59GEXY59k5pmrhYillDS8p5eGYOLVjlHJZ5EdARClY4oa4xT9LqwWCcO+MExRPm+CTQAWm7NPLJuB3QMWv7fhjj8QZPUMRcgG/Dsm3X9gf+xla/izd6XXjqP+m6G6Ptre2B5fUG2PIcW66/yWe8vLVL40vOlmrIOEq4g7jzBU7oAmkBisRSnf4Ah+msiThCeblllTm5/E2skfaTe+TGyM2XUE5dGui7TTiPtb2qc5buuIKRfQ2U7JhlEHWct3oKNxjAKMyBE0ZtAG7S2e41O1w+ZTl2bBe8pdjBRwHDLfMIewT9mogwoNZbslBLSSmlhcQ+LOdmWn6mtJQScnyuuRw7QdFYyJ0enMDQMZnh4DlNQsTVQgFN8lfzMp32OpYw37MINIxg6FXEYuwSn2DPlOc5jMCZA+TC+1DwsGXuEX6CuNiiYxtHI8LbAncYZcc4kfuZQ7sjRw5wzCfmsN8yT7D/XMQbOKCdH498IRaxBx1rZlt9EQJ2pzhBYywl8z0GgyeW1W3blvhnipVQ0CSwlX3fFQcQGhIqVt8eDgQMCZV+D/CR8QQGXuKp0NPsycjDdiMU0iSeELcw2twDlB3KfIA5EvozEuI9xOQxLMtub2c6lMfbg2zwkB1gH6UBn2/BwBQS2WxgNwjO0FiSQHx9NgPsIxRk368E1xeyF7ldjby7qUduTV5l7TJ35XJLuSulmrm7uy90lAI5dZXa+xMEaSGAJTrFy0t0SVNBU/VwClhI5Ev827I2LeMip+ApCuMgp8Vp0utnuCtD2jVD5ofRDNnOJz6gFZdCfZqOOOEyU92Mdi64IFgcHL12jl+cOqev9s4Oz14+M+cziuDhhVMnHjOHzfc8ZC9ENiOuUFtpJ32uwWczeDs1eEsHqCNste0HRBdGXyXCtduWJf7vQwY2qG98+PpPH/78n/f/eHv97b+vv/n5+qc/bl7/4ccP33/3/i8/XP/rn/D5/S9/v/7hl/aH7/76vx//9u7tf9999ft3b79qlnqztfVi77w9mngChk2Xhk87lv3EsruW3dsadLY2w47ITqDN5ykvkvZRc8pmeBxiWVRV/fdoacaeJz+1hOOr4L5CtswmBITp4nk9lNdAMLrBcRi3n+32rIG1GXbT/qLFHC6U1xRYMIMDDTThbpOkqpGiNBxJTKoz7Mri4ENkSrwUBc4EI3AxBw4C8V+fJ0lTnvo7qIHx2rNyHdVsgdTCIm61eidEM8fDAdKLW5nnwFlKu6MpJZ4T4TEkvSlsr9dBHmFoFMicfkNJldOwJBSi2AkxRx7iSJPfsOui7gTFsrNpEhXhSjnD4nIyq86rblCbtDSRlau9pn7jjW87kFGsc1n5LMinARnNFhaE+ayVbBknmGHdx6DWufQR49VOhTb2JxNRtZTkAlm+1KV6m52ykFCfxg1sgEAf4h1rGGInEdXiTm+YuE5A6QUSxN+xxacdSEbDiIJJExoiIMGwP+t7Lod50ChCbBfH3oloVHEEN9Fp1elmvF+vDi7WHGsrDqwq8WaJSPp1qe0nvV7NU0apz0QK08JHt9fv12SZ6/AJmG5CA0+bUJG8wJeiwQxJtETTmMwcP9SpkBfiEqZFPbK9hK1h3A1QqHuPLHRWIaxmo+X13jwEjXRMoUioxSlX50blZoGwmDLJLD2CZXWBgGie4m9OU86vvE2ZhItbCVnVyIPkT7IhZG5C5MFEcLCG1rm8fHnq2zvi+mRnfl0yVHckO+JOZCgvQnZQEJTjSfPVTnWLAzFRdVUGn2CDiHbZICG0Pptmpcl/SaKLck9tatWxVS6e4QV24sfIK+5qFGqgl970fYYhqsCQqGAyw4u9BN2sajUtXndPhE0lCxUtsy3AQKFDIsdyrOJTkwK/JZ7oBQUrhAHLt1xP5T2RGOmY84uvct1UwkENrwZEnlTymuijg1M6XuX80s0X0WMv9X2cGFMRIQ1JO9YyUOQZIbqQhAkN5LqYMQIp3eBUcsiXi0H+JVGFQ3Oo5f2UYWVs8yGqG0wmSkPdv+X4j+T292qAKkc+uhWWnXx10xwT98KAlGdA4OEkSmnKDAahGr6qdQt3bhleQmP5DjmEf3p+vQy0dT29yoGcbGL0XqlW8rhHDoX36/BT6ERQyd8hJYmudu76hrp//uR4VgTndQkF6tfIpCIXgzNXKHUz+FBsQSXOS4lY2QFwFo6eYVzcihqxuOE0lNbs04O75B/rAl5YKse7GLg/950b9fGIWHNcAEAWi7WfRO5g8XvO9asjIrrOrO+qoyRAsEvVV27jVaqGbrlquAHuGq3uzpqHi6EPimk1cnXrkauGYJWOrUW/HtcKFcSYClyS4kYaAV2g1ffys1OJ8trxq9t8Vz+/Wshv6Re5b47iEkeVd/AN6VUE3oyLBQ1XimXlQHaMEoY9B0VpEFQSiBxZP56tBUol2jiKCjdVK3cATDvnHItV6hEk2v/7bkAcW1VI5Y4P3bbluA3wN7HoAWygHXpFG3y8TuMxXVpDZy0/vsmUBbdu12Hchlmau33kGHiP3v1Q3cZjck2LuGtxbT6tFrXu3G4oQyxqN27baDwm0pojrIW0ZqcC8Nv2G7dx5gdNzNoRy65b6zfsh+g37pTai9oYYsDlAiCEubJfDyrg2LXOol4OdCvlQGMvUQ92D9NI3Fd4vCewqt7Q1cJPc8+g/pby6v+f/7kxhyoAAA==

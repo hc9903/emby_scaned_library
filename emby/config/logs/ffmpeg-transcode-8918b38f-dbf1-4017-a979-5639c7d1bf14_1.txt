@@ -1,0 +1,284 @@
+2020-05-22 09:14:46.403
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/10203/hls1/main/133.ts?DeviceId=f6e80783-687e-493f-86cc-bb660d1276e8&MediaSourceId=734a8fa78e47eeec1104d2d4cd7ee1c9&PlaySessionId=2b662fd49f2341bf9a75e426d9eb0bc4&api_key=e1b2df3ea44d45129b6352df6a663541&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=59680000&AudioBitrate=320000&AudioStreamIndex=1&SubtitleStreamIndex=7&SubtitleMethod=Encode&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=SubtitleCodecNotSupported
+
+{"Protocol":"File","Id":"734a8fa78e47eeec1104d2d4cd7ee1c9","Path":"/00/00/IMDB Top250/130.龙猫.My.Neighbor.Totoro.1988.BluRay.1080p.x265.10bit.4Audio.MnHD-FRDS/My.Neighbor.Totoro.1988.BluRay.1080p.x265.10bit.4Audio.MnHD-FRDS.mkv","Type":"Default","Container":"mkv","Size":5452958093,"Name":"My.Neighbor.Totoro.1988.BluRay.1080p.x265.10bit.4Audio.MnHD-FRDS","IsRemote":false,"RunTimeTicks":51851840000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"hevc","ColorPrimaries":"bt709","TimeBase":"1/1000","CodecTimeBase":"1001/24000","VideoRange":"SDR","DisplayTitle":"1080p HEVC","IsInterlaced":false,"BitRate":8413137,"BitDepth":10,"RefFrames":1,"IsDefault":true,"IsForced":false,"Height":1038,"Width":1920,"AverageFrameRate":23.976025,"RealFrameRate":23.976025,"Profile":"Main 10","Type":"Video","AspectRatio":"320:173","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p10le","Level":120,"IsAnamorphic":false},{"Codec":"ac3","Language":"jpn","TimeBase":"1/1000","CodecTimeBase":"1/48000","Title":"日语","DisplayTitle":"Japanese Dolby Digital stereo (Default)","DisplayLanguage":"Japanese","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":320000,"Channels":2,"SampleRate":48000,"IsDefault":true,"IsForced":false,"Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"1/48000","Title":"台配国语","DisplayTitle":"Chinese Dolby Digital stereo","DisplayLanguage":"Chinese","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":192000,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":2,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"1/48000","Title":"粤语","DisplayTitle":"Chinese Dolby Digital stereo","DisplayLanguage":"Chinese","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":192000,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":3,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","Language":"eng","TimeBase":"1/1000","CodecTimeBase":"1/48000","Title":"英语","DisplayTitle":"English Dolby Digital stereo","DisplayLanguage":"English","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":192000,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":4,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"jpn","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"日文","DisplayTitle":"Japanese (Default PGSSUB)","DisplayLanguage":"Japanese","IsInterlaced":false,"IsDefault":true,"IsForced":false,"Type":"Subtitle","Index":5,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"囯配简中特效","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"Type":"Subtitle","Index":6,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"囯配简中特效","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"Type":"Subtitle","Index":7,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"繁体中文","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":8,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"繁体中文","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":9,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"eng","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"英文","DisplayTitle":"English (PGSSUB)","DisplayLanguage":"English","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":10,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":8413137,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for 1124721976
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: hevc, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    ColorConversion                          >> False                False                                                         
+Info    SubtitleOverlay                          >> False                False                                                         
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    hevc                 >> -            yuv420p10    yuv420p10    >> format
+Info    format               >> -            yuv420p      yuv420p      >> overlay
+Info    overlay              >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -ss 00:06:39.000  -f matroska -i file:"/00/00/IMDB Top250/130.龙猫.My.Neighbor.Totoro.1988.BluRay.1080p.x265.10bit.4Audio.MnHD-FRDS/My.Neighbor.Totoro.1988.BluRay.1080p.x265.10bit.4Audio.MnHD-FRDS.mkv" -threads 0 -map 0:0 -map 0:1 -c:v:0 libx264 -copyts -filter_complex "[0:7]scale=1920:1038:force_original_aspect_ratio=decrease[sub];[0:0][sub]overlay=(W-w)/2:(H-h):repeatlast=0" -pix_fmt yuv420p  -maxrate 16826274 -bufsize 33652548 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 72 -keyint_min:v:0 72 -sc_threshold:v:0 0  -vsync -1 -codec:a:0 libmp3lame -metadata:s:a:0 language=jpn -disposition:a:0 default -ac:a:0 2 -ab:a:0 192000  -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 133 -segment_list "/config/transcoding-temp/0FDABE.m3u8" -y "/config/transcoding-temp/0FDABE_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-8918b38f-dbf1-4017-a979-5639c7d1bf14_1graph.txt -copyts -start_at_zero -f matroska,webm -ss 00:06:39.000 -c:v:0 hevc -canvas_size:s:2 "1920:1080" -i "/00/00/IMDB Top250/130.龙猫.My.Neighbor.Totoro.1988.BluRay.1080p.x265.10bit.4Audio.MnHD-FRDS/My.Neighbor.Totoro.1988.BluRay.1080p.x265.10bit.4Audio.MnHD-FRDS.mkv" -filter_complex "[0:0]format@f1=pix_fmts=yuv420p[f1_out0];[0:7]scale@f2=width=1920:height=-2:force_original_aspect_ratio=decrease[f2_out0];[f1_out0][f2_out0]overlay@f3=x=(W-w)/2:y=(H-h):repeatlast=0[f3_out0]" -map [f3_out0] -map 0:1 -sn -c:v:0 libx264 -g:v:0 72 -maxrate:v:0 16826274 -bufsize:v:0 33652548 -sc_threshold:v:0 0 -keyint_min:v:0 72 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 4.0 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 2 -metadata:s:a:0 language=jpn -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/0FDABE.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 133 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/0FDABE_%d.ts"
+
+09:14:46.431 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+09:14:46.432   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+09:14:46.432 Execution Date: 2020-05-22 09:14:46
+09:14:48.615 [matroska,webm @ 0x19e9b40] Could not find codec parameters for stream 5 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+09:14:48.615 [matroska,webm @ 0x19e9b40] Could not find codec parameters for stream 8 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+09:14:48.615 [matroska,webm @ 0x19e9b40] Could not find codec parameters for stream 9 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+09:14:48.615 [matroska,webm @ 0x19e9b40] Could not find codec parameters for stream 10 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+09:14:49.445 Input #0, matroska,webm, from '/00/00/IMDB Top250/130.龙猫.My.Neighbor.Totoro.1988.BluRay.1080p.x265.10bit.4Audio.MnHD-FRDS/My.Neighbor.Totoro.1988.BluRay.1080p.x265.10bit.4Audio.MnHD-FRDS.mkv':
+09:14:49.445   Metadata:
+09:14:49.445     encoder         : libebml v1.3.5 + libmatroska v1.4.8
+09:14:49.445     creation_time   : 2017-11-15T11:15:23.000000Z
+09:14:49.445   Duration: 01:26:25.18, start: 0.000000, bitrate: 8413 kb/s
+09:14:49.445     Stream #0:0: Video: hevc (Main 10), yuv420p10le(tv, unknown/bt709/unknown), 1920x1038, SAR 1:1 DAR 320:173, Level 120, 23.98 fps, 23.98 tbr, 1k tbn, 23.98 tbc (default)
+09:14:49.445     Metadata:
+09:14:49.445       BPS             : 7446755
+09:14:49.445       BPS-eng         : 7446755
+09:14:49.445       DURATION        : 01:26:25.180000000
+09:14:49.445       DURATION-eng    : 01:26:25.180000000
+09:14:49.445       NUMBER_OF_FRAMES: 124320
+09:14:49.445       NUMBER_OF_FRAMES-eng: 124320
+09:14:49.445       NUMBER_OF_BYTES : 4826596023
+09:14:49.445       NUMBER_OF_BYTES-eng: 4826596023
+09:14:49.445     Stream #0:1(jpn): Audio: ac3, 48000 Hz, stereo, fltp, 320 kb/s (default)
+09:14:49.445     Metadata:
+09:14:49.445       title           : 日语
+09:14:49.445       BPS             : 320000
+09:14:49.445       BPS-eng         : 320000
+09:14:49.445       DURATION        : 01:26:25.184000000
+09:14:49.445       DURATION-eng    : 01:26:25.184000000
+09:14:49.445       NUMBER_OF_FRAMES: 162037
+09:14:49.445       NUMBER_OF_FRAMES-eng: 162037
+09:14:49.445       NUMBER_OF_BYTES : 207407360
+09:14:49.445       NUMBER_OF_BYTES-eng: 207407360
+09:14:49.445     Stream #0:2(chi): Audio: ac3, 48000 Hz, stereo, fltp, 192 kb/s
+09:14:49.445     Metadata:
+09:14:49.445       title           : 台配国语
+09:14:49.445       BPS             : 192000
+09:14:49.445       BPS-eng         : 192000
+09:14:49.445       DURATION        : 01:26:25.184000000
+09:14:49.445       DURATION-eng    : 01:26:25.184000000
+09:14:49.445       NUMBER_OF_FRAMES: 162037
+09:14:49.445       NUMBER_OF_FRAMES-eng: 162037
+09:14:49.445       NUMBER_OF_BYTES : 124444416
+09:14:49.445       NUMBER_OF_BYTES-eng: 124444416
+09:14:49.445     Stream #0:3(chi): Audio: ac3, 48000 Hz, stereo, fltp, 192 kb/s
+09:14:49.445     Metadata:
+09:14:49.445       title           : 粤语
+09:14:49.445       BPS             : 192000
+09:14:49.445       BPS-eng         : 192000
+09:14:49.445       DURATION        : 01:26:25.184000000
+09:14:49.445       DURATION-eng    : 01:26:25.184000000
+09:14:49.445       NUMBER_OF_FRAMES: 162037
+09:14:49.445       NUMBER_OF_FRAMES-eng: 162037
+09:14:49.445       NUMBER_OF_BYTES : 124444416
+09:14:49.445       NUMBER_OF_BYTES-eng: 124444416
+09:14:49.445     Stream #0:4(eng): Audio: ac3, 48000 Hz, stereo, fltp, 192 kb/s
+09:14:49.445     Metadata:
+09:14:49.445       title           : 英语
+09:14:49.445       BPS             : 192000
+09:14:49.445       BPS-eng         : 192000
+09:14:49.445       DURATION        : 01:26:25.184000000
+09:14:49.445       DURATION-eng    : 01:26:25.184000000
+09:14:49.445       NUMBER_OF_FRAMES: 162037
+09:14:49.445       NUMBER_OF_FRAMES-eng: 162037
+09:14:49.445       NUMBER_OF_BYTES : 124444416
+09:14:49.446       NUMBER_OF_BYTES-eng: 124444416
+09:14:49.446     Stream #0:5(jpn): Subtitle: hdmv_pgs_subtitle (default)
+09:14:49.446     Metadata:
+09:14:49.446       title           : 日文
+09:14:49.446       BPS             : 19525
+09:14:49.446       BPS-eng         : 19525
+09:14:49.446       DURATION        : 01:25:38.217000000
+09:14:49.446       DURATION-eng    : 01:25:38.217000000
+09:14:49.446       NUMBER_OF_FRAMES: 2028
+09:14:49.446       NUMBER_OF_FRAMES-eng: 2028
+09:14:49.446       NUMBER_OF_BYTES : 12540591
+09:14:49.446       NUMBER_OF_BYTES-eng: 12540591
+09:14:49.446     Stream #0:6(chi): Subtitle: hdmv_pgs_subtitle, 1920x1080, Start-Time 1.210s
+09:14:49.446     Metadata:
+09:14:49.446       title           : 囯配简中特效
+09:14:49.446       BPS             : 34244
+09:14:49.446       BPS-eng         : 34244
+09:14:49.446       DURATION        : 01:26:20.175000000
+09:14:49.446       DURATION-eng    : 01:26:20.175000000
+09:14:49.446       NUMBER_OF_FRAMES: 1523
+09:14:49.446       NUMBER_OF_FRAMES-eng: 1523
+09:14:49.446       NUMBER_OF_BYTES : 22174132
+09:14:49.446       NUMBER_OF_BYTES-eng: 22174132
+09:14:49.446     Stream #0:7(chi): Subtitle: hdmv_pgs_subtitle, 1920x1080, Start-Time 1.418s
+09:14:49.446     Metadata:
+09:14:49.446       title           : 囯配简中特效
+09:14:49.446       BPS             : 29193
+09:14:49.446       BPS-eng         : 29193
+09:14:49.446       DURATION        : 01:26:19.967000000
+09:14:49.446       DURATION-eng    : 01:26:19.967000000
+09:14:49.446       NUMBER_OF_FRAMES: 1497
+09:14:49.446       NUMBER_OF_FRAMES-eng: 1497
+09:14:49.446       NUMBER_OF_BYTES : 18902370
+09:14:49.446       NUMBER_OF_BYTES-eng: 18902370
+09:14:49.446     Stream #0:8(chi): Subtitle: hdmv_pgs_subtitle
+09:14:49.446     Metadata:
+09:14:49.446       title           : 繁体中文
+09:14:49.446       BPS             : 18324
+09:14:49.446       BPS-eng         : 18324
+09:14:49.446       DURATION        : 01:25:50.312000000
+09:14:49.446       DURATION-eng    : 01:25:50.312000000
+09:14:49.446       NUMBER_OF_FRAMES: 1470
+09:14:49.446       NUMBER_OF_FRAMES-eng: 1470
+09:14:49.446       NUMBER_OF_BYTES : 11796848
+09:14:49.446       NUMBER_OF_BYTES-eng: 11796848
+09:14:49.446     Stream #0:9(chi): Subtitle: hdmv_pgs_subtitle
+09:14:49.446     Metadata:
+09:14:49.446       title           : 繁体中文
+09:14:49.446       BPS             : 18044
+09:14:49.446       BPS-eng         : 18044
+09:14:49.446       DURATION        : 01:25:50.312000000
+09:14:49.446       DURATION-eng    : 01:25:50.312000000
+09:14:49.446       NUMBER_OF_FRAMES: 1470
+09:14:49.446       NUMBER_OF_FRAMES-eng: 1470
+09:14:49.446       NUMBER_OF_BYTES : 11616973
+09:14:49.446       NUMBER_OF_BYTES-eng: 11616973
+09:14:49.446     Stream #0:10(eng): Subtitle: hdmv_pgs_subtitle
+09:14:49.446     Metadata:
+09:14:49.446       title           : 英文
+09:14:49.446       BPS             : 18876
+09:14:49.446       BPS-eng         : 18876
+09:14:49.446       DURATION        : 01:26:13.877000000
+09:14:49.446       DURATION-eng    : 01:26:13.877000000
+09:14:49.446       NUMBER_OF_FRAMES: 1174
+09:14:49.446       NUMBER_OF_FRAMES-eng: 1174
+09:14:49.446       NUMBER_OF_BYTES : 12208321
+09:14:49.446       NUMBER_OF_BYTES-eng: 12208321
+09:14:49.447 Stream mapping:
+09:14:49.447   Stream #0:0 (hevc) -> format (graph 0)
+09:14:49.447   Stream #0:7 (pgssub) -> scale (graph 0)
+09:14:49.447   overlay (graph 0) -> Stream #0:0 (libx264)
+09:14:49.447   Stream #0:1 -> #0:1 (ac3 (native) -> mp3 (libmp3lame))
+09:14:49.447 Press [q] to stop, [?] for help
+09:14:50.516 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+09:14:50.609 [matroska,webm @ 0x19e9b40] sub2video: using 1920x1038 canvas
+09:14:50.616 [libx264 @ 0x1a16a80] using SAR=1/1
+09:14:50.616 [libx264 @ 0x1a16a80] VBV buffer (33652) > level limit (25000)
+09:14:50.616 [libx264 @ 0x1a16a80] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+09:14:50.628 [libx264 @ 0x1a16a80] profile Main, level 4.0, 4:2:0, 8-bit
+09:14:50.629 [libx264 @ 0x1a16a80] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=72 keyint_min=37 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=16826 vbv_bufsize=33652 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+09:14:50.630 Output #0, segment, to '/config/transcoding-temp/0FDABE_%d.ts':
+09:14:50.630   Metadata:
+09:14:50.630     encoder         : Lavf58.35.100
+09:14:50.630     Stream #0:0: Video: h264 (libx264), yuv420p, 1920x1038 [SAR 1:1 DAR 320:173], q=-1--1, 23.98 fps, 90k tbn, 23.98 tbc (default)
+09:14:50.630     Metadata:
+09:14:50.630       encoder         : Lavc58.62.100 libx264
+09:14:50.630     Side data:
+09:14:50.630       cpb: bitrate max/min/avg: 16826000/0/0 buffer size: 33652000 vbv_delay: N/A
+09:14:50.630     Stream #0:1(jpn): Audio: mp3 (libmp3lame), 48000 Hz, stereo, fltp, 192 kb/s (default)
+09:14:50.630     Metadata:
+09:14:50.630       encoder         : Lavc58.62.100 libmp3lame
+09:14:51.013 frame=    0 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=   0.0kbits/s throttle=off speed=5.9e+12x    
+09:14:51.531 frame=   17 fps=8.2 q=0.0 size=      26kB time=00:06:40.10 bitrate=   0.0kbits/s throttle=off speed=4.46e+12x    
+09:14:52.022 frame=   48 fps= 19 q=28.0 size=     610kB time=00:06:41.13 bitrate=   0.0kbits/s throttle=off speed=3.59e+12x    
+09:14:52.527 frame=   83 fps= 27 q=28.0 size=    1093kB time=00:06:42.67 bitrate=   0.0kbits/s throttle=off speed=3e+12x    
+09:14:52.700 [segment @ 0x1a14740] Opening '/config/transcoding-temp/0FDABE.m3u8.tmp' for writing
+09:14:52.701 SegmentComplete=video:0 Index=133 Start=0.000000 End=402.026633 Duration=402.026633 offset_pts=0 start_pts=0 Frames=72 filename=0FDABE_133.ts
+09:14:52.701 [segment @ 0x1a14740] Opening '/config/transcoding-temp/0FDABE_134.ts.tmp' for writing
+09:14:53.035 frame=  117 fps= 33 q=28.0 size=    1679kB time=00:06:44.04 bitrate=   0.0kbits/s throttle=off speed=2.58e+12x    
+09:14:53.526 frame=  147 fps= 36 q=28.0 size=    2055kB time=00:06:45.45 bitrate=   0.0kbits/s throttle=off speed=2.26e+12x    
+09:14:53.809 [segment @ 0x1a14740] Opening '/config/transcoding-temp/0FDABE.m3u8.tmp' for writing
+09:14:53.809 SegmentComplete=video:0 Index=134 Start=402.026622 End=405.029633 Duration=3.003011 offset_pts=0 start_pts=402026622 Frames=72 filename=0FDABE_134.ts
+09:14:53.809 [segment @ 0x1a14740] Opening '/config/transcoding-temp/0FDABE_135.ts.tmp' for writing
+09:14:54.037 frame=  181 fps= 40 q=28.0 size=    2634kB time=00:06:46.80 bitrate=   0.0kbits/s throttle=off speed=2.01e+12x    
+09:14:54.545 frame=  216 fps= 42 q=28.0 size=    3002kB time=00:06:48.21 bitrate=   0.0kbits/s throttle=off speed=1.81e+12x    
+09:14:54.937 [segment @ 0x1a14740] Opening '/config/transcoding-temp/0FDABE.m3u8.tmp' for writing
+09:14:54.937 SegmentComplete=video:0 Index=135 Start=405.029622 End=408.032633 Duration=3.003011 offset_pts=0 start_pts=405029622 Frames=72 filename=0FDABE_135.ts
+09:14:54.937 [segment @ 0x1a14740] Opening '/config/transcoding-temp/0FDABE_136.ts.tmp' for writing
+09:14:55.050 frame=  246 fps= 44 q=28.0 size=    3514kB time=00:06:49.58 bitrate=   0.0kbits/s throttle=off speed=1.65e+12x    
+09:14:55.569 frame=  283 fps= 46 q=28.0 size=    3830kB time=00:06:51.12 bitrate=   0.0kbits/s throttle=off speed=1.51e+12x    
+09:14:55.963 [segment @ 0x1a14740] Opening '/config/transcoding-temp/0FDABE.m3u8.tmp' for writing
+09:14:55.963 SegmentComplete=video:0 Index=136 Start=408.032622 End=411.035633 Duration=3.003011 offset_pts=0 start_pts=408032622 Frames=72 filename=0FDABE_136.ts
+09:14:55.963 [segment @ 0x1a14740] Opening '/config/transcoding-temp/0FDABE_137.ts.tmp' for writing
+09:14:56.088 frame=  317 fps= 48 q=28.0 size=    4243kB time=00:06:52.58 bitrate=   0.0kbits/s throttle=off speed=1.4e+12x    
+09:14:56.586 frame=  356 fps= 50 q=28.0 size=    4664kB time=00:06:54.00 bitrate=   0.0kbits/s throttle=off speed=1.29e+12x    
+09:14:56.912 [segment @ 0x1a14740] Opening '/config/transcoding-temp/0FDABE.m3u8.tmp' for writing
+09:14:56.913 SegmentComplete=video:0 Index=137 Start=411.035622 End=414.038633 Duration=3.003011 offset_pts=0 start_pts=411035622 Frames=72 filename=0FDABE_137.ts
+09:14:56.913 [segment @ 0x1a14740] Opening '/config/transcoding-temp/0FDABE_138.ts.tmp' for writing
+09:14:57.106 frame=  394 fps= 52 q=28.0 size=    5057kB time=00:06:55.60 bitrate=   0.0kbits/s throttle=off speed=1.21e+12x    
+09:14:57.600 frame=  423 fps= 52 q=28.0 size=    5525kB time=00:06:56.90 bitrate=   0.0kbits/s throttle=off speed=1.13e+12x    
+09:14:58.070 [segment @ 0x1a14740] Opening '/config/transcoding-temp/0FDABE.m3u8.tmp' for writing
+09:14:58.071 SegmentComplete=video:0 Index=138 Start=414.038622 End=417.041633 Duration=3.003011 offset_pts=0 start_pts=414038622 Frames=72 filename=0FDABE_138.ts
+09:14:58.071 [segment @ 0x1a14740] Opening '/config/transcoding-temp/0FDABE_139.ts.tmp' for writing
+09:14:58.126 frame=  457 fps= 53 q=28.0 size=    6265kB time=00:06:58.24 bitrate=   0.0kbits/s throttle=off speed=1.06e+12x    
+09:14:58.622 frame=  488 fps= 53 q=28.0 size=    6790kB time=00:06:59.56 bitrate=   0.0kbits/s throttle=off speed=1.01e+12x    
+09:14:59.154 frame=  523 fps= 54 q=28.0 size=    7283kB time=00:07:01.08 bitrate=   0.0kbits/s throttle=off speed=9.53e+11x    
+09:14:59.180 [segment @ 0x1a14740] Opening '/config/transcoding-temp/0FDABE.m3u8.tmp' for writing
+09:14:59.181 SegmentComplete=video:0 Index=139 Start=417.041622 End=420.044633 Duration=3.003011 offset_pts=0 start_pts=417041622 Frames=72 filename=0FDABE_139.ts
+09:14:59.181 [segment @ 0x1a14740] Opening '/config/transcoding-temp/0FDABE_140.ts.tmp' for writing
+09:14:59.632 frame=  558 fps= 55 q=28.0 size=    7959kB time=00:07:02.76 bitrate=   0.0kbits/s throttle=off speed=9.06e+11x    
+09:15:00.150 frame=  594 fps= 56 q=28.0 size=    8265kB time=00:07:03.98 bitrate=   0.0kbits/s throttle=off speed=8.63e+11x    
+09:15:00.202 [segment @ 0x1a14740] Opening '/config/transcoding-temp/0FDABE.m3u8.tmp' for writing
+09:15:00.202 SegmentComplete=video:0 Index=140 Start=420.044622 End=423.047633 Duration=3.003011 offset_pts=0 start_pts=420044622 Frames=72 filename=0FDABE_140.ts
+09:15:00.202 [segment @ 0x1a14740] Opening '/config/transcoding-temp/0FDABE_141.ts.tmp' for writing
+09:15:00.671 frame=  634 fps= 57 q=28.0 size=    8756kB time=00:07:05.61 bitrate=   0.0kbits/s throttle=off speed=8.24e+11x    
+09:15:00.780 
+
+[q] command received. Exiting.
+
+09:15:00.844 09:15:00.844 [segment @ 0x1a14740] Opening '/config/transcoding-temp/0FDABE.m3u8.tmp' for writing
+09:15:00.845 SegmentComplete=video:0 Index=141 Start=423.047622 End=425.800378 Duration=2.752756 offset_pts=0 start_pts=423047622 Frames=66 filename=0FDABE_141.ts
+09:15:00.845 frame=  642 fps= 56 q=-1.0 Lsize=    8942kB time=00:07:06.19 bitrate=   0.0kbits/s throttle=off speed=8.09e+11x    
+09:15:00.845 video:8304kB audio:638kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+09:15:00.854 EXIT
+09:15:00.855 [libx264 @ 0x1a16a80] frame I:9     Avg QP:20.44  size:134302
+09:15:00.855 [libx264 @ 0x1a16a80] frame P:166   Avg QP:22.94  size: 29746
+09:15:00.855 [libx264 @ 0x1a16a80] frame B:467   Avg QP:25.05  size:  5045
+09:15:00.855 [libx264 @ 0x1a16a80] consecutive B-frames:  1.7%  1.9%  6.1% 90.3%
+09:15:00.855 [libx264 @ 0x1a16a80] mb I  I16..4: 47.4%  0.0% 52.6%
+09:15:00.855 [libx264 @ 0x1a16a80] mb P  I16..4: 21.1%  0.0%  0.0%  P16..4: 42.8%  0.0%  0.0%  0.0%  0.0%    skip:36.2%
+09:15:00.855 [libx264 @ 0x1a16a80] mb B  I16..4:  2.5%  0.0%  0.0%  B16..8: 12.2%  0.0%  0.0%  direct: 7.2%  skip:78.1%  L0:42.9% L1:48.4% BI: 8.8%
+09:15:00.855 [libx264 @ 0x1a16a80] coded y,uvDC,uvAC intra: 48.5% 34.7% 13.9% inter: 7.2% 4.8% 0.2%
+09:15:00.855 [libx264 @ 0x1a16a80] i16 v,h,dc,p: 31% 27% 33%  9%
+09:15:00.855 [libx264 @ 0x1a16a80] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 19% 22% 14%  9%  7%  6%  7%  5% 10%
+09:15:00.855 [libx264 @ 0x1a16a80] i8c dc,h,v,p: 49% 26% 21%  4%
+09:15:00.855 [libx264 @ 0x1a16a80] Weighted P-Frames: Y:4.8% UV:0.6%
+09:15:00.855 [libx264 @ 0x1a16a80] kb/s:2540.22
+09:15:00.862 
+
+======= ExtraData
+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

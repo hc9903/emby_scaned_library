@@ -1,0 +1,368 @@
+2020-05-22 12:10:59.185
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/811/hls1/main/57.ts?DeviceId=0939de9f-ad24-4206-b247-0dafb526de65&MediaSourceId=6c422cbf7b4c57dd848af79b871b55bf&PlaySessionId=071eebea068048b3a07fb4674fd6f072&api_key=b24b9e0ee12b43b4b0d434c8e5187ccc&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=1738999&AudioBitrate=256000&AudioStreamIndex=1&SubtitleMethod=Encode&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=ContainerBitrateExceedsLimit
+
+{"Protocol":"File","Id":"6c422cbf7b4c57dd848af79b871b55bf","Path":"/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170129215650.m2ts","Type":"Default","Container":"mpegts","Size":2563964928,"Name":"bhd1080.com@20170129215650","IsRemote":false,"RunTimeTicks":9124160000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"h264","CodecTag":"HDMV","TimeBase":"1/90000","CodecTimeBase":"1001/60000","VideoRange":"SDR","DisplayTitle":"1080i H264","NalLengthSize":"0","IsInterlaced":true,"IsAVC":false,"BitRate":22480666,"BitDepth":8,"RefFrames":1,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"AverageFrameRate":29.97003,"RealFrameRate":59.94006,"Profile":"High","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p","Level":40,"IsAnamorphic":false},{"Codec":"ac3","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"Dolby Digital stereo","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":256000,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"Type":"Subtitle","Index":2,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":22480666,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for guest
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: h264, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+Warning: No filter behavior available for filter yadif
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    Deinterlace                              >> False                False                                                         
+Info    Scaling                                  >> False                False                                                         
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    h264                 >> -            yuv420p      yuv420p      >> yadif
+Info    yadif                >> -            yuv420p      yuv420p      >> scale
+Info    scale                >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -ss 00:02:51.000  -f mpegts -i file:"/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170129215650.m2ts" -threads 0 -map 0:0 -map 0:1 -sn -c:v:0 libx264 -filter_complex "[0:0]yadif=0:-1:0,scale=trunc(min(max(iw\,ih*dar)\,720)/2)*2:trunc(ow/dar/2)*2" -pix_fmt yuv420p  -maxrate 1738999 -bufsize 3477998 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 90 -keyint_min:v:0 90 -sc_threshold:v:0 0  -copyts -vsync -1 -codec:a:0 libmp3lame -disposition:a:0 default -ac:a:0 2 -ab:a:0 192000  -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 57 -segment_list "/config/transcoding-temp/2AB052.m3u8" -y "/config/transcoding-temp/2AB052_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-96a195c7-c1b4-429b-890e-c7b9c5e5af8d_1graph.txt -copyts -start_at_zero -f mpegts -ss 00:02:51.000 -c:v:0 h264 -i "/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170129215650.m2ts" -filter_complex "[0:0]yadif@f1=mode=send_frame:parity=auto:deint=all,scale@f2=w=720:h=404[f2_out0]" -map [f2_out0] -map 0:1 -sn -c:v:0 libx264 -g:v:0 90 -maxrate:v:0 1738999 -bufsize:v:0 3477998 -sc_threshold:v:0 0 -keyint_min:v:0 90 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 3.1 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 2 -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/2AB052.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 57 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/2AB052_%d.ts"
+
+12:10:59.214 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+12:10:59.214   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+12:10:59.214 Execution Date: 2020-05-22 12:10:59
+12:11:14.609 Input #0, mpegts, from '/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170129215650.m2ts':
+12:11:14.609   Duration: 00:15:12.42, start: 1.033367, bitrate: 22480 kb/s
+12:11:14.609   Program 1 
+12:11:14.609     Stream #0:0[0x1011]: Video: h264 (High) (HDMV / 0x564D4448), yuv420p(top first), 1920x1080 [SAR 1:1 DAR 16:9], Level 40, 29.97 fps, 59.94 tbr, 90k tbn, 59.94 tbc, Start-Time 1.100s
+12:11:14.609     Stream #0:1[0x1100]: Audio: ac3 (AC-3 / 0x332D4341), 48000 Hz, stereo, fltp, 256 kb/s, Start-Time 1.033s
+12:11:14.609     Stream #0:2[0x1200]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), 1920x1080, Start-Time 1.033s
+12:11:14.610 Stream mapping:
+12:11:14.610   Stream #0:0 (h264) -> yadif (graph 0)
+12:11:14.610   scale (graph 0) -> Stream #0:0 (libx264)
+12:11:14.610   Stream #0:1 -> #0:1 (ac3 (native) -> mp3 (libmp3lame))
+12:11:14.610 Press [q] to stop, [?] for help
+12:11:15.251 [h264 @ 0x655640] reference picture missing during reorder
+12:11:15.251 [h264 @ 0x655640] Missing reference picture, default is 2147483647
+12:11:15.252 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+12:11:15.252 [h264 @ 0x664d00] reference picture missing during reorder
+12:11:15.252 [h264 @ 0x664d00] Missing reference picture, default is 2147483647
+12:11:15.266 [h264 @ 0x6e6580] reference picture missing during reorder
+12:11:15.266 [h264 @ 0x6e6580] Missing reference picture, default is 2147483647
+12:11:16.121 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+12:11:16.215 [libx264 @ 0x611040] using SAR=404/405
+12:11:16.215 [libx264 @ 0x611040] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+12:11:16.217 [libx264 @ 0x611040] profile Main, level 3.1, 4:2:0, 8-bit
+12:11:16.217 [libx264 @ 0x611040] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=90 keyint_min=46 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=1738 vbv_bufsize=3477 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+12:11:16.217 Output #0, segment, to '/config/transcoding-temp/2AB052_%d.ts':
+12:11:16.217   Metadata:
+12:11:16.217     encoder         : Lavf58.35.100
+12:11:16.217     Stream #0:0: Video: h264 (libx264), yuv420p, 720x404 [SAR 404:405 DAR 16:9], q=-1--1, 29.97 fps, 90k tbn, 29.97 tbc
+12:11:16.217     Metadata:
+12:11:16.217       encoder         : Lavc58.62.100 libx264
+12:11:16.217     Side data:
+12:11:16.217       cpb: bitrate max/min/avg: 1738000/0/0 buffer size: 3477000 vbv_delay: N/A
+12:11:16.217     Stream #0:1: Audio: mp3 (libmp3lame), 48000 Hz, stereo, fltp, 192 kb/s (default)
+12:11:16.217     Metadata:
+12:11:16.217       encoder         : Lavc58.62.100 libmp3lame
+12:11:16.627 frame=   46 fps= 23 q=29.0 size=     133kB time=00:02:52.27 bitrate=   0.0kbits/s throttle=off speed=4.57e+12x    
+12:11:17.134 frame=  104 fps= 41 q=29.0 size=     431kB time=00:02:54.21 bitrate=   0.0kbits/s throttle=off speed=3.66e+12x    
+12:11:17.187 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:17.188 SegmentComplete=video:0 Index=57 Start=0.000000 End=174.240733 Duration=174.240733 offset_pts=0 start_pts=0 Frames=90 filename=2AB052_57.ts
+12:11:17.188 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_58.ts.tmp' for writing
+12:11:17.634 frame=  162 fps= 54 q=29.0 size=     737kB time=00:02:56.13 bitrate=   0.0kbits/s throttle=off speed=3.05e+12x    
+12:11:17.967 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:17.968 SegmentComplete=video:0 Index=58 Start=174.240733 End=177.243733 Duration=3.003000 offset_pts=0 start_pts=174240733 Frames=90 filename=2AB052_58.ts
+12:11:17.968 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_59.ts.tmp' for writing
+12:11:18.138 frame=  221 fps= 63 q=29.0 size=    1072kB time=00:02:58.10 bitrate=   0.0kbits/s throttle=off speed=2.62e+12x    
+12:11:18.640 frame=  281 fps= 70 q=29.0 size=    1381kB time=00:03:00.12 bitrate=   0.0kbits/s throttle=off speed=2.29e+12x    
+12:11:18.740 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:18.740 SegmentComplete=video:0 Index=59 Start=177.243733 End=180.246733 Duration=3.003000 offset_pts=0 start_pts=177243733 Frames=90 filename=2AB052_59.ts
+12:11:18.740 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_60.ts.tmp' for writing
+12:11:19.140 frame=  325 fps= 72 q=29.0 size=    1598kB time=00:03:01.60 bitrate=   0.0kbits/s throttle=off speed=2.04e+12x    
+12:11:19.644 frame=  374 fps= 74 q=29.0 size=    1784kB time=00:03:03.21 bitrate=   0.0kbits/s throttle=off speed=1.83e+12x    
+12:11:19.700 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:19.701 SegmentComplete=video:0 Index=60 Start=180.246733 End=183.249733 Duration=3.003000 offset_pts=0 start_pts=180246733 Frames=90 filename=2AB052_60.ts
+12:11:19.701 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_61.ts.tmp' for writing
+12:11:20.147 frame=  433 fps= 78 q=29.0 size=    2031kB time=00:03:05.16 bitrate=   0.0kbits/s throttle=off speed=1.67e+12x    
+12:11:20.503 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:20.503 SegmentComplete=video:0 Index=61 Start=183.249733 End=186.252733 Duration=3.003000 offset_pts=0 start_pts=183249733 Frames=90 filename=2AB052_61.ts
+12:11:20.503 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_62.ts.tmp' for writing
+12:11:20.661 frame=  489 fps= 81 q=29.0 size=    2246kB time=00:03:07.03 bitrate=   0.0kbits/s throttle=off speed=1.53e+12x    
+12:11:21.158 frame=  549 fps= 84 q=29.0 size=    2477kB time=00:03:09.04 bitrate=   0.0kbits/s throttle=off speed=1.41e+12x    
+12:11:21.329 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:21.330 SegmentComplete=video:0 Index=62 Start=186.252733 End=189.255733 Duration=3.003000 offset_pts=0 start_pts=186252733 Frames=90 filename=2AB052_62.ts
+12:11:21.331 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_63.ts.tmp' for writing
+12:11:21.659 frame=  584 fps= 83 q=29.0 size=    2668kB time=00:03:10.22 bitrate=   0.0kbits/s throttle=off speed=1.31e+12x    
+12:11:22.163 frame=  619 fps= 82 q=29.0 size=    2829kB time=00:03:11.37 bitrate=   0.0kbits/s throttle=off speed=1.22e+12x    
+12:11:22.594 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:22.594 SegmentComplete=video:0 Index=63 Start=189.255733 End=192.258733 Duration=3.003000 offset_pts=0 start_pts=189255733 Frames=90 filename=2AB052_63.ts
+12:11:22.594 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_64.ts.tmp' for writing
+12:11:22.677 frame=  656 fps= 81 q=29.0 size=    3027kB time=00:03:12.64 bitrate=   0.0kbits/s throttle=off speed=1.14e+12x    
+12:11:23.203 frame=  690 fps= 80 q=29.0 size=    3196kB time=00:03:13.75 bitrate=   0.0kbits/s throttle=off speed=1.07e+12x    
+12:11:23.708 frame=  724 fps= 80 q=29.0 size=    3357kB time=00:03:14.85 bitrate=   0.0kbits/s throttle=off speed=1.01e+12x    
+12:11:23.922 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:23.930 SegmentComplete=video:0 Index=64 Start=192.258733 End=195.261733 Duration=3.003000 offset_pts=0 start_pts=192258733 Frames=90 filename=2AB052_64.ts
+12:11:23.930 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_65.ts.tmp' for writing
+12:11:24.218 frame=  757 fps= 79 q=29.0 size=    3507kB time=00:03:15.98 bitrate=   0.0kbits/s throttle=off speed=9.61e+11x    
+12:11:24.730 frame=  779 fps= 77 q=29.0 size=    3598kB time=00:03:16.72 bitrate=   0.0kbits/s throttle=off speed=9.12e+11x    
+12:11:25.230 frame=  810 fps= 76 q=29.0 size=    3724kB time=00:03:17.73 bitrate=   0.0kbits/s throttle=off speed=8.68e+11x    
+12:11:25.589 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:25.589 SegmentComplete=video:0 Index=65 Start=195.261733 End=198.264733 Duration=3.003000 offset_pts=0 start_pts=195261733 Frames=90 filename=2AB052_65.ts
+12:11:25.589 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_66.ts.tmp' for writing
+12:11:25.737 frame=  841 fps= 76 q=29.0 size=    3853kB time=00:03:18.79 bitrate=   0.0kbits/s throttle=off speed=8.29e+11x    
+12:11:26.239 frame=  874 fps= 75 q=29.0 size=    3967kB time=00:03:19.92 bitrate=   0.0kbits/s throttle=off speed=7.93e+11x    
+12:11:26.750 frame=  906 fps= 75 q=29.0 size=    4080kB time=00:03:20.95 bitrate=   0.0kbits/s throttle=off speed=7.6e+11x    
+12:11:26.945 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:26.946 SegmentComplete=video:0 Index=66 Start=198.264733 End=201.267733 Duration=3.003000 offset_pts=0 start_pts=198264733 Frames=90 filename=2AB052_66.ts
+12:11:26.946 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_67.ts.tmp' for writing
+12:11:27.252 frame=  941 fps= 74 q=29.0 size=    4232kB time=00:03:22.15 bitrate=   0.0kbits/s throttle=off speed=7.3e+11x    
+12:11:27.760 frame=  976 fps= 74 q=29.0 size=    4388kB time=00:03:23.30 bitrate=   0.0kbits/s throttle=off speed=7.01e+11x    
+12:11:28.240 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:28.241 SegmentComplete=video:0 Index=67 Start=201.267733 End=204.270733 Duration=3.003000 offset_pts=0 start_pts=201267733 Frames=90 filename=2AB052_67.ts
+12:11:28.241 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_68.ts.tmp' for writing
+12:11:28.265 frame= 1012 fps= 74 q=29.0 size=    4546kB time=00:03:24.50 bitrate=   0.0kbits/s throttle=off speed=6.75e+11x    
+12:11:28.767 frame= 1046 fps= 74 q=29.0 size=    4679kB time=00:03:25.65 bitrate=   0.0kbits/s throttle=off speed=6.51e+11x    
+12:11:29.277 frame= 1080 fps= 74 q=29.0 size=    4825kB time=00:03:26.76 bitrate=   0.0kbits/s throttle=off speed=6.29e+11x    
+12:11:29.640 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:29.640 SegmentComplete=video:0 Index=68 Start=204.270733 End=207.273733 Duration=3.003000 offset_pts=0 start_pts=204270733 Frames=90 filename=2AB052_68.ts
+12:11:29.640 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_69.ts.tmp' for writing
+12:11:29.792 frame= 1108 fps= 73 q=29.0 size=    4964kB time=00:03:27.69 bitrate=   0.0kbits/s throttle=off speed=6.08e+11x    
+12:11:30.285 frame= 1142 fps= 73 q=29.0 size=    5120kB time=00:03:28.82 bitrate=   0.0kbits/s throttle=off speed=5.88e+11x    
+12:11:30.791 frame= 1172 fps= 72 q=29.0 size=    5242kB time=00:03:29.88 bitrate=   0.0kbits/s throttle=off speed=5.7e+11x    
+12:11:31.094 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:31.095 SegmentComplete=video:0 Index=69 Start=207.273733 End=210.276733 Duration=3.003000 offset_pts=0 start_pts=207273733 Frames=90 filename=2AB052_69.ts
+12:11:31.095 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_70.ts.tmp' for writing
+12:11:31.295 frame= 1205 fps= 72 q=29.0 size=    5396kB time=00:03:30.93 bitrate=   0.0kbits/s throttle=off speed=5.53e+11x    
+12:11:31.808 frame= 1239 fps= 72 q=29.0 size=    5534kB time=00:03:32.08 bitrate=   0.0kbits/s throttle=off speed=5.37e+11x    
+12:11:32.331 frame= 1276 fps= 72 q=26.0 size=    5689kB time=00:03:33.28 bitrate=   0.0kbits/s throttle=off speed=5.21e+11x    
+12:11:32.382 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:32.382 SegmentComplete=video:0 Index=70 Start=210.276733 End=213.279733 Duration=3.003000 offset_pts=0 start_pts=210276733 Frames=90 filename=2AB052_70.ts
+12:11:32.382 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_71.ts.tmp' for writing
+12:11:32.839 frame= 1311 fps= 72 q=29.0 size=    5844kB time=00:03:34.48 bitrate=   0.0kbits/s throttle=off speed=5.06e+11x    
+12:11:33.344 frame= 1342 fps= 72 q=29.0 size=    5970kB time=00:03:35.49 bitrate=   0.0kbits/s throttle=off speed=4.92e+11x    
+12:11:33.797 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:33.797 SegmentComplete=video:0 Index=71 Start=213.279733 End=216.282733 Duration=3.003000 offset_pts=0 start_pts=213279733 Frames=90 filename=2AB052_71.ts
+12:11:33.797 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_72.ts.tmp' for writing
+12:11:33.852 frame= 1374 fps= 71 q=29.0 size=    6113kB time=00:03:36.55 bitrate=   0.0kbits/s throttle=off speed=4.79e+11x    
+12:11:34.356 frame= 1408 fps= 71 q=29.0 size=    6257kB time=00:03:37.70 bitrate=   0.0kbits/s throttle=off speed=4.67e+11x    
+12:11:34.863 frame= 1437 fps= 71 q=29.0 size=    6372kB time=00:03:38.71 bitrate=   0.0kbits/s throttle=off speed=4.55e+11x    
+12:11:35.315 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:35.315 SegmentComplete=video:0 Index=72 Start=216.282733 End=219.285733 Duration=3.003000 offset_pts=0 start_pts=216282733 Frames=90 filename=2AB052_72.ts
+12:11:35.315 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_73.ts.tmp' for writing
+12:11:35.366 frame= 1463 fps= 70 q=29.0 size=    6501kB time=00:03:39.52 bitrate=   0.0kbits/s throttle=off speed=4.44e+11x    
+12:11:35.867 frame= 1496 fps= 70 q=29.0 size=    6635kB time=00:03:40.65 bitrate=   0.0kbits/s throttle=off speed=4.34e+11x    
+12:11:36.372 frame= 1532 fps= 70 q=29.0 size=    6778kB time=00:03:41.83 bitrate=   0.0kbits/s throttle=off speed=4.24e+11x    
+12:11:36.680 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:36.680 SegmentComplete=video:0 Index=73 Start=219.285733 End=222.288733 Duration=3.003000 offset_pts=0 start_pts=219285733 Frames=90 filename=2AB052_73.ts
+12:11:36.680 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_74.ts.tmp' for writing
+12:11:36.872 frame= 1565 fps= 70 q=29.0 size=    6933kB time=00:03:42.96 bitrate=   0.0kbits/s throttle=off speed=4.14e+11x    
+12:11:37.386 frame= 1601 fps= 70 q=29.0 size=    7095kB time=00:03:44.18 bitrate=   0.0kbits/s throttle=off speed=4.05e+11x    
+12:11:37.894 frame= 1635 fps= 70 q=29.0 size=    7238kB time=00:03:45.28 bitrate=   0.0kbits/s throttle=off speed=3.96e+11x    
+12:11:37.986 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:37.986 SegmentComplete=video:0 Index=74 Start=222.288733 End=225.291733 Duration=3.003000 offset_pts=0 start_pts=222288733 Frames=90 filename=2AB052_74.ts
+12:11:37.986 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_75.ts.tmp' for writing
+12:11:38.400 frame= 1665 fps= 70 q=29.0 size=    7381kB time=00:03:46.29 bitrate=   0.0kbits/s throttle=off speed=3.88e+11x    
+12:11:38.912 frame= 1704 fps= 70 q=29.0 size=    7559kB time=00:03:47.64 bitrate=   0.0kbits/s throttle=off speed=3.8e+11x    
+12:11:39.274 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:39.274 SegmentComplete=video:0 Index=75 Start=225.291733 End=228.294733 Duration=3.003000 offset_pts=0 start_pts=225291733 Frames=90 filename=2AB052_75.ts
+12:11:39.274 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_76.ts.tmp' for writing
+12:11:39.435 frame= 1740 fps= 70 q=29.0 size=    7742kB time=00:03:48.79 bitrate=   0.0kbits/s throttle=off speed=3.72e+11x    
+12:11:39.936 frame= 1776 fps= 70 q=29.0 size=    7931kB time=00:03:49.96 bitrate=   0.0kbits/s throttle=off speed=3.64e+11x    
+12:11:40.444 frame= 1809 fps= 70 q=29.0 size=    8105kB time=00:03:51.09 bitrate=   0.0kbits/s throttle=off speed=3.57e+11x    
+12:11:40.624 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:40.626 SegmentComplete=video:0 Index=76 Start=228.294733 End=231.297733 Duration=3.003000 offset_pts=0 start_pts=228294733 Frames=90 filename=2AB052_76.ts
+12:11:40.626 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_77.ts.tmp' for writing
+12:11:40.941 frame= 1841 fps= 70 q=29.0 size=    8292kB time=00:03:52.20 bitrate=   0.0kbits/s throttle=off speed=3.5e+11x    
+12:11:41.472 frame= 1874 fps= 70 q=29.0 size=    8483kB time=00:03:53.25 bitrate=   0.0kbits/s throttle=off speed=3.44e+11x    
+12:11:41.968 frame= 1900 fps= 69 q=29.0 size=    8621kB time=00:03:54.12 bitrate=   0.0kbits/s throttle=off speed=3.37e+11x    
+12:11:42.212 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:42.212 SegmentComplete=video:0 Index=77 Start=231.297733 End=234.300733 Duration=3.003000 offset_pts=0 start_pts=231297733 Frames=90 filename=2AB052_77.ts
+12:11:42.212 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_78.ts.tmp' for writing
+12:11:42.495 frame= 1927 fps= 69 q=29.0 size=    8773kB time=00:03:55.03 bitrate=   0.0kbits/s throttle=off speed=3.31e+11x    
+12:11:42.998 frame= 1951 fps= 69 q=29.0 size=    8903kB time=00:03:55.82 bitrate=   0.0kbits/s throttle=off speed=3.25e+11x    
+12:11:43.482 frame= 1980 fps= 69 q=29.0 size=    9061kB time=00:03:56.85 bitrate=   0.0kbits/s throttle=off speed=3.19e+11x    
+12:11:43.815 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:43.815 SegmentComplete=video:0 Index=78 Start=234.300733 End=237.303733 Duration=3.003000 offset_pts=0 start_pts=234300733 Frames=90 filename=2AB052_78.ts
+12:11:43.815 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_79.ts.tmp' for writing
+12:11:43.994 frame= 2012 fps= 69 q=29.0 size=    9248kB time=00:03:57.84 bitrate=   0.0kbits/s throttle=off speed=3.14e+11x    
+12:11:44.494 frame= 2047 fps= 68 q=29.0 size=    9444kB time=00:03:59.01 bitrate=   0.0kbits/s throttle=off speed=3.09e+11x    
+12:11:44.995 frame= 2081 fps= 68 q=29.0 size=    9618kB time=00:04:00.14 bitrate=   0.0kbits/s throttle=off speed=3.04e+11x    
+12:11:45.162 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:45.162 SegmentComplete=video:0 Index=79 Start=237.303733 End=240.306733 Duration=3.003000 offset_pts=0 start_pts=237303733 Frames=90 filename=2AB052_79.ts
+12:11:45.162 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_80.ts.tmp' for writing
+12:11:45.496 frame= 2117 fps= 69 q=29.0 size=    9828kB time=00:04:01.36 bitrate=   0.0kbits/s throttle=off speed=2.99e+11x    
+12:11:46.007 frame= 2151 fps= 69 q=29.0 size=   10004kB time=00:04:02.47 bitrate=   0.0kbits/s throttle=off speed=2.94e+11x    
+12:11:46.407 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:46.407 SegmentComplete=video:0 Index=80 Start=240.306733 End=243.309733 Duration=3.003000 offset_pts=0 start_pts=240306733 Frames=90 filename=2AB052_80.ts
+12:11:46.407 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_81.ts.tmp' for writing
+12:11:46.522 frame= 2188 fps= 69 q=29.0 size=   10217kB time=00:04:03.72 bitrate=   0.0kbits/s throttle=off speed=2.89e+11x    
+12:11:47.019 frame= 2220 fps= 69 q=29.0 size=   10387kB time=00:04:04.84 bitrate=   0.0kbits/s throttle=off speed=2.85e+11x    
+12:11:47.519 frame= 2253 fps= 68 q=29.0 size=   10559kB time=00:04:05.90 bitrate=   0.0kbits/s throttle=off speed=2.8e+11x    
+12:11:47.774 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:47.775 SegmentComplete=video:0 Index=81 Start=243.309733 End=246.312733 Duration=3.003000 offset_pts=0 start_pts=243309733 Frames=90 filename=2AB052_81.ts
+12:11:47.775 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_82.ts.tmp' for writing
+12:11:48.022 frame= 2287 fps= 68 q=29.0 size=   10756kB time=00:04:07.05 bitrate=   0.0kbits/s throttle=off speed=2.76e+11x    
+12:11:48.523 frame= 2322 fps= 68 q=29.0 size=   10943kB time=00:04:08.20 bitrate=   0.0kbits/s throttle=off speed=2.72e+11x    
+12:11:49.026 frame= 2354 fps= 68 q=29.0 size=   11118kB time=00:04:09.28 bitrate=   0.0kbits/s throttle=off speed=2.68e+11x    
+12:11:49.132 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:49.134 SegmentComplete=video:0 Index=82 Start=246.312733 End=249.315733 Duration=3.003000 offset_pts=0 start_pts=246312733 Frames=90 filename=2AB052_82.ts
+12:11:49.134 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_83.ts.tmp' for writing
+12:11:49.533 frame= 2386 fps= 68 q=29.0 size=   11312kB time=00:04:10.32 bitrate=   0.0kbits/s throttle=off speed=2.64e+11x    
+12:11:50.053 frame= 2420 fps= 68 q=29.0 size=   11517kB time=00:04:11.47 bitrate=   0.0kbits/s throttle=off speed=2.6e+11x    
+12:11:50.558 frame= 2448 fps= 68 q=29.0 size=   11627kB time=00:04:12.40 bitrate=   0.0kbits/s throttle=off speed=2.57e+11x    
+12:11:50.620 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:50.621 SegmentComplete=video:0 Index=83 Start=249.315733 End=252.318733 Duration=3.003000 offset_pts=0 start_pts=249315733 Frames=90 filename=2AB052_83.ts
+12:11:50.621 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_84.ts.tmp' for writing
+12:11:51.068 frame= 2483 fps= 68 q=29.0 size=   11808kB time=00:04:13.58 bitrate=   0.0kbits/s throttle=off speed=2.53e+11x    
+12:11:51.571 frame= 2521 fps= 68 q=29.0 size=   11976kB time=00:04:14.85 bitrate=   0.0kbits/s throttle=off speed=2.5e+11x    
+12:11:51.830 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:51.830 SegmentComplete=video:0 Index=84 Start=252.318733 End=255.321733 Duration=3.003000 offset_pts=0 start_pts=252318733 Frames=90 filename=2AB052_84.ts
+12:11:51.830 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_85.ts.tmp' for writing
+12:11:52.071 frame= 2558 fps= 68 q=29.0 size=   12156kB time=00:04:16.08 bitrate=   0.0kbits/s throttle=off speed=2.46e+11x    
+12:11:52.579 frame= 2591 fps= 68 q=29.0 size=   12295kB time=00:04:17.20 bitrate=   0.0kbits/s throttle=off speed=2.43e+11x    
+12:11:53.090 frame= 2623 fps= 68 q=29.0 size=   12427kB time=00:04:18.26 bitrate=   0.0kbits/s throttle=off speed=2.4e+11x    
+12:11:53.182 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:53.182 SegmentComplete=video:0 Index=85 Start=255.321733 End=258.324733 Duration=3.003000 offset_pts=0 start_pts=255321733 Frames=90 filename=2AB052_85.ts
+12:11:53.182 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_86.ts.tmp' for writing
+12:11:53.587 frame= 2658 fps= 68 q=29.0 size=   12580kB time=00:04:19.44 bitrate=   0.0kbits/s throttle=off speed=2.37e+11x    
+12:11:54.084 frame= 2694 fps= 68 q=29.0 size=   12706kB time=00:04:20.66 bitrate=   0.0kbits/s throttle=off speed=2.34e+11x    
+12:11:54.445 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:54.446 SegmentComplete=video:0 Index=86 Start=258.324733 End=261.327733 Duration=3.003000 offset_pts=0 start_pts=258324733 Frames=90 filename=2AB052_86.ts
+12:11:54.446 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_87.ts.tmp' for writing
+12:11:54.592 frame= 2731 fps= 68 q=29.0 size=   12836kB time=00:04:21.86 bitrate=   0.0kbits/s throttle=off speed=2.31e+11x    
+12:11:55.096 frame= 2766 fps= 68 q=29.0 size=   12959kB time=00:04:22.99 bitrate=   0.0kbits/s throttle=off speed=2.28e+11x    
+12:11:55.597 frame= 2797 fps= 68 q=29.0 size=   13056kB time=00:04:24.04 bitrate=   0.0kbits/s throttle=off speed=2.25e+11x    
+12:11:55.789 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:55.790 SegmentComplete=video:0 Index=87 Start=261.327733 End=264.330733 Duration=3.003000 offset_pts=0 start_pts=261327733 Frames=90 filename=2AB052_87.ts
+12:11:55.790 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_88.ts.tmp' for writing
+12:11:56.107 frame= 2833 fps= 68 q=29.0 size=   13196kB time=00:04:25.27 bitrate=   0.0kbits/s throttle=off speed=2.22e+11x    
+12:11:56.609 frame= 2862 fps= 68 q=29.0 size=   13284kB time=00:04:26.25 bitrate=   0.0kbits/s throttle=off speed=2.2e+11x    
+12:11:57.115 frame= 2897 fps= 68 q=29.0 size=   13403kB time=00:04:27.40 bitrate=   0.0kbits/s throttle=off speed=2.17e+11x    
+12:11:57.162 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:57.163 SegmentComplete=video:0 Index=88 Start=264.330733 End=267.333733 Duration=3.003000 offset_pts=0 start_pts=264330733 Frames=90 filename=2AB052_88.ts
+12:11:57.163 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_89.ts.tmp' for writing
+12:11:57.625 frame= 2932 fps= 68 q=29.0 size=   13540kB time=00:04:28.56 bitrate=   0.0kbits/s throttle=off speed=2.14e+11x    
+12:11:58.133 frame= 2960 fps= 68 q=29.0 size=   13638kB time=00:04:29.49 bitrate=   0.0kbits/s throttle=off speed=2.12e+11x    
+12:11:58.646 frame= 2989 fps= 68 q=29.0 size=   13719kB time=00:04:30.45 bitrate=   0.0kbits/s throttle=off speed=2.1e+11x    
+12:11:58.682 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:11:58.683 SegmentComplete=video:0 Index=89 Start=267.333733 End=270.336733 Duration=3.003000 offset_pts=0 start_pts=267333733 Frames=90 filename=2AB052_89.ts
+12:11:58.683 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_90.ts.tmp' for writing
+12:11:59.136 frame= 3008 fps= 68 q=29.0 size=   13785kB time=00:04:31.12 bitrate=   0.0kbits/s throttle=off speed=2.07e+11x    
+12:11:59.640 frame= 3029 fps= 67 q=29.0 size=   13840kB time=00:04:31.80 bitrate=   0.0kbits/s throttle=off speed=2.05e+11x    
+12:12:00.140 frame= 3051 fps= 67 q=29.0 size=   13901kB time=00:04:32.59 bitrate=   0.0kbits/s throttle=off speed=2.03e+11x    
+12:12:00.645 frame= 3077 fps= 67 q=29.0 size=   13971kB time=00:04:33.43 bitrate=   0.0kbits/s throttle=off speed=2e+11x    
+12:12:00.702 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:12:00.702 SegmentComplete=video:0 Index=90 Start=270.336733 End=273.339733 Duration=3.003000 offset_pts=0 start_pts=270336733 Frames=90 filename=2AB052_90.ts
+12:12:00.702 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_91.ts.tmp' for writing
+12:12:01.157 frame= 3105 fps= 67 q=29.0 size=   14061kB time=00:04:34.34 bitrate=   0.0kbits/s throttle=off speed=1.98e+11x    
+12:12:01.658 frame= 3131 fps= 67 q=29.0 size=   14132kB time=00:04:35.25 bitrate=   0.0kbits/s throttle=off speed=1.96e+11x    
+12:12:02.172 frame= 3156 fps= 66 q=29.0 size=   14193kB time=00:04:36.02 bitrate=   0.0kbits/s throttle=off speed=1.94e+11x    
+12:12:02.534 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:12:02.535 SegmentComplete=video:0 Index=91 Start=273.339733 End=276.342733 Duration=3.003000 offset_pts=0 start_pts=273339733 Frames=90 filename=2AB052_91.ts
+12:12:02.535 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_92.ts.tmp' for writing
+12:12:02.673 frame= 3178 fps= 66 q=29.0 size=   14269kB time=00:04:36.74 bitrate=   0.0kbits/s throttle=off speed=1.92e+11x    
+12:12:03.176 frame= 3200 fps= 66 q=29.0 size=   14332kB time=00:04:37.48 bitrate=   0.0kbits/s throttle=off speed=1.9e+11x    
+12:12:03.682 frame= 3220 fps= 66 q=29.0 size=   14389kB time=00:04:38.16 bitrate=   0.0kbits/s throttle=off speed=1.88e+11x    
+12:12:04.203 frame= 3242 fps= 65 q=29.0 size=   14441kB time=00:04:38.90 bitrate=   0.0kbits/s throttle=off speed=1.86e+11x    
+12:12:04.617 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:12:04.617 SegmentComplete=video:0 Index=92 Start=276.342733 End=279.345733 Duration=3.003000 offset_pts=0 start_pts=276342733 Frames=90 filename=2AB052_92.ts
+12:12:04.617 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_93.ts.tmp' for writing
+12:12:04.710 frame= 3265 fps= 65 q=29.0 size=   14519kB time=00:04:39.67 bitrate=   0.0kbits/s throttle=off speed=1.84e+11x    
+12:12:05.212 frame= 3286 fps= 65 q=29.0 size=   14582kB time=00:04:40.36 bitrate=   0.0kbits/s throttle=off speed=1.82e+11x    
+12:12:05.725 frame= 3317 fps= 65 q=29.0 size=   14663kB time=00:04:41.40 bitrate=   0.0kbits/s throttle=off speed=1.8e+11x    
+12:12:06.238 frame= 3347 fps= 65 q=29.0 size=   14755kB time=00:04:42.40 bitrate=   0.0kbits/s throttle=off speed=1.79e+11x    
+12:12:06.308 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:12:06.309 SegmentComplete=video:0 Index=93 Start=279.345733 End=282.348733 Duration=3.003000 offset_pts=0 start_pts=279345733 Frames=90 filename=2AB052_93.ts
+12:12:06.309 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_94.ts.tmp' for writing
+12:12:06.751 frame= 3380 fps= 65 q=29.0 size=   14866kB time=00:04:43.51 bitrate=   0.0kbits/s throttle=off speed=1.77e+11x    
+12:12:07.245 frame= 3412 fps= 65 q=29.0 size=   14966kB time=00:04:44.59 bitrate=   0.0kbits/s throttle=off speed=1.75e+11x    
+12:12:07.710 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:12:07.711 SegmentComplete=video:0 Index=94 Start=282.348733 End=285.351733 Duration=3.003000 offset_pts=0 start_pts=282348733 Frames=90 filename=2AB052_94.ts
+12:12:07.711 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_95.ts.tmp' for writing
+12:12:07.759 frame= 3444 fps= 65 q=29.0 size=   15094kB time=00:04:45.67 bitrate=   0.0kbits/s throttle=off speed=1.74e+11x    
+12:12:08.258 frame= 3477 fps= 65 q=29.0 size=   15214kB time=00:04:46.77 bitrate=   0.0kbits/s throttle=off speed=1.72e+11x    
+12:12:08.763 frame= 3506 fps= 65 q=29.0 size=   15328kB time=00:04:47.73 bitrate=   0.0kbits/s throttle=off speed=1.7e+11x    
+12:12:09.284 frame= 3530 fps= 65 q=29.0 size=   15409kB time=00:04:48.50 bitrate=   0.0kbits/s throttle=off speed=1.69e+11x    
+12:12:09.290 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:12:09.297 SegmentComplete=video:0 Index=95 Start=285.351733 End=288.354733 Duration=3.003000 offset_pts=0 start_pts=285351733 Frames=90 filename=2AB052_95.ts
+12:12:09.297 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_96.ts.tmp' for writing
+12:12:09.782 frame= 3555 fps= 64 q=29.0 size=   15518kB time=00:04:49.32 bitrate=   0.0kbits/s throttle=off speed=1.67e+11x    
+12:12:10.292 frame= 3577 fps= 64 q=29.0 size=   15602kB time=00:04:50.08 bitrate=   0.0kbits/s throttle=off speed=1.66e+11x    
+12:12:10.795 frame= 3602 fps= 64 q=29.0 size=   15700kB time=00:04:50.90 bitrate=   0.0kbits/s throttle=off speed=1.64e+11x    
+12:12:11.273 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:12:11.273 SegmentComplete=video:0 Index=96 Start=288.354733 End=291.357733 Duration=3.003000 offset_pts=0 start_pts=288354733 Frames=90 filename=2AB052_96.ts
+12:12:11.273 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_97.ts.tmp' for writing
+12:12:11.327 frame= 3623 fps= 64 q=29.0 size=   15805kB time=00:04:51.60 bitrate=   0.0kbits/s throttle=off speed=1.63e+11x    
+12:12:11.859 frame= 3648 fps= 64 q=29.0 size=   15885kB time=00:04:52.44 bitrate=   0.0kbits/s throttle=off speed=1.61e+11x    
+12:12:12.377 frame= 3671 fps= 64 q=29.0 size=   15951kB time=00:04:53.25 bitrate=   0.0kbits/s throttle=off speed=1.6e+11x    
+12:12:12.889 frame= 3695 fps= 63 q=29.0 size=   16020kB time=00:04:54.00 bitrate=   0.0kbits/s throttle=off speed=1.58e+11x    
+12:12:13.308 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:12:13.309 SegmentComplete=video:0 Index=97 Start=291.357733 End=294.360733 Duration=3.003000 offset_pts=0 start_pts=291357733 Frames=90 filename=2AB052_97.ts
+12:12:13.309 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_98.ts.tmp' for writing
+12:12:13.412 frame= 3714 fps= 63 q=29.0 size=   16090kB time=00:04:54.67 bitrate=   0.0kbits/s throttle=off speed=1.57e+11x    
+12:12:13.923 frame= 3738 fps= 63 q=29.0 size=   16161kB time=00:04:55.46 bitrate=   0.0kbits/s throttle=off speed=1.56e+11x    
+12:12:14.433 frame= 3759 fps= 63 q=29.0 size=   16222kB time=00:04:56.20 bitrate=   0.0kbits/s throttle=off speed=1.54e+11x    
+12:12:14.943 frame= 3786 fps= 63 q=29.0 size=   16309kB time=00:04:57.04 bitrate=   0.0kbits/s throttle=off speed=1.53e+11x    
+12:12:15.161 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:12:15.161 SegmentComplete=video:0 Index=98 Start=294.360733 End=297.363733 Duration=3.003000 offset_pts=0 start_pts=294360733 Frames=90 filename=2AB052_98.ts
+12:12:15.161 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_99.ts.tmp' for writing
+12:12:15.446 frame= 3821 fps= 63 q=29.0 size=   16431kB time=00:04:58.24 bitrate=   0.0kbits/s throttle=off speed=1.52e+11x    
+12:12:15.954 frame= 3854 fps= 63 q=29.0 size=   16540kB time=00:04:59.30 bitrate=   0.0kbits/s throttle=off speed=1.5e+11x    
+12:12:16.461 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:12:16.461 SegmentComplete=video:0 Index=99 Start=297.363733 End=300.366733 Duration=3.003000 offset_pts=0 start_pts=297363733 Frames=90 filename=2AB052_99.ts
+12:12:16.461 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052_100.ts.tmp' for writing
+12:12:16.461 frame= 3891 fps= 63 q=29.0 size=   16683kB time=00:05:00.52 bitrate=   0.0kbits/s throttle=off speed=1.49e+11x    
+12:12:16.959 frame= 3909 fps= 63 q=29.0 size=   16751kB time=00:05:01.17 bitrate=   0.0kbits/s throttle=off speed=1.48e+11x    
+12:12:17.308 
+
+[q] command received. Exiting.
+
+12:12:17.366 12:12:17.366 [segment @ 0x60f900] Opening '/config/transcoding-temp/2AB052.m3u8.tmp' for writing
+12:12:17.367 SegmentComplete=video:0 Index=100 Start=300.366733 End=302.368733 Duration=2.002000 offset_pts=0 start_pts=300366733 Frames=60 filename=2AB052_100.ts
+12:12:17.367 frame= 3930 fps= 63 q=-1.0 Lsize=   16869kB time=00:05:02.26 bitrate=   0.0kbits/s throttle=off speed=1.47e+11x    
+12:12:17.367 video:13800kB audio:3070kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+12:12:17.371 EXIT
+12:12:17.374 [libx264 @ 0x611040] frame I:44    Avg QP:21.03  size: 21588
+12:12:17.374 [libx264 @ 0x611040] frame P:1016  Avg QP:24.38  size:  7838
+12:12:17.374 [libx264 @ 0x611040] frame B:2870  Avg QP:27.99  size:  1818
+12:12:17.374 [libx264 @ 0x611040] consecutive B-frames:  2.2%  0.9%  1.5% 95.5%
+12:12:17.374 [libx264 @ 0x611040] mb I  I16..4: 23.0%  0.0% 77.0%
+12:12:17.374 [libx264 @ 0x611040] mb P  I16..4: 16.7%  0.0%  0.0%  P16..4: 67.3%  0.0%  0.0%  0.0%  0.0%    skip:16.0%
+12:12:17.374 [libx264 @ 0x611040] mb B  I16..4:  1.9%  0.0%  0.0%  B16..8: 34.8%  0.0%  0.0%  direct: 5.3%  skip:58.1%  L0:36.9% L1:44.7% BI:18.4%
+12:12:17.374 [libx264 @ 0x611040] coded y,uvDC,uvAC intra: 38.5% 47.1% 14.6% inter: 13.2% 9.6% 0.6%
+12:12:17.374 [libx264 @ 0x611040] i16 v,h,dc,p: 27% 26% 20% 27%
+12:12:17.374 [libx264 @ 0x611040] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 19% 20% 11% 10% 10%  7%  9%  6%  8%
+12:12:17.374 [libx264 @ 0x611040] i8c dc,h,v,p: 41% 24% 24% 11%
+12:12:17.375 [libx264 @ 0x611040] Weighted P-Frames: Y:5.8% UV:0.4%
+12:12:17.375 [libx264 @ 0x611040] kb/s:862.04
+12:12:17.382 
+
+======= ExtraData
+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

@@ -1,0 +1,45 @@
+2020-05-23 06:30:52.294
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/23725/hls1/main/0.ts?DeviceId=f6e80783-687e-493f-86cc-bb660d1276e8&MediaSourceId=a1df1e28e214d52b85704dcde28df2c5&PlaySessionId=0a1e0d8ad9dd454fa3f3631fe8d82ad7&api_key=e1b2df3ea44d45129b6352df6a663541&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=59616000&AudioBitrate=384000&AudioStreamIndex=1&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=AudioCodecNotSupported
+
+{"Protocol":"File","Id":"a1df1e28e214d52b85704dcde28df2c5","Path":"/00/11/TV/英美剧/绝命毒师Breaking Bad/第一季/Breaking.Bad.S01E02.mkv","Type":"Default","Container":"mkv","Size":1612070722,"Name":"Breaking.Bad.S01E02","IsRemote":false,"RunTimeTicks":28929600000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"h264","TimeBase":"1/1000","CodecTimeBase":"1001/48000","Title":"Encode by 小狮子@CMCT","VideoRange":"SDR","DisplayTitle":"720p H264","NalLengthSize":"4","IsInterlaced":false,"IsAVC":true,"BitRate":4457913,"BitDepth":8,"RefFrames":1,"IsDefault":true,"IsForced":false,"Height":720,"Width":1280,"AverageFrameRate":23.976025,"RealFrameRate":23.976025,"Profile":"High","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p","Level":41,"IsAnamorphic":false},{"Codec":"ac3","TimeBase":"1/1000","CodecTimeBase":"1/48000","Title":"英语English","DisplayTitle":"Dolby Digital 5.1 (Default)","IsInterlaced":false,"ChannelLayout":"5.1","BitRate":640000,"Channels":6,"SampleRate":48000,"IsDefault":true,"IsForced":false,"Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ass","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"中上英下","DisplayTitle":"Und (Default ASS)","IsInterlaced":false,"IsDefault":true,"IsForced":false,"Type":"Subtitle","Index":2,"IsExternal":false,"IsTextSubtitleStream":true,"SupportsExternalStream":true,"Protocol":"File"},{"Codec":"ass","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"英上中下","DisplayTitle":"Und (ASS)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":3,"IsExternal":false,"IsTextSubtitleStream":true,"SupportsExternalStream":true,"Protocol":"File"},{"Codec":"ass","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"简体中字","DisplayTitle":"Und (ASS)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":4,"IsExternal":false,"IsTextSubtitleStream":true,"SupportsExternalStream":true,"Protocol":"File"},{"Codec":"ass","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"繁体中字","DisplayTitle":"Und (ASS)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":5,"IsExternal":false,"IsTextSubtitleStream":true,"SupportsExternalStream":true,"Protocol":"File"},{"Codec":"subrip","TimeBase":"1/1000","CodecTimeBase":"0/1","Title":"英语字幕","DisplayTitle":"Und (SUBRIP)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":6,"IsExternal":false,"IsTextSubtitleStream":true,"SupportsExternalStream":true,"Protocol":"File"}],"Formats":[],"Bitrate":4457913,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for 1124721976
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Copy video stream                        >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    Copy video stream                        >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    h264                 >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -f matroska -noaccurate_seek -i file:"/00/11/TV/英美剧/绝命毒师Breaking Bad/第一季/Breaking.Bad.S01E02.mkv" -threads 0 -map 0:0 -map 0:1 -sn -c:v:0 copy -bsf:v h264_mp4toannexb -copyts -vsync -1 -codec:a:0 libmp3lame -disposition:a:0 default -ac:a:0 2 -ab:a:0 192000 -filter:a:0 "volume=2" -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 6  -individual_header_trailer 0 -break_non_keyframes 1 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 0 -segment_list "/config/transcoding-temp/6E1E93.m3u8" -y "/config/transcoding-temp/6E1E93_%d.ts" -map 0:6 -map 0:0 -c:v:0 copy -codec:0 webvtt -copyts -vsync -1 -f segment -segment_time 6 -segment_format webvtt -max_delay 5000000 -avoid_negative_ts disabled -start_at_zero -write_empty_segments 1 -segment_list_type m3u8 -segment_start_number 0 -segment_write_temp 1 -break_non_keyframes 1 -segment_list "/config/transcoding-temp/6E1E93_s6.m3u8" -y "/config/transcoding-temp/6E1E93_s6_%d.vtt"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-remux-69402a99-fd37-4e1f-b106-b4dd49bce1f9_1graph.txt -copyts -start_at_zero -f matroska,webm -noaccurate_seek -c:v:0 h264 -i "/00/11/TV/英美剧/绝命毒师Breaking Bad/第一季/Breaking.Bad.S01E02.mkv" -map 0:0 -map 0:1 -sn -c:v:0 copy -bsf:v:0 h264_mp4toannexb -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 2 -filter:a:0 "volume=2" -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/6E1E93.m3u8 -segment_list_type m3u8 -segment_time 6 -segment_start_number 0 -break_non_keyframes 1 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/6E1E93_%d.ts" -map 0:6 -map 0:0 -an -c:v:0 copy -c:s:0 webvtt -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format webvtt -segment_list /config/transcoding-temp/6E1E93_s6.m3u8 -segment_list_type m3u8 -segment_time 6 -segment_start_number 0 -break_non_keyframes 1 -individual_header_trailer 1 -write_header_trailer 0 -write_empty_segments 1 -segment_write_temp 1 -min_frame_time 00:00:00.000 "/config/transcoding-temp/6E1E93_s6_%d.vtt"
+
+06:30:52.326 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+06:30:52.327   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+06:30:52.327 Execution Date: 2020-05-23 06:30:52
+06:30:52.336 /00/11/TV/英美剧/绝命毒师Breaking Bad/第一季/Breaking.Bad.S01E02.mkv: No such file or directory
+06:30:52.336 
+
+======= ExtraData
+H4sIAAAAAAAAA+1ZzW7bRhB+FWOB3iSRlGTFElAgtqykQuPGsJxcmoBYkktpIZJLkEtFSmAgvbUN0F8UPfXUQy9x0t4cFOnTWHUeo7NLUqJEybQTIw0Q+0QN5/+bneWMn6A2c13sWaj1BN2iDidBuPD45cOjErrtMAM7d31OmSdfx4/3sRMRwfMEfYFdglpogkpIUns8oF4fKDyICDoqzTh8oHO9H2B/EOo2dUhOQjGZZ9O+4rB+qNi265N+OSBuNC43mnW1ipvNsm3VbpTrRLPLhqY2ykbdsupNwwRCU9ek7gof86xZk/kTHhZ6F3IccB1z/TEJ2BpukZCu50c8jnxXuEYCmTSCeRSQRJeLecDCIS49IoYLupK3hxNfvE3FSmh9Wh8epaa6nkXGqKUmP/cDxpnJnLzRAed+ztaiTKHFC+Bs53KzGG0mpdg0owBzooeEDHNiNnbCJKdAI9hNk2oya1VSB9VGPRfffWoRlooUJzTcjviMvSU9KKE9YlH8ORUHIdZXoKgUc8VOC442qDMTLz+LvZQckj73XNIOsNcXfL3dAyDt0zFxbrEAUhgrcliQ/kSTaFSvqgLTjgceekC654U+MalNiYVkPF0PzqqDTfidhrND+QEkHbjrldrGnkG5IqofyOE+CaRF1NKqkrJLfD5Ara0SOiD2rQBCgBC1NED6WGjRqlvq+EZVBR3bIxLgPpGMiQ1Na25tqZqyqcIfEnqwc977bRGAcJAy8bbRaoo0BEz2A0gf7Q+AcIeMhJeoriGJmoddFvgDas6inB+LGIdsPYCMTP0hdckODqUbKvhQ34p9yNIVLaZ1w11i48iBxIuzLggARDavh5RLFzueKJ8NY7Ix/fP7s2cvpsc/3GzvtQ9FcI5ziPuySoSCzhjA8bCTqDgSR2NteWOzlqvu7ciib13dcRjZ4pbqCotbcq0u7u228FEypLUdu90eYM8jDqhozH7cwRMWiTqOHzb3GbR/bQebQ5Qt0kZ1s6JuD

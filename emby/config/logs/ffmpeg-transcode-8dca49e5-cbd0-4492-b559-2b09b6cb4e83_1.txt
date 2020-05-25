@@ -1,0 +1,527 @@
+2020-05-22 12:37:34.424
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/6865/hls1/main/630.ts?DeviceId=0939de9f-ad24-4206-b247-0dafb526de65&MediaSourceId=50de0fe0ca065073a94c7a4883853660&PlaySessionId=e8356e59e84c4fd5848827ff197e5bc5&api_key=b24b9e0ee12b43b4b0d434c8e5187ccc&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=1668999&AudioBitrate=256000&AudioStreamIndex=1&SubtitleStreamIndex=2&SubtitleMethod=Hls&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=ContainerBitrateExceedsLimit
+
+{"Protocol":"File","Id":"50de0fe0ca065073a94c7a4883853660","Path":"/00/00/SSNI/001-100/SSNI-026-2017-10-14/SSNI-026-C.mp4","Type":"Default","Container":"mp4","Size":7106908395,"Name":"SSNI-026-C","IsRemote":false,"RunTimeTicks":94992830000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"h264","CodecTag":"avc1","Language":"und","ColorSpace":"bt709","TimeBase":"1/16000","CodecTimeBase":"6079487/364405760","VideoRange":"SDR","DisplayTitle":"1080p H264","NalLengthSize":"4","IsInterlaced":false,"IsAVC":true,"BitRate":5719674,"BitDepth":8,"RefFrames":1,"IsDefault":true,"IsForced":false,"Height":1080,"Width":1920,"AverageFrameRate":29.970108,"RealFrameRate":29.97003,"Profile":"Main","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p","Level":40,"IsAnamorphic":false},{"Codec":"aac","CodecTag":"mp4a","Language":"jpn","TimeBase":"1/44100","CodecTimeBase":"1/44100","DisplayTitle":"Japanese AAC stereo (Default)","DisplayLanguage":"Japanese","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":256000,"Channels":2,"SampleRate":44100,"IsDefault":true,"IsForced":false,"Profile":"LC","Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"mov_text","CodecTag":"tx3g","Language":"chi","TimeBase":"1/1000000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (Default MOV_TEXT)","DisplayLanguage":"Chinese","IsInterlaced":false,"BitRate":2,"IsDefault":true,"IsForced":false,"Type":"Subtitle","Index":2,"IsExternal":false,"IsTextSubtitleStream":true,"SupportsExternalStream":true,"Protocol":"File"},{"Codec":"mov_text","CodecTag":"tx3g","Language":"chi","TimeBase":"1/1000000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (MOV_TEXT)","DisplayLanguage":"Chinese","IsInterlaced":false,"BitRate":2,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":3,"IsExternal":false,"IsTextSubtitleStream":true,"SupportsExternalStream":true,"Protocol":"File"}],"Formats":[],"Bitrate":5985216,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for guest
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: h264, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    Scaling                                  >> False                False                                                         
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    h264                 >> -            yuv420p      yuv420p      >> scale
+Info    scale                >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -ss 00:31:30.000  -f mp4 -i file:"/00/00/SSNI/001-100/SSNI-026-2017-10-14/SSNI-026-C.mp4" -threads 0 -map 0:0 -map 0:1 -sn -c:v:0 libx264 -filter_complex "[0:0]scale=trunc(min(max(iw\,ih*dar)\,720)/2)*2:trunc(ow/dar/2)*2" -pix_fmt yuv420p  -maxrate 1668999 -bufsize 3337998 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 90 -keyint_min:v:0 90 -sc_threshold:v:0 0  -copyts -vsync -1 -codec:a:0 copy -metadata:s:a:0 language=jpn -disposition:a:0 default -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 630 -segment_list "/config/transcoding-temp/8E2B07.m3u8" -y "/config/transcoding-temp/8E2B07_%d.ts" -map 0:2 -map 0:0 -c:v:0 copy -codec:0 webvtt -copyts -vsync -1 -f segment -segment_time 3 -segment_format webvtt -max_delay 5000000 -avoid_negative_ts disabled -start_at_zero -write_empty_segments 1 -segment_list_type m3u8 -segment_start_number 630 -segment_write_temp 1 -break_non_keyframes 1 -segment_list "/config/transcoding-temp/8E2B07_s2.m3u8" -y "/config/transcoding-temp/8E2B07_s2_%d.vtt" -map 0:3 -map 0:0 -c:v:0 copy -codec:0 webvtt -copyts -vsync -1 -f segment -segment_time 3 -segment_format webvtt -max_delay 5000000 -avoid_negative_ts disabled -start_at_zero -write_empty_segments 1 -segment_list_type m3u8 -segment_start_number 630 -segment_write_temp 1 -break_non_keyframes 1 -segment_list "/config/transcoding-temp/8E2B07_s3.m3u8" -y "/config/transcoding-temp/8E2B07_s3_%d.vtt"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-8dca49e5-cbd0-4492-b559-2b09b6cb4e83_1graph.txt -copyts -start_at_zero -f mp4 -ss 00:31:30.000 -c:v:0 h264 -i "/00/00/SSNI/001-100/SSNI-026-2017-10-14/SSNI-026-C.mp4" -filter_complex "[0:0]scale@f1=w=720:h=404[f1_out0]" -map [f1_out0] -map 0:1 -sn -c:v:0 libx264 -g:v:0 90 -maxrate:v:0 1668999 -bufsize:v:0 3337998 -sc_threshold:v:0 0 -keyint_min:v:0 90 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 3.0 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 copy -metadata:s:a:0 language=jpn -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/8E2B07.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 630 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/8E2B07_%d.ts" -map 0:2 -map 0:0 -an -c:v:0 copy -c:s:0 webvtt -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format webvtt -segment_list /config/transcoding-temp/8E2B07_s2.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 630 -break_non_keyframes 1 -individual_header_trailer 1 -write_header_trailer 0 -write_empty_segments 1 -segment_write_temp 1 -min_frame_time 00:31:30.000 "/config/transcoding-temp/8E2B07_s2_%d.vtt" -map 0:3 -map 0:0 -an -c:v:0 copy -c:s:0 webvtt -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format webvtt -segment_list /config/transcoding-temp/8E2B07_s3.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 630 -break_non_keyframes 1 -individual_header_trailer 1 -write_header_trailer 0 -write_empty_segments 1 -segment_write_temp 1 -min_frame_time 00:31:30.000 "/config/transcoding-temp/8E2B07_s3_%d.vtt"
+
+12:37:34.456 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+12:37:34.457   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+12:37:34.457 Execution Date: 2020-05-22 12:37:34
+12:37:36.114 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/00/00/SSNI/001-100/SSNI-026-2017-10-14/SSNI-026-C.mp4':
+12:37:36.114   Metadata:
+12:37:36.114     major_brand     : isom
+12:37:36.114     minor_version   : 512
+12:37:36.114     compatible_brands: isomiso2avc1mp41
+12:37:36.114     title           : ssni-026 交わる体液、濃密セックス 完全ノーカットスペシャル 深田ナナ
+12:37:36.114     encoder         : Lavf58.17.101
+12:37:36.114   Duration: 02:38:19.28, start: 0.000000, bitrate: 5985 kb/s
+12:37:36.114     Stream #0:0(und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709/unknown/unknown), 1920x1080 [SAR 1:1 DAR 16:9], 5719 kb/s, Level 40, 29.97 fps, 29.97 tbr, 16k tbn, 59.94 tbc, Start-Time 0.067s (default)
+12:37:36.114     Metadata:
+12:37:36.114       handler_name    : VideoHandler
+12:37:36.114     Stream #0:1(jpn): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 256 kb/s (default)
+12:37:36.114     Metadata:
+12:37:36.114       handler_name    : SoundHandler
+12:37:36.114     Stream #0:2(chi): Subtitle: mov_text (tx3g / 0x67337874), 0 kb/s (default)
+12:37:36.114     Metadata:
+12:37:36.114       handler_name    : SubtitleHandler
+12:37:36.114     Stream #0:3(chi): Subtitle: mov_text (tx3g / 0x67337874), 0 kb/s
+12:37:36.114     Metadata:
+12:37:36.114       handler_name    : SubtitleHandler
+12:37:36.115 Output #1, segment, to '/config/transcoding-temp/8E2B07_s2_%d.vtt':
+12:37:36.115   Metadata:
+12:37:36.115     encoder         : Lavf58.35.100
+12:37:36.115     Stream #1:0: Subtitle: webvtt (default)
+12:37:36.115     Metadata:
+12:37:36.115       encoder         : Lavc58.62.100 webvtt
+12:37:36.115     Stream #1:1: Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709/unknown/unknown), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 5719 kb/s, Level 40, 29.97 fps, 29.97 tbr, 29.97 tbn, 29.97 tbc (default)
+12:37:36.116 Output #2, segment, to '/config/transcoding-temp/8E2B07_s3_%d.vtt':
+12:37:36.116   Metadata:
+12:37:36.116     encoder         : Lavf58.35.100
+12:37:36.116     Stream #2:0: Subtitle: webvtt
+12:37:36.116     Metadata:
+12:37:36.116       encoder         : Lavc58.62.100 webvtt
+12:37:36.116     Stream #2:1: Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709/unknown/unknown), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 5719 kb/s, Level 40, 29.97 fps, 29.97 tbr, 29.97 tbn, 29.97 tbc (default)
+12:37:36.116 Stream mapping:
+12:37:36.116   Stream #0:0 (h264) -> scale
+12:37:36.116   scale -> Stream #0:0 (libx264)
+12:37:36.116   Stream #0:1 -> #0:1 (copy)
+12:37:36.116   Stream #0:2 -> #1:0 (mov_text (native) -> webvtt (native))
+12:37:36.116   Stream #0:0 -> #1:1 (copy)
+12:37:36.116   Stream #0:3 -> #2:0 (mov_text (native) -> webvtt (native))
+12:37:36.116   Stream #0:0 -> #2:1 (copy)
+12:37:36.116 Press [q] to stop, [?] for help
+12:37:37.979 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+12:37:39.210 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+12:37:39.264 [libx264 @ 0x241de80] using SAR=404/405
+12:37:39.264 [libx264 @ 0x241de80] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+12:37:39.266 [libx264 @ 0x241de80] profile Main, level 3.0, 4:2:0, 8-bit
+12:37:39.266 [libx264 @ 0x241de80] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=90 keyint_min=46 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=1668 vbv_bufsize=3337 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+12:37:39.266 Output #0, segment, to '/config/transcoding-temp/8E2B07_%d.ts':
+12:37:39.266   Metadata:
+12:37:39.266     encoder         : Lavf58.35.100
+12:37:39.266     Stream #0:0: Video: h264 (libx264), yuv420p, 720x404 [SAR 404:405 DAR 16:9], q=-1--1, 29.97 fps, 90k tbn, 29.97 tbc (default)
+12:37:39.266     Metadata:
+12:37:39.266       encoder         : Lavc58.62.100 libx264
+12:37:39.266     Side data:
+12:37:39.266       cpb: bitrate max/min/avg: 1668000/0/0 buffer size: 3337000 vbv_delay: N/A
+12:37:39.266     Stream #0:1(jpn): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 256 kb/s (default)
+12:37:39.607 frame=   82 fps= 23 q=29.0 size=     218kB time=00:31:32.86 bitrate=   0.0kbits/s throttle=off speed=2.64e+12x    
+12:37:39.742 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:39.742 SegmentComplete=video:0 Index=630 Start=0.000000 End=1893.024467 Duration=1893.024467 offset_pts=0 start_pts=0 Frames=90 filename=8E2B07_630.ts
+12:37:39.742 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_631.ts.tmp' for writing
+12:37:39.823 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:39.823 SegmentComplete=video:1 Index=630 Start=0.000000 End=1893.026360 Duration=1893.026360 offset_pts=0 start_pts=0 Frames=92 filename=8E2B07_s2_630.vtt
+12:37:39.823 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_631.vtt.tmp' for writing
+12:37:39.823 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:39.824 SegmentComplete=video:1 Index=630 Start=0.000000 End=1893.026360 Duration=1893.026360 offset_pts=0 start_pts=0 Frames=92 filename=8E2B07_s3_630.vtt
+12:37:39.824 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_631.vtt.tmp' for writing
+12:37:40.084 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:40.085 SegmentComplete=video:0 Index=631 Start=1893.024467 End=1896.027467 Duration=3.003000 offset_pts=0 start_pts=1893024467 Frames=90 filename=8E2B07_631.ts
+12:37:40.085 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_632.ts.tmp' for writing
+12:37:41.406 frame=  202 fps= 38 q=29.0 size=     591kB time=00:31:36.86 bitrate=   0.0kbits/s throttle=off speed=1.74e+12x    
+12:37:41.859 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:41.860 SegmentComplete=video:0 Index=632 Start=1896.027467 End=1899.030467 Duration=3.003000 offset_pts=0 start_pts=1896027467 Frames=90 filename=8E2B07_632.ts
+12:37:41.860 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_633.ts.tmp' for writing
+12:37:41.909 frame=  298 fps= 51 q=29.0 size=     859kB time=00:31:40.08 bitrate=   0.0kbits/s throttle=off speed=1.59e+12x    
+12:37:42.030 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:42.030 SegmentComplete=video:1 Index=631 Start=1893.026360 End=1895.995996 Duration=2.969636 offset_pts=0 start_pts=1893026360 Frames=89 filename=8E2B07_s2_631.vtt
+12:37:42.030 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_632.vtt.tmp' for writing
+12:37:42.031 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:42.031 SegmentComplete=video:1 Index=632 Start=1896.029363 End=1898.965632 Duration=2.936270 offset_pts=0 start_pts=1896029363 Frames=89 filename=8E2B07_s2_632.vtt
+12:37:42.031 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_633.vtt.tmp' for writing
+12:37:42.031 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:42.031 SegmentComplete=video:1 Index=631 Start=1893.026360 End=1895.995996 Duration=2.969636 offset_pts=0 start_pts=1893026360 Frames=89 filename=8E2B07_s3_631.vtt
+12:37:42.031 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_632.vtt.tmp' for writing
+12:37:42.032 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:42.032 SegmentComplete=video:1 Index=632 Start=1896.029363 End=1898.965632 Duration=2.936270 offset_pts=0 start_pts=1896029363 Frames=89 filename=8E2B07_s3_632.vtt
+12:37:42.032 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_633.vtt.tmp' for writing
+12:37:42.275 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:42.276 SegmentComplete=video:0 Index=633 Start=1899.030467 End=1902.033467 Duration=3.003000 offset_pts=0 start_pts=1899030467 Frames=90 filename=8E2B07_633.ts
+12:37:42.276 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_634.ts.tmp' for writing
+12:37:43.144 frame=  381 fps= 54 q=29.0 size=    1101kB time=00:31:43.01 bitrate=   0.0kbits/s throttle=off speed=1.31e+12x    
+12:37:43.868 frame=  389 fps= 50 q=29.0 size=    1120kB time=00:31:43.24 bitrate=   0.0kbits/s throttle=off speed=1.19e+12x    
+12:37:44.216 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:44.216 SegmentComplete=video:0 Index=634 Start=1902.033467 End=1905.036467 Duration=3.003000 offset_pts=0 start_pts=1902033467 Frames=90 filename=8E2B07_634.ts
+12:37:44.216 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_635.ts.tmp' for writing
+12:37:44.378 frame=  514 fps= 62 q=29.0 size=    1468kB time=00:31:47.44 bitrate=   0.0kbits/s throttle=off speed=1.12e+12x    
+12:37:44.556 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:44.557 SegmentComplete=video:0 Index=635 Start=1905.036467 End=1908.039467 Duration=3.003000 offset_pts=0 start_pts=1905036467 Frames=90 filename=8E2B07_635.ts
+12:37:44.557 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_636.ts.tmp' for writing
+12:37:44.890 frame=  647 fps= 74 q=29.0 size=    1836kB time=00:31:51.81 bitrate=   0.0kbits/s throttle=off speed=1.05e+12x    
+12:37:44.905 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:44.906 SegmentComplete=video:0 Index=636 Start=1908.039467 End=1911.042467 Duration=3.003000 offset_pts=0 start_pts=1908039467 Frames=90 filename=8E2B07_636.ts
+12:37:44.906 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_637.ts.tmp' for writing
+12:37:44.916 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:44.916 SegmentComplete=video:1 Index=633 Start=1899.032366 End=1902.002002 Duration=2.969636 offset_pts=0 start_pts=1899032366 Frames=91 filename=8E2B07_s2_633.vtt
+12:37:44.916 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_634.vtt.tmp' for writing
+12:37:44.916 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:44.916 SegmentComplete=video:1 Index=633 Start=1899.032366 End=1902.002002 Duration=2.969636 offset_pts=0 start_pts=1899032366 Frames=91 filename=8E2B07_s3_633.vtt
+12:37:44.916 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_634.vtt.tmp' for writing
+12:37:45.254 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:45.254 SegmentComplete=video:0 Index=637 Start=1911.042467 End=1914.045467 Duration=3.003000 offset_pts=0 start_pts=1911042467 Frames=90 filename=8E2B07_637.ts
+12:37:45.254 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_638.ts.tmp' for writing
+12:37:45.269 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:45.270 SegmentComplete=video:1 Index=634 Start=1902.035369 End=1905.005005 Duration=2.969636 offset_pts=0 start_pts=1902035369 Frames=90 filename=8E2B07_s2_634.vtt
+12:37:45.271 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_635.vtt.tmp' for writing
+12:37:45.271 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:45.271 SegmentComplete=video:1 Index=634 Start=1902.035369 End=1905.005005 Duration=2.969636 offset_pts=0 start_pts=1902035369 Frames=90 filename=8E2B07_s3_634.vtt
+12:37:45.271 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_635.vtt.tmp' for writing
+12:37:45.384 frame=  773 fps= 83 q=29.0 size=    2239kB time=00:31:55.97 bitrate=   0.0kbits/s throttle=off speed=9.95e+11x    
+12:37:45.592 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:45.592 SegmentComplete=video:0 Index=638 Start=1914.045467 End=1917.048467 Duration=3.003000 offset_pts=0 start_pts=1914045467 Frames=90 filename=8E2B07_638.ts
+12:37:45.592 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_639.ts.tmp' for writing
+12:37:45.610 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:45.610 SegmentComplete=video:1 Index=635 Start=1905.038372 End=1908.008008 Duration=2.969636 offset_pts=0 start_pts=1905038372 Frames=90 filename=8E2B07_s2_635.vtt
+12:37:45.610 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_636.vtt.tmp' for writing
+12:37:45.610 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:45.610 SegmentComplete=video:1 Index=635 Start=1905.038372 End=1908.008008 Duration=2.969636 offset_pts=0 start_pts=1905038372 Frames=90 filename=8E2B07_s3_635.vtt
+12:37:45.610 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_636.vtt.tmp' for writing
+12:37:45.887 frame=  913 fps= 93 q=29.0 size=    2666kB time=00:32:00.70 bitrate=   0.0kbits/s throttle=off speed=9.44e+11x    
+12:37:45.918 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:45.919 SegmentComplete=video:0 Index=639 Start=1917.048467 End=1920.051467 Duration=3.003000 offset_pts=0 start_pts=1917048467 Frames=90 filename=8E2B07_639.ts
+12:37:45.919 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_640.ts.tmp' for writing
+12:37:45.932 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:45.932 SegmentComplete=video:1 Index=636 Start=1908.041375 End=1911.011011 Duration=2.969636 offset_pts=0 start_pts=1908041375 Frames=90 filename=8E2B07_s2_636.vtt
+12:37:45.932 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_637.vtt.tmp' for writing
+12:37:45.932 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:45.933 SegmentComplete=video:1 Index=636 Start=1908.041375 End=1911.011011 Duration=2.969636 offset_pts=0 start_pts=1908041375 Frames=90 filename=8E2B07_s3_636.vtt
+12:37:45.933 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_637.vtt.tmp' for writing
+12:37:46.395 frame= 1009 fps= 98 q=29.0 size=    3017kB time=00:32:03.84 bitrate=   0.0kbits/s throttle=off speed=8.98e+11x    
+12:37:46.404 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:46.408 SegmentComplete=video:0 Index=640 Start=1920.051467 End=1923.054467 Duration=3.003000 offset_pts=0 start_pts=1920051467 Frames=90 filename=8E2B07_640.ts
+12:37:46.409 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_641.ts.tmp' for writing
+12:37:46.446 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:46.447 SegmentComplete=video:1 Index=637 Start=1911.044378 End=1914.014014 Duration=2.969636 offset_pts=0 start_pts=1911044378 Frames=90 filename=8E2B07_s2_637.vtt
+12:37:46.447 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_638.vtt.tmp' for writing
+12:37:46.447 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:46.447 SegmentComplete=video:1 Index=637 Start=1911.044378 End=1914.014014 Duration=2.969636 offset_pts=0 start_pts=1911044378 Frames=90 filename=8E2B07_s3_637.vtt
+12:37:46.447 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_638.vtt.tmp' for writing
+12:37:46.813 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:46.814 SegmentComplete=video:0 Index=641 Start=1923.054467 End=1926.057467 Duration=3.003000 offset_pts=0 start_pts=1923054467 Frames=90 filename=8E2B07_641.ts
+12:37:46.814 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_642.ts.tmp' for writing
+12:37:46.828 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:46.829 SegmentComplete=video:1 Index=638 Start=1914.014014 End=1917.017017 Duration=3.003003 offset_pts=0 start_pts=1914014014 Frames=90 filename=8E2B07_s2_638.vtt
+12:37:46.829 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_639.vtt.tmp' for writing
+12:37:46.829 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:46.829 SegmentComplete=video:1 Index=638 Start=1914.014014 End=1917.017017 Duration=3.003003 offset_pts=0 start_pts=1914014014 Frames=90 filename=8E2B07_s3_638.vtt
+12:37:46.829 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_639.vtt.tmp' for writing
+12:37:46.895 frame= 1123 fps=104 q=29.0 size=    3422kB time=00:32:07.67 bitrate=   0.0kbits/s throttle=off speed=8.56e+11x    
+12:37:47.142 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:47.143 SegmentComplete=video:0 Index=642 Start=1926.057467 End=1929.060467 Duration=3.003000 offset_pts=0 start_pts=1926057467 Frames=90 filename=8E2B07_642.ts
+12:37:47.143 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_643.ts.tmp' for writing
+12:37:47.150 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:47.150 SegmentComplete=video:1 Index=639 Start=1917.050384 End=1920.020020 Duration=2.969636 offset_pts=0 start_pts=1917050384 Frames=90 filename=8E2B07_s2_639.vtt
+12:37:47.150 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_640.vtt.tmp' for writing
+12:37:47.150 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:47.150 SegmentComplete=video:1 Index=639 Start=1917.050384 End=1920.020020 Duration=2.969636 offset_pts=0 start_pts=1917050384 Frames=90 filename=8E2B07_s3_639.vtt
+12:37:47.150 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_640.vtt.tmp' for writing
+12:37:47.401 frame= 1258 fps=111 q=29.0 size=    3880kB time=00:32:12.10 bitrate=   0.0kbits/s throttle=off speed=8.17e+11x    
+12:37:47.478 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:47.479 SegmentComplete=video:0 Index=643 Start=1929.060467 End=1932.063467 Duration=3.003000 offset_pts=0 start_pts=1929060467 Frames=90 filename=8E2B07_643.ts
+12:37:47.479 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_644.ts.tmp' for writing
+12:37:47.489 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:47.489 SegmentComplete=video:1 Index=640 Start=1920.053387 End=1923.023023 Duration=2.969636 offset_pts=0 start_pts=1920053387 Frames=90 filename=8E2B07_s2_640.vtt
+12:37:47.489 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_641.vtt.tmp' for writing
+12:37:47.489 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:47.489 SegmentComplete=video:1 Index=640 Start=1920.053387 End=1923.023023 Duration=2.969636 offset_pts=0 start_pts=1920053387 Frames=90 filename=8E2B07_s3_640.vtt
+12:37:47.489 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_641.vtt.tmp' for writing
+12:37:47.807 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:47.808 SegmentComplete=video:0 Index=644 Start=1932.063467 End=1935.066467 Duration=3.003000 offset_pts=0 start_pts=1932063467 Frames=90 filename=8E2B07_644.ts
+12:37:47.808 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_645.ts.tmp' for writing
+12:37:47.821 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:47.821 SegmentComplete=video:1 Index=641 Start=1923.023023 End=1926.026026 Duration=3.003003 offset_pts=0 start_pts=1923023023 Frames=90 filename=8E2B07_s2_641.vtt
+12:37:47.821 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_642.vtt.tmp' for writing
+12:37:47.821 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:47.821 SegmentComplete=video:1 Index=641 Start=1923.023023 End=1926.026026 Duration=3.003003 offset_pts=0 start_pts=1923023023 Frames=90 filename=8E2B07_s3_641.vtt
+12:37:47.821 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_642.vtt.tmp' for writing
+12:37:47.901 frame= 1397 fps=119 q=29.0 size=    4321kB time=00:32:16.75 bitrate=   0.0kbits/s throttle=off speed=7.83e+11x    
+12:37:48.120 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:48.121 SegmentComplete=video:1 Index=642 Start=1926.059393 End=1929.029029 Duration=2.969636 offset_pts=0 start_pts=1926059393 Frames=90 filename=8E2B07_s2_642.vtt
+12:37:48.121 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_643.vtt.tmp' for writing
+12:37:48.121 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:48.122 SegmentComplete=video:1 Index=643 Start=1929.062396 End=1932.032032 Duration=2.969636 offset_pts=0 start_pts=1929062396 Frames=90 filename=8E2B07_s2_643.vtt
+12:37:48.122 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_644.vtt.tmp' for writing
+12:37:48.122 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:48.122 SegmentComplete=video:1 Index=644 Start=1932.065399 End=1934.968302 Duration=2.902903 offset_pts=0 start_pts=1932065399 Frames=88 filename=8E2B07_s2_644.vtt
+12:37:48.122 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_645.vtt.tmp' for writing
+12:37:48.123 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:48.123 SegmentComplete=video:1 Index=645 Start=1935.001668 End=1938.004671 Duration=3.003003 offset_pts=0 start_pts=1935001668 Frames=91 filename=8E2B07_s2_645.vtt
+12:37:48.123 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_646.vtt.tmp' for writing
+12:37:48.123 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:48.123 SegmentComplete=video:1 Index=642 Start=1926.059393 End=1929.029029 Duration=2.969636 offset_pts=0 start_pts=1926059393 Frames=90 filename=8E2B07_s3_642.vtt
+12:37:48.123 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_643.vtt.tmp' for writing
+12:37:48.124 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:48.124 SegmentComplete=video:1 Index=643 Start=1929.062396 End=1932.032032 Duration=2.969636 offset_pts=0 start_pts=1929062396 Frames=90 filename=8E2B07_s3_643.vtt
+12:37:48.124 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_644.vtt.tmp' for writing
+12:37:48.124 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:48.124 SegmentComplete=video:1 Index=644 Start=1932.065399 End=1934.968302 Duration=2.902903 offset_pts=0 start_pts=1932065399 Frames=88 filename=8E2B07_s3_644.vtt
+12:37:48.124 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_645.vtt.tmp' for writing
+12:37:48.125 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:48.125 SegmentComplete=video:1 Index=645 Start=1935.001668 End=1938.004671 Duration=3.003003 offset_pts=0 start_pts=1935001668 Frames=91 filename=8E2B07_s3_645.vtt
+12:37:48.125 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_646.vtt.tmp' for writing
+12:37:48.130 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:48.131 SegmentComplete=video:0 Index=645 Start=1935.066467 End=1938.069467 Duration=3.003000 offset_pts=0 start_pts=1935066467 Frames=90 filename=8E2B07_645.ts
+12:37:48.131 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_646.ts.tmp' for writing
+12:37:49.244 frame= 1520 fps=116 q=29.0 size=    4709kB time=00:32:20.93 bitrate=   0.0kbits/s throttle=off speed=7.03e+11x    
+12:37:49.405 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:49.406 SegmentComplete=video:0 Index=646 Start=1938.069467 End=1941.072467 Duration=3.003000 offset_pts=0 start_pts=1938069467 Frames=90 filename=8E2B07_646.ts
+12:37:49.406 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_647.ts.tmp' for writing
+12:37:49.749 frame= 1634 fps=120 q=29.0 size=    5077kB time=00:32:24.73 bitrate=   0.0kbits/s throttle=off speed=6.77e+11x    
+12:37:49.774 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:49.775 SegmentComplete=video:0 Index=647 Start=1941.072467 End=1944.075467 Duration=3.003000 offset_pts=0 start_pts=1941072467 Frames=90 filename=8E2B07_647.ts
+12:37:49.775 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_648.ts.tmp' for writing
+12:37:50.104 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:50.104 SegmentComplete=video:0 Index=648 Start=1944.075467 End=1947.078467 Duration=3.003000 offset_pts=0 start_pts=1944075467 Frames=90 filename=8E2B07_648.ts
+12:37:50.104 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_649.ts.tmp' for writing
+12:37:50.251 frame= 1769 fps=125 q=29.0 size=    5515kB time=00:32:29.15 bitrate=   0.0kbits/s throttle=off speed=6.53e+11x    
+12:37:50.489 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:50.490 SegmentComplete=video:0 Index=649 Start=1947.078467 End=1950.081467 Duration=3.003000 offset_pts=0 start_pts=1947078467 Frames=90 filename=8E2B07_649.ts
+12:37:50.490 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_650.ts.tmp' for writing
+12:37:50.493 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:50.499 SegmentComplete=video:1 Index=646 Start=1938.004671 End=1940.974308 Duration=2.969636 offset_pts=0 start_pts=1938004671 Frames=89 filename=8E2B07_s2_646.vtt
+12:37:50.499 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_647.vtt.tmp' for writing
+12:37:50.499 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:50.499 SegmentComplete=video:1 Index=646 Start=1938.004671 End=1940.974308 Duration=2.969636 offset_pts=0 start_pts=1938004671 Frames=89 filename=8E2B07_s3_646.vtt
+12:37:50.499 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_647.vtt.tmp' for writing
+12:37:50.754 frame= 1870 fps=128 q=29.0 size=    5829kB time=00:32:32.54 bitrate=   0.0kbits/s throttle=off speed=6.3e+11x    
+12:37:50.933 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:50.934 SegmentComplete=video:0 Index=650 Start=1950.081467 End=1953.084467 Duration=3.003000 offset_pts=0 start_pts=1950081467 Frames=90 filename=8E2B07_650.ts
+12:37:50.934 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_651.ts.tmp' for writing
+12:37:50.952 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:50.952 SegmentComplete=video:1 Index=647 Start=1941.007674 End=1944.010677 Duration=3.003003 offset_pts=0 start_pts=1941007674 Frames=91 filename=8E2B07_s2_647.vtt
+12:37:50.952 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_648.vtt.tmp' for writing
+12:37:50.952 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:50.952 SegmentComplete=video:1 Index=647 Start=1941.007674 End=1944.010677 Duration=3.003003 offset_pts=0 start_pts=1941007674 Frames=91 filename=8E2B07_s3_647.vtt
+12:37:50.952 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_648.vtt.tmp' for writing
+12:37:51.147 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:51.148 SegmentComplete=video:1 Index=648 Start=1944.010677 End=1946.980314 Duration=2.969636 offset_pts=0 start_pts=1944010677 Frames=89 filename=8E2B07_s2_648.vtt
+12:37:51.148 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_649.vtt.tmp' for writing
+12:37:51.148 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:51.148 SegmentComplete=video:1 Index=649 Start=1947.013680 End=1950.016683 Duration=3.003003 offset_pts=0 start_pts=1947013680 Frames=91 filename=8E2B07_s2_649.vtt
+12:37:51.148 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_650.vtt.tmp' for writing
+12:37:51.148 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:51.148 SegmentComplete=video:1 Index=650 Start=1950.016683 End=1952.986320 Duration=2.969636 offset_pts=0 start_pts=1950016683 Frames=89 filename=8E2B07_s2_650.vtt
+12:37:51.148 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_651.vtt.tmp' for writing
+12:37:51.149 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:51.149 SegmentComplete=video:1 Index=648 Start=1944.010677 End=1946.980314 Duration=2.969636 offset_pts=0 start_pts=1944010677 Frames=89 filename=8E2B07_s3_648.vtt
+12:37:51.149 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_649.vtt.tmp' for writing
+12:37:51.149 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:51.149 SegmentComplete=video:1 Index=649 Start=1947.013680 End=1950.016683 Duration=3.003003 offset_pts=0 start_pts=1947013680 Frames=91 filename=8E2B07_s3_649.vtt
+12:37:51.149 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_650.vtt.tmp' for writing
+12:37:51.150 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:51.150 SegmentComplete=video:1 Index=650 Start=1950.016683 End=1952.986320 Duration=2.969636 offset_pts=0 start_pts=1950016683 Frames=89 filename=8E2B07_s3_650.vtt
+12:37:51.150 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_651.vtt.tmp' for writing
+12:37:51.261 frame= 1977 fps=131 q=29.0 size=    6160kB time=00:32:36.09 bitrate=   0.0kbits/s throttle=off speed=6.09e+11x    
+12:37:51.368 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:51.369 SegmentComplete=video:0 Index=651 Start=1953.084467 End=1956.087467 Duration=3.003000 offset_pts=0 start_pts=1953084467 Frames=90 filename=8E2B07_651.ts
+12:37:51.369 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_652.ts.tmp' for writing
+12:37:51.648 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:51.649 SegmentComplete=video:1 Index=651 Start=1953.019686 End=1956.022689 Duration=3.003003 offset_pts=0 start_pts=1953019686 Frames=91 filename=8E2B07_s2_651.vtt
+12:37:51.649 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_652.vtt.tmp' for writing
+12:37:51.649 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:51.650 SegmentComplete=video:1 Index=651 Start=1953.019686 End=1956.022689 Duration=3.003003 offset_pts=0 start_pts=1953019686 Frames=91 filename=8E2B07_s3_651.vtt
+12:37:51.650 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_652.vtt.tmp' for writing
+12:37:51.768 frame= 2081 fps=133 q=29.0 size=    6487kB time=00:32:39.57 bitrate=   0.0kbits/s throttle=off speed=5.89e+11x    
+12:37:51.819 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:51.820 SegmentComplete=video:0 Index=652 Start=1956.087467 End=1959.090467 Duration=3.003000 offset_pts=0 start_pts=1956087467 Frames=90 filename=8E2B07_652.ts
+12:37:51.820 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_653.ts.tmp' for writing
+12:37:52.801 frame= 2131 fps=128 q=29.0 size=    6658kB time=00:32:41.22 bitrate=   0.0kbits/s throttle=off speed=5.53e+11x    
+12:37:53.032 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:53.032 SegmentComplete=video:0 Index=653 Start=1959.090467 End=1962.093467 Duration=3.003000 offset_pts=0 start_pts=1959090467 Frames=90 filename=8E2B07_653.ts
+12:37:53.033 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_654.ts.tmp' for writing
+12:37:53.075 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:53.076 SegmentComplete=video:1 Index=652 Start=1956.022689 End=1958.992326 Duration=2.969636 offset_pts=0 start_pts=1956022689 Frames=89 filename=8E2B07_s2_652.vtt
+12:37:53.076 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_653.vtt.tmp' for writing
+12:37:53.076 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:53.076 SegmentComplete=video:1 Index=653 Start=1959.025692 End=1962.028695 Duration=3.003003 offset_pts=0 start_pts=1959025692 Frames=91 filename=8E2B07_s2_653.vtt
+12:37:53.076 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_654.vtt.tmp' for writing
+12:37:53.077 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:53.077 SegmentComplete=video:1 Index=652 Start=1956.022689 End=1958.992326 Duration=2.969636 offset_pts=0 start_pts=1956022689 Frames=89 filename=8E2B07_s3_652.vtt
+12:37:53.077 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_653.vtt.tmp' for writing
+12:37:53.077 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:53.077 SegmentComplete=video:1 Index=653 Start=1959.025692 End=1962.028695 Duration=3.003003 offset_pts=0 start_pts=1959025692 Frames=91 filename=8E2B07_s3_653.vtt
+12:37:53.077 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_654.vtt.tmp' for writing
+12:37:53.309 frame= 2246 fps=131 q=29.0 size=    7035kB time=00:32:45.15 bitrate=   0.0kbits/s throttle=off speed=5.36e+11x    
+12:37:54.335 frame= 2246 fps=123 q=29.0 size=    7038kB time=00:32:45.24 bitrate=   0.0kbits/s throttle=off speed=5.06e+11x    
+12:37:55.126 frame= 2257 fps=119 q=29.0 size=    7071kB time=00:32:45.49 bitrate=   0.0kbits/s throttle=off speed=4.85e+11x    
+12:37:55.199 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:55.199 SegmentComplete=video:0 Index=654 Start=1962.093467 End=1965.096467 Duration=3.003000 offset_pts=0 start_pts=1962093467 Frames=90 filename=8E2B07_654.ts
+12:37:55.199 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_655.ts.tmp' for writing
+12:37:55.546 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:55.546 SegmentComplete=video:0 Index=655 Start=1965.096467 End=1968.099467 Duration=3.003000 offset_pts=0 start_pts=1965096467 Frames=90 filename=8E2B07_655.ts
+12:37:55.546 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_656.ts.tmp' for writing
+12:37:55.630 frame= 2380 fps=122 q=29.0 size=    7449kB time=00:32:49.70 bitrate=   0.0kbits/s throttle=off speed=4.73e+11x    
+12:37:55.967 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:55.968 SegmentComplete=video:0 Index=656 Start=1968.099467 End=1971.102467 Duration=3.003000 offset_pts=0 start_pts=1968099467 Frames=90 filename=8E2B07_656.ts
+12:37:55.968 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_657.ts.tmp' for writing
+12:37:56.134 frame= 2495 fps=125 q=29.0 size=    7759kB time=00:32:53.50 bitrate=   0.0kbits/s throttle=off speed=4.61e+11x    
+12:37:56.312 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:56.312 SegmentComplete=video:0 Index=657 Start=1971.102467 End=1974.105467 Duration=3.003000 offset_pts=0 start_pts=1971102467 Frames=90 filename=8E2B07_657.ts
+12:37:56.312 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_658.ts.tmp' for writing
+12:37:56.318 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:56.318 SegmentComplete=video:1 Index=654 Start=1962.028695 End=1964.998332 Duration=2.969636 offset_pts=0 start_pts=1962028695 Frames=89 filename=8E2B07_s2_654.vtt
+12:37:56.318 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_655.vtt.tmp' for writing
+12:37:56.318 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:56.319 SegmentComplete=video:1 Index=654 Start=1962.028695 End=1964.998332 Duration=2.969636 offset_pts=0 start_pts=1962028695 Frames=89 filename=8E2B07_s3_654.vtt
+12:37:56.319 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_655.vtt.tmp' for writing
+12:37:56.632 frame= 2630 fps=128 q=29.0 size=    8229kB time=00:32:57.89 bitrate=   0.0kbits/s throttle=off speed=4.5e+11x    
+12:37:56.642 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:56.643 SegmentComplete=video:0 Index=658 Start=1974.105467 End=1977.108467 Duration=3.003000 offset_pts=0 start_pts=1974105467 Frames=90 filename=8E2B07_658.ts
+12:37:56.643 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_659.ts.tmp' for writing
+12:37:56.644 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:56.644 SegmentComplete=video:1 Index=655 Start=1965.031698 End=1967.967968 Duration=2.936270 offset_pts=0 start_pts=1965031698 Frames=89 filename=8E2B07_s2_655.vtt
+12:37:56.644 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_656.vtt.tmp' for writing
+12:37:56.644 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:56.644 SegmentComplete=video:1 Index=655 Start=1965.031698 End=1967.967968 Duration=2.936270 offset_pts=0 start_pts=1965031698 Frames=89 filename=8E2B07_s3_655.vtt
+12:37:56.644 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_656.vtt.tmp' for writing
+12:37:56.965 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:56.966 SegmentComplete=video:0 Index=659 Start=1977.108467 End=1980.111467 Duration=3.003000 offset_pts=0 start_pts=1977108467 Frames=90 filename=8E2B07_659.ts
+12:37:56.966 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_660.ts.tmp' for writing
+12:37:56.974 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:56.975 SegmentComplete=video:1 Index=656 Start=1968.001335 End=1971.004338 Duration=3.003003 offset_pts=0 start_pts=1968001335 Frames=91 filename=8E2B07_s2_656.vtt
+12:37:56.975 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_657.vtt.tmp' for writing
+12:37:56.975 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:56.975 SegmentComplete=video:1 Index=656 Start=1968.001335 End=1971.004338 Duration=3.003003 offset_pts=0 start_pts=1968001335 Frames=91 filename=8E2B07_s3_656.vtt
+12:37:56.975 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_657.vtt.tmp' for writing
+12:37:57.129 frame= 2753 fps=131 q=29.0 size=    8701kB time=00:33:02.03 bitrate=   0.0kbits/s throttle=off speed=4.39e+11x    
+12:37:57.419 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:57.420 SegmentComplete=video:0 Index=660 Start=1980.111467 End=1983.114467 Duration=3.003000 offset_pts=0 start_pts=1980111467 Frames=90 filename=8E2B07_660.ts
+12:37:57.420 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_661.ts.tmp' for writing
+12:37:57.426 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:57.426 SegmentComplete=video:1 Index=657 Start=1971.037704 End=1974.007341 Duration=2.969636 offset_pts=0 start_pts=1971037704 Frames=90 filename=8E2B07_s2_657.vtt
+12:37:57.426 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_658.vtt.tmp' for writing
+12:37:57.426 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:57.426 SegmentComplete=video:1 Index=657 Start=1971.037704 End=1974.007341 Duration=2.969636 offset_pts=0 start_pts=1971037704 Frames=90 filename=8E2B07_s3_657.vtt
+12:37:57.426 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_658.vtt.tmp' for writing
+12:37:57.631 frame= 2859 fps=133 q=29.0 size=    9085kB time=00:33:05.69 bitrate=   0.0kbits/s throttle=off speed=4.29e+11x    
+12:37:57.844 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:57.844 SegmentComplete=video:0 Index=661 Start=1983.114467 End=1986.117467 Duration=3.003000 offset_pts=0 start_pts=1983114467 Frames=90 filename=8E2B07_661.ts
+12:37:57.844 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_662.ts.tmp' for writing
+12:37:57.852 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:57.852 SegmentComplete=video:1 Index=658 Start=1974.007341 End=1977.010344 Duration=3.003003 offset_pts=0 start_pts=1974007341 Frames=90 filename=8E2B07_s2_658.vtt
+12:37:57.852 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_659.vtt.tmp' for writing
+12:37:57.852 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:57.852 SegmentComplete=video:1 Index=658 Start=1974.007341 End=1977.010344 Duration=3.003003 offset_pts=0 start_pts=1974007341 Frames=90 filename=8E2B07_s3_658.vtt
+12:37:57.852 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_659.vtt.tmp' for writing
+12:37:58.141 frame= 2964 fps=135 q=29.0 size=    9435kB time=00:33:09.15 bitrate=   0.0kbits/s throttle=off speed=4.19e+11x    
+12:37:58.268 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:58.268 SegmentComplete=video:0 Index=662 Start=1986.117467 End=1989.120467 Duration=3.003000 offset_pts=0 start_pts=1986117467 Frames=90 filename=8E2B07_662.ts
+12:37:58.268 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_663.ts.tmp' for writing
+12:37:58.276 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:58.277 SegmentComplete=video:1 Index=659 Start=1977.010344 End=1980.013347 Duration=3.003003 offset_pts=0 start_pts=1977010344 Frames=90 filename=8E2B07_s2_659.vtt
+12:37:58.277 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_660.vtt.tmp' for writing
+12:37:58.277 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:58.277 SegmentComplete=video:1 Index=659 Start=1977.010344 End=1980.013347 Duration=3.003003 offset_pts=0 start_pts=1977010344 Frames=90 filename=8E2B07_s3_659.vtt
+12:37:58.277 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_660.vtt.tmp' for writing
+12:37:58.642 frame= 3074 fps=136 q=29.0 size=    9787kB time=00:33:12.78 bitrate=   0.0kbits/s throttle=off speed=4.09e+11x    
+12:37:58.662 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:58.662 SegmentComplete=video:0 Index=663 Start=1989.120467 End=1992.123467 Duration=3.003000 offset_pts=0 start_pts=1989120467 Frames=90 filename=8E2B07_663.ts
+12:37:58.662 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_664.ts.tmp' for writing
+12:37:58.671 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:58.672 SegmentComplete=video:1 Index=660 Start=1980.013347 End=1983.016350 Duration=3.003003 offset_pts=0 start_pts=1980013347 Frames=90 filename=8E2B07_s2_660.vtt
+12:37:58.672 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_661.vtt.tmp' for writing
+12:37:58.672 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:58.672 SegmentComplete=video:1 Index=660 Start=1980.013347 End=1983.016350 Duration=3.003003 offset_pts=0 start_pts=1980013347 Frames=90 filename=8E2B07_s3_660.vtt
+12:37:58.672 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_661.vtt.tmp' for writing
+12:37:58.995 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:58.996 SegmentComplete=video:0 Index=664 Start=1992.123467 End=1995.126467 Duration=3.003000 offset_pts=0 start_pts=1992123467 Frames=90 filename=8E2B07_664.ts
+12:37:58.996 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_665.ts.tmp' for writing
+12:37:58.999 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:58.999 SegmentComplete=video:1 Index=661 Start=1983.049716 End=1986.019353 Duration=2.969636 offset_pts=0 start_pts=1983049716 Frames=90 filename=8E2B07_s2_661.vtt
+12:37:58.999 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_662.vtt.tmp' for writing
+12:37:59.000 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:59.000 SegmentComplete=video:1 Index=661 Start=1983.049716 End=1986.019353 Duration=2.969636 offset_pts=0 start_pts=1983049716 Frames=90 filename=8E2B07_s3_661.vtt
+12:37:59.000 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_662.vtt.tmp' for writing
+12:37:59.141 frame= 3210 fps=139 q=29.0 size=   10236kB time=00:33:17.24 bitrate=   0.0kbits/s throttle=off speed=4.01e+11x    
+12:37:59.325 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:59.325 SegmentComplete=video:0 Index=665 Start=1995.126467 End=1998.129467 Duration=3.003000 offset_pts=0 start_pts=1995126467 Frames=90 filename=8E2B07_665.ts
+12:37:59.325 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_666.ts.tmp' for writing
+12:37:59.330 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:59.330 SegmentComplete=video:1 Index=662 Start=1986.019353 End=1989.022356 Duration=3.003003 offset_pts=0 start_pts=1986019353 Frames=90 filename=8E2B07_s2_662.vtt
+12:37:59.330 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_663.vtt.tmp' for writing
+12:37:59.330 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:59.330 SegmentComplete=video:1 Index=662 Start=1986.019353 End=1989.022356 Duration=3.003003 offset_pts=0 start_pts=1986019353 Frames=90 filename=8E2B07_s3_662.vtt
+12:37:59.330 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_663.vtt.tmp' for writing
+12:37:59.646 frame= 3339 fps=142 q=29.0 size=   10680kB time=00:33:21.53 bitrate=   0.0kbits/s throttle=off speed=3.92e+11x    
+12:37:59.715 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:37:59.715 SegmentComplete=video:0 Index=666 Start=1998.129467 End=2001.132467 Duration=3.003000 offset_pts=0 start_pts=1998129467 Frames=90 filename=8E2B07_666.ts
+12:37:59.715 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_667.ts.tmp' for writing
+12:37:59.728 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:37:59.729 SegmentComplete=video:1 Index=663 Start=1989.055722 End=1992.025359 Duration=2.969636 offset_pts=0 start_pts=1989055722 Frames=90 filename=8E2B07_s2_663.vtt
+12:37:59.729 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_664.vtt.tmp' for writing
+12:37:59.729 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:37:59.729 SegmentComplete=video:1 Index=663 Start=1989.055722 End=1992.025359 Duration=2.969636 offset_pts=0 start_pts=1989055722 Frames=90 filename=8E2B07_s3_663.vtt
+12:37:59.729 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_664.vtt.tmp' for writing
+12:38:00.085 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:38:00.085 SegmentComplete=video:0 Index=667 Start=2001.132467 End=2004.135467 Duration=3.003000 offset_pts=0 start_pts=2001132467 Frames=90 filename=8E2B07_667.ts
+12:38:00.085 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_668.ts.tmp' for writing
+12:38:00.091 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:38:00.092 SegmentComplete=video:1 Index=664 Start=1992.025359 End=1994.994995 Duration=2.969636 offset_pts=0 start_pts=1992025359 Frames=89 filename=8E2B07_s2_664.vtt
+12:38:00.092 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_665.vtt.tmp' for writing
+12:38:00.092 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:38:00.092 SegmentComplete=video:1 Index=664 Start=1992.025359 End=1994.994995 Duration=2.969636 offset_pts=0 start_pts=1992025359 Frames=89 filename=8E2B07_s3_664.vtt
+12:38:00.092 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_665.vtt.tmp' for writing
+12:38:00.152 frame= 3458 fps=144 q=29.0 size=   11128kB time=00:33:25.50 bitrate=   0.0kbits/s throttle=off speed=3.84e+11x    
+12:38:00.303 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:38:00.303 SegmentComplete=video:1 Index=665 Start=1995.028362 End=1997.997998 Duration=2.969636 offset_pts=0 start_pts=1995028362 Frames=90 filename=8E2B07_s2_665.vtt
+12:38:00.303 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_666.vtt.tmp' for writing
+12:38:00.304 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:38:00.304 SegmentComplete=video:1 Index=666 Start=1998.031365 End=2001.001001 Duration=2.969636 offset_pts=0 start_pts=1998031365 Frames=90 filename=8E2B07_s2_666.vtt
+12:38:00.304 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_667.vtt.tmp' for writing
+12:38:00.304 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:38:00.304 SegmentComplete=video:1 Index=667 Start=2001.001001 End=2004.004004 Duration=3.003003 offset_pts=0 start_pts=2001001001 Frames=90 filename=8E2B07_s2_667.vtt
+12:38:00.304 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_668.vtt.tmp' for writing
+12:38:00.304 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:38:00.305 SegmentComplete=video:1 Index=665 Start=1995.028362 End=1997.997998 Duration=2.969636 offset_pts=0 start_pts=1995028362 Frames=90 filename=8E2B07_s3_665.vtt
+12:38:00.305 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_666.vtt.tmp' for writing
+12:38:00.305 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:38:00.305 SegmentComplete=video:1 Index=666 Start=1998.031365 End=2001.001001 Duration=2.969636 offset_pts=0 start_pts=1998031365 Frames=90 filename=8E2B07_s3_666.vtt
+12:38:00.305 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_667.vtt.tmp' for writing
+12:38:00.305 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:38:00.305 SegmentComplete=video:1 Index=667 Start=2001.001001 End=2004.004004 Duration=3.003003 offset_pts=0 start_pts=2001001001 Frames=90 filename=8E2B07_s3_667.vtt
+12:38:00.305 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_668.vtt.tmp' for writing
+12:38:00.422 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:38:00.426 SegmentComplete=video:0 Index=668 Start=2004.135467 End=2007.138467 Duration=3.003000 offset_pts=0 start_pts=2004135467 Frames=90 filename=8E2B07_668.ts
+12:38:00.426 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07_669.ts.tmp' for writing
+12:38:00.479 
+
+[q] command received. Exiting.
+
+12:38:00.489 12:38:00.489 [segment @ 0x278cc80] Opening '/config/transcoding-temp/8E2B07.m3u8.tmp' for writing
+12:38:00.490 SegmentComplete=video:0 Index=669 Start=2007.138467 End=2008.306300 Duration=1.167833 offset_pts=0 start_pts=2007138467 Frames=35 filename=8E2B07_669.ts
+12:38:00.490 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:38:00.490 SegmentComplete=video:1 Index=668 Start=2004.004004 End=2007.007007 Duration=3.003003 offset_pts=0 start_pts=2004004004 Frames=90 filename=8E2B07_s2_668.vtt
+12:38:00.490 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2_669.vtt.tmp' for writing
+12:38:00.490 [segment @ 0x24223c0] Opening '/config/transcoding-temp/8E2B07_s2.m3u8.tmp' for writing
+12:38:00.490 SegmentComplete=video:1 Index=669 Start=2007.007007 End=2008.475142 Duration=1.468135 offset_pts=0 start_pts=2007007007 Frames=44 filename=8E2B07_s2_669.vtt
+12:38:00.490 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:38:00.490 SegmentComplete=video:1 Index=668 Start=2004.004004 End=2007.007007 Duration=3.003003 offset_pts=0 start_pts=2004004004 Frames=90 filename=8E2B07_s3_668.vtt
+12:38:00.490 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3_669.vtt.tmp' for writing
+12:38:00.491 [segment @ 0x26b8f80] Opening '/config/transcoding-temp/8E2B07_s3.m3u8.tmp' for writing
+12:38:00.491 SegmentComplete=video:1 Index=669 Start=2007.007007 End=2008.475142 Duration=1.468135 offset_pts=0 start_pts=2007007007 Frames=44 filename=8E2B07_s3_669.vtt
+12:38:00.491 frame= 3545 fps=145 q=-1.0 Lsize=   11498kB time=00:33:28.54 bitrate=   0.0kbits/s throttle=off speed=3.78e+11x    
+12:38:00.491 video:174977kB audio:3708kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+    Last message repeated 1 times
+12:38:00.494 EXIT
+12:38:00.494 [libx264 @ 0x241de80] frame I:40    Avg QP:20.05  size: 19637
+12:38:00.494 [libx264 @ 0x241de80] frame P:921   Avg QP:23.87  size:  5151
+12:38:00.494 [libx264 @ 0x241de80] frame B:2584  Avg QP:28.14  size:   947
+12:38:00.494 [libx264 @ 0x241de80] consecutive B-frames:  2.0%  2.2%  0.9% 94.9%
+12:38:00.494 [libx264 @ 0x241de80] mb I  I16..4: 25.7%  0.0% 74.3%
+12:38:00.494 [libx264 @ 0x241de80] mb P  I16..4:  9.5%  0.0%  0.0%  P16..4: 58.7%  0.0%  0.0%  0.0%  0.0%    skip:31.8%
+12:38:00.494 [libx264 @ 0x241de80] mb B  I16..4:  0.6%  0.0%  0.0%  B16..8: 20.3%  0.0%  0.0%  direct: 3.7%  skip:75.4%  L0:35.5% L1:45.5% BI:19.0%
+12:38:00.494 [libx264 @ 0x241de80] coded y,uvDC,uvAC intra: 46.9% 57.0% 20.3% inter: 7.9% 6.7% 0.1%
+12:38:00.494 [libx264 @ 0x241de80] i16 v,h,dc,p: 34% 26% 15% 24%
+12:38:00.494 [libx264 @ 0x241de80] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 30% 20% 10%  9%  6%  6%  5%  6%  7%
+12:38:00.494 [libx264 @ 0x241de80] i8c dc,h,v,p: 34% 25% 28% 13%
+12:38:00.494 [libx264 @ 0x241de80] Weighted P-Frames: Y:1.5% UV:0.2%
+12:38:00.494 [libx264 @ 0x241de80] kb/s:539.44
+12:38:00.499 
+
+======= ExtraData
+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

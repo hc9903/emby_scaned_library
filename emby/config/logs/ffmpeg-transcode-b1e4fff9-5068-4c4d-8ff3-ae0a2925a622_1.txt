@@ -1,0 +1,185 @@
+2020-05-22 12:07:44.238
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/808/hls1/main/0.ts?DeviceId=0939de9f-ad24-4206-b247-0dafb526de65&MediaSourceId=7d6ec28e0a9188328e4314b174455d4f&PlaySessionId=45e62053d67546d78b15858dac57a6cb&api_key=b24b9e0ee12b43b4b0d434c8e5187ccc&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=1389000&AudioBitrate=256000&AudioStreamIndex=1&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=ContainerBitrateExceedsLimit
+
+{"Protocol":"File","Id":"7d6ec28e0a9188328e4314b174455d4f","Path":"/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170129181455.m2ts","Type":"Default","Container":"mpegts","Size":932610048,"Name":"bhd1080.com@20170129181455","IsRemote":false,"RunTimeTicks":3318400000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"h264","CodecTag":"HDMV","TimeBase":"1/90000","CodecTimeBase":"1001/60000","VideoRange":"SDR","DisplayTitle":"1080i H264","NalLengthSize":"0","IsInterlaced":true,"IsAVC":false,"BitRate":22483366,"BitDepth":8,"RefFrames":1,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"AverageFrameRate":29.97003,"RealFrameRate":59.94006,"Profile":"High","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p","Level":40,"IsAnamorphic":false},{"Codec":"ac3","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"Dolby Digital stereo","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":256000,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"Type":"Subtitle","Index":2,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":22483366,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for guest
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: h264, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+Warning: No filter behavior available for filter yadif
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    Deinterlace                              >> False                False                                                         
+Info    Scaling                                  >> False                False                                                         
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    h264                 >> -            yuv420p      yuv420p      >> yadif
+Info    yadif                >> -            yuv420p      yuv420p      >> scale
+Info    scale                >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -f mpegts -i file:"/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170129181455.m2ts" -threads 0 -map 0:0 -map 0:1 -sn -c:v:0 libx264 -filter_complex "[0:0]yadif=0:-1:0,scale=trunc(min(max(iw\,ih*dar)\,720)/2)*2:trunc(ow/dar/2)*2" -pix_fmt yuv420p  -maxrate 1389000 -bufsize 2778000 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 90 -keyint_min:v:0 90 -sc_threshold:v:0 0  -copyts -vsync -1 -codec:a:0 libmp3lame -disposition:a:0 default -ac:a:0 2 -ab:a:0 192000  -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 0 -segment_list "/config/transcoding-temp/F66CF9.m3u8" -y "/config/transcoding-temp/F66CF9_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-b1e4fff9-5068-4c4d-8ff3-ae0a2925a622_1graph.txt -copyts -start_at_zero -f mpegts -c:v:0 h264 -i "/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170129181455.m2ts" -filter_complex "[0:0]yadif@f1=mode=send_frame:parity=auto:deint=all,scale@f2=w=720:h=404[f2_out0]" -map [f2_out0] -map 0:1 -sn -c:v:0 libx264 -g:v:0 90 -maxrate:v:0 1389000 -bufsize:v:0 2778000 -sc_threshold:v:0 0 -keyint_min:v:0 90 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 3.1 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 2 -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/F66CF9.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 0 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/F66CF9_%d.ts"
+
+12:07:44.266 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+12:07:44.266   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+12:07:44.266 Execution Date: 2020-05-22 12:07:44
+12:07:50.249 Input #0, mpegts, from '/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170129181455.m2ts':
+12:07:50.249   Duration: 00:05:31.84, start: 1.033367, bitrate: 22483 kb/s
+12:07:50.249   Program 1 
+12:07:50.249     Stream #0:0[0x1011]: Video: h264 (High) (HDMV / 0x564D4448), yuv420p(top first), 1920x1080 [SAR 1:1 DAR 16:9], Level 40, 29.97 fps, 59.94 tbr, 90k tbn, 59.94 tbc, Start-Time 1.100s
+12:07:50.249     Stream #0:1[0x1100]: Audio: ac3 (AC-3 / 0x332D4341), 48000 Hz, stereo, fltp, 256 kb/s, Start-Time 1.033s
+12:07:50.250     Stream #0:2[0x1200]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), 1920x1080, Start-Time 1.033s
+12:07:50.251 Stream mapping:
+12:07:50.251   Stream #0:0 (h264) -> yadif (graph 0)
+12:07:50.251   scale (graph 0) -> Stream #0:0 (libx264)
+12:07:50.251   Stream #0:1 -> #0:1 (ac3 (native) -> mp3 (libmp3lame))
+12:07:50.251 Press [q] to stop, [?] for help
+12:07:50.281 [libx264 @ 0xee3300] using SAR=404/405
+12:07:50.282 [libx264 @ 0xee3300] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+12:07:50.283 [libx264 @ 0xee3300] profile Main, level 3.1, 4:2:0, 8-bit
+12:07:50.283 [libx264 @ 0xee3300] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=90 keyint_min=46 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=1389 vbv_bufsize=2778 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+12:07:50.284 Output #0, segment, to '/config/transcoding-temp/F66CF9_%d.ts':
+12:07:50.284   Metadata:
+12:07:50.284     encoder         : Lavf58.35.100
+12:07:50.284     Stream #0:0: Video: h264 (libx264), yuv420p, 720x404 [SAR 404:405 DAR 16:9], q=-1--1, 29.97 fps, 90k tbn, 29.97 tbc
+12:07:50.284     Metadata:
+12:07:50.284       encoder         : Lavc58.62.100 libx264
+12:07:50.284     Side data:
+12:07:50.284       cpb: bitrate max/min/avg: 1389000/0/0 buffer size: 2778000 vbv_delay: N/A
+12:07:50.284     Stream #0:1: Audio: mp3 (libmp3lame), 48000 Hz, stereo, fltp, 192 kb/s (default)
+12:07:50.284     Metadata:
+12:07:50.284       encoder         : Lavc58.62.100 libmp3lame
+12:07:51.260 frame=   53 fps= 53 q=29.0 size=     254kB time=00:00:01.65 bitrate=N/A throttle=off speed=   0x    
+12:07:51.769 frame=  105 fps= 70 q=29.0 size=     634kB time=00:00:03.24 bitrate=3277.4kbits/s throttle=off speed=1.05x    
+12:07:51.822 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9.m3u8.tmp' for writing
+12:07:51.822 SegmentComplete=video:0 Index=0 Start=0.000000 End=3.003000 Duration=3.003000 offset_pts=0 start_pts=0 Frames=90 filename=F66CF9_0.ts
+12:07:51.822 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9_1.ts.tmp' for writing
+12:07:52.266 frame=  163 fps= 81 q=29.0 size=     945kB time=00:00:05.04 bitrate=2287.4kbits/s throttle=off speed=1.68x    
+12:07:52.580 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9.m3u8.tmp' for writing
+12:07:52.580 SegmentComplete=video:0 Index=1 Start=3.003000 End=6.006000 Duration=3.003000 offset_pts=0 start_pts=3003000 Frames=90 filename=F66CF9_1.ts
+12:07:52.580 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9_2.ts.tmp' for writing
+12:07:52.767 frame=  224 fps= 89 q=29.0 size=    1184kB time=00:00:06.98 bitrate=1820.2kbits/s throttle=off speed=2.12x    
+12:07:53.272 frame=  285 fps= 94 q=29.0 size=    1367kB time=00:00:09.04 bitrate=1515.3kbits/s throttle=off speed=2.45x    
+12:07:53.315 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9.m3u8.tmp' for writing
+12:07:53.315 SegmentComplete=video:0 Index=2 Start=6.006000 End=9.009000 Duration=3.003000 offset_pts=0 start_pts=6006000 Frames=90 filename=F66CF9_2.ts
+12:07:53.315 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9_3.ts.tmp' for writing
+12:07:53.780 frame=  334 fps= 95 q=29.0 size=    1550kB time=00:00:10.60 bitrate=1418.7kbits/s throttle=off speed=2.54x    
+12:07:54.261 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9.m3u8.tmp' for writing
+12:07:54.261 SegmentComplete=video:0 Index=3 Start=9.009000 End=12.012000 Duration=3.003000 offset_pts=0 start_pts=9009000 Frames=90 filename=F66CF9_3.ts
+12:07:54.261 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9_4.ts.tmp' for writing
+12:07:54.287 frame=  383 fps= 95 q=29.0 size=    1719kB time=00:00:12.26 bitrate=1327.2kbits/s throttle=off speed=2.63x    
+12:07:54.796 frame=  427 fps= 94 q=29.0 size=    1842kB time=00:00:13.75 bitrate=1247.5kbits/s throttle=off speed=2.66x    
+12:07:55.301 frame=  460 fps= 91 q=29.0 size=    1949kB time=00:00:14.83 bitrate=1211.9kbits/s throttle=off speed=2.61x    
+12:07:55.483 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9.m3u8.tmp' for writing
+12:07:55.485 SegmentComplete=video:0 Index=4 Start=12.012000 End=15.015000 Duration=3.003000 offset_pts=0 start_pts=12012000 Frames=90 filename=F66CF9_4.ts
+12:07:55.485 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9_5.ts.tmp' for writing
+12:07:55.806 frame=  492 fps= 89 q=29.0 size=    2072kB time=00:00:15.96 bitrate=1186.7kbits/s throttle=off speed=2.58x    
+12:07:56.310 frame=  521 fps= 86 q=29.0 size=    2161kB time=00:00:16.92 bitrate=1159.8kbits/s throttle=off speed=2.52x    
+12:07:56.818 frame=  556 fps= 85 q=26.0 size=    2260kB time=00:00:18.02 bitrate=1131.3kbits/s throttle=off speed=2.49x    
+12:07:56.858 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9.m3u8.tmp' for writing
+12:07:56.858 SegmentComplete=video:0 Index=5 Start=15.015000 End=18.018000 Duration=3.003000 offset_pts=0 start_pts=15015000 Frames=90 filename=F66CF9_5.ts
+12:07:56.858 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9_6.ts.tmp' for writing
+12:07:57.313 frame=  615 fps= 87 q=29.0 size=    2463kB time=00:00:19.99 bitrate=1100.5kbits/s throttle=off speed= 2.6x    
+12:07:57.604 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9.m3u8.tmp' for writing
+12:07:57.605 SegmentComplete=video:0 Index=6 Start=18.018000 End=21.021000 Duration=3.003000 offset_pts=0 start_pts=18018000 Frames=90 filename=F66CF9_6.ts
+12:07:57.605 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9_7.ts.tmp' for writing
+12:07:57.821 frame=  677 fps= 89 q=29.0 size=    2671kB time=00:00:22.05 bitrate=1072.4kbits/s throttle=off speed=2.69x    
+12:07:58.329 frame=  739 fps= 91 q=29.0 size=    2859kB time=00:00:24.14 bitrate=1041.6kbits/s throttle=off speed=2.78x    
+12:07:58.340 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9.m3u8.tmp' for writing
+12:07:58.340 SegmentComplete=video:0 Index=7 Start=21.021000 End=24.024000 Duration=3.003000 offset_pts=0 start_pts=21021000 Frames=90 filename=F66CF9_7.ts
+12:07:58.340 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9_8.ts.tmp' for writing
+12:07:58.830 frame=  803 fps= 94 q=29.0 size=    3084kB time=00:00:26.28 bitrate=1026.2kbits/s throttle=off speed=2.87x    
+12:07:59.077 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9.m3u8.tmp' for writing
+12:07:59.078 SegmentComplete=video:0 Index=8 Start=24.024000 End=27.027000 Duration=3.003000 offset_pts=0 start_pts=24024000 Frames=90 filename=F66CF9_8.ts
+12:07:59.078 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9_9.ts.tmp' for writing
+12:07:59.335 frame=  861 fps= 95 q=29.0 size=    3291kB time=00:00:28.24 bitrate=1013.9kbits/s throttle=off speed=2.93x    
+12:07:59.838 frame=  920 fps= 96 q=29.0 size=    3489kB time=00:00:30.16 bitrate=1002.5kbits/s throttle=off speed=2.97x    
+12:07:59.843 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9.m3u8.tmp' for writing
+12:07:59.844 SegmentComplete=video:0 Index=9 Start=27.027000 End=30.030000 Duration=3.003000 offset_pts=0 start_pts=27027000 Frames=90 filename=F66CF9_9.ts
+12:07:59.844 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9_10.ts.tmp' for writing
+12:08:00.345 frame=  981 fps= 97 q=29.0 size=    3697kB time=00:00:32.20 bitrate= 991.3kbits/s throttle=off speed=3.03x    
+12:08:00.583 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9.m3u8.tmp' for writing
+12:08:00.584 SegmentComplete=video:0 Index=10 Start=30.030000 End=33.033000 Duration=3.003000 offset_pts=0 start_pts=30030000 Frames=90 filename=F66CF9_10.ts
+12:08:00.584 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9_11.ts.tmp' for writing
+12:08:00.853 frame= 1043 fps= 98 q=29.0 size=    3915kB time=00:00:34.29 bitrate= 982.5kbits/s throttle=off speed=3.08x    
+12:08:01.318 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9.m3u8.tmp' for writing
+12:08:01.318 SegmentComplete=video:0 Index=11 Start=33.033000 End=36.036000 Duration=3.003000 offset_pts=0 start_pts=33033000 Frames=90 filename=F66CF9_11.ts
+12:08:01.318 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9_12.ts.tmp' for writing
+12:08:01.354 frame= 1105 fps=100 q=29.0 size=    4141kB time=00:00:36.43 bitrate= 975.5kbits/s throttle=off speed=3.13x    
+12:08:01.857 frame= 1166 fps=100 q=29.0 size=    4339kB time=00:00:38.44 bitrate= 966.2kbits/s throttle=off speed=3.17x    
+12:08:02.067 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9.m3u8.tmp' for writing
+12:08:02.067 SegmentComplete=video:0 Index=12 Start=36.036000 End=39.039000 Duration=3.003000 offset_pts=0 start_pts=36036000 Frames=90 filename=F66CF9_12.ts
+12:08:02.068 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9_13.ts.tmp' for writing
+12:08:02.358 frame= 1226 fps=101 q=29.0 size=    4537kB time=00:00:40.39 bitrate= 959.5kbits/s throttle=off speed= 3.2x    
+12:08:02.809 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9.m3u8.tmp' for writing
+12:08:02.810 SegmentComplete=video:0 Index=13 Start=39.039000 End=42.042000 Duration=3.003000 offset_pts=0 start_pts=39039000 Frames=90 filename=F66CF9_13.ts
+12:08:02.810 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9_14.ts.tmp' for writing
+12:08:02.858 frame= 1286 fps=102 q=29.0 size=    4731kB time=00:00:42.48 bitrate= 949.4kbits/s throttle=off speed=3.24x    
+12:08:03.359 frame= 1347 fps=103 q=29.0 size=    4900kB time=00:00:44.47 bitrate= 937.6kbits/s throttle=off speed=3.27x    
+12:08:03.553 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9.m3u8.tmp' for writing
+12:08:03.553 SegmentComplete=video:0 Index=14 Start=42.042000 End=45.045000 Duration=3.003000 offset_pts=0 start_pts=42042000 Frames=90 filename=F66CF9_14.ts
+12:08:03.553 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9_15.ts.tmp' for writing
+12:08:03.869 frame= 1408 fps=103 q=29.0 size=    5097kB time=00:00:46.48 bitrate= 931.3kbits/s throttle=off speed=3.29x    
+12:08:04.274 
+
+[q] command received. Exiting.
+
+12:08:04.277 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9.m3u8.tmp' for writing
+12:08:04.277 SegmentComplete=video:0 Index=15 Start=45.045000 End=48.048000 Duration=3.003000 offset_pts=0 start_pts=45045000 Frames=90 filename=F66CF9_15.ts
+12:08:04.277 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9_16.ts.tmp' for writing
+12:08:04.289 12:08:04.289 [segment @ 0xee1c00] Opening '/config/transcoding-temp/F66CF9.m3u8.tmp' for writing
+12:08:04.289 SegmentComplete=video:0 Index=16 Start=48.048000 End=48.648600 Duration=0.600600 offset_pts=0 start_pts=48048000 Frames=18 filename=F66CF9_16.ts
+12:08:04.289 frame= 1458 fps=104 q=-1.0 Lsize=    5306kB time=00:00:48.54 bitrate= 927.0kbits/s throttle=off speed=3.34x    
+12:08:04.289 video:4175kB audio:1131kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+12:08:04.290 EXIT
+12:08:04.293 [libx264 @ 0xee3300] frame I:17    Avg QP:20.75  size: 28022
+12:08:04.293 [libx264 @ 0xee3300] frame P:409   Avg QP:24.74  size:  7098
+12:08:04.293 [libx264 @ 0xee3300] frame B:1032  Avg QP:29.76  size:   868
+12:08:04.293 [libx264 @ 0xee3300] consecutive B-frames:  4.5%  2.7%  1.6% 91.1%
+12:08:04.293 [libx264 @ 0xee3300] mb I  I16..4: 17.6%  0.0% 82.4%
+12:08:04.293 [libx264 @ 0xee3300] mb P  I16..4:  7.8%  0.0%  0.0%  P16..4: 65.4%  0.0%  0.0%  0.0%  0.0%    skip:26.8%
+12:08:04.293 [libx264 @ 0xee3300] mb B  I16..4:  0.3%  0.0%  0.0%  B16..8: 15.5%  0.0%  0.0%  direct: 4.3%  skip:79.9%  L0:29.9% L1:44.1% BI:25.9%
+12:08:04.293 [libx264 @ 0xee3300] coded y,uvDC,uvAC intra: 60.3% 61.5% 25.6% inter: 10.8% 6.9% 0.4%
+12:08:04.293 [libx264 @ 0xee3300] i16 v,h,dc,p: 30% 29% 19% 22%
+12:08:04.293 [libx264 @ 0xee3300] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 21% 20% 10% 10%  7%  7%  8%  9% 10%
+12:08:04.293 [libx264 @ 0xee3300] i8c dc,h,v,p: 36% 27% 24% 13%
+12:08:04.293 [libx264 @ 0xee3300] Weighted P-Frames: Y:0.0% UV:0.0%
+12:08:04.293 [libx264 @ 0xee3300] kb/s:702.97
+12:08:04.296 
+
+======= ExtraData
+H4sIAAAAAAAAA9VaW2/byBX+KwSBvskSSUm2JECAb3HWaNwalpM+BAExIofSwLyBM1SkXfghixa7W2D72sdFCxToW7foBUVR9M8ETtB/0TNDjkRyKEu+bXaDPEijM5fzne+c+eYkX+hHURCg0NUHX+gnxGc4oaWPr+VnMYoRSxP8CxRgfaAvkEs8vSFHLxcxH31FXBzlUxr6L2NGolAsmX18hfwUZ+vmywSRi8FS/DBiCQknMEhx6Npewi2uG0vTGCWELRRjlLKoaOZiEjLVyvf16zfX143coVPwWfdMsDsN45SdkzA71lEUhthh2B1FaeJgYWYMDGHn4rk+MGCVxnpYqIN8/HBY3ioO7FlG0cupYtAxOjUeWlt5+Noz7Shlxpuyn+Cp/tyPxsjf4shqZFiSlgMI48yeJCieUtsjvhr4lhOFHpm0/GhCW54XxHiywxIUUgdosjM2ccfzvP5O19jt7XScjrvT87z2DsIGsvpWF+1alm2K9ZtszopbO1G8YHTjCSlDCbMRsz/HSbTGmoMiEM28P8ZBOq9jAj+82LJMBWl/Gw1EFMUeMhgyiEnEIify1d2mjMXKXuU5G3fcIsieAkrupoAFBjEKJC48ZjW4TK3dTn2CyCmboaEHkPTLHTzkU9zQz7BL0M8Jr2bZehsWamRW2aG5xREs5+Sn/Cw7pbAQ46uTi7ELFE643ej4AobOyRz7J1ESIJYt5EeJ/Kov0lnHMnh0noVwwhCGXoY0xg7xCHZ14c9pCBnrIwe+DzjNGvohYReI8S0sUzsbE9biXIJReo4TsZ8+MC0xcoxjNtUHvYZ+gb0TXjbBQVO6Rz7ni5h9y5ibRo9XsoMZTtAEC0u5R7+/ZxjtlmnwPzpfCfl1Bt389wPuAD8hifjqu4M+hyGJRFoDfGTCK9QLPOPnhNqki6iFKIiSeEqcZdBWBM/iUOQDzBHQX5IAHyIq3DAMs7Wbn6E43urng6f0GHso9dlqCwqhEMjmAwe+f4kmggT812dzwD5Efv77Na8Ha9mLnLZC3oPUJfcmbxbtInfFchu5K6zquXtwxM8oDCR1s2MfTRHUfh+WsJZfXqAFVH4wyT6MAAuBfIF/XaNpaFeSgiMUxL6kxSjp9HLcs0CalUBKZ5RAtuTEJ4ziRqhH6ZgRJi6i29GWhmuKxfHZK/v8+cgevTy8PL188UxfzVgWDzeY2fGE2nS15yl9zi8r4vBjZ6cTOVeTszm8VgXeggNVhI2W+YTowujLhKd2yzD43yO4YLXI0z7++g8f//ifD/94d/PVv29+8+ebP/2+efO77z5+8/WHv3x7869/ws8fvv/7zbfftz5+/df/ffe39+/++/7L375/92W91etu9/nhm9Z46nIYmk4U7FuGuWeYVt/smZ1utxlY4vKB+KVseSef1d/IFE8CLLRhOX/PNl7IK4GQLWF7WXFfdxk2lAk+oaq5lDtS4sDoDsNB3DrZ3T066TeDdtpbt5jN+OGVA6yZwYAGinG7zjKTQGEajAUm5RklCQopRGbETZFvTzGCDLPBDyj/6jTBmeLUt6Dk8Z1nySNmszlQayXadmomQHPbxT5Spau45oySu2gWEdcO8QTuvBlsr6pJl1A09sWVfotgkiwsGAUotgPMkIsYUux3zKqpM0WxeJ/VmfJqleXCerGYa+9yFlQmbbzHimKv/k1hLd8Uz8I116lPxvO1elDO2iqWcYIpVlMMpM7CQ5SV3yFR7etjykVLwc4X6kXJmmYpIPz4UVzDBqjzAR4agwDbCReLw84gcWw/iq4QJ/7Q5D8N4S4ahBGENIkCBCQY9OY912EwD567UNq528MwCkuJ4CQqrax2zvu7yeDlmhNlxb5RJt484Xd+1cps9/qVTBmnHuU3mHLEvb1exZQ6NptC5KaR795eba7wgr8eAxJuOGhM5rYXqEyQMlygtO6hb24gaxC3fRSoySNkzjZ8VUK0We2tKtBYRR8kQqVMOSrupfYIoXFEBbHUAparAg7R6oK//ZKyf+Y25fsvazwITSMckZ/Ec5A6CRGO8dpgDIw3ooO075lD3gMarno+g6zRM+SNnYHo5gyR7zdEZ2Xfs4Zvh3uWMZgOO0anWGPqm1blfY/5atlDS2NTrBH+QNZIAK+hpl561r8g4VXxFa0rgtko6mn4Ajuxc+Quu1AZlHAu9R34GYZKA0Nc1ORs4HtxDhplgc2/HlzwQAtqZlyVGcvR1YzcCQ8KiEZFTdayhlVmXHekXxGXPxg5eXicix29fdET4yOWvmryFcVVAZlseDtoiv2xfdGW+sEBKzhYQuC63NArU2bED1wgy4yXVI3XNw2FbitKNMgPuGVYZsOppGXq8KfHqAJAdyVPIa6SPLIV+njkWarueyAD1WJLYMASrLtVcAoe5hDsbSTPYep5OMk5I4obbXDaaAG6EqQKNOQ4mFIy5iSLBIc8sRiIPBKWKLQCe1PmywiMxfaPGoICRX50BW/7pN4mLjN4laBCWOB+4g/cVYS0rNP8CbL8wVxeJtLGNN8rZTk4YBu2SjEKXpdodjv8R8WKWaiqgDQoXYnyskWqxbzdmVdV+pMEvFA87gj5MlQS8eXA4yX1KqyflIzlsgoQCP1Y+SeQB0T9kQvz9nWOv0Pzl1gVKI6BWVBaMsrblPh2scTfUkQrN/bDefN0lXRrnm0BqdQfEtJy8WpXi1cFwBIZG+v+TbwMxjmiNCtdgt9aGgJZ4OnvSs8jgfGdK1i7vnW/ajXIpv269JUYbrh8RUu+7tK1TZuEAN5WyrBYvc5RQrFrozD1/dK9IUbuXsTuhESpvthZ+G8TLg9ASfFzhcU2QgTxJsBjC8Ri0Jaw31cS3gd4BZQfgp6PCPxTKcBPmc5KMtwpnVfTKoR6sADMArFOAN5X+n1KpBX23wlpJU5LwO+r/+6TwU9aMxUXi6lbUX/mU6i/B1XdpVKBGrBYAwQPV97eLYFjVnRetVK3S5W6VtkZA7NCnKeQdY9VHh8JrHI2tJXyUy/hsv/Jdv1/YFGA7+0oAAA=

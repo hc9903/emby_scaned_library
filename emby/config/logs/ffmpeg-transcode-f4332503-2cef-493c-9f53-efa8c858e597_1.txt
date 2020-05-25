@@ -1,0 +1,819 @@
+2020-05-22 14:25:28.775
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome Android
+
+http://localhost:8096/videos/10319/hls1/main/2082.ts?DeviceId=d14043e9-28c3-4164-89bf-6ba994348754&MediaSourceId=356bb811d390990d0ea86a2b882b8ebd&PlaySessionId=812d9effa2864603b7eaa41183616ee5&api_key=ed5abae5d80a4b64ad808f55349b937f&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=59616000&AudioBitrate=384000&AudioStreamIndex=1&SubtitleStreamIndex=4&SubtitleMethod=Encode&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=False&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=SubtitleCodecNotSupported
+
+{"Protocol":"File","Id":"356bb811d390990d0ea86a2b882b8ebd","Path":"/00/00/IMDB Top250/246.加勒比海盗：黑珍珠号的诅咒.Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS/Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS.mkv","Type":"Default","Container":"mkv","Size":9118586887,"Name":"Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS","IsRemote":false,"RunTimeTicks":85959210000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"hevc","ColorPrimaries":"bt709","TimeBase":"1/1000","CodecTimeBase":"1001/24000","VideoRange":"SDR","DisplayTitle":"1080p HEVC","IsInterlaced":false,"BitRate":8486431,"BitDepth":10,"RefFrames":1,"IsDefault":true,"IsForced":false,"Height":800,"Width":1920,"AverageFrameRate":23.976025,"RealFrameRate":23.976025,"Profile":"Main 10","Type":"Video","AspectRatio":"2.40:1","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p10le","Level":120,"IsAnamorphic":false},{"Codec":"ac3","Language":"eng","TimeBase":"1/1000","CodecTimeBase":"1/48000","DisplayTitle":"English Dolby Digital 5.1 (Default)","DisplayLanguage":"English","IsInterlaced":false,"ChannelLayout":"5.1","BitRate":640000,"Channels":6,"SampleRate":48000,"IsDefault":true,"IsForced":false,"Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"1/48000","DisplayTitle":"Chinese Dolby Digital 5.1","DisplayLanguage":"Chinese","IsInterlaced":false,"ChannelLayout":"5.1","BitRate":448000,"Channels":6,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":2,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"eng","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"English (Default PGSSUB)","DisplayLanguage":"English","IsInterlaced":false,"IsDefault":true,"IsForced":false,"Type":"Subtitle","Index":3,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":4,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":5,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":6,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":7,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":8,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":9,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":10,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":8486431,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for 1124721976
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: hevc, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    ColorConversion                          >> False                False                                                         
+Info    SubtitleOverlay                          >> False                False                                                         
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    hevc                 >> -            yuv420p10    yuv420p10    >> format
+Info    format               >> -            yuv420p      yuv420p      >> overlay
+Info    overlay              >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -ss 01:44:06.000  -f matroska -i file:"/00/00/IMDB Top250/246.加勒比海盗：黑珍珠号的诅咒.Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS/Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS.mkv" -threads 0 -map 0:0 -map 0:1 -c:v:0 libx264 -copyts -filter_complex "[0:4]scale=1920:800:force_original_aspect_ratio=decrease[sub];[0:0][sub]overlay=(W-w)/2:(H-h):repeatlast=0" -pix_fmt yuv420p  -maxrate 16972862 -bufsize 33945724 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 72 -keyint_min:v:0 72 -sc_threshold:v:0 0  -vsync -1 -codec:a:0 libmp3lame -metadata:s:a:0 language=eng -disposition:a:0 default -ac:a:0 2 -ab:a:0 192000 -filter:a:0 "volume=2" -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 2082 -segment_list "/config/transcoding-temp/F71E1F.m3u8" -y "/config/transcoding-temp/F71E1F_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-f4332503-2cef-493c-9f53-efa8c858e597_1graph.txt -copyts -start_at_zero -f matroska,webm -ss 01:44:06.000 -c:v:0 hevc -i "/00/00/IMDB Top250/246.加勒比海盗：黑珍珠号的诅咒.Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS/Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS.mkv" -filter_complex "[0:0]format@f1=pix_fmts=yuv420p[f1_out0];[0:4]scale@f2=width=1920:height=-2:force_original_aspect_ratio=decrease[f2_out0];[f1_out0][f2_out0]overlay@f3=x=(W-w)/2:y=(H-h):repeatlast=0[f3_out0]" -map [f3_out0] -map 0:1 -sn -c:v:0 libx264 -g:v:0 72 -maxrate:v:0 16972862 -bufsize:v:0 33945724 -sc_threshold:v:0 0 -keyint_min:v:0 72 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 4.0 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 2 -metadata:s:a:0 language=eng -filter:a:0 "volume=2" -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/F71E1F.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 2082 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/F71E1F_%d.ts"
+
+14:25:28.807 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+14:25:28.807   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+14:25:28.807 Execution Date: 2020-05-22 14:25:28
+14:25:32.273 [matroska,webm @ 0x1a36a00] Could not find codec parameters for stream 3 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+14:25:32.273 [matroska,webm @ 0x1a36a00] Could not find codec parameters for stream 4 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+14:25:32.273 [matroska,webm @ 0x1a36a00] Could not find codec parameters for stream 5 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+14:25:32.273 [matroska,webm @ 0x1a36a00] Could not find codec parameters for stream 6 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+14:25:32.273 [matroska,webm @ 0x1a36a00] Could not find codec parameters for stream 7 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+14:25:32.273 [matroska,webm @ 0x1a36a00] Could not find codec parameters for stream 8 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+14:25:32.273 [matroska,webm @ 0x1a36a00] Could not find codec parameters for stream 9 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+14:25:32.273 [matroska,webm @ 0x1a36a00] Could not find codec parameters for stream 10 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+14:25:33.257 Input #0, matroska,webm, from '/00/00/IMDB Top250/246.加勒比海盗：黑珍珠号的诅咒.Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS/Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS.mkv':
+14:25:33.257   Metadata:
+14:25:33.257     encoder         : libebml v1.3.3 + libmatroska v1.4.4
+14:25:33.257     creation_time   : 2016-11-25T09:17:17.000000Z
+14:25:33.257   Duration: 02:23:15.92, start: 0.000000, bitrate: 8486 kb/s
+14:25:33.257     Stream #0:0: Video: hevc (Main 10), yuv420p10le(tv, unknown/bt709/unknown), 1920x800, SAR 1:1 DAR 12:5, Level 120, 23.98 fps, 23.98 tbr, 1k tbn, 23.98 tbc (default)
+14:25:33.258     Metadata:
+14:25:33.258       BPS             : 7273764
+14:25:33.258       BPS-eng         : 7273764
+14:25:33.258       DURATION        : 02:23:15.921000000
+14:25:33.258       DURATION-eng    : 02:23:15.921000000
+14:25:33.258       NUMBER_OF_FRAMES: 206096
+14:25:33.258       NUMBER_OF_FRAMES-eng: 206096
+14:25:33.258       NUMBER_OF_BYTES : 7815587640
+14:25:33.258       NUMBER_OF_BYTES-eng: 7815587640
+14:25:33.258     Stream #0:1(eng): Audio: ac3, 48000 Hz, 5.1(side), fltp, 640 kb/s (default)
+14:25:33.258     Metadata:
+14:25:33.258       BPS             : 640000
+14:25:33.258       BPS-eng         : 640000
+14:25:33.258       DURATION        : 02:23:14.912000000
+14:25:33.258       DURATION-eng    : 02:23:14.912000000
+14:25:33.258       NUMBER_OF_FRAMES: 268591
+14:25:33.258       NUMBER_OF_FRAMES-eng: 268591
+14:25:33.258       NUMBER_OF_BYTES : 687592960
+14:25:33.258       NUMBER_OF_BYTES-eng: 687592960
+14:25:33.258     Stream #0:2(chi): Audio: ac3, 48000 Hz, 5.1(side), fltp, 448 kb/s, Start-Time 0.024s
+14:25:33.258     Metadata:
+14:25:33.258       BPS             : 448000
+14:25:33.258       BPS-eng         : 448000
+14:25:33.258       DURATION        : 02:23:09.952000000
+14:25:33.258       DURATION-eng    : 02:23:09.952000000
+14:25:33.258       NUMBER_OF_FRAMES: 268436
+14:25:33.258       NUMBER_OF_FRAMES-eng: 268436
+14:25:33.258       NUMBER_OF_BYTES : 481037312
+14:25:33.258       NUMBER_OF_BYTES-eng: 481037312
+14:25:33.258     Stream #0:3(eng): Subtitle: hdmv_pgs_subtitle (default)
+14:25:33.258     Metadata:
+14:25:33.258       BPS             : 6793
+14:25:33.258       BPS-eng         : 6793
+14:25:33.258       DURATION        : 02:12:41.996000000
+14:25:33.258       DURATION-eng    : 02:12:41.996000000
+14:25:33.258       NUMBER_OF_FRAMES: 3848
+14:25:33.258       NUMBER_OF_FRAMES-eng: 3848
+14:25:33.258       NUMBER_OF_BYTES : 6761239
+14:25:33.258       NUMBER_OF_BYTES-eng: 6761239
+14:25:33.258     Stream #0:4(chi): Subtitle: hdmv_pgs_subtitle
+14:25:33.258     Metadata:
+14:25:33.258       BPS             : 53173
+14:25:33.258       BPS-eng         : 53173
+14:25:33.258       DURATION        : 02:15:11.478000000
+14:25:33.258       DURATION-eng    : 02:15:11.478000000
+14:25:33.258       NUMBER_OF_FRAMES: 3907
+14:25:33.258       NUMBER_OF_FRAMES-eng: 3907
+14:25:33.258       NUMBER_OF_BYTES : 53914058
+14:25:33.258       NUMBER_OF_BYTES-eng: 53914058
+14:25:33.258     Stream #0:5(chi): Subtitle: hdmv_pgs_subtitle
+14:25:33.258     Metadata:
+14:25:33.258       BPS             : 12921
+14:25:33.258       BPS-eng         : 12921
+14:25:33.258       DURATION        : 02:13:01.481000000
+14:25:33.258       DURATION-eng    : 02:13:01.481000000
+14:25:33.258       NUMBER_OF_FRAMES: 3104
+14:25:33.258       NUMBER_OF_FRAMES-eng: 3104
+14:25:33.258       NUMBER_OF_BYTES : 12891617
+14:25:33.258       NUMBER_OF_BYTES-eng: 12891617
+14:25:33.258     Stream #0:6(chi): Subtitle: hdmv_pgs_subtitle
+14:25:33.258     Metadata:
+14:25:33.258       BPS             : 12920
+14:25:33.258       BPS-eng         : 12920
+14:25:33.258       DURATION        : 02:13:01.481000000
+14:25:33.258       DURATION-eng    : 02:13:01.481000000
+14:25:33.258       NUMBER_OF_FRAMES: 3104
+14:25:33.258       NUMBER_OF_FRAMES-eng: 3104
+14:25:33.258       NUMBER_OF_BYTES : 12890630
+14:25:33.258       NUMBER_OF_BYTES-eng: 12890630
+14:25:33.258     Stream #0:7(chi): Subtitle: hdmv_pgs_subtitle
+14:25:33.258     Metadata:
+14:25:33.258       BPS             : 11075
+14:25:33.258       BPS-eng         : 11075
+14:25:33.258       DURATION        : 02:13:01.106000000
+14:25:33.258       DURATION-eng    : 02:13:01.106000000
+14:25:33.258       NUMBER_OF_FRAMES: 2396
+14:25:33.258       NUMBER_OF_FRAMES-eng: 2396
+14:25:33.258       NUMBER_OF_BYTES : 11049500
+14:25:33.258       NUMBER_OF_BYTES-eng: 11049500
+14:25:33.258     Stream #0:8(chi): Subtitle: hdmv_pgs_subtitle
+14:25:33.258     Metadata:
+14:25:33.258       BPS             : 11074
+14:25:33.258       BPS-eng         : 11074
+14:25:33.258       DURATION        : 02:13:01.106000000
+14:25:33.258       DURATION-eng    : 02:13:01.106000000
+14:25:33.258       NUMBER_OF_FRAMES: 2396
+14:25:33.258       NUMBER_OF_FRAMES-eng: 2396
+14:25:33.258       NUMBER_OF_BYTES : 11048738
+14:25:33.258       NUMBER_OF_BYTES-eng: 11048738
+14:25:33.258     Stream #0:9(chi): Subtitle: hdmv_pgs_subtitle
+14:25:33.258     Metadata:
+14:25:33.258       BPS             : 11402
+14:25:33.258       BPS-eng         : 11402
+14:25:33.258       DURATION        : 02:13:01.106000000
+14:25:33.258       DURATION-eng    : 02:13:01.106000000
+14:25:33.258       NUMBER_OF_FRAMES: 2396
+14:25:33.258       NUMBER_OF_FRAMES-eng: 2396
+14:25:33.258       NUMBER_OF_BYTES : 11376042
+14:25:33.258       NUMBER_OF_BYTES-eng: 11376042
+14:25:33.258     Stream #0:10(chi): Subtitle: hdmv_pgs_subtitle
+14:25:33.258     Metadata:
+14:25:33.258       BPS             : 11402
+14:25:33.258       BPS-eng         : 11402
+14:25:33.258       DURATION        : 02:13:01.106000000
+14:25:33.258       DURATION-eng    : 02:13:01.106000000
+14:25:33.258       NUMBER_OF_FRAMES: 2396
+14:25:33.258       NUMBER_OF_FRAMES-eng: 2396
+14:25:33.258       NUMBER_OF_BYTES : 11375296
+14:25:33.258       NUMBER_OF_BYTES-eng: 11375296
+14:25:33.260 Stream mapping:
+14:25:33.260   Stream #0:0 (hevc) -> format (graph 0)
+14:25:33.260   Stream #0:4 (pgssub) -> scale (graph 0)
+14:25:33.260   overlay (graph 0) -> Stream #0:0 (libx264)
+14:25:33.260   Stream #0:1 -> #0:1 (ac3 (native) -> mp3 (libmp3lame))
+14:25:33.260 Press [q] to stop, [?] for help
+14:25:33.984 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+14:25:34.071 [matroska,webm @ 0x1a36a00] sub2video: using 1920x800 canvas
+14:25:34.076 [libx264 @ 0x1bf0780] using SAR=1/1
+14:25:34.076 [libx264 @ 0x1bf0780] VBV buffer (33945) > level limit (25000)
+14:25:34.077 [libx264 @ 0x1bf0780] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+14:25:34.083 [libx264 @ 0x1bf0780] profile Main, level 4.0, 4:2:0, 8-bit
+14:25:34.085 [libx264 @ 0x1bf0780] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=72 keyint_min=37 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=16972 vbv_bufsize=33945 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+14:25:34.085 Output #0, segment, to '/config/transcoding-temp/F71E1F_%d.ts':
+14:25:34.085   Metadata:
+14:25:34.085     encoder         : Lavf58.35.100
+14:25:34.085     Stream #0:0: Video: h264 (libx264), yuv420p, 1920x800 [SAR 1:1 DAR 12:5], q=-1--1, 23.98 fps, 90k tbn, 23.98 tbc (default)
+14:25:34.085     Metadata:
+14:25:34.085       encoder         : Lavc58.62.100 libx264
+14:25:34.085     Side data:
+14:25:34.085       cpb: bitrate max/min/avg: 16972000/0/0 buffer size: 33945000 vbv_delay: N/A
+14:25:34.085     Stream #0:1(eng): Audio: mp3 (libmp3lame), 48000 Hz, stereo, fltp, 192 kb/s (default)
+14:25:34.085     Metadata:
+14:25:34.085       encoder         : Lavc58.62.100 libmp3lame
+14:25:34.489 frame=    0 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=   0.0kbits/s throttle=off speed=7.55e+12x    
+14:25:34.995 frame=    0 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=   0.0kbits/s throttle=off speed=5.33e+12x    
+14:25:35.507 frame=   26 fps= 12 q=28.0 size=     101kB time=01:44:07.27 bitrate=   0.0kbits/s throttle=off speed=4.13e+12x    
+14:25:35.569 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6247.57
+14:25:35.569 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:35.681 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6247.91
+14:25:35.682 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:35.783 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6248.13
+14:25:35.783 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:35.884 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6248.37
+14:25:35.884 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:35.947 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6248.62
+14:25:35.947 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:36.008 frame=   60 fps= 22 q=28.0 size=     646kB time=01:44:08.95 bitrate=   0.0kbits/s throttle=off speed=3.37e+12x    
+14:25:36.047 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6248.99
+14:25:36.047 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:36.193 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6249.32
+14:25:36.193 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:36.274 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6249.57
+14:25:36.274 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:36.367 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6249.82
+14:25:36.367 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:36.462 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6250.08
+14:25:36.462 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:36.494 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:36.495 SegmentComplete=video:0 Index=2082 Start=0.000000 End=6249.034467 Duration=6249.034467 offset_pts=0 start_pts=0 Frames=72 filename=F71E1F_2082.ts
+14:25:36.495 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2083.ts.tmp' for writing
+14:25:36.519 frame=   95 fps= 29 q=28.0 size=    1425kB time=01:44:10.24 bitrate=   0.0kbits/s throttle=off speed=2.84e+12x    
+14:25:36.549 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6250.37
+14:25:36.549 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:36.644 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6250.59
+14:25:36.644 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:36.742 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6250.83
+14:25:36.755 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:36.810 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6251.03
+14:25:36.811 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:36.898 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6251.24
+14:25:36.898 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:36.965 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6251.45
+14:25:36.965 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:37.039 frame=  130 fps= 34 q=28.0 size=    2069kB time=01:44:11.76 bitrate=   0.0kbits/s throttle=off speed=2.44e+12x    
+14:25:37.041 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6251.66
+14:25:37.041 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:37.102 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6251.91
+14:25:37.102 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:37.123 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6251.95
+14:25:37.123 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:37.133 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6252.04
+14:25:37.133 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:37.246 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6252.29
+14:25:37.246 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:37.347 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6252.58
+14:25:37.347 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:37.435 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6252.99
+14:25:37.435 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:37.574 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:37.575 SegmentComplete=video:0 Index=2083 Start=6249.034456 End=6252.037467 Duration=3.003011 offset_pts=0 start_pts=6249034456 Frames=72 filename=F71E1F_2083.ts
+14:25:37.575 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2084.ts.tmp' for writing
+14:25:37.576 frame=  165 fps= 39 q=28.0 size=    2747kB time=01:44:13.17 bitrate=   0.0kbits/s throttle=off speed=2.16e+12x    
+14:25:37.614 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6253.29
+14:25:37.615 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:37.706 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6253.66
+14:25:37.706 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:37.720 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6253.66
+14:25:37.721 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:37.799 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6253.75
+14:25:37.799 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:37.908 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6254
+14:25:37.908 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:37.971 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6254.33
+14:25:37.972 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:38.047 frame=  196 fps= 41 q=28.0 size=    3361kB time=01:44:14.37 bitrate=   0.0kbits/s throttle=off speed=1.93e+12x    
+14:25:38.090 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6254.58
+14:25:38.090 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:38.192 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6254.98
+14:25:38.192 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:38.312 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6255.23
+14:25:38.312 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:38.401 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6255.49
+14:25:38.401 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:38.484 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6255.71
+14:25:38.484 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:38.588 frame=  232 fps= 44 q=25.0 size=    4001kB time=01:44:16.17 bitrate=   0.0kbits/s throttle=off speed=1.73e+12x    
+14:25:38.588 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6255.91
+14:25:38.588 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:38.653 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:38.654 SegmentComplete=video:0 Index=2084 Start=6252.037456 End=6255.040467 Duration=3.003011 offset_pts=0 start_pts=6252037456 Frames=72 filename=F71E1F_2084.ts
+14:25:38.654 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2085.ts.tmp' for writing
+14:25:38.656 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6256.12
+14:25:38.656 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:38.726 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6256.33
+14:25:38.726 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:38.801 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6256.54
+14:25:38.801 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:38.868 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6256.75
+14:25:38.868 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:38.936 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6257
+14:25:38.936 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:39.036 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6257.29
+14:25:39.036 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:39.114 frame=  270 fps= 46 q=28.0 size=    4667kB time=01:44:17.44 bitrate=   0.0kbits/s throttle=off speed=1.58e+12x    
+14:25:39.121 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6257.53
+14:25:39.121 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:39.178 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6257.75
+14:25:39.178 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:39.296 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6258.08
+14:25:39.296 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:39.385 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6258.3
+14:25:39.386 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:39.482 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6258.63
+14:25:39.482 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:39.573 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6258.88
+14:25:39.573 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:39.633 frame=  305 fps= 48 q=28.0 size=    5313kB time=01:44:18.96 bitrate=   0.0kbits/s throttle=off speed=1.45e+12x    
+14:25:39.679 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6259.13
+14:25:39.679 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:39.697 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:39.698 SegmentComplete=video:0 Index=2085 Start=6255.040456 End=6258.043467 Duration=3.003011 offset_pts=0 start_pts=6255040456 Frames=72 filename=F71E1F_2085.ts
+14:25:39.698 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2086.ts.tmp' for writing
+14:25:39.762 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6259.42
+14:25:39.762 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:39.814 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6259.55
+14:25:39.814 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:39.919 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6259.79
+14:25:39.919 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:39.993 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6260.04
+14:25:39.993 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:40.084 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6260.3
+14:25:40.084 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:40.128 frame=  338 fps= 49 q=28.0 size=    5954kB time=01:44:20.56 bitrate=   0.0kbits/s throttle=off speed=1.34e+12x    
+14:25:40.179 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6260.55
+14:25:40.179 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:40.281 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6260.8
+14:25:40.281 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:40.360 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6261.09
+14:25:40.360 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:40.457 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6261.42
+14:25:40.457 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:40.581 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6261.63
+14:25:40.582 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:40.632 frame=  374 fps= 51 q=28.0 size=    6596kB time=01:44:21.76 bitrate=   0.0kbits/s throttle=off speed=1.25e+12x    
+14:25:40.635 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6261.86
+14:25:40.635 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:40.767 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6262.21
+14:25:40.767 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:40.781 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:40.783 SegmentComplete=video:0 Index=2086 Start=6258.043456 End=6261.046467 Duration=3.003011 offset_pts=0 start_pts=6258043456 Frames=72 filename=F71E1F_2086.ts
+14:25:40.783 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2087.ts.tmp' for writing
+14:25:40.872 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6262.59
+14:25:40.872 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:41.002 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6262.92
+14:25:41.002 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:41.098 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6263.13
+14:25:41.098 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:41.137 frame=  410 fps= 52 q=28.0 size=    7241kB time=01:44:23.47 bitrate=   0.0kbits/s throttle=off speed=1.17e+12x    
+14:25:41.155 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6263.55
+14:25:41.155 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:41.276 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6263.8
+14:25:41.276 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:41.326 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6264.05
+14:25:41.326 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:41.393 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6264.3
+14:25:41.393 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:41.457 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6264.51
+14:25:41.457 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:41.509 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6264.72
+14:25:41.509 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:41.558 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6264.97
+14:25:41.558 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:41.612 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:41.612 SegmentComplete=video:0 Index=2087 Start=6261.046456 End=6264.049467 Duration=3.003011 offset_pts=0 start_pts=6261046456 Frames=72 filename=F71E1F_2087.ts
+14:25:41.612 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2088.ts.tmp' for writing
+14:25:41.635 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6265.22
+14:25:41.637 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:41.660 frame=  456 fps= 54 q=28.0 size=    7709kB time=01:44:25.27 bitrate=   0.0kbits/s throttle=off speed=1.1e+12x    
+14:25:41.708 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6265.47
+14:25:41.708 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:41.777 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6265.72
+14:25:41.777 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:41.847 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6265.97
+14:25:41.847 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:41.913 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6266.22
+14:25:41.913 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:42.002 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6266.47
+14:25:42.003 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:42.079 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6266.72
+14:25:42.079 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:42.150 frame=  496 fps= 56 q=28.0 size=    8159kB time=01:44:27.00 bitrate=   0.0kbits/s throttle=off speed=1.04e+12x    
+14:25:42.153 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6266.97
+14:25:42.153 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:42.227 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6267.22
+14:25:42.227 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:42.309 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6267.47
+14:25:42.309 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:42.413 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6267.72
+14:25:42.413 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:42.492 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6268.06
+14:25:42.492 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:42.543 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:42.544 SegmentComplete=video:0 Index=2088 Start=6264.049456 End=6267.052467 Duration=3.003011 offset_pts=0 start_pts=6264049456 Frames=72 filename=F71E1F_2088.ts
+14:25:42.544 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2089.ts.tmp' for writing
+14:25:42.619 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6268.3
+14:25:42.620 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:42.672 frame=  532 fps= 57 q=28.0 size=    8839kB time=01:44:28.48 bitrate=   0.0kbits/s throttle=off speed=9.83e+11x    
+14:25:42.698 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6268.55
+14:25:42.698 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:42.782 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6268.8
+14:25:42.782 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:42.876 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6269.05
+14:25:42.876 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:42.980 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6269.3
+14:25:42.980 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:43.049 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6269.55
+14:25:43.049 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:43.155 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6269.8
+14:25:43.155 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:43.175 frame=  566 fps= 57 q=28.0 size=    9647kB time=01:44:29.78 bitrate=   0.0kbits/s throttle=off speed=9.32e+11x    
+14:25:43.242 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6270.05
+14:25:43.243 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:43.338 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6270.31
+14:25:43.338 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:43.419 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6270.56
+14:25:43.419 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:43.511 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6270.76
+14:25:43.511 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:43.597 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6270.97
+14:25:43.597 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:43.642 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:43.642 SegmentComplete=video:0 Index=2089 Start=6267.052456 End=6270.055467 Duration=3.003011 offset_pts=0 start_pts=6267052456 Frames=72 filename=F71E1F_2089.ts
+14:25:43.642 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2090.ts.tmp' for writing
+14:25:43.668 frame=  598 fps= 57 q=28.0 size=   10442kB time=01:44:31.17 bitrate=   0.0kbits/s throttle=off speed=8.86e+11x    
+14:25:43.668 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6271.22
+14:25:43.668 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:43.769 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6271.47
+14:25:43.769 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:43.835 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6271.76
+14:25:43.835 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:43.945 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6271.97
+14:25:43.945 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:44.011 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6272.18
+14:25:44.011 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:44.092 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6272.39
+14:25:44.092 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:44.164 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6272.6
+14:25:44.164 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:44.195 frame=  635 fps= 58 q=28.0 size=   11194kB time=01:44:32.68 bitrate=   0.0kbits/s throttle=off speed=8.44e+11x    
+14:25:44.242 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6272.81
+14:25:44.242 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:44.310 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6273.06
+14:25:44.310 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:44.378 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6273.27
+14:25:44.378 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:44.453 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6273.52
+14:25:44.453 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:44.561 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6273.85
+14:25:44.561 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:44.667 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6274.06
+14:25:44.667 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:44.682 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:44.683 SegmentComplete=video:0 Index=2090 Start=6270.055456 End=6273.058467 Duration=3.003011 offset_pts=0 start_pts=6270055456 Frames=72 filename=F71E1F_2090.ts
+14:25:44.683 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2091.ts.tmp' for writing
+14:25:44.729 frame=  671 fps= 59 q=28.0 size=   12049kB time=01:44:34.12 bitrate=   0.0kbits/s throttle=off speed=8.06e+11x    
+14:25:44.741 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6274.27
+14:25:44.741 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:44.811 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6274.52
+14:25:44.812 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:44.897 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6274.85
+14:25:44.897 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:45.014 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6275.1
+14:25:45.014 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:45.098 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6275.31
+14:25:45.098 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:45.183 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6275.52
+14:25:45.184 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:45.207 frame=  705 fps= 59 q=28.0 size=   12552kB time=01:44:35.66 bitrate=   0.0kbits/s throttle=off speed=7.72e+11x    
+14:25:45.230 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6275.73
+14:25:45.230 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:45.307 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6275.98
+14:25:45.307 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:45.391 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6276.23
+14:25:45.391 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:45.483 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6276.56
+14:25:45.483 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:45.604 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6276.81
+14:25:45.604 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:45.687 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6277.06
+14:25:45.687 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:45.711 frame=  740 fps= 59 q=28.0 size=   13182kB time=01:44:37.03 bitrate=   0.0kbits/s throttle=off speed=7.41e+11x    
+14:25:45.739 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:45.739 SegmentComplete=video:0 Index=2091 Start=6273.058456 End=6276.061467 Duration=3.003011 offset_pts=0 start_pts=6273058456 Frames=72 filename=F71E1F_2091.ts
+14:25:45.739 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2092.ts.tmp' for writing
+14:25:45.752 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6277.35
+14:25:45.752 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:45.831 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6277.44
+14:25:45.831 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:45.937 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6277.77
+14:25:45.937 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:46.037 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6278.02
+14:25:46.038 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:46.118 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6278.24
+14:25:46.118 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:46.213 frame=  773 fps= 60 q=28.0 size=   13905kB time=01:44:38.66 bitrate=   0.0kbits/s throttle=off speed=7.12e+11x    
+14:25:46.213 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6278.48
+14:25:46.213 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:46.273 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6278.69
+14:25:46.273 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:46.381 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6279.02
+14:25:46.382 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:46.485 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6279.26
+14:25:46.485 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:46.508 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6279.32
+14:25:46.508 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:46.599 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6279.61
+14:25:46.599 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:46.705 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6279.81
+14:25:46.705 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:46.730 frame=  808 fps= 60 q=25.0 size=   14635kB time=01:44:40.15 bitrate=   0.0kbits/s throttle=off speed=6.85e+11x    
+14:25:46.761 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6280.19
+14:25:46.761 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:46.827 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:46.828 SegmentComplete=video:0 Index=2092 Start=6276.061456 End=6279.064467 Duration=3.003011 offset_pts=0 start_pts=6276061456 Frames=72 filename=F71E1F_2092.ts
+14:25:46.828 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2093.ts.tmp' for writing
+14:25:46.935 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6280.4
+14:25:46.935 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:47.040 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6280.86
+14:25:47.040 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:47.239 frame=  836 fps= 60 q=28.0 size=   15385kB time=01:44:41.44 bitrate=   0.0kbits/s throttle=off speed=6.6e+11x    
+14:25:47.241 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6281.11
+14:25:47.241 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:47.335 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6281.52
+14:25:47.335 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:47.518 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6281.73
+14:25:47.518 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:47.596 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6281.98
+14:25:47.596 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:47.659 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6282.11
+14:25:47.659 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:47.749 frame=  864 fps= 60 q=28.0 size=   16598kB time=01:44:42.48 bitrate=   0.0kbits/s throttle=off speed=6.37e+11x    
+14:25:47.767 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6282.36
+14:25:47.767 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:47.892 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6282.69
+14:25:47.892 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:48.031 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6282.9
+14:25:48.031 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:48.131 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6283.11
+14:25:48.131 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:48.152 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:48.152 SegmentComplete=video:0 Index=2093 Start=6279.064456 End=6282.067467 Duration=3.003011 offset_pts=0 start_pts=6279064456 Frames=72 filename=F71E1F_2093.ts
+14:25:48.152 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2094.ts.tmp' for writing
+14:25:48.199 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6283.36
+14:25:48.200 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:48.266 frame=  891 fps= 59 q=28.0 size=   17871kB time=01:44:43.34 bitrate=   0.0kbits/s throttle=off speed=6.15e+11x    
+14:25:48.337 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6283.61
+14:25:48.337 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:48.421 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6283.86
+14:25:48.421 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:48.550 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6284.11
+14:25:48.550 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:48.638 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6284.32
+14:25:48.638 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:48.713 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6284.53
+14:25:48.713 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:48.775 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6284.74
+14:25:48.775 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:48.783 frame=  922 fps= 59 q=28.0 size=   18935kB time=01:44:44.68 bitrate=   0.0kbits/s throttle=off speed=5.95e+11x    
+14:25:48.880 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6284.94
+14:25:48.880 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:48.943 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6285.15
+14:25:48.943 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:49.006 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6285.49
+14:25:49.006 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:49.127 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6285.69
+14:25:49.127 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:49.202 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6286.03
+14:25:49.203 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:49.259 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6286.15
+14:25:49.259 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:49.276 frame=  956 fps= 60 q=28.0 size=   19639kB time=01:44:46.34 bitrate=   0.0kbits/s throttle=off speed=5.76e+11x    
+14:25:49.283 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6286.45
+14:25:49.283 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:49.298 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:49.299 SegmentComplete=video:0 Index=2094 Start=6282.067456 End=6285.070467 Duration=3.003011 offset_pts=0 start_pts=6282067456 Frames=72 filename=F71E1F_2094.ts
+14:25:49.300 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2095.ts.tmp' for writing
+14:25:49.505 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6286.7
+14:25:49.505 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:49.583 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6286.9
+14:25:49.583 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:49.675 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6287.11
+14:25:49.675 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:49.760 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6287.49
+14:25:49.761 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:49.797 frame=  988 fps= 60 q=28.0 size=   20291kB time=01:44:47.49 bitrate=   0.0kbits/s throttle=off speed=5.58e+11x    
+14:25:49.857 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6287.61
+14:25:49.857 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:49.949 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6287.86
+14:25:49.949 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:50.037 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6288.07
+14:25:50.037 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:50.125 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6288.28
+14:25:50.125 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:50.217 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6288.61
+14:25:50.217 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:50.302 frame= 1019 fps= 60 q=28.0 size=   21082kB time=01:44:48.72 bitrate=   0.0kbits/s throttle=off speed=5.41e+11x    
+14:25:50.368 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6288.82
+14:25:50.368 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:50.443 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6289.03
+14:25:50.443 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:50.476 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:50.477 SegmentComplete=video:0 Index=2095 Start=6285.070456 End=6288.073467 Duration=3.003011 offset_pts=0 start_pts=6285070456 Frames=72 filename=F71E1F_2095.ts
+14:25:50.477 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2096.ts.tmp' for writing
+14:25:50.517 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6289.36
+14:25:50.517 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:50.661 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6289.57
+14:25:50.661 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:50.721 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6289.78
+14:25:50.721 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:50.807 frame= 1049 fps= 60 q=28.0 size=   21991kB time=01:44:49.94 bitrate=   0.0kbits/s throttle=off speed=5.26e+11x    
+14:25:50.826 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6290.03
+14:25:50.826 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:50.924 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6290.37
+14:25:50.924 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:51.057 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6290.75
+14:25:51.057 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:51.209 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6291.12
+14:25:51.209 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:51.315 frame= 1081 fps= 60 q=28.0 size=   22821kB time=01:44:51.43 bitrate=   0.0kbits/s throttle=off speed=5.11e+11x    
+14:25:51.316 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6291.33
+14:25:51.316 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:51.393 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6291.53
+14:25:51.393 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:51.487 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6291.74
+14:25:51.487 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:51.573 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6291.99
+14:25:51.573 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:51.653 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:51.653 SegmentComplete=video:0 Index=2096 Start=6288.073456 End=6291.076467 Duration=3.003011 offset_pts=0 start_pts=6288073456 Frames=72 filename=F71E1F_2096.ts
+14:25:51.653 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2097.ts.tmp' for writing
+14:25:51.676 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6292.24
+14:25:51.677 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:51.790 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6292.49
+14:25:51.790 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:51.819 frame= 1110 fps= 60 q=28.0 size=   23717kB time=01:44:52.53 bitrate=   0.0kbits/s throttle=off speed=4.97e+11x    
+14:25:51.884 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6292.83
+14:25:51.884 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:51.909 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6292.83
+14:25:51.909 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:51.928 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6292.91
+14:25:51.928 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:52.073 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6293.16
+14:25:52.073 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:52.169 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6293.41
+14:25:52.169 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:52.262 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6293.62
+14:25:52.262 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:52.321 frame= 1140 fps= 60 q=28.0 size=   24665kB time=01:44:53.71 bitrate=   0.0kbits/s throttle=off speed=4.84e+11x    
+14:25:52.349 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6293.83
+14:25:52.349 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:52.442 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6294.16
+14:25:52.442 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:52.566 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6294.37
+14:25:52.566 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:52.639 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6294.62
+14:25:52.639 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:52.728 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6294.87
+14:25:52.728 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:52.856 frame= 1171 fps= 60 q=28.0 size=   25659kB time=01:44:55.05 bitrate=   0.0kbits/s throttle=off speed=4.71e+11x    
+14:25:52.857 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6295.12
+14:25:52.857 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:52.871 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:52.871 SegmentComplete=video:0 Index=2097 Start=6291.076456 End=6294.079467 Duration=3.003011 offset_pts=0 start_pts=6291076456 Frames=72 filename=F71E1F_2097.ts
+14:25:52.871 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2098.ts.tmp' for writing
+14:25:52.943 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6295.37
+14:25:52.943 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:52.976 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6295.41
+14:25:52.976 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:52.993 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6295.5
+14:25:52.994 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:53.115 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6295.75
+14:25:53.115 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:53.191 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6295.95
+14:25:53.191 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:53.268 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6296.29
+14:25:53.268 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:53.340 frame= 1202 fps= 60 q=28.0 size=   26646kB time=01:44:56.32 bitrate=   0.0kbits/s throttle=off speed=4.6e+11x    
+14:25:53.398 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6296.5
+14:25:53.398 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:53.480 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6296.93
+14:25:53.480 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:53.645 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6297.16
+14:25:53.645 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:53.738 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6297.5
+14:25:53.738 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:53.849 frame= 1234 fps= 60 q=28.0 size=   27527kB time=01:44:57.76 bitrate=   0.0kbits/s throttle=off speed=4.48e+11x    
+14:25:53.851 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6297.71
+14:25:53.851 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:53.932 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6297.92
+14:25:53.932 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:53.999 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6298.25
+14:25:53.999 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:54.012 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6298.25
+14:25:54.012 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:54.022 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:54.022 SegmentComplete=video:0 Index=2098 Start=6294.079456 End=6297.082467 Duration=3.003011 offset_pts=0 start_pts=6294079456 Frames=72 filename=F71E1F_2098.ts
+14:25:54.023 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2099.ts.tmp' for writing
+14:25:54.025 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6298.33
+14:25:54.025 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:54.157 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6298.58
+14:25:54.157 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:54.266 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6298.92
+14:25:54.266 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:54.349 frame= 1266 fps= 60 q=28.0 size=   28448kB time=01:44:59.08 bitrate=   0.0kbits/s throttle=off speed=4.37e+11x    
+14:25:54.375 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6299.12
+14:25:54.375 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:54.446 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6299.36
+14:25:54.446 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:54.526 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6299.63
+14:25:54.526 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:54.639 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6299.83
+14:25:54.639 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:54.715 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6300.25
+14:25:54.715 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:54.828 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6300.63
+14:25:54.828 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:54.840 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6300.71
+14:25:54.840 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:54.850 frame= 1299 fps= 60 q=28.0 size=   29238kB time=01:45:00.69 bitrate=   0.0kbits/s throttle=off speed=4.27e+11x    
+14:25:55.029 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6300.96
+14:25:55.029 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:55.111 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:55.111 SegmentComplete=video:0 Index=2099 Start=6297.082456 End=6300.085467 Duration=3.003011 offset_pts=0 start_pts=6297082456 Frames=72 filename=F71E1F_2099.ts
+14:25:55.111 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2100.ts.tmp' for writing
+14:25:55.113 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6301.17
+14:25:55.113 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:55.182 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6301.38
+14:25:55.187 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:55.256 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6301.71
+14:25:55.256 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:55.360 frame= 1335 fps= 60 q=28.0 size=   29925kB time=01:45:02.06 bitrate=   0.0kbits/s throttle=off speed=4.17e+11x    
+14:25:55.360 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6302.14
+14:25:55.360 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:55.525 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6302.4
+14:25:55.525 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:55.612 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6302.63
+14:25:55.612 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:55.690 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6302.96
+14:25:55.690 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:55.786 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6303.38
+14:25:55.786 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:55.799 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6303.38
+14:25:55.799 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:55.883 frame= 1372 fps= 61 q=28.0 size=   30526kB time=01:45:03.60 bitrate=   0.0kbits/s throttle=off speed=4.08e+11x    
+14:25:55.886 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6303.46
+14:25:55.886 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:55.980 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6303.71
+14:25:55.980 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:56.026 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6303.94
+14:25:56.026 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:56.116 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:56.116 SegmentComplete=video:0 Index=2100 Start=6300.085456 End=6303.088467 Duration=3.003011 offset_pts=0 start_pts=6300085456 Frames=72 filename=F71E1F_2100.ts
+14:25:56.116 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F_2101.ts.tmp' for writing
+14:25:56.119 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6304.19
+14:25:56.119 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:56.209 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6304.55
+14:25:56.209 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:56.305 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6304.76
+14:25:56.305 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:56.370 frame= 1408 fps= 61 q=28.0 size=   31062kB time=01:45:05.13 bitrate=   0.0kbits/s throttle=off speed=3.99e+11x    
+14:25:56.373 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6304.96
+14:25:56.373 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:56.447 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6305.17
+14:25:56.447 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:56.510 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6305.38
+14:25:56.510 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:56.575 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6305.59
+14:25:56.575 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:56.645 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6305.92
+14:25:56.645 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:56.741 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 6306.26
+14:25:56.742 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:56.766 
+
+[q] command received. Exiting.
+
+14:25:56.771 [graph 0 input from stream 0:4 @ 0x1d92680] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 4.30127e+06
+14:25:56.772 [graph 0 input from stream 0:4 @ 0x1d92680] Changing video frame properties on the fly is not supported by all filters.
+14:25:56.844 14:25:56.844 [segment @ 0x1bef2c0] Opening '/config/transcoding-temp/F71E1F.m3u8.tmp' for writing
+14:25:56.844 SegmentComplete=video:0 Index=2101 Start=6303.088456 End=6305.966333 Duration=2.877878 offset_pts=0 start_pts=6303088456 Frames=69 filename=F71E1F_2101.ts
+14:25:56.844 frame= 1437 fps= 61 q=-1.0 Lsize=   31639kB time=01:45:06.28 bitrate=   0.0kbits/s throttle=off speed=3.91e+11x    
+14:25:56.844 video:30226kB audio:1414kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+14:25:56.854 EXIT
+14:25:56.856 [libx264 @ 0x1bf0780] frame I:20    Avg QP:19.45  size: 86621
+14:25:56.856 [libx264 @ 0x1bf0780] frame P:375   Avg QP:22.72  size: 36081
+14:25:56.856 [libx264 @ 0x1bf0780] frame B:1042  Avg QP:24.44  size: 15055
+14:25:56.856 [libx264 @ 0x1bf0780] consecutive B-frames:  1.9%  2.1%  6.1% 89.9%
+14:25:56.856 [libx264 @ 0x1bf0780] mb I  I16..4: 53.2%  0.0% 46.8%
+14:25:56.856 [libx264 @ 0x1bf0780] mb P  I16..4: 44.6%  0.0%  0.0%  P16..4: 39.0%  0.0%  0.0%  0.0%  0.0%    skip:16.4%
+14:25:56.856 [libx264 @ 0x1bf0780] mb B  I16..4: 10.8%  0.0%  0.0%  B16..8: 28.4%  0.0%  0.0%  direct:13.3%  skip:47.5%  L0:41.5% L1:46.6% BI:11.9%
+14:25:56.856 [libx264 @ 0x1bf0780] coded y,uvDC,uvAC intra: 44.8% 32.4% 5.9% inter: 15.2% 15.3% 0.5%
+14:25:56.856 [libx264 @ 0x1bf0780] i16 v,h,dc,p: 33% 17% 32% 18%
+14:25:56.856 [libx264 @ 0x1bf0780] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24% 16% 17% 10%  7%  7%  6%  7%  6%
+14:25:56.856 [libx264 @ 0x1bf0780] i8c dc,h,v,p: 50% 18% 26%  7%
+14:25:56.856 [libx264 @ 0x1bf0780] Weighted P-Frames: Y:8.0% UV:5.1%
+14:25:56.856 [libx264 @ 0x1bf0780] kb/s:4131.17
+14:25:56.864 
+
+======= ExtraData
+H4sIAAAAAAAAA+1cW2/jxhX+KwSBAllAF5KSbFmBAN93jdhZw3Y2D4lBjMihNDBvIIdaOYHf2pcWxaKLAgXSl/yDPBV5aP/OZtun/oWeGV7EmyRKluRsaiAP1vDM7TvfufAcbr4XjxzLQrYu9r4XT4lJsedn/vwm/puPYkQDD3+JLCz2RMPxLETFWjx8c++y4TdEx040pya+dilxbL5m+OcbZAY4XDhaxyUT1bCoD9L84TX1iD2EB/fBuK1Irvhw+/BQi45xprOdZZA9s92AXhI7XOvIsW2sUaxfO4GnYS4m9SQup+OJ2JNgldrsy/gaMvHj7/KW6HRUuIi8p0gi2z2SGmEyHNGCWF1JCwG8GlYdjwyJjUwV+S7cT/UQbFyYqWPNw8jHJVApFaFqV4bKGWPPRPePB2tSuMdnX9ffvmhmYLgvCr2qj16kRTzswkFM5BchNZBZikqrEirfGLLqBFS6TWNTmyWr5GVl2BeQFF+azgCZFQAp3pV6AU5f1YVxqg495I581SCcstkZTc2xDTJsms7QbxqG5eJhnXrI9jVHx3Wj3WopHalVVzRs1Nt7La2+Z3RadWygrtbtdHFnb1eV+foNOqHprTXHvS8x0vwJfYo8qiKqfoe9IlFDaQYKRz+8/TG2gkkZ08C9eI5/h2pv8cAq8C2eNo9rXPF8q1h/sd49hzqaYxY3HVHqFvbKzlm4YwVdGwVssrdNQ1pEXZJ77XZP2gmxhGGMrBhMpugSMEd4rJXbbDxlMZD+QUAT8R43rpp4gXWCviAshoTrLVioFkqFh2YSR7CcFp3y1cmbIzGS4OPTkx85puNdesRCHmFLiQO6K+3FwlfIHrIFro+vYOiSTLB5GgYovgNMjX/GcUVm0eHEhsPbMHhOKDVx9JPf9cymzNFpWE+uekjoFaJsm25DFi4GhDaZbmDYv8Qe3xTMvsNHjrELoaAnA+OusHHqwf3g0HJ8e/IdjiLDpCuxkxyAW0VDzAWjTWR5r9uV5GZHkrjIFUbmvOcHPEZc8RABT5Vmh0HhOdxR9MQLRGyB3/ocj9lJQYRHSP/ARpbjuSOiJVed2kuoqDRhuDJANzfEwocs7MBKEpxDaYfnSI835XDszD8GJxOYoADmBNjAKYtwU3APTPMGDTlH2NOTCcAPkS96/sAMYia5kdYqcPsg0MnK3A7PmKY2X24htblUObUPjtgZuUDM7PDYRyME8cSEJXaSH+foHqIJ4yX/o3PpgOOXD5F2J6ZpuKN0GpJwFxPxGlmuGbPj2mt3I+yjeJTTZXyjgi6b8cTVFHkOphggbo0YvNWzZlfRbLu12+hU1ayybs3GTmCOarURqabahfhfBwNKKM9l5qsgFpwROo4v3qiXL6/V668Ob85uzk/E6YwklOjWWHWHvupP9zzzX7J8h2js2BGlQ1hbOVhTB80jKzXlrdrLpwtqe82gPlOVodp5RnUDqO48o7oBVHefUd0Aqt1nVDeA6t4zqhtAVc6/Vv5qYIXRrzz2atyUJPbf2cXxoXDjuEpHgtfbncaHP/744U/vf/npr7/84+ePf//bf//1w3/++ZeP7/788d2PH979/PGH3//7pz98eP++cUk8yNX9hmM06Ag3jpBHBgOM7MYN+xV4Po4fHZqQ+jcuMfLMhiJJLRgIrtB9Q5a6ktuYKDsd+BNeAxoKz+obF1++Oq6fXh1fN7ewR8O6G4sMlNcBTep1F+XVOh8PLWwXGwIXC6t000pXuISatBZyFTIXD+EM6dJYNMEkJcXfuBQalz9htE6x5TZPd+UT+bRhtYLurMVUyg5fOMCMGRTYWRBulUmG5VE7sAYck+wMRepmat9gxWRM9ACZ6ggjMHIVrkLMkplRnXs69a1HKF56VnzKcDbDamYFt1qV00ITVcdhtyC7Dq9ZSZm2CBo7RFdtPESUjGH7YtlTJz4amGDf6T5JQSomYkrIQq5qYYp0RFFBvi7nRbURcnn/q0yUOczQHGYXkaPSfNYQcpMWFi7SZd3ylkMraTmc2DPqJyYZgH23yyu/8axqfToP+7hoZWPs3Rus95JpUzilzYkRGY7SciavQ+al2o0MLdjxHbeEDRBqLNyXehZWPVb97bd7nqaajnOHGPH7MnvUh3DYsx1QqedYCEjQ6066ukZhngumSPi1+7ZjZwxB84q0UloR75creCdrDgsr7ipZ4k2YPy9IyTt7u0p3JyM7CAyfVZALPqe11+7sKu2MUWsqHYHuRo6pFxsJack7fM/aSxaxFxw1atkWpDId21mdRnkBXS23ZSKraD48NFVhbEFJiwt8Ux80KOK/p+QdlVYkR0aTszyNGaUjfVbnSfuwuGuaFd//Vhw7ZgAkVr4V0/LgB13H59wt+sgoJ2I6mGYz80Oh+ju9wQLrbdIm5ZkbRyr+i/eWfM0jHDnmfqSedBtG6n1D7sdt/H5EgqR5+jkItm95g33fUPq8Rd5noPbCPni/rvTmNLv7cXM76bB+niydDEU96X2j1Z/0oy5y777PW8W9aX+4L6V9ZvlHDtlLAoVhaSpAFiUQ1gQUxsziBeoI4DIEx+BP2HGJQbAuuKwHJISo+A0x0+c8J/Zdup8oFmrCUrpkDD/gLPQS6bHWI83CyXOtLBh6FX5T0OtKUkR+thUzOSlbPWY/D64Yr7klhqYZ7QAcslRiq5IqJY/K9v+af+bQY0pkHMt8ELLPv85gQ4qY+kgknUCmgAiHqyGR/f5gnzfxswhZiLuuTcGTvmAGgofs9xJZCl0z5hcIxNy3gGy96XiCliaZBf4hItDm+TMYeiiFDnsfqAiPNI897RXYEzuIFHnij3K2wp3UZy0p+qCV+VMCUOqKMQZtRVlAn9fhuQQUE4evCN4HfJAbOyDOrDXTZYvGVI0rtcffabtKXnwtrv7EBDLsjI1geuT1mUHilbcdYDI3rO5CDwPDwF5kAAb/lKLGnKdgoTvuWi0BaRr2fTJgrtbhNhEmVfAqR+yMZUzx5t85CVLklw14QRB8/s4lhJ8OxioY8O3XqgEUUEflVPF4rK2qCFniHnEtylh0/er6uSTaHc+HIJJRYgdO4As+ZHDwNFw38VE1QffAbbHf8EqyhQi3ZgLn9bZslMtmWDHB2OgGDDx0rk+bRP6qjby9WSPPJkTLJmOPikKLbv2bsO1tAra6obc3aeipbOMpk/31WvkYEROljBzD4yjRDe1dCL9Q/tSCR5J2LUsmOH0uYoTeyocrZ+g0H/v/r2JGJtdcrZax4UJGotUnI+Jvo4rxBLnxsnzK542bK3Fk06+nzo9zBANAeD05968xHsGMNSeQS3EKxMZR/yePF4NDLvMjVd45W+l0dA7y6yiObAq/ublZBeBiw6iCW7sybiUvtuuwvc3lN5XttAKk00pSUlvK5BVT+KK8Igdh1pZrs/6VaC7nGLHWbBw0eDdr6YAgdzpy+cf0088JGvJnPtz/xRyfFwO3wL3xT+RLsl0WzqJ7JMyrVLxMx4FL5PlYV0MgMpEgHFo+FKwATtpXw5sav/v8MtQjoCveeApLlTcFxJq3664HqHIYItOtKrRqBWB1Dcyj1QZUUbh6RU1srwTw9JZewGgp856n0IRnqxUBVmdZ0QK37CHXaPCbKg200tAqRWh9WJoH1w1AF+aIahiMl6bcdFrOkT26OBAqYlZxYNWywFMiXRLxlsK6oKkE8lXLA0uhUdD4NshY0XivIlQj1rDPnz5B7190lUvxo4RfCUPi4e1wpKDG7VhTmiy5d315E+/6j0oOk3crCBn3M6Dg1wy/HszAI+feTPMJZSuTUM4pqqdZtIkX0XVF0zWBlXWdKZTmvnJK/P+k8vA/OuodOa5IAAA=

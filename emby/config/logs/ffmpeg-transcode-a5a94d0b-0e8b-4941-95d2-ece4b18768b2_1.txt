@@ -1,0 +1,331 @@
+2020-05-22 13:31:53.080
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/813/hls1/main/36.ts?DeviceId=0939de9f-ad24-4206-b247-0dafb526de65&MediaSourceId=cba9bc2a18e59467bf93325f1205d43a&PlaySessionId=de2c958ee6e7488396ee6c2e23f163ec&api_key=b24b9e0ee12b43b4b0d434c8e5187ccc&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=6744000&AudioBitrate=256000&AudioStreamIndex=1&SubtitleMethod=Encode&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=ContainerBitrateExceedsLimit
+
+{"Protocol":"File","Id":"cba9bc2a18e59467bf93325f1205d43a","Path":"/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170130145925.m2ts","Type":"Default","Container":"mpegts","Size":3931275264,"Name":"bhd1080.com@20170130145925","IsRemote":false,"RunTimeTicks":13989120000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"h264","CodecTag":"HDMV","TimeBase":"1/90000","CodecTimeBase":"1001/60000","VideoRange":"SDR","DisplayTitle":"1080i H264","NalLengthSize":"0","IsInterlaced":true,"IsAVC":false,"BitRate":22481901,"BitDepth":8,"RefFrames":1,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"AverageFrameRate":29.97003,"RealFrameRate":59.94006,"Profile":"High","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p","Level":40,"IsAnamorphic":false},{"Codec":"ac3","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"Dolby Digital stereo","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":256000,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"Type":"Subtitle","Index":2,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":22481901,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for guest
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: h264, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+Warning: No filter behavior available for filter yadif
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    Deinterlace                              >> False                False                                                         
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    h264                 >> -            yuv420p      yuv420p      >> yadif
+Info    yadif                >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -ss 00:01:48.000  -f mpegts -i file:"/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170130145925.m2ts" -threads 0 -map 0:0 -map 0:1 -sn -c:v:0 libx264 -filter_complex "[0:0]yadif=0:-1:0" -pix_fmt yuv420p  -maxrate 6744000 -bufsize 13488000 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 90 -keyint_min:v:0 90 -sc_threshold:v:0 0  -copyts -vsync -1 -codec:a:0 libmp3lame -disposition:a:0 default -ac:a:0 2 -ab:a:0 192000  -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 36 -segment_list "/config/transcoding-temp/EA4090.m3u8" -y "/config/transcoding-temp/EA4090_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-a5a94d0b-0e8b-4941-95d2-ece4b18768b2_1graph.txt -copyts -start_at_zero -f mpegts -ss 00:01:48.000 -c:v:0 h264 -i "/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170130145925.m2ts" -filter_complex "[0:0]yadif@f1=mode=send_frame:parity=auto:deint=all[f1_out0]" -map [f1_out0] -map 0:1 -sn -c:v:0 libx264 -g:v:0 90 -maxrate:v:0 6744000 -bufsize:v:0 13488000 -sc_threshold:v:0 0 -keyint_min:v:0 90 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 4.2 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 2 -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/EA4090.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 36 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/EA4090_%d.ts"
+
+13:31:53.114 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+13:31:53.114   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+13:31:53.114 Execution Date: 2020-05-22 13:31:53
+13:31:59.552 Input #0, mpegts, from '/00/00/Copy of 無碼流出全套.原版母帶無水印/爱音まりあ.原版母帶無水印[55GB]/bhd1080.com@20170130145925.m2ts':
+13:31:59.552   Duration: 00:23:18.91, start: 1.033367, bitrate: 22481 kb/s
+13:31:59.552   Program 1 
+13:31:59.553     Stream #0:0[0x1011]: Video: h264 (High) (HDMV / 0x564D4448), yuv420p(top first), 1920x1080 [SAR 1:1 DAR 16:9], Level 40, 29.97 fps, 59.94 tbr, 90k tbn, 59.94 tbc, Start-Time 1.100s
+13:31:59.553     Stream #0:1[0x1100]: Audio: ac3 (AC-3 / 0x332D4341), 48000 Hz, stereo, fltp, 256 kb/s, Start-Time 1.033s
+13:31:59.553     Stream #0:2[0x1200]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), 1920x1080, Start-Time 1.033s
+13:31:59.554 Stream mapping:
+13:31:59.554   Stream #0:0 (h264) -> yadif (graph 0)
+13:31:59.554   yadif (graph 0) -> Stream #0:0 (libx264)
+13:31:59.554   Stream #0:1 -> #0:1 (ac3 (native) -> mp3 (libmp3lame))
+13:31:59.554 Press [q] to stop, [?] for help
+13:32:00.240 [h264 @ 0x17d3bc0] reference picture missing during reorder
+13:32:00.240 [h264 @ 0x17d3bc0] Missing reference picture, default is 2147483647
+13:32:00.241 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+13:32:00.241 [h264 @ 0x17e3280] reference picture missing during reorder
+13:32:00.241 [h264 @ 0x17e3280] Missing reference picture, default is 2147483647
+13:32:00.252 [h264 @ 0x1865f40] reference picture missing during reorder
+13:32:00.252 [h264 @ 0x1865f40] Missing reference picture, default is 2147483647
+13:32:01.055 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+13:32:01.798 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+13:32:01.843 [libx264 @ 0x1792a40] using SAR=1/1
+13:32:01.843 [libx264 @ 0x1792a40] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+13:32:01.853 [libx264 @ 0x1792a40] profile Main, level 4.2, 4:2:0, 8-bit
+13:32:01.855 [libx264 @ 0x1792a40] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=90 keyint_min=46 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=6744 vbv_bufsize=13488 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+13:32:01.855 Output #0, segment, to '/config/transcoding-temp/EA4090_%d.ts':
+13:32:01.855   Metadata:
+13:32:01.855     encoder         : Lavf58.35.100
+13:32:01.855     Stream #0:0: Video: h264 (libx264), yuv420p, 1920x1080 [SAR 1:1 DAR 16:9], q=-1--1, 29.97 fps, 90k tbn, 29.97 tbc
+13:32:01.855     Metadata:
+13:32:01.855       encoder         : Lavc58.62.100 libx264
+13:32:01.855     Side data:
+13:32:01.855       cpb: bitrate max/min/avg: 6744000/0/0 buffer size: 13488000 vbv_delay: N/A
+13:32:01.855     Stream #0:1: Audio: mp3 (libmp3lame), 48000 Hz, stereo, fltp, 192 kb/s (default)
+13:32:01.855     Metadata:
+13:32:01.855       encoder         : Lavc58.62.100 libmp3lame
+13:32:02.267 frame=   29 fps= 11 q=29.0 size=     173kB time=00:01:48.64 bitrate=   0.0kbits/s throttle=off speed=3.4e+12x    
+13:32:02.775 frame=   67 fps= 21 q=29.0 size=     599kB time=00:01:49.89 bitrate=   0.0kbits/s throttle=off speed=2.86e+12x    
+13:32:03.286 frame=  105 fps= 28 q=29.0 size=    1028kB time=00:01:51.14 bitrate=   0.0kbits/s throttle=off speed=2.48e+12x    
+13:32:03.390 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:03.394 SegmentComplete=video:0 Index=36 Start=0.000000 End=111.177733 Duration=111.177733 offset_pts=0 start_pts=0 Frames=90 filename=EA4090_36.ts
+13:32:03.394 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_37.ts.tmp' for writing
+13:32:03.784 frame=  139 fps= 33 q=29.0 size=    1554kB time=00:01:52.27 bitrate=   0.0kbits/s throttle=off speed=2.18e+12x    
+13:32:04.296 frame=  176 fps= 37 q=29.0 size=    2035kB time=00:01:53.54 bitrate=   0.0kbits/s throttle=off speed=1.95e+12x    
+13:32:04.680 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:04.680 SegmentComplete=video:0 Index=37 Start=111.177733 End=114.180733 Duration=3.003000 offset_pts=0 start_pts=111177733 Frames=90 filename=EA4090_37.ts
+13:32:04.680 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_38.ts.tmp' for writing
+13:32:04.792 frame=  209 fps= 40 q=29.0 size=    2547kB time=00:01:54.64 bitrate=   0.0kbits/s throttle=off speed=1.76e+12x    
+13:32:05.303 frame=  244 fps= 42 q=29.0 size=    3206kB time=00:01:55.80 bitrate=   0.0kbits/s throttle=off speed=1.6e+12x    
+13:32:05.810 frame=  279 fps= 45 q=29.0 size=    3869kB time=00:01:57.00 bitrate=   0.0kbits/s throttle=off speed=1.47e+12x    
+13:32:06.027 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:06.027 SegmentComplete=video:0 Index=38 Start=114.180733 End=117.183733 Duration=3.003000 offset_pts=0 start_pts=114180733 Frames=90 filename=EA4090_38.ts
+13:32:06.027 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_39.ts.tmp' for writing
+13:32:06.342 frame=  309 fps= 46 q=29.0 size=    4458kB time=00:01:58.00 bitrate=   0.0kbits/s throttle=off speed=1.36e+12x    
+13:32:06.827 frame=  327 fps= 45 q=29.0 size=    4752kB time=00:01:58.58 bitrate=   0.0kbits/s throttle=off speed=1.27e+12x    
+13:32:07.326 frame=  360 fps= 46 q=29.0 size=    5358kB time=00:01:59.66 bitrate=   0.0kbits/s throttle=off speed=1.19e+12x    
+13:32:07.679 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:07.680 SegmentComplete=video:0 Index=39 Start=117.183733 End=120.186733 Duration=3.003000 offset_pts=0 start_pts=117183733 Frames=90 filename=EA4090_39.ts
+13:32:07.680 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_40.ts.tmp' for writing
+13:32:07.831 frame=  390 fps= 47 q=29.0 size=    5957kB time=00:02:00.69 bitrate=   0.0kbits/s throttle=off speed=1.11e+12x    
+13:32:08.341 frame=  415 fps= 47 q=29.0 size=    6372kB time=00:02:01.51 bitrate=   0.0kbits/s throttle=off speed=1.05e+12x    
+13:32:08.858 frame=  449 fps= 48 q=29.0 size=    6941kB time=00:02:02.64 bitrate=   0.0kbits/s throttle=off speed=9.91e+11x    
+13:32:09.200 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:09.200 SegmentComplete=video:0 Index=40 Start=120.186733 End=123.189733 Duration=3.003000 offset_pts=0 start_pts=120186733 Frames=90 filename=EA4090_40.ts
+13:32:09.200 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_41.ts.tmp' for writing
+13:32:09.370 frame=  483 fps= 49 q=29.0 size=    7581kB time=00:02:03.79 bitrate=   0.0kbits/s throttle=off speed=9.4e+11x    
+13:32:09.882 frame=  519 fps= 50 q=29.0 size=    8206kB time=00:02:05.01 bitrate=   0.0kbits/s throttle=off speed=8.94e+11x    
+13:32:10.374 frame=  553 fps= 51 q=29.0 size=    8812kB time=00:02:06.09 bitrate=   0.0kbits/s throttle=off speed=8.52e+11x    
+13:32:10.522 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:10.524 SegmentComplete=video:0 Index=41 Start=123.189733 End=126.192733 Duration=3.003000 offset_pts=0 start_pts=123189733 Frames=90 filename=EA4090_41.ts
+13:32:10.524 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_42.ts.tmp' for writing
+13:32:10.883 frame=  586 fps= 52 q=29.0 size=    9439kB time=00:02:07.22 bitrate=   0.0kbits/s throttle=off speed=8.15e+11x    
+13:32:11.377 frame=  618 fps= 52 q=29.0 size=    9998kB time=00:02:08.30 bitrate=   0.0kbits/s throttle=off speed=7.8e+11x    
+13:32:11.882 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:11.883 SegmentComplete=video:0 Index=42 Start=126.192733 End=129.195733 Duration=3.003000 offset_pts=0 start_pts=126192733 Frames=90 filename=EA4090_42.ts
+13:32:11.883 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_43.ts.tmp' for writing
+13:32:11.883 frame=  651 fps= 53 q=29.0 size=   10602kB time=00:02:09.36 bitrate=   0.0kbits/s throttle=off speed=7.48e+11x    
+13:32:12.391 frame=  688 fps= 54 q=29.0 size=   11241kB time=00:02:10.63 bitrate=   0.0kbits/s throttle=off speed=7.19e+11x    
+13:32:12.908 frame=  723 fps= 54 q=29.0 size=   11837kB time=00:02:11.78 bitrate=   0.0kbits/s throttle=off speed=6.91e+11x    
+13:32:13.195 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:13.195 SegmentComplete=video:0 Index=43 Start=129.195733 End=132.198733 Duration=3.003000 offset_pts=0 start_pts=129195733 Frames=90 filename=EA4090_43.ts
+13:32:13.195 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_44.ts.tmp' for writing
+13:32:13.411 frame=  754 fps= 54 q=29.0 size=   12543kB time=00:02:12.81 bitrate=   0.0kbits/s throttle=off speed=6.66e+11x    
+13:32:13.927 frame=  789 fps= 55 q=29.0 size=   13189kB time=00:02:13.99 bitrate=   0.0kbits/s throttle=off speed=6.42e+11x    
+13:32:14.430 frame=  824 fps= 55 q=29.0 size=   13788kB time=00:02:15.14 bitrate=   0.0kbits/s throttle=off speed=6.2e+11x    
+13:32:14.564 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:14.564 SegmentComplete=video:0 Index=44 Start=132.198733 End=135.201733 Duration=3.003000 offset_pts=0 start_pts=132198733 Frames=90 filename=EA4090_44.ts
+13:32:14.564 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_45.ts.tmp' for writing
+13:32:14.931 frame=  857 fps= 56 q=29.0 size=   14398kB time=00:02:16.24 bitrate=   0.0kbits/s throttle=off speed=6e+11x    
+13:32:15.434 frame=  893 fps= 56 q=29.0 size=   14911kB time=00:02:17.44 bitrate=   0.0kbits/s throttle=off speed=5.81e+11x    
+13:32:15.911 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:15.911 SegmentComplete=video:0 Index=45 Start=135.201733 End=138.204733 Duration=3.003000 offset_pts=0 start_pts=135201733 Frames=90 filename=EA4090_45.ts
+13:32:15.911 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_46.ts.tmp' for writing
+13:32:15.944 frame=  923 fps= 56 q=29.0 size=   15444kB time=00:02:18.45 bitrate=   0.0kbits/s throttle=off speed=5.63e+11x    
+13:32:16.446 frame=  952 fps= 56 q=29.0 size=   15865kB time=00:02:19.44 bitrate=   0.0kbits/s throttle=off speed=5.46e+11x    
+13:32:16.957 frame=  987 fps= 57 q=29.0 size=   16460kB time=00:02:20.59 bitrate=   0.0kbits/s throttle=off speed=5.3e+11x    
+13:32:17.326 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:17.326 SegmentComplete=video:0 Index=46 Start=138.204733 End=141.207733 Duration=3.003000 offset_pts=0 start_pts=138204733 Frames=90 filename=EA4090_46.ts
+13:32:17.327 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_47.ts.tmp' for writing
+13:32:17.457 frame= 1020 fps= 57 q=29.0 size=   17052kB time=00:02:21.67 bitrate=   0.0kbits/s throttle=off speed=5.15e+11x    
+13:32:17.963 frame= 1056 fps= 57 q=29.0 size=   17665kB time=00:02:22.89 bitrate=   0.0kbits/s throttle=off speed=5.01e+11x    
+13:32:18.473 frame= 1072 fps= 57 q=29.0 size=   17932kB time=00:02:23.44 bitrate=   0.0kbits/s throttle=off speed=4.88e+11x    
+13:32:18.979 frame= 1085 fps= 56 q=29.0 size=   18132kB time=00:02:23.85 bitrate=   0.0kbits/s throttle=off speed=4.75e+11x    
+13:32:19.521 frame= 1096 fps= 55 q=26.0 size=   18302kB time=00:02:24.24 bitrate=   0.0kbits/s throttle=off speed=4.62e+11x    
+13:32:19.695 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:19.700 SegmentComplete=video:0 Index=47 Start=141.207733 End=144.210733 Duration=3.003000 offset_pts=0 start_pts=141207733 Frames=90 filename=EA4090_47.ts
+13:32:19.700 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_48.ts.tmp' for writing
+13:32:20.034 frame= 1109 fps= 54 q=29.0 size=   18565kB time=00:02:24.69 bitrate=   0.0kbits/s throttle=off speed=4.5e+11x    
+13:32:20.544 frame= 1129 fps= 54 q=29.0 size=   18890kB time=00:02:25.32 bitrate=   0.0kbits/s throttle=off speed=4.39e+11x    
+13:32:21.048 frame= 1162 fps= 54 q=29.0 size=   19431kB time=00:02:26.42 bitrate=   0.0kbits/s throttle=off speed=4.29e+11x    
+13:32:21.558 frame= 1189 fps= 54 q=29.0 size=   19881kB time=00:02:27.33 bitrate=   0.0kbits/s throttle=off speed=4.19e+11x    
+13:32:21.580 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:21.581 SegmentComplete=video:0 Index=48 Start=144.210733 End=147.213733 Duration=3.003000 offset_pts=0 start_pts=144210733 Frames=90 filename=EA4090_48.ts
+13:32:21.581 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_49.ts.tmp' for writing
+13:32:22.064 frame= 1222 fps= 54 q=29.0 size=   20509kB time=00:02:28.44 bitrate=   0.0kbits/s throttle=off speed=4.1e+11x    
+13:32:22.566 frame= 1255 fps= 55 q=29.0 size=   21108kB time=00:02:29.52 bitrate=   0.0kbits/s throttle=off speed=4.01e+11x    
+13:32:22.988 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:22.988 SegmentComplete=video:0 Index=49 Start=147.213733 End=150.216733 Duration=3.003000 offset_pts=0 start_pts=147213733 Frames=90 filename=EA4090_49.ts
+13:32:22.988 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_50.ts.tmp' for writing
+13:32:23.075 frame= 1286 fps= 55 q=29.0 size=   21747kB time=00:02:30.60 bitrate=   0.0kbits/s throttle=off speed=3.92e+11x    
+13:32:23.586 frame= 1319 fps= 55 q=29.0 size=   22259kB time=00:02:31.65 bitrate=   0.0kbits/s throttle=off speed=3.84e+11x    
+13:32:24.089 frame= 1353 fps= 55 q=29.0 size=   22752kB time=00:02:32.80 bitrate=   0.0kbits/s throttle=off speed=3.76e+11x    
+13:32:24.494 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:24.496 SegmentComplete=video:0 Index=50 Start=150.216733 End=153.219733 Duration=3.003000 offset_pts=0 start_pts=150216733 Frames=90 filename=EA4090_50.ts
+13:32:24.496 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_51.ts.tmp' for writing
+13:32:24.608 frame= 1376 fps= 55 q=29.0 size=   23219kB time=00:02:33.62 bitrate=   0.0kbits/s throttle=off speed=3.68e+11x    
+13:32:25.099 frame= 1395 fps= 55 q=29.0 size=   23482kB time=00:02:34.22 bitrate=   0.0kbits/s throttle=off speed=3.61e+11x    
+13:32:25.621 frame= 1415 fps= 54 q=29.0 size=   23771kB time=00:02:34.87 bitrate=   0.0kbits/s throttle=off speed=3.54e+11x    
+13:32:26.148 frame= 1451 fps= 55 q=29.0 size=   24337kB time=00:02:36.07 bitrate=   0.0kbits/s throttle=off speed=3.47e+11x    
+13:32:26.421 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:26.421 SegmentComplete=video:0 Index=51 Start=153.219733 End=156.222733 Duration=3.003000 offset_pts=0 start_pts=153219733 Frames=90 filename=EA4090_51.ts
+13:32:26.421 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_52.ts.tmp' for writing
+13:32:26.666 frame= 1470 fps= 54 q=29.0 size=   24775kB time=00:02:36.72 bitrate=   0.0kbits/s throttle=off speed=3.4e+11x    
+13:32:27.176 frame= 1488 fps= 54 q=29.0 size=   25062kB time=00:02:37.32 bitrate=   0.0kbits/s throttle=off speed=3.34e+11x    
+13:32:27.741 frame= 1510 fps= 54 q=29.0 size=   25464kB time=00:02:38.08 bitrate=   0.0kbits/s throttle=off speed=3.27e+11x    
+13:32:28.251 frame= 1532 fps= 53 q=29.0 size=   25760kB time=00:02:38.76 bitrate=   0.0kbits/s throttle=off speed=3.21e+11x    
+13:32:28.696 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:28.697 SegmentComplete=video:0 Index=52 Start=156.222733 End=159.225733 Duration=3.003000 offset_pts=0 start_pts=156222733 Frames=90 filename=EA4090_52.ts
+13:32:28.697 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_53.ts.tmp' for writing
+13:32:28.785 frame= 1552 fps= 53 q=29.0 size=   26173kB time=00:02:39.48 bitrate=   0.0kbits/s throttle=off speed=3.16e+11x    
+13:32:29.286 frame= 1572 fps= 53 q=29.0 size=   26384kB time=00:02:40.10 bitrate=   0.0kbits/s throttle=off speed=3.1e+11x    
+13:32:29.805 frame= 1592 fps= 53 q=29.0 size=   26632kB time=00:02:40.77 bitrate=   0.0kbits/s throttle=off speed=3.05e+11x    
+13:32:30.294 frame= 1612 fps= 52 q=29.0 size=   26859kB time=00:02:41.44 bitrate=   0.0kbits/s throttle=off speed=3e+11x    
+13:32:30.801 frame= 1634 fps= 52 q=29.0 size=   27057kB time=00:02:42.16 bitrate=   0.0kbits/s throttle=off speed=2.95e+11x    
+13:32:30.976 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:30.976 SegmentComplete=video:0 Index=53 Start=159.225733 End=162.228733 Duration=3.003000 offset_pts=0 start_pts=159225733 Frames=90 filename=EA4090_53.ts
+13:32:30.976 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_54.ts.tmp' for writing
+13:32:31.304 frame= 1655 fps= 52 q=29.0 size=   27370kB time=00:02:42.88 bitrate=   0.0kbits/s throttle=off speed=2.91e+11x    
+13:32:31.805 frame= 1674 fps= 52 q=29.0 size=   27530kB time=00:02:43.60 bitrate=   0.0kbits/s throttle=off speed=2.86e+11x    
+13:32:32.318 frame= 1691 fps= 52 q=29.0 size=   27680kB time=00:02:44.13 bitrate=   0.0kbits/s throttle=off speed=2.82e+11x    
+13:32:32.837 frame= 1711 fps= 51 q=29.0 size=   27852kB time=00:02:44.76 bitrate=   0.0kbits/s throttle=off speed=2.77e+11x    
+13:32:33.376 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:33.377 SegmentComplete=video:0 Index=54 Start=162.228733 End=165.231733 Duration=3.003000 offset_pts=0 start_pts=162228733 Frames=90 filename=EA4090_54.ts
+13:32:33.377 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_55.ts.tmp' for writing
+13:32:33.377 frame= 1731 fps= 51 q=29.0 size=   28212kB time=00:02:45.43 bitrate=   0.0kbits/s throttle=off speed=2.73e+11x    
+13:32:33.881 frame= 1752 fps= 51 q=29.0 size=   28464kB time=00:02:46.15 bitrate=   0.0kbits/s throttle=off speed=2.69e+11x    
+13:32:34.455 frame= 1776 fps= 51 q=29.0 size=   28729kB time=00:02:46.92 bitrate=   0.0kbits/s throttle=off speed=2.64e+11x    
+13:32:34.985 frame= 1796 fps= 51 q=29.0 size=   28969kB time=00:02:47.59 bitrate=   0.0kbits/s throttle=off speed=2.6e+11x    
+13:32:35.533 frame= 1816 fps= 50 q=26.0 size=   29225kB time=00:02:48.26 bitrate=   0.0kbits/s throttle=off speed=2.56e+11x    
+13:32:35.679 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:35.680 SegmentComplete=video:0 Index=55 Start=165.231733 End=168.234733 Duration=3.003000 offset_pts=0 start_pts=165231733 Frames=90 filename=EA4090_55.ts
+13:32:35.680 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_56.ts.tmp' for writing
+13:32:36.051 frame= 1836 fps= 50 q=29.0 size=   29583kB time=00:02:48.91 bitrate=   0.0kbits/s throttle=off speed=2.53e+11x    
+13:32:36.574 frame= 1856 fps= 50 q=29.0 size=   29831kB time=00:02:49.60 bitrate=   0.0kbits/s throttle=off speed=2.49e+11x    
+13:32:37.064 frame= 1875 fps= 50 q=29.0 size=   30074kB time=00:02:50.23 bitrate=   0.0kbits/s throttle=off speed=2.46e+11x    
+13:32:37.560 frame= 1895 fps= 50 q=29.0 size=   30303kB time=00:02:50.90 bitrate=   0.0kbits/s throttle=off speed=2.43e+11x    
+13:32:37.990 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:37.990 SegmentComplete=video:0 Index=56 Start=168.234733 End=171.237733 Duration=3.003000 offset_pts=0 start_pts=168234733 Frames=90 filename=EA4090_56.ts
+13:32:37.990 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_57.ts.tmp' for writing
+13:32:38.068 frame= 1914 fps= 50 q=29.0 size=   30618kB time=00:02:51.57 bitrate=   0.0kbits/s throttle=off speed=2.39e+11x    
+13:32:38.584 frame= 1936 fps= 50 q=29.0 size=   30857kB time=00:02:52.27 bitrate=   0.0kbits/s throttle=off speed=2.36e+11x    
+13:32:39.138 frame= 1956 fps= 49 q=29.0 size=   31074kB time=00:02:52.92 bitrate=   0.0kbits/s throttle=off speed=2.33e+11x    
+13:32:39.653 frame= 1972 fps= 49 q=29.0 size=   31279kB time=00:02:53.44 bitrate=   0.0kbits/s throttle=off speed=2.3e+11x    
+13:32:40.237 frame= 1996 fps= 49 q=26.0 size=   31624kB time=00:02:54.26 bitrate=   0.0kbits/s throttle=off speed=2.27e+11x    
+13:32:40.326 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:40.326 SegmentComplete=video:0 Index=57 Start=171.237733 End=174.240733 Duration=3.003000 offset_pts=0 start_pts=171237733 Frames=90 filename=EA4090_57.ts
+13:32:40.327 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_58.ts.tmp' for writing
+13:32:40.774 frame= 2017 fps= 49 q=29.0 size=   31981kB time=00:02:54.96 bitrate=   0.0kbits/s throttle=off speed=2.24e+11x    
+13:32:41.275 frame= 2028 fps= 49 q=29.0 size=   32164kB time=00:02:55.32 bitrate=   0.0kbits/s throttle=off speed=2.21e+11x    
+13:32:41.775 frame= 2048 fps= 49 q=29.0 size=   32441kB time=00:02:55.99 bitrate=   0.0kbits/s throttle=off speed=2.18e+11x    
+13:32:42.288 frame= 2065 fps= 48 q=29.0 size=   32722kB time=00:02:56.56 bitrate=   0.0kbits/s throttle=off speed=2.16e+11x    
+13:32:42.805 frame= 2082 fps= 48 q=29.0 size=   33054kB time=00:02:57.14 bitrate=   0.0kbits/s throttle=off speed=2.13e+11x    
+13:32:43.037 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:43.038 SegmentComplete=video:0 Index=58 Start=174.240733 End=177.243733 Duration=3.003000 offset_pts=0 start_pts=174240733 Frames=90 filename=EA4090_58.ts
+13:32:43.038 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_59.ts.tmp' for writing
+13:32:43.313 frame= 2101 fps= 48 q=29.0 size=   33459kB time=00:02:57.76 bitrate=   0.0kbits/s throttle=off speed=2.11e+11x    
+13:32:43.835 frame= 2120 fps= 48 q=29.0 size=   33785kB time=00:02:58.39 bitrate=   0.0kbits/s throttle=off speed=2.08e+11x    
+13:32:44.345 frame= 2137 fps= 48 q=29.0 size=   34086kB time=00:02:58.96 bitrate=   0.0kbits/s throttle=off speed=2.06e+11x    
+13:32:44.858 frame= 2157 fps= 48 q=29.0 size=   34413kB time=00:02:59.66 bitrate=   0.0kbits/s throttle=off speed=2.04e+11x    
+13:32:45.418 frame= 2176 fps= 47 q=26.0 size=   34730kB time=00:03:00.26 bitrate=   0.0kbits/s throttle=off speed=2.01e+11x    
+13:32:45.511 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:45.512 SegmentComplete=video:0 Index=59 Start=177.243733 End=180.246733 Duration=3.003000 offset_pts=0 start_pts=177243733 Frames=90 filename=EA4090_59.ts
+13:32:45.512 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_60.ts.tmp' for writing
+13:32:45.923 frame= 2197 fps= 47 q=29.0 size=   35152kB time=00:03:00.98 bitrate=   0.0kbits/s throttle=off speed=1.99e+11x    
+13:32:46.436 frame= 2216 fps= 47 q=29.0 size=   35526kB time=00:03:01.60 bitrate=   0.0kbits/s throttle=off speed=1.97e+11x    
+13:32:46.953 frame= 2234 fps= 47 q=29.0 size=   35876kB time=00:03:02.23 bitrate=   0.0kbits/s throttle=off speed=1.95e+11x    
+13:32:47.502 frame= 2249 fps= 47 q=29.0 size=   36113kB time=00:03:02.71 bitrate=   0.0kbits/s throttle=off speed=1.92e+11x    
+13:32:48.020 frame= 2268 fps= 47 q=29.0 size=   36467kB time=00:03:03.33 bitrate=   0.0kbits/s throttle=off speed=1.9e+11x    
+13:32:48.080 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:48.081 SegmentComplete=video:0 Index=60 Start=180.246733 End=183.249733 Duration=3.003000 offset_pts=0 start_pts=180246733 Frames=90 filename=EA4090_60.ts
+13:32:48.081 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_61.ts.tmp' for writing
+13:32:48.526 frame= 2290 fps= 47 q=29.0 size=   36884kB time=00:03:04.08 bitrate=   0.0kbits/s throttle=off speed=1.88e+11x    
+13:32:49.033 frame= 2311 fps= 47 q=29.0 size=   37203kB time=00:03:04.75 bitrate=   0.0kbits/s throttle=off speed=1.86e+11x    
+13:32:49.545 frame= 2329 fps= 47 q=29.0 size=   37515kB time=00:03:05.35 bitrate=   0.0kbits/s throttle=off speed=1.85e+11x    
+13:32:50.046 frame= 2348 fps= 47 q=29.0 size=   37855kB time=00:03:06.00 bitrate=   0.0kbits/s throttle=off speed=1.83e+11x    
+13:32:50.389 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:50.389 SegmentComplete=video:0 Index=61 Start=183.249733 End=186.252733 Duration=3.003000 offset_pts=0 start_pts=183249733 Frames=90 filename=EA4090_61.ts
+13:32:50.389 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_62.ts.tmp' for writing
+13:32:50.570 frame= 2366 fps= 46 q=29.0 size=   38274kB time=00:03:06.67 bitrate=   0.0kbits/s throttle=off speed=1.81e+11x    
+13:32:51.071 frame= 2385 fps= 46 q=29.0 size=   38596kB time=00:03:07.24 bitrate=   0.0kbits/s throttle=off speed=1.79e+11x    
+13:32:51.581 frame= 2403 fps= 46 q=29.0 size=   38907kB time=00:03:07.84 bitrate=   0.0kbits/s throttle=off speed=1.77e+11x    
+13:32:52.084 frame= 2423 fps= 46 q=29.0 size=   39234kB time=00:03:08.49 bitrate=   0.0kbits/s throttle=off speed=1.76e+11x    
+13:32:52.593 frame= 2442 fps= 46 q=29.0 size=   39567kB time=00:03:09.14 bitrate=   0.0kbits/s throttle=off speed=1.74e+11x    
+13:32:52.803 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:52.804 SegmentComplete=video:0 Index=62 Start=186.252733 End=189.255733 Duration=3.003000 offset_pts=0 start_pts=186252733 Frames=90 filename=EA4090_62.ts
+13:32:52.804 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_63.ts.tmp' for writing
+13:32:53.100 frame= 2463 fps= 46 q=29.0 size=   39977kB time=00:03:09.84 bitrate=   0.0kbits/s throttle=off speed=1.72e+11x    
+13:32:53.613 frame= 2481 fps= 46 q=29.0 size=   40306kB time=00:03:10.44 bitrate=   0.0kbits/s throttle=off speed=1.71e+11x    
+13:32:54.119 frame= 2499 fps= 46 q=29.0 size=   40612kB time=00:03:11.08 bitrate=   0.0kbits/s throttle=off speed=1.69e+11x    
+13:32:54.626 frame= 2517 fps= 46 q=29.0 size=   40928kB time=00:03:11.64 bitrate=   0.0kbits/s throttle=off speed=1.67e+11x    
+13:32:55.145 frame= 2532 fps= 46 q=29.0 size=   41185kB time=00:03:12.16 bitrate=   0.0kbits/s throttle=off speed=1.66e+11x    
+13:32:55.549 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:55.550 SegmentComplete=video:0 Index=63 Start=189.255733 End=192.258733 Duration=3.003000 offset_pts=0 start_pts=189255733 Frames=90 filename=EA4090_63.ts
+13:32:55.550 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_64.ts.tmp' for writing
+13:32:55.674 frame= 2546 fps= 45 q=29.0 size=   41491kB time=00:03:12.62 bitrate=   0.0kbits/s throttle=off speed=1.64e+11x    
+13:32:56.174 frame= 2566 fps= 45 q=29.0 size=   41795kB time=00:03:13.29 bitrate=   0.0kbits/s throttle=off speed=1.63e+11x    
+13:32:56.681 frame= 2584 fps= 45 q=29.0 size=   42071kB time=00:03:13.87 bitrate=   0.0kbits/s throttle=off speed=1.61e+11x    
+13:32:57.189 frame= 2603 fps= 45 q=29.0 size=   42392kB time=00:03:14.52 bitrate=   0.0kbits/s throttle=off speed=1.6e+11x    
+13:32:57.693 frame= 2620 fps= 45 q=29.0 size=   42689kB time=00:03:15.09 bitrate=   0.0kbits/s throttle=off speed=1.59e+11x    
+13:32:57.989 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:32:57.994 SegmentComplete=video:0 Index=64 Start=192.258733 End=195.261733 Duration=3.003000 offset_pts=0 start_pts=192258733 Frames=90 filename=EA4090_64.ts
+13:32:57.994 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_65.ts.tmp' for writing
+13:32:58.266 frame= 2640 fps= 45 q=29.0 size=   43106kB time=00:03:15.72 bitrate=   0.0kbits/s throttle=off speed=1.57e+11x    
+13:32:58.710 frame= 2658 fps= 45 q=29.0 size=   43444kB time=00:03:16.34 bitrate=   0.0kbits/s throttle=off speed=1.56e+11x    
+13:32:59.217 frame= 2674 fps= 45 q=29.0 size=   43762kB time=00:03:16.87 bitrate=   0.0kbits/s throttle=off speed=1.55e+11x    
+13:32:59.725 frame= 2694 fps= 45 q=29.0 size=   44159kB time=00:03:17.59 bitrate=   0.0kbits/s throttle=off speed=1.53e+11x    
+13:33:00.227 frame= 2712 fps= 45 q=29.0 size=   44525kB time=00:03:18.19 bitrate=   0.0kbits/s throttle=off speed=1.52e+11x    
+13:33:00.449 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:33:00.449 SegmentComplete=video:0 Index=65 Start=195.261733 End=198.264733 Duration=3.003000 offset_pts=0 start_pts=195261733 Frames=90 filename=EA4090_65.ts
+13:33:00.449 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_66.ts.tmp' for writing
+13:33:00.809 frame= 2734 fps= 45 q=29.0 size=   45018kB time=00:03:18.88 bitrate=   0.0kbits/s throttle=off speed=1.51e+11x    
+13:33:01.322 frame= 2751 fps= 45 q=29.0 size=   45371kB time=00:03:19.44 bitrate=   0.0kbits/s throttle=off speed=1.49e+11x    
+13:33:01.840 frame= 2768 fps= 44 q=29.0 size=   45803kB time=00:03:20.01 bitrate=   0.0kbits/s throttle=off speed=1.48e+11x    
+13:33:02.372 frame= 2784 fps= 44 q=29.0 size=   46185kB time=00:03:20.56 bitrate=   0.0kbits/s throttle=off speed=1.47e+11x    
+13:33:02.910 frame= 2799 fps= 44 q=29.0 size=   46489kB time=00:03:21.07 bitrate=   0.0kbits/s throttle=off speed=1.46e+11x    
+13:33:03.219 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:33:03.219 SegmentComplete=video:0 Index=66 Start=198.264733 End=201.267733 Duration=3.003000 offset_pts=0 start_pts=198264733 Frames=90 filename=EA4090_66.ts
+13:33:03.219 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090_67.ts.tmp' for writing
+13:33:03.433 frame= 2818 fps= 44 q=29.0 size=   46929kB time=00:03:21.67 bitrate=   0.0kbits/s throttle=off speed=1.44e+11x    
+13:33:03.480 
+
+[q] command received. Exiting.
+
+13:33:03.770 13:33:03.771 [segment @ 0x1791740] Opening '/config/transcoding-temp/EA4090.m3u8.tmp' for writing
+13:33:03.771 SegmentComplete=video:0 Index=67 Start=201.267733 End=202.302100 Duration=1.034367 offset_pts=0 start_pts=201267733 Frames=31 filename=EA4090_67.ts
+13:33:03.771 frame= 2821 fps= 44 q=-1.0 Lsize=   47375kB time=00:03:22.20 bitrate=   0.0kbits/s throttle=off speed=1.44e+11x    
+13:33:03.771 video:45174kB audio:2201kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+13:33:03.774 EXIT
+13:33:03.777 [libx264 @ 0x1792a40] frame I:32    Avg QP:20.10  size:105746
+13:33:03.777 [libx264 @ 0x1792a40] frame P:725   Avg QP:23.38  size: 35774
+13:33:03.777 [libx264 @ 0x1792a40] frame B:2064  Avg QP:25.49  size:  8206
+13:33:03.777 [libx264 @ 0x1792a40] consecutive B-frames:  2.2%  0.5%  0.4% 96.8%
+13:33:03.777 [libx264 @ 0x1792a40] mb I  I16..4: 34.7%  0.0% 65.3%
+13:33:03.777 [libx264 @ 0x1792a40] mb P  I16..4: 23.3%  0.0%  0.0%  P16..4: 56.9%  0.0%  0.0%  0.0%  0.0%    skip:19.8%
+13:33:03.777 [libx264 @ 0x1792a40] mb B  I16..4:  2.4%  0.0%  0.0%  B16..8: 26.4%  0.0%  0.0%  direct: 9.6%  skip:61.7%  L0:37.7% L1:52.2% BI:10.0%
+13:33:03.777 [libx264 @ 0x1792a40] coded y,uvDC,uvAC intra: 28.8% 39.9% 5.7% inter: 8.6% 13.4% 0.0%
+13:33:03.777 [libx264 @ 0x1792a40] i16 v,h,dc,p: 32% 24% 23% 22%
+13:33:03.777 [libx264 @ 0x1792a40] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 24% 18% 13%  8% 10%  9%  7%  5%  6%
+13:33:03.777 [libx264 @ 0x1792a40] i8c dc,h,v,p: 42% 22% 27%  9%
+13:33:03.777 [libx264 @ 0x1792a40] Weighted P-Frames: Y:1.4% UV:0.3%
+13:33:03.777 [libx264 @ 0x1792a40] kb/s:3931.50
+13:33:03.790 
+
+======= ExtraData
+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

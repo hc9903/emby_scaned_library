@@ -1,0 +1,282 @@
+2020-05-22 14:11:22.830
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome Android
+
+http://emby.super0.me:8096/videos/10319/hls1/main/2595.ts?DeviceId=d14043e9-28c3-4164-89bf-6ba994348754&MediaSourceId=356bb811d390990d0ea86a2b882b8ebd&PlaySessionId=26505c1921e74304ba10b5103d3a495a&api_key=ed5abae5d80a4b64ad808f55349b937f&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=59616000&AudioBitrate=384000&AudioStreamIndex=1&SubtitleStreamIndex=4&SubtitleMethod=Encode&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=False&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=SubtitleCodecNotSupported
+
+{"Protocol":"File","Id":"356bb811d390990d0ea86a2b882b8ebd","Path":"/00/00/IMDB Top250/246.加勒比海盗：黑珍珠号的诅咒.Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS/Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS.mkv","Type":"Default","Container":"mkv","Size":9118586887,"Name":"Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS","IsRemote":false,"RunTimeTicks":85959210000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"hevc","ColorPrimaries":"bt709","TimeBase":"1/1000","CodecTimeBase":"1001/24000","VideoRange":"SDR","DisplayTitle":"1080p HEVC","IsInterlaced":false,"BitRate":8486431,"BitDepth":10,"RefFrames":1,"IsDefault":true,"IsForced":false,"Height":800,"Width":1920,"AverageFrameRate":23.976025,"RealFrameRate":23.976025,"Profile":"Main 10","Type":"Video","AspectRatio":"2.40:1","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p10le","Level":120,"IsAnamorphic":false},{"Codec":"ac3","Language":"eng","TimeBase":"1/1000","CodecTimeBase":"1/48000","DisplayTitle":"English Dolby Digital 5.1 (Default)","DisplayLanguage":"English","IsInterlaced":false,"ChannelLayout":"5.1","BitRate":640000,"Channels":6,"SampleRate":48000,"IsDefault":true,"IsForced":false,"Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"1/48000","DisplayTitle":"Chinese Dolby Digital 5.1","DisplayLanguage":"Chinese","IsInterlaced":false,"ChannelLayout":"5.1","BitRate":448000,"Channels":6,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":2,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"eng","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"English (Default PGSSUB)","DisplayLanguage":"English","IsInterlaced":false,"IsDefault":true,"IsForced":false,"Type":"Subtitle","Index":3,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":4,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":5,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":6,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":7,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":8,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":9,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","Language":"chi","TimeBase":"1/1000","CodecTimeBase":"0/1","DisplayTitle":"Chinese (PGSSUB)","DisplayLanguage":"Chinese","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":10,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":8486431,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for 1124721976
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: hevc, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    ColorConversion                          >> False                False                                                         
+Info    SubtitleOverlay                          >> False                False                                                         
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    hevc                 >> -            yuv420p10    yuv420p10    >> format
+Info    format               >> -            yuv420p      yuv420p      >> overlay
+Info    overlay              >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -ss 02:09:45.000  -f matroska -i file:"/00/00/IMDB Top250/246.加勒比海盗：黑珍珠号的诅咒.Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS/Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS.mkv" -threads 0 -map 0:0 -map 0:1 -c:v:0 libx264 -copyts -filter_complex "[0:4]scale=1920:800:force_original_aspect_ratio=decrease[sub];[0:0][sub]overlay=(W-w)/2:(H-h):repeatlast=0" -pix_fmt yuv420p  -maxrate 16972862 -bufsize 33945724 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 72 -keyint_min:v:0 72 -sc_threshold:v:0 0  -vsync -1 -codec:a:0 libmp3lame -metadata:s:a:0 language=eng -disposition:a:0 default -ac:a:0 2 -ab:a:0 192000 -filter:a:0 "volume=2" -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 2595 -segment_list "/config/transcoding-temp/5DEFAB.m3u8" -y "/config/transcoding-temp/5DEFAB_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-2d9e2fd1-d88b-41a2-89ff-2fd5c16e53d9_1graph.txt -copyts -start_at_zero -f matroska,webm -ss 02:09:45.000 -c:v:0 hevc -i "/00/00/IMDB Top250/246.加勒比海盗：黑珍珠号的诅咒.Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS/Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS.mkv" -filter_complex "[0:0]format@f1=pix_fmts=yuv420p[f1_out0];[0:4]scale@f2=width=1920:height=-2:force_original_aspect_ratio=decrease[f2_out0];[f1_out0][f2_out0]overlay@f3=x=(W-w)/2:y=(H-h):repeatlast=0[f3_out0]" -map [f3_out0] -map 0:1 -sn -c:v:0 libx264 -g:v:0 72 -maxrate:v:0 16972862 -bufsize:v:0 33945724 -sc_threshold:v:0 0 -keyint_min:v:0 72 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 4.0 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 2 -metadata:s:a:0 language=eng -filter:a:0 "volume=2" -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/5DEFAB.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 2595 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/5DEFAB_%d.ts"
+
+14:11:22.902 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+14:11:22.903   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+14:11:22.903 Execution Date: 2020-05-22 14:11:22
+14:11:24.816 [matroska,webm @ 0xe7fa00] Could not find codec parameters for stream 3 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+14:11:24.816 [matroska,webm @ 0xe7fa00] Could not find codec parameters for stream 4 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+14:11:24.816 [matroska,webm @ 0xe7fa00] Could not find codec parameters for stream 5 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+14:11:24.816 [matroska,webm @ 0xe7fa00] Could not find codec parameters for stream 6 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+14:11:24.816 [matroska,webm @ 0xe7fa00] Could not find codec parameters for stream 7 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+14:11:24.816 [matroska,webm @ 0xe7fa00] Could not find codec parameters for stream 8 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+14:11:24.816 [matroska,webm @ 0xe7fa00] Could not find codec parameters for stream 9 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+14:11:24.816 [matroska,webm @ 0xe7fa00] Could not find codec parameters for stream 10 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+14:11:25.747 Input #0, matroska,webm, from '/00/00/IMDB Top250/246.加勒比海盗：黑珍珠号的诅咒.Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS/Pirates.of.the.Caribbean.The.Curse.of.the.Black.Pearl.2003.BluRay.1080p.x265.10bit.2Audio.MNHD-FRDS.mkv':
+14:11:25.747   Metadata:
+14:11:25.747     encoder         : libebml v1.3.3 + libmatroska v1.4.4
+14:11:25.748     creation_time   : 2016-11-25T09:17:17.000000Z
+14:11:25.748   Duration: 02:23:15.92, start: 0.000000, bitrate: 8486 kb/s
+14:11:25.749     Stream #0:0: Video: hevc (Main 10), yuv420p10le(tv, unknown/bt709/unknown), 1920x800, SAR 1:1 DAR 12:5, Level 120, 23.98 fps, 23.98 tbr, 1k tbn, 23.98 tbc (default)
+14:11:25.750     Metadata:
+14:11:25.750       BPS             : 7273764
+14:11:25.750       BPS-eng         : 7273764
+14:11:25.751       DURATION        : 02:23:15.921000000
+14:11:25.751       DURATION-eng    : 02:23:15.921000000
+14:11:25.752       NUMBER_OF_FRAMES: 206096
+14:11:25.752       NUMBER_OF_FRAMES-eng: 206096
+14:11:25.752       NUMBER_OF_BYTES : 7815587640
+14:11:25.753       NUMBER_OF_BYTES-eng: 7815587640
+14:11:25.753     Stream #0:1(eng): Audio: ac3, 48000 Hz, 5.1(side), fltp, 640 kb/s (default)
+14:11:25.754     Metadata:
+14:11:25.759       BPS             : 640000
+14:11:25.759       BPS-eng         : 640000
+14:11:25.759       DURATION        : 02:23:14.912000000
+14:11:25.760       DURATION-eng    : 02:23:14.912000000
+14:11:25.760       NUMBER_OF_FRAMES: 268591
+14:11:25.761       NUMBER_OF_FRAMES-eng: 268591
+14:11:25.761       NUMBER_OF_BYTES : 687592960
+14:11:25.761       NUMBER_OF_BYTES-eng: 687592960
+14:11:25.762     Stream #0:2(chi): Audio: ac3, 48000 Hz, 5.1(side), fltp, 448 kb/s, Start-Time 0.024s
+14:11:25.763     Metadata:
+14:11:25.763       BPS             : 448000
+14:11:25.763       BPS-eng         : 448000
+14:11:25.764       DURATION        : 02:23:09.952000000
+14:11:25.764       DURATION-eng    : 02:23:09.952000000
+14:11:25.764       NUMBER_OF_FRAMES: 268436
+14:11:25.765       NUMBER_OF_FRAMES-eng: 268436
+14:11:25.765       NUMBER_OF_BYTES : 481037312
+14:11:25.765       NUMBER_OF_BYTES-eng: 481037312
+14:11:25.765     Stream #0:3(eng): Subtitle: hdmv_pgs_subtitle (default)
+14:11:25.765     Metadata:
+14:11:25.765       BPS             : 6793
+14:11:25.765       BPS-eng         : 6793
+14:11:25.766       DURATION        : 02:12:41.996000000
+14:11:25.766       DURATION-eng    : 02:12:41.996000000
+14:11:25.766       NUMBER_OF_FRAMES: 3848
+14:11:25.766       NUMBER_OF_FRAMES-eng: 3848
+14:11:25.766       NUMBER_OF_BYTES : 6761239
+14:11:25.766       NUMBER_OF_BYTES-eng: 6761239
+14:11:25.766     Stream #0:4(chi): Subtitle: hdmv_pgs_subtitle
+14:11:25.766     Metadata:
+14:11:25.766       BPS             : 53173
+14:11:25.766       BPS-eng         : 53173
+14:11:25.766       DURATION        : 02:15:11.478000000
+14:11:25.766       DURATION-eng    : 02:15:11.478000000
+14:11:25.766       NUMBER_OF_FRAMES: 3907
+14:11:25.766       NUMBER_OF_FRAMES-eng: 3907
+14:11:25.766       NUMBER_OF_BYTES : 53914058
+14:11:25.766       NUMBER_OF_BYTES-eng: 53914058
+14:11:25.767     Stream #0:5(chi): Subtitle: hdmv_pgs_subtitle
+14:11:25.767     Metadata:
+14:11:25.767       BPS             : 12921
+14:11:25.767       BPS-eng         : 12921
+14:11:25.767       DURATION        : 02:13:01.481000000
+14:11:25.767       DURATION-eng    : 02:13:01.481000000
+14:11:25.767       NUMBER_OF_FRAMES: 3104
+14:11:25.767       NUMBER_OF_FRAMES-eng: 3104
+14:11:25.767       NUMBER_OF_BYTES : 12891617
+14:11:25.767       NUMBER_OF_BYTES-eng: 12891617
+14:11:25.767     Stream #0:6(chi): Subtitle: hdmv_pgs_subtitle
+14:11:25.767     Metadata:
+14:11:25.767       BPS             : 12920
+14:11:25.767       BPS-eng         : 12920
+14:11:25.767       DURATION        : 02:13:01.481000000
+14:11:25.767       DURATION-eng    : 02:13:01.481000000
+14:11:25.767       NUMBER_OF_FRAMES: 3104
+14:11:25.768       NUMBER_OF_FRAMES-eng: 3104
+14:11:25.768       NUMBER_OF_BYTES : 12890630
+14:11:25.768       NUMBER_OF_BYTES-eng: 12890630
+14:11:25.768     Stream #0:7(chi): Subtitle: hdmv_pgs_subtitle
+14:11:25.768     Metadata:
+14:11:25.768       BPS             : 11075
+14:11:25.768       BPS-eng         : 11075
+14:11:25.768       DURATION        : 02:13:01.106000000
+14:11:25.768       DURATION-eng    : 02:13:01.106000000
+14:11:25.768       NUMBER_OF_FRAMES: 2396
+14:11:25.768       NUMBER_OF_FRAMES-eng: 2396
+14:11:25.768       NUMBER_OF_BYTES : 11049500
+14:11:25.768       NUMBER_OF_BYTES-eng: 11049500
+14:11:25.768     Stream #0:8(chi): Subtitle: hdmv_pgs_subtitle
+14:11:25.768     Metadata:
+14:11:25.768       BPS             : 11074
+14:11:25.769       BPS-eng         : 11074
+14:11:25.769       DURATION        : 02:13:01.106000000
+14:11:25.769       DURATION-eng    : 02:13:01.106000000
+14:11:25.769       NUMBER_OF_FRAMES: 2396
+14:11:25.769       NUMBER_OF_FRAMES-eng: 2396
+14:11:25.769       NUMBER_OF_BYTES : 11048738
+14:11:25.769       NUMBER_OF_BYTES-eng: 11048738
+14:11:25.769     Stream #0:9(chi): Subtitle: hdmv_pgs_subtitle
+14:11:25.769     Metadata:
+14:11:25.769       BPS             : 11402
+14:11:25.769       BPS-eng         : 11402
+14:11:25.769       DURATION        : 02:13:01.106000000
+14:11:25.769       DURATION-eng    : 02:13:01.106000000
+14:11:25.769       NUMBER_OF_FRAMES: 2396
+14:11:25.769       NUMBER_OF_FRAMES-eng: 2396
+14:11:25.769       NUMBER_OF_BYTES : 11376042
+14:11:25.769       NUMBER_OF_BYTES-eng: 11376042
+14:11:25.769     Stream #0:10(chi): Subtitle: hdmv_pgs_subtitle
+14:11:25.770     Metadata:
+14:11:25.770       BPS             : 11402
+14:11:25.770       BPS-eng         : 11402
+14:11:25.770       DURATION        : 02:13:01.106000000
+14:11:25.770       DURATION-eng    : 02:13:01.106000000
+14:11:25.770       NUMBER_OF_FRAMES: 2396
+14:11:25.770       NUMBER_OF_FRAMES-eng: 2396
+14:11:25.770       NUMBER_OF_BYTES : 11375296
+14:11:25.770       NUMBER_OF_BYTES-eng: 11375296
+14:11:25.771 Stream mapping:
+14:11:25.771   Stream #0:0 (hevc) -> format (graph 0)
+14:11:25.771   Stream #0:4 (pgssub) -> scale (graph 0)
+14:11:25.771   overlay (graph 0) -> Stream #0:0 (libx264)
+14:11:25.771   Stream #0:1 -> #0:1 (ac3 (native) -> mp3 (libmp3lame))
+14:11:25.771 Press [q] to stop, [?] for help
+14:11:28.151 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+14:11:28.297 [matroska,webm @ 0xe7fa00] sub2video: using 1920x800 canvas
+14:11:28.303 [libx264 @ 0x1039780] using SAR=1/1
+14:11:28.303 [libx264 @ 0x1039780] VBV buffer (33945) > level limit (25000)
+14:11:28.303 [libx264 @ 0x1039780] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+14:11:28.311 [libx264 @ 0x1039780] profile Main, level 4.0, 4:2:0, 8-bit
+14:11:28.312 [libx264 @ 0x1039780] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=72 keyint_min=37 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=16972 vbv_bufsize=33945 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+14:11:28.312 Output #0, segment, to '/config/transcoding-temp/5DEFAB_%d.ts':
+14:11:28.313   Metadata:
+14:11:28.313     encoder         : Lavf58.35.100
+14:11:28.313     Stream #0:0: Video: h264 (libx264), yuv420p, 1920x800 [SAR 1:1 DAR 12:5], q=-1--1, 23.98 fps, 90k tbn, 23.98 tbc (default)
+14:11:28.313     Metadata:
+14:11:28.314       encoder         : Lavc58.62.100 libx264
+14:11:28.314     Side data:
+14:11:28.314       cpb: bitrate max/min/avg: 16972000/0/0 buffer size: 33945000 vbv_delay: N/A
+14:11:28.314     Stream #0:1(eng): Audio: mp3 (libmp3lame), 48000 Hz, stereo, fltp, 192 kb/s (default)
+14:11:28.314     Metadata:
+14:11:28.314       encoder         : Lavc58.62.100 libmp3lame
+14:11:28.672 frame=    0 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=   0.0kbits/s throttle=off speed=3.2e+12x    
+14:11:29.243 frame=   17 fps=4.9 q=0.0 size=      24kB time=02:09:46.00 bitrate=   0.0kbits/s throttle=off speed=2.68e+12x    
+14:11:29.731 frame=   36 fps=9.1 q=28.0 size=     340kB time=02:09:46.80 bitrate=   0.0kbits/s throttle=off speed=2.33e+12x    
+14:11:29.855 [graph 0 input from stream 0:4 @ 0x12790c0] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 7786.95
+14:11:29.856 [graph 0 input from stream 0:4 @ 0x12790c0] Changing video frame properties on the fly is not supported by all filters.
+14:11:30.061 [graph 0 input from stream 0:4 @ 0x12790c0] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 7787.19
+14:11:30.061 [graph 0 input from stream 0:4 @ 0x12790c0] Changing video frame properties on the fly is not supported by all filters.
+14:11:30.205 [graph 0 input from stream 0:4 @ 0x12790c0] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 7787.61
+14:11:30.205 [graph 0 input from stream 0:4 @ 0x12790c0] Changing video frame properties on the fly is not supported by all filters.
+14:11:30.299 frame=   55 fps= 12 q=28.0 size=     623kB time=02:09:47.49 bitrate=   0.0kbits/s throttle=off speed=2.06e+12x    
+14:11:30.471 [graph 0 input from stream 0:4 @ 0x12790c0] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 7787.82
+14:11:30.471 [graph 0 input from stream 0:4 @ 0x12790c0] Changing video frame properties on the fly is not supported by all filters.
+14:11:30.576 [graph 0 input from stream 0:4 @ 0x12790c0] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 7788.11
+14:11:30.576 [graph 0 input from stream 0:4 @ 0x12790c0] Changing video frame properties on the fly is not supported by all filters.
+14:11:30.798 frame=   72 fps= 14 q=28.0 size=    1293kB time=02:09:48.26 bitrate=   0.0kbits/s throttle=off speed=1.84e+12x    
+14:11:31.261 [graph 0 input from stream 0:4 @ 0x12790c0] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 7788.35
+14:11:31.261 [graph 0 input from stream 0:4 @ 0x12790c0] Changing video frame properties on the fly is not supported by all filters.
+14:11:31.309 frame=   77 fps= 14 q=28.0 size=    1575kB time=02:09:48.52 bitrate=   0.0kbits/s throttle=off speed=1.67e+12x    
+14:11:31.440 [graph 0 input from stream 0:4 @ 0x12790c0] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 7788.57
+14:11:31.441 [graph 0 input from stream 0:4 @ 0x12790c0] Changing video frame properties on the fly is not supported by all filters.
+14:11:31.571 [graph 0 input from stream 0:4 @ 0x12790c0] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 7788.78
+14:11:31.572 [graph 0 input from stream 0:4 @ 0x12790c0] Changing video frame properties on the fly is not supported by all filters.
+14:11:31.885 frame=   90 fps= 15 q=28.0 size=    2139kB time=02:09:48.98 bitrate=   0.0kbits/s throttle=off speed=1.51e+12x    
+14:11:31.891 [graph 0 input from stream 0:4 @ 0x12790c0] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 7789.07
+14:11:31.891 [graph 0 input from stream 0:4 @ 0x12790c0] Changing video frame properties on the fly is not supported by all filters.
+14:11:31.972 [segment @ 0x10382c0] Opening '/config/transcoding-temp/5DEFAB.m3u8.tmp' for writing
+14:11:31.972 SegmentComplete=video:0 Index=2595 Start=0.000000 End=7788.030256 Duration=7788.030256 offset_pts=0 start_pts=0 Frames=72 filename=5DEFAB_2595.ts
+14:11:31.972 [segment @ 0x10382c0] Opening '/config/transcoding-temp/5DEFAB_2596.ts.tmp' for writing
+14:11:32.071 [graph 0 input from stream 0:4 @ 0x12790c0] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 7789.32
+14:11:32.071 [graph 0 input from stream 0:4 @ 0x12790c0] Changing video frame properties on the fly is not supported by all filters.
+14:11:32.300 [graph 0 input from stream 0:4 @ 0x12790c0] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 7789.66
+14:11:32.311 [graph 0 input from stream 0:4 @ 0x12790c0] Changing video frame properties on the fly is not supported by all filters.
+14:11:32.444 frame=  107 fps= 16 q=28.0 size=    2793kB time=02:09:49.75 bitrate=   0.0kbits/s throttle=off speed=1.39e+12x    
+14:11:32.545 [graph 0 input from stream 0:4 @ 0x12790c0] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 7789.91
+14:11:32.545 [graph 0 input from stream 0:4 @ 0x12790c0] Changing video frame properties on the fly is not supported by all filters.
+14:11:32.749 [graph 0 input from stream 0:4 @ 0x12790c0] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 7790.14
+14:11:32.749 [graph 0 input from stream 0:4 @ 0x12790c0] Changing video frame properties on the fly is not supported by all filters.
+14:11:32.877 [graph 0 input from stream 0:4 @ 0x12790c0] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 7790.4
+14:11:32.877 [graph 0 input from stream 0:4 @ 0x12790c0] Changing video frame properties on the fly is not supported by all filters.
+14:11:32.915 [graph 0 input from stream 0:4 @ 0x12790c0] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 7790.49
+14:11:32.915 [graph 0 input from stream 0:4 @ 0x12790c0] Changing video frame properties on the fly is not supported by all filters.
+14:11:32.925 frame=  124 fps= 17 q=28.0 size=    3384kB time=02:09:50.61 bitrate=   0.0kbits/s throttle=off speed=1.29e+12x    
+14:11:33.077 
+
+[q] command received. Exiting.
+
+14:11:33.086 [graph 0 input from stream 0:4 @ 0x12790c0] filter context - w: 1920 h: 800 fmt: 28, incoming frame - w: 1920 h: 1080 fmt: 28 pts_time: 4.30276e+06
+14:11:33.086 [graph 0 input from stream 0:4 @ 0x12790c0] Changing video frame properties on the fly is not supported by all filters.
+14:11:33.400 14:11:33.401 [segment @ 0x10382c0] Opening '/config/transcoding-temp/5DEFAB.m3u8.tmp' for writing
+14:11:33.401 SegmentComplete=video:0 Index=2596 Start=7788.030256 End=7790.407633 Duration=2.377378 offset_pts=0 start_pts=7788030256 Frames=57 filename=5DEFAB_2596.ts
+14:11:33.401 frame=  129 fps= 17 q=-1.0 Lsize=    3770kB time=02:09:50.90 bitrate=   0.0kbits/s throttle=off speed=1.21e+12x    
+14:11:33.401 video:3631kB audio:139kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+14:11:33.429 EXIT
+14:11:33.441 [libx264 @ 0x1039780] frame I:2     Avg QP:21.51  size: 95171
+14:11:33.441 [libx264 @ 0x1039780] frame P:34    Avg QP:24.45  size: 51031
+14:11:33.441 [libx264 @ 0x1039780] frame B:93    Avg QP:26.98  size: 19267
+14:11:33.441 [libx264 @ 0x1039780] consecutive B-frames:  1.6%  6.2%  2.3% 89.9%
+14:11:33.441 [libx264 @ 0x1039780] mb I  I16..4: 37.9%  0.0% 62.1%
+14:11:33.441 [libx264 @ 0x1039780] mb P  I16..4: 36.6%  0.0%  0.0%  P16..4: 45.7%  0.0%  0.0%  0.0%  0.0%    skip:17.7%
+14:11:33.441 [libx264 @ 0x1039780] mb B  I16..4:  9.5%  0.0%  0.0%  B16..8: 25.8%  0.0%  0.0%  direct:11.6%  skip:53.1%  L0:37.8% L1:43.2% BI:19.1%
+14:11:33.441 [libx264 @ 0x1039780] coded y,uvDC,uvAC intra: 73.7% 22.3% 3.3% inter: 20.3% 6.5% 0.1%
+14:11:33.441 [libx264 @ 0x1039780] i16 v,h,dc,p: 19% 27% 35% 19%
+14:11:33.442 [libx264 @ 0x1039780] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 20% 20% 13% 11%  7%  7%  7%  7%  9%
+14:11:33.442 [libx264 @ 0x1039780] i8c dc,h,v,p: 51% 27% 17%  6%
+14:11:33.442 [libx264 @ 0x1039780] Weighted P-Frames: Y:0.0% UV:0.0%
+14:11:33.442 [libx264 @ 0x1039780] kb/s:5527.16
+14:11:33.452 
+
+======= ExtraData
+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

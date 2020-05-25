@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<UserConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PlayDefaultAudioTrack>true</PlayDefaultAudioTrack>
+  <DisplayMissingEpisodes>false</DisplayMissingEpisodes>
+  <GroupedFolders />
+  <SubtitleMode>Default</SubtitleMode>
+  <DisplayCollectionsView>false</DisplayCollectionsView>
+  <EnableLocalPassword>false</EnableLocalPassword>
+  <OrderedViews>
+    <string>1c8e714ca18d5f72b2db5db162b92603</string>
+    <string>d5cd3dd7e8d75833d24229bc1d7dc0c4</string>
+    <string>c0e64f2182d52de6bc5ad6659458f085</string>
+    <string>87e9fdcdef2b981bf51a727a59540807</string>
+    <string>a887b2b956a7ec421df3dd855638a785</string>
+    <string>d81677bf924bb53712af5c19de764dff</string>
+    <string>484a56bd029e71462a89159fa2bf7356</string>
+    <string>00f4e72f6c222cd20f10e5f9771cfabf</string>
+    <string>ea555e0b760f095ed755e43589d607f1</string>
+    <string>cfe93c19e55f417e8ad3668e37ee96a6</string>
+    <string>eae75af54b5673a4fda271df1edce2d2</string>
+    <string>5d198df87a3474551654ec18070af1e6</string>
+    <string>e0cafd6b6c0b3510b712203c029f1a82</string>
+    <string>9dbf488bc9d13602e4d446a0ead34c1f</string>
+  </OrderedViews>
+  <LatestItemsExcludes />
+  <MyMediaExcludes />
+  <HidePlayedInLatest>true</HidePlayedInLatest>
+  <RememberAudioSelections>true</RememberAudioSelections>
+  <RememberSubtitleSelections>true</RememberSubtitleSelections>
+  <EnableNextEpisodeAutoPlay>true</EnableNextEpisodeAutoPlay>
+</UserConfiguration>

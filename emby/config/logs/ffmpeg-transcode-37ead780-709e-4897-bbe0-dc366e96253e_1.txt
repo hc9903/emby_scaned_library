@@ -1,0 +1,209 @@
+2020-05-23 04:40:31.779
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome Android
+
+http://emby.super0.me:8096/videos/8675/hls1/main/0.ts?DeviceId=5f44ca82-da4c-431e-b855-db1136acebe0&MediaSourceId=08ecf0c9ef09e82bac9bf2a013ea4652&PlaySessionId=8d6f0f99d9a64b3ebae3299cc8fffbd9&api_key=69a8c8e4d325445b972db49b3c282f55&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=59808000&AudioBitrate=192000&AudioStreamIndex=0&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=False&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=ContainerNotSupported
+
+{"Protocol":"File","Id":"08ecf0c9ef09e82bac9bf2a013ea4652","Path":"/00/22/SEX分类/无码/あずみ恋/【あずみ恋】043013-325/043013-325 AV女優と飲み…そして泊まりSEX by HAMAR　前編.wmv","Type":"Default","Container":"asf","Size":2121336128,"Name":"043013-325 AV女優と飲み…そして泊まりSEX by HAMAR　前編","IsRemote":false,"RunTimeTicks":40451440000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"wmav2","TimeBase":"1/1000","CodecTimeBase":"1/48000","DisplayTitle":"WMAV2 2 ch","IsInterlaced":false,"BitRate":192000,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"wmv3","CodecTag":"WMV3","TimeBase":"1/1000","CodecTimeBase":"1001/30000","VideoRange":"SDR","DisplayTitle":"720p WMV3","IsInterlaced":false,"BitRate":4000000,"BitDepth":8,"RefFrames":1,"IsDefault":false,"IsForced":false,"Height":720,"Width":1280,"AverageFrameRate":29.97003,"RealFrameRate":29.97003,"Profile":"Main","Type":"Video","AspectRatio":"16:9","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p","Level":-99,"IsAnamorphic":false}],"Formats":[],"Bitrate":4195323,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for 1124721976
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: wmv3, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    wmv3                 >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -async 1  -f asf -i file:"/00/22/SEX分类/无码/あずみ恋/【あずみ恋】043013-325/043013-325 AV女優と飲み…そして泊まりSEX by HAMAR　前編.wmv" -threads 0 -map 0:1 -map 0:0 -sn -c:v:0 libx264 -pix_fmt yuv420p  -maxrate 4000000 -bufsize 8000000 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 90 -keyint_min:v:0 90 -sc_threshold:v:0 0  -copyts -vsync -1 -codec:a:0 libmp3lame -disposition:a:0 default -ac:a:0 2 -ab:a:0 192000  -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 0 -segment_list "/config/transcoding-temp/464C3C.m3u8" -y "/config/transcoding-temp/464C3C_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-37ead780-709e-4897-bbe0-dc366e96253e_1graph.txt -async 1 -copyts -start_at_zero -f asf -c:v:0 wmv3 -i "/00/22/SEX分类/无码/あずみ恋/【あずみ恋】043013-325/043013-325 AV女優と飲み…そして泊まりSEX by HAMAR　前編.wmv" -map 0:1 -map 0:0 -sn -c:v:0 libx264 -g:v:0 90 -maxrate:v:0 4000000 -bufsize:v:0 8000000 -sc_threshold:v:0 0 -keyint_min:v:0 90 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 3.1 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 2 -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/464C3C.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 0 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/464C3C_%d.ts"
+
+04:40:31.811 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+04:40:31.811   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+04:40:31.811 Execution Date: 2020-05-23 04:40:31
+04:40:32.924 [wmv3 @ 0x489600] Extra data: 8 bits left, value: 0
+04:40:32.959 Guessed Channel Layout for Input Stream #0.0 : stereo
+04:40:32.959 Input #0, asf, from '/00/22/SEX分类/无码/あずみ恋/【あずみ恋】043013-325/043013-325 AV女優と飲み…そして泊まりSEX by HAMAR　前編.wmv':
+04:40:32.959   Metadata:
+04:40:32.959     VBR Peak        : 7000000
+04:40:32.959     DeviceConformanceTemplate: MP@HL
+04:40:32.959     NumberOfFrames  : 121219
+04:40:32.959     WMFSDKVersion   : 12.0.7601.17514
+04:40:32.959     WMFSDKNeeded    : 0.0.0.0000
+04:40:32.959     IsVBR           : 1
+04:40:32.959     Buffer Average  : 210513
+04:40:32.959   Duration: 01:07:25.14, start: 0.000000, bitrate: 4195 kb/s
+04:40:32.959     Stream #0:0: Audio: wmav2 (a[1][0][0] / 0x0161), 48000 Hz, stereo, fltp, 192 kb/s
+04:40:32.959     Stream #0:1: Video: wmv3 (Main) (WMV3 / 0x33564D57), yuv420p, 1280x720, 4000 kb/s, SAR 1:1 DAR 16:9, 29.97 fps, 29.97 tbr, 1k tbn, 1k tbc
+04:40:32.961 [wmv3 @ 0x48b400] Extra data: 8 bits left, value: 0
+04:40:32.962 Stream mapping:
+04:40:32.962   Stream #0:1 -> #0:0 (wmv3 (native) -> h264 (libx264))
+04:40:32.962   Stream #0:0 -> #0:1 (wmav2 (native) -> mp3 (libmp3lame))
+04:40:32.962 Press [q] to stop, [?] for help
+04:40:32.963 -async is forwarded to lavfi similarly to -af aresample=async=1:min_hard_comp=0.100000:first_pts=0.
+04:40:32.979 [libx264 @ 0x4b70c0] using SAR=1/1
+04:40:32.979 [libx264 @ 0x4b70c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+04:40:33.006 [libx264 @ 0x4b70c0] profile Main, level 3.1, 4:2:0, 8-bit
+04:40:33.009 [libx264 @ 0x4b70c0] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=90 keyint_min=46 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=4000 vbv_bufsize=8000 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+04:40:33.009 Output #0, segment, to '/config/transcoding-temp/464C3C_%d.ts':
+04:40:33.009   Metadata:
+04:40:33.009     encoder         : Lavf58.35.100
+04:40:33.009     Stream #0:0: Video: h264 (libx264), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], q=-1--1, 29.97 fps, 90k tbn, 29.97 tbc
+04:40:33.009     Metadata:
+04:40:33.009       encoder         : Lavc58.62.100 libx264
+04:40:33.009     Side data:
+04:40:33.009       cpb: bitrate max/min/avg: 4000000/0/0 buffer size: 8000000 vbv_delay: N/A
+04:40:33.009     Stream #0:1: Audio: mp3 (libmp3lame), 48000 Hz, stereo, fltp, 192 kb/s (default)
+04:40:33.009     Metadata:
+04:40:33.009       encoder         : Lavc58.62.100 libmp3lame
+04:40:33.469 frame=  120 fps=0.0 q=29.0 size=     145kB time=00:00:03.23 bitrate=N/A throttle=off speed=   0x    
+04:40:33.477 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:33.478 SegmentComplete=video:0 Index=0 Start=0.000000 End=3.003000 Duration=3.003000 offset_pts=0 start_pts=0 Frames=90 filename=464C3C_0.ts
+04:40:33.478 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_1.ts.tmp' for writing
+04:40:33.738 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:33.739 SegmentComplete=video:0 Index=1 Start=3.003000 End=6.006000 Duration=3.003000 offset_pts=0 start_pts=3003000 Frames=90 filename=464C3C_1.ts
+04:40:33.739 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_2.ts.tmp' for writing
+04:40:33.965 frame=  286 fps=286 q=26.0 size=     403kB time=00:00:10.10 bitrate= 480.1kbits/s throttle=off speed=6.86x    
+04:40:33.977 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:33.977 SegmentComplete=video:0 Index=2 Start=6.006000 End=9.009000 Duration=3.003000 offset_pts=0 start_pts=6006000 Frames=90 filename=464C3C_2.ts
+04:40:33.978 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_3.ts.tmp' for writing
+04:40:34.299 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:34.300 SegmentComplete=video:0 Index=3 Start=9.009000 End=12.012000 Duration=3.003000 offset_pts=0 start_pts=9009000 Frames=90 filename=464C3C_3.ts
+04:40:34.300 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_4.ts.tmp' for writing
+04:40:34.465 frame=  454 fps=302 q=29.0 size=     748kB time=00:00:15.86 bitrate= 485.3kbits/s throttle=off speed=8.41x    
+04:40:34.502 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:34.502 SegmentComplete=video:0 Index=4 Start=12.012000 End=15.015000 Duration=3.003000 offset_pts=0 start_pts=12012000 Frames=90 filename=464C3C_4.ts
+04:40:34.502 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_5.ts.tmp' for writing
+04:40:34.731 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:34.732 SegmentComplete=video:0 Index=5 Start=15.015000 End=18.018000 Duration=3.003000 offset_pts=0 start_pts=15015000 Frames=90 filename=464C3C_5.ts
+04:40:34.732 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_6.ts.tmp' for writing
+04:40:34.965 frame=  649 fps=324 q=29.0 size=    1035kB time=00:00:21.62 bitrate= 460.9kbits/s throttle=off speed=9.19x    
+04:40:34.969 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:34.970 SegmentComplete=video:0 Index=6 Start=18.018000 End=21.021000 Duration=3.003000 offset_pts=0 start_pts=18018000 Frames=90 filename=464C3C_6.ts
+04:40:34.970 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_7.ts.tmp' for writing
+04:40:35.235 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:35.236 SegmentComplete=video:0 Index=7 Start=21.021000 End=24.024000 Duration=3.003000 offset_pts=0 start_pts=21021000 Frames=90 filename=464C3C_7.ts
+04:40:35.236 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_8.ts.tmp' for writing
+04:40:35.450 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:35.451 SegmentComplete=video:0 Index=8 Start=24.024000 End=27.027000 Duration=3.003000 offset_pts=0 start_pts=24024000 Frames=90 filename=464C3C_8.ts
+04:40:35.451 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_9.ts.tmp' for writing
+04:40:35.467 frame=  839 fps=335 q=29.0 size=    1389kB time=00:00:28.68 bitrate= 447.2kbits/s throttle=off speed=10.2x    
+04:40:35.669 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:35.669 SegmentComplete=video:0 Index=9 Start=27.027000 End=30.030000 Duration=3.003000 offset_pts=0 start_pts=27027000 Frames=90 filename=464C3C_9.ts
+04:40:35.669 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_10.ts.tmp' for writing
+04:40:35.933 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:35.933 SegmentComplete=video:0 Index=10 Start=30.030000 End=33.033000 Duration=3.003000 offset_pts=0 start_pts=30030000 Frames=90 filename=464C3C_10.ts
+04:40:35.933 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_11.ts.tmp' for writing
+04:40:35.969 frame= 1024 fps=341 q=29.0 size=    1691kB time=00:00:35.06 bitrate= 435.2kbits/s throttle=off speed=10.6x    
+04:40:36.173 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:36.173 SegmentComplete=video:0 Index=11 Start=33.033000 End=36.036000 Duration=3.003000 offset_pts=0 start_pts=33033000 Frames=90 filename=464C3C_11.ts
+04:40:36.173 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_12.ts.tmp' for writing
+04:40:36.404 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:36.404 SegmentComplete=video:0 Index=12 Start=36.036000 End=39.039000 Duration=3.003000 offset_pts=0 start_pts=36036000 Frames=90 filename=464C3C_12.ts
+04:40:36.404 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_13.ts.tmp' for writing
+04:40:36.470 frame= 1205 fps=344 q=29.0 size=    1974kB time=00:00:40.82 bitrate= 430.1kbits/s throttle=off speed=10.7x    
+04:40:36.703 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:36.704 SegmentComplete=video:0 Index=13 Start=39.039000 End=42.042000 Duration=3.003000 offset_pts=0 start_pts=39039000 Frames=90 filename=464C3C_13.ts
+04:40:36.704 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_14.ts.tmp' for writing
+04:40:36.938 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:36.938 SegmentComplete=video:0 Index=14 Start=42.042000 End=45.045000 Duration=3.003000 offset_pts=0 start_pts=42042000 Frames=90 filename=464C3C_14.ts
+04:40:36.938 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_15.ts.tmp' for writing
+04:40:36.974 frame= 1385 fps=346 q=29.0 size=    2313kB time=00:00:47.23 bitrate= 430.7kbits/s throttle=off speed=  11x    
+04:40:37.181 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:37.181 SegmentComplete=video:0 Index=15 Start=45.045000 End=48.048000 Duration=3.003000 offset_pts=0 start_pts=45045000 Frames=90 filename=464C3C_15.ts
+04:40:37.181 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_16.ts.tmp' for writing
+04:40:37.477 frame= 1534 fps=340 q=29.0 size=    2616kB time=00:00:51.67 bitrate= 442.4kbits/s throttle=off speed=10.7x    
+04:40:37.555 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:37.556 SegmentComplete=video:0 Index=16 Start=48.048000 End=51.051000 Duration=3.003000 offset_pts=0 start_pts=48048000 Frames=90 filename=464C3C_16.ts
+04:40:37.556 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_17.ts.tmp' for writing
+04:40:37.880 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:37.880 SegmentComplete=video:0 Index=17 Start=51.051000 End=54.054000 Duration=3.003000 offset_pts=0 start_pts=51051000 Frames=90 filename=464C3C_17.ts
+04:40:37.880 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_18.ts.tmp' for writing
+04:40:37.975 frame= 1666 fps=332 q=29.0 size=    3148kB time=00:00:56.01 bitrate= 488.7kbits/s throttle=off speed=10.5x    
+04:40:38.126 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:38.126 SegmentComplete=video:0 Index=18 Start=54.054000 End=57.057000 Duration=3.003000 offset_pts=0 start_pts=54054000 Frames=90 filename=464C3C_18.ts
+04:40:38.126 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_19.ts.tmp' for writing
+04:40:38.332 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:38.333 SegmentComplete=video:0 Index=19 Start=57.057000 End=60.060000 Duration=3.003000 offset_pts=0 start_pts=57057000 Frames=90 filename=464C3C_19.ts
+04:40:38.333 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_20.ts.tmp' for writing
+04:40:38.475 frame= 1882 fps=341 q=29.0 size=    3377kB time=00:01:03.69 bitrate= 457.5kbits/s throttle=off speed=  11x    
+04:40:38.547 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:38.547 SegmentComplete=video:0 Index=20 Start=60.060000 End=63.063000 Duration=3.003000 offset_pts=0 start_pts=60060000 Frames=90 filename=464C3C_20.ts
+04:40:38.547 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_21.ts.tmp' for writing
+04:40:38.757 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:38.757 SegmentComplete=video:0 Index=21 Start=63.063000 End=66.066000 Duration=3.003000 offset_pts=0 start_pts=63063000 Frames=90 filename=464C3C_21.ts
+04:40:38.757 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_22.ts.tmp' for writing
+04:40:38.978 frame= 2090 fps=348 q=29.0 size=    3591kB time=00:01:10.75 bitrate= 435.8kbits/s throttle=off speed=11.2x    
+04:40:38.980 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:38.980 SegmentComplete=video:0 Index=22 Start=66.066000 End=69.069000 Duration=3.003000 offset_pts=0 start_pts=66066000 Frames=90 filename=464C3C_22.ts
+04:40:38.980 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_23.ts.tmp' for writing
+04:40:39.187 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:39.187 SegmentComplete=video:0 Index=23 Start=69.069000 End=72.072000 Duration=3.003000 offset_pts=0 start_pts=69069000 Frames=90 filename=464C3C_23.ts
+04:40:39.187 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_24.ts.tmp' for writing
+04:40:39.424 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:39.425 SegmentComplete=video:0 Index=24 Start=72.072000 End=75.075000 Duration=3.003000 offset_pts=0 start_pts=72072000 Frames=90 filename=464C3C_24.ts
+04:40:39.425 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_25.ts.tmp' for writing
+04:40:39.478 frame= 2289 fps=351 q=29.0 size=    3792kB time=00:01:16.92 bitrate= 421.5kbits/s throttle=off speed=11.3x    
+04:40:39.716 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:39.717 SegmentComplete=video:0 Index=25 Start=75.075000 End=78.078000 Duration=3.003000 offset_pts=0 start_pts=75075000 Frames=90 filename=464C3C_25.ts
+04:40:39.717 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_26.ts.tmp' for writing
+04:40:39.982 frame= 2433 fps=347 q=29.0 size=    3996kB time=00:01:21.84 bitrate= 416.4kbits/s throttle=off speed=11.2x    
+04:40:39.982 
+
+[q] command received. Exiting.
+
+04:40:40.006 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:40.006 SegmentComplete=video:0 Index=26 Start=78.078000 End=81.081000 Duration=3.003000 offset_pts=0 start_pts=78078000 Frames=90 filename=464C3C_26.ts
+04:40:40.006 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C_27.ts.tmp' for writing
+04:40:40.008 04:40:40.008 [segment @ 0x48ac00] Opening '/config/transcoding-temp/464C3C.m3u8.tmp' for writing
+04:40:40.008 SegmentComplete=video:0 Index=27 Start=81.081000 End=81.181100 Duration=0.100100 offset_pts=0 start_pts=81081000 Frames=3 filename=464C3C_27.ts
+04:40:40.008 frame= 2433 fps=345 q=-1.0 Lsize=    4030kB time=00:01:21.91 bitrate= 419.6kbits/s throttle=off speed=11.2x    
+04:40:40.008 video:2109kB audio:1920kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+04:40:40.008 EXIT
+04:40:40.009 [libx264 @ 0x4b70c0] frame I:28    Avg QP:10.63  size: 35818
+04:40:40.009 [libx264 @ 0x4b70c0] frame P:629   Avg QP:16.44  size:  1454
+04:40:40.009 [libx264 @ 0x4b70c0] frame B:1776  Avg QP:16.20  size:   136
+04:40:40.009 [libx264 @ 0x4b70c0] consecutive B-frames:  2.1%  1.1%  1.6% 95.2%
+04:40:40.009 [libx264 @ 0x4b70c0] mb I  I16..4: 82.3%  0.0% 17.7%
+04:40:40.009 [libx264 @ 0x4b70c0] mb P  I16..4:  5.9%  0.0%  0.0%  P16..4:  2.6%  0.0%  0.0%  0.0%  0.0%    skip:91.5%
+04:40:40.009 [libx264 @ 0x4b70c0] mb B  I16..4:  0.1%  0.0%  0.0%  B16..8:  0.4%  0.0%  0.0%  direct: 0.2%  skip:99.2%  L0:46.6% L1:41.6% BI:11.8%
+04:40:40.009 [libx264 @ 0x4b70c0] coded y,uvDC,uvAC intra: 11.4% 1.4% 1.2% inter: 0.4% 0.1% 0.0%
+04:40:40.009 [libx264 @ 0x4b70c0] i16 v,h,dc,p: 88%  7%  4%  1%
+04:40:40.009 [libx264 @ 0x4b70c0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 40% 22%  8%  5%  5%  5%  5%  5%  5%
+04:40:40.009 [libx264 @ 0x4b70c0] i8c dc,h,v,p: 97%  2%  1%  0%
+04:40:40.009 [libx264 @ 0x4b70c0] Weighted P-Frames: Y:10.2% UV:5.7%
+04:40:40.009 [libx264 @ 0x4b70c0] kb/s:212.79
+04:40:40.013 
+
+======= ExtraData
+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

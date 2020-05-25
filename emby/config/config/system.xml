@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<ServerConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EnableDebugLevelLogging>false</EnableDebugLevelLogging>
+  <EnableAutoUpdate>true</EnableAutoUpdate>
+  <LogFileRetentionDays>3</LogFileRetentionDays>
+  <RunAtStartup>true</RunAtStartup>
+  <IsStartupWizardCompleted>true</IsStartupWizardCompleted>
+  <EnableUPnP>true</EnableUPnP>
+  <PublicPort>8096</PublicPort>
+  <PublicHttpsPort>8920</PublicHttpsPort>
+  <HttpServerPortNumber>8096</HttpServerPortNumber>
+  <HttpsPortNumber>8920</HttpsPortNumber>
+  <EnableHttps>false</EnableHttps>
+  <CertificatePath>/00/00/ssl/certificate.crt</CertificatePath>
+  <CertificatePassword>MIIEpAIBAAKCAQEApmxiqTf1xdAfQf18gOO4VrD3+KotoIWGNJw7Ksl+neu3VNbQ RTESsgwysyz5V2RvF188Tprxv+NUNW5L1Yx2/4XAW58dBOan9/XLyqMCyMA1gyGH JhZ5Bo4rJrHM2s4sfyvRzbIhOUWDkBswLni87ZhcJURqZOJPariG+Nj8lbGIxP3/ BT7LcAJEr5U4kNwMeZBgA1wtKBeweMqxMhWAfcTCH/ls7IszJX5Ea2uuoEKQ8wRJ 7uBmMj3kfs+ETo/sp9spFv5tVAQvjluTDvmjBY51VxebllI9Jtxalk/GzY44L26p k7p7u2yfxzARUN2G5sl3k3JrIZf4OcFy44jzaQIDAQABAoIBAFxW6QsxRIoEZ0OL LWiqcV6QhJYRfo2BaKyKPv4HnNxsrGVDZ33ss43c3Miz3IlT7ZvPOLv4lsg8jz2y PBt5+5DdmpR7nXNZs7sOQ4vklKfklgxzLvTAJViwy1qF7r89BE1vd9Kk0nBflJcB ruMqFNHT5tS6uDnPo/b3+dPbOZKob4kEAHBrCaLf4u7nAHMPalE9DnOE7WD0kKL6 0mCD5jEk25Vrn/B9JO+Pepf+m3TVq8cSGvgaYIxVPJeo9I0UUi5vji6ehg/jzsib awY7dqoZDsCl57/YMoZLYKxvo2djje8dVeQ6MZvR9TQ6bnq0RrmdhPzHRapERgqy Fpos4p0CgYEA5Rc4M8ty92IjMIObt/Sin69W1PDbyJe98nDCvdShC8LOjNEDz9iv 8inlizPADNFTjg7JpCw9jzJ8tUXxNLFcWqsaIAR3UUhjjtTtZznys5roiXuH3+Bx YBfcMjxIxQ2KEGkckdAPuf8tLFBLDV02EUnKEXVHGZ1e4ehG2xc2bKcCgYEAufjA 0gCghi8aqSRryEAHHuEcDep7mWacLQBBaqokGiFzlnQAym+v7tc5cP8dn2BagKwT 8MysQUPDg+iUOCDC2VkER0Gtc8plA61pVIiWyzgoh95t397LwvxNgCoYlIIeqL66 wh/SVmbKdUW+NlusdkEzI7o2Mwdqhx2HZZfZUW8CgYEAn/uaJRmT/MyM9IlECrAN jWR+SBC3+5p0bMVwSe8eVD9DzTT9631QSdYWViLaoFjid9c926eFieXhDxp7+qdN bogEo41a4emilRF/hNID+odYkwIwfhiYNFoVTQOqceolm5Y7/FwHT4WzPzoHX5rT cjlMoup6r5mltC9opAHO4QsCgYBV/hArCt8vLNjHHXA5SGIChVTTmnlMlYXhyRx2 lfXbn1wzVbCH6t0PM7X76ftolsVCek8+KWX9R7hAZmsjCQMQPXkc+eGaiRvsd2Md E4umrHERYmir+/l8T+4GNXDoOsKyhH8XBF/eU+mKEJXDzOASTlO3UYN+VQ+NKrpQ 38Y9QQKBgQCALKiIuU4zZrJLtpsjNAsHNHyoAUTWcDp0Tk39vKAYZ3oKYiyNE2J5 lpDSQcGv0ZwJEBHwyK3jiOHIKyEQygcO2H4wwuSKcd5jSWHtX/YGmzIQU5N1OOWR V3dZO+UP2LkFy0/SODPZlzuzQ4Ntq+TRzZ0B8NmgrRjWIQZ29HbQ8A==</CertificatePassword>
+  <IsPortAuthorized>true</IsPortAuthorized>
+  <AutoRunWebApp>true</AutoRunWebApp>
+  <EnableRemoteAccess>true</EnableRemoteAccess>
+  <LogAllQueryTimes>false</LogAllQueryTimes>
+  <EnableCaseSensitiveItemIds>true</EnableCaseSensitiveItemIds>
+  <PreferredMetadataLanguage>zh-CN</PreferredMetadataLanguage>
+  <MetadataCountryCode>CN</MetadataCountryCode>
+  <SortReplaceChars>
+    <char>46</char>
+    <char>43</char>
+    <char>37</char>
+  </SortReplaceChars>
+  <SortRemoveChars>
+    <char>44</char>
+    <char>38</char>
+    <char>45</char>
+    <char>123</char>
+    <char>125</char>
+    <char>39</char>
+  </SortRemoveChars>
+  <SortRemoveWords>
+    <string>the</string>
+    <string>a</string>
+    <string>an</string>
+    <string>das</string>
+    <string>der</string>
+    <string>el</string>
+    <string>la</string>
+  </SortRemoveWords>
+  <LibraryMonitorDelay>60</LibraryMonitorDelay>
+  <EnableDashboardResponseCaching>true</EnableDashboardResponseCaching>
+  <ImageSavingConvention>Compatible</ImageSavingConvention>
+  <EnableAutomaticRestart>true</EnableAutomaticRestart>
+  <WanDdns>emby.super0.me</WanDdns>
+  <UICulture>zh-CN</UICulture>
+  <SaveMetadataHidden>false</SaveMetadataHidden>
+  <RemoteClientBitrateLimit>0</RemoteClientBitrateLimit>
+  <DisplaySpecialsWithinSeasons>true</DisplaySpecialsWithinSeasons>
+  <LocalNetworkSubnets />
+  <LocalNetworkAddresses />
+  <EnableExternalContentInSuggestions>true</EnableExternalContentInSuggestions>
+  <RequireHttps>false</RequireHttps>
+  <IsBehindProxy>false</IsBehindProxy>
+  <RemoteIPFilter />
+  <IsRemoteIPFilterBlacklist>false</IsRemoteIPFilterBlacklist>
+  <ImageExtractionTimeoutMs>0</ImageExtractionTimeoutMs>
+  <PathSubstitutions />
+  <UninstalledPlugins />
+  <CollapseVideoFolders>true</CollapseVideoFolders>
+  <PlaylistsMigrated>true</PlaylistsMigrated>
+  <TagsMigrated>true</TagsMigrated>
+  <ChannelNumbersMigrated>true</ChannelNumbersMigrated>
+  <EnableOriginalTrackTitles>false</EnableOriginalTrackTitles>
+  <VacuumDatabaseOnStartup>false</VacuumDatabaseOnStartup>
+  <LibraryOptionsMigrated>true</LibraryOptionsMigrated>
+  <EnableV2SortTitles>true</EnableV2SortTitles>
+  <EnableHttp2Server>false</EnableHttp2Server>
+  <SimultaneousStreamLimit>0</SimultaneousStreamLimit>
+</ServerConfiguration>

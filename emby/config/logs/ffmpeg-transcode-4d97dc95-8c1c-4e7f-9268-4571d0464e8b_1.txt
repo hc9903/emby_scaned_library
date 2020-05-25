@@ -1,0 +1,500 @@
+2020-05-22 12:31:52.834
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/6844/hls1/main/1653.ts?DeviceId=0939de9f-ad24-4206-b247-0dafb526de65&MediaSourceId=81b0f62fa5108ce629e77443b479dded&PlaySessionId=035d436af2df447ca3e0a3d4be216143&api_key=b24b9e0ee12b43b4b0d434c8e5187ccc&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=1739000&AudioBitrate=255999&AudioStreamIndex=1&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=ContainerBitrateExceedsLimit
+
+{"Protocol":"File","Id":"81b0f62fa5108ce629e77443b479dded","Path":"/00/00/SSNI/001-100/SSNI-004-2017-09-17/SSNI-004.mp4","Type":"Default","Container":"mp4","Size":6894741532,"Name":"SSNI-004","IsRemote":false,"RunTimeTicks":92431680000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"h264","CodecTag":"avc1","Language":"und","ColorSpace":"bt709","TimeBase":"1/90000","CodecTimeBase":"20796997/1246572000","VideoRange":"SDR","DisplayTitle":"1080p H264","NalLengthSize":"4","IsInterlaced":false,"IsAVC":true,"BitRate":5701066,"BitDepth":8,"RefFrames":1,"IsDefault":true,"IsForced":false,"Height":1080,"Width":1920,"AverageFrameRate":29.97,"RealFrameRate":29.97003,"Profile":"Main","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p","Level":40,"IsAnamorphic":false},{"Codec":"aac","CodecTag":"mp4a","Language":"und","TimeBase":"1/44100","CodecTimeBase":"1/44100","DisplayTitle":"Und AAC stereo (Default)","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":255999,"Channels":2,"SampleRate":44100,"IsDefault":true,"IsForced":false,"Profile":"LC","Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":5967427,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for guest
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: h264, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    Scaling                                  >> False                False                                                         
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    h264                 >> -            yuv420p      yuv420p      >> scale
+Info    scale                >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -ss 01:22:39.000  -f mp4 -i file:"/00/00/SSNI/001-100/SSNI-004-2017-09-17/SSNI-004.mp4" -threads 0 -map 0:0 -map 0:1 -sn -c:v:0 libx264 -filter_complex "[0:0]scale=trunc(min(max(iw\,ih*dar)\,720)/2)*2:trunc(ow/dar/2)*2" -pix_fmt yuv420p  -maxrate 1739000 -bufsize 3478000 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 90 -keyint_min:v:0 90 -sc_threshold:v:0 0  -copyts -vsync -1 -codec:a:0 copy -disposition:a:0 default -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 1653 -segment_list "/config/transcoding-temp/0C973F.m3u8" -y "/config/transcoding-temp/0C973F_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-4d97dc95-8c1c-4e7f-9268-4571d0464e8b_1graph.txt -copyts -start_at_zero -f mp4 -ss 01:22:39.000 -c:v:0 h264 -i "/00/00/SSNI/001-100/SSNI-004-2017-09-17/SSNI-004.mp4" -filter_complex "[0:0]scale@f1=w=720:h=404[f1_out0]" -map [f1_out0] -map 0:1 -sn -c:v:0 libx264 -g:v:0 90 -maxrate:v:0 1739000 -bufsize:v:0 3478000 -sc_threshold:v:0 0 -keyint_min:v:0 90 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 3.0 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 copy -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/0C973F.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 1653 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/0C973F_%d.ts"
+
+12:31:52.862 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+12:31:52.862   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+12:31:52.862 Execution Date: 2020-05-22 12:31:52
+12:31:55.895 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/00/00/SSNI/001-100/SSNI-004-2017-09-17/SSNI-004.mp4':
+12:31:55.895   Metadata:
+12:31:55.895     major_brand     : isom
+12:31:55.895     minor_version   : 512
+12:31:55.895     compatible_brands: isomiso2avc1mp41
+12:31:55.895     encoder         : Lavf58.12.100
+12:31:55.895   Duration: 02:34:03.17, start: 0.000000, bitrate: 5967 kb/s
+12:31:55.895     Stream #0:0(und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709/unknown/unknown), 1920x1080 [SAR 1:1 DAR 16:9], 5701 kb/s, Level 40, 29.97 fps, 29.97 tbr, 90k tbn, 59.94 tbc, Start-Time 0.067s (default)
+12:31:55.895     Metadata:
+12:31:55.895       handler_name    : VideoHandler
+12:31:55.895     Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 255 kb/s (default)
+12:31:55.895     Metadata:
+12:31:55.895       handler_name    : SoundHandler
+12:31:55.896 Stream mapping:
+12:31:55.896   Stream #0:0 (h264) -> scale
+12:31:55.896   scale -> Stream #0:0 (libx264)
+12:31:55.896   Stream #0:1 -> #0:1 (copy)
+12:31:55.896 Press [q] to stop, [?] for help
+12:31:57.771 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+12:31:57.876 [libx264 @ 0x1ed8b80] using SAR=404/405
+12:31:57.876 [libx264 @ 0x1ed8b80] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+12:31:57.877 [libx264 @ 0x1ed8b80] profile Main, level 3.0, 4:2:0, 8-bit
+12:31:57.877 [libx264 @ 0x1ed8b80] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=90 keyint_min=46 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=1739 vbv_bufsize=3478 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+12:31:57.878 Output #0, segment, to '/config/transcoding-temp/0C973F_%d.ts':
+12:31:57.878   Metadata:
+12:31:57.878     encoder         : Lavf58.35.100
+12:31:57.879     Stream #0:0: Video: h264 (libx264), yuv420p, 720x404 [SAR 404:405 DAR 16:9], q=-1--1, 29.97 fps, 90k tbn, 29.97 tbc (default)
+12:31:57.880     Metadata:
+12:31:57.880       encoder         : Lavc58.62.100 libx264
+12:31:57.880     Side data:
+12:31:57.881       cpb: bitrate max/min/avg: 1739000/0/0 buffer size: 3478000 vbv_delay: N/A
+12:31:57.881     Stream #0:1: Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 255 kb/s (default)
+12:31:58.199 frame=   13 fps=5.6 q=0.0 size=      83kB time=01:22:39.57 bitrate=   0.0kbits/s throttle=off speed=4e+12x    
+12:31:58.606 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:31:58.606 SegmentComplete=video:0 Index=1653 Start=0.000000 End=4962.057100 Duration=4962.057100 offset_pts=0 start_pts=0 Frames=90 filename=0C973F_1653.ts
+12:31:58.607 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1654.ts.tmp' for writing
+12:31:58.701 frame=  136 fps= 48 q=29.0 size=     453kB time=01:22:43.68 bitrate=   0.0kbits/s throttle=off speed=3.29e+12x    
+12:31:58.943 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:31:58.943 SegmentComplete=video:0 Index=1654 Start=4962.057100 End=4965.060100 Duration=3.003000 offset_pts=0 start_pts=4962057100 Frames=90 filename=0C973F_1654.ts
+12:31:58.943 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1655.ts.tmp' for writing
+12:31:59.201 frame=  268 fps= 81 q=29.0 size=     866kB time=01:22:48.07 bitrate=   0.0kbits/s throttle=off speed=2.79e+12x    
+12:31:59.292 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:31:59.293 SegmentComplete=video:0 Index=1655 Start=4965.060100 End=4968.063100 Duration=3.003000 offset_pts=0 start_pts=4965060100 Frames=90 filename=0C973F_1655.ts
+12:31:59.293 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1656.ts.tmp' for writing
+12:31:59.662 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:31:59.663 SegmentComplete=video:0 Index=1656 Start=4968.063100 End=4971.066100 Duration=3.003000 offset_pts=0 start_pts=4968063100 Frames=90 filename=0C973F_1656.ts
+12:31:59.663 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1657.ts.tmp' for writing
+12:31:59.702 frame=  391 fps=103 q=29.0 size=    1328kB time=01:22:52.18 bitrate=   0.0kbits/s throttle=off speed=2.42e+12x    
+12:32:00.003 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:00.003 SegmentComplete=video:0 Index=1657 Start=4971.066100 End=4974.069100 Duration=3.003000 offset_pts=0 start_pts=4971066100 Frames=90 filename=0C973F_1657.ts
+12:32:00.003 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1658.ts.tmp' for writing
+12:32:00.202 frame=  522 fps=121 q=29.0 size=    1785kB time=01:22:56.54 bitrate=   0.0kbits/s throttle=off speed=2.14e+12x    
+12:32:00.380 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:00.382 SegmentComplete=video:0 Index=1658 Start=4974.069100 End=4977.072100 Duration=3.003000 offset_pts=0 start_pts=4974069100 Frames=90 filename=0C973F_1658.ts
+12:32:00.382 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1659.ts.tmp' for writing
+12:32:00.704 frame=  609 fps=127 q=29.0 size=    2085kB time=01:22:59.44 bitrate=   0.0kbits/s throttle=off speed=1.92e+12x    
+12:32:01.046 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:01.046 SegmentComplete=video:0 Index=1659 Start=4977.072100 End=4980.075100 Duration=3.003000 offset_pts=0 start_pts=4977072100 Frames=90 filename=0C973F_1659.ts
+12:32:01.046 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1660.ts.tmp' for writing
+12:32:01.206 frame=  675 fps=127 q=29.0 size=    2301kB time=01:23:01.65 bitrate=   0.0kbits/s throttle=off speed=1.74e+12x    
+12:32:01.719 frame=  739 fps=127 q=29.0 size=    2507kB time=01:23:03.79 bitrate=   0.0kbits/s throttle=off speed=1.58e+12x    
+12:32:01.732 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:01.732 SegmentComplete=video:0 Index=1660 Start=4980.075100 End=4983.078100 Duration=3.003000 offset_pts=0 start_pts=4980075100 Frames=90 filename=0C973F_1660.ts
+12:32:01.733 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1661.ts.tmp' for writing
+12:32:02.220 frame=  800 fps=127 q=29.0 size=    2722kB time=01:23:05.83 bitrate=   0.0kbits/s throttle=off speed=1.46e+12x    
+12:32:02.452 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:02.452 SegmentComplete=video:0 Index=1661 Start=4983.078100 End=4986.081100 Duration=3.003000 offset_pts=0 start_pts=4983078100 Frames=90 filename=0C973F_1661.ts
+12:32:02.452 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1662.ts.tmp' for writing
+12:32:02.724 frame=  864 fps=127 q=29.0 size=    2941kB time=01:23:07.97 bitrate=   0.0kbits/s throttle=off speed=1.35e+12x    
+12:32:03.227 frame=  916 fps=125 q=26.0 size=    3106kB time=01:23:09.71 bitrate=   0.0kbits/s throttle=off speed=1.26e+12x    
+12:32:03.288 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:03.288 SegmentComplete=video:0 Index=1662 Start=4986.081100 End=4989.084100 Duration=3.003000 offset_pts=0 start_pts=4986081100 Frames=90 filename=0C973F_1662.ts
+12:32:03.288 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1663.ts.tmp' for writing
+12:32:03.734 frame=  970 fps=124 q=29.0 size=    3276kB time=01:23:11.50 bitrate=   0.0kbits/s throttle=off speed=1.18e+12x    
+12:32:04.074 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:04.074 SegmentComplete=video:0 Index=1663 Start=4989.084100 End=4992.087100 Duration=3.003000 offset_pts=0 start_pts=4989084100 Frames=90 filename=0C973F_1663.ts
+12:32:04.074 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1664.ts.tmp' for writing
+12:32:04.235 frame= 1035 fps=124 q=29.0 size=    3469kB time=01:23:13.68 bitrate=   0.0kbits/s throttle=off speed=1.11e+12x    
+12:32:04.702 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:04.702 SegmentComplete=video:0 Index=1664 Start=4992.087100 End=4995.090100 Duration=3.003000 offset_pts=0 start_pts=4992087100 Frames=90 filename=0C973F_1664.ts
+12:32:04.702 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1665.ts.tmp' for writing
+12:32:04.745 frame= 1106 fps=125 q=29.0 size=    3691kB time=01:23:16.05 bitrate=   0.0kbits/s throttle=off speed=1.04e+12x    
+12:32:05.259 frame= 1166 fps=125 q=29.0 size=    3855kB time=01:23:18.04 bitrate=   0.0kbits/s throttle=off speed=9.85e+11x    
+12:32:05.468 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:05.468 SegmentComplete=video:0 Index=1665 Start=4995.090100 End=4998.093100 Duration=3.003000 offset_pts=0 start_pts=4995090100 Frames=90 filename=0C973F_1665.ts
+12:32:05.468 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1666.ts.tmp' for writing
+12:32:05.772 frame= 1227 fps=124 q=29.0 size=    4031kB time=01:23:20.06 bitrate=   0.0kbits/s throttle=off speed=9.34e+11x    
+12:32:06.152 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:06.157 SegmentComplete=video:0 Index=1666 Start=4998.093100 End=5001.096100 Duration=3.003000 offset_pts=0 start_pts=4998093100 Frames=90 filename=0C973F_1666.ts
+12:32:06.157 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1667.ts.tmp' for writing
+12:32:06.274 frame= 1296 fps=125 q=29.0 size=    4244kB time=01:23:22.39 bitrate=   0.0kbits/s throttle=off speed=8.89e+11x    
+12:32:06.778 frame= 1365 fps=125 q=29.0 size=    4462kB time=01:23:24.68 bitrate=   0.0kbits/s throttle=off speed=8.48e+11x    
+12:32:06.830 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:06.831 SegmentComplete=video:0 Index=1667 Start=5001.096100 End=5004.099100 Duration=3.003000 offset_pts=0 start_pts=5001096100 Frames=90 filename=0C973F_1667.ts
+12:32:06.831 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1668.ts.tmp' for writing
+12:32:07.289 frame= 1435 fps=126 q=29.0 size=    4686kB time=01:23:27.01 bitrate=   0.0kbits/s throttle=off speed=8.1e+11x    
+12:32:07.465 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:07.466 SegmentComplete=video:0 Index=1668 Start=5004.099100 End=5007.102100 Duration=3.003000 offset_pts=0 start_pts=5004099100 Frames=90 filename=0C973F_1668.ts
+12:32:07.466 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1669.ts.tmp' for writing
+12:32:07.789 frame= 1502 fps=126 q=29.0 size=    4876kB time=01:23:29.26 bitrate=   0.0kbits/s throttle=off speed=7.75e+11x    
+12:32:08.160 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:08.167 SegmentComplete=video:0 Index=1669 Start=5007.102100 End=5010.105100 Duration=3.003000 offset_pts=0 start_pts=5007102100 Frames=90 filename=0C973F_1669.ts
+12:32:08.167 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1670.ts.tmp' for writing
+12:32:08.293 frame= 1568 fps=126 q=29.0 size=    5054kB time=01:23:31.44 bitrate=   0.0kbits/s throttle=off speed=7.44e+11x    
+12:32:08.804 frame= 1631 fps=126 q=29.0 size=    5221kB time=01:23:33.55 bitrate=   0.0kbits/s throttle=off speed=7.15e+11x    
+12:32:08.906 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:08.906 SegmentComplete=video:0 Index=1670 Start=5010.105100 End=5013.108100 Duration=3.003000 offset_pts=0 start_pts=5010105100 Frames=90 filename=0C973F_1670.ts
+12:32:08.906 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1671.ts.tmp' for writing
+12:32:09.306 frame= 1703 fps=127 q=29.0 size=    5447kB time=01:23:35.95 bitrate=   0.0kbits/s throttle=off speed=6.88e+11x    
+12:32:09.498 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:09.499 SegmentComplete=video:0 Index=1671 Start=5013.108100 End=5016.111100 Duration=3.003000 offset_pts=0 start_pts=5013108100 Frames=90 filename=0C973F_1671.ts
+12:32:09.499 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1672.ts.tmp' for writing
+12:32:09.812 frame= 1769 fps=127 q=29.0 size=    5650kB time=01:23:38.15 bitrate=   0.0kbits/s throttle=off speed=6.63e+11x    
+12:32:10.232 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:10.232 SegmentComplete=video:0 Index=1672 Start=5016.111100 End=5019.114100 Duration=3.003000 offset_pts=0 start_pts=5016111100 Frames=90 filename=0C973F_1672.ts
+12:32:10.232 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1673.ts.tmp' for writing
+12:32:10.317 frame= 1833 fps=127 q=29.0 size=    5855kB time=01:23:40.29 bitrate=   0.0kbits/s throttle=off speed=6.4e+11x    
+12:32:10.823 frame= 1903 fps=127 q=29.0 size=    6088kB time=01:23:42.63 bitrate=   0.0kbits/s throttle=off speed=6.18e+11x    
+12:32:10.915 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:10.915 SegmentComplete=video:0 Index=1673 Start=5019.114100 End=5022.117100 Duration=3.003000 offset_pts=0 start_pts=5019114100 Frames=90 filename=0C973F_1673.ts
+12:32:10.915 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1674.ts.tmp' for writing
+12:32:11.328 frame= 1962 fps=127 q=29.0 size=    6291kB time=01:23:44.61 bitrate=   0.0kbits/s throttle=off speed=5.98e+11x    
+12:32:11.653 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:11.653 SegmentComplete=video:0 Index=1674 Start=5022.117100 End=5025.120100 Duration=3.003000 offset_pts=0 start_pts=5022117100 Frames=90 filename=0C973F_1674.ts
+12:32:11.653 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1675.ts.tmp' for writing
+12:32:11.837 frame= 2023 fps=127 q=29.0 size=    6501kB time=01:23:46.63 bitrate=   0.0kbits/s throttle=off speed=5.79e+11x    
+12:32:12.344 frame= 2086 fps=127 q=26.0 size=    6690kB time=01:23:48.74 bitrate=   0.0kbits/s throttle=off speed=5.61e+11x    
+12:32:12.386 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:12.387 SegmentComplete=video:0 Index=1675 Start=5025.120100 End=5028.123100 Duration=3.003000 offset_pts=0 start_pts=5025120100 Frames=90 filename=0C973F_1675.ts
+12:32:12.387 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1676.ts.tmp' for writing
+12:32:12.860 frame= 2143 fps=126 q=29.0 size=    6874kB time=01:23:50.64 bitrate=   0.0kbits/s throttle=off speed=5.44e+11x    
+12:32:13.168 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:13.170 SegmentComplete=video:0 Index=1676 Start=5028.123100 End=5031.126100 Duration=3.003000 offset_pts=0 start_pts=5028123100 Frames=90 filename=0C973F_1676.ts
+12:32:13.170 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1677.ts.tmp' for writing
+12:32:13.364 frame= 2204 fps=126 q=29.0 size=    7068kB time=01:23:52.66 bitrate=   0.0kbits/s throttle=off speed=5.28e+11x    
+12:32:13.872 frame= 2270 fps=126 q=29.0 size=    7318kB time=01:23:54.87 bitrate=   0.0kbits/s throttle=off speed=5.13e+11x    
+12:32:13.873 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:13.874 SegmentComplete=video:0 Index=1677 Start=5031.126100 End=5034.129100 Duration=3.003000 offset_pts=0 start_pts=5031126100 Frames=90 filename=0C973F_1677.ts
+12:32:13.874 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1678.ts.tmp' for writing
+12:32:14.374 frame= 2348 fps=127 q=29.0 size=    7620kB time=01:23:57.47 bitrate=   0.0kbits/s throttle=off speed=4.99e+11x    
+12:32:14.501 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:14.501 SegmentComplete=video:0 Index=1678 Start=5034.129100 End=5037.132100 Duration=3.003000 offset_pts=0 start_pts=5034129100 Frames=90 filename=0C973F_1678.ts
+12:32:14.501 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1679.ts.tmp' for writing
+12:32:14.880 frame= 2412 fps=127 q=29.0 size=    7875kB time=01:23:59.61 bitrate=   0.0kbits/s throttle=off speed=4.86e+11x    
+12:32:15.169 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:15.169 SegmentComplete=video:0 Index=1679 Start=5037.132100 End=5040.135100 Duration=3.003000 offset_pts=0 start_pts=5037132100 Frames=90 filename=0C973F_1679.ts
+12:32:15.169 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1680.ts.tmp' for writing
+12:32:15.381 frame= 2485 fps=128 q=29.0 size=    8138kB time=01:24:02.05 bitrate=   0.0kbits/s throttle=off speed=4.73e+11x    
+12:32:15.803 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:15.804 SegmentComplete=video:0 Index=1680 Start=5040.135100 End=5043.138100 Duration=3.003000 offset_pts=0 start_pts=5040135100 Frames=90 filename=0C973F_1680.ts
+12:32:15.804 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1681.ts.tmp' for writing
+12:32:15.881 frame= 2554 fps=128 q=29.0 size=    8379kB time=01:24:04.34 bitrate=   0.0kbits/s throttle=off speed=4.62e+11x    
+12:32:16.387 frame= 2629 fps=128 q=29.0 size=    8604kB time=01:24:06.85 bitrate=   0.0kbits/s throttle=off speed=4.5e+11x    
+12:32:16.392 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:16.393 SegmentComplete=video:0 Index=1681 Start=5043.138100 End=5046.141100 Duration=3.003000 offset_pts=0 start_pts=5043138100 Frames=90 filename=0C973F_1681.ts
+12:32:16.393 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1682.ts.tmp' for writing
+12:32:16.887 frame= 2701 fps=129 q=29.0 size=    8850kB time=01:24:09.27 bitrate=   0.0kbits/s throttle=off speed=4.39e+11x    
+12:32:17.055 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:17.056 SegmentComplete=video:0 Index=1682 Start=5046.141100 End=5049.144100 Duration=3.003000 offset_pts=0 start_pts=5046141100 Frames=90 filename=0C973F_1682.ts
+12:32:17.056 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1683.ts.tmp' for writing
+12:32:17.388 frame= 2766 fps=129 q=29.0 size=    9094kB time=01:24:11.43 bitrate=   0.0kbits/s throttle=off speed=4.29e+11x    
+12:32:17.715 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:17.715 SegmentComplete=video:0 Index=1683 Start=5049.144100 End=5052.147100 Duration=3.003000 offset_pts=0 start_pts=5049144100 Frames=90 filename=0C973F_1683.ts
+12:32:17.715 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1684.ts.tmp' for writing
+12:32:17.895 frame= 2836 fps=129 q=29.0 size=    9357kB time=01:24:13.77 bitrate=   0.0kbits/s throttle=off speed=4.19e+11x    
+12:32:18.341 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:18.342 SegmentComplete=video:0 Index=1684 Start=5052.147100 End=5055.150100 Duration=3.003000 offset_pts=0 start_pts=5052147100 Frames=90 filename=0C973F_1684.ts
+12:32:18.342 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1685.ts.tmp' for writing
+12:32:18.396 frame= 2911 fps=129 q=29.0 size=    9616kB time=01:24:16.26 bitrate=   0.0kbits/s throttle=off speed=4.1e+11x    
+12:32:18.898 frame= 2974 fps=129 q=29.0 size=    9811kB time=01:24:18.37 bitrate=   0.0kbits/s throttle=off speed=4.01e+11x    
+12:32:19.051 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:19.053 SegmentComplete=video:0 Index=1685 Start=5055.150100 End=5058.153100 Duration=3.003000 offset_pts=0 start_pts=5055150100 Frames=90 filename=0C973F_1685.ts
+12:32:19.053 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1686.ts.tmp' for writing
+12:32:19.399 frame= 3035 fps=129 q=29.0 size=    9990kB time=01:24:20.39 bitrate=   0.0kbits/s throttle=off speed=3.92e+11x    
+12:32:19.742 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:19.743 SegmentComplete=video:0 Index=1686 Start=5058.153100 End=5061.156100 Duration=3.003000 offset_pts=0 start_pts=5058153100 Frames=90 filename=0C973F_1686.ts
+12:32:19.743 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1687.ts.tmp' for writing
+12:32:19.901 frame= 3100 fps=129 q=29.0 size=   10185kB time=01:24:22.57 bitrate=   0.0kbits/s throttle=off speed=3.84e+11x    
+12:32:20.401 frame= 3160 fps=129 q=29.0 size=   10343kB time=01:24:24.57 bitrate=   0.0kbits/s throttle=off speed=3.76e+11x    
+12:32:20.492 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:20.492 SegmentComplete=video:0 Index=1687 Start=5061.156100 End=5064.159100 Duration=3.003000 offset_pts=0 start_pts=5061156100 Frames=90 filename=0C973F_1687.ts
+12:32:20.492 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1688.ts.tmp' for writing
+12:32:20.902 frame= 3231 fps=129 q=29.0 size=   10587kB time=01:24:26.94 bitrate=   0.0kbits/s throttle=off speed=3.69e+11x    
+12:32:21.148 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:21.148 SegmentComplete=video:0 Index=1688 Start=5064.159100 End=5067.162100 Duration=3.003000 offset_pts=0 start_pts=5064159100 Frames=90 filename=0C973F_1688.ts
+12:32:21.149 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1689.ts.tmp' for writing
+12:32:21.411 frame= 3296 fps=129 q=29.0 size=   10805kB time=01:24:29.12 bitrate=   0.0kbits/s throttle=off speed=3.61e+11x    
+12:32:21.869 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:21.869 SegmentComplete=video:0 Index=1689 Start=5067.162100 End=5070.165100 Duration=3.003000 offset_pts=0 start_pts=5067162100 Frames=90 filename=0C973F_1689.ts
+12:32:21.869 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1690.ts.tmp' for writing
+12:32:21.911 frame= 3356 fps=129 q=29.0 size=   11000kB time=01:24:31.12 bitrate=   0.0kbits/s throttle=off speed=3.55e+11x    
+12:32:22.423 frame= 3416 fps=129 q=29.0 size=   11203kB time=01:24:33.11 bitrate=   0.0kbits/s throttle=off speed=3.48e+11x    
+12:32:22.616 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:22.618 SegmentComplete=video:0 Index=1690 Start=5070.165100 End=5073.168100 Duration=3.003000 offset_pts=0 start_pts=5070165100 Frames=90 filename=0C973F_1690.ts
+12:32:22.618 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1691.ts.tmp' for writing
+12:32:22.924 frame= 3476 fps=129 q=29.0 size=   11411kB time=01:24:35.11 bitrate=   0.0kbits/s throttle=off speed=3.41e+11x    
+12:32:23.396 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:23.397 SegmentComplete=video:0 Index=1691 Start=5073.168100 End=5076.171100 Duration=3.003000 offset_pts=0 start_pts=5073168100 Frames=90 filename=0C973F_1691.ts
+12:32:23.397 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1692.ts.tmp' for writing
+12:32:23.426 frame= 3535 fps=128 q=29.0 size=   11611kB time=01:24:37.08 bitrate=   0.0kbits/s throttle=off speed=3.35e+11x    
+12:32:23.936 frame= 3595 fps=128 q=29.0 size=   11789kB time=01:24:39.08 bitrate=   0.0kbits/s throttle=off speed=3.29e+11x    
+12:32:24.167 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:24.168 SegmentComplete=video:0 Index=1692 Start=5076.171100 End=5079.174100 Duration=3.003000 offset_pts=0 start_pts=5076171100 Frames=90 filename=0C973F_1692.ts
+12:32:24.168 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1693.ts.tmp' for writing
+12:32:24.438 frame= 3654 fps=128 q=29.0 size=   11963kB time=01:24:41.06 bitrate=   0.0kbits/s throttle=off speed=3.23e+11x    
+12:32:24.897 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:24.897 SegmentComplete=video:0 Index=1693 Start=5079.174100 End=5082.177100 Duration=3.003000 offset_pts=0 start_pts=5079174100 Frames=90 filename=0C973F_1693.ts
+12:32:24.897 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1694.ts.tmp' for writing
+12:32:24.946 frame= 3716 fps=128 q=29.0 size=   12165kB time=01:24:43.12 bitrate=   0.0kbits/s throttle=off speed=3.17e+11x    
+12:32:25.454 frame= 3768 fps=127 q=29.0 size=   12339kB time=01:24:44.86 bitrate=   0.0kbits/s throttle=off speed=3.12e+11x    
+12:32:25.750 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:25.750 SegmentComplete=video:0 Index=1694 Start=5082.177100 End=5085.180100 Duration=3.003000 offset_pts=0 start_pts=5082177100 Frames=90 filename=0C973F_1694.ts
+12:32:25.750 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1695.ts.tmp' for writing
+12:32:25.954 frame= 3829 fps=127 q=29.0 size=   12582kB time=01:24:46.88 bitrate=   0.0kbits/s throttle=off speed=3.07e+11x    
+12:32:26.466 frame= 3889 fps=127 q=29.0 size=   12808kB time=01:24:48.90 bitrate=   0.0kbits/s throttle=off speed=3.02e+11x    
+12:32:26.470 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:26.474 SegmentComplete=video:0 Index=1695 Start=5085.180100 End=5088.183100 Duration=3.003000 offset_pts=0 start_pts=5085180100 Frames=90 filename=0C973F_1695.ts
+12:32:26.475 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1696.ts.tmp' for writing
+12:32:26.970 frame= 3951 fps=127 q=29.0 size=   13021kB time=01:24:50.97 bitrate=   0.0kbits/s throttle=off speed=2.97e+11x    
+12:32:27.220 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:27.220 SegmentComplete=video:0 Index=1696 Start=5088.183100 End=5091.186100 Duration=3.003000 offset_pts=0 start_pts=5088183100 Frames=90 filename=0C973F_1696.ts
+12:32:27.220 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1697.ts.tmp' for writing
+12:32:27.476 frame= 4013 fps=127 q=29.0 size=   13243kB time=01:24:53.04 bitrate=   0.0kbits/s throttle=off speed=2.92e+11x    
+12:32:27.908 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:27.908 SegmentComplete=video:0 Index=1697 Start=5091.186100 End=5094.189100 Duration=3.003000 offset_pts=0 start_pts=5091186100 Frames=90 filename=0C973F_1697.ts
+12:32:27.908 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1698.ts.tmp' for writing
+12:32:27.979 frame= 4080 fps=127 q=29.0 size=   13487kB time=01:24:55.27 bitrate=   0.0kbits/s throttle=off speed=2.87e+11x    
+12:32:28.479 frame= 4143 fps=127 q=29.0 size=   13692kB time=01:24:57.38 bitrate=   0.0kbits/s throttle=off speed=2.83e+11x    
+12:32:28.617 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:28.617 SegmentComplete=video:0 Index=1698 Start=5094.189100 End=5097.192100 Duration=3.003000 offset_pts=0 start_pts=5094189100 Frames=90 filename=0C973F_1698.ts
+12:32:28.617 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1699.ts.tmp' for writing
+12:32:28.981 frame= 4211 fps=127 q=29.0 size=   13845kB time=01:24:59.63 bitrate=   0.0kbits/s throttle=off speed=2.79e+11x    
+12:32:29.331 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:29.336 SegmentComplete=video:0 Index=1699 Start=5097.192100 End=5100.195100 Duration=3.003000 offset_pts=0 start_pts=5097192100 Frames=90 filename=0C973F_1699.ts
+12:32:29.336 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1700.ts.tmp' for writing
+12:32:29.492 frame= 4271 fps=127 q=29.0 size=   13978kB time=01:25:01.65 bitrate=   0.0kbits/s throttle=off speed=2.75e+11x    
+12:32:30.020 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:30.021 SegmentComplete=video:0 Index=1700 Start=5100.195100 End=5103.198100 Duration=3.003000 offset_pts=0 start_pts=5100195100 Frames=90 filename=0C973F_1700.ts
+12:32:30.021 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1701.ts.tmp' for writing
+12:32:30.021 frame= 4341 fps=127 q=29.0 size=   14152kB time=01:25:03.97 bitrate=   0.0kbits/s throttle=off speed=2.7e+11x    
+12:32:30.522 frame= 4411 fps=127 q=29.0 size=   14305kB time=01:25:06.32 bitrate=   0.0kbits/s throttle=off speed=2.66e+11x    
+12:32:30.653 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:30.654 SegmentComplete=video:0 Index=1701 Start=5103.198100 End=5106.201100 Duration=3.003000 offset_pts=0 start_pts=5103198100 Frames=90 filename=0C973F_1701.ts
+12:32:30.654 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1702.ts.tmp' for writing
+12:32:31.032 frame= 4480 fps=128 q=29.0 size=   14465kB time=01:25:08.62 bitrate=   0.0kbits/s throttle=off speed=2.63e+11x    
+12:32:31.355 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:31.356 SegmentComplete=video:0 Index=1702 Start=5106.201100 End=5109.204100 Duration=3.003000 offset_pts=0 start_pts=5106201100 Frames=90 filename=0C973F_1702.ts
+12:32:31.356 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1703.ts.tmp' for writing
+12:32:31.538 frame= 4549 fps=128 q=29.0 size=   14620kB time=01:25:10.92 bitrate=   0.0kbits/s throttle=off speed=2.59e+11x    
+12:32:32.035 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:32.036 SegmentComplete=video:0 Index=1703 Start=5109.204100 End=5112.207100 Duration=3.003000 offset_pts=0 start_pts=5109204100 Frames=90 filename=0C973F_1703.ts
+12:32:32.036 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1704.ts.tmp' for writing
+12:32:32.039 frame= 4612 fps=128 q=29.0 size=   14769kB time=01:25:13.03 bitrate=   0.0kbits/s throttle=off speed=2.55e+11x    
+12:32:32.545 frame= 4665 fps=127 q=29.0 size=   14878kB time=01:25:14.79 bitrate=   0.0kbits/s throttle=off speed=2.52e+11x    
+12:32:32.884 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:32.884 SegmentComplete=video:0 Index=1704 Start=5112.207100 End=5115.210100 Duration=3.003000 offset_pts=0 start_pts=5112207100 Frames=90 filename=0C973F_1704.ts
+12:32:32.884 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1705.ts.tmp' for writing
+12:32:33.047 frame= 4723 fps=127 q=29.0 size=   15037kB time=01:25:16.72 bitrate=   0.0kbits/s throttle=off speed=2.48e+11x    
+12:32:33.559 frame= 4780 fps=127 q=29.0 size=   15162kB time=01:25:18.63 bitrate=   0.0kbits/s throttle=off speed=2.45e+11x    
+12:32:33.652 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:33.653 SegmentComplete=video:0 Index=1705 Start=5115.210100 End=5118.213100 Duration=3.003000 offset_pts=0 start_pts=5115210100 Frames=90 filename=0C973F_1705.ts
+12:32:33.653 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1706.ts.tmp' for writing
+12:32:34.061 frame= 4847 fps=127 q=29.0 size=   15314kB time=01:25:20.85 bitrate=   0.0kbits/s throttle=off speed=2.42e+11x    
+12:32:34.334 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:34.335 SegmentComplete=video:0 Index=1706 Start=5118.213100 End=5121.216100 Duration=3.003000 offset_pts=0 start_pts=5118213100 Frames=90 filename=0C973F_1706.ts
+12:32:34.335 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1707.ts.tmp' for writing
+12:32:34.561 frame= 4912 fps=127 q=29.0 size=   15454kB time=01:25:23.04 bitrate=   0.0kbits/s throttle=off speed=2.39e+11x    
+12:32:35.052 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:35.053 SegmentComplete=video:0 Index=1707 Start=5121.216100 End=5124.219100 Duration=3.003000 offset_pts=0 start_pts=5121216100 Frames=90 filename=0C973F_1707.ts
+12:32:35.053 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1708.ts.tmp' for writing
+12:32:35.067 frame= 4974 fps=127 q=29.0 size=   15615kB time=01:25:25.10 bitrate=   0.0kbits/s throttle=off speed=2.35e+11x    
+12:32:35.569 frame= 5038 fps=127 q=29.0 size=   15751kB time=01:25:27.24 bitrate=   0.0kbits/s throttle=off speed=2.32e+11x    
+12:32:35.732 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:35.733 SegmentComplete=video:0 Index=1708 Start=5124.219100 End=5127.222100 Duration=3.003000 offset_pts=0 start_pts=5124219100 Frames=90 filename=0C973F_1708.ts
+12:32:35.733 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1709.ts.tmp' for writing
+12:32:36.074 frame= 5107 fps=127 q=29.0 size=   15897kB time=01:25:29.54 bitrate=   0.0kbits/s throttle=off speed=2.3e+11x    
+12:32:36.433 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:36.434 SegmentComplete=video:0 Index=1709 Start=5127.222100 End=5130.225100 Duration=3.003000 offset_pts=0 start_pts=5127222100 Frames=90 filename=0C973F_1709.ts
+12:32:36.434 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1710.ts.tmp' for writing
+12:32:36.576 frame= 5171 fps=127 q=29.0 size=   16033kB time=01:25:31.67 bitrate=   0.0kbits/s throttle=off speed=2.27e+11x    
+12:32:37.086 frame= 5240 fps=127 q=29.0 size=   16154kB time=01:25:33.97 bitrate=   0.0kbits/s throttle=off speed=2.24e+11x    
+12:32:37.096 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:37.097 SegmentComplete=video:0 Index=1710 Start=5130.225100 End=5133.228100 Duration=3.003000 offset_pts=0 start_pts=5130225100 Frames=90 filename=0C973F_1710.ts
+12:32:37.097 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1711.ts.tmp' for writing
+12:32:37.606 frame= 5306 fps=127 q=29.0 size=   16346kB time=01:25:36.18 bitrate=   0.0kbits/s throttle=off speed=2.21e+11x    
+12:32:37.835 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:37.836 SegmentComplete=video:0 Index=1711 Start=5133.228100 End=5136.231100 Duration=3.003000 offset_pts=0 start_pts=5133228100 Frames=90 filename=0C973F_1711.ts
+12:32:37.836 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1712.ts.tmp' for writing
+12:32:38.107 frame= 5369 fps=127 q=29.0 size=   16574kB time=01:25:38.27 bitrate=   0.0kbits/s throttle=off speed=2.19e+11x    
+12:32:38.487 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:38.492 SegmentComplete=video:0 Index=1712 Start=5136.231100 End=5139.234100 Duration=3.003000 offset_pts=0 start_pts=5136231100 Frames=90 filename=0C973F_1712.ts
+12:32:38.492 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1713.ts.tmp' for writing
+12:32:38.611 frame= 5437 fps=127 q=29.0 size=   16794kB time=01:25:40.54 bitrate=   0.0kbits/s throttle=off speed=2.16e+11x    
+12:32:39.105 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:39.105 SegmentComplete=video:0 Index=1713 Start=5139.234100 End=5142.237100 Duration=3.003000 offset_pts=0 start_pts=5139234100 Frames=90 filename=0C973F_1713.ts
+12:32:39.105 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1714.ts.tmp' for writing
+12:32:39.120 frame= 5513 fps=128 q=29.0 size=   17009kB time=01:25:43.08 bitrate=   0.0kbits/s throttle=off speed=2.13e+11x    
+12:32:39.631 frame= 5577 fps=128 q=29.0 size=   17169kB time=01:25:45.21 bitrate=   0.0kbits/s throttle=off speed=2.11e+11x    
+12:32:39.804 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:39.805 SegmentComplete=video:0 Index=1714 Start=5142.237100 End=5145.240100 Duration=3.003000 offset_pts=0 start_pts=5142237100 Frames=90 filename=0C973F_1714.ts
+12:32:39.805 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1715.ts.tmp' for writing
+12:32:40.132 frame= 5647 fps=128 q=29.0 size=   17351kB time=01:25:47.56 bitrate=   0.0kbits/s throttle=off speed=2.08e+11x    
+12:32:40.468 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:40.469 SegmentComplete=video:0 Index=1715 Start=5145.240100 End=5148.243100 Duration=3.003000 offset_pts=0 start_pts=5145240100 Frames=90 filename=0C973F_1715.ts
+12:32:40.469 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1716.ts.tmp' for writing
+12:32:40.645 frame= 5716 fps=128 q=29.0 size=   17533kB time=01:25:49.86 bitrate=   0.0kbits/s throttle=off speed=2.06e+11x    
+12:32:41.145 frame= 5780 fps=128 q=29.0 size=   17705kB time=01:25:51.99 bitrate=   0.0kbits/s throttle=off speed=2.04e+11x    
+12:32:41.152 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:41.153 SegmentComplete=video:0 Index=1716 Start=5148.243100 End=5151.246100 Duration=3.003000 offset_pts=0 start_pts=5148243100 Frames=90 filename=0C973F_1716.ts
+12:32:41.153 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1717.ts.tmp' for writing
+12:32:41.650 frame= 5850 fps=128 q=29.0 size=   17895kB time=01:25:54.34 bitrate=   0.0kbits/s throttle=off speed=2.02e+11x    
+12:32:41.811 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:41.812 SegmentComplete=video:0 Index=1717 Start=5151.246100 End=5154.249100 Duration=3.003000 offset_pts=0 start_pts=5151246100 Frames=90 filename=0C973F_1717.ts
+12:32:41.812 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1718.ts.tmp' for writing
+12:32:42.155 frame= 5913 fps=128 q=29.0 size=   18060kB time=01:25:56.43 bitrate=   0.0kbits/s throttle=off speed=1.99e+11x    
+12:32:42.511 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:42.511 SegmentComplete=video:0 Index=1718 Start=5154.249100 End=5157.252100 Duration=3.003000 offset_pts=0 start_pts=5154249100 Frames=90 filename=0C973F_1718.ts
+12:32:42.511 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1719.ts.tmp' for writing
+12:32:42.659 frame= 5981 fps=128 q=29.0 size=   18250kB time=01:25:58.70 bitrate=   0.0kbits/s throttle=off speed=1.97e+11x    
+12:32:43.176 frame= 6046 fps=128 q=26.0 size=   18402kB time=01:26:00.86 bitrate=   0.0kbits/s throttle=off speed=1.95e+11x    
+12:32:43.208 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:43.208 SegmentComplete=video:0 Index=1719 Start=5157.252100 End=5160.255100 Duration=3.003000 offset_pts=0 start_pts=5157252100 Frames=90 filename=0C973F_1719.ts
+12:32:43.209 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1720.ts.tmp' for writing
+12:32:43.684 frame= 6116 fps=128 q=29.0 size=   18622kB time=01:26:03.21 bitrate=   0.0kbits/s throttle=off speed=1.93e+11x    
+12:32:43.901 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:43.901 SegmentComplete=video:0 Index=1720 Start=5160.255100 End=5163.258100 Duration=3.003000 offset_pts=0 start_pts=5160255100 Frames=90 filename=0C973F_1720.ts
+12:32:43.901 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1721.ts.tmp' for writing
+12:32:44.190 frame= 6172 fps=128 q=29.0 size=   18848kB time=01:26:05.06 bitrate=   0.0kbits/s throttle=off speed=1.91e+11x    
+12:32:44.694 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:44.694 SegmentComplete=video:0 Index=1721 Start=5163.258100 End=5166.261100 Duration=3.003000 offset_pts=0 start_pts=5163258100 Frames=90 filename=0C973F_1721.ts
+12:32:44.694 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1722.ts.tmp' for writing
+12:32:44.694 frame= 6231 fps=128 q=29.0 size=   19046kB time=01:26:07.04 bitrate=   0.0kbits/s throttle=off speed=1.89e+11x    
+12:32:45.199 frame= 6286 fps=127 q=29.0 size=   19225kB time=01:26:08.87 bitrate=   0.0kbits/s throttle=off speed=1.87e+11x    
+12:32:45.506 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:45.506 SegmentComplete=video:0 Index=1722 Start=5166.261100 End=5169.264100 Duration=3.003000 offset_pts=0 start_pts=5166261100 Frames=90 filename=0C973F_1722.ts
+12:32:45.506 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1723.ts.tmp' for writing
+12:32:45.700 frame= 6349 fps=127 q=29.0 size=   19400kB time=01:26:10.99 bitrate=   0.0kbits/s throttle=off speed=1.85e+11x    
+12:32:46.139 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:46.139 SegmentComplete=video:0 Index=1723 Start=5169.264100 End=5172.267100 Duration=3.003000 offset_pts=0 start_pts=5169264100 Frames=90 filename=0C973F_1723.ts
+12:32:46.139 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1724.ts.tmp' for writing
+12:32:46.210 frame= 6418 fps=128 q=29.0 size=   19590kB time=01:26:13.28 bitrate=   0.0kbits/s throttle=off speed=1.83e+11x    
+12:32:46.723 frame= 6489 fps=128 q=29.0 size=   19800kB time=01:26:15.65 bitrate=   0.0kbits/s throttle=off speed=1.81e+11x    
+12:32:46.824 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:46.825 SegmentComplete=video:0 Index=1724 Start=5172.267100 End=5175.270100 Duration=3.003000 offset_pts=0 start_pts=5172267100 Frames=90 filename=0C973F_1724.ts
+12:32:46.825 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1725.ts.tmp' for writing
+12:32:47.229 frame= 6550 fps=128 q=29.0 size=   19982kB time=01:26:17.67 bitrate=   0.0kbits/s throttle=off speed=1.8e+11x    
+12:32:47.573 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:47.574 SegmentComplete=video:0 Index=1725 Start=5175.270100 End=5178.273100 Duration=3.003000 offset_pts=0 start_pts=5175270100 Frames=90 filename=0C973F_1725.ts
+12:32:47.574 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1726.ts.tmp' for writing
+12:32:47.742 frame= 6615 fps=128 q=29.0 size=   20180kB time=01:26:19.86 bitrate=   0.0kbits/s throttle=off speed=1.78e+11x    
+12:32:48.214 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:48.215 SegmentComplete=video:0 Index=1726 Start=5178.273100 End=5181.276100 Duration=3.003000 offset_pts=0 start_pts=5178273100 Frames=90 filename=0C973F_1726.ts
+12:32:48.215 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1727.ts.tmp' for writing
+12:32:48.244 frame= 6686 fps=128 q=29.0 size=   20386kB time=01:26:22.22 bitrate=   0.0kbits/s throttle=off speed=1.76e+11x    
+12:32:48.751 frame= 6751 fps=128 q=29.0 size=   20555kB time=01:26:24.38 bitrate=   0.0kbits/s throttle=off speed=1.75e+11x    
+12:32:48.912 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:48.912 SegmentComplete=video:0 Index=1727 Start=5181.276100 End=5184.279100 Duration=3.003000 offset_pts=0 start_pts=5181276100 Frames=90 filename=0C973F_1727.ts
+12:32:48.912 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1728.ts.tmp' for writing
+12:32:49.253 frame= 6824 fps=128 q=29.0 size=   20723kB time=01:26:26.82 bitrate=   0.0kbits/s throttle=off speed=1.73e+11x    
+12:32:49.515 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:49.516 SegmentComplete=video:0 Index=1728 Start=5184.279100 End=5187.282100 Duration=3.003000 offset_pts=0 start_pts=5184279100 Frames=90 filename=0C973F_1728.ts
+12:32:49.516 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1729.ts.tmp' for writing
+12:32:49.763 frame= 6896 fps=128 q=29.0 size=   20938kB time=01:26:29.24 bitrate=   0.0kbits/s throttle=off speed=1.71e+11x    
+12:32:50.108 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:50.125 SegmentComplete=video:0 Index=1729 Start=5187.282100 End=5190.285100 Duration=3.003000 offset_pts=0 start_pts=5187282100 Frames=90 filename=0C973F_1729.ts
+12:32:50.125 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1730.ts.tmp' for writing
+12:32:50.278 frame= 6975 fps=128 q=29.0 size=   21157kB time=01:26:31.86 bitrate=   0.0kbits/s throttle=off speed=1.7e+11x    
+12:32:50.779 frame= 7038 fps=128 q=29.0 size=   21317kB time=01:26:33.97 bitrate=   0.0kbits/s throttle=off speed=1.68e+11x    
+12:32:50.792 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:50.793 SegmentComplete=video:0 Index=1730 Start=5190.285100 End=5193.288100 Duration=3.003000 offset_pts=0 start_pts=5190285100 Frames=90 filename=0C973F_1730.ts
+12:32:50.793 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1731.ts.tmp' for writing
+12:32:51.279 frame= 7100 fps=128 q=29.0 size=   21501kB time=01:26:36.04 bitrate=   0.0kbits/s throttle=off speed=1.67e+11x    
+12:32:51.524 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:51.525 SegmentComplete=video:0 Index=1731 Start=5193.288100 End=5196.291100 Duration=3.003000 offset_pts=0 start_pts=5193288100 Frames=90 filename=0C973F_1731.ts
+12:32:51.525 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1732.ts.tmp' for writing
+12:32:51.783 frame= 7168 fps=128 q=29.0 size=   21681kB time=01:26:38.32 bitrate=   0.0kbits/s throttle=off speed=1.65e+11x    
+12:32:52.183 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:52.197 SegmentComplete=video:0 Index=1732 Start=5196.291100 End=5199.294100 Duration=3.003000 offset_pts=0 start_pts=5196291100 Frames=90 filename=0C973F_1732.ts
+12:32:52.197 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1733.ts.tmp' for writing
+12:32:52.302 frame= 7234 fps=128 q=29.0 size=   21849kB time=01:26:40.50 bitrate=   0.0kbits/s throttle=off speed=1.64e+11x    
+12:32:52.820 frame= 7283 fps=128 q=29.0 size=   21985kB time=01:26:42.15 bitrate=   0.0kbits/s throttle=off speed=1.62e+11x    
+12:32:53.123 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:53.124 SegmentComplete=video:0 Index=1733 Start=5199.294100 End=5202.297100 Duration=3.003000 offset_pts=0 start_pts=5199294100 Frames=90 filename=0C973F_1733.ts
+12:32:53.124 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1734.ts.tmp' for writing
+12:32:53.321 frame= 7342 fps=128 q=29.0 size=   22165kB time=01:26:44.12 bitrate=   0.0kbits/s throttle=off speed=1.61e+11x    
+12:32:53.823 frame= 7399 fps=128 q=29.0 size=   22313kB time=01:26:46.00 bitrate=   0.0kbits/s throttle=off speed=1.59e+11x    
+12:32:53.834 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:53.835 SegmentComplete=video:0 Index=1734 Start=5202.297100 End=5205.300100 Duration=3.003000 offset_pts=0 start_pts=5202297100 Frames=90 filename=0C973F_1734.ts
+12:32:53.835 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1735.ts.tmp' for writing
+12:32:54.336 frame= 7468 fps=128 q=29.0 size=   22495kB time=01:26:48.32 bitrate=   0.0kbits/s throttle=off speed=1.58e+11x    
+12:32:54.473 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:54.473 SegmentComplete=video:0 Index=1735 Start=5205.300100 End=5208.303100 Duration=3.003000 offset_pts=0 start_pts=5205300100 Frames=90 filename=0C973F_1735.ts
+12:32:54.473 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1736.ts.tmp' for writing
+12:32:54.839 frame= 7543 fps=128 q=29.0 size=   22697kB time=01:26:50.81 bitrate=   0.0kbits/s throttle=off speed=1.56e+11x    
+12:32:55.182 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:55.182 SegmentComplete=video:0 Index=1736 Start=5208.303100 End=5211.306100 Duration=3.003000 offset_pts=0 start_pts=5208303100 Frames=90 filename=0C973F_1736.ts
+12:32:55.182 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1737.ts.tmp' for writing
+12:32:55.343 frame= 7602 fps=128 q=29.0 size=   22867kB time=01:26:52.78 bitrate=   0.0kbits/s throttle=off speed=1.55e+11x    
+12:32:55.844 frame= 7660 fps=128 q=29.0 size=   23011kB time=01:26:54.73 bitrate=   0.0kbits/s throttle=off speed=1.54e+11x    
+12:32:55.921 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:55.922 SegmentComplete=video:0 Index=1737 Start=5211.306100 End=5214.309100 Duration=3.003000 offset_pts=0 start_pts=5211306100 Frames=90 filename=0C973F_1737.ts
+12:32:55.922 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1738.ts.tmp' for writing
+12:32:56.345 frame= 7727 fps=128 q=29.0 size=   23186kB time=01:26:56.96 bitrate=   0.0kbits/s throttle=off speed=1.53e+11x    
+12:32:56.606 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:56.610 SegmentComplete=video:0 Index=1738 Start=5214.309100 End=5217.312100 Duration=3.003000 offset_pts=0 start_pts=5214309100 Frames=90 filename=0C973F_1738.ts
+12:32:56.610 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1739.ts.tmp' for writing
+12:32:56.855 frame= 7790 fps=128 q=29.0 size=   23371kB time=01:26:59.05 bitrate=   0.0kbits/s throttle=off speed=1.51e+11x    
+12:32:57.361 frame= 7847 fps=128 q=29.0 size=   23568kB time=01:27:00.96 bitrate=   0.0kbits/s throttle=off speed=1.5e+11x    
+12:32:57.383 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:57.384 SegmentComplete=video:0 Index=1739 Start=5217.312100 End=5220.315100 Duration=3.003000 offset_pts=0 start_pts=5217312100 Frames=90 filename=0C973F_1739.ts
+12:32:57.384 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1740.ts.tmp' for writing
+12:32:57.863 frame= 7918 fps=128 q=29.0 size=   23779kB time=01:27:03.32 bitrate=   0.0kbits/s throttle=off speed=1.49e+11x    
+12:32:58.007 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:58.007 SegmentComplete=video:0 Index=1740 Start=5220.315100 End=5223.318100 Duration=3.003000 offset_pts=0 start_pts=5220315100 Frames=90 filename=0C973F_1740.ts
+12:32:58.007 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1741.ts.tmp' for writing
+12:32:58.365 frame= 7986 fps=128 q=29.0 size=   23982kB time=01:27:05.60 bitrate=   0.0kbits/s throttle=off speed=1.48e+11x    
+12:32:58.646 
+
+[q] command received. Exiting.
+
+12:32:58.682 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:58.682 SegmentComplete=video:0 Index=1741 Start=5223.318100 End=5226.321100 Duration=3.003000 offset_pts=0 start_pts=5223318100 Frames=90 filename=0C973F_1741.ts
+12:32:58.682 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F_1742.ts.tmp' for writing
+12:32:58.685 12:32:58.685 [segment @ 0x1ed7240] Opening '/config/transcoding-temp/0C973F.m3u8.tmp' for writing
+12:32:58.685 SegmentComplete=video:0 Index=1742 Start=5226.321100 End=5226.554667 Duration=0.233567 offset_pts=0 start_pts=5226321100 Frames=7 filename=0C973F_1742.ts
+12:32:58.685 frame= 8017 fps=128 q=-1.0 Lsize=   24113kB time=01:27:06.62 bitrate=   0.0kbits/s throttle=off speed=1.47e+11x    
+12:32:58.685 video:15685kB audio:8428kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+12:32:58.688 EXIT
+12:32:58.688 [libx264 @ 0x1ed8b80] frame I:90    Avg QP:19.53  size: 14668
+12:32:58.689 [libx264 @ 0x1ed8b80] frame P:2151  Avg QP:22.93  size:  4415
+12:32:58.689 [libx264 @ 0x1ed8b80] frame B:5776  Avg QP:26.11  size:   908
+12:32:58.689 [libx264 @ 0x1ed8b80] consecutive B-frames:  2.4%  3.2%  4.4% 90.0%
+12:32:58.689 [libx264 @ 0x1ed8b80] mb I  I16..4: 25.6%  0.0% 74.4%
+12:32:58.689 [libx264 @ 0x1ed8b80] mb P  I16..4: 19.1%  0.0%  0.0%  P16..4: 56.4%  0.0%  0.0%  0.0%  0.0%    skip:24.5%
+12:32:58.689 [libx264 @ 0x1ed8b80] mb B  I16..4:  2.0%  0.0%  0.0%  B16..8: 21.4%  0.0%  0.0%  direct: 4.3%  skip:72.4%  L0:37.7% L1:50.5% BI:11.7%
+12:32:58.689 [libx264 @ 0x1ed8b80] coded y,uvDC,uvAC intra: 30.2% 45.5% 10.4% inter: 6.8% 7.9% 0.1%
+12:32:58.689 [libx264 @ 0x1ed8b80] i16 v,h,dc,p: 33% 25% 17% 24%
+12:32:58.689 [libx264 @ 0x1ed8b80] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 19% 12%  8%  9%  8%  6%  5%  5%
+12:32:58.689 [libx264 @ 0x1ed8b80] i8c dc,h,v,p: 41% 23% 24% 11%
+12:32:58.689 [libx264 @ 0x1ed8b80] Weighted P-Frames: Y:5.3% UV:0.2%
+12:32:58.689 [libx264 @ 0x1ed8b80] kb/s:480.31
+12:32:58.698 
+
+======= ExtraData
+H4sIAAAAAAAAA9VYbW+bSBD+KwjpvvllwTi2kSw1dZo2uqSN4rb3oYrQGhZ7L8AiWFynVf77zSwvAWPHTpteValRzTA7O/vMMy/Ld30mwpBGnm5/1895IFmSNn5+KX8rKaMyS9h7GjLd1lOXBkzvlNKP9zFKP3OPiWJJR/8QSy4iZTL/+ZkGGcvtFma+gpqSzmXCoyVIRibRHzqVwqqlYBFLf7h9eOgUvl2A+7pvgN5FFGfymkf5DjMRRcyVzJuLLHGZUiM2UXoe2+g2ASu3YOZtIBY0OMLZ+5YvMslY3dsY5NJZJjRepY7PFULNFX1XRD5f9gOxTPu+H8Zs2ZUJjVJXeKxreZOR506G3bFruF2LjfzuxDwZd63hyPCIdWKx8cIxlP2e3Mj61q6I72V60MNU0kQ6VDrfWCL2aCMoCsv89GcszDa7OBCKdSeMrU5o0c5gGcOf2Qn/NVusKA08xQgVULVpGZ0ynomQwhVBe/uVlHFrr+aagzseEXW/hRKcuQFpG3Vi2KZpDyY5liBmNCzBxEDvAHNlnli786lcchi+9DSTlbrt0yBlHf2KeZz+zTHLc3sHDHVyrdxp1JiBObfw8l3updJQ8kfPZyIQyTymLuot5IhMSsUbGi1ROD+7AdE137DgXCQhlbl1WFY+6vfZ2jIJhvVNBG5HIPoUpTFzuc+Zp6tDXkSQ9QHs41VnfM3lDZW4x7BnaVcLLvsYFBCn1yxRO+q2YSrJGYvlSrfHHf2G+ecJnAvObZSn5t/QijExycYgY6wWp2uW0CVTmsUm5mQy6hsE394wGmy/ImSAb4lSOEXv0Tsu0PCJjbAAQVV1sPUryiMQXLI1ugjFTVdxjGgoknjF3eqIj2mRR6bOEIU+BOMjD9lrmio/yGhyotw0rZMhFFXlTE3B6E8KDy/SM+bTLAD8Mf9RAPGow3sJAcyoimEGPIJDBcFHulR8QfU3G4hIRINiwQMmx16iU+q2eH6aefyHeZ47Xae5MneQ5kprN81PT2d6oVCyPHd7tqLQVQIwYVYPl/ReZEje/MccsFAheSSlOSQ9ot2VtJzTMA5KwswTy8qpVETY2IpweZjtCBv9cuFO4S+IKkg/JcjSPiH4bz5/fwH/G12jeOgSYnVNYoy6ZNI1RpWspyomLP+QyaqtXO1uKilbhiySLYpcHWwhjwU5N+H4eVVpl2+2BB/qFbxYEPC0rV527LJLg7QrWRj3yWwyGpz3wkE23mfMkeh8y4E9KyTEsaU82KWZd/EoCxcKk+YK42TYWAQ5wdfcy2jgrBiFlHHgKFB92itVnOtLvyZcsmevKr3MVyNWeweN41pwSDeOxwLaHsCGJK+ztd3pWnDPidgSSu4atm93Z4+ndBGodvJEly+JWFMKaeyETFKPStrS7xrbqu6KxmqQ3qWKFShPh/0TTjFBNhNha9HBalmfPnbNxF98w4GyRW5V091TtAO+2OwdUMpVR8UyTljK2lkGTfbep6lsTtNi5wy94stVXS9QzbOVOL0GLdB9Ee9gQ5otQjYldsicBAeVqWUnrhMIcUeR+FMDX02hudiRgJAmIqRAAnu8GXuuhHUxpCJXx55GImokgpu0aWUOCt4/by6rbC5bFiekSbxNgp2lVRVGg8lWpiwyP8V5p4WcNRpvqaauI1cQuZUIvPa0W9e8Y/d4BwrVWPOUozHfOH7YZkI5AiqU9l3j8Lr3vI5f7QvZH4tURaxdGYqWiXs/drunG4Dzl9fDdnJb3Ujfqvsf+lD+UoN/6iZc+YRJBzfRW3WHfuUb069TGNDs1RSutvVs3H0Pbxqaow1NrpjG8eajrZFJGoZVg4t9XyQaeA/JJXOdEPq9lvfFnt645V3y6K5+h9Jb8w2pjz/wAI7Ia+qVsBbQgdvtYf4dg5QFEY7UReBwLwwmac5D+Hh6g3xVMc6DXmwBUQodHjnEIdWrXQ78wz2c8HGIxyjWv1i8Uh8KUGLWPmLUx5IaDrn4OCDKil2OHD8ADkT/SGxAE7SH2/jUTlhAMEIEVBrt48/rzPdZUtDGV7ehDjJHC+md4lWoUddlacoXyDOhaOQrY9DeeNRg0SPY6hOFRgpS+lA0tVT1IS3/BFNGYKG2f9EQNFnyv5P00Mkb5HwyNNfcvdOgo2AGSx5lIku1FEohvM3tVlnf0bxExOoZavQfmNmHQHturjc5UJINpS9KtVrC/eZieDyrjkn4NQz6tJbvDF4Lv5b6Wv4J8jfw7KeLZFWhD3Jq1KAUHGCLTnntSuHUDVI9Df+s3o1rHRuQxlQvUK6+eGkxfrsqOnb6RwJeS5JnQl6FqkS8ErxcCj+G9beSsdmvAQI1OW59Cv+JqL9wxz++quHVrrjcbAOFGBi1KayM8jGzw6A+OzxRMrfaw8/z5tdV0qN59gOQNovXYLt4bQHYICPQ8T9a2hzDKBwAAA==

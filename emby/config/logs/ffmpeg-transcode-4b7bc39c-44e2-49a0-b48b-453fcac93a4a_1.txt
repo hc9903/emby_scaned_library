@@ -1,0 +1,615 @@
+2020-05-24 14:17:32.370
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/6943/hls1/main/325.ts?DeviceId=0939de9f-ad24-4206-b247-0dafb526de65&MediaSourceId=911f844c1d386225d909e26c90862e3a&PlaySessionId=20cbb8f450aa4e49b245887a2b907fc8&api_key=b24b9e0ee12b43b4b0d434c8e5187ccc&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=858000&AudioBitrate=192000&AudioStreamIndex=1&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=ContainerBitrateExceedsLimit
+
+{"Protocol":"File","Id":"911f844c1d386225d909e26c90862e3a","Path":"/00/00/SSNI/101-200/SSNI-105-2018-02-03/SSNI-105.mkv","Type":"Default","Container":"mkv","Size":6711979551,"Name":"SSNI-105","IsRemote":false,"RunTimeTicks":89977640000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"h264","ColorSpace":"bt709","TimeBase":"1/1000","CodecTimeBase":"1001/60000","VideoRange":"SDR","DisplayTitle":"1080p H264","NalLengthSize":"4","IsInterlaced":false,"IsAVC":true,"BitRate":5967686,"BitDepth":8,"RefFrames":1,"IsDefault":true,"IsForced":false,"Height":1080,"Width":1920,"AverageFrameRate":29.97003,"RealFrameRate":29.97003,"Profile":"Main","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p","Level":40,"IsAnamorphic":false},{"Codec":"aac","TimeBase":"1/1000","CodecTimeBase":"1/44100","DisplayTitle":"AAC stereo (Default)","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":192000,"Channels":2,"SampleRate":44100,"IsDefault":true,"IsForced":false,"Profile":"LC","Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":5967686,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for guest
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+>>>>>>  Affected codecs
+Encoder libx264 Software Encoder
+        Profiles: Baseline Profile (Level 6.2), Main Profile (Level 6.2), High Profile (Level 6.2), High 10 Profile (Level 6.2), High 4:2:2 Profile (Level 6.2), High 4:4:4 Predictive Profile (Level 6.2)
+
+
+>>>>>>  FindVideoEncoder - Media: h264, UseHardwareCodecs: True, Mode: Automatic
+Info    Checking: 'libx264 Software Encoder'
+Info    Check successful - selecting 'libx264 Software Encoder'
+
+>>>>>>  FindVideoDecoder - MediaType: h264, Mode: Automatic
+Info    Checking: 'Automatic software decoder'
+Info    Check successful - selecting 'Automatic software decoder'
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Automatic software decoder               >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    Scaling                                  >> False                False                                                         
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    libx264 Software Encoder                 >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    h264                 >> -            yuv420p      yuv420p      >> scale
+Info    scale                >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -ss 00:16:15.000  -f matroska -i file:"/00/00/SSNI/101-200/SSNI-105-2018-02-03/SSNI-105.mkv" -threads 0 -map 0:0 -map 0:1 -sn -c:v:0 libx264 -filter_complex "[0:0]scale=trunc(min(max(iw\,ih*dar)\,640)/2)*2:trunc(ow/dar/2)*2" -pix_fmt yuv420p  -maxrate 858000 -bufsize 1716000 -preset veryfast -profile:v:0 high -level:v:0 4.1 -crf 23 -x264opts:0 subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none -g:v:0 90 -keyint_min:v:0 90 -sc_threshold:v:0 0  -copyts -vsync -1 -codec:a:0 copy -disposition:a:0 default -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 3  -individual_header_trailer 0 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 325 -segment_list "/config/transcoding-temp/941F06.m3u8" -y "/config/transcoding-temp/941F06_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-transcode-4b7bc39c-44e2-49a0-b48b-453fcac93a4a_1graph.txt -copyts -start_at_zero -f matroska,webm -ss 00:16:15.000 -c:v:0 h264 -i "/00/00/SSNI/101-200/SSNI-105-2018-02-03/SSNI-105.mkv" -filter_complex "[0:0]scale@f1=w=640:h=360[f1_out0]" -map [f1_out0] -map 0:1 -sn -c:v:0 libx264 -g:v:0 90 -maxrate:v:0 858000 -bufsize:v:0 1716000 -sc_threshold:v:0 0 -keyint_min:v:0 90 -pix_fmt:v:0 yuv420p -preset:v:0 veryfast -profile:v:0 high -level:v:0 3.0 -x264opts:v:0 "subme=0:me_range=4:rc_lookahead=10:me=dia:no_chroma_me:8x8dct=0:partitions=none" -crf:v:0 23 -c:a:0 copy -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/941F06.m3u8 -segment_list_type m3u8 -segment_time 3 -segment_start_number 325 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/941F06_%d.ts"
+
+14:17:32.405 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+14:17:32.405   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+14:17:32.405 Execution Date: 2020-05-24 14:17:32
+14:17:35.339 Input #0, matroska,webm, from '/00/00/SSNI/101-200/SSNI-105-2018-02-03/SSNI-105.mkv':
+14:17:35.339   Metadata:
+14:17:35.339     title           : @ RUNBKK
+14:17:35.339     encoder         : libebml v1.3.5 + libmatroska v1.4.8
+14:17:35.339     creation_time   : 2018-03-13T11:00:49.000000Z
+14:17:35.339   Duration: 02:29:57.76, start: 0.000000, bitrate: 5967 kb/s
+14:17:35.339     Stream #0:0: Video: h264 (Main), yuv420p(tv, bt709/unknown/unknown, progressive), 1920x1080 [SAR 1:1 DAR 16:9], Level 40, 29.97 fps, 29.97 tbr, 1k tbn, 59.94 tbc, Start-Time 0.067s (default)
+14:17:35.339     Metadata:
+14:17:35.339       BPS             : 5709208
+14:17:35.339       BPS-eng         : 5709208
+14:17:35.339       DURATION        : 02:29:57.697000000
+14:17:35.339       DURATION-eng    : 02:29:57.697000000
+14:17:35.339       NUMBER_OF_FRAMES: 269661
+14:17:35.339       NUMBER_OF_FRAMES-eng: 269661
+14:17:35.339       NUMBER_OF_BYTES : 6421215686
+14:17:35.339       NUMBER_OF_BYTES-eng: 6421215686
+14:17:35.339     Stream #0:1: Audio: aac (LC), 44100 Hz, stereo, fltp (default)
+14:17:35.339     Metadata:
+14:17:35.339       BPS             : 256000
+14:17:35.339       BPS-eng         : 256000
+14:17:35.339       DURATION        : 02:29:57.755000000
+14:17:35.339       DURATION-eng    : 02:29:57.755000000
+14:17:35.339       NUMBER_OF_FRAMES: 387501
+14:17:35.339       NUMBER_OF_FRAMES-eng: 387501
+14:17:35.339       NUMBER_OF_BYTES : 287928180
+14:17:35.339       NUMBER_OF_BYTES-eng: 287928180
+14:17:35.340 Stream mapping:
+14:17:35.341   Stream #0:0 (h264) -> scale
+14:17:35.341   scale -> Stream #0:0 (libx264)
+14:17:35.341   Stream #0:1 -> #0:1 (copy)
+14:17:35.341 Press [q] to stop, [?] for help
+14:17:36.281 frame=    0 fps=0.0 q=0.0 size=       0kB time=-577014:32:22.77 bitrate=N/A throttle=off speed=   0x    
+14:17:36.353 [libx264 @ 0x232f100] using SAR=1/1
+14:17:36.353 [libx264 @ 0x232f100] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+14:17:36.355 [libx264 @ 0x232f100] profile Main, level 3.0, 4:2:0, 8-bit
+14:17:36.355 [libx264 @ 0x232f100] 264 - core 159 r2999 296494a - H.264/MPEG-4 AVC codec - Copyleft 2003-2020 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x1:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=4 chroma_me=0 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=90 keyint_min=46 scenecut=0 intra_refresh=0 rc_lookahead=10 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=858 vbv_bufsize=1716 crf_max=0.0 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+14:17:36.356 Output #0, segment, to '/config/transcoding-temp/941F06_%d.ts':
+14:17:36.356   Metadata:
+14:17:36.356     encoder         : Lavf58.35.100
+14:17:36.356     Stream #0:0: Video: h264 (libx264), yuv420p, 640x360 [SAR 1:1 DAR 16:9], q=-1--1, 29.97 fps, 90k tbn, 29.97 tbc (default)
+14:17:36.356     Metadata:
+14:17:36.356       encoder         : Lavc58.62.100 libx264
+14:17:36.356     Side data:
+14:17:36.356       cpb: bitrate max/min/avg: 858000/0/0 buffer size: 1716000 vbv_delay: N/A
+14:17:36.356     Stream #0:1: Audio: aac (LC), 44100 Hz, stereo, fltp (default)
+14:17:36.793 frame=   54 fps= 37 q=29.0 size=     216kB time=00:16:17.00 bitrate=   0.0kbits/s throttle=off speed=6.38e+12x    
+14:17:37.036 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:37.037 SegmentComplete=video:0 Index=325 Start=0.000000 End=978.010367 Duration=978.010367 offset_pts=0 start_pts=0 Frames=90 filename=941F06_325.ts
+14:17:37.037 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_326.ts.tmp' for writing
+14:17:37.292 frame=  170 fps= 87 q=29.0 size=     596kB time=00:16:20.85 bitrate=   0.0kbits/s throttle=off speed=4.73e+12x    
+14:17:37.430 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:37.431 SegmentComplete=video:0 Index=326 Start=978.010367 End=981.013367 Duration=3.003000 offset_pts=0 start_pts=978010367 Frames=90 filename=941F06_326.ts
+14:17:37.431 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_327.ts.tmp' for writing
+14:17:37.800 frame=  286 fps=116 q=26.0 size=    1041kB time=00:16:24.66 bitrate=   0.0kbits/s throttle=off speed=3.75e+12x    
+14:17:37.825 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:37.826 SegmentComplete=video:0 Index=327 Start=981.013367 End=984.016367 Duration=3.003000 offset_pts=0 start_pts=981013367 Frames=90 filename=941F06_327.ts
+14:17:37.826 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_328.ts.tmp' for writing
+14:17:38.209 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:38.209 SegmentComplete=video:0 Index=328 Start=984.016367 End=987.019367 Duration=3.003000 offset_pts=0 start_pts=984016367 Frames=90 filename=941F06_328.ts
+14:17:38.209 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_329.ts.tmp' for writing
+14:17:38.311 frame=  404 fps=136 q=29.0 size=    1458kB time=00:16:28.68 bitrate=   0.0kbits/s throttle=off speed=3.11e+12x    
+14:17:38.587 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:38.587 SegmentComplete=video:0 Index=329 Start=987.019367 End=990.022367 Duration=3.003000 offset_pts=0 start_pts=987019367 Frames=90 filename=941F06_329.ts
+14:17:38.587 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_330.ts.tmp' for writing
+14:17:38.813 frame=  522 fps=150 q=29.0 size=    1837kB time=00:16:32.67 bitrate=   0.0kbits/s throttle=off speed=2.66e+12x    
+14:17:38.985 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:38.986 SegmentComplete=video:0 Index=330 Start=990.022367 End=993.025367 Duration=3.003000 offset_pts=0 start_pts=990022367 Frames=90 filename=941F06_330.ts
+14:17:38.986 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_331.ts.tmp' for writing
+14:17:39.319 frame=  645 fps=162 q=29.0 size=    2195kB time=00:16:36.69 bitrate=   0.0kbits/s throttle=off speed=2.32e+12x    
+14:17:39.346 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:39.348 SegmentComplete=video:0 Index=331 Start=993.025367 End=996.028367 Duration=3.003000 offset_pts=0 start_pts=993025367 Frames=90 filename=941F06_331.ts
+14:17:39.348 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_332.ts.tmp' for writing
+14:17:39.719 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:39.723 SegmentComplete=video:0 Index=332 Start=996.028367 End=999.031367 Duration=3.003000 offset_pts=0 start_pts=996028367 Frames=90 filename=941F06_332.ts
+14:17:39.723 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_333.ts.tmp' for writing
+14:17:39.817 frame=  765 fps=171 q=29.0 size=    2545kB time=00:16:40.68 bitrate=   0.0kbits/s throttle=off speed=2.06e+12x    
+14:17:40.086 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:40.087 SegmentComplete=video:0 Index=333 Start=999.031367 End=1002.034367 Duration=3.003000 offset_pts=0 start_pts=999031367 Frames=90 filename=941F06_333.ts
+14:17:40.087 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_334.ts.tmp' for writing
+14:17:40.320 frame=  885 fps=178 q=29.0 size=    2879kB time=00:16:44.72 bitrate=   0.0kbits/s throttle=off speed=1.85e+12x    
+14:17:40.517 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:40.518 SegmentComplete=video:0 Index=334 Start=1002.034367 End=1005.037367 Duration=3.003000 offset_pts=0 start_pts=1002034367 Frames=90 filename=941F06_334.ts
+14:17:40.518 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_335.ts.tmp' for writing
+14:17:40.822 frame=  979 fps=179 q=29.0 size=    3129kB time=00:16:47.95 bitrate=   0.0kbits/s throttle=off speed=1.68e+12x    
+14:17:41.003 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:41.004 SegmentComplete=video:0 Index=335 Start=1005.037367 End=1008.040367 Duration=3.003000 offset_pts=0 start_pts=1005037367 Frames=90 filename=941F06_335.ts
+14:17:41.004 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_336.ts.tmp' for writing
+14:17:41.337 frame= 1072 fps=179 q=29.0 size=    3371kB time=00:16:51.04 bitrate=   0.0kbits/s throttle=off speed=1.54e+12x    
+14:17:41.493 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:41.494 SegmentComplete=video:0 Index=336 Start=1008.040367 End=1011.043367 Duration=3.003000 offset_pts=0 start_pts=1008040367 Frames=90 filename=941F06_336.ts
+14:17:41.494 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_337.ts.tmp' for writing
+14:17:41.838 frame= 1164 fps=179 q=29.0 size=    3606kB time=00:16:53.99 bitrate=   0.0kbits/s throttle=off speed=1.42e+12x    
+14:17:41.986 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:41.986 SegmentComplete=video:0 Index=337 Start=1011.043367 End=1014.046367 Duration=3.003000 offset_pts=0 start_pts=1011043367 Frames=90 filename=941F06_337.ts
+14:17:41.986 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_338.ts.tmp' for writing
+14:17:42.341 frame= 1270 fps=181 q=29.0 size=    3895kB time=00:16:57.59 bitrate=   0.0kbits/s throttle=off speed=1.32e+12x    
+14:17:42.390 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:42.390 SegmentComplete=video:0 Index=338 Start=1014.046367 End=1017.049367 Duration=3.003000 offset_pts=0 start_pts=1014046367 Frames=90 filename=941F06_338.ts
+14:17:42.390 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_339.ts.tmp' for writing
+14:17:42.775 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:42.776 SegmentComplete=video:0 Index=339 Start=1017.049367 End=1020.052367 Duration=3.003000 offset_pts=0 start_pts=1017049367 Frames=90 filename=941F06_339.ts
+14:17:42.776 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_340.ts.tmp' for writing
+14:17:42.842 frame= 1387 fps=185 q=29.0 size=    4205kB time=00:17:01.44 bitrate=   0.0kbits/s throttle=off speed=1.23e+12x    
+14:17:43.216 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:43.217 SegmentComplete=video:0 Index=340 Start=1020.052367 End=1023.055367 Duration=3.003000 offset_pts=0 start_pts=1020052367 Frames=90 filename=941F06_340.ts
+14:17:43.217 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_341.ts.tmp' for writing
+14:17:43.350 frame= 1492 fps=186 q=29.0 size=    4501kB time=00:17:04.90 bitrate=   0.0kbits/s throttle=off speed=1.15e+12x    
+14:17:43.616 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:43.617 SegmentComplete=video:0 Index=341 Start=1023.055367 End=1026.058367 Duration=3.003000 offset_pts=0 start_pts=1023055367 Frames=90 filename=941F06_341.ts
+14:17:43.617 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_342.ts.tmp' for writing
+14:17:43.866 frame= 1605 fps=188 q=29.0 size=    4840kB time=00:17:08.71 bitrate=   0.0kbits/s throttle=off speed=1.08e+12x    
+14:17:44.028 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:44.029 SegmentComplete=video:0 Index=342 Start=1026.058367 End=1029.061367 Duration=3.003000 offset_pts=0 start_pts=1026058367 Frames=90 filename=941F06_342.ts
+14:17:44.029 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_343.ts.tmp' for writing
+14:17:44.368 frame= 1715 fps=190 q=29.0 size=    5183kB time=00:17:12.38 bitrate=   0.0kbits/s throttle=off speed=1.02e+12x    
+14:17:44.429 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:44.430 SegmentComplete=video:0 Index=343 Start=1029.061367 End=1032.064367 Duration=3.003000 offset_pts=0 start_pts=1029061367 Frames=90 filename=941F06_343.ts
+14:17:44.430 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_344.ts.tmp' for writing
+14:17:44.813 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:44.814 SegmentComplete=video:0 Index=344 Start=1032.064367 End=1035.067367 Duration=3.003000 offset_pts=0 start_pts=1032064367 Frames=90 filename=941F06_344.ts
+14:17:44.814 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_345.ts.tmp' for writing
+14:17:44.875 frame= 1835 fps=192 q=29.0 size=    5545kB time=00:17:16.37 bitrate=   0.0kbits/s throttle=off speed=9.67e+11x    
+14:17:45.239 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:45.239 SegmentComplete=video:0 Index=345 Start=1035.067367 End=1038.070367 Duration=3.003000 offset_pts=0 start_pts=1035067367 Frames=90 filename=941F06_345.ts
+14:17:45.239 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_346.ts.tmp' for writing
+14:17:45.381 frame= 1942 fps=193 q=29.0 size=    5880kB time=00:17:19.99 bitrate=   0.0kbits/s throttle=off speed=9.19e+11x    
+14:17:45.636 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:45.636 SegmentComplete=video:0 Index=346 Start=1038.070367 End=1041.073367 Duration=3.003000 offset_pts=0 start_pts=1038070367 Frames=90 filename=941F06_346.ts
+14:17:45.636 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_347.ts.tmp' for writing
+14:17:45.892 frame= 2059 fps=195 q=29.0 size=    6204kB time=00:17:23.99 bitrate=   0.0kbits/s throttle=off speed=8.74e+11x    
+14:17:46.064 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:46.065 SegmentComplete=video:0 Index=347 Start=1041.073367 End=1044.076367 Duration=3.003000 offset_pts=0 start_pts=1041073367 Frames=90 filename=941F06_347.ts
+14:17:46.065 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_348.ts.tmp' for writing
+14:17:46.407 frame= 2148 fps=194 q=29.0 size=    6462kB time=00:17:26.91 bitrate=   0.0kbits/s throttle=off speed=8.34e+11x    
+14:17:46.597 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:46.597 SegmentComplete=video:0 Index=348 Start=1044.076367 End=1047.079367 Duration=3.003000 offset_pts=0 start_pts=1044076367 Frames=90 filename=941F06_348.ts
+14:17:46.597 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_349.ts.tmp' for writing
+14:17:46.911 frame= 2238 fps=193 q=29.0 size=    6727kB time=00:17:29.84 bitrate=   0.0kbits/s throttle=off speed=7.97e+11x    
+14:17:47.092 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:47.093 SegmentComplete=video:0 Index=349 Start=1047.079367 End=1050.082367 Duration=3.003000 offset_pts=0 start_pts=1047079367 Frames=90 filename=941F06_349.ts
+14:17:47.093 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_350.ts.tmp' for writing
+14:17:47.415 frame= 2335 fps=193 q=29.0 size=    7020kB time=00:17:33.07 bitrate=   0.0kbits/s throttle=off speed=7.64e+11x    
+14:17:47.535 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:47.537 SegmentComplete=video:0 Index=350 Start=1050.082367 End=1053.085367 Duration=3.003000 offset_pts=0 start_pts=1050082367 Frames=90 filename=941F06_350.ts
+14:17:47.538 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_351.ts.tmp' for writing
+14:17:47.916 frame= 2448 fps=195 q=29.0 size=    7365kB time=00:17:36.92 bitrate=   0.0kbits/s throttle=off speed=7.34e+11x    
+14:17:47.922 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:47.922 SegmentComplete=video:0 Index=351 Start=1053.085367 End=1056.088367 Duration=3.003000 offset_pts=0 start_pts=1053085367 Frames=90 filename=941F06_351.ts
+14:17:47.922 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_352.ts.tmp' for writing
+14:17:48.302 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:48.302 SegmentComplete=video:0 Index=352 Start=1056.088367 End=1059.091367 Duration=3.003000 offset_pts=0 start_pts=1056088367 Frames=90 filename=941F06_352.ts
+14:17:48.302 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_353.ts.tmp' for writing
+14:17:48.419 frame= 2566 fps=196 q=29.0 size=    7729kB time=00:17:40.75 bitrate=   0.0kbits/s throttle=off speed=7.05e+11x    
+14:17:48.732 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:48.732 SegmentComplete=video:0 Index=353 Start=1059.091367 End=1062.094367 Duration=3.003000 offset_pts=0 start_pts=1059091367 Frames=90 filename=941F06_353.ts
+14:17:48.732 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_354.ts.tmp' for writing
+14:17:48.922 frame= 2675 fps=197 q=29.0 size=    8054kB time=00:17:44.37 bitrate=   0.0kbits/s throttle=off speed=6.79e+11x    
+14:17:49.125 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:49.127 SegmentComplete=video:0 Index=354 Start=1062.094367 End=1065.097367 Duration=3.003000 offset_pts=0 start_pts=1062094367 Frames=90 filename=941F06_354.ts
+14:17:49.127 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_355.ts.tmp' for writing
+14:17:49.427 frame= 2789 fps=198 q=29.0 size=    8409kB time=00:17:48.20 bitrate=   0.0kbits/s throttle=off speed=6.55e+11x    
+14:17:49.520 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:49.521 SegmentComplete=video:0 Index=355 Start=1065.097367 End=1068.100367 Duration=3.003000 offset_pts=0 start_pts=1065097367 Frames=90 filename=941F06_355.ts
+14:17:49.521 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_356.ts.tmp' for writing
+14:17:49.921 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:49.922 SegmentComplete=video:0 Index=356 Start=1068.100367 End=1071.103367 Duration=3.003000 offset_pts=0 start_pts=1068100367 Frames=90 filename=941F06_356.ts
+14:17:49.922 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_357.ts.tmp' for writing
+14:17:49.926 frame= 2902 fps=199 q=29.0 size=    8808kB time=00:17:52.01 bitrate=   0.0kbits/s throttle=off speed=6.33e+11x    
+14:17:50.300 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:50.300 SegmentComplete=video:0 Index=357 Start=1071.103367 End=1074.106367 Duration=3.003000 offset_pts=0 start_pts=1071103367 Frames=90 filename=941F06_357.ts
+14:17:50.300 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_358.ts.tmp' for writing
+14:17:50.430 frame= 3022 fps=200 q=29.0 size=    9175kB time=00:17:56.03 bitrate=   0.0kbits/s throttle=off speed=6.11e+11x    
+14:17:50.703 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:50.704 SegmentComplete=video:0 Index=358 Start=1074.106367 End=1077.109367 Duration=3.003000 offset_pts=0 start_pts=1074106367 Frames=90 filename=941F06_358.ts
+14:17:50.704 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_359.ts.tmp' for writing
+14:17:50.928 frame= 3133 fps=201 q=29.0 size=    9496kB time=00:17:59.68 bitrate=   0.0kbits/s throttle=off speed=5.92e+11x    
+14:17:51.089 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:51.089 SegmentComplete=video:0 Index=359 Start=1077.109367 End=1080.112367 Duration=3.003000 offset_pts=0 start_pts=1077109367 Frames=90 filename=941F06_359.ts
+14:17:51.089 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_360.ts.tmp' for writing
+14:17:51.436 frame= 3241 fps=201 q=29.0 size=    9816kB time=00:18:03.30 bitrate=   0.0kbits/s throttle=off speed=5.73e+11x    
+14:17:51.567 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:51.567 SegmentComplete=video:0 Index=360 Start=1080.112367 End=1083.115367 Duration=3.003000 offset_pts=0 start_pts=1080112367 Frames=90 filename=941F06_360.ts
+14:17:51.567 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_361.ts.tmp' for writing
+14:17:51.939 frame= 3316 fps=200 q=29.0 size=   10047kB time=00:18:05.85 bitrate=   0.0kbits/s throttle=off speed=5.56e+11x    
+14:17:52.129 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:52.143 SegmentComplete=video:0 Index=361 Start=1083.115367 End=1086.118367 Duration=3.003000 offset_pts=0 start_pts=1083115367 Frames=90 filename=941F06_361.ts
+14:17:52.143 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_362.ts.tmp' for writing
+14:17:52.444 frame= 3409 fps=199 q=29.0 size=   10314kB time=00:18:08.96 bitrate=   0.0kbits/s throttle=off speed=5.39e+11x    
+14:17:52.616 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:52.618 SegmentComplete=video:0 Index=362 Start=1086.118367 End=1089.121367 Duration=3.003000 offset_pts=0 start_pts=1086118367 Frames=90 filename=941F06_362.ts
+14:17:52.618 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_363.ts.tmp' for writing
+14:17:52.946 frame= 3502 fps=199 q=29.0 size=   10568kB time=00:18:12.05 bitrate=   0.0kbits/s throttle=off speed=5.24e+11x    
+14:17:53.104 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:53.104 SegmentComplete=video:0 Index=363 Start=1089.121367 End=1092.124367 Duration=3.003000 offset_pts=0 start_pts=1089121367 Frames=90 filename=941F06_363.ts
+14:17:53.104 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_364.ts.tmp' for writing
+14:17:53.458 frame= 3596 fps=199 q=29.0 size=   10831kB time=00:18:15.12 bitrate=   0.0kbits/s throttle=off speed=5.09e+11x    
+14:17:53.599 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:53.600 SegmentComplete=video:0 Index=364 Start=1092.124367 End=1095.127367 Duration=3.003000 offset_pts=0 start_pts=1092124367 Frames=90 filename=941F06_364.ts
+14:17:53.600 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_365.ts.tmp' for writing
+14:17:53.962 frame= 3684 fps=198 q=29.0 size=   11100kB time=00:18:18.04 bitrate=   0.0kbits/s throttle=off speed=4.95e+11x    
+14:17:54.157 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:54.157 SegmentComplete=video:0 Index=365 Start=1095.127367 End=1098.130367 Duration=3.003000 offset_pts=0 start_pts=1095127367 Frames=90 filename=941F06_365.ts
+14:17:54.157 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_366.ts.tmp' for writing
+14:17:54.464 frame= 3768 fps=197 q=29.0 size=   11368kB time=00:18:20.97 bitrate=   0.0kbits/s throttle=off speed=4.82e+11x    
+14:17:54.705 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:54.705 SegmentComplete=video:0 Index=366 Start=1098.130367 End=1101.133367 Duration=3.003000 offset_pts=0 start_pts=1098130367 Frames=90 filename=941F06_366.ts
+14:17:54.706 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_367.ts.tmp' for writing
+14:17:54.971 frame= 3853 fps=196 q=29.0 size=   11628kB time=00:18:23.68 bitrate=   0.0kbits/s throttle=off speed=4.7e+11x    
+14:17:55.173 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:55.173 SegmentComplete=video:0 Index=367 Start=1101.133367 End=1104.136367 Duration=3.003000 offset_pts=0 start_pts=1101133367 Frames=90 filename=941F06_367.ts
+14:17:55.173 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_368.ts.tmp' for writing
+14:17:55.477 frame= 3961 fps=197 q=29.0 size=   12038kB time=00:18:27.31 bitrate=   0.0kbits/s throttle=off speed=4.58e+11x    
+14:17:55.568 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:55.569 SegmentComplete=video:0 Index=368 Start=1104.136367 End=1107.139367 Duration=3.003000 offset_pts=0 start_pts=1104136367 Frames=90 filename=941F06_368.ts
+14:17:55.569 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_369.ts.tmp' for writing
+14:17:55.978 frame= 4069 fps=197 q=29.0 size=   12472kB time=00:18:30.98 bitrate=   0.0kbits/s throttle=off speed=4.47e+11x    
+14:17:55.982 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:55.982 SegmentComplete=video:0 Index=369 Start=1107.139367 End=1110.142367 Duration=3.003000 offset_pts=0 start_pts=1107139367 Frames=90 filename=941F06_369.ts
+14:17:55.982 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_370.ts.tmp' for writing
+14:17:56.378 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:56.378 SegmentComplete=video:0 Index=370 Start=1110.142367 End=1113.145367 Duration=3.003000 offset_pts=0 start_pts=1110142367 Frames=90 filename=941F06_370.ts
+14:17:56.378 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_371.ts.tmp' for writing
+14:17:56.479 frame= 4183 fps=198 q=29.0 size=   12861kB time=00:18:34.81 bitrate=   0.0kbits/s throttle=off speed=4.36e+11x    
+14:17:56.776 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:56.778 SegmentComplete=video:0 Index=371 Start=1113.145367 End=1116.148367 Duration=3.003000 offset_pts=0 start_pts=1113145367 Frames=90 filename=941F06_371.ts
+14:17:56.778 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_372.ts.tmp' for writing
+14:17:56.978 frame= 4295 fps=198 q=29.0 size=   13227kB time=00:18:38.45 bitrate=   0.0kbits/s throttle=off speed=4.26e+11x    
+14:17:57.183 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:57.185 SegmentComplete=video:0 Index=372 Start=1116.148367 End=1119.151367 Duration=3.003000 offset_pts=0 start_pts=1116148367 Frames=90 filename=941F06_372.ts
+14:17:57.186 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_373.ts.tmp' for writing
+14:17:57.481 frame= 4413 fps=199 q=29.0 size=   13606kB time=00:18:42.45 bitrate=   0.0kbits/s throttle=off speed=4.17e+11x    
+14:17:57.556 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:57.556 SegmentComplete=video:0 Index=373 Start=1119.151367 End=1122.154367 Duration=3.003000 offset_pts=0 start_pts=1119151367 Frames=90 filename=941F06_373.ts
+14:17:57.556 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_374.ts.tmp' for writing
+14:17:57.982 frame= 4509 fps=199 q=29.0 size=   13908kB time=00:18:45.70 bitrate=   0.0kbits/s throttle=off speed=4.07e+11x    
+14:17:58.040 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:58.040 SegmentComplete=video:0 Index=374 Start=1122.154367 End=1125.157367 Duration=3.003000 offset_pts=0 start_pts=1122154367 Frames=90 filename=941F06_374.ts
+14:17:58.040 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_375.ts.tmp' for writing
+14:17:58.487 frame= 4598 fps=199 q=29.0 size=   14179kB time=00:18:48.62 bitrate=   0.0kbits/s throttle=off speed=3.99e+11x    
+14:17:58.545 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:58.546 SegmentComplete=video:0 Index=375 Start=1125.157367 End=1128.160367 Duration=3.003000 offset_pts=0 start_pts=1125157367 Frames=90 filename=941F06_375.ts
+14:17:58.546 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_376.ts.tmp' for writing
+14:17:58.991 frame= 4690 fps=198 q=29.0 size=   14454kB time=00:18:51.71 bitrate=   0.0kbits/s throttle=off speed=3.9e+11x    
+14:17:59.051 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:59.052 SegmentComplete=video:0 Index=376 Start=1128.160367 End=1131.163367 Duration=3.003000 offset_pts=0 start_pts=1128160367 Frames=90 filename=941F06_376.ts
+14:17:59.052 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_377.ts.tmp' for writing
+14:17:59.488 frame= 4779 fps=198 q=29.0 size=   14718kB time=00:18:54.66 bitrate=   0.0kbits/s throttle=off speed=3.82e+11x    
+14:17:59.557 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:17:59.558 SegmentComplete=video:0 Index=377 Start=1131.163367 End=1134.166367 Duration=3.003000 offset_pts=0 start_pts=1131163367 Frames=90 filename=941F06_377.ts
+14:17:59.558 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_378.ts.tmp' for writing
+14:18:00.003 frame= 4869 fps=198 q=29.0 size=   14980kB time=00:18:57.70 bitrate=   0.0kbits/s throttle=off speed=3.74e+11x    
+14:18:00.070 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:00.073 SegmentComplete=video:0 Index=378 Start=1134.166367 End=1137.169367 Duration=3.003000 offset_pts=0 start_pts=1134166367 Frames=90 filename=941F06_378.ts
+14:18:00.073 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_379.ts.tmp' for writing
+14:18:00.506 frame= 4956 fps=197 q=29.0 size=   15236kB time=00:19:00.65 bitrate=   0.0kbits/s throttle=off speed=3.67e+11x    
+14:18:00.590 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:00.590 SegmentComplete=video:0 Index=379 Start=1137.169367 End=1140.172367 Duration=3.003000 offset_pts=0 start_pts=1137169367 Frames=90 filename=941F06_379.ts
+14:18:00.590 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_380.ts.tmp' for writing
+14:18:01.000 frame= 5044 fps=197 q=29.0 size=   15482kB time=00:19:03.53 bitrate=   0.0kbits/s throttle=off speed=3.59e+11x    
+14:18:01.067 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:01.068 SegmentComplete=video:0 Index=380 Start=1140.172367 End=1143.175367 Duration=3.003000 offset_pts=0 start_pts=1140172367 Frames=90 filename=941F06_380.ts
+14:18:01.068 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_381.ts.tmp' for writing
+14:18:01.502 frame= 5134 fps=196 q=29.0 size=   15699kB time=00:19:06.48 bitrate=   0.0kbits/s throttle=off speed=3.53e+11x    
+14:18:01.582 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:01.582 SegmentComplete=video:0 Index=381 Start=1143.175367 End=1146.178367 Duration=3.003000 offset_pts=0 start_pts=1143175367 Frames=90 filename=941F06_381.ts
+14:18:01.582 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_382.ts.tmp' for writing
+14:18:01.998 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:01.998 SegmentComplete=video:0 Index=382 Start=1146.178367 End=1149.181367 Duration=3.003000 offset_pts=0 start_pts=1146178367 Frames=90 filename=941F06_382.ts
+14:18:01.998 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_383.ts.tmp' for writing
+14:18:02.002 frame= 5243 fps=197 q=29.0 size=   16005kB time=00:19:10.13 bitrate=   0.0kbits/s throttle=off speed=3.46e+11x    
+14:18:02.389 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:02.389 SegmentComplete=video:0 Index=383 Start=1149.181367 End=1152.184367 Duration=3.003000 offset_pts=0 start_pts=1149181367 Frames=90 filename=941F06_383.ts
+14:18:02.389 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_384.ts.tmp' for writing
+14:18:02.504 frame= 5357 fps=197 q=29.0 size=   16302kB time=00:19:13.93 bitrate=   0.0kbits/s throttle=off speed=3.4e+11x    
+14:18:02.767 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:02.767 SegmentComplete=video:0 Index=384 Start=1152.184367 End=1155.187367 Duration=3.003000 offset_pts=0 start_pts=1152184367 Frames=90 filename=941F06_384.ts
+14:18:02.767 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_385.ts.tmp' for writing
+14:18:03.024 frame= 5479 fps=198 q=29.0 size=   16583kB time=00:19:18.11 bitrate=   0.0kbits/s throttle=off speed=3.33e+11x    
+14:18:03.167 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:03.168 SegmentComplete=video:0 Index=385 Start=1155.187367 End=1158.190367 Duration=3.003000 offset_pts=0 start_pts=1155187367 Frames=90 filename=941F06_385.ts
+14:18:03.168 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_386.ts.tmp' for writing
+14:18:03.518 frame= 5592 fps=198 q=29.0 size=   16840kB time=00:19:21.73 bitrate=   0.0kbits/s throttle=off speed=3.27e+11x    
+14:18:03.565 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:03.567 SegmentComplete=video:0 Index=386 Start=1158.190367 End=1161.193367 Duration=3.003000 offset_pts=0 start_pts=1158190367 Frames=90 filename=941F06_386.ts
+14:18:03.567 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_387.ts.tmp' for writing
+14:18:03.987 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:03.990 SegmentComplete=video:0 Index=387 Start=1161.193367 End=1164.196367 Duration=3.003000 offset_pts=0 start_pts=1161193367 Frames=90 filename=941F06_387.ts
+14:18:03.990 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_388.ts.tmp' for writing
+14:18:04.027 frame= 5699 fps=199 q=29.0 size=   17109kB time=00:19:25.36 bitrate=   0.0kbits/s throttle=off speed=3.22e+11x    
+14:18:04.391 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:04.392 SegmentComplete=video:0 Index=388 Start=1164.196367 End=1167.199367 Duration=3.003000 offset_pts=0 start_pts=1164196367 Frames=90 filename=941F06_388.ts
+14:18:04.392 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_389.ts.tmp' for writing
+14:18:04.520 frame= 5811 fps=199 q=29.0 size=   17394kB time=00:19:29.05 bitrate=   0.0kbits/s throttle=off speed=3.16e+11x    
+14:18:04.781 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:04.781 SegmentComplete=video:0 Index=389 Start=1167.199367 End=1170.202367 Duration=3.003000 offset_pts=0 start_pts=1167199367 Frames=90 filename=941F06_389.ts
+14:18:04.781 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_390.ts.tmp' for writing
+14:18:05.022 frame= 5929 fps=200 q=29.0 size=   17689kB time=00:19:33.04 bitrate=   0.0kbits/s throttle=off speed=3.11e+11x    
+14:18:05.182 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:05.182 SegmentComplete=video:0 Index=390 Start=1170.202367 End=1173.205367 Duration=3.003000 offset_pts=0 start_pts=1170202367 Frames=90 filename=941F06_390.ts
+14:18:05.182 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_391.ts.tmp' for writing
+14:18:05.529 frame= 6011 fps=199 q=29.0 size=   17885kB time=00:19:35.76 bitrate=   0.0kbits/s throttle=off speed=3.06e+11x    
+14:18:05.776 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:05.777 SegmentComplete=video:0 Index=391 Start=1173.205367 End=1176.208367 Duration=3.003000 offset_pts=0 start_pts=1173205367 Frames=90 filename=941F06_391.ts
+14:18:05.777 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_392.ts.tmp' for writing
+14:18:06.036 frame= 6098 fps=199 q=29.0 size=   18124kB time=00:19:38.69 bitrate=   0.0kbits/s throttle=off speed=3.01e+11x    
+14:18:06.286 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:06.287 SegmentComplete=video:0 Index=392 Start=1176.208367 End=1179.211367 Duration=3.003000 offset_pts=0 start_pts=1176208367 Frames=90 filename=941F06_392.ts
+14:18:06.287 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_393.ts.tmp' for writing
+14:18:06.537 frame= 6185 fps=198 q=29.0 size=   18358kB time=00:19:41.56 bitrate=   0.0kbits/s throttle=off speed=2.96e+11x    
+14:18:06.789 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:06.790 SegmentComplete=video:0 Index=393 Start=1179.211367 End=1182.214367 Duration=3.003000 offset_pts=0 start_pts=1179211367 Frames=90 filename=941F06_393.ts
+14:18:06.790 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_394.ts.tmp' for writing
+14:18:07.038 frame= 6289 fps=198 q=29.0 size=   18640kB time=00:19:45.05 bitrate=   0.0kbits/s throttle=off speed=2.91e+11x    
+14:18:07.188 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:07.188 SegmentComplete=video:0 Index=394 Start=1182.214367 End=1185.217367 Duration=3.003000 offset_pts=0 start_pts=1182214367 Frames=90 filename=941F06_394.ts
+14:18:07.189 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_395.ts.tmp' for writing
+14:18:07.542 frame= 6399 fps=199 q=29.0 size=   18961kB time=00:19:48.69 bitrate=   0.0kbits/s throttle=off speed=2.86e+11x    
+14:18:07.603 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:07.604 SegmentComplete=video:0 Index=395 Start=1185.217367 End=1188.220367 Duration=3.003000 offset_pts=0 start_pts=1185217367 Frames=90 filename=941F06_395.ts
+14:18:07.604 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_396.ts.tmp' for writing
+14:18:08.025 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:08.028 SegmentComplete=video:0 Index=396 Start=1188.220367 End=1191.223367 Duration=3.003000 offset_pts=0 start_pts=1188220367 Frames=90 filename=941F06_396.ts
+14:18:08.028 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_397.ts.tmp' for writing
+14:18:08.045 frame= 6505 fps=199 q=29.0 size=   19312kB time=00:19:52.32 bitrate=   0.0kbits/s throttle=off speed=2.82e+11x    
+14:18:08.453 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:08.454 SegmentComplete=video:0 Index=397 Start=1191.223367 End=1194.226367 Duration=3.003000 offset_pts=0 start_pts=1191223367 Frames=90 filename=941F06_397.ts
+14:18:08.455 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_398.ts.tmp' for writing
+14:18:08.546 frame= 6606 fps=199 q=29.0 size=   19679kB time=00:19:55.59 bitrate=   0.0kbits/s throttle=off speed=2.78e+11x    
+14:18:08.884 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:08.885 SegmentComplete=video:0 Index=398 Start=1194.226367 End=1197.229367 Duration=3.003000 offset_pts=0 start_pts=1194226367 Frames=90 filename=941F06_398.ts
+14:18:08.885 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_399.ts.tmp' for writing
+14:18:09.046 frame= 6717 fps=199 q=29.0 size=   20142kB time=00:19:59.24 bitrate=   0.0kbits/s throttle=off speed=2.74e+11x    
+14:18:09.288 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:09.289 SegmentComplete=video:0 Index=399 Start=1197.229367 End=1200.232367 Duration=3.003000 offset_pts=0 start_pts=1197229367 Frames=90 filename=941F06_399.ts
+14:18:09.289 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_400.ts.tmp' for writing
+14:18:09.562 frame= 6808 fps=199 q=29.0 size=   20497kB time=00:20:02.32 bitrate=   0.0kbits/s throttle=off speed=2.7e+11x    
+14:18:09.957 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:09.958 SegmentComplete=video:0 Index=400 Start=1200.232367 End=1203.235367 Duration=3.003000 offset_pts=0 start_pts=1200232367 Frames=90 filename=941F06_400.ts
+14:18:09.958 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_401.ts.tmp' for writing
+14:18:10.060 frame= 6877 fps=198 q=29.0 size=   20765kB time=00:20:04.71 bitrate=   0.0kbits/s throttle=off speed=2.66e+11x    
+14:18:10.542 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:10.542 SegmentComplete=video:0 Index=401 Start=1203.235367 End=1206.238367 Duration=3.003000 offset_pts=0 start_pts=1203235367 Frames=90 filename=941F06_401.ts
+14:18:10.542 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_402.ts.tmp' for writing
+14:18:10.552 frame= 6952 fps=197 q=29.0 size=   21026kB time=00:20:07.11 bitrate=   0.0kbits/s throttle=off speed=2.62e+11x    
+14:18:11.073 frame= 7010 fps=196 q=29.0 size=   21248kB time=00:20:09.15 bitrate=   0.0kbits/s throttle=off speed=2.58e+11x    
+14:18:11.338 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:11.341 SegmentComplete=video:0 Index=402 Start=1206.238367 End=1209.241367 Duration=3.003000 offset_pts=0 start_pts=1206238367 Frames=90 filename=941F06_402.ts
+14:18:11.341 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_403.ts.tmp' for writing
+14:18:11.567 frame= 7066 fps=195 q=29.0 size=   21472kB time=00:20:10.92 bitrate=   0.0kbits/s throttle=off speed=2.55e+11x    
+14:18:12.092 frame= 7117 fps=194 q=29.0 size=   21662kB time=00:20:12.70 bitrate=   0.0kbits/s throttle=off speed=2.51e+11x    
+14:18:12.210 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:12.210 SegmentComplete=video:0 Index=403 Start=1209.241367 End=1212.244367 Duration=3.003000 offset_pts=0 start_pts=1209241367 Frames=90 filename=941F06_403.ts
+14:18:12.210 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_404.ts.tmp' for writing
+14:18:12.589 frame= 7169 fps=192 q=29.0 size=   21869kB time=00:20:14.38 bitrate=   0.0kbits/s throttle=off speed=2.48e+11x    
+14:18:13.005 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:13.006 SegmentComplete=video:0 Index=404 Start=1212.244367 End=1215.247367 Duration=3.003000 offset_pts=0 start_pts=1212244367 Frames=90 filename=941F06_404.ts
+14:18:13.006 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_405.ts.tmp' for writing
+14:18:13.097 frame= 7235 fps=192 q=29.0 size=   22143kB time=00:20:16.56 bitrate=   0.0kbits/s throttle=off speed=2.44e+11x    
+14:18:13.538 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:13.539 SegmentComplete=video:0 Index=405 Start=1215.247367 End=1218.250367 Duration=3.003000 offset_pts=0 start_pts=1215247367 Frames=90 filename=941F06_405.ts
+14:18:13.539 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_406.ts.tmp' for writing
+14:18:13.609 frame= 7326 fps=191 q=29.0 size=   22455kB time=00:20:19.60 bitrate=   0.0kbits/s throttle=off speed=2.41e+11x    
+14:18:13.924 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:13.924 SegmentComplete=video:0 Index=406 Start=1218.250367 End=1221.253367 Duration=3.003000 offset_pts=0 start_pts=1218250367 Frames=90 filename=941F06_406.ts
+14:18:13.924 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_407.ts.tmp' for writing
+14:18:14.109 frame= 7445 fps=192 q=29.0 size=   22878kB time=00:20:23.62 bitrate=   0.0kbits/s throttle=off speed=2.38e+11x    
+14:18:14.307 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:14.307 SegmentComplete=video:0 Index=407 Start=1221.253367 End=1224.256367 Duration=3.003000 offset_pts=0 start_pts=1221253367 Frames=90 filename=941F06_407.ts
+14:18:14.307 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_408.ts.tmp' for writing
+14:18:14.612 frame= 7564 fps=193 q=29.0 size=   23318kB time=00:20:27.61 bitrate=   0.0kbits/s throttle=off speed=2.35e+11x    
+14:18:14.692 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:14.693 SegmentComplete=video:0 Index=408 Start=1224.256367 End=1227.259367 Duration=3.003000 offset_pts=0 start_pts=1224256367 Frames=90 filename=941F06_408.ts
+14:18:14.693 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_409.ts.tmp' for writing
+14:18:15.095 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:15.096 SegmentComplete=video:0 Index=409 Start=1227.259367 End=1230.262367 Duration=3.003000 offset_pts=0 start_pts=1227259367 Frames=90 filename=941F06_409.ts
+14:18:15.096 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_410.ts.tmp' for writing
+14:18:15.112 frame= 7676 fps=193 q=29.0 size=   23723kB time=00:20:31.26 bitrate=   0.0kbits/s throttle=off speed=2.32e+11x    
+14:18:15.463 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:15.463 SegmentComplete=video:0 Index=410 Start=1230.262367 End=1233.265367 Duration=3.003000 offset_pts=0 start_pts=1230262367 Frames=90 filename=941F06_410.ts
+14:18:15.463 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_411.ts.tmp' for writing
+14:18:15.613 frame= 7792 fps=193 q=29.0 size=   24134kB time=00:20:35.11 bitrate=   0.0kbits/s throttle=off speed=2.29e+11x    
+14:18:15.907 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:15.908 SegmentComplete=video:0 Index=411 Start=1233.265367 End=1236.268367 Duration=3.003000 offset_pts=0 start_pts=1233265367 Frames=90 filename=941F06_411.ts
+14:18:15.908 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_412.ts.tmp' for writing
+14:18:16.127 frame= 7897 fps=194 q=29.0 size=   24547kB time=00:20:38.73 bitrate=   0.0kbits/s throttle=off speed=2.26e+11x    
+14:18:16.318 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:16.319 SegmentComplete=video:0 Index=412 Start=1236.268367 End=1239.271367 Duration=3.003000 offset_pts=0 start_pts=1236268367 Frames=90 filename=941F06_412.ts
+14:18:16.319 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_413.ts.tmp' for writing
+14:18:16.633 frame= 8012 fps=194 q=29.0 size=   24975kB time=00:20:42.56 bitrate=   0.0kbits/s throttle=off speed=2.23e+11x    
+14:18:16.711 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:16.712 SegmentComplete=video:0 Index=413 Start=1239.271367 End=1242.274367 Duration=3.003000 offset_pts=0 start_pts=1239271367 Frames=90 filename=941F06_413.ts
+14:18:16.712 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_414.ts.tmp' for writing
+14:18:17.121 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:17.121 SegmentComplete=video:0 Index=414 Start=1242.274367 End=1245.277367 Duration=3.003000 offset_pts=0 start_pts=1242274367 Frames=90 filename=941F06_414.ts
+14:18:17.121 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_415.ts.tmp' for writing
+14:18:17.129 frame= 8123 fps=194 q=29.0 size=   25434kB time=00:20:46.19 bitrate=   0.0kbits/s throttle=off speed=2.21e+11x    
+14:18:17.486 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:17.487 SegmentComplete=video:0 Index=415 Start=1245.277367 End=1248.280367 Duration=3.003000 offset_pts=0 start_pts=1245277367 Frames=90 filename=941F06_415.ts
+14:18:17.487 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_416.ts.tmp' for writing
+14:18:17.634 frame= 8243 fps=195 q=29.0 size=   25800kB time=00:20:50.20 bitrate=   0.0kbits/s throttle=off speed=2.18e+11x    
+14:18:17.933 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:17.933 SegmentComplete=video:0 Index=416 Start=1248.280367 End=1251.283367 Duration=3.003000 offset_pts=0 start_pts=1248280367 Frames=90 filename=941F06_416.ts
+14:18:17.933 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_417.ts.tmp' for writing
+14:18:18.138 frame= 8326 fps=195 q=29.0 size=   26103kB time=00:20:52.94 bitrate=   0.0kbits/s throttle=off speed=2.16e+11x    
+14:18:18.645 frame= 8377 fps=193 q=29.0 size=   26292kB time=00:20:54.75 bitrate=   0.0kbits/s throttle=off speed=2.13e+11x    
+14:18:18.791 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:18.792 SegmentComplete=video:0 Index=417 Start=1251.283367 End=1254.286367 Duration=3.003000 offset_pts=0 start_pts=1251283367 Frames=90 filename=941F06_417.ts
+14:18:18.792 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_418.ts.tmp' for writing
+14:18:19.166 frame= 8421 fps=192 q=29.0 size=   26468kB time=00:20:56.19 bitrate=   0.0kbits/s throttle=off speed=2.11e+11x    
+14:18:19.669 frame= 8466 fps=191 q=29.0 size=   26623kB time=00:20:57.63 bitrate=   0.0kbits/s throttle=off speed=2.08e+11x    
+14:18:19.824 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:19.824 SegmentComplete=video:0 Index=418 Start=1254.286367 End=1257.289367 Duration=3.003000 offset_pts=0 start_pts=1254286367 Frames=90 filename=941F06_418.ts
+14:18:19.824 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_419.ts.tmp' for writing
+14:18:20.173 frame= 8519 fps=190 q=29.0 size=   26826kB time=00:20:59.47 bitrate=   0.0kbits/s throttle=off speed=2.06e+11x    
+14:18:20.616 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:20.617 SegmentComplete=video:0 Index=419 Start=1257.289367 End=1260.292367 Duration=3.003000 offset_pts=0 start_pts=1257289367 Frames=90 filename=941F06_419.ts
+14:18:20.617 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_420.ts.tmp' for writing
+14:18:20.679 frame= 8580 fps=189 q=29.0 size=   27044kB time=00:21:01.46 bitrate=   0.0kbits/s throttle=off speed=2.03e+11x    
+14:18:21.186 frame= 8640 fps=188 q=29.0 size=   27218kB time=00:21:03.46 bitrate=   0.0kbits/s throttle=off speed=2.01e+11x    
+14:18:21.374 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:21.375 SegmentComplete=video:0 Index=420 Start=1260.292367 End=1263.295367 Duration=3.003000 offset_pts=0 start_pts=1260292367 Frames=90 filename=941F06_420.ts
+14:18:21.375 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_421.ts.tmp' for writing
+14:18:21.686 frame= 8701 fps=188 q=29.0 size=   27398kB time=00:21:05.48 bitrate=   0.0kbits/s throttle=off speed=1.99e+11x    
+14:18:21.958 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:21.959 SegmentComplete=video:0 Index=421 Start=1263.295367 End=1266.298367 Duration=3.003000 offset_pts=0 start_pts=1263295367 Frames=90 filename=941F06_421.ts
+14:18:21.959 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_422.ts.tmp' for writing
+14:18:22.186 frame= 8801 fps=188 q=29.0 size=   27661kB time=00:21:08.80 bitrate=   0.0kbits/s throttle=off speed=1.97e+11x    
+14:18:22.367 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:22.367 SegmentComplete=video:0 Index=422 Start=1266.298367 End=1269.301367 Duration=3.003000 offset_pts=0 start_pts=1266298367 Frames=90 filename=941F06_422.ts
+14:18:22.368 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_423.ts.tmp' for writing
+14:18:22.703 frame= 8914 fps=188 q=29.0 size=   28092kB time=00:21:12.59 bitrate=   0.0kbits/s throttle=off speed=1.95e+11x    
+14:18:22.782 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:22.782 SegmentComplete=video:0 Index=423 Start=1269.301367 End=1272.304367 Duration=3.003000 offset_pts=0 start_pts=1269301367 Frames=90 filename=941F06_423.ts
+14:18:22.782 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_424.ts.tmp' for writing
+14:18:23.191 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:23.192 SegmentComplete=video:0 Index=424 Start=1272.304367 End=1275.307367 Duration=3.003000 offset_pts=0 start_pts=1272304367 Frames=90 filename=941F06_424.ts
+14:18:23.192 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_425.ts.tmp' for writing
+14:18:23.194 frame= 9022 fps=189 q=29.0 size=   28511kB time=00:21:16.21 bitrate=   0.0kbits/s throttle=off speed=1.93e+11x    
+14:18:23.581 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:23.581 SegmentComplete=video:0 Index=425 Start=1275.307367 End=1278.310367 Duration=3.003000 offset_pts=0 start_pts=1275307367 Frames=90 filename=941F06_425.ts
+14:18:23.581 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_426.ts.tmp' for writing
+14:18:23.710 frame= 9139 fps=189 q=29.0 size=   28934kB time=00:21:20.23 bitrate=   0.0kbits/s throttle=off speed=1.91e+11x    
+14:18:24.008 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:24.008 SegmentComplete=video:0 Index=426 Start=1278.310367 End=1281.313367 Duration=3.003000 offset_pts=0 start_pts=1278310367 Frames=90 filename=941F06_426.ts
+14:18:24.009 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_427.ts.tmp' for writing
+14:18:24.200 frame= 9245 fps=189 q=29.0 size=   29328kB time=00:21:23.66 bitrate=   0.0kbits/s throttle=off speed=1.89e+11x    
+14:18:24.419 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:24.420 SegmentComplete=video:0 Index=427 Start=1281.313367 End=1284.316367 Duration=3.003000 offset_pts=0 start_pts=1281313367 Frames=90 filename=941F06_427.ts
+14:18:24.420 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_428.ts.tmp' for writing
+14:18:24.700 frame= 9356 fps=190 q=29.0 size=   29731kB time=00:21:27.31 bitrate=   0.0kbits/s throttle=off speed=1.87e+11x    
+14:18:24.813 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:24.814 SegmentComplete=video:0 Index=428 Start=1284.316367 End=1287.319367 Duration=3.003000 offset_pts=0 start_pts=1284316367 Frames=90 filename=941F06_428.ts
+14:18:24.814 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_429.ts.tmp' for writing
+14:18:25.209 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:25.210 SegmentComplete=video:0 Index=429 Start=1287.319367 End=1290.322367 Duration=3.003000 offset_pts=0 start_pts=1287319367 Frames=90 filename=941F06_429.ts
+14:18:25.210 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_430.ts.tmp' for writing
+14:18:25.210 frame= 9471 fps=190 q=29.0 size=   30158kB time=00:21:31.26 bitrate=   0.0kbits/s throttle=off speed=1.85e+11x    
+14:18:25.602 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:25.602 SegmentComplete=video:0 Index=430 Start=1290.322367 End=1293.325367 Duration=3.003000 offset_pts=0 start_pts=1290322367 Frames=90 filename=941F06_430.ts
+14:18:25.602 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_431.ts.tmp' for writing
+14:18:25.702 frame= 9583 fps=190 q=29.0 size=   30512kB time=00:21:34.97 bitrate=   0.0kbits/s throttle=off speed=1.83e+11x    
+14:18:26.199 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:26.200 SegmentComplete=video:0 Index=431 Start=1293.325367 End=1296.328367 Duration=3.003000 offset_pts=0 start_pts=1293325367 Frames=90 filename=941F06_431.ts
+14:18:26.200 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_432.ts.tmp' for writing
+14:18:26.201 frame= 9651 fps=190 q=29.0 size=   30768kB time=00:21:37.22 bitrate=   0.0kbits/s throttle=off speed=1.81e+11x    
+14:18:26.706 frame= 9717 fps=189 q=29.0 size=   31025kB time=00:21:39.31 bitrate=   0.0kbits/s throttle=off speed=1.8e+11x    
+14:18:26.891 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:26.891 SegmentComplete=video:0 Index=432 Start=1296.328367 End=1299.331367 Duration=3.003000 offset_pts=0 start_pts=1296328367 Frames=90 filename=941F06_432.ts
+14:18:26.891 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_433.ts.tmp' for writing
+14:18:27.209 frame= 9777 fps=188 q=29.0 size=   31226kB time=00:21:41.36 bitrate=   0.0kbits/s throttle=off speed=1.78e+11x    
+14:18:27.621 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:27.622 SegmentComplete=video:0 Index=433 Start=1299.331367 End=1302.334367 Duration=3.003000 offset_pts=0 start_pts=1299331367 Frames=90 filename=941F06_433.ts
+14:18:27.622 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_434.ts.tmp' for writing
+14:18:27.733 frame= 9841 fps=188 q=29.0 size=   31509kB time=00:21:43.54 bitrate=   0.0kbits/s throttle=off speed=1.76e+11x    
+14:18:28.252 frame= 9899 fps=187 q=29.0 size=   31749kB time=00:21:45.51 bitrate=   0.0kbits/s throttle=off speed=1.74e+11x    
+14:18:28.447 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:28.447 SegmentComplete=video:0 Index=434 Start=1302.334367 End=1305.337367 Duration=3.003000 offset_pts=0 start_pts=1302334367 Frames=90 filename=941F06_434.ts
+14:18:28.447 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_435.ts.tmp' for writing
+14:18:28.764 frame= 9951 fps=186 q=29.0 size=   31970kB time=00:21:47.18 bitrate=   0.0kbits/s throttle=off speed=1.73e+11x    
+14:18:29.268 frame=10003 fps=186 q=29.0 size=   32175kB time=00:21:49.00 bitrate=   0.0kbits/s throttle=off speed=1.71e+11x    
+14:18:29.337 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:29.338 SegmentComplete=video:0 Index=435 Start=1305.337367 End=1308.340367 Duration=3.003000 offset_pts=0 start_pts=1305337367 Frames=90 filename=941F06_435.ts
+14:18:29.338 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_436.ts.tmp' for writing
+14:18:29.764 frame=10054 fps=185 q=29.0 size=   32372kB time=00:21:50.65 bitrate=   0.0kbits/s throttle=off speed=1.69e+11x    
+14:18:30.185 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:30.185 SegmentComplete=video:0 Index=436 Start=1308.340367 End=1311.343367 Duration=3.003000 offset_pts=0 start_pts=1308340367 Frames=90 filename=941F06_436.ts
+14:18:30.185 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_437.ts.tmp' for writing
+14:18:30.277 frame=10112 fps=184 q=29.0 size=   32606kB time=00:21:52.62 bitrate=   0.0kbits/s throttle=off speed=1.68e+11x    
+14:18:30.804 frame=10172 fps=183 q=29.0 size=   32853kB time=00:21:54.64 bitrate=   0.0kbits/s throttle=off speed=1.66e+11x    
+14:18:30.992 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:30.993 SegmentComplete=video:0 Index=437 Start=1311.343367 End=1314.346367 Duration=3.003000 offset_pts=0 start_pts=1311343367 Frames=90 filename=941F06_437.ts
+14:18:30.993 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_438.ts.tmp' for writing
+14:18:31.285 frame=10224 fps=183 q=29.0 size=   33078kB time=00:21:56.29 bitrate=   0.0kbits/s throttle=off speed=1.65e+11x    
+14:18:31.680 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:31.680 SegmentComplete=video:0 Index=438 Start=1314.346367 End=1317.349367 Duration=3.003000 offset_pts=0 start_pts=1314346367 Frames=90 filename=941F06_438.ts
+14:18:31.681 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_439.ts.tmp' for writing
+14:18:31.787 frame=10299 fps=182 q=29.0 size=   33382kB time=00:21:58.84 bitrate=   0.0kbits/s throttle=off speed=1.63e+11x    
+14:18:32.292 frame=10365 fps=182 q=29.0 size=   33635kB time=00:22:01.00 bitrate=   0.0kbits/s throttle=off speed=1.62e+11x    
+14:18:32.344 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:32.345 SegmentComplete=video:0 Index=439 Start=1317.349367 End=1320.352367 Duration=3.003000 offset_pts=0 start_pts=1317349367 Frames=90 filename=941F06_439.ts
+14:18:32.345 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_440.ts.tmp' for writing
+14:18:32.797 frame=10435 fps=182 q=29.0 size=   33867kB time=00:22:03.35 bitrate=   0.0kbits/s throttle=off speed=1.61e+11x    
+14:18:32.978 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:32.988 SegmentComplete=video:0 Index=440 Start=1320.352367 End=1323.355367 Duration=3.003000 offset_pts=0 start_pts=1320352367 Frames=90 filename=941F06_440.ts
+14:18:32.988 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_441.ts.tmp' for writing
+14:18:33.294 frame=10501 fps=181 q=29.0 size=   34084kB time=00:22:05.55 bitrate=   0.0kbits/s throttle=off speed=1.59e+11x    
+14:18:33.679 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:33.679 SegmentComplete=video:0 Index=441 Start=1323.355367 End=1326.358367 Duration=3.003000 offset_pts=0 start_pts=1323355367 Frames=90 filename=941F06_441.ts
+14:18:33.679 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_442.ts.tmp' for writing
+14:18:33.813 frame=10568 fps=181 q=29.0 size=   34356kB time=00:22:07.90 bitrate=   0.0kbits/s throttle=off speed=1.58e+11x    
+14:18:34.310 frame=10639 fps=180 q=29.0 size=   34569kB time=00:22:10.27 bitrate=   0.0kbits/s throttle=off speed=1.56e+11x    
+14:18:34.334 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:34.335 SegmentComplete=video:0 Index=442 Start=1326.358367 End=1329.361367 Duration=3.003000 offset_pts=0 start_pts=1326358367 Frames=90 filename=941F06_442.ts
+14:18:34.335 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_443.ts.tmp' for writing
+14:18:34.823 frame=10702 fps=180 q=29.0 size=   34796kB time=00:22:12.29 bitrate=   0.0kbits/s throttle=off speed=1.55e+11x    
+14:18:34.982 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:34.983 SegmentComplete=video:0 Index=443 Start=1329.361367 End=1332.364367 Duration=3.003000 offset_pts=0 start_pts=1329361367 Frames=90 filename=941F06_443.ts
+14:18:34.983 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_444.ts.tmp' for writing
+14:18:35.325 frame=10809 fps=180 q=29.0 size=   35183kB time=00:22:15.91 bitrate=   0.0kbits/s throttle=off speed=1.54e+11x    
+14:18:35.378 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:35.378 SegmentComplete=video:0 Index=444 Start=1332.364367 End=1335.367367 Duration=3.003000 offset_pts=0 start_pts=1332364367 Frames=90 filename=941F06_444.ts
+14:18:35.378 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_445.ts.tmp' for writing
+14:18:35.830 frame=10909 fps=180 q=29.0 size=   35536kB time=00:22:19.20 bitrate=   0.0kbits/s throttle=off speed=1.52e+11x    
+14:18:35.840 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:35.841 SegmentComplete=video:0 Index=445 Start=1335.367367 End=1338.370367 Duration=3.003000 offset_pts=0 start_pts=1335367367 Frames=90 filename=941F06_445.ts
+14:18:35.841 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_446.ts.tmp' for writing
+14:18:36.328 frame=10995 fps=180 q=29.0 size=   35837kB time=00:22:22.11 bitrate=   0.0kbits/s throttle=off speed=1.51e+11x    
+14:18:36.363 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:36.363 SegmentComplete=video:0 Index=446 Start=1338.370367 End=1341.373367 Duration=3.003000 offset_pts=0 start_pts=1338370367 Frames=90 filename=941F06_446.ts
+14:18:36.363 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_447.ts.tmp' for writing
+14:18:36.860 frame=11064 fps=180 q=29.0 size=   36051kB time=00:22:24.29 bitrate=   0.0kbits/s throttle=off speed=1.5e+11x    
+14:18:37.164 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:37.164 SegmentComplete=video:0 Index=447 Start=1341.373367 End=1344.376367 Duration=3.003000 offset_pts=0 start_pts=1341373367 Frames=90 filename=941F06_447.ts
+14:18:37.164 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06_448.ts.tmp' for writing
+14:18:37.309 
+
+[q] command received. Exiting.
+
+14:18:37.380 14:18:37.380 [segment @ 0x232d780] Opening '/config/transcoding-temp/941F06.m3u8.tmp' for writing
+14:18:37.380 SegmentComplete=video:0 Index=448 Start=1344.376367 End=1345.477467 Duration=1.101100 offset_pts=0 start_pts=1344376367 Frames=33 filename=941F06_448.ts
+14:18:37.381 frame=11103 fps=179 q=-1.0 Lsize=   36218kB time=00:22:25.73 bitrate=   0.0kbits/s throttle=off speed=1.49e+11x    
+14:18:37.381 video:24569kB audio:11648kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+14:18:37.391 EXIT
+14:18:37.411 [libx264 @ 0x232f100] frame I:124   Avg QP:20.36  size: 17008
+14:18:37.411 [libx264 @ 0x232f100] frame P:2973  Avg QP:23.79  size:  5412
+14:18:37.411 [libx264 @ 0x232f100] frame B:8006  Avg QP:28.46  size:   869
+14:18:37.411 [libx264 @ 0x232f100] consecutive B-frames:  2.1%  4.3%  3.0% 90.6%
+14:18:37.411 [libx264 @ 0x232f100] mb I  I16..4: 16.2%  0.0% 83.8%
+14:18:37.411 [libx264 @ 0x232f100] mb P  I16..4: 11.3%  0.0%  0.0%  P16..4: 68.1%  0.0%  0.0%  0.0%  0.0%    skip:20.6%
+14:18:37.411 [libx264 @ 0x232f100] mb B  I16..4:  0.4%  0.0%  0.0%  B16..8: 19.7%  0.0%  0.0%  direct: 4.6%  skip:75.2%  L0:27.6% L1:47.5% BI:24.9%
+14:18:37.411 [libx264 @ 0x232f100] coded y,uvDC,uvAC intra: 55.9% 58.0% 19.0% inter: 10.7% 7.3% 0.2%
+14:18:37.411 [libx264 @ 0x232f100] i16 v,h,dc,p: 23% 33% 17% 26%
+14:18:37.411 [libx264 @ 0x232f100] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 21% 25% 10%  9%  8%  6%  8%  5%  8%
+14:18:37.411 [libx264 @ 0x232f100] i8c dc,h,v,p: 36% 30% 20% 14%
+14:18:37.411 [libx264 @ 0x232f100] Weighted P-Frames: Y:2.2% UV:0.0%
+14:18:37.411 [libx264 @ 0x232f100] kb/s:543.27
+14:18:37.420 
+
+======= ExtraData
+H4sIAAAAAAAAA9VYW2+bShD+KwjpvPkCvsVGslQ3aXqi07RR3PY8VBFaYLFXBhbB4jit8t/PzHLJYnxLmp6qUR7MMDs7+803l+WHfs7DkESebv3QL1kgaJLWfn4rf0spJSJL6EcSUt3SU5cEVG+V0s8PMUq/Mo/yYklL/xQLxiNpMv/5lQQZze0WZu5BTUrnImHRAiSjgaE/tiqFZUOhPwKFu8fHVuHbFbiv+yboXUVxJm5YlO9wzqOIuoJ6c54lLpVqhmVIPY9udMsAK3dg5n3AHRKc4OxDwxeRZFT1Nga5sBcJiZep7TOJUH1F1+WRzxbdgC/Sru+HMV20RUKi1OUebQ+cM8ftT9z2YEB77cGEGG1nMHbag2Hfd4k76ZMBsU1pvyM2Qt3a5fGDSI96mAqSCJsI+ztN+B5tBEVimZ/+gobZZhcHQiISnq5I6546YYML5bJDPJBhlFuVMSmjmHDBXR40N10KETf2qq85uuMJsfYb2NRPq0LaRN0wLHNkmcMcSxBTEpZgYqB3gLnsjQa786lcchzIdJaJSt3ySZDSln5NPUb+YZjlub0jhlq5Vu40apyDObfw8u/cS6kh5U+en/OAJ/OYuKjniDNjUirekmiBwvnFLYhu2IYGlzwBPHPrsKx81B+y9aBnYIDfReB2BKIvURpTl/mMero85FUEWR/APl51xrdM3BKBeww7Z9q1w0QXgwLi9IYmckfdMntSckFjsdStcUu/pf5lAueCc5vlqdl3tGJOesbGNMZYLWZrmpAFlZrFJr3J5Mww+l3TwD8dLZHgoMIMz4A+Mo7mRxaCA4SVNcLSrwmLQPCBrtFRfSCrVDqLSMiTeMnc6qBPaZLHR+WJjAGE5DML6VuSynMYhtkdFT6ocumZ3OSC+iQLAHvMfRRALFRoZ0HwmSwkNfDtuw2AH5GgeP+IebCX04S4DUrPMo+9mNK5jyqjpbmjjJZauxk9m53rhUJJ6Nzt8yWBBhKAiV718IE88Ax5mv+YAxYS9yf+meOzzlBblQyckzAOSlbMk8HANJQOZG6FsTxMI4zdcuGviSFIvyRIvK5h4P98/vEKrJvtXvHQNo0hPJjjttFrA69LWSdcrXVc/ikTVb+43t0tUroIaSQahLg+2iWeKm1uwvbzctGo0NBMwQe1NBcLApY21ctWXLZfkLYFDePuZGBeGqNO2M/G+4zZAp1vOLBnhYCoNeeYXZp5e46y0JGYbK3oDdU1kABszbyMBPaSEsgPG04C9aS5UIZZXXqfMEGfvap0Ml+NUO0dIE5rsiHZ2B4NSHOwGhp55VR2J2vOPDuiCyiia9i+2XU9lhInkG3iQB8veagohSS2QyqIRwRp6LfNbVV3SWI5IO9SxXKTZ8P+GaaYDOt5sLXoaGlUp4pds+4337ShRhl3spnuqdABczZ7B49y1UmxjBOa0maSQfN88Ekq6lMy3zkbL9liqeoFsh02sqBTowW6z+MdbEgzJ6RTwwqpneAAMh1YiWsHnK8IEn9q4qspdBIr4hDShIcESGCNN2PPFbAuhkxk8tjTiEe1RHCTJq16/YL3z5u3KpuLhsWJUSfeJsE2sq01Ho63EsXJ/BTHmG1N88wcbammri2WELglD7zmEKtqrugDXm1COacc8jNmG9sPm0QoJzsJ0r7bGd7intfdq30h+WOeyoA1C0PRH3Hvp153uPzbf3kdbCZ31UXzvbzWoQ/lLznPp27CpE+Yc3DBvJNX4ze+Ob2fwmXWWk7hxqom4+7rdd3QHG1oYkk1hlcbbY1E0jCsGtzXuzzRwHvILZHrhDCganlX7Oi1y9sHFq3US5LemGUMddSBB3BE3BCvhLWADtxuzuh/U8hYEOGkXAQO98JgGvXZBx9nt0hCGeM86MUWEKXQZpFt2Eb1apcD/zIPB3eczTGK6oeIN/L+j5Ke8m1CHUoUHHLxaUCUBbscOF4ADkT/5dgopyuOD5QqUmgfd95mvk+TgjK+vOC0kDVaSFaSU6FGXJemKXOQY1xSyJfGoLOxqMagJ6DlVwfNKAjpQ73UUtmCtPyrSom+I7d/VfjrDPnfCXrs5DViHgzNDXNXGjQTzF7BooxnqZZCGYS3ud0q41ual/BYPkN9/gOz+hhoz83zOgdKsqH0VammJNxvLoSns+qUhF/DjE+UfKfwmvtK6mv5V8XfwLOfKpBVZT7KJ1k4KzqB81tUyutWCieuEeow9OdqF1Y6NaCMaV4gXH3A0mL8FFV06vSPA1tJjmfCXYWpRLsSvF7qPoX0t5Gw3qPh+HJS3Pq2/RPRfuUuf3olw5tccZfZBgkxMJWpq4zwKfNCX50XDqC91RJ+njO/rnqezLEXQFovWv3torUFYI2MQMf/AKptlqrvGwAA

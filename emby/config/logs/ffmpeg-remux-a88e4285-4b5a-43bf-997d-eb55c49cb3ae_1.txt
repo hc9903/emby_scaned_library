@@ -1,0 +1,1320 @@
+2020-05-23 06:45:10.811
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/20994/hls1/main/0.ts?DeviceId=f6e80783-687e-493f-86cc-bb660d1276e8&MediaSourceId=eeb5991b30fd2468ccc6af64218e965a&PlaySessionId=1586db95a9694f9a959af207cebd6689&api_key=e1b2df3ea44d45129b6352df6a663541&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=59616000&AudioBitrate=384000&AudioStreamIndex=1&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=ContainerNotSupported
+
+{"Protocol":"File","Id":"eeb5991b30fd2468ccc6af64218e965a","Path":"/00/11/TV/英美剧/单身毒妈.Weeds/Weeds S01 1080p EUR Blu-ray AVC TrueHD 5.1-WiHD/WEEDS_S1_D1","Type":"Default","Container":"bluray","Size":8619411456,"Name":"WEEDS_S1_D1/Bluray","IsRemote":false,"RunTimeTicks":19009600000,"SupportsTranscoding":true,"SupportsDirectStream":false,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"h264","CodecTag":"HDMV","ColorTransfer":"bt709","ColorPrimaries":"bt709","ColorSpace":"bt709","TimeBase":"1/90000","CodecTimeBase":"1001/48000","VideoRange":"SDR","DisplayTitle":"1080p H264","NalLengthSize":"0","IsInterlaced":false,"IsAVC":false,"BitRate":36273930,"BitDepth":8,"RefFrames":1,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"AverageFrameRate":23.976025,"RealFrameRate":23.976025,"Profile":"High","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p","Level":41,"IsAnamorphic":false},{"Codec":"truehd","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"TRUEHD 5.1","IsInterlaced":false,"ChannelLayout":"5.1","BitDepth":24,"Channels":6,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"Dolby Digital 5.1","IsInterlaced":false,"ChannelLayout":"5.1","BitRate":640000,"Channels":6,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":2,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"truehd","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"TRUEHD 5.1","IsInterlaced":false,"ChannelLayout":"5.1","BitDepth":24,"Channels":6,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":3,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"Dolby Digital 5.1","IsInterlaced":false,"ChannelLayout":"5.1","BitRate":640000,"Channels":6,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":4,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"Dolby Digital stereo","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":192000,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":5,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"Dolby Digital stereo","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":192000,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":6,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"ac3","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"Dolby Digital stereo","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":192000,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":7,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":8,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":9,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":10,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":11,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":12,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":13,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":14,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":15,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":16,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":17,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":18,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":19,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":20,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":21,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":22,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":23,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Type":"Subtitle","Index":24,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":36273930,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for 1124721976
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Copy video stream                        >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    Copy video stream                        >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    h264                 >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -noaccurate_seek -i file:"/00/11/TV/英美剧/单身毒妈.Weeds/Weeds S01 1080p EUR Blu-ray AVC TrueHD 5.1-WiHD/WEEDS_S1_D1/BDMV/STREAM/00262.m2ts" -threads 0 -map 0:0 -map 0:1 -sn -c:v:0 copy -copyts -vsync -1 -codec:a:0 libmp3lame -disposition:a:0 default -ac:a:0 2 -ab:a:0 192000 -filter:a:0 "volume=2" -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 6  -individual_header_trailer 0 -break_non_keyframes 1 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 0 -segment_list "/config/transcoding-temp/3C4C19.m3u8" -y "/config/transcoding-temp/3C4C19_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-remux-a88e4285-4b5a-43bf-997d-eb55c49cb3ae_1graph.txt -copyts -start_at_zero -noaccurate_seek -c:v:0 h264 -i "/00/11/TV/英美剧/单身毒妈.Weeds/Weeds S01 1080p EUR Blu-ray AVC TrueHD 5.1-WiHD/WEEDS_S1_D1/BDMV/STREAM/00262.m2ts" -map 0:0 -map 0:1 -sn -c:v:0 copy -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 2 -filter:a:0 "volume=2" -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/3C4C19.m3u8 -segment_list_type m3u8 -segment_time 6 -segment_start_number 0 -break_non_keyframes 1 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/3C4C19_%d.ts"
+
+06:45:11.194 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+06:45:11.194   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+06:45:11.194 Execution Date: 2020-05-23 06:45:11
+06:45:12.180 [mpegts @ 0x7da540] start time for stream 8 is not set in estimate_timings_from_pts
+06:45:12.180 [mpegts @ 0x7da540] start time for stream 9 is not set in estimate_timings_from_pts
+06:45:12.180 [mpegts @ 0x7da540] start time for stream 10 is not set in estimate_timings_from_pts
+06:45:12.180 [mpegts @ 0x7da540] start time for stream 11 is not set in estimate_timings_from_pts
+06:45:12.180 [mpegts @ 0x7da540] start time for stream 12 is not set in estimate_timings_from_pts
+06:45:12.180 [mpegts @ 0x7da540] start time for stream 13 is not set in estimate_timings_from_pts
+06:45:12.180 [mpegts @ 0x7da540] start time for stream 14 is not set in estimate_timings_from_pts
+06:45:12.180 [mpegts @ 0x7da540] start time for stream 15 is not set in estimate_timings_from_pts
+06:45:12.180 [mpegts @ 0x7da540] start time for stream 16 is not set in estimate_timings_from_pts
+06:45:12.180 [mpegts @ 0x7da540] start time for stream 17 is not set in estimate_timings_from_pts
+06:45:12.180 [mpegts @ 0x7da540] start time for stream 18 is not set in estimate_timings_from_pts
+06:45:12.180 [mpegts @ 0x7da540] start time for stream 19 is not set in estimate_timings_from_pts
+06:45:12.180 [mpegts @ 0x7da540] start time for stream 20 is not set in estimate_timings_from_pts
+06:45:12.180 [mpegts @ 0x7da540] start time for stream 21 is not set in estimate_timings_from_pts
+06:45:12.180 [mpegts @ 0x7da540] start time for stream 22 is not set in estimate_timings_from_pts
+06:45:12.180 [mpegts @ 0x7da540] start time for stream 23 is not set in estimate_timings_from_pts
+06:45:12.180 [mpegts @ 0x7da540] start time for stream 24 is not set in estimate_timings_from_pts
+06:45:17.828 [mpegts @ 0x7da540] stream 0 : no PTS found at end of file, duration not set
+06:45:17.828 [mpegts @ 0x7da540] Could not find codec parameters for stream 8 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:45:17.828 [mpegts @ 0x7da540] Could not find codec parameters for stream 9 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:45:17.828 [mpegts @ 0x7da540] Could not find codec parameters for stream 10 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:45:17.828 [mpegts @ 0x7da540] Could not find codec parameters for stream 11 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:45:17.828 [mpegts @ 0x7da540] Could not find codec parameters for stream 12 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:45:17.828 [mpegts @ 0x7da540] Could not find codec parameters for stream 13 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:45:17.828 [mpegts @ 0x7da540] Could not find codec parameters for stream 14 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:45:17.828 [mpegts @ 0x7da540] Could not find codec parameters for stream 15 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:45:17.828 [mpegts @ 0x7da540] Could not find codec parameters for stream 16 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:45:17.828 [mpegts @ 0x7da540] Could not find codec parameters for stream 17 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:45:17.828 [mpegts @ 0x7da540] Could not find codec parameters for stream 18 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:45:17.828 [mpegts @ 0x7da540] Could not find codec parameters for stream 19 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:45:17.828 [mpegts @ 0x7da540] Could not find codec parameters for stream 20 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:45:17.828 [mpegts @ 0x7da540] Could not find codec parameters for stream 21 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:45:17.828 [mpegts @ 0x7da540] Could not find codec parameters for stream 22 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:45:17.828 [mpegts @ 0x7da540] Could not find codec parameters for stream 23 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:45:17.828 [mpegts @ 0x7da540] Could not find codec parameters for stream 24 (Subtitle: hdmv_pgs_subtitle (pgssub) ([144][0][0][0] / 0x0090)): unspecified size
+Consider increasing the value for the 'analyzeduration' and 'probesize' options
+06:45:17.830 Input #0, mpegts, from '/00/11/TV/英美剧/单身毒妈.Weeds/Weeds S01 1080p EUR Blu-ray AVC TrueHD 5.1-WiHD/WEEDS_S1_D1/BDMV/STREAM/00262.m2ts':
+06:45:17.830   Duration: 00:31:40.96, start: 11.650667, bitrate: 36273 kb/s
+06:45:17.830   Program 1 
+06:45:17.830     Stream #0:0[0x1011]: Video: h264 (High) (HDMV / 0x564D4448), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], Level 41, 23.98 fps, 23.98 tbr, 90k tbn, 47.95 tbc, Start-Time 11.651s
+06:45:17.830     Stream #0:1[0x1100]: Audio: truehd (AC-3 / 0x332D4341), 48000 Hz, 5.1(side), s32 (24 bit), Start-Time 11.651s
+06:45:17.830     Stream #0:2[0x1100]: Audio: ac3 (AC-3 / 0x332D4341), 48000 Hz, 5.1(side), fltp, 640 kb/s, Start-Time 11.651s
+06:45:17.830     Stream #0:3[0x1101]: Audio: truehd (AC-3 / 0x332D4341), 48000 Hz, 5.1(side), s32 (24 bit), Start-Time 11.651s
+06:45:17.830     Stream #0:4[0x1101]: Audio: ac3 (AC-3 / 0x332D4341), 48000 Hz, 5.1(side), fltp, 640 kb/s, Start-Time 11.651s
+06:45:17.831     Stream #0:5[0x1102]: Audio: ac3 (AC-3 / 0x332D4341), 48000 Hz, stereo, fltp, 192 kb/s, Start-Time 11.651s
+06:45:17.831     Stream #0:6[0x1103]: Audio: ac3 (AC-3 / 0x332D4341), 48000 Hz, stereo, fltp, 192 kb/s, Start-Time 11.651s
+06:45:17.831     Stream #0:7[0x1104]: Audio: ac3 (AC-3 / 0x332D4341), 48000 Hz, stereo, fltp, 192 kb/s, Start-Time 11.651s
+06:45:17.831     Stream #0:8[0x1200]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:45:17.831     Stream #0:9[0x1201]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:45:17.831     Stream #0:10[0x1202]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:45:17.831     Stream #0:11[0x1203]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:45:17.831     Stream #0:12[0x1204]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:45:17.831     Stream #0:13[0x1205]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:45:17.831     Stream #0:14[0x1206]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:45:17.831     Stream #0:15[0x1207]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:45:17.831     Stream #0:16[0x1208]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:45:17.831     Stream #0:17[0x1209]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:45:17.831     Stream #0:18[0x120a]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:45:17.831     Stream #0:19[0x120b]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:45:17.831     Stream #0:20[0x120c]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:45:17.831     Stream #0:21[0x120d]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:45:17.831     Stream #0:22[0x120e]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:45:17.831     Stream #0:23[0x120f]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:45:17.831     Stream #0:24[0x1210]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), Start-Time 11.651s
+06:45:17.832 Stream mapping:
+06:45:17.832   Stream #0:0 -> #0:0 (copy)
+06:45:17.832   Stream #0:1 -> #0:1 (truehd (native) -> mp3 (libmp3lame))
+06:45:17.832 Press [q] to stop, [?] for help
+06:45:17.836 Output #0, segment, to '/config/transcoding-temp/3C4C19_%d.ts':
+06:45:17.836   Metadata:
+06:45:17.836     encoder         : Lavf58.35.100
+06:45:17.836     Stream #0:0: Video: h264 (High) (HDMV / 0x564D4448), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, Level 41, 23.98 fps, 23.98 tbr, 90k tbn, 23.98 tbc
+06:45:17.836     Stream #0:1: Audio: mp3 (libmp3lame), 48000 Hz, stereo, fltp (24 bit), 192 kb/s (default)
+06:45:17.836     Metadata:
+06:45:17.836       encoder         : Lavc58.62.100 libmp3lame
+06:45:18.675 frame=   83 fps=0.0 q=-1.0 size=    3486kB time=00:00:03.37 bitrate=N/A throttle=off speed=   0x    
+06:45:19.008 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:19.009 SegmentComplete=video:0 Index=0 Start=0.000000 End=6.005989 Duration=6.005989 offset_pts=0 start_pts=0 Frames=144 filename=3C4C19_0.ts
+06:45:19.009 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_1.ts.tmp' for writing
+06:45:19.412 frame=  182 fps=115 q=-1.0 size=   15802kB time=00:00:07.50 bitrate=31351.1kbits/s throttle=off speed=2.61x    
+06:45:19.915 frame=  193 fps= 93 q=-1.0 size=   16978kB time=00:00:07.96 bitrate=30314.7kbits/s throttle=off speed= 2.2x    
+06:45:20.574 frame=  228 fps= 83 q=-1.0 size=   21073kB time=00:00:09.42 bitrate=28545.3kbits/s throttle=off speed=2.21x    
+06:45:21.074 frame=  272 fps= 84 q=-1.0 size=   26293kB time=00:00:11.26 bitrate=27323.6kbits/s throttle=off speed=2.43x    
+06:45:21.871 frame=  288 fps= 71 q=-1.0 size=   27690kB time=00:00:11.92 bitrate=26529.8kbits/s throttle=off speed=2.12x    
+06:45:21.913 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:21.913 SegmentComplete=video:0 Index=1 Start=6.089411 End=12.011989 Duration=5.922578 offset_pts=0 start_pts=6089411 Frames=144 filename=3C4C19_1.ts
+06:45:21.913 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_2.ts.tmp' for writing
+06:45:22.471 frame=  433 fps= 93 q=-1.0 size=   29098kB time=00:00:17.97 bitrate=16329.3kbits/s throttle=off speed=3.15x    
+06:45:22.513 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:22.513 SegmentComplete=video:0 Index=2 Start=12.012000 End=18.017989 Duration=6.005989 offset_pts=0 start_pts=12012000 Frames=144 filename=3C4C19_2.ts
+06:45:22.513 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_3.ts.tmp' for writing
+06:45:23.375 frame=  489 fps= 88 q=-1.0 size=   35677kB time=00:00:20.31 bitrate=17259.6kbits/s throttle=off speed=3.05x    
+06:45:23.897 frame=  523 fps= 86 q=-1.0 size=   40186kB time=00:00:21.73 bitrate=17938.8kbits/s throttle=off speed=3.03x    
+06:45:24.397 frame=  582 fps= 89 q=-1.0 size=   48249kB time=00:00:24.19 bitrate=18991.3kbits/s throttle=off speed=3.17x    
+06:45:24.421 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:24.422 SegmentComplete=video:0 Index=3 Start=18.101411 End=24.023989 Duration=5.922578 offset_pts=0 start_pts=18101411 Frames=144 filename=3C4C19_3.ts
+06:45:24.422 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_4.ts.tmp' for writing
+06:45:25.034 frame=  607 fps= 84 q=-1.0 size=   51664kB time=00:00:25.23 bitrate=19365.4kbits/s throttle=off speed=3.03x    
+06:45:25.552 frame=  653 fps= 85 q=-1.0 size=   57475kB time=00:00:27.15 bitrate=19804.9kbits/s throttle=off speed=3.08x    
+06:45:26.163 frame=  704 fps= 84 q=-1.0 size=   63273kB time=00:00:29.27 bitrate=20012.2kbits/s throttle=off speed=3.11x    
+06:45:26.248 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:26.249 SegmentComplete=video:0 Index=4 Start=24.107411 End=29.988278 Duration=5.880867 offset_pts=0 start_pts=24107411 Frames=143 filename=3C4C19_4.ts
+06:45:26.249 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_5.ts.tmp' for writing
+06:45:26.749 frame=  749 fps= 84 q=-1.0 size=   69348kB time=00:00:31.15 bitrate=20451.5kbits/s throttle=off speed=3.12x    
+06:45:27.320 frame=  795 fps= 84 q=-1.0 size=   75546kB time=00:00:33.07 bitrate=20840.0kbits/s throttle=off speed=3.13x    
+06:45:27.852 frame=  839 fps= 84 q=-1.0 size=   81460kB time=00:00:34.90 bitrate=21163.7kbits/s throttle=off speed=3.15x    
+06:45:27.946 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:27.946 SegmentComplete=video:0 Index=5 Start=30.071700 End=36.035989 Duration=5.964289 offset_pts=0 start_pts=30071700 Frames=145 filename=3C4C19_5.ts
+06:45:27.946 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_6.ts.tmp' for writing
+06:45:28.487 frame=  884 fps= 83 q=-1.0 size=   87503kB time=00:00:36.78 bitrate=21456.5kbits/s throttle=off speed=3.14x    
+06:45:29.754 frame=  923 fps= 77 q=-1.0 size=   92797kB time=00:00:38.41 bitrate=21698.0kbits/s throttle=off speed=2.94x    
+06:45:30.320 frame=  956 fps= 77 q=-1.0 size=   97236kB time=00:00:39.78 bitrate=21876.5kbits/s throttle=off speed=2.92x    
+06:45:31.184 frame=  983 fps= 74 q=-1.0 size=  100866kB time=00:00:40.91 bitrate=22012.5kbits/s throttle=off speed=2.81x    
+06:45:31.290 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:31.291 SegmentComplete=video:0 Index=6 Start=36.119411 End=41.916867 Duration=5.797456 offset_pts=0 start_pts=36119411 Frames=141 filename=3C4C19_6.ts
+06:45:31.291 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_7.ts.tmp' for writing
+06:45:32.051 frame= 1034 fps= 73 q=-1.0 size=  107815kB time=00:00:43.04 bitrate=22267.3kbits/s throttle=off speed=2.79x    
+06:45:32.665 frame= 1074 fps= 72 q=-1.0 size=  113294kB time=00:00:44.71 bitrate=22454.3kbits/s throttle=off speed=2.79x    
+06:45:33.234 frame= 1112 fps= 72 q=-1.0 size=  118391kB time=00:00:46.29 bitrate=22598.0kbits/s throttle=off speed=2.79x    
+06:45:33.832 frame= 1153 fps= 72 q=-1.0 size=  123895kB time=00:00:48.00 bitrate=22742.4kbits/s throttle=off speed=2.79x    
+06:45:33.869 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:33.869 SegmentComplete=video:0 Index=7 Start=42.000289 End=48.006278 Duration=6.005989 offset_pts=0 start_pts=42000289 Frames=146 filename=3C4C19_7.ts
+06:45:33.869 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_8.ts.tmp' for writing
+06:45:34.444 frame= 1196 fps= 72 q=-1.0 size=  129741kB time=00:00:49.79 bitrate=22895.5kbits/s throttle=off speed=2.79x    
+06:45:35.046 frame= 1240 fps= 72 q=-1.0 size=  135774kB time=00:00:51.63 bitrate=23048.9kbits/s throttle=off speed= 2.8x    
+06:45:35.679 frame= 1285 fps= 72 q=-1.0 size=  141850kB time=00:00:53.51 bitrate=23178.8kbits/s throttle=off speed=2.81x    
+06:45:35.738 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:35.739 SegmentComplete=video:0 Index=8 Start=48.089700 End=53.928867 Duration=5.839167 offset_pts=0 start_pts=48089700 Frames=142 filename=3C4C19_8.ts
+06:45:35.739 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_9.ts.tmp' for writing
+06:45:36.265 frame= 1330 fps= 72 q=-1.0 size=  147900kB time=00:00:55.38 bitrate=23295.4kbits/s throttle=off speed=2.82x    
+06:45:36.825 frame= 1375 fps= 72 q=-1.0 size=  153953kB time=00:00:57.26 bitrate=23404.2kbits/s throttle=off speed=2.84x    
+06:45:37.401 frame= 1420 fps= 73 q=-1.0 size=  160091kB time=00:00:59.14 bitrate=23518.1kbits/s throttle=off speed=2.85x    
+06:45:37.485 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:37.486 SegmentComplete=video:0 Index=9 Start=54.012289 End=59.934867 Duration=5.922578 offset_pts=0 start_pts=54012289 Frames=144 filename=3C4C19_9.ts
+06:45:37.486 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_10.ts.tmp' for writing
+06:45:37.972 frame= 1464 fps= 73 q=-1.0 size=  165988kB time=00:01:00.97 bitrate=23607.6kbits/s throttle=off speed=2.86x    
+06:45:38.593 frame= 1508 fps= 73 q=-1.0 size=  171952kB time=00:01:02.81 bitrate=23700.6kbits/s throttle=off speed=2.86x    
+06:45:39.093 frame= 1554 fps= 73 q=-1.0 size=  178196kB time=00:01:04.73 bitrate=23793.2kbits/s throttle=off speed=2.89x    
+06:45:39.208 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:39.208 SegmentComplete=video:0 Index=10 Start=60.018289 End=65.940867 Duration=5.922578 offset_pts=0 start_pts=60018289 Frames=144 filename=3C4C19_10.ts
+06:45:39.208 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_11.ts.tmp' for writing
+06:45:39.634 frame= 1599 fps= 73 q=-1.0 size=  184304kB time=00:01:06.60 bitrate=23878.3kbits/s throttle=off speed= 2.9x    
+06:45:40.142 frame= 1643 fps= 74 q=-1.0 size=  190303kB time=00:01:08.44 bitrate=23960.1kbits/s throttle=off speed=2.92x    
+06:45:40.642 frame= 1688 fps= 74 q=-1.0 size=  196367kB time=00:01:10.32 bitrate=24030.4kbits/s throttle=off speed=2.93x    
+06:45:41.275 frame= 1728 fps= 74 q=-1.0 size=  201607kB time=00:01:11.98 bitrate=24071.7kbits/s throttle=off speed=2.93x    
+06:45:41.327 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:41.328 SegmentComplete=video:0 Index=11 Start=66.024289 End=71.946867 Duration=5.922578 offset_pts=0 start_pts=66024289 Frames=144 filename=3C4C19_11.ts
+06:45:41.328 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_12.ts.tmp' for writing
+06:45:41.881 frame= 1768 fps= 74 q=-1.0 size=  207083kB time=00:01:13.65 bitrate=24138.6kbits/s throttle=off speed=2.92x    
+06:45:42.398 frame= 1808 fps= 74 q=-1.0 size=  212550kB time=00:01:15.32 bitrate=24201.3kbits/s throttle=off speed=2.93x    
+06:45:42.980 frame= 1852 fps= 74 q=-1.0 size=  218472kB time=00:01:17.16 bitrate=24256.9kbits/s throttle=off speed=2.93x    
+06:45:43.062 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:43.062 SegmentComplete=video:0 Index=12 Start=72.030289 End=78.036278 Duration=6.005989 offset_pts=0 start_pts=72030289 Frames=146 filename=3C4C19_12.ts
+06:45:43.062 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_13.ts.tmp' for writing
+06:45:43.582 frame= 1895 fps= 74 q=-1.0 size=  224204kB time=00:01:18.95 bitrate=24302.6kbits/s throttle=off speed=2.93x    
+06:45:44.103 frame= 1938 fps= 74 q=-1.0 size=  230180kB time=00:01:20.74 bitrate=24371.9kbits/s throttle=off speed=2.95x    
+06:45:44.625 frame= 1982 fps= 74 q=-1.0 size=  236021kB time=00:01:22.58 bitrate=24411.4kbits/s throttle=off speed=2.96x    
+06:45:45.220 frame= 2025 fps= 74 q=-1.0 size=  241842kB time=00:01:24.37 bitrate=24459.6kbits/s throttle=off speed=2.96x    
+06:45:45.237 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:45.237 SegmentComplete=video:0 Index=13 Start=78.036289 End=84.000567 Duration=5.964278 offset_pts=0 start_pts=78036289 Frames=143 filename=3C4C19_13.ts
+06:45:45.237 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_14.ts.tmp' for writing
+06:45:45.753 frame= 2070 fps= 74 q=-1.0 size=  247918kB time=00:01:26.25 bitrate=24506.3kbits/s throttle=off speed=2.97x    
+06:45:46.253 frame= 2124 fps= 75 q=-1.0 size=  255134kB time=00:01:28.50 bitrate=24552.4kbits/s throttle=off speed=   3x    
+06:45:46.725 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:46.726 SegmentComplete=video:0 Index=14 Start=84.084000 End=89.923156 Duration=5.839156 offset_pts=0 start_pts=84084000 Frames=142 filename=3C4C19_14.ts
+06:45:46.726 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_15.ts.tmp' for writing
+06:45:46.753 frame= 2183 fps= 75 q=-1.0 size=  263108kB time=00:01:30.96 bitrate=24608.3kbits/s throttle=off speed=3.03x    
+06:45:47.253 frame= 2242 fps= 76 q=-1.0 size=  271039kB time=00:01:33.42 bitrate=24657.3kbits/s throttle=off speed=3.06x    
+06:45:47.767 frame= 2275 fps= 76 q=-1.0 size=  275462kB time=00:01:34.80 bitrate=24682.4kbits/s throttle=off speed=3.05x    
+06:45:47.888 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:47.889 SegmentComplete=video:0 Index=15 Start=90.006578 End=96.012567 Duration=6.005989 offset_pts=0 start_pts=90006578 Frames=146 filename=3C4C19_15.ts
+06:45:47.889 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_16.ts.tmp' for writing
+06:45:48.963 frame= 2326 fps= 75 q=-1.0 size=  282405kB time=00:01:36.93 bitrate=24729.2kbits/s throttle=off speed=3.01x    
+06:45:49.987 frame= 2358 fps= 73 q=-1.0 size=  286740kB time=00:01:38.26 bitrate=24755.6kbits/s throttle=off speed=2.95x    
+06:45:50.275 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:50.275 SegmentComplete=video:0 Index=16 Start=96.012578 End=101.935156 Duration=5.922578 offset_pts=0 start_pts=96012578 Frames=142 filename=3C4C19_16.ts
+06:45:50.275 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_17.ts.tmp' for writing
+06:45:50.814 frame= 2463 fps= 75 q=-1.0 size=  300892kB time=00:01:42.64 bitrate=24831.4kbits/s throttle=off speed=3.01x    
+06:45:51.455 frame= 2506 fps= 75 q=-1.0 size=  306660kB time=00:01:44.43 bitrate=24858.2kbits/s throttle=off speed=3.01x    
+06:45:52.099 frame= 2550 fps= 74 q=-1.0 size=  312636kB time=00:01:46.27 bitrate=24890.7kbits/s throttle=off speed=   3x    
+06:45:52.801 frame= 2587 fps= 74 q=-1.0 size=  317660kB time=00:01:47.81 bitrate=24916.9kbits/s throttle=off speed=2.99x    
+06:45:52.853 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:52.853 SegmentComplete=video:0 Index=17 Start=102.018578 End=107.941156 Duration=5.922578 offset_pts=0 start_pts=102018578 Frames=144 filename=3C4C19_17.ts
+06:45:52.853 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_18.ts.tmp' for writing
+06:45:53.386 frame= 2631 fps= 74 q=-1.0 size=  323502kB time=00:01:49.65 bitrate=24937.1kbits/s throttle=off speed=2.99x    
+06:45:54.021 frame= 2674 fps= 74 q=-1.0 size=  329402kB time=00:01:51.44 bitrate=24970.4kbits/s throttle=off speed=2.99x    
+06:45:54.660 frame= 2717 fps= 74 q=-1.0 size=  335146kB time=00:01:53.23 bitrate=24991.1kbits/s throttle=off speed=2.98x    
+06:45:54.743 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:54.744 SegmentComplete=video:0 Index=18 Start=108.024578 End=114.030567 Duration=6.005989 offset_pts=0 start_pts=108024578 Frames=146 filename=3C4C19_18.ts
+06:45:54.744 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_19.ts.tmp' for writing
+06:45:55.304 frame= 2759 fps= 74 q=-1.0 size=  340825kB time=00:01:54.98 bitrate=25015.7kbits/s throttle=off speed=2.98x    
+06:45:55.878 frame= 2803 fps= 74 q=-1.0 size=  346767kB time=00:01:56.82 bitrate=25040.1kbits/s throttle=off speed=2.98x    
+06:45:56.426 frame= 2846 fps= 74 q=-1.0 size=  352506kB time=00:01:58.61 bitrate=25058.4kbits/s throttle=off speed=2.99x    
+06:45:56.993 frame= 2888 fps= 74 q=-1.0 size=  358272kB time=00:02:00.37 bitrate=25086.9kbits/s throttle=off speed=2.99x    
+06:45:57.005 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:57.005 SegmentComplete=video:0 Index=19 Start=114.114000 End=119.953156 Duration=5.839156 offset_pts=0 start_pts=114114000 Frames=142 filename=3C4C19_19.ts
+06:45:57.005 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_20.ts.tmp' for writing
+06:45:57.523 frame= 2933 fps= 74 q=-1.0 size=  364298kB time=00:02:02.24 bitrate=25106.1kbits/s throttle=off speed=2.99x    
+06:45:58.270 frame= 2975 fps= 74 q=-1.0 size=  370022kB time=00:02:03.99 bitrate=25130.2kbits/s throttle=off speed=2.98x    
+06:45:59.028 frame= 3019 fps= 73 q=-1.0 size=  376020kB time=00:02:05.83 bitrate=25154.9kbits/s throttle=off speed=2.97x    
+06:45:59.070 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:45:59.070 SegmentComplete=video:0 Index=20 Start=120.036578 End=125.959156 Duration=5.922578 offset_pts=0 start_pts=120036578 Frames=144 filename=3C4C19_20.ts
+06:45:59.070 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_21.ts.tmp' for writing
+06:45:59.692 frame= 3063 fps= 73 q=-1.0 size=  381877kB time=00:02:07.66 bitrate=25169.5kbits/s throttle=off speed=2.97x    
+06:46:00.225 frame= 3106 fps= 73 q=-1.0 size=  387704kB time=00:02:09.46 bitrate=25190.1kbits/s throttle=off speed=2.97x    
+06:46:00.980 frame= 3152 fps= 73 q=-1.0 size=  393756kB time=00:02:11.38 bitrate=25199.8kbits/s throttle=off speed=2.97x    
+06:46:01.054 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:01.055 SegmentComplete=video:0 Index=21 Start=126.000867 End=131.965156 Duration=5.964289 offset_pts=0 start_pts=126000867 Frames=144 filename=3C4C19_21.ts
+06:46:01.055 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_22.ts.tmp' for writing
+06:46:01.560 frame= 3195 fps= 73 q=-1.0 size=  399590kB time=00:02:13.17 bitrate=25219.8kbits/s throttle=off speed=2.97x    
+06:46:02.248 frame= 3240 fps= 73 q=-1.0 size=  405469kB time=00:02:15.05 bitrate=25226.1kbits/s throttle=off speed=2.96x    
+06:46:02.975 frame= 3284 fps= 73 q=-1.0 size=  411497kB time=00:02:16.88 bitrate=25249.2kbits/s throttle=off speed=2.96x    
+06:46:03.086 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:03.087 SegmentComplete=video:0 Index=22 Start=132.048578 End=138.012867 Duration=5.964289 offset_pts=0 start_pts=132048578 Frames=145 filename=3C4C19_22.ts
+06:46:03.087 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_23.ts.tmp' for writing
+06:46:03.523 frame= 3328 fps= 73 q=-1.0 size=  417363kB time=00:02:18.72 bitrate=25261.9kbits/s throttle=off speed=2.96x    
+06:46:04.129 frame= 3371 fps= 73 q=-1.0 size=  423191kB time=00:02:20.51 bitrate=25279.7kbits/s throttle=off speed=2.96x    
+06:46:04.717 frame= 3417 fps= 73 q=-1.0 size=  429369kB time=00:02:22.43 bitrate=25294.8kbits/s throttle=off speed=2.97x    
+06:46:05.325 frame= 3460 fps= 73 q=-1.0 size=  435189kB time=00:02:24.22 bitrate=25311.3kbits/s throttle=off speed=2.97x    
+06:46:05.349 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:05.349 SegmentComplete=video:0 Index=23 Start=138.096289 End=143.977156 Duration=5.880867 offset_pts=0 start_pts=138096289 Frames=143 filename=3C4C19_23.ts
+06:46:05.349 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_24.ts.tmp' for writing
+06:46:06.049 frame= 3505 fps= 73 q=-1.0 size=  441195kB time=00:02:26.10 bitrate=25323.1kbits/s throttle=off speed=2.96x    
+06:46:06.581 frame= 3547 fps= 73 q=-1.0 size=  446930kB time=00:02:27.85 bitrate=25341.3kbits/s throttle=off speed=2.96x    
+06:46:07.201 frame= 3593 fps= 73 q=-1.0 size=  453106kB time=00:02:29.77 bitrate=25354.8kbits/s throttle=off speed=2.97x    
+06:46:07.258 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:07.259 SegmentComplete=video:0 Index=24 Start=144.060578 End=150.024867 Duration=5.964289 offset_pts=0 start_pts=144060578 Frames=145 filename=3C4C19_24.ts
+06:46:07.259 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_25.ts.tmp' for writing
+06:46:07.749 frame= 3636 fps= 73 q=-1.0 size=  458825kB time=00:02:31.56 bitrate=25364.1kbits/s throttle=off speed=2.97x    
+06:46:08.468 frame= 3682 fps= 73 q=-1.0 size=  465087kB time=00:02:33.48 bitrate=25381.6kbits/s throttle=off speed=2.96x    
+06:46:08.968 frame= 3735 fps= 73 q=-1.0 size=  472247kB time=00:02:35.69 bitrate=25398.4kbits/s throttle=off speed=2.98x    
+06:46:09.022 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:09.023 SegmentComplete=video:0 Index=25 Start=150.108289 End=156.030867 Duration=5.922578 offset_pts=0 start_pts=150108289 Frames=144 filename=3C4C19_25.ts
+06:46:09.023 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_26.ts.tmp' for writing
+06:46:09.470 frame= 3773 fps= 73 q=-1.0 size=  477368kB time=00:02:37.28 bitrate=25409.4kbits/s throttle=off speed=2.98x    
+06:46:10.012 frame= 3817 fps= 73 q=-1.0 size=  483312kB time=00:02:39.11 bitrate=25422.6kbits/s throttle=off speed=2.98x    
+06:46:10.462 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:10.463 SegmentComplete=video:0 Index=26 Start=156.114289 End=161.995156 Duration=5.880867 offset_pts=0 start_pts=156114289 Frames=143 filename=3C4C19_26.ts
+06:46:10.463 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_27.ts.tmp' for writing
+06:46:10.737 frame= 3906 fps= 74 q=-1.0 size=  495284kB time=00:02:42.82 bitrate=25445.9kbits/s throttle=off speed=3.01x    
+06:46:11.397 frame= 3992 fps= 75 q=-1.0 size=  506972kB time=00:02:46.41 bitrate=25473.3kbits/s throttle=off speed=3.04x    
+06:46:12.046 frame= 4034 fps= 74 q=-1.0 size=  512611kB time=00:02:48.16 bitrate=25482.9kbits/s throttle=off speed=3.04x    
+06:46:12.070 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:12.071 SegmentComplete=video:0 Index=27 Start=162.036867 End=167.959444 Duration=5.922578 offset_pts=0 start_pts=162036867 Frames=143 filename=3C4C19_27.ts
+06:46:12.071 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_28.ts.tmp' for writing
+06:46:12.583 frame= 4076 fps= 74 q=-1.0 size=  518276kB time=00:02:49.91 bitrate=25493.5kbits/s throttle=off speed=3.04x    
+06:46:13.680 frame= 4118 fps= 74 q=-1.0 size=  523972kB time=00:02:51.67 bitrate=25505.4kbits/s throttle=off speed=3.01x    
+06:46:14.388 frame= 4159 fps= 74 q=-1.0 size=  529450kB time=00:02:53.38 bitrate=25512.8kbits/s throttle=off speed=3.01x    
+06:46:14.485 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:14.485 SegmentComplete=video:0 Index=28 Start=168.042867 End=173.965444 Duration=5.922578 offset_pts=0 start_pts=168042867 Frames=144 filename=3C4C19_28.ts
+06:46:14.485 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_29.ts.tmp' for writing
+06:46:14.971 frame= 4200 fps= 74 q=-1.0 size=  535021kB time=00:02:55.09 bitrate=25524.5kbits/s throttle=off speed=3.01x    
+06:46:15.523 frame= 4243 fps= 74 q=-1.0 size=  540912kB time=00:02:56.88 bitrate=25538.8kbits/s throttle=off speed=3.01x    
+06:46:16.098 frame= 4287 fps= 74 q=-1.0 size=  546777kB time=00:02:58.72 bitrate=25545.5kbits/s throttle=off speed=3.01x    
+06:46:16.690 frame= 4329 fps= 74 q=-1.0 size=  552507kB time=00:03:00.47 bitrate=25557.9kbits/s throttle=off speed=3.01x    
+06:46:16.697 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:16.697 SegmentComplete=video:0 Index=29 Start=174.048867 End=179.929733 Duration=5.880867 offset_pts=0 start_pts=174048867 Frames=143 filename=3C4C19_29.ts
+06:46:16.697 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_30.ts.tmp' for writing
+06:46:17.325 frame= 4373 fps= 74 q=-1.0 size=  558388kB time=00:03:02.30 bitrate=25565.0kbits/s throttle=off speed=3.01x    
+06:46:18.098 frame= 4414 fps= 73 q=-1.0 size=  563909kB time=00:03:04.01 bitrate=25573.4kbits/s throttle=off speed=   3x    
+06:46:18.282 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:18.283 SegmentComplete=video:0 Index=30 Start=180.013167 End=185.935733 Duration=5.922567 offset_pts=0 start_pts=180013167 Frames=144 filename=3C4C19_30.ts
+06:46:18.283 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_31.ts.tmp' for writing
+06:46:18.702 frame= 4498 fps= 74 q=-1.0 size=  575265kB time=00:03:07.52 bitrate=25592.0kbits/s throttle=off speed=3.03x    
+06:46:19.074 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:19.075 SegmentComplete=video:0 Index=31 Start=186.019167 End=192.025156 Duration=6.005989 offset_pts=0 start_pts=186019167 Frames=146 filename=3C4C19_31.ts
+06:46:19.075 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_32.ts.tmp' for writing
+06:46:19.203 frame= 4665 fps= 76 q=-1.0 size=  597779kB time=00:03:14.48 bitrate=25624.3kbits/s throttle=off speed=3.11x    
+06:46:20.143 frame= 4758 fps= 76 q=-1.0 size=  610200kB time=00:03:18.36 bitrate=25636.4kbits/s throttle=off speed=3.13x    
+06:46:20.157 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:20.158 SegmentComplete=video:0 Index=32 Start=192.108578 End=197.989444 Duration=5.880867 offset_pts=0 start_pts=192108578 Frames=143 filename=3C4C19_32.ts
+06:46:20.158 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_33.ts.tmp' for writing
+06:46:20.775 frame= 4843 fps= 77 q=-1.0 size=  621671kB time=00:03:21.91 bitrate=25652.0kbits/s throttle=off speed=3.15x    
+06:46:21.010 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:21.011 SegmentComplete=video:0 Index=33 Start=198.072867 End=204.037156 Duration=5.964289 offset_pts=0 start_pts=198072867 Frames=145 filename=3C4C19_33.ts
+06:46:21.011 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_34.ts.tmp' for writing
+06:46:21.533 frame= 4925 fps= 77 q=-1.0 size=  632700kB time=00:03:25.33 bitrate=25664.9kbits/s throttle=off speed=3.17x    
+06:46:22.184 frame= 5010 fps= 78 q=-1.0 size=  644187kB time=00:03:28.87 bitrate=25680.1kbits/s throttle=off speed=3.19x    
+06:46:22.299 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:22.299 SegmentComplete=video:0 Index=34 Start=204.037167 End=209.918033 Duration=5.880867 offset_pts=0 start_pts=204037167 Frames=141 filename=3C4C19_34.ts
+06:46:22.299 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_35.ts.tmp' for writing
+06:46:23.084 frame= 5054 fps= 77 q=-1.0 size=  650041kB time=00:03:30.71 bitrate=25684.1kbits/s throttle=off speed=3.18x    
+06:46:24.366 frame= 5090 fps= 77 q=-1.0 size=  654904kB time=00:03:32.21 bitrate=25690.2kbits/s throttle=off speed=3.14x    
+06:46:25.112 frame= 5122 fps= 76 q=-1.0 size=  659293kB time=00:03:33.54 bitrate=25698.1kbits/s throttle=off speed=3.12x    
+06:46:26.043 frame= 5142 fps= 75 q=-1.0 size=  661940kB time=00:03:34.38 bitrate=25699.3kbits/s throttle=off speed=3.09x    
+06:46:26.805 frame= 5163 fps= 75 q=-1.0 size=  664772kB time=00:03:35.25 bitrate=25702.5kbits/s throttle=off speed=3.07x    
+06:46:27.213 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:27.213 SegmentComplete=video:0 Index=35 Start=210.001456 End=216.007444 Duration=6.005989 offset_pts=0 start_pts=210001456 Frames=146 filename=3C4C19_35.ts
+06:46:27.213 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_36.ts.tmp' for writing
+06:46:27.545 frame= 5202 fps= 75 q=-1.0 size=  670043kB time=00:03:36.88 bitrate=25708.9kbits/s throttle=off speed=3.06x    
+06:46:28.490 frame= 5233 fps= 74 q=-1.0 size=  674195kB time=00:03:38.17 bitrate=25712.5kbits/s throttle=off speed=3.04x    
+06:46:29.369 frame= 5279 fps= 74 q=-1.0 size=  680382kB time=00:03:40.09 bitrate=25718.8kbits/s throttle=off speed=3.03x    
+06:46:29.869 frame= 5334 fps= 74 q=-1.0 size=  687849kB time=00:03:42.38 bitrate=25728.7kbits/s throttle=off speed=3.04x    
+06:46:29.883 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:29.883 SegmentComplete=video:0 Index=36 Start=216.090867 End=221.971733 Duration=5.880867 offset_pts=0 start_pts=216090867 Frames=143 filename=3C4C19_36.ts
+06:46:29.883 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_37.ts.tmp' for writing
+06:46:30.370 frame= 5382 fps= 74 q=-1.0 size=  694310kB time=00:03:44.39 bitrate=25735.2kbits/s throttle=off speed=3.05x    
+06:46:30.914 frame= 5389 fps= 74 q=-1.0 size=  695235kB time=00:03:44.68 bitrate=25735.4kbits/s throttle=off speed=3.03x    
+06:46:31.455 frame= 5432 fps= 74 q=-1.0 size=  701100kB time=00:03:46.47 bitrate=25743.9kbits/s throttle=off speed=3.03x    
+06:46:31.998 frame= 5473 fps= 74 q=-1.0 size=  706544kB time=00:03:48.18 bitrate=25746.5kbits/s throttle=off speed=3.03x    
+06:46:32.024 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:32.025 SegmentComplete=video:0 Index=37 Start=222.055167 End=228.019444 Duration=5.964278 offset_pts=0 start_pts=222055167 Frames=145 filename=3C4C19_37.ts
+06:46:32.025 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_38.ts.tmp' for writing
+06:46:32.655 frame= 5515 fps= 74 q=-1.0 size=  712293kB time=00:03:49.93 bitrate=25755.3kbits/s throttle=off speed=3.03x    
+06:46:33.242 frame= 5557 fps= 74 q=-1.0 size=  717908kB time=00:03:51.68 bitrate=25759.1kbits/s throttle=off speed=3.03x    
+06:46:33.851 frame= 5600 fps= 74 q=-1.0 size=  723731kB time=00:03:53.48 bitrate=25765.6kbits/s throttle=off speed=3.03x    
+06:46:33.941 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:33.942 SegmentComplete=video:0 Index=38 Start=228.102867 End=234.025444 Duration=5.922578 offset_pts=0 start_pts=228102867 Frames=144 filename=3C4C19_38.ts
+06:46:33.942 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_39.ts.tmp' for writing
+06:46:34.383 frame= 5640 fps= 74 q=-1.0 size=  729126kB time=00:03:55.15 bitrate=25770.9kbits/s throttle=off speed=3.03x    
+06:46:35.027 frame= 5684 fps= 74 q=-1.0 size=  735085kB time=00:03:56.98 bitrate=25777.4kbits/s throttle=off speed=3.03x    
+06:46:35.803 frame= 5726 fps= 73 q=-1.0 size=  740706kB time=00:03:58.73 bitrate=25781.2kbits/s throttle=off speed=3.02x    
+06:46:36.237 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:36.238 SegmentComplete=video:0 Index=39 Start=234.108867 End=239.948033 Duration=5.839167 offset_pts=0 start_pts=234108867 Frames=142 filename=3C4C19_39.ts
+06:46:36.238 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_40.ts.tmp' for writing
+06:46:36.303 frame= 5792 fps= 74 q=-1.0 size=  749724kB time=00:04:01.49 bitrate=25793.4kbits/s throttle=off speed=3.03x    
+06:46:36.803 frame= 5820 fps= 74 q=-1.0 size=  753462kB time=00:04:02.65 bitrate=25795.5kbits/s throttle=off speed=3.03x    
+06:46:37.304 frame= 5852 fps= 74 q=-1.0 size=  757856kB time=00:04:03.99 bitrate=25802.0kbits/s throttle=off speed=3.03x    
+06:46:37.845 frame= 5894 fps= 74 q=-1.0 size=  763393kB time=00:04:05.74 bitrate=25802.7kbits/s throttle=off speed=3.03x    
+06:46:37.910 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:37.910 SegmentComplete=video:0 Index=40 Start=240.031456 End=245.954033 Duration=5.922578 offset_pts=0 start_pts=240031456 Frames=144 filename=3C4C19_40.ts
+06:46:37.910 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_41.ts.tmp' for writing
+06:46:38.345 frame= 5938 fps= 74 q=-1.0 size=  769392kB time=00:04:07.58 bitrate=25810.0kbits/s throttle=off speed=3.03x    
+06:46:38.981 frame= 5980 fps= 74 q=-1.0 size=  774994kB time=00:04:09.33 bitrate=25812.7kbits/s throttle=off speed=3.03x    
+06:46:39.485 frame= 6033 fps= 74 q=-1.0 size=  782356kB time=00:04:11.54 bitrate=25825.8kbits/s throttle=off speed=3.04x    
+06:46:39.556 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:39.556 SegmentComplete=video:0 Index=41 Start=246.037456 End=251.960033 Duration=5.922578 offset_pts=0 start_pts=246037456 Frames=144 filename=3C4C19_41.ts
+06:46:39.556 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_42.ts.tmp' for writing
+06:46:39.989 frame= 6064 fps= 74 q=-1.0 size=  786364kB time=00:04:12.83 bitrate=25823.6kbits/s throttle=off speed=3.04x    
+06:46:40.518 frame= 6106 fps= 74 q=-1.0 size=  791838kB time=00:04:14.58 bitrate=25822.0kbits/s throttle=off speed=3.04x    
+06:46:41.100 frame= 6149 fps= 74 q=-1.0 size=  797695kB time=00:04:16.38 bitrate=25828.6kbits/s throttle=off speed=3.04x    
+06:46:41.793 frame= 6193 fps= 74 q=-1.0 size=  803598kB time=00:04:18.21 bitrate=25832.4kbits/s throttle=off speed=3.04x    
+06:46:41.823 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:41.823 SegmentComplete=video:0 Index=42 Start=252.043456 End=257.966033 Duration=5.922578 offset_pts=0 start_pts=252043456 Frames=144 filename=3C4C19_42.ts
+06:46:41.823 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_43.ts.tmp' for writing
+06:46:42.293 frame= 6262 fps= 74 q=-1.0 size=  812940kB time=00:04:21.09 bitrate=25840.9kbits/s throttle=off speed=3.05x    
+06:46:42.936 frame= 6319 fps= 74 q=-1.0 size=  820635kB time=00:04:23.47 bitrate=25847.0kbits/s throttle=off speed=3.06x    
+06:46:42.995 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:42.995 SegmentComplete=video:0 Index=43 Start=258.049456 End=263.930322 Duration=5.880867 offset_pts=0 start_pts=258049456 Frames=143 filename=3C4C19_43.ts
+06:46:42.995 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_44.ts.tmp' for writing
+06:46:43.811 frame= 6407 fps= 75 q=-1.0 size=  832577kB time=00:04:27.14 bitrate=25858.3kbits/s throttle=off speed=3.07x    
+06:46:44.311 frame= 6468 fps= 75 q=-1.0 size=  840802kB time=00:04:29.68 bitrate=25864.2kbits/s throttle=off speed=3.08x    
+06:46:44.362 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:44.363 SegmentComplete=video:0 Index=44 Start=264.013744 End=269.978033 Duration=5.964289 offset_pts=0 start_pts=264013744 Frames=145 filename=3C4C19_44.ts
+06:46:44.363 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_45.ts.tmp' for writing
+06:46:44.811 frame= 6518 fps= 75 q=-1.0 size=  847608kB time=00:04:31.77 bitrate=25871.0kbits/s throttle=off speed=3.09x    
+06:46:45.311 frame= 6547 fps= 75 q=-1.0 size=  851556kB time=00:04:32.98 bitrate=25874.9kbits/s throttle=off speed=3.08x    
+06:46:45.873 frame= 6581 fps= 75 q=-1.0 size=  856138kB time=00:04:34.39 bitrate=25878.0kbits/s throttle=off speed=3.08x    
+06:46:46.228 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:46.229 SegmentComplete=video:0 Index=45 Start=270.061456 End=275.942322 Duration=5.880867 offset_pts=0 start_pts=270061456 Frames=143 filename=3C4C19_45.ts
+06:46:46.229 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_46.ts.tmp' for writing
+06:46:46.680 frame= 6670 fps= 75 q=-1.0 size=  868243kB time=00:04:38.11 bitrate=25889.3kbits/s throttle=off speed=3.09x    
+06:46:47.181 frame= 6731 fps= 75 q=-1.0 size=  876426kB time=00:04:40.65 bitrate=25893.5kbits/s throttle=off speed= 3.1x    
+06:46:47.537 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:47.537 SegmentComplete=video:0 Index=46 Start=276.025744 End=282.031733 Duration=6.005989 offset_pts=0 start_pts=276025744 Frames=146 filename=3C4C19_46.ts
+06:46:47.537 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_47.ts.tmp' for writing
+06:46:47.681 frame= 6838 fps= 76 q=-1.0 size=  890858kB time=00:04:45.11 bitrate=25903.0kbits/s throttle=off speed=3.14x    
+06:46:48.242 frame= 6847 fps= 76 q=-1.0 size=  892133kB time=00:04:45.49 bitrate=25905.6kbits/s throttle=off speed=3.12x    
+06:46:48.457 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:48.458 SegmentComplete=video:0 Index=47 Start=282.115167 End=287.954322 Duration=5.839156 offset_pts=0 start_pts=282115167 Frames=142 filename=3C4C19_47.ts
+06:46:48.458 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_48.ts.tmp' for writing
+06:46:48.742 frame= 6956 fps= 77 q=-1.0 size=  906828kB time=00:04:50.03 bitrate=25914.7kbits/s throttle=off speed=3.15x    
+06:46:49.243 frame= 7037 fps= 77 q=-1.0 size=  917585kB time=00:04:53.41 bitrate=25916.6kbits/s throttle=off speed=3.17x    
+06:46:49.553 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:49.554 SegmentComplete=video:0 Index=48 Start=288.037744 End=294.002033 Duration=5.964289 offset_pts=0 start_pts=288037744 Frames=145 filename=3C4C19_48.ts
+06:46:49.554 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_49.ts.tmp' for writing
+06:46:49.748 frame= 7106 fps= 77 q=-1.0 size=  926975kB time=00:04:56.29 bitrate=25924.6kbits/s throttle=off speed=3.19x    
+06:46:50.248 frame= 7202 fps= 78 q=-1.0 size=  939955kB time=00:05:00.30 bitrate=25933.1kbits/s throttle=off speed=3.21x    
+06:46:50.282 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:50.283 SegmentComplete=video:0 Index=49 Start=294.085456 End=300.008033 Duration=5.922578 offset_pts=0 start_pts=294085456 Frames=144 filename=3C4C19_49.ts
+06:46:50.283 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_50.ts.tmp' for writing
+06:46:50.748 frame= 7292 fps= 78 q=-1.0 size=  952109kB time=00:05:04.05 bitrate=25940.5kbits/s throttle=off speed=3.24x    
+06:46:51.199 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:51.199 SegmentComplete=video:0 Index=50 Start=300.091456 End=305.972322 Duration=5.880867 offset_pts=0 start_pts=300091456 Frames=143 filename=3C4C19_50.ts
+06:46:51.199 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_51.ts.tmp' for writing
+06:46:51.347 frame= 7368 fps= 79 q=-1.0 size=  962378kB time=00:05:07.22 bitrate=25946.8kbits/s throttle=off speed=3.25x    
+06:46:51.928 frame= 7454 fps= 79 q=-1.0 size=  974139kB time=00:05:10.81 bitrate=25957.4kbits/s throttle=off speed=3.27x    
+06:46:52.043 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:52.043 SegmentComplete=video:0 Index=51 Start=306.055744 End=311.936611 Duration=5.880867 offset_pts=0 start_pts=306055744 Frames=143 filename=3C4C19_51.ts
+06:46:52.043 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_52.ts.tmp' for writing
+06:46:52.463 frame= 7542 fps= 80 q=-1.0 size=  985830kB time=00:05:14.48 bitrate=25959.0kbits/s throttle=off speed=3.29x    
+06:46:53.065 frame= 7631 fps= 80 q=-1.0 size=  997925kB time=00:05:18.19 bitrate=25967.7kbits/s throttle=off speed=3.31x    
+06:46:53.089 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:53.090 SegmentComplete=video:0 Index=52 Start=312.020033 End=317.942611 Duration=5.922578 offset_pts=0 start_pts=312020033 Frames=144 filename=3C4C19_52.ts
+06:46:53.090 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_53.ts.tmp' for writing
+06:46:53.620 frame= 7720 fps= 81 q=-1.0 size= 1009855kB time=00:05:21.90 bitrate=25971.9kbits/s throttle=off speed=3.33x    
+06:46:53.894 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:53.895 SegmentComplete=video:0 Index=53 Start=318.026033 End=323.948611 Duration=5.922578 offset_pts=0 start_pts=318026033 Frames=144 filename=3C4C19_53.ts
+06:46:53.895 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_54.ts.tmp' for writing
+06:46:54.216 frame= 7809 fps= 81 q=-1.0 size= 1021829kB time=00:05:25.61 bitrate=25977.1kbits/s throttle=off speed=3.34x    
+06:46:54.716 frame= 7905 fps= 82 q=-1.0 size= 1034821kB time=00:05:29.62 bitrate=25984.5kbits/s throttle=off speed=3.37x    
+06:46:54.774 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:54.775 SegmentComplete=video:0 Index=54 Start=324.032033 End=329.996322 Duration=5.964289 offset_pts=0 start_pts=324032033 Frames=145 filename=3C4C19_54.ts
+06:46:54.775 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_55.ts.tmp' for writing
+06:46:55.216 frame= 7973 fps= 82 q=-1.0 size= 1044022kB time=00:05:32.45 bitrate=25989.6kbits/s throttle=off speed=3.38x    
+06:46:55.836 frame= 8073 fps= 82 q=-1.0 size= 1057373kB time=00:05:36.62 bitrate=25992.5kbits/s throttle=off speed= 3.4x    
+06:46:55.838 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:55.838 SegmentComplete=video:0 Index=55 Start=330.079744 End=336.002322 Duration=5.922578 offset_pts=0 start_pts=330079744 Frames=144 filename=3C4C19_55.ts
+06:46:55.839 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_56.ts.tmp' for writing
+06:46:56.337 frame= 8189 fps= 83 q=-1.0 size= 1073024kB time=00:05:41.46 bitrate=25999.8kbits/s throttle=off speed=3.43x    
+06:46:56.522 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:56.523 SegmentComplete=video:0 Index=56 Start=336.085744 End=342.008322 Duration=5.922578 offset_pts=0 start_pts=336085744 Frames=144 filename=3C4C19_56.ts
+06:46:56.523 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_57.ts.tmp' for writing
+06:46:56.860 frame= 8289 fps= 84 q=-1.0 size= 1086567kB time=00:05:45.63 bitrate=26007.1kbits/s throttle=off speed=3.46x    
+06:46:57.170 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:57.171 SegmentComplete=video:0 Index=57 Start=342.091744 End=347.972611 Duration=5.880867 offset_pts=0 start_pts=342091744 Frames=143 filename=3C4C19_57.ts
+06:46:57.171 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_58.ts.tmp' for writing
+06:46:57.360 frame= 8419 fps= 85 q=-1.0 size= 1103348kB time=00:05:51.05 bitrate=25996.9kbits/s throttle=off speed=3.49x    
+06:46:57.860 frame= 8492 fps= 85 q=-1.0 size= 1113162kB time=00:05:54.10 bitrate=26000.5kbits/s throttle=off speed=3.51x    
+06:46:57.887 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:57.887 SegmentComplete=video:0 Index=58 Start=348.056033 End=353.936900 Duration=5.880867 offset_pts=0 start_pts=348056033 Frames=143 filename=3C4C19_58.ts
+06:46:57.887 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_59.ts.tmp' for writing
+06:46:58.442 frame= 8513 fps= 85 q=-1.0 size= 1116032kB time=00:05:54.97 bitrate=26002.6kbits/s throttle=off speed=3.49x    
+06:46:59.061 frame= 8600 fps= 85 q=-1.0 size= 1127854kB time=00:05:58.60 bitrate=26009.6kbits/s throttle=off speed=3.51x    
+06:46:59.275 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:46:59.275 SegmentComplete=video:0 Index=59 Start=354.020333 End=359.984611 Duration=5.964278 offset_pts=0 start_pts=354020333 Frames=145 filename=3C4C19_59.ts
+06:46:59.275 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_60.ts.tmp' for writing
+06:46:59.591 frame= 8686 fps= 85 q=-1.0 size= 1139408kB time=00:06:02.19 bitrate=26013.4kbits/s throttle=off speed=3.53x    
+06:47:00.245 frame= 8770 fps= 86 q=-1.0 size= 1150769kB time=00:06:05.69 bitrate=26018.7kbits/s throttle=off speed=3.54x    
+06:47:00.297 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:00.297 SegmentComplete=video:0 Index=60 Start=360.068033 End=365.948900 Duration=5.880867 offset_pts=0 start_pts=360068033 Frames=143 filename=3C4C19_60.ts
+06:47:00.297 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_61.ts.tmp' for writing
+06:47:00.757 frame= 8854 fps= 86 q=-1.0 size= 1162002kB time=00:06:09.20 bitrate=26021.1kbits/s throttle=off speed=3.55x    
+06:47:01.113 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:01.113 SegmentComplete=video:0 Index=61 Start=366.032333 End=372.038322 Duration=6.005989 offset_pts=0 start_pts=366032333 Frames=146 filename=3C4C19_61.ts
+06:47:01.113 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_62.ts.tmp' for writing
+06:47:01.258 frame= 8956 fps= 87 q=-1.0 size= 1175119kB time=00:06:13.45 bitrate=26012.3kbits/s throttle=off speed=3.58x    
+06:47:01.758 frame= 9068 fps= 87 q=-1.0 size= 1190290kB time=00:06:18.12 bitrate=26019.7kbits/s throttle=off speed=3.61x    
+06:47:01.788 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:01.789 SegmentComplete=video:0 Index=62 Start=372.121744 End=377.960900 Duration=5.839156 offset_pts=0 start_pts=372121744 Frames=142 filename=3C4C19_62.ts
+06:47:01.789 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_63.ts.tmp' for writing
+06:47:02.264 frame= 9184 fps= 88 q=-1.0 size= 1205877kB time=00:06:22.96 bitrate=26024.4kbits/s throttle=off speed=3.63x    
+06:47:02.501 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:02.501 SegmentComplete=video:0 Index=63 Start=378.044333 End=384.008611 Duration=5.964278 offset_pts=0 start_pts=378044333 Frames=145 filename=3C4C19_63.ts
+06:47:02.501 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_64.ts.tmp' for writing
+06:47:02.825 frame= 9269 fps= 88 q=-1.0 size= 1217225kB time=00:06:26.51 bitrate=26026.2kbits/s throttle=off speed=3.65x    
+06:47:03.368 frame= 9354 fps= 89 q=-1.0 size= 1228675kB time=00:06:30.05 bitrate=26030.2kbits/s throttle=off speed=3.66x    
+06:47:03.397 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:03.398 SegmentComplete=video:0 Index=64 Start=384.092033 End=389.931200 Duration=5.839167 offset_pts=0 start_pts=384092033 Frames=142 filename=3C4C19_64.ts
+06:47:03.398 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_65.ts.tmp' for writing
+06:47:04.019 frame= 9438 fps= 89 q=-1.0 size= 1240014kB time=00:06:33.55 bitrate=26034.5kbits/s throttle=off speed=3.67x    
+06:47:04.263 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:04.263 SegmentComplete=video:0 Index=65 Start=390.014622 End=395.978900 Duration=5.964278 offset_pts=0 start_pts=390014622 Frames=145 filename=3C4C19_65.ts
+06:47:04.263 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_66.ts.tmp' for writing
+06:47:04.572 frame= 9520 fps= 89 q=-1.0 size= 1251122kB time=00:06:36.97 bitrate=26039.5kbits/s throttle=off speed=3.69x    
+06:47:05.093 frame= 9608 fps= 90 q=-1.0 size= 1262936kB time=00:06:40.65 bitrate=26042.5kbits/s throttle=off speed= 3.7x    
+06:47:05.226 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:05.226 SegmentComplete=video:0 Index=66 Start=396.062333 End=401.984900 Duration=5.922567 offset_pts=0 start_pts=396062333 Frames=144 filename=3C4C19_66.ts
+06:47:05.226 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_67.ts.tmp' for writing
+06:47:06.103 frame= 9705 fps= 90 q=-1.0 size= 1274643kB time=00:06:44.69 bitrate=26019.0kbits/s throttle=off speed=3.71x    
+06:47:06.584 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:06.584 SegmentComplete=video:0 Index=67 Start=402.068333 End=407.949200 Duration=5.880867 offset_pts=0 start_pts=402068333 Frames=143 filename=3C4C19_67.ts
+06:47:06.584 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_68.ts.tmp' for writing
+06:47:06.603 frame= 9806 fps= 90 q=-1.0 size= 1287833kB time=00:06:48.90 bitrate=26015.1kbits/s throttle=off speed=3.73x    
+06:47:07.150 frame= 9886 fps= 90 q=-1.0 size= 1298132kB time=00:06:52.24 bitrate=26009.2kbits/s throttle=off speed=3.74x    
+06:47:07.400 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:07.400 SegmentComplete=video:0 Index=68 Start=408.032622 End=413.996900 Duration=5.964278 offset_pts=0 start_pts=408032622 Frames=145 filename=3C4C19_68.ts
+06:47:07.400 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_69.ts.tmp' for writing
+06:47:07.734 frame= 9975 fps= 91 q=-1.0 size= 1310115kB time=00:06:55.95 bitrate=26013.1kbits/s throttle=off speed=3.75x    
+06:47:08.308 frame=10064 fps= 91 q=-1.0 size= 1322037kB time=00:06:59.66 bitrate=26015.8kbits/s throttle=off speed=3.77x    
+06:47:08.376 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:08.376 SegmentComplete=video:0 Index=69 Start=414.080333 End=420.002900 Duration=5.922567 offset_pts=0 start_pts=414080333 Frames=144 filename=3C4C19_69.ts
+06:47:08.376 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_70.ts.tmp' for writing
+06:47:08.881 frame=10152 fps= 91 q=-1.0 size= 1333945kB time=00:07:03.33 bitrate=26020.7kbits/s throttle=off speed=3.78x    
+06:47:09.219 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:09.219 SegmentComplete=video:0 Index=70 Start=420.044622 End=425.925489 Duration=5.880867 offset_pts=0 start_pts=420044622 Frames=142 filename=3C4C19_70.ts
+06:47:09.219 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_71.ts.tmp' for writing
+06:47:09.492 frame=10242 fps= 92 q=-1.0 size= 1346169kB time=00:07:07.09 bitrate=26026.5kbits/s throttle=off speed=3.79x    
+06:47:10.110 frame=10330 fps= 92 q=-1.0 size= 1358045kB time=00:07:10.76 bitrate=26030.6kbits/s throttle=off speed=3.81x    
+06:47:10.310 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:10.310 SegmentComplete=video:0 Index=71 Start=426.008911 End=432.014900 Duration=6.005989 offset_pts=0 start_pts=426008911 Frames=146 filename=3C4C19_71.ts
+06:47:10.310 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_72.ts.tmp' for writing
+06:47:10.633 frame=10417 fps= 92 q=-1.0 size= 1369781kB time=00:07:14.39 bitrate=26034.5kbits/s throttle=off speed=3.82x    
+06:47:11.313 frame=10505 fps= 93 q=-1.0 size= 1381693kB time=00:07:18.06 bitrate=26039.2kbits/s throttle=off speed=3.83x    
+06:47:11.342 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:11.343 SegmentComplete=video:0 Index=72 Start=432.056622 End=437.979200 Duration=5.922578 offset_pts=0 start_pts=432056622 Frames=143 filename=3C4C19_72.ts
+06:47:11.343 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_73.ts.tmp' for writing
+06:47:13.141 frame=10631 fps= 92 q=-1.0 size= 1398604kB time=00:07:23.31 bitrate=26043.0kbits/s throttle=off speed=3.82x    
+06:47:13.579 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:13.580 SegmentComplete=video:0 Index=73 Start=438.062622 End=443.943489 Duration=5.880867 offset_pts=0 start_pts=438062622 Frames=143 filename=3C4C19_73.ts
+06:47:13.580 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_74.ts.tmp' for writing
+06:47:14.032 frame=10665 fps= 92 q=-1.0 size= 1403186kB time=00:07:24.73 bitrate=26044.4kbits/s throttle=off speed= 3.8x    
+06:47:14.754 frame=10687 fps= 91 q=-1.0 size= 1406123kB time=00:07:25.65 bitrate=26044.8kbits/s throttle=off speed=3.78x    
+06:47:15.298 frame=10697 fps= 91 q=-1.0 size= 1407489kB time=00:07:26.07 bitrate=26045.5kbits/s throttle=off speed=3.77x    
+06:47:15.798 frame=10728 fps= 91 q=-1.0 size= 1411710kB time=00:07:27.36 bitrate=26047.5kbits/s throttle=off speed=3.76x    
+06:47:16.347 frame=10736 fps= 91 q=-1.0 size= 1412783kB time=00:07:27.69 bitrate=26047.8kbits/s throttle=off speed=3.75x    
+06:47:17.292 frame=10781 fps= 90 q=-1.0 size= 1418851kB time=00:07:29.57 bitrate=26049.6kbits/s throttle=off speed=3.74x    
+06:47:17.380 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:17.381 SegmentComplete=video:0 Index=74 Start=444.026911 End=450.032900 Duration=6.005989 offset_pts=0 start_pts=444026911 Frames=146 filename=3C4C19_74.ts
+06:47:17.381 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_75.ts.tmp' for writing
+06:47:17.848 frame=10819 fps= 90 q=-1.0 size= 1424108kB time=00:07:31.15 bitrate=26053.6kbits/s throttle=off speed=3.73x    
+06:47:18.392 frame=10831 fps= 90 q=-1.0 size= 1425585kB time=00:07:31.65 bitrate=26051.5kbits/s throttle=off speed=3.72x    
+06:47:18.976 frame=10869 fps= 90 q=-1.0 size= 1430753kB time=00:07:33.24 bitrate=26053.8kbits/s throttle=off speed=3.71x    
+06:47:19.583 frame=10902 fps= 90 q=-1.0 size= 1435276kB time=00:07:34.62 bitrate=26056.5kbits/s throttle=off speed=3.71x    
+06:47:20.083 frame=10950 fps= 90 q=-1.0 size= 1441729kB time=00:07:36.62 bitrate=26058.0kbits/s throttle=off speed=3.71x    
+06:47:20.086 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:20.086 SegmentComplete=video:0 Index=75 Start=450.116333 End=455.997200 Duration=5.880867 offset_pts=0 start_pts=450116333 Frames=143 filename=3C4C19_75.ts
+06:47:20.086 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_76.ts.tmp' for writing
+06:47:20.583 frame=11004 fps= 90 q=-1.0 size= 1448920kB time=00:07:38.87 bitrate=26058.5kbits/s throttle=off speed=3.71x    
+06:47:21.090 frame=11058 fps= 90 q=-1.0 size= 1456172kB time=00:07:41.12 bitrate=26060.1kbits/s throttle=off speed=3.71x    
+06:47:21.527 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:21.528 SegmentComplete=video:0 Index=76 Start=456.080622 End=461.919778 Duration=5.839156 offset_pts=0 start_pts=456080622 Frames=142 filename=3C4C19_76.ts
+06:47:21.528 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_77.ts.tmp' for writing
+06:47:21.590 frame=11117 fps= 90 q=-1.0 size= 1464152kB time=00:07:43.58 bitrate=26062.8kbits/s throttle=off speed=3.72x    
+06:47:22.091 frame=11140 fps= 90 q=-1.0 size= 1467240kB time=00:07:44.54 bitrate=26063.4kbits/s throttle=off speed=3.71x    
+06:47:22.652 frame=11168 fps= 89 q=-1.0 size= 1471033kB time=00:07:45.71 bitrate=26064.8kbits/s throttle=off speed= 3.7x    
+06:47:23.282 frame=11211 fps= 89 q=-1.0 size= 1476892kB time=00:07:47.50 bitrate=26067.5kbits/s throttle=off speed= 3.7x    
+06:47:23.357 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:23.358 SegmentComplete=video:0 Index=77 Start=462.003200 End=467.925778 Duration=5.922578 offset_pts=0 start_pts=462003200 Frames=144 filename=3C4C19_77.ts
+06:47:23.358 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_78.ts.tmp' for writing
+06:47:23.874 frame=11255 fps= 89 q=-1.0 size= 1482852kB time=00:07:49.34 bitrate=26069.6kbits/s throttle=off speed= 3.7x    
+06:47:24.656 frame=11299 fps= 89 q=-1.0 size= 1488768kB time=00:07:51.17 bitrate=26070.9kbits/s throttle=off speed=3.69x    
+06:47:25.157 frame=11349 fps= 89 q=-1.0 size= 1495601kB time=00:07:53.26 bitrate=26074.3kbits/s throttle=off speed=3.69x    
+06:47:25.231 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:25.231 SegmentComplete=video:0 Index=78 Start=468.009200 End=473.931778 Duration=5.922578 offset_pts=0 start_pts=468009200 Frames=144 filename=3C4C19_78.ts
+06:47:25.231 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_79.ts.tmp' for writing
+06:47:25.657 frame=11389 fps= 89 q=-1.0 size= 1500968kB time=00:07:54.93 bitrate=26075.3kbits/s throttle=off speed=3.69x    
+06:47:26.160 frame=11442 fps= 89 q=-1.0 size= 1508126kB time=00:07:57.14 bitrate=26077.4kbits/s throttle=off speed=3.69x    
+06:47:26.682 frame=11478 fps= 89 q=-1.0 size= 1512958kB time=00:07:58.64 bitrate=26078.3kbits/s throttle=off speed=3.69x    
+06:47:27.182 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:27.183 SegmentComplete=video:0 Index=79 Start=474.015200 End=479.979489 Duration=5.964289 offset_pts=0 start_pts=474015200 Frames=145 filename=3C4C19_79.ts
+06:47:27.183 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_80.ts.tmp' for writing
+06:47:27.183 frame=11525 fps= 89 q=-1.0 size= 1519463kB time=00:08:00.60 bitrate=26082.9kbits/s throttle=off speed=3.69x    
+06:47:27.683 frame=11585 fps= 89 q=-1.0 size= 1527518kB time=00:08:03.10 bitrate=26084.4kbits/s throttle=off speed=3.69x    
+06:47:28.263 frame=11610 fps= 89 q=-1.0 size= 1530860kB time=00:08:04.15 bitrate=26084.7kbits/s throttle=off speed=3.69x    
+06:47:28.887 frame=11653 fps= 89 q=-1.0 size= 1536632kB time=00:08:05.94 bitrate=26085.8kbits/s throttle=off speed=3.68x    
+06:47:28.955 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:28.956 SegmentComplete=video:0 Index=80 Start=480.062911 End=486.027200 Duration=5.964289 offset_pts=0 start_pts=480062911 Frames=145 filename=3C4C19_80.ts
+06:47:28.956 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_81.ts.tmp' for writing
+06:47:29.413 frame=11699 fps= 89 q=-1.0 size= 1542887kB time=00:08:07.86 bitrate=26088.2kbits/s throttle=off speed=3.68x    
+06:47:29.955 frame=11743 fps= 89 q=-1.0 size= 1548867kB time=00:08:09.69 bitrate=26090.5kbits/s throttle=off speed=3.68x    
+06:47:30.577 frame=11788 fps= 89 q=-1.0 size= 1554898kB time=00:08:11.57 bitrate=26091.4kbits/s throttle=off speed=3.68x    
+06:47:30.637 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:30.638 SegmentComplete=video:0 Index=81 Start=486.027200 End=492.033200 Duration=6.006000 offset_pts=0 start_pts=486027200 Frames=144 filename=3C4C19_81.ts
+06:47:30.638 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_82.ts.tmp' for writing
+06:47:31.145 frame=11832 fps= 89 q=-1.0 size= 1560815kB time=00:08:13.40 bitrate=26092.6kbits/s throttle=off speed=3.68x    
+06:47:31.793 frame=11876 fps= 89 q=-1.0 size= 1566789kB time=00:08:15.24 bitrate=26094.8kbits/s throttle=off speed=3.67x    
+06:47:32.338 frame=11920 fps= 89 q=-1.0 size= 1572836kB time=00:08:17.07 bitrate=26098.1kbits/s throttle=off speed=3.67x    
+06:47:32.425 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:32.425 SegmentComplete=video:0 Index=82 Start=492.116622 End=498.039200 Duration=5.922578 offset_pts=0 start_pts=492116622 Frames=144 filename=3C4C19_82.ts
+06:47:32.425 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_83.ts.tmp' for writing
+06:47:32.838 frame=11975 fps= 89 q=-1.0 size= 1580165kB time=00:08:19.37 bitrate=26098.4kbits/s throttle=off speed=3.67x    
+06:47:33.442 frame=12011 fps= 89 q=-1.0 size= 1585004kB time=00:08:20.87 bitrate=26099.4kbits/s throttle=off speed=3.67x    
+06:47:33.942 frame=12063 fps= 89 q=-1.0 size= 1592085kB time=00:08:23.04 bitrate=26102.2kbits/s throttle=off speed=3.67x    
+06:47:34.759 frame=12101 fps= 88 q=-1.0 size= 1597014kB time=00:08:24.62 bitrate=26100.2kbits/s throttle=off speed=3.66x    
+06:47:34.762 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:34.762 SegmentComplete=video:0 Index=83 Start=498.122622 End=504.003489 Duration=5.880867 offset_pts=0 start_pts=498122622 Frames=143 filename=3C4C19_83.ts
+06:47:34.762 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_84.ts.tmp' for writing
+06:47:35.281 frame=12144 fps= 88 q=-1.0 size= 1602706kB time=00:08:26.42 bitrate=26099.8kbits/s throttle=off speed=3.66x    
+06:47:35.893 frame=12189 fps= 88 q=-1.0 size= 1608761kB time=00:08:28.29 bitrate=26101.0kbits/s throttle=off speed=3.66x    
+06:47:36.420 frame=12234 fps= 88 q=-1.0 size= 1614627kB time=00:08:30.17 bitrate=26099.2kbits/s throttle=off speed=3.66x    
+06:47:36.443 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:36.443 SegmentComplete=video:0 Index=84 Start=504.086911 End=509.926067 Duration=5.839156 offset_pts=0 start_pts=504086911 Frames=142 filename=3C4C19_84.ts
+06:47:36.444 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_85.ts.tmp' for writing
+06:47:37.040 frame=12280 fps= 88 q=-1.0 size= 1620871kB time=00:08:32.09 bitrate=26101.3kbits/s throttle=off speed=3.65x    
+06:47:37.540 frame=12361 fps= 88 q=-1.0 size= 1631650kB time=00:08:35.47 bitrate=26101.6kbits/s throttle=off speed=3.67x    
+06:47:38.191 frame=12369 fps= 88 q=-1.0 size= 1632744kB time=00:08:35.80 bitrate=26102.1kbits/s throttle=off speed=3.65x    
+06:47:38.249 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:38.250 SegmentComplete=video:0 Index=85 Start=510.009500 End=515.932067 Duration=5.922567 offset_pts=0 start_pts=510009500 Frames=144 filename=3C4C19_85.ts
+06:47:38.250 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_86.ts.tmp' for writing
+06:47:38.877 frame=12458 fps= 88 q=-1.0 size= 1644826kB time=00:08:39.51 bitrate=26106.1kbits/s throttle=off speed=3.66x    
+06:47:39.070 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:39.071 SegmentComplete=video:0 Index=86 Start=516.015500 End=521.938067 Duration=5.922567 offset_pts=0 start_pts=516015500 Frames=144 filename=3C4C19_86.ts
+06:47:39.071 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_87.ts.tmp' for writing
+06:47:39.748 frame=12548 fps= 88 q=-1.0 size= 1656913kB time=00:08:43.27 bitrate=26108.1kbits/s throttle=off speed=3.66x    
+06:47:40.353 frame=12638 fps= 89 q=-1.0 size= 1668937kB time=00:08:47.02 bitrate=26109.0kbits/s throttle=off speed=3.67x    
+06:47:40.439 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:40.439 SegmentComplete=video:0 Index=87 Start=522.021500 End=527.985778 Duration=5.964278 offset_pts=0 start_pts=522021500 Frames=145 filename=3C4C19_87.ts
+06:47:40.439 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_88.ts.tmp' for writing
+06:47:40.941 frame=12725 fps= 89 q=-1.0 size= 1680723kB time=00:08:50.65 bitrate=26112.4kbits/s throttle=off speed=3.68x    
+06:47:41.663 frame=12814 fps= 89 q=-1.0 size= 1692744kB time=00:08:54.36 bitrate=26115.3kbits/s throttle=off speed=3.69x    
+06:47:41.677 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:41.678 SegmentComplete=video:0 Index=88 Start=528.069200 End=533.991778 Duration=5.922578 offset_pts=0 start_pts=528069200 Frames=144 filename=3C4C19_88.ts
+06:47:41.678 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_89.ts.tmp' for writing
+06:47:42.373 frame=12902 fps= 89 q=-1.0 size= 1704512kB time=00:08:58.03 bitrate=26116.4kbits/s throttle=off speed= 3.7x    
+06:47:42.591 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:42.592 SegmentComplete=video:0 Index=89 Start=534.075200 End=539.997778 Duration=5.922578 offset_pts=0 start_pts=534075200 Frames=144 filename=3C4C19_89.ts
+06:47:42.592 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_90.ts.tmp' for writing
+06:47:42.920 frame=12988 fps= 90 q=-1.0 size= 1716193kB time=00:09:01.62 bitrate=26120.1kbits/s throttle=off speed=3.71x    
+06:47:43.847 frame=13074 fps= 90 q=-1.0 size= 1727830kB time=00:09:05.21 bitrate=26123.2kbits/s throttle=off speed=3.71x    
+06:47:43.922 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:43.923 SegmentComplete=video:0 Index=90 Start=540.081200 End=545.962067 Duration=5.880867 offset_pts=0 start_pts=540081200 Frames=143 filename=3C4C19_90.ts
+06:47:43.923 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_91.ts.tmp' for writing
+06:47:44.833 frame=13160 fps= 90 q=-1.0 size= 1739481kB time=00:09:08.79 bitrate=26126.3kbits/s throttle=off speed=3.71x    
+06:47:45.614 frame=13245 fps= 90 q=-1.0 size= 1750998kB time=00:09:12.34 bitrate=26129.5kbits/s throttle=off speed=3.71x    
+06:47:45.628 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:45.629 SegmentComplete=video:0 Index=91 Start=546.045500 End=551.968067 Duration=5.922567 offset_pts=0 start_pts=546045500 Frames=144 filename=3C4C19_91.ts
+06:47:45.629 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_92.ts.tmp' for writing
+06:47:46.114 frame=13332 fps= 90 q=-1.0 size= 1762653kB time=00:09:15.97 bitrate=26130.7kbits/s throttle=off speed=3.73x    
+06:47:46.407 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:46.408 SegmentComplete=video:0 Index=92 Start=552.051500 End=557.932367 Duration=5.880867 offset_pts=0 start_pts=552051500 Frames=143 filename=3C4C19_92.ts
+06:47:46.408 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_93.ts.tmp' for writing
+06:47:46.823 frame=13419 fps= 90 q=-1.0 size= 1774183kB time=00:09:19.60 bitrate=26130.0kbits/s throttle=off speed=3.73x    
+06:47:47.391 frame=13506 fps= 90 q=-1.0 size= 1785766kB time=00:09:23.22 bitrate=26130.2kbits/s throttle=off speed=3.74x    
+06:47:47.478 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:47.479 SegmentComplete=video:0 Index=93 Start=558.015789 End=563.938367 Duration=5.922578 offset_pts=0 start_pts=558015789 Frames=144 filename=3C4C19_93.ts
+06:47:47.479 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_94.ts.tmp' for writing
+06:47:47.952 frame=13592 fps= 91 q=-1.0 size= 1797421kB time=00:09:26.81 bitrate=26133.3kbits/s throttle=off speed=3.75x    
+06:47:48.453 frame=13673 fps= 91 q=-1.0 size= 1808215kB time=00:09:30.19 bitrate=26133.5kbits/s throttle=off speed=3.76x    
+06:47:48.597 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:48.598 SegmentComplete=video:0 Index=94 Start=564.021789 End=570.027778 Duration=6.005989 offset_pts=0 start_pts=564021789 Frames=146 filename=3C4C19_94.ts
+06:47:48.598 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_95.ts.tmp' for writing
+06:47:49.071 frame=13720 fps= 91 q=-1.0 size= 1814287kB time=00:09:32.15 bitrate=26130.9kbits/s throttle=off speed=3.76x    
+06:47:49.645 frame=13806 fps= 91 q=-1.0 size= 1825758kB time=00:09:35.74 bitrate=26131.3kbits/s throttle=off speed=3.77x    
+06:47:49.711 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:49.712 SegmentComplete=video:0 Index=95 Start=570.111200 End=575.992067 Duration=5.880867 offset_pts=0 start_pts=570111200 Frames=143 filename=3C4C19_95.ts
+06:47:49.712 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_96.ts.tmp' for writing
+06:47:50.346 frame=13891 fps= 91 q=-1.0 size= 1837198kB time=00:09:39.28 bitrate=26133.2kbits/s throttle=off speed=3.78x    
+06:47:50.733 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:50.733 SegmentComplete=video:0 Index=96 Start=576.075500 End=581.956367 Duration=5.880867 offset_pts=0 start_pts=576075500 Frames=143 filename=3C4C19_96.ts
+06:47:50.733 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_97.ts.tmp' for writing
+06:47:50.905 frame=13979 fps= 91 q=-1.0 size= 1849068kB time=00:09:42.95 bitrate=26135.5kbits/s throttle=off speed=3.79x    
+06:47:51.467 frame=14065 fps= 92 q=-1.0 size= 1860715kB time=00:09:46.54 bitrate=26138.3kbits/s throttle=off speed= 3.8x    
+06:47:52.144 frame=14111 fps= 91 q=-1.0 size= 1866435kB time=00:09:48.46 bitrate=26132.7kbits/s throttle=off speed=3.79x    
+06:47:52.153 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:52.154 SegmentComplete=video:0 Index=97 Start=582.039789 End=588.004067 Duration=5.964278 offset_pts=0 start_pts=582039789 Frames=145 filename=3C4C19_97.ts
+06:47:52.154 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_98.ts.tmp' for writing
+06:47:52.721 frame=14196 fps= 92 q=-1.0 size= 1877936kB time=00:09:52.00 bitrate=26135.4kbits/s throttle=off speed= 3.8x    
+06:47:53.207 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:53.207 SegmentComplete=video:0 Index=98 Start=588.087500 End=593.926656 Duration=5.839156 offset_pts=0 start_pts=588087500 Frames=142 filename=3C4C19_98.ts
+06:47:53.207 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_99.ts.tmp' for writing
+06:47:53.221 frame=14263 fps= 92 q=-1.0 size= 1887065kB time=00:09:54.80 bitrate=26138.3kbits/s throttle=off speed=3.81x    
+06:47:53.777 frame=14325 fps= 92 q=-1.0 size= 1895169kB time=00:09:57.38 bitrate=26136.3kbits/s throttle=off speed=3.81x    
+06:47:54.228 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:54.229 SegmentComplete=video:0 Index=99 Start=594.010078 End=599.932656 Duration=5.922578 offset_pts=0 start_pts=594010078 Frames=144 filename=3C4C19_99.ts
+06:47:54.229 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_100.ts.tmp' for writing
+06:47:54.438 frame=14415 fps= 92 q=-1.0 size= 1907174kB time=00:10:01.14 bitrate=26136.7kbits/s throttle=off speed=3.82x    
+06:47:54.938 frame=14485 fps= 92 q=-1.0 size= 1916840kB time=00:10:04.06 bitrate=26141.5kbits/s throttle=off speed=3.82x    
+06:47:55.451 frame=14543 fps= 92 q=-1.0 size= 1924528kB time=00:10:06.48 bitrate=26141.1kbits/s throttle=off speed=3.83x    
+06:47:55.462 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:55.462 SegmentComplete=video:0 Index=100 Start=600.016078 End=606.022067 Duration=6.005989 offset_pts=0 start_pts=600016078 Frames=146 filename=3C4C19_100.ts
+06:47:55.462 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_101.ts.tmp' for writing
+06:47:56.131 frame=14631 fps= 92 q=-1.0 size= 1936240kB time=00:10:10.15 bitrate=26141.0kbits/s throttle=off speed=3.83x    
+06:47:56.503 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:56.503 SegmentComplete=video:0 Index=101 Start=606.105500 End=611.944656 Duration=5.839156 offset_pts=0 start_pts=606105500 Frames=142 filename=3C4C19_101.ts
+06:47:56.503 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_102.ts.tmp' for writing
+06:47:56.636 frame=14720 fps= 93 q=-1.0 size= 1947866kB time=00:10:13.86 bitrate=26138.1kbits/s throttle=off speed=3.84x    
+06:47:57.136 frame=14781 fps= 93 q=-1.0 size= 1956131kB time=00:10:16.40 bitrate=26140.1kbits/s throttle=off speed=3.85x    
+06:47:57.421 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:57.422 SegmentComplete=video:0 Index=102 Start=612.028078 End=617.950656 Duration=5.922578 offset_pts=0 start_pts=612028078 Frames=144 filename=3C4C19_102.ts
+06:47:57.422 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_103.ts.tmp' for writing
+06:47:57.637 frame=14857 fps= 93 q=-1.0 size= 1966418kB time=00:10:19.57 bitrate=26142.4kbits/s throttle=off speed=3.86x    
+06:47:58.237 frame=14939 fps= 93 q=-1.0 size= 1977477kB time=00:10:22.99 bitrate=26144.3kbits/s throttle=off speed=3.86x    
+06:47:58.360 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:58.360 SegmentComplete=video:0 Index=103 Start=618.034078 End=623.998367 Duration=5.964289 offset_pts=0 start_pts=618034078 Frames=145 filename=3C4C19_103.ts
+06:47:58.360 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_104.ts.tmp' for writing
+06:47:58.853 frame=15027 fps= 93 q=-1.0 size= 1989436kB time=00:10:26.66 bitrate=26147.5kbits/s throttle=off speed=3.87x    
+06:47:59.455 frame=15116 fps= 94 q=-1.0 size= 2001462kB time=00:10:30.37 bitrate=26149.8kbits/s throttle=off speed=3.88x    
+06:47:59.472 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:47:59.473 SegmentComplete=video:0 Index=104 Start=624.081789 End=629.962656 Duration=5.880867 offset_pts=0 start_pts=624081789 Frames=143 filename=3C4C19_104.ts
+06:47:59.473 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_105.ts.tmp' for writing
+06:48:00.005 frame=15202 fps= 94 q=-1.0 size= 2013056kB time=00:10:33.96 bitrate=26151.7kbits/s throttle=off speed=3.89x    
+06:48:00.490 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:00.490 SegmentComplete=video:0 Index=105 Start=630.046078 End=635.968656 Duration=5.922578 offset_pts=0 start_pts=630046078 Frames=144 filename=3C4C19_105.ts
+06:48:00.490 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_106.ts.tmp' for writing
+06:48:00.505 frame=15269 fps= 94 q=-1.0 size= 2022105kB time=00:10:36.76 bitrate=26153.4kbits/s throttle=off speed=3.89x    
+06:48:01.036 frame=15291 fps= 94 q=-1.0 size= 2025046kB time=00:10:37.67 bitrate=26153.5kbits/s throttle=off speed=3.89x    
+06:48:01.834 frame=15377 fps= 94 q=-1.0 size= 2036659kB time=00:10:41.26 bitrate=26155.6kbits/s throttle=off speed=3.89x    
+06:48:01.908 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:01.908 SegmentComplete=video:0 Index=106 Start=636.052078 End=642.016367 Duration=5.964289 offset_pts=0 start_pts=636052078 Frames=145 filename=3C4C19_106.ts
+06:48:01.908 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_107.ts.tmp' for writing
+06:48:02.337 frame=15464 fps= 94 q=-1.0 size= 2048436kB time=00:10:44.89 bitrate=26158.0kbits/s throttle=off speed= 3.9x    
+06:48:02.798 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:02.799 SegmentComplete=video:0 Index=107 Start=642.099789 End=647.938944 Duration=5.839156 offset_pts=0 start_pts=642099789 Frames=142 filename=3C4C19_107.ts
+06:48:02.799 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_108.ts.tmp' for writing
+06:48:02.862 frame=15552 fps= 94 q=-1.0 size= 2060205kB time=00:10:48.56 bitrate=26158.6kbits/s throttle=off speed=3.91x    
+06:48:03.363 frame=15622 fps= 94 q=-1.0 size= 2069720kB time=00:10:51.48 bitrate=26161.1kbits/s throttle=off speed=3.92x    
+06:48:03.863 frame=15681 fps= 94 q=-1.0 size= 2076398kB time=00:10:53.94 bitrate=26146.2kbits/s throttle=off speed=3.92x    
+06:48:03.993 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:03.994 SegmentComplete=video:0 Index=108 Start=648.022367 End=653.986656 Duration=5.964289 offset_pts=0 start_pts=648022367 Frames=145 filename=3C4C19_108.ts
+06:48:03.994 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_109.ts.tmp' for writing
+06:48:04.488 frame=15730 fps= 94 q=-1.0 size= 2082911kB time=00:10:55.98 bitrate=26146.1kbits/s throttle=off speed=3.92x    
+06:48:05.156 frame=15813 fps= 95 q=-1.0 size= 2094187kB time=00:10:59.45 bitrate=26148.9kbits/s throttle=off speed=3.92x    
+06:48:05.224 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:05.225 SegmentComplete=video:0 Index=109 Start=654.070078 End=660.034367 Duration=5.964289 offset_pts=0 start_pts=654070078 Frames=145 filename=3C4C19_109.ts
+06:48:05.225 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_110.ts.tmp' for writing
+06:48:05.819 frame=15895 fps= 95 q=-1.0 size= 2105237kB time=00:11:02.87 bitrate=26150.6kbits/s throttle=off speed=3.93x    
+06:48:06.488 frame=15977 fps= 95 q=-1.0 size= 2116121kB time=00:11:06.29 bitrate=26150.2kbits/s throttle=off speed=3.93x    
+06:48:06.509 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:06.509 SegmentComplete=video:0 Index=110 Start=660.117789 End=666.040367 Duration=5.922578 offset_pts=0 start_pts=660117789 Frames=144 filename=3C4C19_110.ts
+06:48:06.509 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_111.ts.tmp' for writing
+06:48:07.056 frame=16059 fps= 95 q=-1.0 size= 2127126kB time=00:11:09.71 bitrate=26151.2kbits/s throttle=off speed=3.94x    
+06:48:07.283 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:07.284 SegmentComplete=video:0 Index=111 Start=666.123789 End=671.962944 Duration=5.839156 offset_pts=0 start_pts=666123789 Frames=142 filename=3C4C19_111.ts
+06:48:07.284 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_112.ts.tmp' for writing
+06:48:07.596 frame=16140 fps= 95 q=-1.0 size= 2138061kB time=00:11:13.08 bitrate=26153.1kbits/s throttle=off speed=3.94x    
+06:48:08.097 frame=16218 fps= 95 q=-1.0 size= 2148506kB time=00:11:16.34 bitrate=26153.8kbits/s throttle=off speed=3.95x    
+06:48:08.628 frame=16266 fps= 95 q=-1.0 size= 2154994kB time=00:11:18.34 bitrate=26155.0kbits/s throttle=off speed=3.95x    
+06:48:08.645 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:08.645 SegmentComplete=video:0 Index=112 Start=672.046367 End=678.010656 Duration=5.964289 offset_pts=0 start_pts=672046367 Frames=145 filename=3C4C19_112.ts
+06:48:08.645 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_113.ts.tmp' for writing
+06:48:09.350 frame=16352 fps= 95 q=-1.0 size= 2166596kB time=00:11:21.93 bitrate=26156.8kbits/s throttle=off speed=3.96x    
+06:48:09.715 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:09.716 SegmentComplete=video:0 Index=113 Start=678.094078 End=683.933233 Duration=5.839156 offset_pts=0 start_pts=678094078 Frames=142 filename=3C4C19_113.ts
+06:48:09.716 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_114.ts.tmp' for writing
+06:48:09.984 frame=16440 fps= 95 q=-1.0 size= 2178511kB time=00:11:25.60 bitrate=26159.1kbits/s throttle=off speed=3.96x    
+06:48:10.484 frame=16504 fps= 96 q=-1.0 size= 2187149kB time=00:11:28.27 bitrate=26160.5kbits/s throttle=off speed=3.97x    
+06:48:10.678 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:10.679 SegmentComplete=video:0 Index=114 Start=684.016667 End=690.022656 Duration=6.005989 offset_pts=0 start_pts=684016667 Frames=146 filename=3C4C19_114.ts
+06:48:10.679 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_115.ts.tmp' for writing
+06:48:10.993 frame=16570 fps= 96 q=-1.0 size= 2196221kB time=00:11:31.02 bitrate=26163.8kbits/s throttle=off speed=3.97x    
+06:48:11.493 frame=16664 fps= 96 q=-1.0 size= 2208639kB time=00:11:34.94 bitrate=26162.6kbits/s throttle=off speed=3.98x    
+06:48:11.819 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:11.819 SegmentComplete=video:0 Index=115 Start=690.106078 End=695.986944 Duration=5.880867 offset_pts=0 start_pts=690106078 Frames=143 filename=3C4C19_115.ts
+06:48:11.820 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_116.ts.tmp' for writing
+06:48:12.101 frame=16743 fps= 96 q=-1.0 size= 2219343kB time=00:11:38.23 bitrate=26164.7kbits/s throttle=off speed=3.99x    
+06:48:12.638 frame=16830 fps= 96 q=-1.0 size= 2231023kB time=00:11:41.86 bitrate=26165.8kbits/s throttle=off speed=   4x    
+06:48:12.695 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:12.695 SegmentComplete=video:0 Index=116 Start=696.070367 End=701.951233 Duration=5.880867 offset_pts=0 start_pts=696070367 Frames=143 filename=3C4C19_116.ts
+06:48:12.695 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_117.ts.tmp' for writing
+06:48:13.731 frame=16874 fps= 96 q=-1.0 size= 2237004kB time=00:11:43.70 bitrate=26167.2kbits/s throttle=off speed=3.98x    
+06:48:14.379 frame=16960 fps= 96 q=-1.0 size= 2248667kB time=00:11:47.28 bitrate=26169.6kbits/s throttle=off speed=3.99x    
+06:48:14.453 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:14.453 SegmentComplete=video:0 Index=117 Start=702.034667 End=707.998944 Duration=5.964278 offset_pts=0 start_pts=702034667 Frames=145 filename=3C4C19_117.ts
+06:48:14.453 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_118.ts.tmp' for writing
+06:48:14.889 frame=17048 fps= 96 q=-1.0 size= 2260314kB time=00:11:50.96 bitrate=26168.7kbits/s throttle=off speed=   4x    
+06:48:15.389 frame=17116 fps= 96 q=-1.0 size= 2269181kB time=00:11:53.79 bitrate=26166.5kbits/s throttle=off speed=   4x    
+06:48:15.680 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:15.680 SegmentComplete=video:0 Index=118 Start=708.082367 End=714.004944 Duration=5.922578 offset_pts=0 start_pts=708082367 Frames=144 filename=3C4C19_118.ts
+06:48:15.680 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_119.ts.tmp' for writing
+06:48:15.889 frame=17189 fps= 97 q=-1.0 size= 2279037kB time=00:11:56.84 bitrate=26168.0kbits/s throttle=off speed=4.01x    
+06:48:16.390 frame=17256 fps= 97 q=-1.0 size= 2287187kB time=00:11:59.63 bitrate=26159.1kbits/s throttle=off speed=4.01x    
+06:48:16.543 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:16.544 SegmentComplete=video:0 Index=119 Start=714.088367 End=719.927533 Duration=5.839167 offset_pts=0 start_pts=714088367 Frames=142 filename=3C4C19_119.ts
+06:48:16.544 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_120.ts.tmp' for writing
+06:48:16.890 frame=17343 fps= 97 q=-1.0 size= 2298300kB time=00:12:03.26 bitrate=26153.7kbits/s throttle=off speed=4.02x    
+06:48:17.501 frame=17408 fps= 97 q=-1.0 size= 2307074kB time=00:12:05.97 bitrate=26155.0kbits/s throttle=off speed=4.02x    
+06:48:17.541 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:17.541 SegmentComplete=video:0 Index=120 Start=720.010956 End=725.975233 Duration=5.964278 offset_pts=0 start_pts=720010956 Frames=145 filename=3C4C19_120.ts
+06:48:17.541 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_121.ts.tmp' for writing
+06:48:18.074 frame=17497 fps= 97 q=-1.0 size= 2319067kB time=00:12:09.68 bitrate=26156.6kbits/s throttle=off speed=4.03x    
+06:48:18.402 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:18.402 SegmentComplete=video:0 Index=121 Start=726.058667 End=732.022944 Duration=5.964278 offset_pts=0 start_pts=726058667 Frames=145 filename=3C4C19_121.ts
+06:48:18.402 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_122.ts.tmp' for writing
+06:48:18.604 frame=17579 fps= 97 q=-1.0 size= 2330128kB time=00:12:13.10 bitrate=26158.2kbits/s throttle=off speed=4.04x    
+06:48:19.131 frame=17667 fps= 97 q=-1.0 size= 2342057kB time=00:12:16.77 bitrate=26160.6kbits/s throttle=off speed=4.05x    
+06:48:19.424 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:19.425 SegmentComplete=video:0 Index=122 Start=732.106367 End=737.987233 Duration=5.880867 offset_pts=0 start_pts=732106367 Frames=143 filename=3C4C19_122.ts
+06:48:19.425 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_123.ts.tmp' for writing
+06:48:19.806 frame=17752 fps= 98 q=-1.0 size= 2353589kB time=00:12:20.32 bitrate=26162.9kbits/s throttle=off speed=4.05x    
+06:48:20.517 frame=17837 fps= 98 q=-1.0 size= 2364935kB time=00:12:23.86 bitrate=26163.2kbits/s throttle=off speed=4.05x    
+06:48:20.559 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:20.560 SegmentComplete=video:0 Index=123 Start=738.070667 End=743.951533 Duration=5.880867 offset_pts=0 start_pts=738070667 Frames=143 filename=3C4C19_123.ts
+06:48:20.560 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_124.ts.tmp' for writing
+06:48:21.134 frame=17925 fps= 98 q=-1.0 size= 2376882kB time=00:12:27.53 bitrate=26165.6kbits/s throttle=off speed=4.06x    
+06:48:21.417 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:21.418 SegmentComplete=video:0 Index=124 Start=744.034956 End=750.040944 Duration=6.005989 offset_pts=0 start_pts=744034956 Frames=146 filename=3C4C19_124.ts
+06:48:21.418 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_125.ts.tmp' for writing
+06:48:21.820 frame=18011 fps= 98 q=-1.0 size= 2388448kB time=00:12:31.12 bitrate=26166.8kbits/s throttle=off speed=4.06x    
+06:48:22.447 frame=18097 fps= 98 q=-1.0 size= 2399955kB time=00:12:34.71 bitrate=26167.4kbits/s throttle=off speed=4.07x    
+06:48:22.564 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:22.565 SegmentComplete=video:0 Index=125 Start=750.124367 End=755.963533 Duration=5.839167 offset_pts=0 start_pts=750124367 Frames=142 filename=3C4C19_125.ts
+06:48:22.565 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_126.ts.tmp' for writing
+06:48:23.076 frame=18190 fps= 98 q=-1.0 size= 2411855kB time=00:12:38.59 bitrate=26162.0kbits/s throttle=off speed=4.08x    
+06:48:23.976 frame=18280 fps= 98 q=-1.0 size= 2423666kB time=00:12:42.34 bitrate=26160.1kbits/s throttle=off speed=4.08x    
+06:48:23.994 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:23.994 SegmentComplete=video:0 Index=126 Start=756.046956 End=762.011233 Duration=5.964278 offset_pts=0 start_pts=756046956 Frames=145 filename=3C4C19_126.ts
+06:48:23.994 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_127.ts.tmp' for writing
+06:48:24.499 frame=18371 fps= 98 q=-1.0 size= 2435325kB time=00:12:46.14 bitrate=26155.2kbits/s throttle=off speed=4.09x    
+06:48:24.678 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:24.678 SegmentComplete=video:0 Index=127 Start=762.094667 End=768.017233 Duration=5.922567 offset_pts=0 start_pts=762094667 Frames=144 filename=3C4C19_127.ts
+06:48:24.678 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_128.ts.tmp' for writing
+06:48:25.095 frame=18459 fps= 99 q=-1.0 size= 2447194kB time=00:12:49.81 bitrate=26156.8kbits/s throttle=off speed=4.09x    
+06:48:25.654 frame=18548 fps= 99 q=-1.0 size= 2458941kB time=00:12:53.52 bitrate=26155.7kbits/s throttle=off speed= 4.1x    
+06:48:25.715 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:25.716 SegmentComplete=video:0 Index=128 Start=768.100667 End=773.981533 Duration=5.880867 offset_pts=0 start_pts=768100667 Frames=143 filename=3C4C19_128.ts
+06:48:25.716 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_129.ts.tmp' for writing
+06:48:26.211 frame=18637 fps= 99 q=-1.0 size= 2470769kB time=00:12:57.23 bitrate=26155.4kbits/s throttle=off speed=4.11x    
+06:48:26.552 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:26.552 SegmentComplete=video:0 Index=129 Start=774.064956 End=779.987533 Duration=5.922578 offset_pts=0 start_pts=774064956 Frames=144 filename=3C4C19_129.ts
+06:48:26.553 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_130.ts.tmp' for writing
+06:48:26.876 frame=18727 fps= 99 q=-1.0 size= 2482952kB time=00:13:00.98 bitrate=26157.5kbits/s throttle=off speed=4.11x    
+06:48:27.630 frame=18815 fps= 99 q=-1.0 size= 2494886kB time=00:13:04.65 bitrate=26159.8kbits/s throttle=off speed=4.12x    
+06:48:27.824 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:27.824 SegmentComplete=video:0 Index=130 Start=780.070956 End=785.993533 Duration=5.922578 offset_pts=0 start_pts=780070956 Frames=144 filename=3C4C19_130.ts
+06:48:27.824 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_131.ts.tmp' for writing
+06:48:28.150 frame=18904 fps= 99 q=-1.0 size= 2506757kB time=00:13:08.37 bitrate=26159.9kbits/s throttle=off speed=4.12x    
+06:48:28.751 frame=18993 fps= 99 q=-1.0 size= 2518711kB time=00:13:12.08 bitrate=26161.0kbits/s throttle=off speed=4.13x    
+06:48:28.779 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:28.779 SegmentComplete=video:0 Index=131 Start=786.076956 End=791.957822 Duration=5.880867 offset_pts=0 start_pts=786076956 Frames=143 filename=3C4C19_131.ts
+06:48:28.779 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_132.ts.tmp' for writing
+06:48:29.326 frame=19081 fps=100 q=-1.0 size= 2530603kB time=00:13:15.75 bitrate=26162.7kbits/s throttle=off speed=4.14x    
+06:48:29.765 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:29.766 SegmentComplete=video:0 Index=132 Start=792.041244 End=798.005533 Duration=5.964289 offset_pts=0 start_pts=792041244 Frames=145 filename=3C4C19_132.ts
+06:48:29.766 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_133.ts.tmp' for writing
+06:48:30.009 frame=19169 fps=100 q=-1.0 size= 2542478kB time=00:13:19.42 bitrate=26164.3kbits/s throttle=off speed=4.14x    
+06:48:30.685 frame=19256 fps=100 q=-1.0 size= 2554246kB time=00:13:23.05 bitrate=26166.1kbits/s throttle=off speed=4.15x    
+06:48:30.782 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:30.782 SegmentComplete=video:0 Index=133 Start=798.088956 End=804.011533 Duration=5.922578 offset_pts=0 start_pts=798088956 Frames=144 filename=3C4C19_133.ts
+06:48:30.782 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_134.ts.tmp' for writing
+06:48:31.206 frame=19342 fps=100 q=-1.0 size= 2565911kB time=00:13:26.63 bitrate=26168.3kbits/s throttle=off speed=4.15x    
+06:48:31.879 frame=19431 fps=100 q=-1.0 size= 2577982kB time=00:13:30.35 bitrate=26170.4kbits/s throttle=off speed=4.16x    
+06:48:31.898 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:31.898 SegmentComplete=video:0 Index=134 Start=804.094956 End=810.017533 Duration=5.922578 offset_pts=0 start_pts=804094956 Frames=144 filename=3C4C19_134.ts
+06:48:31.898 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_135.ts.tmp' for writing
+06:48:32.379 frame=19522 fps=100 q=-1.0 size= 2590266kB time=00:13:34.14 bitrate=26172.0kbits/s throttle=off speed=4.17x    
+06:48:32.535 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:32.536 SegmentComplete=video:0 Index=135 Start=810.100956 End=815.940111 Duration=5.839156 offset_pts=0 start_pts=810100956 Frames=142 filename=3C4C19_135.ts
+06:48:32.536 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_136.ts.tmp' for writing
+06:48:32.879 frame=19619 fps=101 q=-1.0 size= 2603316kB time=00:13:38.19 bitrate=26173.3kbits/s throttle=off speed=4.18x    
+06:48:33.805 frame=19695 fps=100 q=-1.0 size= 2613644kB time=00:13:41.36 bitrate=26175.3kbits/s throttle=off speed=4.17x    
+06:48:33.908 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:33.908 SegmentComplete=video:0 Index=136 Start=816.023533 End=822.029533 Duration=6.006000 offset_pts=0 start_pts=816023533 Frames=146 filename=3C4C19_136.ts
+06:48:33.908 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_137.ts.tmp' for writing
+06:48:34.501 frame=19783 fps=101 q=-1.0 size= 2625461kB time=00:13:45.03 bitrate=26176.2kbits/s throttle=off speed=4.18x    
+06:48:35.120 frame=19870 fps=101 q=-1.0 size= 2637242kB time=00:13:48.66 bitrate=26178.0kbits/s throttle=off speed=4.18x    
+06:48:35.122 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:35.123 SegmentComplete=video:0 Index=137 Start=822.112956 End=828.035533 Duration=5.922578 offset_pts=0 start_pts=822112956 Frames=144 filename=3C4C19_137.ts
+06:48:35.123 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_138.ts.tmp' for writing
+06:48:35.766 frame=19956 fps=101 q=-1.0 size= 2648980kB time=00:13:52.24 bitrate=26180.8kbits/s throttle=off speed=4.19x    
+06:48:35.994 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:35.998 SegmentComplete=video:0 Index=138 Start=828.118956 End=833.999822 Duration=5.880867 offset_pts=0 start_pts=828118956 Frames=143 filename=3C4C19_138.ts
+06:48:35.999 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_139.ts.tmp' for writing
+06:48:36.302 frame=20045 fps=101 q=-1.0 size= 2660981kB time=00:13:55.96 bitrate=26182.1kbits/s throttle=off speed=4.19x    
+06:48:36.938 frame=20132 fps=101 q=-1.0 size= 2672753kB time=00:13:59.58 bitrate=26183.8kbits/s throttle=off speed= 4.2x    
+06:48:37.001 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:37.002 SegmentComplete=video:0 Index=139 Start=834.083244 End=839.922400 Duration=5.839156 offset_pts=0 start_pts=834083244 Frames=142 filename=3C4C19_139.ts
+06:48:37.002 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_140.ts.tmp' for writing
+06:48:37.627 frame=20221 fps=101 q=-1.0 size= 2684767kB time=00:14:03.30 bitrate=26185.3kbits/s throttle=off speed= 4.2x    
+06:48:37.902 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:37.903 SegmentComplete=video:0 Index=140 Start=840.005833 End=846.011822 Duration=6.005989 offset_pts=0 start_pts=840005833 Frames=146 filename=3C4C19_140.ts
+06:48:37.903 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_141.ts.tmp' for writing
+06:48:38.253 frame=20311 fps=101 q=-1.0 size= 2696774kB time=00:14:07.05 bitrate=26185.4kbits/s throttle=off speed=4.21x    
+06:48:38.982 frame=20401 fps=101 q=-1.0 size= 2708802kB time=00:14:10.80 bitrate=26185.6kbits/s throttle=off speed=4.21x    
+06:48:39.108 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:39.108 SegmentComplete=video:0 Index=141 Start=846.095244 End=851.976111 Duration=5.880867 offset_pts=0 start_pts=846095244 Frames=143 filename=3C4C19_141.ts
+06:48:39.108 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_142.ts.tmp' for writing
+06:48:39.547 frame=20489 fps=102 q=-1.0 size= 2720729kB time=00:14:14.47 bitrate=26187.5kbits/s throttle=off speed=4.22x    
+06:48:40.172 frame=20577 fps=102 q=-1.0 size= 2732571kB time=00:14:18.14 bitrate=26188.6kbits/s throttle=off speed=4.22x    
+06:48:40.201 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:40.202 SegmentComplete=video:0 Index=142 Start=852.059533 End=858.023822 Duration=5.964289 offset_pts=0 start_pts=852059533 Frames=145 filename=3C4C19_142.ts
+06:48:40.202 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_143.ts.tmp' for writing
+06:48:40.805 frame=20663 fps=102 q=-1.0 size= 2744252kB time=00:14:21.73 bitrate=26190.6kbits/s throttle=off speed=4.23x    
+06:48:41.068 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:41.069 SegmentComplete=video:0 Index=143 Start=858.107244 End=863.988111 Duration=5.880867 offset_pts=0 start_pts=858107244 Frames=143 filename=3C4C19_143.ts
+06:48:41.069 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_144.ts.tmp' for writing
+06:48:41.402 frame=20750 fps=102 q=-1.0 size= 2755991kB time=00:14:25.36 bitrate=26191.9kbits/s throttle=off speed=4.23x    
+06:48:41.962 frame=20839 fps=102 q=-1.0 size= 2768026kB time=00:14:29.07 bitrate=26193.5kbits/s throttle=off speed=4.24x    
+06:48:42.051 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:42.051 SegmentComplete=video:0 Index=144 Start=864.071533 End=870.035822 Duration=5.964289 offset_pts=0 start_pts=864071533 Frames=145 filename=3C4C19_144.ts
+06:48:42.051 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_145.ts.tmp' for writing
+06:48:42.880 frame=20926 fps=102 q=-1.0 size= 2779826kB time=00:14:32.70 bitrate=26195.4kbits/s throttle=off speed=4.24x    
+06:48:43.703 frame=21016 fps=102 q=-1.0 size= 2791886kB time=00:14:36.45 bitrate=26195.9kbits/s throttle=off speed=4.24x    
+06:48:43.717 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:43.718 SegmentComplete=video:0 Index=145 Start=870.035833 End=876.000111 Duration=5.964278 offset_pts=0 start_pts=870035833 Frames=143 filename=3C4C19_145.ts
+06:48:43.718 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_146.ts.tmp' for writing
+06:48:44.333 frame=21102 fps=102 q=-1.0 size= 2803562kB time=00:14:40.04 bitrate=26197.8kbits/s throttle=off speed=4.25x    
+06:48:44.523 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:44.524 SegmentComplete=video:0 Index=146 Start=876.083533 End=881.922700 Duration=5.839167 offset_pts=0 start_pts=876083533 Frames=142 filename=3C4C19_146.ts
+06:48:44.524 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_147.ts.tmp' for writing
+06:48:45.014 frame=21190 fps=102 q=-1.0 size= 2815390kB time=00:14:43.71 bitrate=26198.7kbits/s throttle=off speed=4.25x    
+06:48:45.707 frame=21276 fps=102 q=-1.0 size= 2827095kB time=00:14:47.30 bitrate=26200.8kbits/s throttle=off speed=4.25x    
+06:48:45.800 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:45.800 SegmentComplete=video:0 Index=147 Start=882.006122 End=887.928700 Duration=5.922578 offset_pts=0 start_pts=882006122 Frames=144 filename=3C4C19_147.ts
+06:48:45.800 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_148.ts.tmp' for writing
+06:48:46.310 frame=21362 fps=102 q=-1.0 size= 2838622kB time=00:14:50.89 bitrate=26201.3kbits/s throttle=off speed=4.26x    
+06:48:46.928 frame=21449 fps=103 q=-1.0 size= 2850471kB time=00:14:54.51 bitrate=26203.6kbits/s throttle=off speed=4.26x    
+06:48:46.936 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:46.937 SegmentComplete=video:0 Index=148 Start=888.012122 End=894.018111 Duration=6.005989 offset_pts=0 start_pts=888012122 Frames=146 filename=3C4C19_148.ts
+06:48:46.937 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_149.ts.tmp' for writing
+06:48:47.498 frame=21535 fps=103 q=-1.0 size= 2862147kB time=00:14:58.10 bitrate=26205.4kbits/s throttle=off speed=4.27x    
+06:48:47.790 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:47.791 SegmentComplete=video:0 Index=149 Start=894.101533 End=900.024111 Duration=5.922578 offset_pts=0 start_pts=894101533 Frames=144 filename=3C4C19_149.ts
+06:48:47.791 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_150.ts.tmp' for writing
+06:48:48.065 frame=21624 fps=103 q=-1.0 size= 2874143kB time=00:15:01.81 bitrate=26206.5kbits/s throttle=off speed=4.27x    
+06:48:48.667 frame=21707 fps=103 q=-1.0 size= 2885394kB time=00:15:05.27 bitrate=26208.1kbits/s throttle=off speed=4.28x    
+06:48:48.794 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:48.794 SegmentComplete=video:0 Index=150 Start=900.107533 End=905.988400 Duration=5.880867 offset_pts=0 start_pts=900107533 Frames=143 filename=3C4C19_150.ts
+06:48:48.794 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_151.ts.tmp' for writing
+06:48:49.313 frame=21790 fps=103 q=-1.0 size= 2896454kB time=00:15:08.74 bitrate=26208.0kbits/s throttle=off speed=4.28x    
+06:48:50.660 frame=21828 fps=103 q=-1.0 size= 2901671kB time=00:15:10.32 bitrate=26209.3kbits/s throttle=off speed=4.26x    
+06:48:51.351 frame=21862 fps=102 q=-1.0 size= 2906159kB time=00:15:11.74 bitrate=26208.9kbits/s throttle=off speed=4.25x    
+06:48:51.874 frame=21877 fps=102 q=-1.0 size= 2908186kB time=00:15:12.36 bitrate=26209.1kbits/s throttle=off speed=4.25x    
+06:48:51.889 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:51.890 SegmentComplete=video:0 Index=151 Start=906.071833 End=911.994400 Duration=5.922567 offset_pts=0 start_pts=906071833 Frames=144 filename=3C4C19_151.ts
+06:48:51.890 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_152.ts.tmp' for writing
+06:48:52.441 frame=21887 fps=102 q=-1.0 size= 2909571kB time=00:15:12.78 bitrate=26209.6kbits/s throttle=off speed=4.24x    
+06:48:53.068 frame=21926 fps=102 q=-1.0 size= 2914837kB time=00:15:14.41 bitrate=26210.1kbits/s throttle=off speed=4.23x    
+06:48:53.646 frame=21937 fps=102 q=-1.0 size= 2916446kB time=00:15:14.87 bitrate=26211.4kbits/s throttle=off speed=4.22x    
+06:48:54.259 frame=21975 fps=102 q=-1.0 size= 2921479kB time=00:15:16.45 bitrate=26211.1kbits/s throttle=off speed=4.22x    
+06:48:54.811 frame=22010 fps=101 q=-1.0 size= 2926184kB time=00:15:17.91 bitrate=26211.4kbits/s throttle=off speed=4.21x    
+06:48:54.914 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:54.914 SegmentComplete=video:0 Index=152 Start=912.077833 End=918.000400 Duration=5.922567 offset_pts=0 start_pts=912077833 Frames=144 filename=3C4C19_152.ts
+06:48:54.914 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_153.ts.tmp' for writing
+06:48:55.461 frame=22049 fps=101 q=-1.0 size= 2931448kB time=00:15:19.54 bitrate=26211.9kbits/s throttle=off speed=4.21x    
+06:48:56.033 frame=22091 fps=101 q=-1.0 size= 2937135kB time=00:15:21.29 bitrate=26212.6kbits/s throttle=off speed=4.21x    
+06:48:56.738 frame=22132 fps=101 q=-1.0 size= 2942715kB time=00:15:23.00 bitrate=26213.6kbits/s throttle=off speed= 4.2x    
+06:48:56.837 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:56.838 SegmentComplete=video:0 Index=153 Start=918.000411 End=923.922989 Duration=5.922578 offset_pts=0 start_pts=918000411 Frames=142 filename=3C4C19_153.ts
+06:48:56.838 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_154.ts.tmp' for writing
+06:48:57.423 frame=22175 fps=101 q=-1.0 size= 2948415kB time=00:15:24.79 bitrate=26213.2kbits/s throttle=off speed= 4.2x    
+06:48:57.976 frame=22217 fps=101 q=-1.0 size= 2954055kB time=00:15:26.55 bitrate=26213.5kbits/s throttle=off speed=4.19x    
+06:48:58.576 frame=22260 fps=101 q=-1.0 size= 2959892kB time=00:15:28.34 bitrate=26214.4kbits/s throttle=off speed=4.19x    
+06:48:59.229 frame=22302 fps=101 q=-1.0 size= 2965317kB time=00:15:30.09 bitrate=26212.8kbits/s throttle=off speed=4.19x    
+06:48:59.254 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:48:59.254 SegmentComplete=video:0 Index=154 Start=924.006411 End=929.928989 Duration=5.922578 offset_pts=0 start_pts=924006411 Frames=144 filename=3C4C19_154.ts
+06:48:59.254 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_155.ts.tmp' for writing
+06:49:00.034 frame=22345 fps=101 q=-1.0 size= 2971162kB time=00:15:31.88 bitrate=26213.8kbits/s throttle=off speed=4.18x    
+06:49:00.740 frame=22388 fps=100 q=-1.0 size= 2976960kB time=00:15:33.68 bitrate=26214.3kbits/s throttle=off speed=4.17x    
+06:49:01.450 frame=22434 fps=100 q=-1.0 size= 2982919kB time=00:15:35.60 bitrate=26212.7kbits/s throttle=off speed=4.17x    
+06:49:01.504 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:01.504 SegmentComplete=video:0 Index=155 Start=930.012411 End=935.934989 Duration=5.922578 offset_pts=0 start_pts=930012411 Frames=144 filename=3C4C19_155.ts
+06:49:01.504 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_156.ts.tmp' for writing
+06:49:02.213 frame=22476 fps=100 q=-1.0 size= 2988607kB time=00:15:37.35 bitrate=26213.4kbits/s throttle=off speed=4.16x    
+06:49:02.722 frame=22521 fps=100 q=-1.0 size= 2994722kB time=00:15:39.22 bitrate=26214.4kbits/s throttle=off speed=4.16x    
+06:49:03.309 frame=22566 fps=100 q=-1.0 size= 3000815kB time=00:15:41.10 bitrate=26215.1kbits/s throttle=off speed=4.16x    
+06:49:03.401 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:03.402 SegmentComplete=video:0 Index=156 Start=936.018411 End=942.024400 Duration=6.005989 offset_pts=0 start_pts=936018411 Frames=146 filename=3C4C19_156.ts
+06:49:03.402 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_157.ts.tmp' for writing
+06:49:03.883 frame=22608 fps=100 q=-1.0 size= 3006403kB time=00:15:42.85 bitrate=26215.0kbits/s throttle=off speed=4.16x    
+06:49:04.520 frame=22653 fps=100 q=-1.0 size= 3012434kB time=00:15:44.73 bitrate=26215.2kbits/s throttle=off speed=4.15x    
+06:49:05.042 frame=22695 fps=100 q=-1.0 size= 3018199kB time=00:15:46.48 bitrate=26216.6kbits/s throttle=off speed=4.15x    
+06:49:05.588 frame=22740 fps=100 q=-1.0 size= 3024250kB time=00:15:48.36 bitrate=26217.0kbits/s throttle=off speed=4.15x    
+06:49:05.606 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:05.607 SegmentComplete=video:0 Index=157 Start=942.107833 End=948.030400 Duration=5.922567 offset_pts=0 start_pts=942107833 Frames=144 filename=3C4C19_157.ts
+06:49:05.607 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_158.ts.tmp' for writing
+06:49:06.175 frame=22783 fps=100 q=-1.0 size= 3030079kB time=00:15:50.15 bitrate=26217.7kbits/s throttle=off speed=4.15x    
+06:49:06.760 frame=22826 fps=100 q=-1.0 size= 3035917kB time=00:15:51.95 bitrate=26218.6kbits/s throttle=off speed=4.14x    
+06:49:07.310 frame=22869 fps=100 q=-1.0 size= 3041709kB time=00:15:53.74 bitrate=26219.0kbits/s throttle=off speed=4.14x    
+06:49:07.356 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:07.356 SegmentComplete=video:0 Index=158 Start=948.113833 End=953.952989 Duration=5.839156 offset_pts=0 start_pts=948113833 Frames=142 filename=3C4C19_158.ts
+06:49:07.356 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_159.ts.tmp' for writing
+06:49:07.881 frame=22912 fps=100 q=-1.0 size= 3047541kB time=00:15:55.53 bitrate=26219.8kbits/s throttle=off speed=4.14x    
+06:49:08.461 frame=22956 fps=100 q=-1.0 size= 3053440kB time=00:15:57.37 bitrate=26220.0kbits/s throttle=off speed=4.14x    
+06:49:09.124 frame=23000 fps= 99 q=-1.0 size= 3059405kB time=00:15:59.20 bitrate=26220.8kbits/s throttle=off speed=4.13x    
+06:49:09.231 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:09.232 SegmentComplete=video:0 Index=159 Start=954.036411 End=959.958989 Duration=5.922578 offset_pts=0 start_pts=954036411 Frames=144 filename=3C4C19_159.ts
+06:49:09.232 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_160.ts.tmp' for writing
+06:49:09.655 frame=23042 fps= 99 q=-1.0 size= 3065072kB time=00:16:00.96 bitrate=26221.3kbits/s throttle=off speed=4.13x    
+06:49:10.178 frame=23087 fps= 99 q=-1.0 size= 3071157kB time=00:16:02.83 bitrate=26222.0kbits/s throttle=off speed=4.13x    
+06:49:10.690 frame=23127 fps= 99 q=-1.0 size= 3076516kB time=00:16:04.50 bitrate=26222.2kbits/s throttle=off speed=4.13x    
+06:49:11.335 frame=23173 fps= 99 q=-1.0 size= 3082756kB time=00:16:06.42 bitrate=26223.0kbits/s throttle=off speed=4.12x    
+06:49:11.351 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:11.351 SegmentComplete=video:0 Index=160 Start=960.042411 End=966.006700 Duration=5.964289 offset_pts=0 start_pts=960042411 Frames=145 filename=3C4C19_160.ts
+06:49:11.351 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_161.ts.tmp' for writing
+06:49:11.877 frame=23218 fps= 99 q=-1.0 size= 3088869kB time=00:16:08.30 bitrate=26223.9kbits/s throttle=off speed=4.12x    
+06:49:12.445 frame=23261 fps= 99 q=-1.0 size= 3094757kB time=00:16:10.09 bitrate=26225.1kbits/s throttle=off speed=4.12x    
+06:49:12.964 frame=23306 fps= 99 q=-1.0 size= 3100753kB time=00:16:11.97 bitrate=26225.0kbits/s throttle=off speed=4.12x    
+06:49:13.000 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:13.001 SegmentComplete=video:0 Index=161 Start=966.090122 End=971.929278 Duration=5.839156 offset_pts=0 start_pts=966090122 Frames=142 filename=3C4C19_161.ts
+06:49:13.001 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_162.ts.tmp' for writing
+06:49:13.585 frame=23349 fps= 99 q=-1.0 size= 3106581kB time=00:16:13.76 bitrate=26225.8kbits/s throttle=off speed=4.12x    
+06:49:14.101 frame=23393 fps= 99 q=-1.0 size= 3112566kB time=00:16:15.59 bitrate=26226.7kbits/s throttle=off speed=4.11x    
+06:49:14.779 frame=23437 fps= 99 q=-1.0 size= 3118467kB time=00:16:17.43 bitrate=26226.9kbits/s throttle=off speed=4.11x    
+06:49:14.861 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:14.862 SegmentComplete=video:0 Index=162 Start=972.012700 End=977.976989 Duration=5.964289 offset_pts=0 start_pts=972012700 Frames=145 filename=3C4C19_162.ts
+06:49:14.862 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_163.ts.tmp' for writing
+06:49:15.279 frame=23483 fps= 99 q=-1.0 size= 3124681kB time=00:16:19.35 bitrate=26227.5kbits/s throttle=off speed=4.11x    
+06:49:15.796 frame=23519 fps= 99 q=-1.0 size= 3129621kB time=00:16:20.85 bitrate=26228.6kbits/s throttle=off speed=4.11x    
+06:49:16.296 frame=23566 fps= 99 q=-1.0 size= 3135902kB time=00:16:22.81 bitrate=26228.7kbits/s throttle=off speed=4.11x    
+06:49:16.835 frame=23601 fps= 99 q=-1.0 size= 3140649kB time=00:16:24.27 bitrate=26229.3kbits/s throttle=off speed= 4.1x    
+06:49:16.851 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:16.851 SegmentComplete=video:0 Index=163 Start=978.060411 End=983.941278 Duration=5.880867 offset_pts=0 start_pts=978060411 Frames=143 filename=3C4C19_163.ts
+06:49:16.851 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_164.ts.tmp' for writing
+06:49:17.483 frame=23682 fps= 99 q=-1.0 size= 3151549kB time=00:16:27.65 bitrate=26230.0kbits/s throttle=off speed=4.11x    
+06:49:17.766 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:17.767 SegmentComplete=video:0 Index=164 Start=984.024700 End=989.988989 Duration=5.964289 offset_pts=0 start_pts=984024700 Frames=145 filename=3C4C19_164.ts
+06:49:17.767 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_165.ts.tmp' for writing
+06:49:18.103 frame=23764 fps= 99 q=-1.0 size= 3162629kB time=00:16:31.07 bitrate=26231.0kbits/s throttle=off speed=4.11x    
+06:49:20.219 frame=23839 fps= 98 q=-1.0 size= 3172751kB time=00:16:34.20 bitrate=26231.9kbits/s throttle=off speed=4.09x    
+06:49:21.086 frame=23840 fps= 98 q=-1.0 size= 3173009kB time=00:16:34.24 bitrate=26232.9kbits/s throttle=off speed=4.07x    
+06:49:21.361 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:21.362 SegmentComplete=video:0 Index=165 Start=990.072411 End=996.036700 Duration=5.964289 offset_pts=0 start_pts=990072411 Frames=145 filename=3C4C19_165.ts
+06:49:21.362 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_166.ts.tmp' for writing
+06:49:21.648 frame=23904 fps= 98 q=-1.0 size= 3181624kB time=00:16:36.91 bitrate=26233.5kbits/s throttle=off speed=4.07x    
+06:49:22.414 frame=23944 fps= 98 q=-1.0 size= 3187037kB time=00:16:38.58 bitrate=26234.1kbits/s throttle=off speed=4.07x    
+06:49:23.181 frame=23967 fps= 98 q=-1.0 size= 3190170kB time=00:16:39.54 bitrate=26234.6kbits/s throttle=off speed=4.06x    
+06:49:23.720 frame=23994 fps= 98 q=-1.0 size= 3193823kB time=00:16:40.66 bitrate=26234.9kbits/s throttle=off speed=4.06x    
+06:49:24.275 frame=24032 fps= 98 q=-1.0 size= 3198987kB time=00:16:42.25 bitrate=26235.7kbits/s throttle=off speed=4.05x    
+06:49:24.289 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:24.290 SegmentComplete=video:0 Index=166 Start=996.120122 End=1001.917567 Duration=5.797444 offset_pts=0 start_pts=996120122 Frames=141 filename=3C4C19_166.ts
+06:49:24.290 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_167.ts.tmp' for writing
+06:49:24.775 frame=24046 fps= 97 q=-1.0 size= 3200812kB time=00:16:42.83 bitrate=26235.3kbits/s throttle=off speed=4.05x    
+06:49:25.275 frame=24083 fps= 97 q=-1.0 size= 3205890kB time=00:16:44.37 bitrate=26236.4kbits/s throttle=off speed=4.05x    
+06:49:25.907 frame=24121 fps= 97 q=-1.0 size= 3210944kB time=00:16:45.96 bitrate=26236.2kbits/s throttle=off speed=4.04x    
+06:49:26.676 frame=24160 fps= 97 q=-1.0 size= 3216265kB time=00:16:47.58 bitrate=26237.1kbits/s throttle=off speed=4.04x    
+06:49:26.731 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:26.731 SegmentComplete=video:0 Index=167 Start=1002.001000 End=1007.923567 Duration=5.922567 offset_pts=0 start_pts=1002001000 Frames=144 filename=3C4C19_167.ts
+06:49:26.731 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_168.ts.tmp' for writing
+06:49:28.161 frame=24202 fps= 97 q=-1.0 size= 3221943kB time=00:16:49.34 bitrate=26237.7kbits/s throttle=off speed=4.02x    
+06:49:28.782 frame=24248 fps= 97 q=-1.0 size= 3228154kB time=00:16:51.26 bitrate=26238.2kbits/s throttle=off speed=4.02x    
+06:49:29.327 frame=24291 fps= 97 q=-1.0 size= 3233916kB time=00:16:53.05 bitrate=26238.4kbits/s throttle=off speed=4.01x    
+06:49:29.482 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:29.482 SegmentComplete=video:0 Index=168 Start=1008.007000 End=1013.971278 Duration=5.964278 offset_pts=0 start_pts=1008007000 Frames=145 filename=3C4C19_168.ts
+06:49:29.482 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_169.ts.tmp' for writing
+06:49:29.827 frame=24368 fps= 97 q=-1.0 size= 3244326kB time=00:16:56.26 bitrate=26239.4kbits/s throttle=off speed=4.02x    
+06:49:30.327 frame=24412 fps= 97 q=-1.0 size= 3250038kB time=00:16:58.10 bitrate=26238.0kbits/s throttle=off speed=4.02x    
+06:49:30.827 frame=24435 fps= 97 q=-1.0 size= 3253157kB time=00:16:59.05 bitrate=26238.4kbits/s throttle=off speed=4.01x    
+06:49:31.303 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:31.304 SegmentComplete=video:0 Index=169 Start=1014.054700 End=1019.935567 Duration=5.880867 offset_pts=0 start_pts=1014054700 Frames=143 filename=3C4C19_169.ts
+06:49:31.304 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_170.ts.tmp' for writing
+06:49:31.327 frame=24480 fps= 97 q=-1.0 size= 3258985kB time=00:17:00.93 bitrate=26236.9kbits/s throttle=off speed=4.01x    
+06:49:33.193 frame=24541 fps= 96 q=-1.0 size= 3266827kB time=00:17:03.48 bitrate=26234.5kbits/s throttle=off speed=3.99x    
+06:49:33.866 frame=24577 fps= 96 q=-1.0 size= 3271544kB time=00:17:04.98 bitrate=26233.7kbits/s throttle=off speed=3.99x    
+06:49:34.521 frame=24600 fps= 96 q=-1.0 size= 3274490kB time=00:17:05.94 bitrate=26232.7kbits/s throttle=off speed=3.98x    
+06:49:35.127 frame=24617 fps= 96 q=-1.0 size= 3276601kB time=00:17:06.65 bitrate=26231.4kbits/s throttle=off speed=3.98x    
+06:49:35.128 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:35.129 SegmentComplete=video:0 Index=170 Start=1020.019000 End=1026.024989 Duration=6.005989 offset_pts=0 start_pts=1020019000 Frames=146 filename=3C4C19_170.ts
+06:49:35.129 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_171.ts.tmp' for writing
+06:49:35.942 frame=24666 fps= 96 q=-1.0 size= 3282515kB time=00:17:08.69 bitrate=26226.4kbits/s throttle=off speed=3.97x    
+06:49:36.995 frame=24711 fps= 95 q=-1.0 size= 3288372kB time=00:17:10.57 bitrate=26225.2kbits/s throttle=off speed=3.96x    
+06:49:37.495 frame=24751 fps= 95 q=-1.0 size= 3293514kB time=00:17:12.23 bitrate=26223.6kbits/s throttle=off speed=3.96x    
+06:49:37.519 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:37.519 SegmentComplete=video:0 Index=171 Start=1026.108411 End=1032.030989 Duration=5.922578 offset_pts=0 start_pts=1026108411 Frames=144 filename=3C4C19_171.ts
+06:49:37.519 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_172.ts.tmp' for writing
+06:49:38.217 frame=24789 fps= 95 q=-1.0 size= 3298262kB time=00:17:13.82 bitrate=26221.0kbits/s throttle=off speed=3.96x    
+06:49:38.808 frame=24830 fps= 95 q=-1.0 size= 3303510kB time=00:17:15.53 bitrate=26219.2kbits/s throttle=off speed=3.95x    
+06:49:39.408 frame=24874 fps= 95 q=-1.0 size= 3309226kB time=00:17:17.36 bitrate=26218.0kbits/s throttle=off speed=3.95x    
+06:49:39.482 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:39.482 SegmentComplete=video:0 Index=172 Start=1032.114411 End=1038.036989 Duration=5.922578 offset_pts=0 start_pts=1032114411 Frames=144 filename=3C4C19_172.ts
+06:49:39.482 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_173.ts.tmp' for writing
+06:49:40.046 frame=24920 fps= 95 q=-1.0 size= 3315106kB time=00:17:19.28 bitrate=26215.9kbits/s throttle=off speed=3.95x    
+06:49:40.546 frame=24980 fps= 95 q=-1.0 size= 3322789kB time=00:17:21.79 bitrate=26213.4kbits/s throttle=off speed=3.95x    
+06:49:41.397 frame=25010 fps= 95 q=-1.0 size= 3326806kB time=00:17:23.04 bitrate=26213.5kbits/s throttle=off speed=3.94x    
+06:49:41.497 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:41.498 SegmentComplete=video:0 Index=173 Start=1038.120411 End=1044.001278 Duration=5.880867 offset_pts=0 start_pts=1038120411 Frames=143 filename=3C4C19_173.ts
+06:49:41.498 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_174.ts.tmp' for writing
+06:49:42.030 frame=25054 fps= 95 q=-1.0 size= 3332404kB time=00:17:24.87 bitrate=26211.3kbits/s throttle=off speed=3.94x    
+06:49:42.530 frame=25136 fps= 95 q=-1.0 size= 3343274kB time=00:17:28.29 bitrate=26210.7kbits/s throttle=off speed=3.95x    
+06:49:43.181 frame=25186 fps= 95 q=-1.0 size= 3349959kB time=00:17:30.38 bitrate=26210.8kbits/s throttle=off speed=3.95x    
+06:49:43.194 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:43.194 SegmentComplete=video:0 Index=174 Start=1044.043000 End=1049.965567 Duration=5.922567 offset_pts=0 start_pts=1044043000 Frames=143 filename=3C4C19_174.ts
+06:49:43.194 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_175.ts.tmp' for writing
+06:49:43.681 frame=25257 fps= 95 q=-1.0 size= 3359574kB time=00:17:33.34 bitrate=26211.9kbits/s throttle=off speed=3.95x    
+06:49:44.477 frame=25272 fps= 95 q=-1.0 size= 3361577kB time=00:17:33.96 bitrate=26211.9kbits/s throttle=off speed=3.94x    
+06:49:45.208 frame=25314 fps= 95 q=-1.0 size= 3367270kB time=00:17:35.72 bitrate=26212.6kbits/s throttle=off speed=3.94x    
+06:49:45.261 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:45.262 SegmentComplete=video:0 Index=175 Start=1050.049000 End=1056.013278 Duration=5.964278 offset_pts=0 start_pts=1050049000 Frames=145 filename=3C4C19_175.ts
+06:49:45.262 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_176.ts.tmp' for writing
+06:49:45.839 frame=25355 fps= 95 q=-1.0 size= 3372899kB time=00:17:37.43 bitrate=26213.9kbits/s throttle=off speed=3.93x    
+06:49:46.511 frame=25398 fps= 95 q=-1.0 size= 3378484kB time=00:17:39.22 bitrate=26212.7kbits/s throttle=off speed=3.93x    
+06:49:47.184 frame=25438 fps= 94 q=-1.0 size= 3383932kB time=00:17:40.89 bitrate=26213.5kbits/s throttle=off speed=3.93x    
+06:49:47.294 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:47.295 SegmentComplete=video:0 Index=176 Start=1056.096700 End=1061.977567 Duration=5.880867 offset_pts=0 start_pts=1056096700 Frames=143 filename=3C4C19_176.ts
+06:49:47.295 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_177.ts.tmp' for writing
+06:49:47.782 frame=25480 fps= 94 q=-1.0 size= 3389544kB time=00:17:42.64 bitrate=26213.6kbits/s throttle=off speed=3.92x    
+06:49:48.461 frame=25523 fps= 94 q=-1.0 size= 3395363kB time=00:17:44.43 bitrate=26214.2kbits/s throttle=off speed=3.92x    
+06:49:49.054 frame=25563 fps= 94 q=-1.0 size= 3400767kB time=00:17:46.10 bitrate=26214.7kbits/s throttle=off speed=3.92x    
+06:49:49.595 frame=25604 fps= 94 q=-1.0 size= 3406286kB time=00:17:47.81 bitrate=26215.0kbits/s throttle=off speed=3.92x    
+06:49:49.665 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:49.666 SegmentComplete=video:0 Index=177 Start=1062.061000 End=1068.025278 Duration=5.964278 offset_pts=0 start_pts=1062061000 Frames=145 filename=3C4C19_177.ts
+06:49:49.666 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_178.ts.tmp' for writing
+06:49:50.127 frame=25645 fps= 94 q=-1.0 size= 3411895kB time=00:17:49.52 bitrate=26216.1kbits/s throttle=off speed=3.92x    
+06:49:50.772 frame=25686 fps= 94 q=-1.0 size= 3417472kB time=00:17:51.23 bitrate=26216.9kbits/s throttle=off speed=3.91x    
+06:49:51.282 frame=25725 fps= 94 q=-1.0 size= 3422680kB time=00:17:52.86 bitrate=26216.9kbits/s throttle=off speed=3.91x    
+06:49:51.423 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:51.423 SegmentComplete=video:0 Index=178 Start=1068.025289 End=1074.031278 Duration=6.005989 offset_pts=0 start_pts=1068025289 Frames=144 filename=3C4C19_178.ts
+06:49:51.423 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_179.ts.tmp' for writing
+06:49:51.782 frame=25790 fps= 94 q=-1.0 size= 3431388kB time=00:17:55.57 bitrate=26217.2kbits/s throttle=off speed=3.91x    
+06:49:52.306 frame=25811 fps= 94 q=-1.0 size= 3434072kB time=00:17:56.45 bitrate=26216.2kbits/s throttle=off speed=3.91x    
+06:49:52.806 frame=25866 fps= 94 q=-1.0 size= 3441590kB time=00:17:58.74 bitrate=26217.6kbits/s throttle=off speed=3.91x    
+06:49:53.048 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:53.049 SegmentComplete=video:0 Index=179 Start=1074.114700 End=1079.953867 Duration=5.839167 offset_pts=0 start_pts=1074114700 Frames=142 filename=3C4C19_179.ts
+06:49:53.049 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_180.ts.tmp' for writing
+06:49:53.877 frame=25925 fps= 94 q=-1.0 size= 3449315kB time=00:18:01.20 bitrate=26216.4kbits/s throttle=off speed= 3.9x    
+06:49:54.491 frame=25945 fps= 94 q=-1.0 size= 3452027kB time=00:18:02.03 bitrate=26216.8kbits/s throttle=off speed= 3.9x    
+06:49:54.991 frame=25989 fps= 94 q=-1.0 size= 3458016kB time=00:18:03.87 bitrate=26217.6kbits/s throttle=off speed= 3.9x    
+06:49:55.491 frame=26053 fps= 94 q=-1.0 size= 3466724kB time=00:18:06.54 bitrate=26218.9kbits/s throttle=off speed= 3.9x    
+06:49:55.497 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:55.498 SegmentComplete=video:0 Index=180 Start=1080.037289 End=1086.001567 Duration=5.964278 offset_pts=0 start_pts=1080037289 Frames=145 filename=3C4C19_180.ts
+06:49:55.498 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_181.ts.tmp' for writing
+06:49:55.991 frame=26093 fps= 94 q=-1.0 size= 3472084kB time=00:18:08.21 bitrate=26219.1kbits/s throttle=off speed= 3.9x    
+06:49:56.884 frame=26101 fps= 94 q=-1.0 size= 3473173kB time=00:18:08.54 bitrate=26219.2kbits/s throttle=off speed=3.89x    
+06:49:57.385 frame=26150 fps= 94 q=-1.0 size= 3479723kB time=00:18:10.58 bitrate=26219.3kbits/s throttle=off speed=3.89x    
+06:49:57.847 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:57.847 SegmentComplete=video:0 Index=181 Start=1086.085000 End=1092.007567 Duration=5.922567 offset_pts=0 start_pts=1086085000 Frames=144 filename=3C4C19_181.ts
+06:49:57.847 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_182.ts.tmp' for writing
+06:49:57.885 frame=26216 fps= 94 q=-1.0 size= 3488646kB time=00:18:13.34 bitrate=26220.1kbits/s throttle=off speed=3.89x    
+06:49:58.385 frame=26254 fps= 94 q=-1.0 size= 3493701kB time=00:18:14.92 bitrate=26220.0kbits/s throttle=off speed=3.89x    
+06:49:58.886 frame=26288 fps= 94 q=-1.0 size= 3498336kB time=00:18:16.34 bitrate=26220.7kbits/s throttle=off speed=3.89x    
+06:49:59.386 frame=26332 fps= 94 q=-1.0 size= 3504209kB time=00:18:18.18 bitrate=26220.7kbits/s throttle=off speed=3.89x    
+06:49:59.415 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:49:59.415 SegmentComplete=video:0 Index=182 Start=1092.091000 End=1098.013567 Duration=5.922567 offset_pts=0 start_pts=1092091000 Frames=144 filename=3C4C19_182.ts
+06:49:59.415 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_183.ts.tmp' for writing
+06:49:59.886 frame=26361 fps= 93 q=-1.0 size= 3508111kB time=00:18:19.38 bitrate=26220.9kbits/s throttle=off speed=3.89x    
+06:50:00.387 frame=26403 fps= 93 q=-1.0 size= 3513809kB time=00:18:21.14 bitrate=26221.6kbits/s throttle=off speed=3.89x    
+06:50:00.939 frame=26447 fps= 93 q=-1.0 size= 3519749kB time=00:18:22.97 bitrate=26222.1kbits/s throttle=off speed=3.88x    
+06:50:01.066 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:01.067 SegmentComplete=video:0 Index=183 Start=1098.013578 End=1103.977867 Duration=5.964289 offset_pts=0 start_pts=1098013578 Frames=143 filename=3C4C19_183.ts
+06:50:01.067 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_184.ts.tmp' for writing
+06:50:01.967 frame=26491 fps= 93 q=-1.0 size= 3525735kB time=00:18:24.81 bitrate=26222.9kbits/s throttle=off speed=3.88x    
+06:50:02.523 frame=26533 fps= 93 q=-1.0 size= 3531402kB time=00:18:26.56 bitrate=26223.4kbits/s throttle=off speed=3.88x    
+06:50:03.554 frame=26577 fps= 93 q=-1.0 size= 3537314kB time=00:18:28.39 bitrate=26223.7kbits/s throttle=off speed=3.87x    
+06:50:04.182 frame=26624 fps= 93 q=-1.0 size= 3543353kB time=00:18:30.35 bitrate=26221.9kbits/s throttle=off speed=3.87x    
+06:50:04.198 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:04.199 SegmentComplete=video:0 Index=184 Start=1104.061289 End=1109.983867 Duration=5.922578 offset_pts=0 start_pts=1104061289 Frames=144 filename=3C4C19_184.ts
+06:50:04.199 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_185.ts.tmp' for writing
+06:50:04.826 frame=26669 fps= 93 q=-1.0 size= 3549448kB time=00:18:32.23 bitrate=26222.5kbits/s throttle=off speed=3.86x    
+06:50:05.398 frame=26713 fps= 93 q=-1.0 size= 3555341kB time=00:18:34.07 bitrate=26222.7kbits/s throttle=off speed=3.86x    
+06:50:05.993 frame=26757 fps= 93 q=-1.0 size= 3561159kB time=00:18:35.90 bitrate=26222.3kbits/s throttle=off speed=3.86x    
+06:50:06.036 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:06.037 SegmentComplete=video:0 Index=185 Start=1110.067289 End=1116.031567 Duration=5.964278 offset_pts=0 start_pts=1110067289 Frames=145 filename=3C4C19_185.ts
+06:50:06.037 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_186.ts.tmp' for writing
+06:50:06.675 frame=26801 fps= 93 q=-1.0 size= 3567061kB time=00:18:37.74 bitrate=26222.5kbits/s throttle=off speed=3.86x    
+06:50:07.206 frame=26845 fps= 93 q=-1.0 size= 3572890kB time=00:18:39.57 bitrate=26222.1kbits/s throttle=off speed=3.86x    
+06:50:07.849 frame=26888 fps= 93 q=-1.0 size= 3578640kB time=00:18:41.37 bitrate=26222.2kbits/s throttle=off speed=3.85x    
+06:50:07.936 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:07.937 SegmentComplete=video:0 Index=186 Start=1116.115000 End=1121.995867 Duration=5.880867 offset_pts=0 start_pts=1116115000 Frames=143 filename=3C4C19_186.ts
+06:50:07.937 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_187.ts.tmp' for writing
+06:50:08.349 frame=26933 fps= 93 q=-1.0 size= 3584769kB time=00:18:43.24 bitrate=26223.1kbits/s throttle=off speed=3.85x    
+06:50:08.907 frame=26972 fps= 93 q=-1.0 size= 3590074kB time=00:18:44.87 bitrate=26223.8kbits/s throttle=off speed=3.85x    
+06:50:09.669 frame=27017 fps= 93 q=-1.0 size= 3595890kB time=00:18:46.75 bitrate=26222.4kbits/s throttle=off speed=3.85x    
+06:50:10.150 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:10.151 SegmentComplete=video:0 Index=187 Start=1122.079289 End=1128.001867 Duration=5.922578 offset_pts=0 start_pts=1122079289 Frames=144 filename=3C4C19_187.ts
+06:50:10.151 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_188.ts.tmp' for writing
+06:50:10.169 frame=27066 fps= 93 q=-1.0 size= 3602303kB time=00:18:48.79 bitrate=26221.5kbits/s throttle=off speed=3.85x    
+06:50:10.703 frame=27103 fps= 93 q=-1.0 size= 3607061kB time=00:18:50.33 bitrate=26220.2kbits/s throttle=off speed=3.85x    
+06:50:11.468 frame=27146 fps= 92 q=-1.0 size= 3612615kB time=00:18:52.13 bitrate=26218.8kbits/s throttle=off speed=3.84x    
+06:50:11.968 frame=27195 fps= 92 q=-1.0 size= 3618947kB time=00:18:54.17 bitrate=26217.3kbits/s throttle=off speed=3.84x    
+06:50:12.006 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:12.007 SegmentComplete=video:0 Index=188 Start=1128.085289 End=1134.007867 Duration=5.922578 offset_pts=0 start_pts=1128085289 Frames=144 filename=3C4C19_188.ts
+06:50:12.007 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_189.ts.tmp' for writing
+06:50:12.468 frame=27240 fps= 92 q=-1.0 size= 3625009kB time=00:18:56.05 bitrate=26217.7kbits/s throttle=off speed=3.84x    
+06:50:12.968 frame=27301 fps= 93 q=-1.0 size= 3633257kB time=00:18:58.59 bitrate=26218.5kbits/s throttle=off speed=3.85x    
+06:50:13.519 frame=27316 fps= 92 q=-1.0 size= 3635273kB time=00:18:59.22 bitrate=26218.6kbits/s throttle=off speed=3.84x    
+06:50:13.613 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:13.614 SegmentComplete=video:0 Index=189 Start=1134.091289 End=1140.013867 Duration=5.922578 offset_pts=0 start_pts=1134091289 Frames=144 filename=3C4C19_189.ts
+06:50:13.614 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_190.ts.tmp' for writing
+06:50:14.120 frame=27356 fps= 92 q=-1.0 size= 3640699kB time=00:19:00.88 bitrate=26219.2kbits/s throttle=off speed=3.84x    
+06:50:14.663 frame=27400 fps= 92 q=-1.0 size= 3646598kB time=00:19:02.72 bitrate=26219.4kbits/s throttle=off speed=3.84x    
+06:50:15.196 frame=27444 fps= 92 q=-1.0 size= 3652492kB time=00:19:04.56 bitrate=26219.5kbits/s throttle=off speed=3.84x    
+06:50:15.759 frame=27485 fps= 92 q=-1.0 size= 3657988kB time=00:19:06.27 bitrate=26219.7kbits/s throttle=off speed=3.84x    
+06:50:15.781 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:15.781 SegmentComplete=video:0 Index=190 Start=1140.097289 End=1145.978156 Duration=5.880867 offset_pts=0 start_pts=1140097289 Frames=143 filename=3C4C19_190.ts
+06:50:15.781 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_191.ts.tmp' for writing
+06:50:16.285 frame=27530 fps= 92 q=-1.0 size= 3664024kB time=00:19:08.14 bitrate=26219.9kbits/s throttle=off speed=3.84x    
+06:50:16.829 frame=27573 fps= 92 q=-1.0 size= 3669860kB time=00:19:09.94 bitrate=26220.6kbits/s throttle=off speed=3.83x    
+06:50:17.352 frame=27619 fps= 92 q=-1.0 size= 3675896kB time=00:19:11.85 bitrate=26219.8kbits/s throttle=off speed=3.83x    
+06:50:17.408 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:17.408 SegmentComplete=video:0 Index=191 Start=1146.061578 End=1151.984156 Duration=5.922578 offset_pts=0 start_pts=1146061578 Frames=144 filename=3C4C19_191.ts
+06:50:17.408 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_192.ts.tmp' for writing
+06:50:18.042 frame=27662 fps= 92 q=-1.0 size= 3681537kB time=00:19:13.65 bitrate=26219.1kbits/s throttle=off speed=3.83x    
+06:50:18.684 frame=27704 fps= 92 q=-1.0 size= 3687263kB time=00:19:15.40 bitrate=26219.9kbits/s throttle=off speed=3.83x    
+06:50:19.369 frame=27748 fps= 92 q=-1.0 size= 3693178kB time=00:19:17.23 bitrate=26220.2kbits/s throttle=off speed=3.83x    
+06:50:19.490 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:19.490 SegmentComplete=video:0 Index=192 Start=1152.067578 End=1158.031867 Duration=5.964289 offset_pts=0 start_pts=1152067578 Frames=145 filename=3C4C19_192.ts
+06:50:19.490 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_193.ts.tmp' for writing
+06:50:19.898 frame=27790 fps= 92 q=-1.0 size= 3698819kB time=00:19:18.99 bitrate=26220.5kbits/s throttle=off speed=3.83x    
+06:50:20.520 frame=27833 fps= 92 q=-1.0 size= 3704615kB time=00:19:20.78 bitrate=26220.9kbits/s throttle=off speed=3.82x    
+06:50:21.247 frame=27876 fps= 92 q=-1.0 size= 3710396kB time=00:19:22.57 bitrate=26221.2kbits/s throttle=off speed=3.82x    
+06:50:21.388 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:21.388 SegmentComplete=video:0 Index=193 Start=1158.115289 End=1163.996156 Duration=5.880867 offset_pts=0 start_pts=1158115289 Frames=143 filename=3C4C19_193.ts
+06:50:21.388 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_194.ts.tmp' for writing
+06:50:21.852 frame=27964 fps= 92 q=-1.0 size= 3722224kB time=00:19:26.24 bitrate=26221.7kbits/s throttle=off speed=3.82x    
+06:50:22.608 frame=28051 fps= 92 q=-1.0 size= 3733847kB time=00:19:29.87 bitrate=26221.8kbits/s throttle=off speed=3.83x    
+06:50:22.645 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:22.646 SegmentComplete=video:0 Index=194 Start=1164.079578 End=1169.918733 Duration=5.839156 offset_pts=0 start_pts=1164079578 Frames=142 filename=3C4C19_194.ts
+06:50:22.646 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_195.ts.tmp' for writing
+06:50:23.198 frame=28137 fps= 92 q=-1.0 size= 3745503kB time=00:19:33.46 bitrate=26223.0kbits/s throttle=off speed=3.83x    
+06:50:23.516 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:23.516 SegmentComplete=video:0 Index=195 Start=1170.002167 End=1176.008156 Duration=6.005989 offset_pts=0 start_pts=1170002167 Frames=146 filename=3C4C19_195.ts
+06:50:23.516 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_196.ts.tmp' for writing
+06:50:23.698 frame=28262 fps= 92 q=-1.0 size= 3762296kB time=00:19:38.67 bitrate=26223.7kbits/s throttle=off speed=3.84x    
+06:50:24.198 frame=28299 fps= 92 q=-1.0 size= 3767304kB time=00:19:40.22 bitrate=26224.2kbits/s throttle=off speed=3.84x    
+06:50:24.697 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:24.698 SegmentComplete=video:0 Index=196 Start=1176.091578 End=1182.014156 Duration=5.922578 offset_pts=0 start_pts=1176091578 Frames=144 filename=3C4C19_196.ts
+06:50:24.698 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_197.ts.tmp' for writing
+06:50:24.698 frame=28357 fps= 92 q=-1.0 size= 3775141kB time=00:19:42.63 bitrate=26224.9kbits/s throttle=off speed=3.84x    
+06:50:25.198 frame=28417 fps= 92 q=-1.0 size= 3783271kB time=00:19:45.14 bitrate=26225.7kbits/s throttle=off speed=3.84x    
+06:50:25.750 frame=28487 fps= 93 q=-1.0 size= 3792747kB time=00:19:48.06 bitrate=26226.6kbits/s throttle=off speed=3.85x    
+06:50:25.783 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:25.783 SegmentComplete=video:0 Index=197 Start=1182.097578 End=1187.978444 Duration=5.880867 offset_pts=0 start_pts=1182097578 Frames=143 filename=3C4C19_197.ts
+06:50:25.783 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_198.ts.tmp' for writing
+06:50:26.433 frame=28574 fps= 93 q=-1.0 size= 3804446kB time=00:19:51.69 bitrate=26227.1kbits/s throttle=off speed=3.85x    
+06:50:26.697 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:26.698 SegmentComplete=video:0 Index=198 Start=1188.061867 End=1194.026156 Duration=5.964289 offset_pts=0 start_pts=1188061867 Frames=145 filename=3C4C19_198.ts
+06:50:26.698 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_199.ts.tmp' for writing
+06:50:27.050 frame=28663 fps= 93 q=-1.0 size= 3816423kB time=00:19:55.40 bitrate=26227.8kbits/s throttle=off speed=3.85x    
+06:50:27.777 frame=28697 fps= 93 q=-1.0 size= 3821010kB time=00:19:56.82 bitrate=26228.1kbits/s throttle=off speed=3.85x    
+06:50:28.277 frame=28739 fps= 93 q=-1.0 size= 3826707kB time=00:19:58.57 bitrate=26228.7kbits/s throttle=off speed=3.85x    
+06:50:29.134 frame=28773 fps= 92 q=-1.0 size= 3831286kB time=00:19:59.99 bitrate=26229.0kbits/s throttle=off speed=3.84x    
+06:50:29.172 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:29.172 SegmentComplete=video:0 Index=199 Start=1194.109578 End=1199.990444 Duration=5.880867 offset_pts=0 start_pts=1194109578 Frames=143 filename=3C4C19_199.ts
+06:50:29.172 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_200.ts.tmp' for writing
+06:50:29.645 frame=28836 fps= 92 q=-1.0 size= 3839812kB time=00:20:02.61 bitrate=26229.7kbits/s throttle=off speed=3.85x    
+06:50:30.508 frame=28883 fps= 92 q=-1.0 size= 3846113kB time=00:20:04.57 bitrate=26229.9kbits/s throttle=off speed=3.84x    
+06:50:31.085 frame=28922 fps= 92 q=-1.0 size= 3851337kB time=00:20:06.20 bitrate=26230.0kbits/s throttle=off speed=3.84x    
+06:50:31.119 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:31.119 SegmentComplete=video:0 Index=200 Start=1200.073867 End=1206.038156 Duration=5.964289 offset_pts=0 start_pts=1200073867 Frames=145 filename=3C4C19_200.ts
+06:50:31.119 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_201.ts.tmp' for writing
+06:50:31.585 frame=28968 fps= 92 q=-1.0 size= 3857650kB time=00:20:08.12 bitrate=26231.2kbits/s throttle=off speed=3.84x    
+06:50:32.085 frame=29017 fps= 92 q=-1.0 size= 3864160kB time=00:20:10.16 bitrate=26230.9kbits/s throttle=off speed=3.84x    
+06:50:32.892 frame=29053 fps= 92 q=-1.0 size= 3869059kB time=00:20:11.66 bitrate=26231.5kbits/s throttle=off speed=3.84x    
+06:50:32.942 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:32.943 SegmentComplete=video:0 Index=201 Start=1206.121578 End=1211.919033 Duration=5.797456 offset_pts=0 start_pts=1206121578 Frames=141 filename=3C4C19_201.ts
+06:50:32.943 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_202.ts.tmp' for writing
+06:50:33.495 frame=29096 fps= 92 q=-1.0 size= 3874873kB time=00:20:13.46 bitrate=26232.0kbits/s throttle=off speed=3.83x    
+06:50:34.047 frame=29140 fps= 92 q=-1.0 size= 3880761kB time=00:20:15.29 bitrate=26232.1kbits/s throttle=off speed=3.83x    
+06:50:34.547 frame=29186 fps= 92 q=-1.0 size= 3887010kB time=00:20:17.21 bitrate=26232.8kbits/s throttle=off speed=3.83x    
+06:50:34.621 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:34.622 SegmentComplete=video:0 Index=202 Start=1212.002456 End=1217.925033 Duration=5.922578 offset_pts=0 start_pts=1212002456 Frames=144 filename=3C4C19_202.ts
+06:50:34.622 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_203.ts.tmp' for writing
+06:50:35.149 frame=29228 fps= 92 q=-1.0 size= 3892616kB time=00:20:18.96 bitrate=26232.8kbits/s throttle=off speed=3.83x    
+06:50:35.897 frame=29273 fps= 92 q=-1.0 size= 3898680kB time=00:20:20.84 bitrate=26233.2kbits/s throttle=off speed=3.83x    
+06:50:36.430 frame=29315 fps= 92 q=-1.0 size= 3904363kB time=00:20:22.59 bitrate=26233.7kbits/s throttle=off speed=3.83x    
+06:50:36.939 frame=29359 fps= 92 q=-1.0 size= 3910293kB time=00:20:24.43 bitrate=26234.0kbits/s throttle=off speed=3.83x    
+06:50:36.947 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:36.948 SegmentComplete=video:0 Index=203 Start=1218.008456 End=1223.931033 Duration=5.922578 offset_pts=0 start_pts=1218008456 Frames=144 filename=3C4C19_203.ts
+06:50:36.948 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_204.ts.tmp' for writing
+06:50:37.439 frame=29418 fps= 92 q=-1.0 size= 3918274kB time=00:20:26.89 bitrate=26234.7kbits/s throttle=off speed=3.83x    
+06:50:38.007 frame=29447 fps= 92 q=-1.0 size= 3922211kB time=00:20:28.10 bitrate=26235.1kbits/s throttle=off speed=3.83x    
+06:50:39.301 frame=29491 fps= 92 q=-1.0 size= 3928167kB time=00:20:29.93 bitrate=26235.6kbits/s throttle=off speed=3.82x    
+06:50:39.347 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:39.348 SegmentComplete=video:0 Index=204 Start=1224.014456 End=1230.020444 Duration=6.005989 offset_pts=0 start_pts=1224014456 Frames=146 filename=3C4C19_204.ts
+06:50:39.348 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_205.ts.tmp' for writing
+06:50:39.987 frame=29536 fps= 92 q=-1.0 size= 3934249kB time=00:20:31.81 bitrate=26236.1kbits/s throttle=off speed=3.81x    
+06:50:40.508 frame=29580 fps= 92 q=-1.0 size= 3940205kB time=00:20:33.64 bitrate=26236.6kbits/s throttle=off speed=3.81x    
+06:50:41.200 frame=29621 fps= 92 q=-1.0 size= 3945815kB time=00:20:35.35 bitrate=26237.5kbits/s throttle=off speed=3.81x    
+06:50:41.296 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:41.297 SegmentComplete=video:0 Index=205 Start=1230.103867 End=1235.984733 Duration=5.880867 offset_pts=0 start_pts=1230103867 Frames=143 filename=3C4C19_205.ts
+06:50:41.297 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_206.ts.tmp' for writing
+06:50:41.706 frame=29665 fps= 92 q=-1.0 size= 3951773kB time=00:20:37.19 bitrate=26238.1kbits/s throttle=off speed=3.81x    
+06:50:42.273 frame=29709 fps= 92 q=-1.0 size= 3957746kB time=00:20:39.02 bitrate=26238.7kbits/s throttle=off speed=3.81x    
+06:50:42.880 frame=29753 fps= 92 q=-1.0 size= 3963734kB time=00:20:40.86 bitrate=26239.4kbits/s throttle=off speed=3.81x    
+06:50:42.979 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:42.980 SegmentComplete=video:0 Index=206 Start=1236.068167 End=1241.990733 Duration=5.922567 offset_pts=0 start_pts=1236068167 Frames=144 filename=3C4C19_206.ts
+06:50:42.980 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_207.ts.tmp' for writing
+06:50:43.402 frame=29796 fps= 92 q=-1.0 size= 3969435kB time=00:20:42.65 bitrate=26239.1kbits/s throttle=off speed=3.81x    
+06:50:43.904 frame=29839 fps= 92 q=-1.0 size= 3975323kB time=00:20:44.45 bitrate=26240.1kbits/s throttle=off speed=3.81x    
+06:50:44.407 frame=29884 fps= 92 q=-1.0 size= 3981412kB time=00:20:46.32 bitrate=26240.6kbits/s throttle=off speed=3.81x    
+06:50:45.204 frame=29927 fps= 91 q=-1.0 size= 3987189kB time=00:20:48.12 bitrate=26240.8kbits/s throttle=off speed= 3.8x    
+06:50:45.279 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:45.280 SegmentComplete=video:0 Index=207 Start=1242.074167 End=1247.955033 Duration=5.880867 offset_pts=0 start_pts=1242074167 Frames=143 filename=3C4C19_207.ts
+06:50:45.280 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_208.ts.tmp' for writing
+06:50:45.802 frame=29970 fps= 91 q=-1.0 size= 3992972kB time=00:20:49.91 bitrate=26241.0kbits/s throttle=off speed= 3.8x    
+06:50:46.374 frame=30014 fps= 91 q=-1.0 size= 3998930kB time=00:20:51.75 bitrate=26241.6kbits/s throttle=off speed= 3.8x    
+06:50:46.874 frame=30060 fps= 91 q=-1.0 size= 4004888kB time=00:20:53.66 bitrate=26240.3kbits/s throttle=off speed= 3.8x    
+06:50:46.944 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:46.945 SegmentComplete=video:0 Index=208 Start=1248.038456 End=1253.961033 Duration=5.922578 offset_pts=0 start_pts=1248038456 Frames=144 filename=3C4C19_208.ts
+06:50:46.945 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_209.ts.tmp' for writing
+06:50:47.433 frame=30103 fps= 91 q=-1.0 size= 4010510kB time=00:20:55.46 bitrate=26239.5kbits/s throttle=off speed= 3.8x    
+06:50:47.940 frame=30144 fps= 91 q=-1.0 size= 4015985kB time=00:20:57.17 bitrate=26239.5kbits/s throttle=off speed= 3.8x    
+06:50:48.458 frame=30189 fps= 91 q=-1.0 size= 4022106kB time=00:20:59.04 bitrate=26240.2kbits/s throttle=off speed= 3.8x    
+06:50:48.571 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:48.572 SegmentComplete=video:0 Index=209 Start=1254.044456 End=1259.925322 Duration=5.880867 offset_pts=0 start_pts=1254044456 Frames=143 filename=3C4C19_209.ts
+06:50:48.572 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_210.ts.tmp' for writing
+06:50:49.078 frame=30276 fps= 91 q=-1.0 size= 4033834kB time=00:21:02.67 bitrate=26240.9kbits/s throttle=off speed= 3.8x    
+06:50:49.644 frame=30364 fps= 92 q=-1.0 size= 4045649kB time=00:21:06.34 bitrate=26241.3kbits/s throttle=off speed=3.81x    
+06:50:49.673 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:49.675 SegmentComplete=video:0 Index=210 Start=1260.008744 End=1265.931322 Duration=5.922578 offset_pts=0 start_pts=1260008744 Frames=144 filename=3C4C19_210.ts
+06:50:49.675 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_211.ts.tmp' for writing
+06:50:50.221 frame=30450 fps= 92 q=-1.0 size= 4057351kB time=00:21:09.93 bitrate=26242.7kbits/s throttle=off speed=3.81x    
+06:50:50.577 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:50.578 SegmentComplete=video:0 Index=211 Start=1266.014744 End=1272.020733 Duration=6.005989 offset_pts=0 start_pts=1266014744 Frames=146 filename=3C4C19_211.ts
+06:50:50.578 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_212.ts.tmp' for writing
+06:50:50.755 frame=30536 fps= 92 q=-1.0 size= 4068908kB time=00:21:13.52 bitrate=26243.1kbits/s throttle=off speed=3.82x    
+06:50:51.468 frame=30624 fps= 92 q=-1.0 size= 4080740kB time=00:21:17.19 bitrate=26243.6kbits/s throttle=off speed=3.82x    
+06:50:51.550 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:51.550 SegmentComplete=video:0 Index=212 Start=1272.104167 End=1277.943322 Duration=5.839156 offset_pts=0 start_pts=1272104167 Frames=142 filename=3C4C19_212.ts
+06:50:51.550 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19_213.ts.tmp' for writing
+06:50:51.872 
+
+[q] command received. Exiting.
+
+06:50:51.873 06:50:51.876 [segment @ 0x980800] Opening '/config/transcoding-temp/3C4C19.m3u8.tmp' for writing
+06:50:51.877 SegmentComplete=video:0 Index=213 Start=1278.026744 End=1280.612656 Duration=2.585911 offset_pts=0 start_pts=1278026744 Frames=63 filename=3C4C19_213.ts
+06:50:51.877 frame=30703 fps= 92 q=-1.0 Lsize= 4091371kB time=00:21:20.48 bitrate=26244.0kbits/s throttle=off speed=3.82x    
+06:50:51.877 video:4061373kB audio:29998kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+06:50:51.877 EXIT
+06:50:51.878 
+
+======= ExtraData
+H4sIAAAAAAAAA+1b3W7iRhR+FctSpVYC/AMkgFSpBNhN1KSLgCQXuytrsAcYxX+yxzTsKvetqvaiUl+hvehF1dte9G223cfombGNjQ0hsEm6WTkXkTlzZs453/kZD3N4K3Ycy0K2Ibbeis+ISbHnrzy+fH1TEp+bzhiZL1xKHJsPh48XyAww43krfoMsLLbEhVgSOXVIPWJPgUK9AIs3pSWHC3SqTT3kznxtQkycmyHpjj0hU8l0pr40mVgunpY9bAXXZdRo4JraqJdr4zoq16rjSbnZPDTKeFyv67WmPq4irCl87Qq9pmmxuuMuqL9VO58ij2qIam+w52zgZoCc2G5AQ8u7TDXscdAwooGHo7Wm2MYe0WGViD5auIweTyiJmwF9fRMLObENfC225Ohj33OooztmXtyMUjcna3XOVol38DDS9cBDFGs+xlc5hCbI9COIgIaRFWOkO8Y6jGbqQS2n9AUxsBNP2Y6S3w7okr3FNSiJZ9gg6GvC4jpcb8tCpZArVJpxdGA5PdLyONSSc3B6onnHMR1v5CHbnzDp4pgeys2Y3veIhTzCRKwODF2k4xSRrzxA9pQRh90BkPrkGpvPHM9CNFQHpsUfxUUwr6kyc3fPBjttIJ3bvot1MiHYEDkqJzYksAlyjCUoR4QOwHXAXa0LZ2NCJZYRQPX72OMCxZaickoXu3QmtholcYAnzzzAAYxQYpTIG7aI0lTla0VuyLBIe449NMWcM5KhKM1GQ1akugx/IlsImbeNt5kBTEHisNGDFkMGYpcXCXACmc6AcIrnTE2xpojc9zayHM+dQZ7FViYZE3ozHVXcAeDAEbHwEfK5GjLoUGuEOqTpUjNS7MTv4gkKTJqI8MEVaWTbpjlCUx5KbLR3DdjbyIzGb1iF2ZgDrKrMjFwWtAOD7J0FbM3VJODLbU0CzrU+CUaD895xV4x44jRYKt+ZIdvGJix0sPxwihZOwOI1fKj3Haj9yhHSr5KwGyLLZf5Va+Av/hyFx9CLnRI5VMk4NLYo59D/1ZtIr370rmx3qlk/hmrv48TIXQdqvSILV3FRud2V6pNwZZGYd0vM6pPwZpGYd0jMWuHKx3OlusmVQ8CCv6skXlQah5X6Xb1YL7z4CXjxoPDiJ+DFw4/Ji1uhHgZjSij/UuZ2tGPGDQfm7tmF1n8+1IbnR6OT0WlPTGYsD9CGNdfcqa/5icwT/zn78oboTO1QuwjGRgbGlKJZJGVJKVBcj2KzQPEeUFSyXy0UMO4FY/ZAX8C4F4zZw3QB414wZk+xBYx7wZg9QRYw7gVj9ghXwLgXjNkzVAHjXjBmDzEFjHvBWBxi7gXG4hRzHzCqxSnmXmAsTjH3AmNxirkXGItTzL3A+NGcYoB67rF+F0kGQYo0upDe//Dnv3//9O7736R3P/7y/q/f//nj53e/fle5xNjwJf5fGMqKwBpzXKF3PhCOzKDsoYXQvugIIzDzuCvUK0r5khx3pcterwvAKVpXkY4AR2k4GvTaZyBNPVArlkp9kenwIqDLhrez9e1uPp5a2Ka5y4Czrc1uSfdduIQ2Cfucss1lrBOQ6VPKTTCJn2eP+wgp686CGARqmWLLlaqdWkdpVqxq0Ni0mEaZ8jkFNsyg4Pwc88E6zrC/0A6sMcdkdYacnjGG6LvSbMfWrvBiEjZgbetehKwic2IEyNRmGEHSaWA7MdeIivr0kqnfeoTinWfFZoWzGbgbdLxrd6GFrjUDmyjfR8q7xOQViNDcIYZm4ymiZA7i8wAZxEdjk3fELWdNclxx5KaYLORqFqbIQBTl+MtKllWfIZe3y65jZQUszJ/NzZtRI+xq5mQmbb1IS3dcdhzbxjrFxtAJoOCcsHIrt1hR2rUzkpm6fjVW93r2hntBk4wtt2oiK28XvwKLJ261arebwCQ4xjlnsH7FTATpOSZ1JVZ4F3SO56tX4twxAwt/qb4S0/wQb67jE6ZRPhajrYDlQlLVb69R2mdGhVdgwCHsyOY7Fjc8fnqZbtaOnxlDF/u6Rzg8IIndbk6xQFhDsBBqXxFL6UbmU2JfpduGxdyVaHX9jWmSSPFdKYimfWTEqESWl8RjTKYzynszuVuZOBZM8uotKr8JBRIPtthV8CqhedjnbJ7GIjkcXyfnkhise1VmQEeDfeT52NBCy/l0NqDCSEgSVze5FBgh+QPRiAOK72wazNdkTXkYpPKWJnDwbN4UIkfBZII9AbEkE8ItpyQg2xAsdIUFOsOWgHQd+z6BmipQh5GEMEWgABJ7JZ4S5Hk/PphL7MjmGHg05gJ3R16p15X1PVHJdlFRPvehun2xiv+aKHoAD+QsvkcHzGFrRin8MQw7k5QrhPD3D08pt3NZsVNmJ9MygeWD0SvBdTv6sMnNsUc5lGGZDB0BQDs2jkFedtkLodb+k0I6Xxt2gjrnqCXiy1f2RyiiD1o9cybeMXcHUVGJgoa9OO4cGXvUtYeuXDuFx5rqugyQmPw4IZKP88d5JUkHC+DC39Eyv+C6azDIabPl0gPs1cufE3nTsVrbgAW3M3zrXsFHSXy7doOvrmzwaSgZjO3B8gSRjqMdI+PDIdphN12iBZTF/mCt1s4UStFulUEqFVAQUv8Bortb7K45AAA=

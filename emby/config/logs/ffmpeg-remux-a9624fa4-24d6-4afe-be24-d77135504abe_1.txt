@@ -1,0 +1,194 @@
+2020-05-22 08:57:44.073
+Emby Server version: 4.4.2.0
+Operating system: Unix 4.15.0.96
+Command Line: /system/EmbyServer.dll -programdata /config -ffdetect /bin/ffdetect -ffmpeg /bin/ffmpeg -ffprobe /bin/ffprobe -restartexitcode 3
+
+App: Emby Web 4.4.2.0
+Chrome
+
+http://emby.super0.me:8096/videos/660/hls1/main/0.ts?DeviceId=f6e80783-687e-493f-86cc-bb660d1276e8&MediaSourceId=0f7aa5f9d3a38e52e5635749fe0af94a&PlaySessionId=f37faab784ec406080598e37a9b91277&api_key=e1b2df3ea44d45129b6352df6a663541&VideoCodec=h264&AudioCodec=mp3,aac&VideoBitrate=59744000&AudioBitrate=256000&AudioStreamIndex=1&TranscodingMaxAudioChannels=2&SegmentContainer=ts&MinSegments=1&BreakOnNonKeyFrames=True&ManifestSubtitles=vtt&h264-profile=high,main,baseline,constrainedbaseline,high10&h264-level=52&TranscodeReasons=ContainerNotSupported
+
+{"Protocol":"File","Id":"0f7aa5f9d3a38e52e5635749fe0af94a","Path":"/00/00/Copy of 無碼流出全套.原版母帶無水印/あやみ旬果.Part1.原版母帶無水印[64GB]/bhd1080.com@20161123171140.m2ts","Type":"Default","Container":"mpegts","Size":1565589504,"Name":"bhd1080.com@20161123171140","IsRemote":false,"RunTimeTicks":5570880000,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"RequiresOpening":false,"RequiresClosing":false,"RequiresLooping":false,"SupportsProbing":false,"MediaStreams":[{"Codec":"h264","CodecTag":"HDMV","TimeBase":"1/90000","CodecTimeBase":"1001/60000","VideoRange":"SDR","DisplayTitle":"1080i H264","NalLengthSize":"0","IsInterlaced":true,"IsAVC":false,"BitRate":22482473,"BitDepth":8,"RefFrames":1,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"AverageFrameRate":29.97003,"RealFrameRate":59.94006,"Profile":"High","Type":"Video","AspectRatio":"16:9","Index":0,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File","PixelFormat":"yuv420p","Level":40,"IsAnamorphic":false},{"Codec":"ac3","CodecTag":"AC-3","TimeBase":"1/90000","CodecTimeBase":"1/48000","DisplayTitle":"Dolby Digital stereo","IsInterlaced":false,"ChannelLayout":"stereo","BitRate":256000,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"Type":"Audio","Index":1,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"},{"Codec":"PGSSUB","TimeBase":"1/90000","CodecTimeBase":"0/1","DisplayTitle":"Und (PGSSUB)","IsInterlaced":false,"IsDefault":false,"IsForced":false,"Height":1080,"Width":1920,"Type":"Subtitle","Index":2,"IsExternal":false,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Protocol":"File"}],"Formats":[],"Bitrate":22482473,"RequiredHttpHeaders":{},"ReadAtNativeFramerate":false}
+
+>>>>>>  User policy for 1124721976
+        EnablePlaybackRemuxing: True
+        EnableVideoPlaybackTranscoding: True
+        EnableAudioPlaybackTranscoding: True
+
+
+>>>>>>  Processing Plan
+Info    Name                                        CanDoInHardware      WillDoInHardware     Reason                                  
+Info    Copy video stream                        >> False                False                Software Codec                           
+Info    VideoInput                               >> False                False                Not a hardware decoder                   
+Info    VideoOutput                              >> False                False                Not a hardware encoder                   
+Info    Copy video stream                        >> False                False                Software Codec                           
+
+>>>>>>  Projected Processing Formats
+Info    Previous                HW-Context   Format       SW-Format       Next
+Info    h264                 >> -            yuv420p      yuv420p      >> 
+
+>>>>>  Legacy Command
+
+/bin/ffmpeg -f mpegts -noaccurate_seek -i file:"/00/00/Copy of 無碼流出全套.原版母帶無水印/あやみ旬果.Part1.原版母帶無水印[64GB]/bhd1080.com@20161123171140.m2ts" -threads 0 -map 0:0 -map 0:1 -sn -c:v:0 copy -copyts -vsync -1 -codec:a:0 libmp3lame -disposition:a:0 default -ac:a:0 2 -ab:a:0 192000  -f segment -max_delay 5000000 -avoid_negative_ts disabled -map_metadata -1 -map_chapters -1 -start_at_zero -segment_time 6  -individual_header_trailer 0 -break_non_keyframes 1 -segment_format mpegts -segment_write_temp 1 -segment_list_type m3u8 -segment_start_number 0 -segment_list "/config/transcoding-temp/0C1E80.m3u8" -y "/config/transcoding-temp/0C1E80_%d.ts"
+
+>>>>>  Actual Command
+
+/bin/ffmpeg -loglevel +timing -y -print_graphs_file /config/logs/ffmpeg-remux-a9624fa4-24d6-4afe-be24-d77135504abe_1graph.txt -copyts -start_at_zero -f mpegts -noaccurate_seek -c:v:0 h264 -i "/00/00/Copy of 無碼流出全套.原版母帶無水印/あやみ旬果.Part1.原版母帶無水印[64GB]/bhd1080.com@20161123171140.m2ts" -map 0:0 -map 0:1 -sn -c:v:0 copy -c:a:0 libmp3lame -ab:a:0 192000 -ac:a:0 2 -disposition:a:0 default -max_delay 5000000 -avoid_negative_ts disabled -f segment -map_metadata -1 -map_chapters -1 -segment_format mpegts -segment_list /config/transcoding-temp/0C1E80.m3u8 -segment_list_type m3u8 -segment_time 6 -segment_start_number 0 -break_non_keyframes 1 -individual_header_trailer 0 -write_header_trailer 0 -segment_write_temp 1 "/config/transcoding-temp/0C1E80_%d.ts"
+
+08:57:44.101 ffmpeg version 4.3.0-emby_2020_02_24 Copyright (c) 2000-2019 the FFmpeg developers and softworkz for Emby LLC
+08:57:44.101   built with gcc 8.3.0 (crosstool-NG 1.24.0)
+08:57:44.101 Execution Date: 2020-05-22 08:57:44
+08:57:48.152 Input #0, mpegts, from '/00/00/Copy of 無碼流出全套.原版母帶無水印/あやみ旬果.Part1.原版母帶無水印[64GB]/bhd1080.com@20161123171140.m2ts':
+08:57:48.152   Duration: 00:09:17.09, start: 1.033367, bitrate: 22482 kb/s
+08:57:48.152   Program 1 
+08:57:48.152     Stream #0:0[0x1011]: Video: h264 (High) (HDMV / 0x564D4448), yuv420p(top first), 1920x1080 [SAR 1:1 DAR 16:9], Level 40, 29.97 fps, 59.94 tbr, 90k tbn, 59.94 tbc, Start-Time 1.100s
+08:57:48.152     Stream #0:1[0x1100]: Audio: ac3 (AC-3 / 0x332D4341), 48000 Hz, stereo, fltp, 256 kb/s, Start-Time 1.033s
+08:57:48.152     Stream #0:2[0x1200]: Subtitle: hdmv_pgs_subtitle ([144][0][0][0] / 0x0090), 1920x1080, Start-Time 1.033s
+08:57:48.152 Stream mapping:
+08:57:48.152   Stream #0:0 -> #0:0 (copy)
+08:57:48.152   Stream #0:1 -> #0:1 (ac3 (native) -> mp3 (libmp3lame))
+08:57:48.152 Press [q] to stop, [?] for help
+08:57:48.156 Output #0, segment, to '/config/transcoding-temp/0C1E80_%d.ts':
+08:57:48.156   Metadata:
+08:57:48.156     encoder         : Lavf58.35.100
+08:57:48.156     Stream #0:0: Video: h264 (High) (HDMV / 0x564D4448), yuv420p(top first), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, Level 40, 29.97 fps, 59.94 tbr, 90k tbn, 29.97 tbc
+08:57:48.156     Stream #0:1: Audio: mp3 (libmp3lame), 48000 Hz, stereo, fltp, 192 kb/s (default)
+08:57:48.156     Metadata:
+08:57:48.156       encoder         : Lavc58.62.100 libmp3lame
+08:57:48.901 frame=  121 fps=0.0 q=-1.0 size=    5269kB time=00:00:01.96 bitrate=N/A throttle=off speed=   0x    
+08:57:49.102 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:57:49.103 SegmentComplete=video:0 Index=0 Start=0.000000 End=6.006000 Duration=6.006000 offset_pts=0 start_pts=0 Frames=360 filename=0C1E80_0.ts
+08:57:49.103 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_1.ts.tmp' for writing
+08:57:49.402 frame=  552 fps=442 q=-1.0 size=   23627kB time=00:00:09.15 bitrate=26918.1kbits/s throttle=off speed=5.75x    
+08:57:49.865 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:57:49.865 SegmentComplete=video:0 Index=1 Start=6.072733 End=12.012000 Duration=5.939267 offset_pts=0 start_pts=6072733 Frames=360 filename=0C1E80_1.ts
+08:57:49.865 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_2.ts.tmp' for writing
+08:57:50.029 frame=  794 fps=423 q=-1.0 size=   33982kB time=00:00:13.19 bitrate=24793.5kbits/s throttle=off speed=5.98x    
+08:57:50.741 frame= 1086 fps=420 q=-1.0 size=   46606kB time=00:00:18.06 bitrate=23714.9kbits/s throttle=off speed=6.22x    
+08:57:50.760 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:57:50.760 SegmentComplete=video:0 Index=2 Start=12.078733 End=18.001311 Duration=5.922578 offset_pts=0 start_pts=12078733 Frames=357 filename=0C1E80_2.ts
+08:57:50.760 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_3.ts.tmp' for writing
+08:57:51.417 frame= 1428 fps=437 q=-1.0 size=   61207kB time=00:00:23.77 bitrate=22995.0kbits/s throttle=off speed=6.68x    
+08:57:51.443 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:57:51.444 SegmentComplete=video:0 Index=3 Start=18.001322 End=24.007311 Duration=6.005989 offset_pts=0 start_pts=18001322 Frames=360 filename=0C1E80_3.ts
+08:57:51.444 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_4.ts.tmp' for writing
+08:57:51.767 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:57:51.768 SegmentComplete=video:0 Index=4 Start=24.007322 End=30.013311 Duration=6.005989 offset_pts=0 start_pts=24007322 Frames=360 filename=0C1E80_4.ts
+08:57:51.768 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_5.ts.tmp' for writing
+08:57:52.238 frame= 1960 fps=480 q=-1.0 size=   84457kB time=00:00:32.64 bitrate=22550.8kbits/s throttle=off speed=7.51x    
+08:57:52.611 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:57:52.611 SegmentComplete=video:0 Index=5 Start=30.013322 End=35.969267 Duration=5.955944 offset_pts=0 start_pts=30013322 Frames=359 filename=0C1E80_5.ts
+08:57:52.611 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_6.ts.tmp' for writing
+08:57:52.969 frame= 2311 fps=480 q=-1.0 size=   99955kB time=00:00:38.50 bitrate=22411.2kbits/s throttle=off speed=7.59x    
+08:57:53.431 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:57:53.431 SegmentComplete=video:0 Index=6 Start=36.002633 End=41.975267 Duration=5.972633 offset_pts=0 start_pts=36002633 Frames=360 filename=0C1E80_6.ts
+08:57:53.431 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_7.ts.tmp' for writing
+08:57:53.471 frame= 2627 fps=494 q=-1.0 size=  113674kB time=00:00:43.77 bitrate=22273.5kbits/s throttle=off speed=7.86x    
+08:57:53.970 frame= 2812 fps=483 q=-1.0 size=  121615kB time=00:00:46.86 bitrate=22191.2kbits/s throttle=off speed=7.72x    
+08:57:54.472 frame= 2875 fps=455 q=-1.0 size=  124349kB time=00:00:47.91 bitrate=22171.1kbits/s throttle=off speed=7.27x    
+08:57:54.493 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:57:54.494 SegmentComplete=video:0 Index=7 Start=42.008633 End=47.981267 Duration=5.972633 offset_pts=0 start_pts=42008633 Frames=360 filename=0C1E80_7.ts
+08:57:54.494 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_8.ts.tmp' for writing
+08:57:55.659 frame= 2982 fps=397 q=-1.0 size=  129005kB time=00:00:49.69 bitrate=22140.8kbits/s throttle=off speed=6.36x    
+08:57:56.319 frame= 3117 fps=382 q=-1.0 size=  134827kB time=00:00:51.95 bitrate=22097.4kbits/s throttle=off speed=6.12x    
+08:57:56.640 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:57:56.641 SegmentComplete=video:0 Index=8 Start=48.014633 End=53.987267 Duration=5.972633 offset_pts=0 start_pts=48014633 Frames=360 filename=0C1E80_8.ts
+08:57:56.641 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_9.ts.tmp' for writing
+08:57:56.821 frame= 3538 fps=408 q=-1.0 size=  153023kB time=00:00:58.97 bitrate=21989.7kbits/s throttle=off speed=6.58x    
+08:57:56.894 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:57:56.894 SegmentComplete=video:0 Index=9 Start=54.020633 End=59.993267 Duration=5.972633 offset_pts=0 start_pts=54020633 Frames=360 filename=0C1E80_9.ts
+08:57:56.894 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_10.ts.tmp' for writing
+08:57:57.140 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:57:57.140 SegmentComplete=video:0 Index=10 Start=60.026633 End=65.999267 Duration=5.972633 offset_pts=0 start_pts=60026633 Frames=360 filename=0C1E80_10.ts
+08:57:57.140 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_11.ts.tmp' for writing
+08:57:57.532 frame= 4103 fps=437 q=-1.0 size=  177440kB time=00:01:08.40 bitrate=21880.5kbits/s throttle=off speed=7.08x    
+08:57:58.019 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:57:58.019 SegmentComplete=video:0 Index=11 Start=66.032633 End=72.005267 Duration=5.972633 offset_pts=0 start_pts=66032633 Frames=360 filename=0C1E80_11.ts
+08:57:58.019 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_12.ts.tmp' for writing
+08:57:58.033 frame= 4379 fps=443 q=-1.0 size=  189539kB time=00:01:13.00 bitrate=21857.4kbits/s throttle=off speed=7.19x    
+08:57:58.533 frame= 4602 fps=443 q=-1.0 size=  199228kB time=00:01:16.72 bitrate=21831.4kbits/s throttle=off speed= 7.2x    
+08:57:59.103 frame= 4635 fps=423 q=-1.0 size=  200661kB time=00:01:17.27 bitrate=21827.7kbits/s throttle=off speed=6.88x    
+08:57:59.146 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:57:59.146 SegmentComplete=video:0 Index=12 Start=72.038633 End=78.011267 Duration=5.972633 offset_pts=0 start_pts=72038633 Frames=360 filename=0C1E80_12.ts
+08:57:59.146 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_13.ts.tmp' for writing
+08:57:59.603 frame= 4878 fps=426 q=-1.0 size=  211230kB time=00:01:21.33 bitrate=21803.6kbits/s throttle=off speed=6.93x    
+08:58:00.090 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:58:00.090 SegmentComplete=video:0 Index=13 Start=78.044633 End=84.000578 Duration=5.955944 offset_pts=0 start_pts=78044633 Frames=357 filename=0C1E80_13.ts
+08:58:00.090 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_14.ts.tmp' for writing
+08:58:00.104 frame= 5098 fps=427 q=-1.0 size=  220738kB time=00:01:25.00 bitrate=21777.9kbits/s throttle=off speed=6.95x    
+08:58:00.605 frame= 5328 fps=428 q=-1.0 size=  230719kB time=00:01:28.83 bitrate=21757.2kbits/s throttle=off speed=6.98x    
+08:58:00.977 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:58:00.977 SegmentComplete=video:0 Index=14 Start=84.000589 End=90.006578 Duration=6.005989 offset_pts=0 start_pts=84000589 Frames=360 filename=0C1E80_14.ts
+08:58:00.977 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_15.ts.tmp' for writing
+08:58:01.613 frame= 5530 fps=411 q=-1.0 size=  239444kB time=00:01:32.20 bitrate=21736.7kbits/s throttle=off speed= 6.7x    
+08:58:02.141 frame= 5710 fps=408 q=-1.0 size=  247187kB time=00:01:35.21 bitrate=21716.9kbits/s throttle=off speed=6.67x    
+08:58:02.188 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:58:02.188 SegmentComplete=video:0 Index=15 Start=90.006589 End=96.012578 Duration=6.005989 offset_pts=0 start_pts=90006589 Frames=360 filename=0C1E80_15.ts
+08:58:02.188 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_16.ts.tmp' for writing
+08:58:02.654 frame= 5890 fps=406 q=-1.0 size=  254902kB time=00:01:38.21 bitrate=21696.0kbits/s throttle=off speed=6.64x    
+08:58:03.157 frame= 6068 fps=404 q=-1.0 size=  262690kB time=00:01:41.18 bitrate=21689.6kbits/s throttle=off speed=6.61x    
+08:58:03.204 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:58:03.205 SegmentComplete=video:0 Index=16 Start=96.012589 End=101.968533 Duration=5.955944 offset_pts=0 start_pts=96012589 Frames=359 filename=0C1E80_16.ts
+08:58:03.205 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_17.ts.tmp' for writing
+08:58:03.648 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:58:03.649 SegmentComplete=video:0 Index=17 Start=102.001900 End=107.974533 Duration=5.972633 offset_pts=0 start_pts=102001900 Frames=360 filename=0C1E80_17.ts
+08:58:03.649 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_18.ts.tmp' for writing
+08:58:03.658 frame= 6524 fps=421 q=-1.0 size=  282432kB time=00:01:48.79 bitrate=21659.0kbits/s throttle=off speed=6.89x    
+08:58:03.874 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:58:03.875 SegmentComplete=video:0 Index=18 Start=108.007900 End=113.980533 Duration=5.972633 offset_pts=0 start_pts=108007900 Frames=360 filename=0C1E80_18.ts
+08:58:03.875 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_19.ts.tmp' for writing
+08:58:04.065 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:58:04.065 SegmentComplete=video:0 Index=19 Start=114.013900 End=119.986533 Duration=5.972633 offset_pts=0 start_pts=114013900 Frames=360 filename=0C1E80_19.ts
+08:58:04.065 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_20.ts.tmp' for writing
+08:58:04.158 frame= 7414 fps=463 q=-1.0 size=  320996kB time=00:02:03.64 bitrate=21612.3kbits/s throttle=off speed= 7.6x    
+08:58:04.391 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:58:04.391 SegmentComplete=video:0 Index=20 Start=120.019900 End=125.992533 Duration=5.972633 offset_pts=0 start_pts=120019900 Frames=360 filename=0C1E80_20.ts
+08:58:04.391 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_21.ts.tmp' for writing
+08:58:04.955 frame= 7860 fps=468 q=-1.0 size=  340071kB time=00:02:11.08 bitrate=21577.0kbits/s throttle=off speed=7.68x    
+08:58:05.003 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:58:05.003 SegmentComplete=video:0 Index=21 Start=126.025900 End=131.998533 Duration=5.972633 offset_pts=0 start_pts=126025900 Frames=360 filename=0C1E80_21.ts
+08:58:05.003 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_22.ts.tmp' for writing
+08:58:05.436 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:58:05.436 SegmentComplete=video:0 Index=22 Start=132.031900 End=138.004533 Duration=5.972633 offset_pts=0 start_pts=132031900 Frames=360 filename=0C1E80_22.ts
+08:58:05.436 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_23.ts.tmp' for writing
+08:58:05.455 frame= 8342 fps=482 q=-1.0 size=  361068kB time=00:02:19.12 bitrate=21566.1kbits/s throttle=off speed=7.93x    
+08:58:05.816 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:58:05.817 SegmentComplete=video:0 Index=23 Start=138.037900 End=144.010533 Duration=5.972633 offset_pts=0 start_pts=138037900 Frames=360 filename=0C1E80_23.ts
+08:58:05.817 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_24.ts.tmp' for writing
+08:58:06.787 frame= 8714 fps=468 q=-1.0 size=  376980kB time=00:02:25.32 bitrate=21541.7kbits/s throttle=off speed=7.69x    
+08:58:07.423 frame= 8958 fps=465 q=-1.0 size=  387652kB time=00:02:29.39 bitrate=21539.9kbits/s throttle=off speed=7.65x    
+08:58:07.708 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:58:07.708 SegmentComplete=video:0 Index=24 Start=144.043900 End=150.016533 Duration=5.972633 offset_pts=0 start_pts=144043900 Frames=360 filename=0C1E80_24.ts
+08:58:07.708 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_25.ts.tmp' for writing
+08:58:08.165 frame= 9157 fps=458 q=-1.0 size=  396389kB time=00:02:32.71 bitrate=21540.3kbits/s throttle=off speed=7.53x    
+08:58:08.719 frame= 9315 fps=453 q=-1.0 size=  403154kB time=00:02:35.35 bitrate=21531.5kbits/s throttle=off speed=7.46x    
+08:58:08.800 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:58:08.800 SegmentComplete=video:0 Index=25 Start=150.049900 End=156.005844 Duration=5.955944 offset_pts=0 start_pts=150049900 Frames=357 filename=0C1E80_25.ts
+08:58:08.800 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_26.ts.tmp' for writing
+08:58:09.430 frame= 9672 fps=455 q=-1.0 size=  418665kB time=00:02:41.31 bitrate=21524.1kbits/s throttle=off speed=7.49x    
+08:58:09.468 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:58:09.468 SegmentComplete=video:0 Index=26 Start=156.005856 End=162.011844 Duration=6.005989 offset_pts=0 start_pts=156005856 Frames=360 filename=0C1E80_26.ts
+08:58:09.468 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_27.ts.tmp' for writing
+08:58:10.433 frame=10010 fps=449 q=-1.0 size=  433194kB time=00:02:46.95 bitrate=21509.9kbits/s throttle=off speed= 7.4x    
+08:58:10.483 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:58:10.483 SegmentComplete=video:0 Index=27 Start=162.011856 End=167.967800 Duration=5.955944 offset_pts=0 start_pts=162011856 Frames=359 filename=0C1E80_27.ts
+08:58:10.483 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_28.ts.tmp' for writing
+08:58:10.933 frame=10326 fps=453 q=-1.0 size=  446916kB time=00:02:52.22 bitrate=21504.0kbits/s throttle=off speed=7.47x    
+08:58:11.449 frame=10368 fps=445 q=-1.0 size=  448687kB time=00:02:52.92 bitrate=21500.8kbits/s throttle=off speed=7.34x    
+08:58:11.500 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:58:11.500 SegmentComplete=video:0 Index=28 Start=168.001167 End=173.973800 Duration=5.972633 offset_pts=0 start_pts=168001167 Frames=360 filename=0C1E80_28.ts
+08:58:11.500 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80_29.ts.tmp' for writing
+08:58:12.014 
+
+[q] command received. Exiting.
+
+08:58:12.015 08:58:12.017 [segment @ 0x15f1880] Opening '/config/transcoding-temp/0C1E80.m3u8.tmp' for writing
+08:58:12.018 SegmentComplete=video:0 Index=29 Start=174.007167 End=175.975800 Duration=1.968633 offset_pts=0 start_pts=174007167 Frames=118 filename=0C1E80_29.ts
+08:58:12.018 frame=10546 fps=442 q=-1.0 Lsize=  456410kB time=00:02:55.89 bitrate=21497.4kbits/s throttle=off speed=7.29x    
+08:58:12.018 video:452299kB audio:4111kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.000000%
+    Last message repeated 1 times
+08:58:12.018 EXIT
+08:58:12.019 
+
+======= ExtraData
+H4sIAAAAAAAAA9VYzW7bRhB+FYJAb/ohKVm2daosO45QuxEsJz0EAbEil9LCJJfgLlUpgQ8JUrQ9pNdcihYtUKCHAs2hLYqiQB8msPManV2SIqWVrKiJAzQwAmp2dnfmm29+yCd6lwYBCl29/US/Q3yOY7bw+PDRZUU/9ukQ+fciTmgol9PHB8hPsNB5on+KAqy39Zle0aV0wGMSjkDC4wTrl5W5RgRybo9iFI2Z7REfKzvqDg09Mqr7dMTqnhdEeFSNcZBMq2i/ZTU91KxaTbdVbSIPV4fYalbd3V2zsbNjNNEQ26Y8u8anvHytQ6MZZxutYxzF3EbcfoxjukZbANILo4Snnh8K03AsQcOIJzHOzhKGyysz8fksEuJcv6Kvx/PRZX5HL3TxVG8b2c9+TDl1qK/eNuY8Uu5a3LPxxrcIsKeAkrlZAhE5ThIjjm2G8YWi7yGfZSiCDKMgh9Gh7ioYx1arqTj2gLiY5ls2I8k6CZ+rt6UFFf0UuwR9QgT10/M2HFRJtVKjhUYXjnMyK++mVkoNKS8sl7IzFI6E3uDwDER9MsX+HRoHiKcH+TTOf+qzZNK0DBHMoxAsDEF0P2QRdohHsKtLf3ohZKePHPjdFqys6AeEnwHmoGyZ2umQ8LqgHkhZH8fyPr1tWlJyiCM+1tt7Ff0Me3dicAAcNHP3yGNxiLlvGVPT2DPgkM4Ex2iEpWZ+x/7+rmE06qYh/uniJOSvUtjJ1jvCAWEhoeL0VntfwBBTWQEAPjIag+AET4SdelNsgaiFKKBxNCbOPGhFPqRxKPMB9kjoz0mADxCTbhiGWW9lNpTl9f1M2GOH2EOJz4srGIRCIpsJOr5/jkaSBGL1aArYh8jP1i8F89eyFzkNhbydxCX/mbxptMvclcdt5K7UWs3dTlfYKBVy6qZmd8coDLEPR1jzHydoRhNB0/RhAFhI5Ev82zFqhnaRU3CAgsjPaTGIm3sZ7mkgzaVA5s4ogaznG28xihuhHiRDTrjsWTejnSuuKRaHpw/s/vHAHtw/OO+dnxzpxY558XCDiR2NmM2KO3vsWPQ24gizU+tkzq3I2QxeawnekgPLCBt18xbRBen9WKR23TDEXxf6sUY97c3zH978+Pf170+vvvzr6oufr356Wbv65vs3X391/euLqz//gOXrV79dvXhVf/302etnz18//ef65S/X331b60OjNlfrPmw1jw8e1YdjV4BRc2jwsWWYLdO0GuauaTaNWmCJjgU23Uv4vJGfrm7jDI8CHHIli083dvFiqkiPsL20xG/uoPkGnzBVPZ+PeIxCBlQFaZXjIKobXfMI/A0ayd66w2wujFcMWLODAxkU5dYqzXRuCpNgKDFZ3GGUdwyBjRd2SEP7As+8tPlsmsog+ciEuAny7TFGkJs2+A6NQ70qGy6KrZ/HBAaRbXflbqW7BbhrZ8G3G5sCNLVd7CN1PpYN0liACE0oce0Qj6BbTuB6FSCXMDT05TBww2SWM7ekFKDIDjBHLuJI0a+ay6rOGEXyNWCVqqhzaf6sn0qzAX8xc5Y2beyA5TGxS6EJORy7A5pAAeqJqmy0RZHadpwTrq4+zZSj15qG7pNhEDV8FKh+yd6Vb9zo1XYtvCDHUAmGqPtLDHIUJau8DvyJKCPiBpVbWakX3C6q9s01x/7IrcmKCn6lb46yUUlH8qeH5ZfK/FkoHGLmxES6Czf1EWMaH2ONyZBoSQgkhNnZ1TiVcirZU9MXXsJOSHhRfufRlXmlsXqcKZIlH2TAHN5Hbo5UhkZFv4thRuVy9JShE9cJwhiLI44cU0Akrc8OkW+ktmGTEP4T7EpXV93yGXHFbG4I6LNF6HQMuzYKE9+3BdOF3BJRFhJ9sYmVgEjF74hEnseyc9mwP/PgFlBS/CywkMm6jjEHiefhWEMih7S0o1Q0FLpagC6woEygwRspZoxAycxZ5MnDgFokXKBSAbsStDnsQ3nhhwFeAeVD0PM9Aj+BjotKuGNYhrGvCIGWfq75P6WzkgxbpXOxbYlQDJxeINXN6EPvgvdyLqEkAqQsEAA0DXEO8vy7gZZazf5XSCvs3wppJU5zwOeD+AfI4FutmYqL5dQFJGTzXfqG+LaBN8rOGpVbqLrzT15QA2ZrgBDhyqajBXDMIpwrK3VjoVKXcRQYds7mk16ZOFvS4d0R2qI8viewFrOhoZSfJaRKfAJG/QtIlHOXLhgAAA==
